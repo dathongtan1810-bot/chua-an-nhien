@@ -98,6 +98,14 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) store.saveNow();
 });
 installShare();
+// a11y: lời hướng dẫn nghi thức được đọc bởi trình đọc màn hình
+new MutationObserver((muts) => {
+  for (const m of muts)
+    m.addedNodes.forEach((n) => {
+      if (n instanceof HTMLElement)
+        n.querySelectorAll?.('.ritual-hint').forEach((el) => el.setAttribute('aria-live', 'polite'));
+    });
+}).observe(uiRoot(), { childList: true, subtree: true });
 registerSW();
 void import('./native').then((m) => m.initNative()).catch(() => undefined);
 // Nút Back Android: đóng bảng / nghi thức trước, rồi lùi về khu trước

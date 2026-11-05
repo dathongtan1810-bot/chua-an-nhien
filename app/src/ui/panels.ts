@@ -55,7 +55,29 @@ export function openToday(): void {
       h('div', { class: 'big-date' }, formatLunar(info.lunar, lang)),
       h('div', { class: 'muted' }, `${d}/${m}/${y} • ${lang === 'vi' ? 'Năm' : 'Year'} ${yearCanChi(info.lunar.year)}`),
     ),
-    h('section', {}, h('div', { class: 'message' }, info.message)),
+    h(
+      'section',
+      {},
+      h('div', { class: 'message' }, info.message),
+      'speechSynthesis' in window
+        ? h(
+            'button',
+            {
+              class: 'btn',
+              style: { marginTop: '8px' },
+              'aria-label': lang === 'vi' ? 'Đọc to thông điệp' : 'Read the message aloud',
+              onclick: () => {
+                const u = new SpeechSynthesisUtterance(info.message);
+                u.lang = 'vi-VN';
+                u.rate = 0.9;
+                speechSynthesis.cancel();
+                speechSynthesis.speak(u);
+              },
+            },
+            '🔊 ' + (lang === 'vi' ? 'Đọc to' : 'Read aloud'),
+          )
+        : null,
+    ),
   );
   if (info.events.length) {
     const ev = h('section', {}, h('h3', {}, '🏮 ' + t('today.event')));

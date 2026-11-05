@@ -102,6 +102,9 @@ export class RiverLanterns {
 
     const glow = this.scene.add.image(x, y - 8 * scale, this.glowTex);
     glow.setBlendMode(Phaser.BlendModes.ADD).setScale(scale * 1.1).setAlpha(this.glowAlpha(depth));
+    // đèn của người thân trong phòng gia đình (hồng) và của mình (vàng) có quầng sáng riêng
+    const family = !!l.userId && l.userId !== net.userId && !!net.room?.members.some((m) => m.userId === l.userId);
+    if (mine || family) glow.setTint(family ? 0xffa8cc : 0xffe08a).setScale(scale * 1.6);
     const img = this.scene.add.image(x, y, tex).setOrigin(0.5, 0.8).setScale(scale);
     // Enlarged hit area (≥ 44 screen px) in the image's local (unscaled) space.
     const hw = Math.max(img.width, MIN_HIT / scale);
