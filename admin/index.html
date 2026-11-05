@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Quản trị · Chùa An Nhiên</title>
+  <link rel="stylesheet" href="/admin/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Bỏ qua tới nội dung</a>
+
+  <!-- Đăng nhập -->
+  <section id="login-view" class="login" hidden>
+    <form id="login-form" class="card login-card" novalidate>
+      <h1 class="brand">Chùa An Nhiên</h1>
+      <p class="muted">Trang quản trị</p>
+      <label for="login-password">Mật khẩu quản trị</label>
+      <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+      <p id="login-error" class="error" role="alert"></p>
+      <button type="submit" class="btn primary">Đăng nhập</button>
+    </form>
+  </section>
+
+  <!-- Ứng dụng -->
+  <div id="app-view" hidden>
+    <header class="topbar">
+      <div class="brand">Chùa An Nhiên <span class="muted">· Quản trị</span></div>
+      <div class="topbar-right">
+        <span id="mode-info" class="muted small"></span>
+        <button id="logout-btn" type="button" class="btn ghost">Đăng xuất</button>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Mục quản trị">
+      <button type="button" role="tab" id="tab-lanterns" aria-controls="panel-lanterns" data-tab="lanterns">Đèn hoa đăng</button>
+      <button type="button" role="tab" id="tab-reports" aria-controls="panel-reports" data-tab="reports">Báo cáo</button>
+      <button type="button" role="tab" id="tab-users" aria-controls="panel-users" data-tab="users">Thiết bị</button>
+      <button type="button" role="tab" id="tab-words" aria-controls="panel-words" data-tab="words">Từ cấm</button>
+      <button type="button" role="tab" id="tab-stats" aria-controls="panel-stats" data-tab="stats">Thống kê</button>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section id="panel-lanterns" role="tabpanel" aria-labelledby="tab-lanterns" hidden>
+        <div class="toolbar">
+          <label for="lantern-status">Trạng thái</label>
+          <select id="lantern-status">
+            <option value="pending">Chờ duyệt</option>
+            <option value="approved">Đã duyệt</option>
+            <option value="hidden">Đã ẩn</option>
+            <option value="all">Tất cả</option>
+          </select>
+          <button type="button" class="btn" data-refresh="lanterns">Làm mới</button>
+          <span id="lantern-count" class="muted small" aria-live="polite"></span>
+        </div>
+        <ul id="lantern-list" class="list"></ul>
+      </section>
+
+      <section id="panel-reports" role="tabpanel" aria-labelledby="tab-reports" hidden>
+        <div class="toolbar">
+          <label for="report-resolved">Hiển thị</label>
+          <select id="report-resolved">
+            <option value="false">Chưa xử lý</option>
+            <option value="true">Đã xử lý</option>
+            <option value="all">Tất cả</option>
+          </select>
+          <button type="button" class="btn" data-refresh="reports">Làm mới</button>
+          <span id="report-count" class="muted small" aria-live="polite"></span>
+        </div>
+        <ul id="report-list" class="list"></ul>
+      </section>
+
+      <section id="panel-users" role="tabpanel" aria-labelledby="tab-users" hidden>
+        <div class="toolbar">
+          <button type="button" class="btn" data-refresh="users">Làm mới</button>
+        </div>
+        <div class="grid2">
+          <div>
+            <h2>Thiết bị bị khóa</h2>
+            <ul id="banned-list" class="list"></ul>
+          </div>
+          <div>
+            <h2>Thiết bị bị gắn cờ</h2>
+            <ul id="flagged-list" class="list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-words" role="tabpanel" aria-labelledby="tab-words" hidden>
+        <div class="grid2">
+          <form id="words-form" class="card">
+            <h2>Danh sách từ cấm</h2>
+            <label for="words-text">Mỗi dòng một từ hoặc cụm từ</label>
+            <p class="hint">Tiền tố <code>~</code> = biến thể chỉ chặn khi có dấu hiệu lách (vd <code>~lon</code> bắt “l0n”, “l.o.n” nhưng không chặn “lon”); tiền tố <code>+</code> = cụm luôn cho phép (allowlist, vd <code>+con ngủ</code>); tiền tố <code>=</code> = chỉ chặn đúng chữ, không so dạng bỏ dấu (vd <code>=ngu</code> không chặn “ngủ”). Từ 1 âm tiết có dấu chỉ chặn khi viết đúng dấu.</p>
+            <textarea id="words-text" rows="18" spellcheck="false"></textarea>
+            <div class="row">
+              <button type="submit" class="btn primary">Lưu danh sách</button>
+              <button type="button" id="words-reseed" class="btn">Nạp lại từ file gốc</button>
+              <span id="words-count" class="muted small" aria-live="polite"></span>
+            </div>
+          </form>
+          <form id="test-form" class="card">
+            <h2>Thử lọc</h2>
+            <label for="test-text">Nhập câu cần kiểm tra</label>
+            <textarea id="test-text" rows="4" maxlength="1000"></textarea>
+            <div class="row">
+              <button type="submit" class="btn">Kiểm tra</button>
+            </div>
+            <div id="test-result" class="test-result" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <section id="panel-stats" role="tabpanel" aria-labelledby="tab-stats" hidden>
+        <div class="toolbar">
+          <label for="stats-days">Khoảng thời gian</label>
+          <select id="stats-days">
+            <option value="7">7 ngày</option>
+            <option value="30" selected>30 ngày</option>
+            <option value="90">90 ngày</option>
+          </select>
+          <button type="button" class="btn" data-refresh="stats">Làm mới</button>
+        </div>
+        <div class="card">
+          <h2>Đang trực tuyến: <span id="online-now">–</span></h2>
+          <ul id="area-list" class="chips"></ul>
+        </div>
+        <div class="card">
+          <h2>Hoạt động theo ngày</h2>
+          <div id="chart-legend" class="legend"></div>
+          <div id="chart" class="chart"></div>
+        </div>
+        <div class="card table-wrap">
+          <table id="stats-table">
+            <caption class="sr-only">Số liệu theo ngày</caption>
+            <thead>
+              <tr>
+                <th scope="col">Ngày</th><th scope="col">Đèn</th><th scope="col">Nhang</th><th scope="col">Chuông</th>
+                <th scope="col">Báo cáo</th><th scope="col">Người mới</th><th scope="col">Đỉnh online</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h2>Nhật ký quản trị</h2>
+          <p><a class="btn" href="/admin/api/backup" download>Tải bản sao lưu dữ liệu (.db)</a></p>
+          <ul id="audit-list" class="list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toasts" class="toasts" aria-live="assertive" aria-atomic="false"></div>
+  <script src="/admin/app.js" defer></script>
+</body>
+</html>
