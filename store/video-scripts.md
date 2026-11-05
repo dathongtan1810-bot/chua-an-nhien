@@ -49,7 +49,7 @@ Ký hiệu: **VO** = voice-over (lời đọc), **SFX** = hiệu ứng âm thanh
 **Mục tiêu:** khẳng định điểm khác biệt – 100 quẻ thơ tự sáng tác, tích cực, không hù dọa. **Hook 2 giây đầu:** tiếng lắc ống xăm lách cách + câu hỏi trực diện trên màn.
 
 Quẻ mẫu dùng trong video: **Quẻ số 82 – "Con đường qua đồi"** (quẻ thật trong `content/que-xam.json`, chủ đề `cong-viec`; bản EN `content/i18n/en/que-xam.json` id 82):
-> Đường quanh qua mấy ngọn đồi / Đi hoài chẳng vội, đến hồi tới nơi / Việc làm có lúc chơi vơi / Giữ bền từng bước, chân trời mở ra
+> Đường quanh qua mấy ngọn đồi / Dốc cao chẳng ngại, nghỉ ngồi lấy hơi / Việc làm có lúc chơi vơi / Ngoái nhìn chặng cũ, đã vời vợi xa
 >
 > Lời giải tóm tắt: con đường qua đồi không thẳng, nhưng người đi đều chân thì rồi cũng tới; đừng nóng lòng so mình với người khác – kiên nhẫn là tiếp tục đi khi chưa thấy đích.
 > Lời khuyên: "Viết ra ba việc bạn đã làm được trong tháng qua để thấy mình đã đi xa hơn mình nghĩ."
@@ -60,10 +60,10 @@ Quẻ mẫu dùng trong video: **Quẻ số 82 – "Con đường qua đồi"** 
 | 1–2s | Một thẻ xăm bật ra khỏi ống | "Xin một quẻ thơ xem sao" | SFX thẻ rơi "tách" | – |
 | 2–3s | Thẻ quẻ lật mở, giấy dó kem, viền đỏ son | – | Nhạc nền đàn tranh tự sáng tác vào | "Mỗi quẻ ở Chùa An Nhiên…" |
 | 3–4s | Hiện câu thơ 1 (chữ chạy từng tiếng) | "Đường quanh qua mấy ngọn đồi" | Nhạc nền | "…là một bài thơ lục bát." |
-| 4–5s | Câu 2 | "Đi hoài chẳng vội, đến hồi tới nơi" | Nhạc nền | Đọc chậm câu 1–2 |
+| 4–5s | Câu 2 | "Dốc cao chẳng ngại, nghỉ ngồi lấy hơi" | Nhạc nền | Đọc chậm câu 1–2 |
 | 5–6s | Giữ khung, ánh nắng nhẹ lướt qua thẻ | (giữ 2 câu) | Nhạc nền | (tiếp) |
 | 6–7s | Câu 3 | "Việc làm có lúc chơi vơi" | Nhạc nền | Đọc câu 3 |
-| 7–8s | Câu 4 | "Giữ bền từng bước, chân trời mở ra" | Nhạc nền | Đọc câu 4 |
+| 7–8s | Câu 4 | "Ngoái nhìn chặng cũ, đã vời vợi xa" | Nhạc nền | Đọc câu 4 |
 | 8–9s | Vuốt xuống phần lời giải; tab chủ đề hiện ra | "Lời giải theo chủ đề" | Tiếng giấy lật | "Đọc lời giải theo điều bạn đang nghĩ:" |
 | 9–10s | Ngón tay lướt qua các tab: Gia đạo · Công việc · Sức khỏe · Học hành · Tình duyên · Tài lộc | 6 chủ đề nổi lên lần lượt | Tiếng "tách" nhẹ mỗi tab | "gia đạo, công việc, học hành…" |
 | 10–11s | Chạm tab "Công việc"; đoạn lời giải hiện ra | "Công việc đang ở đoạn dốc. Đặt mục tiêu nhỏ cho từng tuần…" | Nhạc nền | – |

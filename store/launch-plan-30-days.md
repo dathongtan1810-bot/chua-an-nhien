@@ -176,4 +176,4 @@ Nguyên tắc ứng xử: **lắng nghe trước, giải thích sau**; xin lỗi
 ## 7. Sau D+30
 - Rằm tháng Giêng (T7 20/02/2027): chiến dịch nhỏ, đổi ảnh/Promotional Text về bản thường sau mùng 10 Tết.
 - Đánh giá lại từ khóa (`aso-keywords.md` mục 4), cập nhật Keywords iOS trong bản 1.1.x.
-- Chuẩn bị Phật Đản (T5 20/05/2027 – hiện chỉ có sự kiện trong `content/su-kien-am-lich.json`, **chưa có** bộ mùa riêng trong `content/mua/`) và bản 1.2 Vu Lan (bộ mùa `content/mua/vu-lan.json`) (phát hành khoảng T2 02/08/2027, Rằm tháng Bảy T2 16/08/2027).
+- Chuẩn bị Phật Đản (T5 20/05/2027 – bộ mùa `content/mua/phat-dan.json`, mùng 8–Rằm tháng Tư) và bản 1.2 Vu Lan (bộ mùa `content/mua/vu-lan.json`) (phát hành khoảng T2 02/08/2027, Rằm tháng Bảy T2 16/08/2027).

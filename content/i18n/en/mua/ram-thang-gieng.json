@@ -4,10 +4,10 @@
   "khoangNgayAm": { "tu": { "thang": 1, "ngay": 13 }, "den": { "thang": 1, "ngay": 16 } },
   "moTa": "In the days around the first full moon of the lunar year, also called the Lantern Festival, An Nhiên Temple lights lanterns along every path and sets out tea, paper and brushes by the lotus pond. It is a time to watch the year's first round moon, write a few simple lines of verse and send kind wishes into a year that is still very young.",
   "loiChao": [
-    { "id": 1, "noiDung": "The first full moon of the year has risen. Come sit in the yard and watch it with us." },
+    { "id": 1, "noiDung": "The year's first full moon has risen. Come sit in the yard and watch with us." },
     { "id": 2, "noiDung": "Lanterns are lit along the path. They are only waiting for your footsteps." },
     { "id": 3, "noiDung": "Good evening on Lantern Night. Tea, paper and brushes are ready by the pond." },
-    { "id": 4, "noiDung": "Half of the first month has passed. Would you like to sit and look back a little?" },
+    { "id": 4, "noiDung": "Half of the first month has passed. Would you like to sit and look back awhile?" },
     { "id": 5, "noiDung": "Round moon, bright lanterns, a cool spring breeze. Wishing you a peaceful night." },
     { "id": 6, "noiDung": "The little monk just hung the last lantern. Come and have a look." },
     { "id": 7, "noiDung": "The first full moon is here. An Nhiên Temple sends you a gentle new-year wish." },

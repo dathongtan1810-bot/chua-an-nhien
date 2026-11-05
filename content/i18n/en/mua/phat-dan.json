@@ -2,7 +2,7 @@
   "id": "phat-dan",
   "ten": "Buddha's Birthday Season",
   "khoangNgayAm": { "tu": { "thang": 4, "ngay": 8 }, "den": { "thang": 4, "ngay": 15 } },
-  "moTa": "From the 8th to the full moon of the fourth lunar month, An Nhiên Temple celebrates the birth of the Buddha. Lotus lanterns hang across the yard, the lotus pond is in full bloom, and a Buddha-bathing altar is set up as a cultural rite that reminds each of us to cleanse our own hearts. It is a season of compassion: share a vegetarian meal, do a small good deed and look at others a little more gently.",
+  "moTa": "From the 8th to the full moon of the fourth lunar month, An Nhiên Temple celebrates the birth of the Buddha. Lotus lanterns hang across the yard, the lotus pond is in full bloom, and a Buddha-bathing altar is set up as a cultural rite that reminds each of us to cleanse our own hearts. It is a season of compassion: share a vegetarian meal, do a small good deed and look at others more gently.",
   "loiChao": [
     { "id": 1, "noiDung": "Buddha's Birthday season is here. The temple lotuses have bloomed; come and see." },
     { "id": 2, "noiDung": "An Nhiên Temple wishes you a joyful Buddha's Birthday full of compassion." },
@@ -13,8 +13,8 @@
     { "id": 7, "noiDung": "Happy Buddha's Birthday! May your heart feel light as a petal on the pond." },
     { "id": 8, "noiDung": "The temple kitchen is cooking a vegetarian soup. Come share the meal." },
     { "id": 9, "noiDung": "Hello. A gentle smile today is also a gift for Buddha's Birthday." },
-    { "id": 10, "noiDung": "Flags and flowers brighten the yard. Thank you for coming in this great festival." },
-    { "id": 11, "noiDung": "The full moon of the fourth month is near. Light a lotus lantern for someone dear." },
+    { "id": 10, "noiDung": "Flags and flowers brighten the yard. Thank you for coming this festival season." },
+    { "id": 11, "noiDung": "The fourth-month full moon is near. Light a lotus lantern for someone dear." },
     { "id": 12, "noiDung": "The lotus grows from mud yet stays fragrant. Be gentle with yourself today." }
   ],
   "thongDiep": [
