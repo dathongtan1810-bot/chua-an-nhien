@@ -67,7 +67,7 @@
     "ngay": 19,
     "moTa": "Celebrates the birth of Guanyin (Quan Âm), the Bodhisattva of Compassion, known in full in Vietnam as Quan Thế Âm. Guanyin embodies great compassion, listening to the cries of all beings. Many people visit pagodas, eat vegetarian food and practice listening to others with empathy.",
     "trangTri": ["A Guanyin statue holding a vase with a willow branch", "Pink lotuses in the pond", "White lanterns along the corridor", "A vase of white tuberoses"],
-    "nhiemVu": ["Listen fully to a loved one without interrupting", "Send a caring message to someone going through a hard time", "Light virtual incense before the Quan Âm shrine", "Write a wish for someone else, not for yourself"]
+    "nhiemVu": ["Listen fully to a loved one without interrupting", "Send a caring message to someone going through a hard time", "Light virtual incense before the Guanyin shrine", "Write a wish for someone else, not for yourself"]
   },
   {
     "id": "tet-han-thuc",
@@ -117,7 +117,7 @@
     "ngay": 19,
     "moTa": "Commemorates the enlightenment of Guanyin, one of the three Guanyin days of the year. A reminder to cultivate compassion through concrete actions, helping others without expecting anything in return.",
     "trangTri": ["A standing Guanyin statue on a lotus throne", "A summer pond of pink lotuses", "Blue glass lamps", "White jasmine flowers"],
-    "nhiemVu": ["Do one helpful thing without telling anyone", "Light virtual incense before the Quan Âm shrine", "Float a virtual lotus leaf on the pond with a wish for peace", "Write a wish for all living beings"]
+    "nhiemVu": ["Do one helpful thing without telling anyone", "Light virtual incense before the Guanyin shrine", "Float a virtual lotus leaf on the pond with a wish for peace", "Write a wish for all living beings"]
   },
   {
     "id": "vu-lan",
@@ -157,7 +157,7 @@
     "ngay": 19,
     "moTa": "Commemorates the renunciation of Guanyin, the last of the three Guanyin days of the year. A time to reflect on setting aside selfishness to live for others, and on keeping a gentle heart amid daily busyness.",
     "trangTri": ["A Guanyin statue meditating on a rocky mountain", "An autumn bamboo grove", "Pale yellow lanterns", "Autumn chrysanthemums"],
-    "nhiemVu": ["Let someone else go first in one small thing today", "Light virtual incense before the Quan Âm shrine", "Walk slowly through the pagoda bamboo grove", "Write a thank-you note to someone who once helped you"]
+    "nhiemVu": ["Let someone else go first in one small thing today", "Light virtual incense before the Guanyin shrine", "Walk slowly through the pagoda bamboo grove", "Write a thank-you note to someone who once helped you"]
   },
   {
     "id": "via-phat-duoc-su",
