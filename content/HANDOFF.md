@@ -43,10 +43,10 @@ Sửa trong `content/_parts/que-xam-0N.json` (VI) / `en-que-xam-0N.json` (EN) �
 - `content/giao-dien.json` (chữ giao diện/onboarding/thông báo kiểm duyệt VI+EN): **chưa tạo**.
 - `store/press-kit.md`, `store/review-replies.md`: **chưa tạo**.
 - QA giao diện site bằng ảnh (độ tương phản, focus, skip-link, theme-color): **chưa làm**; `site/QA.md` chưa có.
-- `store/social-posts-30-ngay.md` và `content/thong-bao-day.json` do subagent viết xong nhưng chưa được biên tập viên đọc lại toàn bộ.
+- `store/social-posts-30-ngay.md` do subagent viết xong nhưng chưa được biên tập viên đọc lại toàn bộ.
 
 ## Ưu tiên cho phiên sau
 1. Viết `content/giao-dien.json` (+ schema, EN) — thông báo kiểm duyệt theo `mucDo` 1/2/3 (D26), luồng xóa dữ liệu (D19), biệt danh tùy chọn (D32).
 2. QA site (Playwright 360/390/768/1280, sáng/tối, WCAG AA).
 3. Press kit + mẫu trả lời đánh giá.
-4. Đọc lại thủ công 30 bài đăng MXH và 90 thông báo đẩy.
+4. Đọc lại thủ công 30 bài đăng MXH (90 thông báo đẩy đã đọc lúc 06:40 UTC, chỉ đổi 1 tiêu đề trùng tên tác phẩm có bản quyền).
