@@ -4,7 +4,7 @@
 import type Phaser from 'phaser';
 import { audio } from '../audio/engine';
 import { vibrate } from '../audio/haptics';
-import { makeBead, makeGlow, makeSparkle } from '../art/sprites';
+import { bakeCanvas, makeGlow, makeSparkle, mixColor, rgba, softDot } from '../art/sprites';
 import { getLang, t } from '../core/i18n';
 import { h } from '../ui/dom';
 import { advanceBead, BEADS_PER_ROUND, type BeadState } from './pure-a';
@@ -15,7 +15,7 @@ export { advanceBead } from './pure-a';
 const ADD = 1; // Phaser.BlendModes.ADD
 const SPACING = 44;
 const HALF = 7; // beads drawn: -HALF..HALF (13 fully visible + 2 fading)
-const CX = 320;
+const CX = 392;
 const CY = 500;
 const BOW = 2.6; // parabola bend in px per index^2
 const SWIPE_PX = 46;
@@ -25,6 +25,46 @@ const L: Record<string, Record<string, string>> = {
   en: { button: 'Next bead' },
 };
 const tr = (k: string): string => (L[getLang()] ?? L.vi)[k] ?? L.vi[k];
+
+const BEAD_RES = 2.2;
+
+/**
+ * Same look as sprites.makeBead('nau') but baked at 2.2× resolution: the rosary is shown
+ * large and the 28 px texture would look blurry when upscaled.
+ */
+function makeBigBead(scene: Phaser.Scene): string {
+  const [hi, mid, lo] = [0xd59a5e, 0x8a5130, 0x3c2012];
+  return bakeCanvas(scene, 'rit-bead-nau-lg', 28 * BEAD_RES, 28 * BEAD_RES, (ctx) => {
+    ctx.scale(BEAD_RES, BEAD_RES);
+    const g = ctx.createRadialGradient(10, 9, 1, 14, 14, 13);
+    g.addColorStop(0, rgba(hi));
+    g.addColorStop(0.55, rgba(mid));
+    g.addColorStop(1, rgba(lo));
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(14, 14, 12.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(14, 14, 12.5, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.strokeStyle = rgba(lo, 0.25);
+    ctx.lineWidth = 0.7;
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath();
+      ctx.ellipse(14, 14 + (i - 2) * 4.5, 14, 3 + i * 0.4, 0.15, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+    ctx.strokeStyle = rgba(lo, 0.6);
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.arc(14, 14, 12.3, 0, Math.PI * 2);
+    ctx.stroke();
+    softDot(ctx, 9.5, 8.5, 5, 0xffffff, 0.55);
+    softDot(ctx, 18, 21, 6, mixColor(hi, 0xffcc88, 0.5), 0.18);
+  });
+}
 
 /** Position on the vertical arc for a (fractional) bead slot s. */
 function slot(s: number): { x: number; y: number; scale: number; alpha: number } {
@@ -48,13 +88,13 @@ export const beadsRitual: RitualFactory = (host) => {
   };
   const tweens: Phaser.Tweens.Tween[] = [];
 
-  const beadKey = makeBead(scene, 'nau');
+  const beadKey = makeBigBead(scene);
   const glowKey = makeGlow(scene);
   const sparkKey = makeSparkle(scene);
 
   // soft backdrop so the strand reads over any area art
   const back = add(scene.add.image(CX, CY, glowKey));
-  back.setScale(5.2, 8.5).setTint(0x3a2414).setAlpha(0.55);
+  back.setScale(4.2, 8.5).setTint(0x1a0e06).setAlpha(0.9);
 
   // static string along the arc
   const str = add(scene.add.graphics());
@@ -71,6 +111,9 @@ export const beadsRitual: RitualFactory = (host) => {
   const focus = add(scene.add.image(slot(0).x, slot(0).y, glowKey));
   focus.setBlendMode(ADD).setScale(0.9).setAlpha(0.45);
 
+  // warm halo behind each bead keeps dark wood readable over dark interiors
+  const halos: Phaser.GameObjects.Image[] = [];
+  for (let i = -HALF; i <= HALF; i++) halos.push(add(scene.add.image(0, 0, glowKey).setBlendMode(ADD)));
   const beads: Phaser.GameObjects.Image[] = [];
   for (let i = -HALF; i <= HALF; i++) beads.push(add(scene.add.image(0, 0, beadKey)));
 
@@ -79,7 +122,8 @@ export const beadsRitual: RitualFactory = (host) => {
     for (let k = 0; k < beads.length; k++) {
       const s = k - HALF - offset;
       const p = slot(s);
-      beads[k].setPosition(p.x, p.y).setScale(p.scale).setAlpha(p.alpha);
+      beads[k].setPosition(p.x, p.y).setScale(p.scale / BEAD_RES).setAlpha(p.alpha);
+      halos[k].setPosition(p.x, p.y).setScale(p.scale * 0.36).setAlpha(p.alpha * 0.4);
     }
   };
   layout();

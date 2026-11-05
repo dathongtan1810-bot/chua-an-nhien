@@ -54,11 +54,19 @@ export const bowRitual: RitualFactory = (host) => {
   const vignette = add(scene.add.image(GAME_W / 2, GAME_H / 2, makeVignette(scene)));
   vignette.setScale(GAME_W / 270 + 0.04, GAME_H / 480 + 0.04).setAlpha(0);
 
+  // soft dark disc so the guide reads over bright daytime art
+  const disc = add(scene.add.graphics({ x: CX, y: CY }));
+  disc.fillStyle(0x1a0e06, 0.18);
+  disc.fillCircle(0, 0, RADIUS + 40);
+  disc.fillStyle(0x1a0e06, 0.18);
+  disc.fillCircle(0, 0, RADIUS + 14);
   const glow = add(scene.add.image(CX, CY, makeGlow(scene)));
   glow.setBlendMode(ADD).setAlpha(0.5);
   const ring = add(scene.add.graphics({ x: CX, y: CY }));
   const drawRing = (pressed: boolean): void => {
     ring.clear();
+    ring.lineStyle(pressed ? 9 : 7, 0x2a1608, 0.45);
+    ring.strokeCircle(0, 0, RADIUS);
     ring.lineStyle(pressed ? 5 : 3, pressed ? 0xffe0a0 : 0xf2dcb0, pressed ? 0.95 : 0.7);
     ring.strokeCircle(0, 0, RADIUS);
     ring.lineStyle(12, 0xf2cd6b, pressed ? 0.22 : 0.1);
@@ -122,7 +130,7 @@ export const bowRitual: RitualFactory = (host) => {
     hint.textContent = t('bow.done');
     counter.textContent = t('bow.n', { i: BOWS });
     host.complete('bow', 1, {}, 'bow');
-    tweens.push(scene.tweens.add({ targets: [ring, glow, core], alpha: 0, duration: 1200 }));
+    tweens.push(scene.tweens.add({ targets: [ring, glow, core, disc], alpha: 0, duration: 1200 }));
     exitTimer = scene.time.delayedCall(1500, () => {
       exitTimer = null;
       host.exit();

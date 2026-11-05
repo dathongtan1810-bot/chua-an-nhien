@@ -79,9 +79,12 @@ export const bellRitual: RitualFactory = (host) => {
   const bellW = bell.displayWidth;
   bell.setOrigin(0.5, 0.06);
   bell.y = by - bellH * 0.44;
-  if (host.night > 0.05) bell.setTint(0xffffff - Math.round(host.night * 0x30) * 0x010101);
+  // same night tint as the scene's static bell sprite
+  const n = Math.max(0, Math.min(1, host.night));
+  const nightTint = (Math.round(255 - n * 120) << 16) | (Math.round(255 - n * 110) << 8) | Math.round(255 - n * 70);
+  bell.setTint(nightTint);
 
-  const log = scene.add.image(0, 0, logKey);
+  const log = scene.add.image(0, 0, logKey).setTint(nightTint);
   const logW = log.displayWidth;
   const logH = log.displayHeight;
   const bodyLeft = bx - bellW * 0.32;

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { AREA_ART, worldWidthOf } from '../art/registry';
+import { makeBeamTexture, makeBellTexture, makeStickCupTexture } from '../art/areas-buildings';
 import { drawSky, nightFactor, type SkyHandle } from '../art/sky';
 import { makeFirefly, makeLeaf, makePetal, makeRedLantern, makeRose, makeSparkle } from '../art/sprites';
 import { GAME_H, GAME_W, type ArtLayers, type AreaArtResult, type Hotspot } from '../art/types';
@@ -43,6 +44,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   private pendingRitual: string | null = null;
   private transitioning = false;
   private markers: Phaser.GameObjects.GameObject[] = [];
+  /** Ẩn khi nghi thức chạy (nghi thức vẽ bản động riêng). */
+  private ritualHidden: Phaser.GameObjects.Image[] = [];
 
   constructor() {
     super('area');
@@ -63,6 +66,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     this.burner = null;
     this.river = null;
     this.markers = [];
+    this.ritualHidden = [];
   }
 
   create(): void {
@@ -133,6 +137,18 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       // hương đang cháy của mọi người
       for (const i of net.burningIncense()) this.burner.add(Math.min(i.count, 3), Date.parse(i.at));
       this.updaters.push((time) => this.burner?.update(time));
+    }
+    // Chuông, chày gỗ, ống xăm: sprite riêng (nghi thức vẽ bản động của nó trong lớp fx)
+    const nightTint = Phaser.Display.Color.GetColor(255 - this.night * 120, 255 - this.night * 110, 255 - this.night * 70);
+    const statics: [string, string][] = [];
+    if (this.area === 'lau-chuong') statics.push(['bell', makeBellTexture(this)], ['beam', makeBeamTexture(this)]);
+    if (this.area === 'am-xam') statics.push(['sticks', makeStickCupTexture(this)]);
+    for (const [hs, key] of statics) {
+      const p = this.hotspots[hs];
+      if (!p) continue;
+      const img = this.add.image(p.x, p.y, key).setTint(nightTint);
+      this.layers.main.add(img);
+      this.ritualHidden.push(img);
     }
     if (this.area === 'bo-song' && this.hotspots.river) {
       const r = this.hotspots.river;
@@ -431,6 +447,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
 
   private setMarkersVisible(v: boolean): void {
     for (const m of this.markers) (m as Phaser.GameObjects.Text).setVisible(v);
+    for (const m of this.ritualHidden) m.setVisible(v);
   }
 
   floatText(text: string, x: number, y: number, color: string): void {

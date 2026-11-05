@@ -3,7 +3,7 @@ import './ui/styles.css';
 import { GAME_H, GAME_W } from './art/types';
 import { audio } from './audio/engine';
 import { isAreaId, type AreaId } from './core/areas';
-import { bus } from './core/bus';
+import { bus, game } from './core/bus';
 import { setLang, t } from './core/i18n';
 import { store } from './core/store';
 import { todayInfo } from './core/today';
@@ -84,4 +84,12 @@ document.addEventListener('visibilitychange', () => {
 });
 installShare();
 registerSW();
+void import('./native').then((m) => m.initNative()).catch(() => undefined);
+// Nút Back Android: đóng bảng / nghi thức trước, rồi lùi về khu trước
+window.addEventListener('can:back', () => {
+  const sheet = document.querySelector('.sheet-wrap');
+  if (sheet) return sheet.remove();
+  if (game.api?.ritual) return game.api.exitRitual();
+  void import('./native').then((m) => m.exitApp?.());
+});
 (window as unknown as { __game?: Phaser.Game }).__game = gameInst;

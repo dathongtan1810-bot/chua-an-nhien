@@ -23,6 +23,10 @@ jobs:
       - run: npm run build
       - name: Bundle size (initial load < 3 MB)
         run: node scripts/check-size.mjs
+      - name: E2E smoke (Playwright)
+        run: |
+          npx playwright install --with-deps chromium
+          npx playwright test
       - uses: actions/upload-artifact@v4
         with:
           name: app-dist
