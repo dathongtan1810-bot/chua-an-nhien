@@ -35,16 +35,16 @@ describe('RateLimiter', () => {
     expect(rl.tryConsume('ring_bell').ok).toBe(true);
     const r = rl.tryConsume('ring_bell');
     expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.retryAfterMs).toBe(8000);
+    if (!r.ok) expect(r.retryAfterMs).toBe(20000);
     expect(rl.tryConsume('light_incense').ok).toBe(true);
     for (let i = 0; i < 100; i++) expect(rl.tryConsume('unknown').ok).toBe(true);
   });
 
   it('has the default rules', () => {
     expect(DEFAULT_RATE_RULES).toMatchObject({
-      light_incense: { capacity: 3, refillMs: 60_000 },
-      ring_bell: { capacity: 1, refillMs: 8_000 },
-      release_lantern: { capacity: 3, refillMs: 600_000 },
+      light_incense: { capacity: 1, refillMs: 15_000 },
+      ring_bell: { capacity: 1, refillMs: 20_000 },
+      release_lantern: { capacity: 3, refillMs: 3_600_000 },
       like_lantern: { capacity: 30, refillMs: 60_000 },
       report: { capacity: 10, refillMs: 3_600_000 },
       enter_area: { capacity: 20, refillMs: 10_000 },

@@ -265,6 +265,7 @@ export const beadsRitual: RitualFactory = (host) => {
 
   const ritual: Ritual = {
     destroy() {
+      if (sinceReport > 0) host.complete('beads', sinceReport);
       scene.input.off('pointerdown', onDown);
       scene.input.off('pointermove', onMove);
       scene.input.off('pointerup', onUp);

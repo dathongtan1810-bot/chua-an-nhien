@@ -10,9 +10,10 @@ export interface RateRule {
 export type RateResult = { ok: true } | { ok: false; retryAfterMs: number };
 
 export const DEFAULT_RATE_RULES: Record<string, RateRule> = {
-  light_incense: { capacity: 3, refillMs: 60_000 },
-  ring_bell: { capacity: 1, refillMs: 8_000 },
-  release_lantern: { capacity: 3, refillMs: 10 * 60_000 },
+  // Khớp giới hạn của server (shared/PROTOCOL.md): hương 1/15 s, chuông 1/20 s, đèn 3/giờ
+  light_incense: { capacity: 1, refillMs: 15_000 },
+  ring_bell: { capacity: 1, refillMs: 20_000 },
+  release_lantern: { capacity: 3, refillMs: 60 * 60_000 },
   like_lantern: { capacity: 30, refillMs: 60_000 },
   report: { capacity: 10, refillMs: 60 * 60_000 },
   enter_area: { capacity: 20, refillMs: 10_000 },

@@ -103,8 +103,8 @@ describe('MockServerClient', () => {
     c.emit('ring_bell', { force: 0.5 });
     vi.advanceTimersByTime(20);
     const me = got.welcome[0]!.userId;
-    expect(got.incense_lit.filter((i) => i.userId === me)).toHaveLength(3);
-    expect(got.rate_limited.map((r) => r.event).sort()).toEqual(['light_incense', 'ring_bell']);
+    expect(got.incense_lit.filter((i) => i.userId === me)).toHaveLength(1);
+    expect(got.rate_limited.map((r) => r.event).sort()).toEqual(['light_incense', 'light_incense', 'light_incense', 'ring_bell']);
     expect(got.rate_limited.every((r) => r.retryAfterMs > 0)).toBe(true);
     c.disconnect();
   });

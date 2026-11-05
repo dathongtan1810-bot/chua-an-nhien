@@ -147,7 +147,7 @@ export const incenseRitual: RitualFactory = (host) => {
       ease: 'Sine.easeIn',
       onComplete: () => {
         const sc = scene as unknown as { burner?: { add(n: number): void } };
-        if (!net.enabled) sc.burner?.add(count);
+        sc.burner?.add(count); // hiện ngay; tiếng vọng từ server cho hương của mình được bỏ qua
         net.lightIncense(count);
         vibrate(30);
         audio.reward();

@@ -21,6 +21,7 @@ import type { Ritual, RitualHost } from '../rituals/types';
 import { addEntry } from '../storage/journal';
 import { h, toast, uiRoot } from '../ui/dom';
 import { BurnerDisplay } from './burner';
+import { VisitorOrbs } from './visitors';
 
 const NAV_LABEL_OFFSET = 70;
 
@@ -149,6 +150,15 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       const img = this.add.image(p.x, p.y, key).setTint(nightTint);
       this.layers.main.add(img);
       this.ritualHidden.push(img);
+    }
+    // người viếng khác trong khu (đốm sáng); dải mặt đất tùy khu
+    if (store.state.settings.online) {
+      const band = this.area === 'bo-song' ? { top: 760, bottom: 820 } : this.area === 'ho-sen' ? { top: 860, bottom: 900 } : { top: 690, bottom: 840 };
+      const orbs = new VisitorOrbs(this, this.layers.main, this.worldWidth, band, rm);
+      orbs.setCount((net.areas[this.area] ?? 0) - 1);
+      this.updaters.push((t, d) => orbs.update(t, d));
+      this.unsubs.push(net.subscribe((e) => e.type === 'presence' && orbs.setCount((e.areas[this.area] ?? 0) - 1)));
+      this.unsubs.push(() => orbs.destroy());
     }
     if (this.area === 'bo-song' && this.hotspots.river) {
       const r = this.hotspots.river;
@@ -334,7 +344,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   private setupNet(): void {
     const onNet = (e: NetEvent) => {
       if (e.type === 'incense') {
-        if (this.burner) this.burner.add(Math.min(e.entry.count, 3), Date.parse(e.entry.at));
+        if (this.burner && !e.mine) this.burner.add(Math.min(e.entry.count, 3), Date.parse(e.entry.at));
         if (!e.mine && (this.area === 'san' || this.area === 'chinh-dien') && !this.active)
           toast('🪔 ' + t('incense.others', { name: e.entry.nickname, n: e.entry.count }));
       } else if (e.type === 'bell') {
@@ -348,7 +358,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         else this.river?.add(e.lantern, e.mine);
       } else if (e.type === 'lanternRemoved') {
         this.river?.remove(e.id);
-      } else if (e.type === 'rateLimited') {
+      } else if (e.type === 'rateLimited' && e.event === 'release_lantern') {
         toast(t('lantern.tooFast', { s: Math.ceil(e.retryAfterMs / 1000) }));
       }
     };
