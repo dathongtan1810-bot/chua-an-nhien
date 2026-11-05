@@ -198,6 +198,23 @@ for (const [base, n, nguong] of [['thong-diep-ngay', 366, 0.08], ['loi-nguyen-ma
   }
 }
 
+// ---------- 6. Bộ nội dung theo mùa ----------
+for (const mua of ['tet', 'vu-lan']) {
+  const vi = checkSchema(`mua/${mua}.json`, 'mua/mua.schema.json');
+  const en = checkSchema(`i18n/en/mua/${mua}.json`, 'mua/mua.schema.json');
+  for (const [rel, d] of [[`mua/${mua}.json`, vi], [`i18n/en/mua/${mua}.json`, en]]) {
+    if (!d) continue;
+    camCheck(rel, d);
+    for (const k of ['loiChao', 'thongDiep', 'loiNguyen']) dupCheck(rel, d[k] || [], (x) => x.noiDung, k);
+  }
+  if (vi) for (const q of vi.queDacBiet || []) {
+    const r = checkLucBat(q.tho);
+    r.errors.forEach((m) => err(`mua/${mua}.json`, `quẻ ${q.id} (lục bát): ${m}`));
+    r.warnings.forEach((m) => warn(`mua/${mua}.json`, `quẻ ${q.id} (lục bát): ${m}`));
+  }
+  if (vi && en) for (const k of ['loiChao', 'thongDiep', 'loiNguyen', 'nhiemVu', 'queDacBiet']) sameIds(`i18n/en/mua/${mua}.json`, vi[k] || [], en[k] || []);
+}
+
 // ---------- Kết quả ----------
 for (const w of warnings) console.log(`⚠ ${w}`);
 for (const e of errors) console.log(`✗ ${e}`);
