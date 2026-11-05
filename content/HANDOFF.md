@@ -41,12 +41,12 @@ Sửa trong `content/_parts/que-xam-0N.json` (VI) / `en-que-xam-0N.json` (EN) �
 
 ## Dở dang (do chạm giới hạn sử dụng lúc ~04:07 UTC, phiên dừng đến 06:30)
 - `content/giao-dien.json` (chữ giao diện/onboarding/thông báo kiểm duyệt VI+EN): **chưa tạo**.
-- `store/press-kit.md`: **chưa tạo**. `store/review-replies.md`: 12 mẫu (đề xuất ban đầu là 20).
+- `store/press-kit.md`: bản ngắn (thiếu bản 400 chữ). `store/review-replies.md`: 12 mẫu (đề xuất ban đầu là 20).
 - QA giao diện site bằng ảnh (độ tương phản, focus, skip-link, theme-color): **chưa làm**; `site/QA.md` chưa có.
 - `store/social-posts-30-ngay.md` do subagent viết xong nhưng chưa được biên tập viên đọc lại toàn bộ.
 
 ## Ưu tiên cho phiên sau
 1. Viết `content/giao-dien.json` (+ schema, EN) — thông báo kiểm duyệt theo `mucDo` 1/2/3 (D26), luồng xóa dữ liệu (D19), biệt danh tùy chọn (D32).
 2. QA site (Playwright 360/390/768/1280, sáng/tối, WCAG AA).
-3. Press kit; bổ sung 8 mẫu trả lời đánh giá.
+3. Bổ sung bản 400 chữ cho press kit và 8 mẫu trả lời đánh giá.
 4. Đọc lại thủ công 30 bài đăng MXH (90 thông báo đẩy đã đọc lúc 06:40 UTC, chỉ đổi 1 tiêu đề trùng tên tác phẩm có bản quyền).
