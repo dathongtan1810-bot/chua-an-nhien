@@ -1,9 +1,9 @@
 name: server-postgres
 on:
   push:
-    paths: ['server/src/repo/**', 'server/test/**postgres**', 'server/package*.json', '.github/workflows/server-postgres.yml']
+    paths: ['server/**', 'shared/**', '.github/workflows/server-postgres.yml']
   pull_request:
-    paths: ['server/src/repo/**', 'server/test/**postgres**', 'server/package*.json', '.github/workflows/server-postgres.yml']
+    paths: ['server/**', 'shared/**', '.github/workflows/server-postgres.yml']
 jobs:
   postgres:
     runs-on: ubuntu-latest
@@ -30,3 +30,7 @@ jobs:
           cache-dependency-path: server/package-lock.json
       - run: npm ci
       - run: npx vitest run test/postgres.real.test.ts test/repo.postgres.test.ts test/postgres.integration.test.ts
+      # Chạy TOÀN BỘ test tích hợp trên Postgres thật (mỗi server test 1 schema)
+      - run: npx vitest run
+        env:
+          TEST_ALL_PG: '1'

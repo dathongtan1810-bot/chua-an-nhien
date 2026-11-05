@@ -19,7 +19,21 @@ export interface TestServer {
 let seq = 0;
 export const devId = () => `dev-${process.pid}-${Date.now()}-${++seq}`;
 
+/** TEST_ALL_PG=1 + PG_TEST_URL: chạy mọi test tích hợp trên Postgres thật, mỗi server một schema riêng. */
+async function pgReposForTest(): Promise<Repositories | undefined> {
+  const url = process.env.PG_TEST_URL;
+  if (!url || !process.env.TEST_ALL_PG) return undefined;
+  const pg = (await import('pg')).default;
+  const { createPostgresRepositories } = await import('../src/repo/postgres.js');
+  const schema = `t_${process.pid}_${++seq}_${Date.now()}`;
+  const admin = new pg.Pool({ connectionString: url });
+  await admin.query(`CREATE SCHEMA ${schema}`);
+  await admin.end();
+  return createPostgresRepositories(new pg.Pool({ connectionString: url, options: `-c search_path=${schema}` }));
+}
+
 export async function startServer(env: Record<string, string> = {}, opts: { repos?: Repositories } = {}): Promise<TestServer> {
+  if (!opts.repos && !env.DB_PATH) opts = { ...opts, repos: await pgReposForTest() };
   const ctx = await buildApp(testConfig({ PRESENCE_INTERVAL_MS: '100', MAX_CONN_PER_IP: '200', SOCKET_EVENTS_PER_10S: '200', ...env }), opts);
   await ctx.app.listen({ host: '127.0.0.1', port: 0 });
   const port = (ctx.app.server.address() as AddressInfo).port;

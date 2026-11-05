@@ -140,6 +140,10 @@ describe('admin', () => {
     const { cookie } = await login();
     expect((await fetch(`${s.url}/admin/api/backup`)).status).toBe(401);
     const r = await api(cookie, '/backup');
+    if (process.env.TEST_ALL_PG) {
+      expect(r.status).toBe(501); // Postgres: dùng pg_dump
+      return;
+    }
     expect(r.status).toBe(200);
     const buf = Buffer.from(await r.arrayBuffer());
     expect(buf.subarray(0, 15).toString()).toBe('SQLite format 3');

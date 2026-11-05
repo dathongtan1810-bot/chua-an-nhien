@@ -181,7 +181,11 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
 
     r.get('/admin/api/backup', async (req, reply) => {
       const file = path.join(os.tmpdir(), `chua-backup-${randomBytes(6).toString('hex')}.db`);
-      await repos.backup(file);
+      try {
+        await repos.backup(file);
+      } catch (err) {
+        return reply.code(501).send({ error: 'backup_unsupported', message: (err as Error).message });
+      }
       await audit(req, 'backup');
       const stream = fs.createReadStream(file);
       stream.on('close', () => fs.rm(file, { force: true }, () => undefined));
