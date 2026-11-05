@@ -1,5 +1,5 @@
 {
-  "note": "Danh sách từ cấm mặc định của server. Nếu có content/tu-cam.json (từ nhánh nội dung) thì được sao chép thành data/tu-cam.json và ưu tiên dùng. Admin có thể sửa trực tiếp trong trang quản trị (lưu DB). Đã bỏ các từ dễ chặn nhầm lời nguyện thật (con chó, óc chó, ma túy, tự tử, khủng bố...) — những nội dung đó để báo cáo/kiểm duyệt xử lý.",
+  "note": "Danh sách từ cấm mặc định của server. Nếu có content/tu-cam.json (từ nhánh nội dung) thì được sao chép thành data/tu-cam.json và ưu tiên dùng. Admin có thể sửa trực tiếp trong trang quản trị (lưu DB). Đã bỏ các từ dễ chặn nhầm lời nguyện thật (con chó, óc chó, ma túy, tự tử, khủng bố...) — những nội dung đó để báo cáo/kiểm duyệt xử lý. Tiền tố: \"~từ\" = chỉ tính khi có dấu hiệu lách (l0n, c.a.c); \"+cụm\" = allowlist.",
   "words": [
     "địt",
     "đụ",
@@ -47,11 +47,17 @@
     "xxx",
     "nude",
     "bò đỏ",
-    "ba que"
+    "ba que",
+    "~lon",
+    "~cac",
+    "~buoi",
+    "~du",
+    "~deo",
+    "~di",
+    "~diem"
   ],
   "unaccentedAlso": [
     "dit",
-    "deo",
     "dm",
     "dmm",
     "dcm",

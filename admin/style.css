@@ -120,3 +120,4 @@ thead th { color: var(--muted); font-weight: 600; }
 @media (prefers-reduced-motion: no-preference) {
   .btn, .tabs button { transition: background 0.15s, border-color 0.15s, color 0.15s; }
 }
+.hint { color: var(--muted); font-size: .9em; margin: .25rem 0 .5rem; } .hint code { background: rgba(0,0,0,.06); padding: 0 .25em; border-radius: 3px; }

@@ -106,3 +106,47 @@ describe('ContentFilter', () => {
     expect(parseWordList([{ word: 'a', variants: ['a1'] }, { tu: 'b' }]).words).toEqual(['a', 'a1', 'b']);
   });
 });
+
+describe('định dạng content/tu-cam.json', () => {
+  const data = {
+    ghiChu: 'mẫu thử',
+    thayKyTu: { '9': 'g' },
+    tuCam: [
+      { tu: 'lồn', nhom: 'tuc', mucDo: 3, bienThe: ['loz'], bienTheLach: ['lon'] },
+      { tu: 'cặc', nhom: 'tuc', mucDo: 3, bienTheLach: ['cac'] },
+      { tu: 'ngu', nhom: 'xuc-pham', mucDo: 1 },
+    ],
+    allowlist: ['con ngủ', 'ngủ ngon'],
+  };
+  const parsed = parseWordList(data);
+  const g = new ContentFilter({ words: parsed.words, substitutions: parsed.substitutions, unaccentedAlso: [] });
+
+  it('parse: biến thể lách & allowlist được mã hoá, bỏ metadata', () => {
+    expect(parsed.words).toEqual(['lồn', 'loz', '~lon', 'cặc', '~cac', 'ngu', '+con ngủ', '+ngủ ngon']);
+    expect(parsed.substitutions).toEqual({ '9': 'g' });
+  });
+
+  it('bienTheLach chỉ tính khi có dấu hiệu lách', () => {
+    expect(g.check('chúc con lớn khôn').ok).toBe(true);
+    expect(g.check('chuc con lon khon').ok).toBe(true);
+    expect(g.check('cac con ngoan').ok).toBe(true);
+    expect(g.check('đồ l0n').ok).toBe(false);
+    expect(g.check('đồ l.o.n').ok).toBe(false);
+    expect(g.check('c a c').ok).toBe(false);
+    expect(g.check('loooon').ok).toBe(false);
+    expect(g.check('loz').ok).toBe(false);
+  });
+
+  it('allowlist che cụm hợp lệ', () => {
+    expect(g.check('ngu').ok).toBe(false);
+    expect(g.check('con ngủ ngoan nhé').ok).toBe(true); // "ngủ" có dấu ≠ "ngu" vốn đã qua; allowlist không làm hỏng
+    expect(g.check('chúc ngủ ngon').ok).toBe(true);
+    expect(g.check('con ngu ngủ ngon').ok).toBe(false); // phần ngoài allowlist vẫn bị bắt
+  });
+
+  it('thayKyTu tuỳ chỉnh', () => {
+    const h = new ContentFilter({ words: ['gà'], substitutions: { '9': 'g' } });
+    expect(h.check('con 9à').ok).toBe(false);
+    expect(h.check('năm 2029').ok).toBe(true);
+  });
+});

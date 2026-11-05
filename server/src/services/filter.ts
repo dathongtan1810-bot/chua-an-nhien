@@ -1,17 +1,21 @@
 /**
- * Bộ lọc nội dung đèn hoa đăng.
+ * Bộ lọc nội dung đèn hoa đăng / biệt danh.
  *
- * Chiến lược (xem DECISIONS.md):
- *  1. Chuẩn hoá: NFC, chữ thường, bỏ ký tự điều khiển/zero-width, đổi leetspeak (0→o, 1→i, 3→e, 4→a, @→a, $→s...).
- *  2. Tách "âm tiết" theo ký tự không phải chữ/số. Các token 1 ký tự liền nhau được ghép lại
- *     (bắt "đ.ị.t", "d i t", "f-u-c-k"). Ký tự lặp được rút gọn ("nguuuu" → "ngu").
- *  3. So khớp theo dãy token:
- *     - Từ cấm 1 âm tiết CÓ dấu (vd "lồn") chỉ khớp khi văn bản cũng có dấu đúng như vậy,
- *       tránh chặn nhầm "lớn"/"lon". Khi văn bản viết không dấu, chỉ khớp nếu từ cấm đó
- *       nằm trong danh sách `unaccentedAlso` (vd "dit", "dm").
- *     - Cụm nhiều âm tiết & từ không dấu: khớp cả bản có dấu lẫn bản đã bỏ dấu.
- *  4. Bản "nén" (bỏ hết khoảng trắng/ký tự chèn) dùng cho từ cấm dài ≥ 5 ký tự để bắt "đ ồ c h ó"…
- *  5. Link, email, số điện thoại (kể cả chèn khoảng trắng/dấu chấm, viết "không chín...") và từ khoá quảng cáo.
+ * Chiến lược (chi tiết: DECISIONS.md #17, #24, #25):
+ *  1. Chuẩn hoá: NFC, chữ thường, bỏ ký tự điều khiển/zero-width.
+ *  2. Tách token theo ký tự không phải chữ/số. Ký tự "lách" (0→o, 1→i, @→a, $→s…) được đổi khi đứng cạnh chữ cái;
+ *     token 1 ký tự liền nhau được ghép ("đ.ị.t", "d i t", "f-u-c-k"); chữ lặp ≥ 3 lần được rút gọn.
+ *     Mỗi token mang cờ `evasive` nếu có dấu hiệu lách (đổi ký tự, ghép chữ rời, kéo dài chữ).
+ *  3. Allowlist (vd "con ngủ") được che trước khi so khớp.
+ *  4. So khớp theo dãy token:
+ *     - văn bản CÓ dấu chỉ so với dạng có dấu của từ cấm; so không dấu chỉ áp lên đoạn văn bản KHÔNG dấu;
+ *     - từ cấm 1 âm tiết có dấu (vd "lồn") chỉ khớp đúng dấu, trừ khi nằm trong `unaccentedAlso`;
+ *     - biến thể "lách" (tiền tố `~`, vd "~lon") chỉ khớp khi đoạn đó có dấu hiệu lách ("l0n", "l.o.n");
+ *     - bản nén so theo ranh giới token ("mấtdạy", "khốnnạn").
+ *  5. Link, email, số điện thoại (kể cả chèn khoảng trắng/dấu chấm, viết bằng chữ) và từ khoá quảng cáo.
+ *
+ * Mã hoá danh sách từ (bảng `banned_words`, trang admin): mỗi dòng 1 mục;
+ *   "từ"   = từ cấm;  "~từ" = biến thể chỉ tính khi có dấu hiệu lách;  "+cụm" = allowlist (không bao giờ chặn).
  */
 import { LIMITS } from '../../../shared/protocol.js';
 
@@ -25,9 +29,14 @@ export interface FilterResult {
   match?: string;
 }
 
-const LEET: Record<string, string> = { '0': 'o', '1': 'i', '3': 'e', '4': 'a', '5': 's', '7': 't', '8': 'b', '@': 'a', $: 's', '!': 'i', '|': 'l', '€': 'e' };
+/** Ký tự lách "mạnh": chỉ cần cạnh 1 chữ cái. */
+export const DEFAULT_STRONG_SUBS: Record<string, string> = { '0': 'o', '1': 'i', '3': 'e', '4': 'a', '5': 's', '7': 't', '8': 'b', '@': 'a', $: 's', '€': 'e' };
+/** Ký tự lách "yếu": cần chữ cái ở cả hai bên ("ngu!" không thành "ngui"). */
+export const DEFAULT_WEAK_SUBS: Record<string, string> = { '!': 'i', '|': 'l' };
 
 const VIET_DIACRITIC = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/;
+const IS_LETTER = /\p{L}/u;
+const MASK = '#';
 
 export function stripDiacritics(s: string): string {
   return s.normalize('NFD').replace(/\p{M}/gu, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').normalize('NFC');
@@ -43,85 +52,149 @@ export function cleanText(input: string): string {
     .trim();
 }
 
-function leet(s: string): string {
-  let out = '';
-  for (const ch of s) out += LEET[ch] ?? ch;
-  return out;
-}
-
 const collapseRepeats = (s: string) => s.replace(/(\p{L})\1{2,}/gu, '$1').replace(/(\p{L})\1/gu, (m, c: string) => (/[a-z]/.test(c) ? c : m));
 
-/** Tách token, ghép các token 1 ký tự liền nhau. */
-export function tokenize(text: string): string[] {
-  const base = leet(text.normalize('NFC').toLowerCase());
-  const raw = base.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-  const out: string[] = [];
+interface Subs {
+  strong: Record<string, string>;
+  weak: Record<string, string>;
+}
+const DEFAULT_SUBS: Subs = { strong: DEFAULT_STRONG_SUBS, weak: DEFAULT_WEAK_SUBS };
+
+export interface Tokens {
+  tokens: string[];
+  evasive: boolean[];
+}
+
+/** Tách token kèm cờ lách. */
+export function tokenizeDetailed(text: string, subs: Subs = DEFAULT_SUBS): Tokens {
+  const chars = [...text.normalize('NFC').toLowerCase()];
+  // 1) đổi ký tự lách theo ngữ cảnh; ký tự khác không phải chữ/số → dấu tách
+  const mapped: Array<{ ch: string; sub: boolean }> = [];
+  for (let i = 0; i < chars.length; i++) {
+    const c = chars[i]!;
+    const prevL = IS_LETTER.test(chars[i - 1] ?? '');
+    const nextL = IS_LETTER.test(chars[i + 1] ?? '');
+    if (subs.strong[c] !== undefined && (prevL || nextL)) mapped.push({ ch: subs.strong[c]!, sub: true });
+    else if (subs.weak[c] !== undefined && prevL && nextL) mapped.push({ ch: subs.weak[c]!, sub: true });
+    else if (/[\p{L}\p{N}\p{M}]/u.test(c)) mapped.push({ ch: c, sub: false });
+    else mapped.push({ ch: ' ', sub: false });
+  }
+  // 2) gom thành token thô
+  const raw: Array<{ t: string; sub: boolean }> = [];
+  let cur = '';
+  let curSub = false;
+  for (const m of mapped) {
+    if (m.ch === ' ') {
+      if (cur) raw.push({ t: cur.normalize('NFC'), sub: curSub });
+      cur = '';
+      curSub = false;
+    } else {
+      cur += m.ch;
+      curSub ||= m.sub;
+    }
+  }
+  if (cur) raw.push({ t: cur.normalize('NFC'), sub: curSub });
+  // 3) ghép token 1 ký tự liền nhau
+  const tokens: string[] = [];
+  const evasive: boolean[] = [];
   let buf = '';
-  for (const t of raw) {
-    if ([...t].length === 1) {
-      buf += t;
+  let bufN = 0;
+  let bufSub = false;
+  const flush = () => {
+    if (!buf) return;
+    tokens.push(buf);
+    evasive.push(bufSub || bufN >= 2);
+    buf = '';
+    bufN = 0;
+    bufSub = false;
+  };
+  for (const r of raw) {
+    if ([...r.t].length === 1) {
+      buf += r.t;
+      bufN++;
+      bufSub ||= r.sub;
       continue;
     }
-    if (buf) {
-      out.push(buf);
-      buf = '';
-    }
-    out.push(t);
+    flush();
+    tokens.push(r.t);
+    evasive.push(r.sub);
   }
-  if (buf) out.push(buf);
-  return out.map(collapseRepeats);
+  flush();
+  // 4) rút gọn chữ lặp
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i]!;
+    const c = collapseRepeats(t);
+    if (/(\p{L})\1{2,}/u.test(t)) evasive[i] = true;
+    tokens[i] = c;
+  }
+  return { tokens, evasive };
 }
+
+export function tokenize(text: string): string[] {
+  return tokenizeDetailed(text).tokens;
+}
+
+type Kind = 'word' | 'lach' | 'allow';
 
 interface Pattern {
   word: string;
-  tokens: string[]; // dạng có dấu (đã chuẩn hoá)
-  plain: string[]; // dạng bỏ dấu
+  kind: Kind;
+  tokens: string[]; // có dấu
+  plain: string[]; // bỏ dấu
   compact: string; // bỏ dấu, nối liền
   compactMarked: string; // có dấu, nối liền
   hasMark: boolean;
   accentStrict: boolean;
 }
 
-function compile(word: string, unaccentedAlso: Set<string>): Pattern | null {
-  const tokens = tokenize(word);
+function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAULT_SUBS): Pattern | null {
+  let kind: Kind = 'word';
+  let word = entry.trim();
+  if (word.startsWith('~')) {
+    kind = 'lach';
+    word = word.slice(1);
+  } else if (word.startsWith('+')) {
+    kind = 'allow';
+    word = word.slice(1);
+  }
+  const { tokens } = tokenizeDetailed(word, subs);
   if (!tokens.length) return null;
   const plain = tokens.map(stripDiacritics);
   const hasMark = tokens.some((t) => VIET_DIACRITIC.test(t));
-  const accentStrict = tokens.length === 1 && hasMark && !unaccentedAlso.has(plain[0]!);
-  return { word, tokens, plain, compact: collapseRepeats(plain.join('')), compactMarked: collapseRepeats(tokens.join('')), hasMark, accentStrict };
+  const accentStrict = kind === 'word' && tokens.length === 1 && hasMark && !unaccentedAlso.has(plain[0]!);
+  return {
+    word: entry.trim(),
+    kind,
+    tokens,
+    plain,
+    compact: collapseRepeats(plain.join('')),
+    compactMarked: collapseRepeats(tokens.join('')),
+    hasMark,
+    accentStrict,
+  };
 }
 
-function seqMatchWhere(hay: string[], needle: string[], ok: (i: number) => boolean): boolean {
+/** Tìm mọi vị trí bắt đầu mà `needle` khớp `hay` và `ok(i)` đúng với mọi token trong đoạn. */
+function seqFind(hay: string[], needle: string[], ok: (i: number) => boolean): number {
   outer: for (let i = 0; i + needle.length <= hay.length; i++) {
     for (let j = 0; j < needle.length; j++) if (!ok(i + j) || hay[i + j] !== needle[j]) continue outer;
-    return true;
-  }
-  return false;
-}
-
-function seqIndexOf(hay: string[], needle: string[]): number {
-  outer: for (let i = 0; i + needle.length <= hay.length; i++) {
-    for (let j = 0; j < needle.length; j++) if (hay[i + j] !== needle[j]) continue outer;
     return i;
   }
   return -1;
 }
 
-/**
- * Bản nén khớp theo ranh giới token: nối các token liên tiếp i..j và so BẰNG với từ cấm đã nén.
- * Bắt "mấtdạy", "khốnnạn" (viết liền) mà không khớp nhầm "con nguyện" với "con ngu".
- */
-function alignedCompactMatch(plain: string[], compact: string, ok: (i: number) => boolean): boolean {
-  for (let i = 0; i < plain.length; i++) {
+/** Bản nén khớp theo ranh giới token: nối token i..j phải BẰNG từ cấm đã nén. */
+function alignedCompact(hay: string[], compact: string, ok: (i: number) => boolean): [number, number] | null {
+  for (let i = 0; i < hay.length; i++) {
     let acc = '';
-    for (let j = i; j < plain.length; j++) {
-      if (!ok(j)) break;
-      acc = collapseRepeats(acc + plain[j]!);
+    for (let j = i; j < hay.length; j++) {
+      if (!ok(j) || hay[j] === MASK) break;
+      acc = collapseRepeats(acc + hay[j]!);
       if (acc.length > compact.length + 2) break;
-      if (acc === compact) return true;
+      if (acc === compact) return [i, j];
     }
   }
-  return false;
+  return null;
 }
 
 // ---- Link / email / điện thoại / quảng cáo -------------------------------
@@ -143,9 +216,10 @@ const DIGIT_WORDS: Record<string, string> = {
 };
 
 function hasPhone(text: string): boolean {
-  const t = leet(text.toLowerCase()).replace(/[oO]/g, (c, i, s: string) => (/\d/.test(s[i - 1] ?? '') || /\d/.test(s[i + 1] ?? '') ? '0' : c));
+  // "o"/"O" kẹp giữa chữ số coi như số 0 ("09o1234567")
+  const t = text.toLowerCase().replace(/o/g, (c, i: number, s: string) => (/\d/.test(s[i - 1] ?? '') || /\d/.test(s[i + 1] ?? '') ? '0' : c));
   if (PHONE_DIGITS_RE.test(t)) return true;
-  // Số viết bằng chữ: "không chín một hai ..." – ≥ 7 chữ-số liên tiếp
+  // Số viết bằng chữ: "không chín một hai ..." – ≥ 9 chữ-số liên tiếp
   const words = text.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean);
   let run = 0;
   for (const w of words) {
@@ -168,44 +242,75 @@ export const DEFAULT_WEAK_ADS_KEYWORDS = [
   'giảm giá', 'khuyến mãi', 'liên hệ', 'kết bạn', 'follow', 'order', 'đặt hàng', 'click', 'subscribe', 'bitcoin', 'crypto', 'kiếm tiền', 'số điện thoại', 'giá rẻ', 'ưu đãi', 'link',
 ];
 
+export const DEFAULT_UNACCENTED_ALSO = ['dit', 'dm', 'dmm', 'dcm', 'vcl', 'vkl', 'clm', 'cmm', 'dkm', 'loz', 'cl', 'vl', 'cc', 'dcmm', 'fuck', 'shit', 'bitch'];
+
 export interface FilterConfig {
+  /** Danh sách mã hoá: "từ", "~biến thể lách", "+allowlist". */
   words: string[];
-  /** Từ cấm 1 âm tiết nhưng vẫn chặn khi viết không dấu (vd "dit", "dm"). */
+  /** Từ cấm 1 âm tiết có dấu nhưng vẫn chặn khi viết không dấu (vd "dit"). */
   unaccentedAlso?: string[];
+  /** Bảng thay ký tự bổ sung (vd {"9": "g"}). */
+  substitutions?: Record<string, string>;
   adsKeywords?: string[];
   weakAdsKeywords?: string[];
   maxChars?: number;
 }
 
+interface Text {
+  tokens: string[];
+  plain: string[];
+  marked: boolean[];
+  evasive: boolean[];
+}
+
 export class ContentFilter {
   private patterns: Pattern[] = [];
+  private allow: Pattern[] = [];
   private ads: Pattern[] = [];
   private weakAds: Pattern[] = [];
   private maxChars: number;
+  private subs: Subs = DEFAULT_SUBS;
+  private unaccentedAlso: string[];
 
   constructor(cfg: FilterConfig) {
     this.maxChars = cfg.maxChars ?? LIMITS.LANTERN_MAX_CHARS;
-    this.setWords(cfg.words, cfg.unaccentedAlso ?? DEFAULT_UNACCENTED_ALSO);
-    const ua = new Set<string>();
-    this.ads = (cfg.adsKeywords ?? DEFAULT_ADS_KEYWORDS)
-      .map((w) => compile(w, ua))
-      .filter((p): p is Pattern => !!p)
-      .map((p) => ({ ...p, accentStrict: false }));
-    this.weakAds = (cfg.weakAdsKeywords ?? DEFAULT_WEAK_ADS_KEYWORDS)
-      .map((w) => compile(w, ua))
-      .filter((p): p is Pattern => !!p)
-      .map((p) => ({ ...p, accentStrict: false }));
+    this.unaccentedAlso = cfg.unaccentedAlso ?? DEFAULT_UNACCENTED_ALSO;
+    if (cfg.substitutions) this.setSubstitutions(cfg.substitutions);
+    this.setWords(cfg.words, this.unaccentedAlso);
+    const none = new Set<string>();
+    const kw = (list: string[]) =>
+      list
+        .map((w) => compile(w, none))
+        .filter((p): p is Pattern => !!p)
+        .map((p) => ({ ...p, kind: 'word' as Kind, accentStrict: false }));
+    this.ads = kw(cfg.adsKeywords ?? DEFAULT_ADS_KEYWORDS);
+    this.weakAds = kw(cfg.weakAdsKeywords ?? DEFAULT_WEAK_ADS_KEYWORDS);
   }
 
-  setWords(words: string[], unaccentedAlso: string[] = DEFAULT_UNACCENTED_ALSO): void {
+  setSubstitutions(extra: Record<string, string>): void {
+    const strong = { ...DEFAULT_STRONG_SUBS };
+    const weak = { ...DEFAULT_WEAK_SUBS };
+    for (const [k, v] of Object.entries(extra)) {
+      if ([...k].length !== 1 || typeof v !== 'string' || !v) continue;
+      if (/[\p{N}@$€]/u.test(k)) strong[k] = v;
+      else weak[k] = v;
+    }
+    this.subs = { strong, weak };
+  }
+
+  setWords(words: string[], unaccentedAlso: string[] = this.unaccentedAlso): void {
+    this.unaccentedAlso = unaccentedAlso;
     const ua = new Set(unaccentedAlso.map((w) => stripDiacritics(w.toLowerCase())));
     const seen = new Set<string>();
     this.patterns = [];
+    this.allow = [];
     for (const w of words) {
-      const p = compile(w, ua);
-      if (!p || seen.has(p.tokens.join(' '))) continue;
-      seen.add(p.tokens.join(' '));
-      this.patterns.push(p);
+      const p = compile(w, ua, this.subs);
+      if (!p) continue;
+      const key = `${p.kind}:${p.tokens.join(' ')}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      (p.kind === 'allow' ? this.allow : this.patterns).push(p);
     }
   }
 
@@ -213,21 +318,59 @@ export class ContentFilter {
     return this.patterns.length;
   }
 
-  /** Trả về từ cấm đầu tiên khớp. `marked[i]` = token i của văn bản có dấu tiếng Việt. */
-  private matchList(list: Pattern[], tokens: string[], plain: string[], marked: boolean[], useCompact: boolean): string | undefined {
-    for (const p of list) {
-      if (seqIndexOf(tokens, p.tokens) >= 0) return p.word;
-      if (p.accentStrict) continue; // từ 1 âm tiết có dấu: chỉ khớp đúng dấu
-      // So không dấu: nếu từ cấm có dấu thì chỉ áp lên đoạn văn bản KHÔNG dấu
-      // (người gõ không dấu), tránh "chỗ để" ≈ "chó đẻ".
-      const needUnmarked = p.hasMark;
-      if (seqMatchWhere(plain, p.plain, (i) => !needUnmarked || !marked[i])) return p.word;
-      if (useCompact && p.compact.length >= 4) {
-        if (alignedCompactMatch(tokens, p.compactMarked, () => true)) return p.word;
-        if (alignedCompactMatch(plain, p.compact, (i) => !needUnmarked || !marked[i])) return p.word;
+  private prepare(clean: string): Text {
+    const { tokens, evasive } = tokenizeDetailed(clean, this.subs);
+    const plain = tokens.map(stripDiacritics);
+    const marked = tokens.map((t) => VIET_DIACRITIC.test(t));
+    const txt: Text = { tokens, plain, marked, evasive };
+    // Che cụm allowlist (thay bằng MASK để không ghép được với token lân cận).
+    // Dạng không dấu của allowlist chỉ áp khi CẢ văn bản không dấu — văn bản có dấu đủ ngữ cảnh
+    // ("con ngu ngủ ngon") không được tha nhờ allowlist "con ngủ".
+    const textUnmarked = !marked.some(Boolean);
+    for (const a of this.allow) {
+      for (const [hay, okf] of [
+        [txt.tokens, () => true],
+        [txt.plain, () => !a.hasMark || textUnmarked],
+      ] as Array<[string[], (i: number) => boolean]>) {
+        const needle = hay === txt.tokens ? a.tokens : a.plain;
+        let i = seqFind(hay, needle, okf);
+        while (i >= 0) {
+          for (let j = i; j < i + needle.length; j++) {
+            txt.tokens[j] = MASK;
+            txt.plain[j] = MASK;
+          }
+          i = seqFind(hay, needle, okf);
+        }
       }
     }
-    return undefined;
+    return txt;
+  }
+
+  private matchOne(p: Pattern, t: Text, useCompact: boolean): boolean {
+    const any = (from: number, len: number, f: (i: number) => boolean) => {
+      for (let k = from; k < from + len; k++) if (f(k)) return true;
+      return false;
+    };
+    const lachOk = (start: number, len: number) => p.kind !== 'lach' || any(start, len, (k) => t.evasive[k]!);
+    // 1) đúng dấu
+    const i = seqFind(t.tokens, p.tokens, () => true);
+    if (i >= 0 && lachOk(i, p.tokens.length)) return true;
+    // 2) không dấu: chỉ trên đoạn văn bản không dấu nếu từ cấm có dấu
+    if (!p.accentStrict) {
+      const okU = (k: number) => !p.hasMark || !t.marked[k];
+      const j = seqFind(t.plain, p.plain, okU);
+      if (j >= 0 && lachOk(j, p.plain.length)) return true;
+    }
+    // 3) bản nén theo ranh giới token
+    if (useCompact && p.compact.length >= 4) {
+      const m1 = alignedCompact(t.tokens, p.compactMarked, () => true);
+      if (m1 && lachOk(m1[0], m1[1] - m1[0] + 1)) return true;
+      if (!p.accentStrict) {
+        const m2 = alignedCompact(t.plain, p.compact, (k) => !p.hasMark || !t.marked[k]);
+        if (m2 && lachOk(m2[0], m2[1] - m2[0] + 1)) return true;
+      }
+    }
+    return false;
   }
 
   check(input: string): FilterResult {
@@ -235,36 +378,42 @@ export class ContentFilter {
     if (!clean) return { ok: false, reason: 'empty', clean };
     if ([...clean].length > this.maxChars) return { ok: false, reason: 'too_long', clean };
 
-    const tokens = tokenize(clean);
-    const plain = tokens.map(stripDiacritics);
-    const marked = tokens.map((t) => VIET_DIACRITIC.test(t));
-
-    const bad = this.matchList(this.patterns, tokens, plain, marked, true);
-    if (bad) return { ok: false, reason: 'banned_word', clean, match: bad };
+    const t = this.prepare(clean);
+    const bad = this.patterns.find((p) => this.matchOne(p, t, true));
+    if (bad) return { ok: false, reason: 'banned_word', clean, match: bad.word };
     if (LINK_RE.test(clean) || LINK_RE.test(stripDiacritics(clean))) return { ok: false, reason: 'link', clean };
     if (hasPhone(clean)) return { ok: false, reason: 'phone', clean };
-    const ad = this.matchList(this.ads, tokens, plain, marked, false);
-    if (ad) return { ok: false, reason: 'ads', clean, match: ad };
-    const weak = this.weakAds.filter((p) => this.matchList([p], tokens, plain, marked, false));
+    const ad = this.ads.find((p) => this.matchOne(p, t, false));
+    if (ad) return { ok: false, reason: 'ads', clean, match: ad.word };
+    const weak = this.weakAds.filter((p) => this.matchOne(p, t, false));
     if (weak.length >= 2) return { ok: false, reason: 'ads', clean, match: weak.map((p) => p.word).join(', ') };
     // spam: một ký tự/âm tiết lặp lại quá nhiều
-    if (/(.)\1{9,}/u.test(clean) || (tokens.length >= 6 && new Set(tokens).size === 1)) return { ok: false, reason: 'spam', clean };
+    if (/(.)\1{9,}/u.test(clean) || (t.tokens.length >= 6 && new Set(t.tokens).size === 1)) return { ok: false, reason: 'spam', clean };
     return { ok: true, clean };
   }
 }
 
-export const DEFAULT_UNACCENTED_ALSO = ['dit', 'dm', 'dmm', 'dcm', 'vcl', 'vkl', 'clm', 'cmm', 'dkm', 'loz', 'cl', 'vl', 'cc', 'dcmm', 'fuck', 'shit', 'bitch'];
+export interface ParsedWordList {
+  /** Danh sách đã mã hoá ("từ", "~lách", "+allow"). */
+  words: string[];
+  unaccentedAlso?: string[];
+  substitutions?: Record<string, string>;
+}
+
+const META_KEYS = new Set(['version', 'phienBan', 'updatedAt', 'capNhat', 'note', 'ghiChu', 'description', 'moTa', '$schema', 'nhom', 'mucDo', 'id']);
 
 /**
- * Đọc danh sách từ cấm từ JSON. Chấp nhận nhiều dạng:
+ * Đọc danh sách từ cấm từ JSON. Chấp nhận:
  *  - ["a", "b"]
- *  - { "words": [...], "unaccentedAlso": [...] }
- *  - { "<nhóm>": [...], ... } (gộp mọi mảng chuỗi)
- *  - [{ "word": "a" }, ...] hoặc [{ "tu": "a" }]
+ *  - { "words": [...], "unaccentedAlso": [...] }            (định dạng server/data/banned-words.json)
+ *  - { "tuCam": [{ "tu", "bienThe": [], "bienTheLach": [] }], "allowlist": [], "thayKyTu": {} }  (content/tu-cam.json)
+ *  - { "<nhóm>": [...] } (gộp mọi mảng chuỗi), [{ "word" | "tu": "a" }]
  */
-export function parseWordList(json: unknown): { words: string[]; unaccentedAlso?: string[] } {
+export function parseWordList(json: unknown): ParsedWordList {
   const words: string[] = [];
   let unaccentedAlso: string[] | undefined;
+  let substitutions: Record<string, string> | undefined;
+  const strs = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []);
   const take = (v: unknown) => {
     if (typeof v === 'string') words.push(v);
     else if (Array.isArray(v)) v.forEach(take);
@@ -273,16 +422,22 @@ export function parseWordList(json: unknown): { words: string[]; unaccentedAlso?
       const w = o.word ?? o.tu ?? o.text ?? o.value;
       if (typeof w === 'string') {
         words.push(w);
-        // các biến thể khai báo kèm
-        for (const k of ['variants', 'bienThe', 'aliases']) if (Array.isArray(o[k])) take(o[k]);
+        for (const k of ['variants', 'bienThe', 'aliases']) words.push(...strs(o[k]));
+        for (const k of ['bienTheLach', 'evasionOnly']) words.push(...strs(o[k]).map((x) => `~${x}`));
         return;
       }
       for (const [k, val] of Object.entries(o)) {
-        if (k === 'unaccentedAlso' && Array.isArray(val)) unaccentedAlso = val.filter((x): x is string => typeof x === 'string');
-        else if (!['version', 'updatedAt', 'note', 'description', '$schema'].includes(k)) take(val);
+        if (META_KEYS.has(k)) continue;
+        if (k === 'unaccentedAlso') unaccentedAlso = strs(val);
+        else if (k === 'allowlist' || k === 'allow' || k === 'ngoaiLe') words.push(...strs(val).map((x) => `+${x}`));
+        else if (k === 'thayKyTu' || k === 'substitutions') {
+          if (val && typeof val === 'object' && !Array.isArray(val)) {
+            substitutions = Object.fromEntries(Object.entries(val).filter((e): e is [string, string] => typeof e[1] === 'string'));
+          }
+        } else take(val);
       }
     }
   };
   take(json);
-  return { words: [...new Set(words.map((w) => w.trim()).filter(Boolean))], unaccentedAlso };
+  return { words: [...new Set(words.map((w) => w.trim()).filter(Boolean))], unaccentedAlso, substitutions };
 }

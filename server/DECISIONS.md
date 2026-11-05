@@ -34,3 +34,7 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - Quảng cáo chia từ khoá mạnh (chặn ngay) và yếu ("giảm giá", "liên hệ"… cần ≥ 2 từ).
     - Bỏ khỏi danh sách mặc định các từ hay xuất hiện trong lời nguyện thật ("con chó", "óc chó", "ma túy", "tự tử", "khủng bố"...).
     - Test `filter.test.ts` chạy toàn bộ `test/fixtures/loi-nguyen-mau*.json` (sao chép từ `content/` nhánh nội dung) và yêu cầu 0 chặn nhầm.
+25. **Định dạng `content/tu-cam.json`** (theo `content/tools/loc-tu.mjs` của nhánh nội dung): `{tuCam:[{tu, nhom, mucDo, bienThe[], bienTheLach[]}], allowlist[], thayKyTu{}}`.
+    Server mã hoá thành dòng trong bảng `banned_words`: `tu`/`bienThe` → "từ", `bienTheLach` → "~từ" (chỉ chặn khi có dấu hiệu lách: đổi ký tự, chữ rời, kéo dài chữ),
+    `allowlist` → "+cụm". `thayKyTu` bổ sung bảng ký tự lách. `mucDo`/`nhom` hiện **bỏ qua** — mọi mức đều từ chối (đơn giản, an toàn cho chùa).
+    Allowlist không dấu chỉ áp khi cả văn bản không dấu (giống loc-tu.mjs).

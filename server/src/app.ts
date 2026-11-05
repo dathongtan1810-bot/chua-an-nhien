@@ -35,9 +35,9 @@ export interface AppContext {
 }
 
 /** Tìm danh sách từ cấm khởi tạo: BANNED_WORDS_PATH → data/tu-cam.json (từ content/) → data/banned-words.json. */
-export function loadSeedWords(config: Config): { words: string[]; unaccentedAlso: string[]; source: string } {
+export function loadSeedWords(config: Config): { words: string[]; unaccentedAlso: string[]; substitutions: Record<string, string>; source: string } {
   const candidates = [config.BANNED_WORDS_PATH, path.join(SERVER_ROOT, 'data/tu-cam.json'), path.join(SERVER_ROOT, 'data/banned-words.json')].filter(Boolean);
-  const merged = { words: [] as string[], unaccentedAlso: [...DEFAULT_UNACCENTED_ALSO], source: 'none' };
+  const merged = { words: [] as string[], unaccentedAlso: [...DEFAULT_UNACCENTED_ALSO], substitutions: {} as Record<string, string>, source: 'none' };
   const sources: string[] = [];
   for (const file of candidates) {
     if (!fs.existsSync(file)) continue;
@@ -45,6 +45,7 @@ export function loadSeedWords(config: Config): { words: string[]; unaccentedAlso
       const parsed = parseWordList(JSON.parse(fs.readFileSync(file, 'utf8')));
       merged.words.push(...parsed.words);
       if (parsed.unaccentedAlso) merged.unaccentedAlso.push(...parsed.unaccentedAlso);
+      if (parsed.substitutions) Object.assign(merged.substitutions, parsed.substitutions);
       sources.push(path.basename(file));
     } catch {
       // bỏ qua file hỏng, dùng nguồn tiếp theo
@@ -74,7 +75,7 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
 
   const seed = loadSeedWords(config);
   if ((await repos.words.count()) === 0 && seed.words.length) await repos.words.replaceAll(seed.words);
-  const filter = new ContentFilter({ words: await repos.words.list(), unaccentedAlso: seed.unaccentedAlso });
+  const filter = new ContentFilter({ words: await repos.words.list(), unaccentedAlso: seed.unaccentedAlso, substitutions: seed.substitutions });
   log.info({ words: filter.wordCount, source: seed.source }, 'banned words loaded');
 
   const app: FastifyInstance = Fastify({

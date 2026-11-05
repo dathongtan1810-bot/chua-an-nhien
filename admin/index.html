@@ -91,6 +91,7 @@
           <form id="words-form" class="card">
             <h2>Danh sách từ cấm</h2>
             <label for="words-text">Mỗi dòng một từ hoặc cụm từ</label>
+            <p class="hint">Tiền tố <code>~</code> = biến thể chỉ chặn khi có dấu hiệu lách (vd <code>~lon</code> bắt “l0n”, “l.o.n” nhưng không chặn “lon”); tiền tố <code>+</code> = cụm luôn cho phép (allowlist, vd <code>+con ngủ</code>). Từ 1 âm tiết có dấu chỉ chặn khi viết đúng dấu.</p>
             <textarea id="words-text" rows="18" spellcheck="false"></textarea>
             <div class="row">
               <button type="submit" class="btn primary">Lưu danh sách</button>
