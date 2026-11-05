@@ -110,6 +110,22 @@ export class Hub {
   private timers: NodeJS.Timeout[] = [];
   private floodStrikes = new Map<string, number>();
   private lanternInflight = new Set<string>();
+  /** Tác vụ nền đang chạy (dọn phòng, presence tick…) — chờ hết khi đóng server. */
+  private pending = new Set<Promise<unknown>>();
+  private stopped = false;
+
+  private track(p: Promise<unknown>, what: string): void {
+    const q = p.catch((err) => {
+      if (!this.stopped) this.d.log.error({ err }, `${what} failed`);
+    });
+    this.pending.add(q);
+    void q.finally(() => this.pending.delete(q));
+  }
+
+  /** Chờ mọi tác vụ nền xong (gọi khi đóng server, trước khi đóng Redis/DB). */
+  async drain(): Promise<void> {
+    while (this.pending.size) await Promise.all([...this.pending]);
+  }
 
   constructor(private readonly d: HubDeps) {
     this.floodLimiter = new SlidingWindowLimiter(d.config.SOCKET_EVENTS_PER_10S, 10_000);
@@ -146,19 +162,21 @@ export class Hub {
     io.on('connection', (s) => this.onConnection(s));
 
     const presenceTick = setInterval(() => this.broadcastPresence(), config.PRESENCE_INTERVAL_MS);
-    const sweepTick = setInterval(() => void this.sweep(), 60_000);
+    const sweepTick = setInterval(() => this.track(this.sweep(), 'sweep'), 60_000);
     presenceTick.unref();
     sweepTick.unref();
     this.timers.push(presenceTick, sweepTick);
   }
 
   stop(): void {
+    this.stopped = true;
     for (const t of this.timers) clearInterval(t);
     this.timers = [];
   }
 
   private broadcastPresence(): void {
-    this.presenceTick().catch((err) => this.d.log.error({ err }, 'presence tick failed'));
+    if (this.stopped) return;
+    this.track(this.presenceTick(), 'presence tick');
   }
 
   private async presenceTick(): Promise<void> {
@@ -312,10 +330,13 @@ export class Hub {
         this.userSockets.delete(uid);
         this.blockCache.delete(uid);
       }
-      void (async () => {
-        const code = last ? await this.d.cluster.rooms.leave(uid) : await this.d.cluster.rooms.roomOf(uid);
-        if (code) await this.emitRoomState(code);
-      })().catch((err) => this.d.log.error({ err }, 'room cleanup failed'));
+      this.track(
+        (async () => {
+          const code = last ? await this.d.cluster.rooms.leave(uid) : await this.d.cluster.rooms.roomOf(uid);
+          if (code) await this.emitRoomState(code);
+        })(),
+        'room cleanup',
+      );
     });
   }
 
@@ -674,10 +695,13 @@ export class Hub {
     this.incense = this.incense.filter((i) => i.userId !== userId);
     this.blockCache.delete(userId);
     for (const set of this.blockCache.values()) set.delete(userId);
-    void (async () => {
-      const code = await this.d.cluster.rooms.leave(userId);
-      if (code) await this.emitRoomState(code);
-    })().catch((err) => this.d.log.error({ err }, 'forgetUser room failed'));
+    this.track(
+      (async () => {
+        const code = await this.d.cluster.rooms.leave(userId);
+        if (code) await this.emitRoomState(code);
+      })(),
+      'forgetUser room',
+    );
   }
 
   async blockedOf(userId: string): Promise<Set<string>> {

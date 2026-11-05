@@ -85,3 +85,25 @@ describe.skipIf(!url)('cụm 2 instance qua Redis', () => {
     expect(await dc).toBeDefined();
   });
 });
+
+describe.skipIf(!url)('đóng server ở chế độ cụm', () => {
+  it('đóng khi còn lệnh Redis đang chạy không sinh unhandled rejection', async () => {
+    const errs: unknown[] = [];
+    const h = (e: unknown) => errs.push(e);
+    process.on('unhandledRejection', h);
+    try {
+      for (let i = 0; i < 8; i++) {
+        const s = await startServer({ REDIS_URL: url!, REDIS_PREFIX: `close${process.pid}${i}:`, PRESENCE_INTERVAL_MS: '1' });
+        const { c } = await s.hello();
+        c.emit('ring_bell', { force: 1 });
+        c.emit('room_create', {});
+        await sleep(i % 3);
+        await s.close();
+      }
+      await sleep(200);
+    } finally {
+      process.off('unhandledRejection', h);
+    }
+    expect(errs.map(String)).toEqual([]);
+  });
+});

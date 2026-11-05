@@ -158,6 +158,16 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     const sub = pub.duplicate();
     const state = pub.duplicate();
     redisClients.push(pub, sub, state);
+    for (const r of redisClients) r.on('error', (err) => log.error({ err }, 'redis error'));
+    // chờ kết nối xong: tránh lệnh nằm trong hàng đợi offline bị huỷ khi đóng sớm
+    await Promise.all(
+      redisClients.map((r) =>
+        r.status === 'ready' ? undefined : new Promise<void>((resolve, reject) => {
+          r.once('ready', () => resolve());
+          r.once('end', () => reject(new Error('redis connection ended before ready')));
+        }),
+      ),
+    );
     io.adapter(createAdapter(pub, sub, { key: `${config.REDIS_PREFIX}sio` }));
     cluster = new RedisCluster(state, config.REDIS_PREFIX, Math.max(10_000, config.PRESENCE_INTERVAL_MS * 4));
     if (!config.DATABASE_URL) log.warn('REDIS_URL đã đặt nhưng không có DATABASE_URL: các instance phải dùng chung một DB (Postgres)');
@@ -181,8 +191,10 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     clearInterval(sweep);
     hub.stop();
     await new Promise<void>((resolve) => io.close(() => resolve()));
+    await hub.drain(); // chờ dọn phòng/presence đang chạy trước khi đóng Redis/DB
     await cluster.close();
-    for (const r of redisClients) r.disconnect();
+    // quit(): chờ các lệnh đang gửi xong rồi mới đóng (disconnect() làm chúng reject "Connection is closed")
+    await Promise.all(redisClients.map((r) => r.quit().catch(() => r.disconnect())));
     await repos.close();
   });
 
