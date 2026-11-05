@@ -108,7 +108,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
   // ---------------------------------------------------------------- step 1: topic
   function showTopics(): void {
     root.innerHTML = '';
-    const used = store.state.daily.fortuneTopics ?? [];
+    const used = (store.dispatch({ type: 'rollDay', dateKey: vnDateKey() }), store.state.daily.fortuneTopics) ?? [];
     const lang = getLang() === 'en' ? 'en' : 'vi';
     let anyUsed = false;
     const chips = TOPICS.map((tp) => {

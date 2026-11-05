@@ -366,8 +366,9 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       if (Math.abs(dx) > 10) this.dragging = true;
       if (this.dragging) this.cameras.main.scrollX = this.dragScroll - dx;
     });
-    this.input.on('pointerup', (p: Phaser.Input.Pointer) => {
+    this.input.on('pointerup', (p: Phaser.Input.Pointer, over: Phaser.GameObjects.GameObject[]) => {
       if (this.active || this.dragging || this.transitioning) return;
+      if (over && over.length > 0) return; // đã có đối tượng tương tác (vd. đèn trên sông) xử lý
       const wx = p.x + this.cameras.main.scrollX;
       const wy = p.y;
       let best: [string, number] | null = null;
@@ -414,7 +415,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         this.river?.remove(e.id);
       } else if (e.type === 'error' && ['content_rejected', 'banned', 'feature_disabled'].includes(e.code)) {
         toast(e.code === 'content_rejected' ? t('lantern.rejected') : e.message || e.code);
-      } else if (e.type === 'rateLimited' && e.event === 'release_lantern') {
+      } else if (e.type === 'rateLimited' && ['release_lantern', 'light_incense', 'ring_bell'].includes(e.event)) {
         toast(t('lantern.tooFast', { s: Math.ceil(e.retryAfterMs / 1000) }));
       }
     };
@@ -458,7 +459,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
           kind,
           amount,
           dateKey: todayInfo().dateKey,
-          eventRitual: this.info.eventRitual,
+          eventRitual: todayInfo().eventRitual,
           topic: typeof detail?.topic === 'string' ? detail.topic : undefined,
         });
         if (journal) void addEntry({ at: new Date().toISOString(), kind: journal, detail: detail ?? {} });

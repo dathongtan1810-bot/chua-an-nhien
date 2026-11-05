@@ -2,21 +2,21 @@ import Phaser from 'phaser';
 import './ui/styles.css';
 import { GAME_H, GAME_W } from './art/types';
 import { audio } from './audio/engine';
-import { isAreaId, type AreaId } from './core/areas';
-import { bus, game } from './core/bus';
+import { AREA_INFO, isAreaId, type AreaId } from './core/areas';
+import { bus, game, requestGoTo } from './core/bus';
 import { setLang, t } from './core/i18n';
 import { store } from './core/store';
 import { setForcedDate, todayInfo } from './core/today';
 import { net } from './net/service';
 import { AreaScene } from './scenes/AreaScene';
-import { h, toast, uiRoot } from './ui/dom';
+import { closeSheet, h, toast, uiRoot } from './ui/dom';
 import { Hud } from './ui/hud';
 import { applySettings } from './ui/panels';
 import { installShare } from './share/share';
 import { registerSW } from './pwa';
 
 const params = new URLSearchParams(location.search);
-if (params.get('date')) setForcedDate(params.get('date'));
+if (import.meta.env.DEV && params.get('date')) setForcedDate(params.get('date'));
 const st = store.state;
 setLang(st.lang);
 store.dispatch({ type: 'rollDay', dateKey: todayInfo().dateKey });
@@ -49,7 +49,9 @@ gameInst.scene.add('area', AreaScene, false);
 
 const hud = new Hud();
 
+let begun = false;
 function begin(): void {
+  begun = true;
   audio.unlock();
   const s = store.state;
   net.start({ deviceId: s.deviceId, nickname: s.nickname, lang: s.lang }, s.settings.online, s.blocked);
@@ -91,7 +93,9 @@ if (ritualParam || params.get('skip') !== null) {
   );
   uiRoot().append(start);
   // nền màn chào: hiển thị cổng chùa phía sau
-  gameInst.events.once('ready', () => gameInst.scene.start('area', { area: 'cong' }));
+  gameInst.events.once('ready', () => {
+    if (!begun) gameInst.scene.start('area', { area: 'cong' });
+  });
 }
 
 document.addEventListener('visibilitychange', () => {
@@ -110,9 +114,11 @@ registerSW();
 void import('./native').then((m) => m.initNative()).catch(() => undefined);
 // Nút Back Android: đóng bảng / nghi thức trước, rồi lùi về khu trước
 window.addEventListener('can:back', () => {
-  const sheet = document.querySelector('.sheet-wrap');
-  if (sheet) return sheet.remove();
+  if (closeSheet()) return;
   if (game.api?.ritual) return game.api.exitRitual();
+  // lùi về khu trước (theo bản đồ); ở cổng chùa thì thoát app
+  const area = store.state.area;
+  if (area !== 'cong') return requestGoTo(AREA_INFO[area].links[0]);
   void import('./native').then((m) => m.exitApp?.());
 });
 (window as unknown as { __game?: Phaser.Game }).__game = gameInst;

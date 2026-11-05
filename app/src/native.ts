@@ -80,14 +80,35 @@ export async function keepAwake(on: boolean): Promise<void> {
   }
 }
 
-let wakeLock: { release: () => Promise<void> } | null = null;
+type Sentinel = { release: () => Promise<void>; addEventListener?: (t: 'release', cb: () => void) => void };
+let wakeLock: Sentinel | null = null;
+let wantAwake = false;
+let visHooked = false;
 async function webWakeLock(on: boolean): Promise<void> {
-  const nav = navigator as Navigator & { wakeLock?: { request: (t: 'screen') => Promise<{ release: () => Promise<void> }> } };
+  wantAwake = on;
+  const nav = navigator as Navigator & { wakeLock?: { request: (t: 'screen') => Promise<Sentinel> } };
+  if (!visHooked && typeof document !== 'undefined') {
+    visHooked = true;
+    // trình duyệt tự nhả khóa khi ẩn tab → xin lại khi quay về nếu vẫn đang thiền
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && wantAwake && !wakeLock) void webWakeLock(true);
+    });
+  }
   try {
-    if (on && nav.wakeLock && !wakeLock) wakeLock = await nav.wakeLock.request('screen');
-    else if (!on && wakeLock) {
-      await wakeLock.release();
+    if (on && nav.wakeLock && !wakeLock) {
+      const s = await nav.wakeLock.request('screen');
+      if (!wantAwake) {
+        await s.release();
+        return;
+      }
+      wakeLock = s;
+      s.addEventListener?.('release', () => {
+        if (wakeLock === s) wakeLock = null;
+      });
+    } else if (!on && wakeLock) {
+      const s = wakeLock;
       wakeLock = null;
+      await s.release();
     }
   } catch {
     wakeLock = null;

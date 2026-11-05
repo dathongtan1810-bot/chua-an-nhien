@@ -5,6 +5,7 @@ import { t } from '../core/i18n';
 import { store } from '../core/store';
 import { h } from '../ui/dom';
 import { isSteady } from './pure';
+import { vnDateKey } from '../logic/dates';
 import type { RitualFactory } from './types';
 
 const MO_TEX = 'rit-mo';
@@ -98,9 +99,11 @@ export const moRitual: RitualFactory = (host) => {
       hint.textContent = t('mo.steady');
       if (steadyRewards < 3) {
         steadyRewards++;
-        store.dispatch({ type: 'reward', amount: 1 });
-        audio.reward();
-        host.floatText(t('reward.plus', { n: 1 }), 270, 440, '#f2cd6b');
+        const r = store.dispatch({ type: 'bonus', dateKey: vnDateKey() });
+        if (r.amount > 0) {
+          audio.reward();
+          host.floatText(t('reward.plus', { n: 1 }), 270, 440, '#f2cd6b');
+        }
       }
     }
     if (pendingTotals >= 10) flush();

@@ -1,3 +1,4 @@
+import { t } from '../core/i18n';
 /** Tiện ích DOM nhỏ gọn cho overlay HTML. */
 type Child = Node | string | null | undefined | false;
 
@@ -46,11 +47,20 @@ export interface ModalHandle {
 }
 
 /** Bảng (sheet) trượt từ dưới lên. */
+let activeClose: (() => void) | null = null;
+
 export function openSheet(title: string, opts: { onClose?: () => void; className?: string } = {}): ModalHandle {
   const root = uiRoot();
+  activeClose?.();
   root.querySelector('.sheet-wrap')?.remove();
   const body = h('div', { class: 'sheet-body' });
+  const opener = document.activeElement as HTMLElement | null;
+  let closed = false;
   const close = () => {
+    if (closed) return;
+    closed = true;
+    if (activeClose === close) activeClose = null;
+    opener?.focus?.();
     wrap.classList.add('closing');
     setTimeout(() => wrap.remove(), 220);
     document.removeEventListener('keydown', onKey);
@@ -59,7 +69,7 @@ export function openSheet(title: string, opts: { onClose?: () => void; className
   const onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') close();
   };
-  const closeBtn = h('button', { class: 'btn icon close', 'aria-label': 'Đóng', onclick: close }, '✕');
+  const closeBtn = h('button', { class: 'btn icon close', 'aria-label': t('common.close'), onclick: close }, '✕');
   const sheet = h(
     'section',
     { class: 'sheet ' + (opts.className ?? ''), role: 'dialog', 'aria-modal': 'true', 'aria-label': title },
@@ -68,11 +78,17 @@ export function openSheet(title: string, opts: { onClose?: () => void; className
   );
   const wrap = h('div', { class: 'sheet-wrap', onclick: (e: Event) => e.target === wrap && close() }, sheet);
   root.append(wrap);
+  activeClose = close;
   document.addEventListener('keydown', onKey);
   setTimeout(() => closeBtn.focus(), 50);
   return { el: sheet, body, close };
 }
 
-export function closeSheet(): void {
-  uiRoot().querySelector('.sheet-wrap')?.remove();
+/** Đóng bảng đang mở; trả về true nếu có bảng để đóng. */
+export function closeSheet(): boolean {
+  if (activeClose) {
+    activeClose();
+    return true;
+  }
+  return false;
 }

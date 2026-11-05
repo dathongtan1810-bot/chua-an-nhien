@@ -214,6 +214,12 @@ export function openShop(): void {
   render();
 }
 
+function restartArea(): void {
+  const a = store.state.area;
+  game.api?.exitRitual();
+  (game.api as unknown as { scene?: { restart(d: unknown): void } })?.scene?.restart({ area: a });
+}
+
 function applyEquip(c: ShopCategory): void {
   if (c === 'music') {
     const it = SHOP_ITEMS.find((i) => i.id === store.state.equipped.music);
@@ -274,6 +280,7 @@ export function openSettings(onLangChange: () => void): void {
       check('online', () => {
         const ss = store.state;
         net.start({ deviceId: ss.deviceId, nickname: ss.nickname, lang: ss.lang }, ss.settings.online, ss.blocked);
+        restartArea();
       }),
       h('div', { class: 'toggle' }, t('settings.nickname'), nickEl),
       h(
@@ -324,7 +331,11 @@ export function openSettings(onLangChange: () => void): void {
           style: { background: '#7a1d14' },
           onclick: async () => {
             if (!confirm(t('settings.deleteConfirm'))) return;
-            await net.deleteMyData(store.state.deviceId);
+            const ok = await net.deleteMyData(store.state.deviceId);
+            if (!ok) {
+              toast(t('settings.deleteFailed'));
+              return;
+            }
             await clearJournal();
             store.reset();
             toast(t('settings.deleted'));
@@ -337,6 +348,6 @@ export function openSettings(onLangChange: () => void): void {
       h('a', { class: 'btn', href: './privacy.html', target: '_blank', rel: 'noopener', style: { textDecoration: 'none', display: 'inline-flex', alignItems: 'center' } }, t('settings.privacy')),
     ),
     h('p', { class: 'muted' }, t('settings.about')),
-    h('p', { class: 'muted' }, 'Nội dung: ' + Object.entries(contentSource()).map(([k, v]) => `${k}=${v}`).join(', ')),
+    h('p', { class: 'muted' }, t('settings.content') + ': ' + Object.entries(contentSource()).map(([k, v]) => `${k}=${v}`).join(', ')),
   );
 }

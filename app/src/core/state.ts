@@ -148,7 +148,9 @@ export type Action =
   | { type: 'block'; userId: string }
   | { type: 'onboarded' }
   | { type: 'nickname'; nickname: string }
-  | { type: 'reward'; amount: number };
+  | { type: 'reward'; amount: number }
+  /** Thưởng nhỏ (vd. giữ nhịp mõ đều) — tính chung trần thưởng nghi thức mỗi ngày. */
+  | { type: 'bonus'; dateKey: string };
 
 export interface Reward {
   amount: number;
@@ -254,6 +256,15 @@ export function reduce(state: GameState, action: Action): Result {
     case 'nickname':
       s = { ...s, nickname: action.nickname.slice(0, 40) };
       break;
+    case 'bonus': {
+      s = rollDay(s, action.dateKey);
+      if (s.daily.ritualRewards < RITUAL_DAILY_CAP) {
+        s = { ...s, hatSen: s.hatSen + 1, daily: { ...s.daily, ritualRewards: s.daily.ritualRewards + 1 } };
+        reward.amount = 1;
+        reward.reasons.push('bonus');
+      }
+      break;
+    }
     case 'reward':
       s = { ...s, hatSen: s.hatSen + action.amount };
       reward.amount = action.amount;

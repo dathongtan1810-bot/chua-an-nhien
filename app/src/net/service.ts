@@ -4,7 +4,7 @@ import { AREAS } from '../core/areas';
 import { checkText } from '../logic/filter';
 import { RateLimiter, DEFAULT_RATE_RULES } from '../logic/ratelimit';
 import { createNetClient, type NetClient, type NetStatus } from './client';
-import { ROOM_CODE_RE, type AreaCounts, type IncenseLitPayload, type LanternPayload, type RoomStatePayload, type S2CEvents } from './protocol';
+import { isLanternColor, ROOM_CODE_RE, type AreaCounts, type IncenseLitPayload, type LanternPayload, type RoomStatePayload, type S2CEvents } from './protocol';
 
 /** Thời gian một nén hương cháy (ms) — ~3 phút. */
 export const INCENSE_BURN_MS = 3 * 60 * 1000;
@@ -55,7 +55,7 @@ export class NetService {
   private hello: { deviceId: string; nickname: string; lang: string } | null = null;
 
   get enabled(): boolean {
-    return ONLINE_FEATURES && this.client !== null;
+    return ONLINE_FEATURES && this.client !== null && this.status === 'online';
   }
 
   start(hello: { deviceId: string; nickname: string; lang: string }, enabled: boolean, blocked: string[]): void {
@@ -143,8 +143,16 @@ export class NetService {
   }
 
   private addLantern(l: LanternPayload): void {
+    if (!l || typeof l.id !== 'string' || typeof l.text !== 'string' || !isLanternColor(l.color)) return;
+    if (l.text.length > 200) return;
+    if (typeof l.nickname !== 'string') l.nickname = '';
     if (this.hidden.has(l.id) || (l.userId && this.blocked.has(l.userId))) return;
     const mine = (!!l.userId && l.userId === this.userId) || (l.nickname === this.hello?.nickname && this.myLanternTexts.has(l.text));
+    if (Date.now() - Date.parse(l.at) > 24 * 3600 * 1000) return;
+    if (this.lanterns.size > 300) {
+      const oldest = this.lanterns.keys().next().value;
+      if (oldest !== undefined) this.lanterns.delete(oldest);
+    }
     const existed = this.lanterns.has(l.id);
     this.lanterns.set(l.id, l);
     if (!existed) this.emit({ type: 'lantern', lantern: l, mine });
@@ -178,7 +186,7 @@ export class NetService {
 
   lightIncense(count: number, nickname = this.hello?.nickname ?? ''): void {
     // ngoại tuyến: tự giữ hương của mình để lư vẫn còn hương khi quay lại khu
-    if (!this.client) this.incense.push({ userId: 'me', nickname, count, at: new Date().toISOString() });
+    if (!this.client || this.status !== 'online') this.incense.push({ userId: 'me', nickname, count, at: new Date().toISOString() });
     this.client?.emit('light_incense', { count });
   }
 
@@ -189,6 +197,8 @@ export class NetService {
   releaseLantern(text: string, color: string): SendResult {
     const check = checkText(text);
     if (!check.ok) return { ok: false, reason: check.reason ?? 'rejected' };
+    // mất kết nối: đèn vẫn được thả trên dòng sông tại máy (ritual tự thêm khi !enabled)
+    if (this.client && this.status !== 'online') return { ok: true };
     const rl = this.limiter.tryConsume('release_lantern');
     if (!rl.ok) return { ok: false, reason: 'rate', retryAfterMs: rl.retryAfterMs };
     this.myLanternTexts.add(text.trim());
@@ -252,6 +262,8 @@ export class NetService {
   }
 
   async deleteMyData(deviceId: string): Promise<boolean> {
+    this.saveRoom(null);
+    this.room = null;
     if (!this.client) return true;
     return this.client.deleteMyData(deviceId);
   }

@@ -1,7 +1,8 @@
 /* Service worker Chùa An Nhiên — chơi được offline.
  * Điều hướng: network-first (fallback bản đã lưu). Tài nguyên cùng origin: stale-while-revalidate.
  * Không cache API / socket.io. */
-const CACHE = 'chua-an-nhien-v1';
+// Mã build được thay khi build (vite.config.ts) → mỗi bản phát hành có cache riêng, bản cũ bị dọn
+const CACHE = 'chua-an-nhien-__BUILD_ID__';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
@@ -23,8 +24,13 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
       fetch(req)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put('./index.html', copy));
+          // chỉ lưu vỏ app (index), không lưu privacy.html hay trang lỗi
+          const p = url.pathname;
+          const isShell = p.endsWith('/') || p.endsWith('/index.html');
+          if (res.ok && isShell) {
+            const copy = res.clone();
+            caches.open(CACHE).then((c) => c.put('./index.html', copy)).catch(() => undefined);
+          }
           return res;
         })
         .catch(() => caches.match('./index.html').then((r) => r || caches.match('./'))),
@@ -37,7 +43,7 @@ self.addEventListener('fetch', (e) => {
         .then((res) => {
           if (res.ok) {
             const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
+            caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => undefined);
           }
           return res;
         })

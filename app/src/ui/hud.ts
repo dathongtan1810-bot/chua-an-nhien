@@ -20,7 +20,7 @@ export class Hud {
   private online = h('div', { class: 'hud-online off' });
   private seeds = h('div', { class: 'hud-pill hatsen', 'aria-live': 'polite' });
   private mini = h('button', { class: 'hud-pill minimap', 'aria-label': t('hud.map'), onclick: () => openMap() });
-  private bottom = h('nav', { class: 'hud-bottom', 'aria-label': 'Hành động' });
+  private bottom = h('nav', { class: 'hud-bottom', 'aria-label': t('hud.actions') });
   private side = h('div', { class: 'hud-side' });
 
   mount(): void {

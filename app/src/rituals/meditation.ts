@@ -24,9 +24,6 @@ const L: Record<string, Record<string, string>> = {
 };
 const tr = (k: string): string => (L[getLang()] ?? L.vi)[k] ?? L.vi[k];
 
-interface WakeSentinel {
-  release(): Promise<void>;
-}
 
 export const meditationRitual: RitualFactory = (host) => {
   const { scene, layers, reducedMotion } = host;
@@ -45,51 +42,14 @@ export const meditationRitual: RitualFactory = (host) => {
   let elapsed = 0;
   let durationMs = 0;
   let lastPhase = '';
-  let wake: WakeSentinel | null = null;
-  let keepAwakeOn = false;
   let destroyed = false;
 
   // ---------------------------------------------------------------- keep awake
   const keepAwake = (): void => {
-    try {
-      const wl = (navigator as any).wakeLock;
-      if (wl?.request) {
-        Promise.resolve(wl.request('screen'))
-          .then((s: WakeSentinel) => {
-            if (destroyed) s.release().catch(() => undefined);
-            else wake = s;
-          })
-          .catch(() => undefined);
-      }
-    } catch {
-      /* ignore */
-    }
-    try {
-      const ka = (window as any).Capacitor?.Plugins?.KeepAwake;
-      if (ka?.keepAwake) {
-        Promise.resolve(ka.keepAwake()).catch(() => undefined);
-        keepAwakeOn = true;
-      }
-    } catch {
-      /* ignore */
-    }
+    if (!destroyed) void import('../native').then((m) => m.keepAwake(true)).catch(() => undefined);
   };
   const allowSleep = (): void => {
-    try {
-      wake?.release().catch(() => undefined);
-    } catch {
-      /* ignore */
-    }
-    wake = null;
-    if (keepAwakeOn) {
-      keepAwakeOn = false;
-      try {
-        const ka = (window as any).Capacitor?.Plugins?.KeepAwake;
-        if (ka?.allowSleep) Promise.resolve(ka.allowSleep()).catch(() => undefined);
-      } catch {
-        /* ignore */
-      }
-    }
+    void import('../native').then((m) => m.keepAwake(false)).catch(() => undefined);
   };
 
   // ---------------------------------------------------------------- Phaser visuals (created on start)
