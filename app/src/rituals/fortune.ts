@@ -367,11 +367,11 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
         role: 'dialog',
         'aria-label': que.tieuDe,
         style: {
-          margin: '64px 14px 16px',
+          margin: '84px 14px 16px',
           padding: '20px 18px',
           pointerEvents: 'auto',
           overflowY: 'auto',
-          maxHeight: 'calc(100% - 96px)',
+          maxHeight: 'calc(100% - 110px)',
           WebkitOverflowScrolling: 'touch',
         },
       },

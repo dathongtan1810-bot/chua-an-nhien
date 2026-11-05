@@ -89,7 +89,7 @@ button { font: inherit; }
   position: absolute; left: 0; right: 0; bottom: calc(14px + var(--safe-bottom)); display: flex; gap: 10px; justify-content: center;
   flex-wrap: wrap; padding: 0 12px;
 }
-.ritual-close { position: absolute; right: 10px; top: calc(10px + var(--safe-top)); }
+.ritual-close { position: absolute; right: 10px; top: calc(150px + var(--safe-top)); }
 .card {
   background: var(--paper); color: var(--ink); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow);
   border: 1px solid #d8c39a; user-select: text; -webkit-user-select: text;

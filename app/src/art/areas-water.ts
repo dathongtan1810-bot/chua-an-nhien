@@ -52,10 +52,10 @@ interface Pal {
 
 function makePal(night: number): Pal {
   const n = Math.max(0, Math.min(1, night));
-  const dusk = Math.max(0, 1 - Math.abs(n - 0.45) / 0.4);
+  const dusk = Math.max(0, 1 - Math.abs(n - 0.3) / 0.3);
   const NIGHT = 0x121838;
   const f = (c: number, k = 1): number => {
-    const warm = mixColor(c, 0xf0a27a, Math.min(0.5, dusk * 0.26 * k));
+    const warm = mixColor(c, 0xeea08e, Math.min(0.55, dusk * 0.3 * k));
     return mixColor(warm, NIGHT, n * 0.68 * k);
   };
   return {

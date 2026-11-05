@@ -110,6 +110,11 @@ export class Hud {
         h('button', { class: 'act nav', onclick: () => game.api?.goTo(to), 'aria-label': t('go.to', { name: t(AREA_INFO[to].nameKey) }) }, '➜ ' + t(AREA_INFO[to].nameKey)),
       );
     }
+    if (area === 'bo-song') {
+      this.bottom.append(
+        h('button', { class: 'act nav', onclick: () => window.dispatchEvent(new CustomEvent('can:share', { detail: { kind: 'invite' } })) }, '💌 ' + t('share.invite')),
+      );
+    }
     // Khung quảng cáo thưởng: TẮT mặc định; không bao giờ ở chính điện / thiền đường.
     if (ADS_ENABLED && !AREA_INFO[area].solemn) {
       this.bottom.append(h('button', { class: 'act nav', 'data-ad': 'rewarded' }, '🎁'));

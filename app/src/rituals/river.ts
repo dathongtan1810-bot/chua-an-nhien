@@ -94,7 +94,7 @@ export class RiverLanterns {
     const lane = Math.floor(Math.random() * LANES);
     const ly = laneY(lane, LANES, top, bottom) + (Math.random() - 0.5) * 8;
     const depth = depthOf(ly, top, bottom);
-    const scale = lanternScale(depth) * 0.9;
+    const scale = lanternScale(depth) * 1.35;
     const style: LanternStyle = mine ? myLanternStyle() : 'sen';
     const tex = makeLantern(this.scene, String(l.color), style);
     const x = opts.fromX ?? Math.random() * this.worldWidth;

@@ -42,6 +42,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   private updaters: ((time: number, delta: number) => void)[] = [];
   private pendingRitual: string | null = null;
   private transitioning = false;
+  private markers: Phaser.GameObjects.GameObject[] = [];
 
   constructor() {
     super('area');
@@ -61,6 +62,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     this.transitioning = false;
     this.burner = null;
     this.river = null;
+    this.markers = [];
   }
 
   create(): void {
@@ -144,7 +146,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       this.updaters.push((time, d) => this.river?.update(time, d));
     }
     if (this.area === 'ho-sen' && this.hotspots.pond) {
-      const fish = createAmbientFish(this, this.layers.main, this.hotspots.pond, 9);
+      const fish = createAmbientFish(this, this.layers.main, this.hotspots.pond, 9, rm);
+      (this as unknown as { ambientFish: unknown }).ambientFish = fish;
       this.updaters.push((time, d) => {
         if (!this.active || this.active.id !== 'fish') fish.update(time, d);
       });
@@ -256,6 +259,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         })
         .setOrigin(0.5, 1);
       this.layers.main.add([ring, txt]);
+      this.markers.push(ring, txt);
       if (!rm) this.tweens.add({ targets: ring, scale: 1.18, alpha: 0.6, yoyo: true, repeat: -1, duration: 1400, ease: 'Sine.easeInOut' });
     }
   }
@@ -323,7 +327,9 @@ export class AreaScene extends Phaser.Scene implements GameApi {
           if (this.active?.id !== 'meditation') toast('🔔 ' + t('bell.others'));
         }
       } else if (e.type === 'lantern') {
-        this.river?.add(e.lantern, e.mine);
+        const drop = (this as unknown as { lastLanternDrop?: { x: number; y: number; at: number } }).lastLanternDrop;
+        if (e.mine && drop && Date.now() - drop.at < 10000) this.river?.add(e.lantern, true, { fromX: drop.x, fromY: drop.y });
+        else this.river?.add(e.lantern, e.mine);
       } else if (e.type === 'lanternRemoved') {
         this.river?.remove(e.id);
       } else if (e.type === 'rateLimited') {
@@ -390,6 +396,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     if (focus) this.cameras.main.scrollX = Phaser.Math.Clamp(focus.x - GAME_W / 2, 0, this.worldWidth - GAME_W);
     const ritual = def.factory(host);
     this.active = { id, ritual, panel };
+    this.setMarkersVisible(false);
     bus.emit({ type: 'ritualStarted', id, zen: !!def.zen });
   }
 
@@ -418,7 +425,12 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       console.warn('ritual destroy', err);
     }
     panel.remove();
+    this.setMarkersVisible(true);
     bus.emit({ type: 'ritualEnded', id });
+  }
+
+  private setMarkersVisible(v: boolean): void {
+    for (const m of this.markers) (m as Phaser.GameObjects.Text).setVisible(v);
   }
 
   floatText(text: string, x: number, y: number, color: string): void {

@@ -6,17 +6,17 @@ import { audio } from '../audio/engine';
 import { vibrate } from '../audio/haptics';
 import { makeBead, makeGlow, makeSparkle } from '../art/sprites';
 import { getLang, t } from '../core/i18n';
-import { h, toast } from '../ui/dom';
+import { h } from '../ui/dom';
 import { advanceBead, BEADS_PER_ROUND, type BeadState } from './pure-a';
 import type { Ritual, RitualFactory } from './types';
 
 export { advanceBead } from './pure-a';
 
 const ADD = 1; // Phaser.BlendModes.ADD
-const SPACING = 50;
+const SPACING = 44;
 const HALF = 7; // beads drawn: -HALF..HALF (13 fully visible + 2 fading)
-const CX = 300;
-const CY = 470;
+const CX = 320;
+const CY = 500;
 const BOW = 2.6; // parabola bend in px per index^2
 const SWIPE_PX = 46;
 
@@ -168,7 +168,6 @@ export const beadsRitual: RitualFactory = (host) => {
       vibrate([60, 60, 120]);
       burst();
       hint.textContent = t('beads.round');
-      toast(t('beads.round'));
       host.complete('beadRound', 1, { round: prevRound }, 'beads');
     } else {
       setCounter(r.n, r.round);

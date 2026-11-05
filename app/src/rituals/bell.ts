@@ -5,7 +5,8 @@
 import type Phaser from 'phaser';
 import { audio } from '../audio/engine';
 import { vibrate } from '../audio/haptics';
-import { bakeCanvas, softDot } from '../art/sprites';
+import { makeBeamTexture, makeBellTexture } from '../art/areas-buildings';
+import { bakeCanvas } from '../art/sprites';
 import { getLang, t } from '../core/i18n';
 import { net } from '../net/service';
 import { h } from '../ui/dom';
@@ -16,88 +17,14 @@ export { bellForce } from './pure-a';
 
 const MAX_PULL = 160;
 const COOLDOWN_MS = 2500;
-const ROPE_LEN = 190;
-const REST_GAP = 16;
+const REST_GAP = 18;
+/** Where the bell sits on screen while ringing (leaves room for the log on the left). */
+const BELL_SCREEN_X = 360;
 const ADD = 1; // Phaser.BlendModes.ADD
 
 const STRIKES: Record<string, string> = { vi: 'Đã thỉnh {n} tiếng chuông', en: 'Bell rung {n} times' };
 
-// ---------------------------------------------------------------- textures (local fallbacks)
-
-function makeBellTex(scene: Phaser.Scene): string {
-  return bakeCanvas(scene, 'rit-bell', 150, 200, (ctx) => {
-    // loop on top
-    ctx.strokeStyle = '#5a3a1a';
-    ctx.lineWidth = 7;
-    ctx.beginPath();
-    ctx.arc(75, 20, 13, Math.PI, 0);
-    ctx.stroke();
-    // body
-    const g = ctx.createLinearGradient(8, 0, 142, 0);
-    g.addColorStop(0, '#4a2f14');
-    g.addColorStop(0.3, '#a8793a');
-    g.addColorStop(0.45, '#d9ad62');
-    g.addColorStop(0.7, '#8a5e2a');
-    g.addColorStop(1, '#3a240f');
-    ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.moveTo(40, 26);
-    ctx.quadraticCurveTo(75, 14, 110, 26);
-    ctx.quadraticCurveTo(122, 40, 124, 150);
-    ctx.quadraticCurveTo(128, 178, 142, 190);
-    ctx.lineTo(8, 190);
-    ctx.quadraticCurveTo(22, 178, 26, 150);
-    ctx.quadraticCurveTo(28, 40, 40, 26);
-    ctx.closePath();
-    ctx.fill();
-    // bands
-    ctx.strokeStyle = 'rgba(60,35,12,0.7)';
-    ctx.lineWidth = 3;
-    for (const y of [60, 120, 168]) {
-      ctx.beginPath();
-      ctx.moveTo(24, y);
-      ctx.lineTo(126, y);
-      ctx.stroke();
-    }
-    // strike lotus medallion
-    ctx.fillStyle = 'rgba(70,40,14,0.5)';
-    ctx.beginPath();
-    ctx.arc(36, 144, 9, 0, Math.PI * 2);
-    ctx.fill();
-    // panels (dots)
-    for (let i = 0; i < 4; i++) for (let j = 0; j < 3; j++) softDot(ctx, 44 + i * 20, 76 + j * 14, 2.4, 0xe8c17a, 0.7);
-    softDot(ctx, 62, 100, 26, 0xffe2a8, 0.18);
-  });
-}
-
-function makeLogTex(scene: Phaser.Scene): string {
-  return bakeCanvas(scene, 'rit-bell-log', 180, 40, (ctx) => {
-    const g = ctx.createLinearGradient(0, 2, 0, 38);
-    g.addColorStop(0, '#9a6a3e');
-    g.addColorStop(0.45, '#6e4422');
-    g.addColorStop(1, '#3a2210');
-    ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.moveTo(8, 4);
-    ctx.lineTo(170, 4);
-    ctx.quadraticCurveTo(180, 20, 170, 36);
-    ctx.lineTo(8, 36);
-    ctx.quadraticCurveTo(0, 20, 8, 4);
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(40,20,8,0.35)';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 4; i++) {
-      ctx.beginPath();
-      ctx.moveTo(14, 10 + i * 6);
-      ctx.lineTo(166, 11 + i * 6);
-      ctx.stroke();
-    }
-    ctx.fillStyle = '#c8935a';
-    ctx.beginPath();
-    ctx.ellipse(172, 20, 4, 14, 0, 0, Math.PI * 2);
-    ctx.fill();
-  });
-}
+// ---------------------------------------------------------------- textures
 
 function makeSoundRing(scene: Phaser.Scene): string {
   return bakeCanvas(scene, 'rit-sound-ring', 256, 256, (ctx) => {
@@ -116,38 +43,55 @@ function makeSoundRing(scene: Phaser.Scene): string {
 
 export const bellRitual: RitualFactory = (host) => {
   const { scene, layers, reducedMotion } = host;
-  const fx = layers.fx;
   const cam = scene.cameras.main;
-  const objs: Phaser.GameObjects.GameObject[] = [];
+  // everything lives in a root container laid out for the target camera scroll;
+  // root.x compensates while the camera glides there.
+  const root = scene.add.container(0, 0);
+  layers.fx.add(root);
+  const objs: Phaser.GameObjects.GameObject[] = [root];
   const add = <T extends Phaser.GameObjects.GameObject>(o: T): T => {
-    fx.add(o);
-    objs.push(o);
+    root.add(o);
     return o;
   };
+  const tweens: Phaser.Tweens.Tween[] = [];
 
-  // bell position on screen
-  const hs = host.hotspots.bell ?? { x: cam.scrollX + 330, y: 420, r: 80 };
-  const bx = Math.max(250, Math.min(470, hs.x - cam.scrollX));
-  const by = hs.y - cam.scrollY;
+  const hsBell = host.hotspots.bell ?? { x: cam.scrollX + 330, y: 470, r: 90 };
+  const hsBeam = host.hotspots.beam;
+  // glide the camera so the bell sits right of centre and the log has room to be pulled back
+  const maxScroll = Math.max(0, (cam.getBounds().width || cam.scrollX + 540) - 540);
+  const targetScroll = Math.max(0, Math.min(maxScroll, hsBell.x - BELL_SCREEN_X));
+  const startScroll = cam.scrollX;
+  if (Math.abs(targetScroll - startScroll) > 1) {
+    if (reducedMotion) cam.scrollX = targetScroll;
+    else tweens.push(scene.tweens.add({ targets: cam, scrollX: targetScroll, duration: 700, ease: 'Sine.easeInOut' }));
+  }
+  const sx = (wx: number): number => wx - targetScroll;
+  const bx = sx(hsBell.x);
+  const by = hsBell.y - cam.scrollY;
 
-  const bellKey = makeBellTex(scene);
-  const logKey = makeLogTex(scene);
+  const bellKey = makeBellTexture(scene);
+  const logKey = makeBeamTexture(scene);
   const ringKey = makeSoundRing(scene);
 
-  // the bell hangs from its top: origin near the top so it can sway
+  // the bell hangs from its loop: origin near the top so it can sway; visual centre stays at the hotspot
   const bell = add(scene.add.image(bx, by, bellKey));
   const bellH = bell.displayHeight;
   const bellW = bell.displayWidth;
   bell.setOrigin(0.5, 0.06);
   bell.y = by - bellH * 0.44;
+  if (host.night > 0.05) bell.setTint(0xffffff - Math.round(host.night * 0x30) * 0x010101);
 
   const log = scene.add.image(0, 0, logKey);
   const logW = log.displayWidth;
   const logH = log.displayHeight;
-  const restX = bx - bellW * 0.42 - logW / 2 - REST_GAP;
-  const restY = by + bellH * 0.18;
-  const anchorY = restY - ROPE_LEN;
-  const ropeDx = logW * 0.3;
+  const bodyLeft = bx - bellW * 0.32;
+  const fallbackX = bodyLeft - logW / 2 - REST_GAP;
+  const restX = hsBeam && hsBeam.x < hsBell.x ? Math.min(sx(hsBeam.x), fallbackX) : fallbackX;
+  const restY = hsBeam ? hsBeam.y - cam.scrollY : by;
+  const contact = Math.max(6, bodyLeft - (restX + logW / 2));
+  const anchorY = Math.min(restY - 80, by - bellH * 0.57);
+  const ROPE_LEN = restY - anchorY;
+  const ropeDx = 60;
 
   const ropes = add(scene.add.graphics());
   add(log);
@@ -161,7 +105,6 @@ export const bellRitual: RitualFactory = (host) => {
   let cooldownUntil = 0;
   let strikes = 0;
   let clock = 0;
-  const tweens: Phaser.Tweens.Tween[] = [];
 
   const place = (): void => {
     const dx = Math.max(-ROPE_LEN * 0.9, Math.min(ROPE_LEN * 0.9, offset));
@@ -171,19 +114,13 @@ export const bellRitual: RitualFactory = (host) => {
     log.setPosition(lx, ly);
     log.setRotation(Math.atan2(-lift, ROPE_LEN) * 0.15 * Math.sign(dx));
     ropes.clear();
-    ropes.lineStyle(3, 0x4a3018, 0.95);
+    ropes.lineStyle(3, 0xb89a6c, 1);
     for (const s of [-1, 1]) {
       ropes.beginPath();
       ropes.moveTo(restX + s * ropeDx, anchorY);
       ropes.lineTo(lx + s * ropeDx, ly - logH * 0.4);
       ropes.strokePath();
     }
-    // bell chain
-    ropes.lineStyle(4, 0x3a2410, 0.9);
-    ropes.beginPath();
-    ropes.moveTo(bx, Math.min(anchorY, bell.y - 40));
-    ropes.lineTo(bx, bell.y + 4);
-    ropes.strokePath();
   };
   place();
 
@@ -274,7 +211,7 @@ export const bellRitual: RitualFactory = (host) => {
     tweens.push(
       scene.tweens.add({
         targets: state,
-        v: REST_GAP,
+        v: contact,
         duration: 160 + (1 - force) * 220,
         ease: 'Quad.easeIn',
         onUpdate: () => {
@@ -355,6 +292,7 @@ export const bellRitual: RitualFactory = (host) => {
   const ritual: Ritual = {
     update(_time: number, delta: number) {
       clock += delta;
+      root.x = targetScroll - cam.scrollX;
       if (cooldownUntil && clock >= cooldownUntil) {
         cooldownUntil = 0;
         hint.style.opacity = '';
