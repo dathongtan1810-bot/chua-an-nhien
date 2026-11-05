@@ -10,6 +10,7 @@ import { AREA_RITUALS, RITUALS } from '../rituals';
 import { h, uiRoot } from './dom';
 import { mapSvg } from './minimap';
 import { openJournal, openMap, openSettings, openShop, openToday } from './panels';
+import { openRoom } from './room';
 
 /** HUD HTML: tên khu, âm lịch, người online, Hạt sen, mini-map, nút nghi thức và đường đi. */
 export class Hud {
@@ -58,6 +59,7 @@ export class Hud {
       btn('📅', 'hud.today', openToday),
       btn('📖', 'hud.journal', openJournal),
       btn('🪷', 'hud.shop', openShop),
+      btn('👨‍👩‍👧', 'room.title', openRoom),
       btn('⚙️', 'hud.settings', () => openSettings(() => this.relabel())),
     );
   }

@@ -4,7 +4,7 @@ import { AREAS } from '../core/areas';
 import { checkText } from '../logic/filter';
 import { RateLimiter, DEFAULT_RATE_RULES } from '../logic/ratelimit';
 import { createNetClient, type NetClient, type NetStatus } from './client';
-import type { AreaCounts, IncenseLitPayload, LanternPayload, S2CEvents } from './protocol';
+import { ROOM_CODE_RE, type AreaCounts, type IncenseLitPayload, type LanternPayload, type RoomStatePayload, type S2CEvents } from './protocol';
 
 /** Thời gian một nén hương cháy (ms) — ~3 phút. */
 export const INCENSE_BURN_MS = 3 * 60 * 1000;
@@ -18,7 +18,8 @@ export type NetEvent =
   | { type: 'lanternRemoved'; id: string }
   | { type: 'rateLimited'; event: string; retryAfterMs: number }
   | { type: 'error'; code: string; message: string }
-  | { type: 'nickname'; nickname: string };
+  | { type: 'nickname'; nickname: string }
+  | { type: 'room'; room: RoomStatePayload | null };
 
 type Listener = (e: NetEvent) => void;
 
@@ -43,6 +44,14 @@ export class NetService {
   blocked = new Set<string>();
   hidden = new Set<string>();
   private area: AreaId = 'cong';
+  room: RoomStatePayload | null = null;
+  private roomCode: string | null = (() => {
+    try {
+      return localStorage.getItem('chua-an-nhien:room');
+    } catch {
+      return null;
+    }
+  })();
   private hello: { deviceId: string; nickname: string; lang: string } | null = null;
 
   get enabled(): boolean {
@@ -69,6 +78,7 @@ export class NetService {
       this.incense = w.incense.filter((i) => !this.blocked.has(i.userId));
       this.emit({ type: 'presence', online: this.online, areas: this.areas });
       c.emit('enter_area', { area: this.area });
+      if (this.roomCode) c.emit('room_join', { code: this.roomCode });
       void this.refreshLanterns();
     });
     on('presence', (p) => {
@@ -91,6 +101,16 @@ export class NetService {
     on('lantern_liked', (x) => {
       const l = this.lanterns.get(x.id);
       if (l) l.likes = x.likes;
+    });
+    on('room_state', (r) => {
+      this.room = r;
+      this.saveRoom(r.code);
+      this.emit({ type: 'room', room: r });
+    });
+    on('room_left', () => {
+      this.room = null;
+      this.saveRoom(null);
+      this.emit({ type: 'room', room: null });
     });
     on('rate_limited', (r) => this.emit({ type: 'rateLimited', event: String(r.event), retryAfterMs: r.retryAfterMs }));
     on('error', (e) => this.emit({ type: 'error', code: String(e.code), message: e.message }));
@@ -199,6 +219,36 @@ export class NetService {
       }
     }
     this.incense = this.incense.filter((i) => i.userId !== userId);
+  }
+
+  private saveRoom(code: string | null): void {
+    this.roomCode = code;
+    try {
+      if (code) localStorage.setItem('chua-an-nhien:room', code);
+      else localStorage.removeItem('chua-an-nhien:room');
+    } catch {
+      /* ignore */
+    }
+  }
+
+  /** Phòng riêng "đi chùa cùng gia đình" (tính năng mở rộng của server). */
+  createRoom(): void {
+    this.client?.emit('room_create', {});
+  }
+
+  joinRoom(code: string): boolean {
+    const c = code.trim().toUpperCase();
+    if (!ROOM_CODE_RE.test(c)) return false;
+    this.saveRoom(c);
+    this.client?.emit('room_join', { code: c });
+    return true;
+  }
+
+  leaveRoom(): void {
+    this.client?.emit('room_leave', {});
+    this.room = null;
+    this.saveRoom(null);
+    this.emit({ type: 'room', room: null });
   }
 
   async deleteMyData(deviceId: string): Promise<boolean> {

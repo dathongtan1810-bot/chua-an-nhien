@@ -57,7 +57,28 @@ export interface BlockUserPayload {
   userId: string;
 }
 
+/** EXT phòng riêng "đi chùa cùng gia đình" (server mở rộng). Mã 6 ký tự [A-HJ-NP-Z2-9]. */
+export interface RoomJoinPayload {
+  code: string;
+}
+export interface RoomMember {
+  userId: string;
+  nickname: string;
+  area: AreaId | string;
+}
+export interface RoomStatePayload {
+  code: string;
+  members: RoomMember[];
+}
+export interface RoomLeftPayload {
+  code: string;
+}
+export const ROOM_CODE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
+
 export interface C2SEvents {
+  room_create: Record<string, never>;
+  room_join: RoomJoinPayload;
+  room_leave: Record<string, never>;
   hello: HelloPayload;
   enter_area: EnterAreaPayload;
   light_incense: LightIncensePayload;
@@ -132,6 +153,8 @@ export interface LanternLikedPayload {
 
 export interface S2CEvents {
   lantern_liked: LanternLikedPayload;
+  room_state: RoomStatePayload;
+  room_left: RoomLeftPayload;
   welcome: WelcomePayload;
   presence: PresencePayload;
   incense_lit: IncenseLitPayload;
@@ -202,6 +225,8 @@ export const S2C_EVENT_NAMES: readonly (keyof S2CEvents)[] = [
   'rate_limited',
   'error',
   'lantern_liked',
+  'room_state',
+  'room_left',
 ];
 
 /** Token màu hợp lệ hoặc mã hex #rgb / #rrggbb. */

@@ -295,6 +295,7 @@ export class MockServerClient implements NetClient {
         }
         me.area = area;
         this.sendPresence();
+        this.sendRoom();
         return;
       }
       case 'light_incense': {
@@ -341,6 +342,26 @@ export class MockServerClient implements NetClient {
       }
       case 'block_user': {
         this.blockUser((data as C2SEvents['block_user']).userId);
+        return;
+      }
+      case 'room_create':
+      case 'room_join': {
+        const raw = ev === 'room_join' ? String((data as C2SEvents['room_join']).code ?? '').toUpperCase() : '';
+        const ALPH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        const code = raw || Array.from({ length: 6 }, () => ALPH[Math.floor(this.rand() * ALPH.length)]).join('');
+        if (!/^[A-HJ-NP-Z2-9]{6}$/.test(code)) {
+          this.send('error', { code: 'room_not_found', message: 'Không tìm thấy phòng' });
+          return;
+        }
+        // mô phỏng: 1–2 người thân đã ở trong phòng
+        const kin = ev === 'room_join' ? [this.newBot(), this.newBot()] : [];
+        this.room = { code, kin };
+        this.sendRoom();
+        return;
+      }
+      case 'room_leave': {
+        if (this.room) this.send('room_left', { code: this.room.code });
+        this.room = null;
         return;
       }
       default:
@@ -473,6 +494,17 @@ export class MockServerClient implements NetClient {
     for (const b of this.bots) c[b.area]++;
     if (this.me && this.connected) c[this.me.area]++;
     return c;
+  }
+
+  private room: { code: string; kin: Bot[] } | null = null;
+
+  private sendRoom(): void {
+    if (!this.room || !this.me) return;
+    const me = this.me;
+    this.send('room_state', {
+      code: this.room.code,
+      members: [{ userId: me.userId, nickname: me.nickname, area: me.area }, ...this.room.kin.map((b) => ({ userId: b.id, nickname: b.nickname, area: b.area }))],
+    });
   }
 
   private sendPresence(): void {

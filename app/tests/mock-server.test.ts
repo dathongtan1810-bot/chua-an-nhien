@@ -17,6 +17,8 @@ const HELLO = { deviceId: 'dev-1', nickname: 'Lữ khách Sen Hồng', lang: 'vi
 function record(c: MockServerClient) {
   const got: { [K in keyof S2CEvents]: S2CEvents[K][] } = {
     lantern_liked: [],
+    room_state: [],
+    room_left: [],
     welcome: [],
     presence: [],
     incense_lit: [],
@@ -230,5 +232,30 @@ describe('createNetClient', () => {
   it('returns MockServerClient when useMock', () => {
     const c = createNetClient({ online: true, useMock: true });
     expect(c).toBeInstanceOf(MockServerClient);
+  });
+});
+
+describe('MockServer — phòng gia đình (EXT)', () => {
+  it('tạo phòng, vào phòng bằng mã, rời phòng', () => {
+    vi.useFakeTimers();
+    const c = new MockServerClient({ random: () => 0.3, latencyMs: 0 });
+    const states: { code: string; members: unknown[] }[] = [];
+    let left = 0;
+    c.on('room_state', (r) => states.push(r));
+    c.on('room_left', () => left++);
+    c.connect({ deviceId: 'dev-r', nickname: 'Khách', lang: 'vi' });
+    vi.advanceTimersByTime(50);
+    c.emit('room_create', {});
+    vi.advanceTimersByTime(50);
+    expect(states.at(-1)!.code).toMatch(/^[A-HJ-NP-Z2-9]{6}$/);
+    c.emit('room_join', { code: 'abc234' });
+    vi.advanceTimersByTime(50);
+    expect(states.at(-1)!.code).toBe('ABC234');
+    expect(states.at(-1)!.members.length).toBeGreaterThan(1);
+    c.emit('room_leave', {});
+    vi.advanceTimersByTime(50);
+    expect(left).toBe(1);
+    c.disconnect();
+    vi.useRealTimers();
   });
 });

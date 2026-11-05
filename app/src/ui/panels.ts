@@ -20,6 +20,7 @@ export function openMap(): void {
   const s = openSheet(t('map.title'));
   const svg = mapSvg(store.state.area, net.areas, {
     large: true,
+    family: net.room?.members.filter((m) => m.userId !== net.userId) ?? [],
     onPick: (a: AreaId) => {
       s.close();
       game.api?.goTo(a);

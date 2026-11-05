@@ -12,7 +12,7 @@ const el = (tag: string, attrs: Record<string, string | number>) => {
 export function mapSvg(
   current: AreaId,
   counts: Partial<Record<AreaId, number>>,
-  opts: { large?: boolean; onPick?: (a: AreaId) => void } = {},
+  opts: { large?: boolean; onPick?: (a: AreaId) => void; family?: { area: string; nickname: string }[] } = {},
 ): SVGSVGElement {
   const W = 100;
   const svg = el('svg', { viewBox: opts.large ? '-10 -2 120 110' : `0 0 ${W} ${W}`, role: opts.large ? 'group' : 'img', 'aria-label': t('map.title') }) as SVGSVGElement;
@@ -41,6 +41,15 @@ export function mapSvg(
       const label = el('text', { x: x * W, y: y * W + 10.5, 'text-anchor': 'middle', 'font-size': 3.9, fill: '#2b1d14', 'font-weight': 600 });
       label.textContent = t(AREA_INFO[a].nameKey);
       g.append(label);
+      const fam = (opts.family ?? []).filter((m) => m.area === a);
+      if (fam.length) {
+        const ft = el('text', { x: x * W - 13, y: y * W - 4, 'font-size': 4.2 });
+        ft.textContent = '🏠' + fam.length;
+        const title = document.createElementNS(NS, 'title');
+        title.textContent = fam.map((m) => m.nickname).join(', ');
+        ft.append(title);
+        g.append(ft);
+      }
       const n = counts[a] ?? 0;
       if (n > 0) {
         const badge = el('text', { x: x * W + 7, y: y * W - 4, 'font-size': 4, fill: '#3f7d5c', 'font-weight': 700 });
