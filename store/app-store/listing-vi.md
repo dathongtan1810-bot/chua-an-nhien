@@ -25,8 +25,8 @@ Sắp đến mùng Một, ngày Rằm? Ghé Chùa An Nhiên thắp một nén h�
 ```
 
 > Promotional Text có thể đổi bất kỳ lúc nào mà không cần duyệt lại. Mẫu theo mùa:
-> - Tết (từ Rằm tháng Chạp): "Sân chùa đã trang hoàng đón Tết Đinh Mùi. Viết lời chúc đầu năm cho người thân và treo lên Cây nguyện. Miễn phí, không quảng cáo."
-> - Vu Lan (từ mùng 1 tháng Bảy âm lịch): "Mùa Vu Lan, cài một bông hồng ảo và viết đôi dòng cảm ơn cha mẹ. Chùa An Nhiên luôn mở cửa, miễn phí, không quảng cáo."
+> - Tết (từ Rằm tháng Chạp): "Sân chùa đã trang hoàng đón Tết Đinh Mùi. Viết lời chúc đầu năm cho người thân và treo lên Cây nguyện. Miễn phí, không quảng cáo." (129 ký tự)
+> - Vu Lan (từ mùng 1 tháng Bảy âm lịch): "Mùa Vu Lan, cài một bông hồng ảo và viết đôi dòng cảm ơn cha mẹ. Chùa An Nhiên luôn mở cửa, miễn phí, không quảng cáo." (118 ký tự)
 > Kiểm lại số ký tự (≤170) mỗi lần thay.
 
 ## Description

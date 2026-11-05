@@ -1,0 +1,2183 @@
+{
+  "version": 1,
+  "ghiChu": "Bộ lọc từ cho lời nguyện và nickname. Dùng cùng content/tools/loc-tu.mjs; kiểm thử: node --test content/tu-cam.test.mjs. mucDo: 1 = nhẹ (che *** hoặc nhắc người dùng sửa), 2 = chặn không cho đăng, 3 = chặn và ghi nhận để kiểm duyệt. kiemTra() trả hopLe=false khi có bất kỳ vi phạm nào; app tự quyết theo mucDoCaoNhat. Không gian so khớp: \"tu\" và biến thể có dấu được so trên văn bản có dấu (sau chuẩn hóa). Biến thể chỉ gồm ký tự ASCII trong \"bienThe\" được so trên văn bản đã bỏ dấu (vì người dùng hay gõ không dấu). Chiến lược chống lọc nhầm: các dạng không dấu ngắn trùng âm với từ vô hại (lon=lớn/lon nước, cac=các, buoi=buổi/bưởi, deo=đeo/dẻo, du=du lịch/dù, dit=đít, dam=đam/dám, di=đi, lin, nung, chich) KHÔNG nằm trong \"bienThe\". Chúng chỉ nằm trong \"bienTheLach\": chỉ bị tính khi đoạn khớp có dấu hiệu lách (ký tự thay thế như l0n, c@c, d1t; hoặc chữ cái bị tách như c.a.c, c-a-c, c a c). Viết thường \"cac ban\", \"lon nuoc\", \"buoi sang\" không bị chặn. Từ có dấu dễ trùng khi gõ không dấu (vd \"ngu\" trùng \"ngủ\" viết không dấu) được bảo vệ thêm bằng allowlist (\"ngủ ngon\", \"đi ngủ\"...). Cụm allowlist được thay bằng khoảng trắng trên cả bản có dấu và bản bỏ dấu trước khi so khớp. Nhiều cụm có dấu cố ý KHÔNG có biến thể không dấu vì bản không dấu trùng với câu bình thường: \"đồ ngu\" (đồ ngủ), \"đâm chết\" (đậm chất?), \"con ngu\" (con ngủ), \"cá độ\" (cá đó), \"lô đề\" (lo để), \"đa cấp\" (đã cấp), \"dâm đãng\" (đảm đang), \"chó má\" (cho mà), \"cờ bạc\" (cô bác), \"tự tử\" (từ từ), \"treo cổ\" (treo cờ). Chuẩn hóa: NFKC + chữ thường + NFC; bỏ ký tự vô hình; nối chữ cái đơn bị tách bằng . - _ * ~ + (≥2 chữ) hoặc khoảng trắng (≥3 chữ); thay ký tự theo \"thayKyTu\" — chữ số và @ $ € chỉ cần một bên là chữ cái, còn ! | cần chữ cái hai bên (để \"ngu!\" không thành \"ngui\"); ký tự lặp ≥3 lần được thử rút còn 1 và còn 2 (đmmmm → đm/đmm). Không ánh xạ chữ cái sang chữ cái (vd z→d, j→i) vì sẽ làm sai tiếng Anh và tên riêng; các dạng teencode như \"đjt\", \"cak\", \"zl\" được liệt kê trực tiếp trong bienThe. Nhóm \"lua-dao\" gồm cả liên kết/thông tin liên hệ (http, www, zalo, sđt) vì lời nguyện hiển thị công khai trên Cây nguyện không nên chứa quảng cáo hay liên hệ. Nhóm \"ma-tuy\" để mucDo 1 cho từ chung \"ma túy\" và có allowlist \"cai nghiện ma túy\"... để không chặn lời nguyện cầu cho người thân cai nghiện. Danh sách mang tính khởi đầu, cần đội kiểm duyệt bổ sung dần từ báo cáo của người dùng. [CẦN XÁC NHẬN] mức độ cho nhóm chinh-tri-cuc-doan.",
+  "tuCam": [
+    {
+      "tu": "địt",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "đit",
+        "đjt",
+        "djt",
+        "đ!t",
+        "đ1t",
+        "địk",
+        "djk"
+      ],
+      "bienTheLach": [
+        "dit"
+      ]
+    },
+    {
+      "tu": "địt mẹ",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "đit mẹ",
+        "đjt mẹ",
+        "dit me",
+        "ditme",
+        "djt me",
+        "djtme",
+        "đitme",
+        "địt mạ",
+        "dit ma"
+      ]
+    },
+    {
+      "tu": "địt con mẹ",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "dit con me",
+        "djt con me",
+        "địt cụ",
+        "dit cu",
+        "đjt cụ"
+      ]
+    },
+    {
+      "tu": "đụ",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "đụk"
+      ],
+      "bienTheLach": [
+        "du"
+      ]
+    },
+    {
+      "tu": "đụ má",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "đụ mạ",
+        "đù má",
+        "đù mé",
+        "duma",
+        "đuma",
+        "dumá"
+      ]
+    },
+    {
+      "tu": "đụ mẹ",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "đù mẹ",
+        "dume",
+        "đume",
+        "đụ mé"
+      ]
+    },
+    {
+      "tu": "đéo",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "đéo",
+        "đéu",
+        "déo",
+        "đếu",
+        "đ3o",
+        "đeos",
+        "deos",
+        "đel",
+        "đếl",
+        "đếk"
+      ],
+      "bienTheLach": [
+        "deo",
+        "đeo"
+      ]
+    },
+    {
+      "tu": "đếch",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "dech",
+        "đek",
+        "dek",
+        "đếk"
+      ]
+    },
+    {
+      "tu": "lồn",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "lìn",
+        "lòn",
+        "l`ồn",
+        "loz",
+        "lozz",
+        "l0z",
+        "lol`",
+        "lồnn",
+        "lờ ồn"
+      ],
+      "bienTheLach": [
+        "lon",
+        "lin"
+      ]
+    },
+    {
+      "tu": "cặc",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "cặk",
+        "kặc",
+        "kặk",
+        "cak",
+        "kak",
+        "kac",
+        "cẹc",
+        "cạc"
+      ],
+      "bienTheLach": [
+        "cac",
+        "kac"
+      ]
+    },
+    {
+      "tu": "buồi",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "buòi",
+        "buoj",
+        "bùi lồn",
+        "bùi"
+      ],
+      "bienTheLach": [
+        "buoi"
+      ]
+    },
+    {
+      "tu": "đầu buồi",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": []
+    },
+    {
+      "tu": "con cặc",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "con cặk",
+        "con cak"
+      ]
+    },
+    {
+      "tu": "cái lồn",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "cái lìn",
+        "cai loz"
+      ]
+    },
+    {
+      "tu": "đm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dm",
+        "đ.m",
+        "đmẹ",
+        "dme",
+        "đ m"
+      ]
+    },
+    {
+      "tu": "đmm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dmm",
+        "đmmm"
+      ]
+    },
+    {
+      "tu": "đcm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dcm",
+        "đcmm",
+        "dcmm",
+        "đcmn",
+        "dcmn"
+      ]
+    },
+    {
+      "tu": "đkm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dkm",
+        "đkmm",
+        "dkmm"
+      ]
+    },
+    {
+      "tu": "đmcs",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dmcs"
+      ]
+    },
+    {
+      "tu": "cmm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "cmnr",
+        "cmmm"
+      ]
+    },
+    {
+      "tu": "cmn",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "cmnl"
+      ]
+    },
+    {
+      "tu": "vcl",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "vkl",
+        "vcll",
+        "vklm",
+        "vcđ",
+        "vcd"
+      ]
+    },
+    {
+      "tu": "vl",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "vll",
+        "vlz"
+      ]
+    },
+    {
+      "tu": "vãi lồn",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "vãi lìn",
+        "vãi loz",
+        "vailon",
+        "vailoz",
+        "vai loz",
+        "vải lồn"
+      ]
+    },
+    {
+      "tu": "vãi cặc",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "vãi cặk",
+        "vãi cak",
+        "vai cak"
+      ]
+    },
+    {
+      "tu": "vãi cả lồn",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "vãi cả lìn",
+        "vc lồn"
+      ]
+    },
+    {
+      "tu": "clgt",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "clmm",
+        "clm",
+        "clgv"
+      ]
+    },
+    {
+      "tu": "cl",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "cll"
+      ]
+    },
+    {
+      "tu": "cc",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "ccc",
+        "cặc cặc"
+      ]
+    },
+    {
+      "tu": "cdm",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "cđm"
+      ]
+    },
+    {
+      "tu": "con mẹ nó",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "con me no",
+        "con mẹ nó chứ"
+      ]
+    },
+    {
+      "tu": "con mẹ mày",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "con me may",
+        "con mịa mày",
+        "con mịa nó"
+      ]
+    },
+    {
+      "tu": "mẹ kiếp",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "me kiep",
+        "mẹ kíp",
+        "mkiep",
+        "mịa kiếp"
+      ]
+    },
+    {
+      "tu": "đậu má",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "đậu mé",
+        "đậu xanh rau má"
+      ]
+    },
+    {
+      "tu": "tiên sư bố",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "tien su bo",
+        "tiên sư cha",
+        "tien su cha",
+        "tiên sư nhà mày",
+        "tsbm"
+      ]
+    },
+    {
+      "tu": "bố mày",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "bố mầy",
+        "bố m"
+      ]
+    },
+    {
+      "tu": "đờ mờ",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "đờ mẹ",
+        "đê mờ"
+      ]
+    },
+    {
+      "tu": "mả mẹ",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "mả cha",
+        "mả bố",
+        "mả mẹ mày"
+      ]
+    },
+    {
+      "tu": "lol",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "lolz",
+        "l0l"
+      ]
+    },
+    {
+      "tu": "dái",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "bóp dái",
+        "hòn dái"
+      ]
+    },
+    {
+      "tu": "fuck",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "fck",
+        "fuk",
+        "fuxk",
+        "phuck",
+        "fucking",
+        "fucker",
+        "fucked",
+        "fuckin",
+        "fuq",
+        "fvck",
+        "f u c k",
+        "fking",
+        "fkin"
+      ]
+    },
+    {
+      "tu": "fuck you",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "fuckyou",
+        "fk you",
+        "fuk u",
+        "fu"
+      ]
+    },
+    {
+      "tu": "motherfucker",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "mother fucker",
+        "mofo",
+        "mf",
+        "mtfk",
+        "mfk"
+      ]
+    },
+    {
+      "tu": "shit",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "sh1t",
+        "shjt",
+        "shiet",
+        "bullshit",
+        "shitty",
+        "shet"
+      ]
+    },
+    {
+      "tu": "bitch",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "b1tch",
+        "biatch",
+        "bitches",
+        "btch",
+        "bich"
+      ]
+    },
+    {
+      "tu": "son of a bitch",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "sonofabitch",
+        "sob"
+      ]
+    },
+    {
+      "tu": "asshole",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "a$$hole",
+        "ass hole",
+        "arsehole",
+        "dumbass",
+        "jackass"
+      ]
+    },
+    {
+      "tu": "bastard",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "basterd"
+      ]
+    },
+    {
+      "tu": "cunt",
+      "nhom": "tuc-tuc",
+      "mucDo": 3,
+      "bienThe": [
+        "cvnt",
+        "kunt"
+      ]
+    },
+    {
+      "tu": "wtf",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "wth",
+        "what the fuck"
+      ]
+    },
+    {
+      "tu": "stfu",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "shut the fuck up"
+      ]
+    },
+    {
+      "tu": "dickhead",
+      "nhom": "tuc-tuc",
+      "mucDo": 2,
+      "bienThe": [
+        "dick head"
+      ]
+    },
+    {
+      "tu": "damn you",
+      "nhom": "tuc-tuc",
+      "mucDo": 1,
+      "bienThe": [
+        "goddamn",
+        "god damn"
+      ]
+    },
+    {
+      "tu": "ngu",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "ngu vl",
+        "ngu vcl",
+        "ngu vãi"
+      ]
+    },
+    {
+      "tu": "ngu ngốc",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "ngu ngoc",
+        "ngu ngốk"
+      ]
+    },
+    {
+      "tu": "ngu như bò",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "ngu nhu bo",
+        "ngu như lợn",
+        "ngu nhu lon"
+      ]
+    },
+    {
+      "tu": "ngu như chó",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "ngu nhu cho"
+      ]
+    },
+    {
+      "tu": "thằng ngu",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "thang ngu",
+        "thg ngu",
+        "thằng ngu học"
+      ]
+    },
+    {
+      "tu": "con ngu",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ ngu",
+        "lũ ngu",
+        "bọn ngu"
+      ]
+    },
+    {
+      "tu": "ngu học",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "ngu hoc",
+        "ngu si",
+        "ngu dốt",
+        "ngu dot"
+      ]
+    },
+    {
+      "tu": "óc chó",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "oc cho",
+        "óc chos",
+        "occho",
+        "óc cờ hó",
+        "oc co ho"
+      ]
+    },
+    {
+      "tu": "óc lợn",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "óc heo",
+        "óc bò",
+        "óc trâu"
+      ]
+    },
+    {
+      "tu": "não tôm",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "nao tom",
+        "não phẳng",
+        "nao phang",
+        "não cá vàng"
+      ]
+    },
+    {
+      "tu": "súc vật",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "suc vat",
+        "súc vât",
+        "đồ súc vật"
+      ]
+    },
+    {
+      "tu": "súc sinh",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "đồ súc sinh",
+        "loài súc sinh"
+      ]
+    },
+    {
+      "tu": "khốn nạn",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "khon nan",
+        "khốn nạ"
+      ]
+    },
+    {
+      "tu": "thằng khốn",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "thang khon",
+        "đồ khốn",
+        "con khốn",
+        "lũ khốn"
+      ]
+    },
+    {
+      "tu": "mất dạy",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "đồ mất dạy",
+        "thằng mất dạy",
+        "mất nết"
+      ]
+    },
+    {
+      "tu": "vô học",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ vô học",
+        "vô giáo dục",
+        "vo giao duc"
+      ]
+    },
+    {
+      "tu": "thiểu năng",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ thiểu năng",
+        "thằng thiểu năng",
+        "thiểu năng trí tuệ"
+      ]
+    },
+    {
+      "tu": "bại não",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ bại não",
+        "thằng bại não"
+      ]
+    },
+    {
+      "tu": "đần độn",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "thằng đần",
+        "con đần",
+        "đồ đần"
+      ]
+    },
+    {
+      "tu": "chó má",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "đồ chó má",
+        "loài chó má"
+      ]
+    },
+    {
+      "tu": "chó chết",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "cho chet",
+        "đồ chó chết",
+        "thằng chó chết"
+      ]
+    },
+    {
+      "tu": "đồ chó",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "thằng chó",
+        "con chó cái",
+        "lũ chó",
+        "bọn chó",
+        "chó đẻ"
+      ]
+    },
+    {
+      "tu": "câm mồm",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "cam mom",
+        "câm mõm",
+        "cam mom di",
+        "câm miệng",
+        "cam mieng",
+        "im mồm"
+      ]
+    },
+    {
+      "tu": "đồ rác rưởi",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ rác",
+        "thứ rác rưởi",
+        "đồ cặn bã"
+      ]
+    },
+    {
+      "tu": "đồ con hoang",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "thằng con hoang",
+        "con hoang"
+      ]
+    },
+    {
+      "tu": "đồ ăn hại",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "đồ vô dụng",
+        "đồ ăn bám"
+      ]
+    },
+    {
+      "tu": "đĩ",
+      "nhom": "xuc-pham",
+      "mucDo": 3,
+      "bienThe": [
+        "đỹ",
+        "đĩ điếm",
+        "con đĩ",
+        "đĩ thõa",
+        "đĩ mẹ"
+      ]
+    },
+    {
+      "tu": "điếm",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "con điếm",
+        "gái điếm",
+        "gai diem",
+        "điếm thúi"
+      ]
+    },
+    {
+      "tu": "con phò",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "đồ phò",
+        "thằng phò",
+        "con cave",
+        "con ca ve"
+      ]
+    },
+    {
+      "tu": "idiot",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "idiots"
+      ]
+    },
+    {
+      "tu": "stupid",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "stupid ass"
+      ]
+    },
+    {
+      "tu": "moron",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "morons"
+      ]
+    },
+    {
+      "tu": "loser",
+      "nhom": "xuc-pham",
+      "mucDo": 1,
+      "bienThe": [
+        "losers"
+      ]
+    },
+    {
+      "tu": "slut",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "sluts",
+        "slutty"
+      ]
+    },
+    {
+      "tu": "whore",
+      "nhom": "xuc-pham",
+      "mucDo": 2,
+      "bienThe": [
+        "whores",
+        "hoe"
+      ]
+    },
+    {
+      "tu": "dâm",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "dâm dục",
+        "dâm đãng",
+        "dâm loạn",
+        "dâm ô",
+        "dâm tặc",
+        "dâm phụ",
+        "dam duc",
+        "dam loan",
+        "dam tac"
+      ]
+    },
+    {
+      "tu": "thủ dâm",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "tự sướng"
+      ]
+    },
+    {
+      "tu": "hiếp dâm",
+      "nhom": "tinh-duc",
+      "mucDo": 3,
+      "bienThe": [
+        "hiep dam",
+        "cưỡng hiếp",
+        "cuong hiep",
+        "bị hiếp",
+        "hiếp dâm tập thể"
+      ]
+    },
+    {
+      "tu": "khiêu dâm",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "khieu dam",
+        "ảnh khiêu dâm",
+        "phim khiêu dâm"
+      ]
+    },
+    {
+      "tu": "sex",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "sếch",
+        "sẽ gầy",
+        "sexx",
+        "s3x",
+        "secks",
+        "sexy girl"
+      ]
+    },
+    {
+      "tu": "phim sex",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "phim heo",
+        "phim nguoi lon",
+        "phim người lớn",
+        "phim cấp 3",
+        "phim cap 3"
+      ]
+    },
+    {
+      "tu": "làm tình",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "làm tềnh",
+        "lam tềnh",
+        "quan hệ tình dục"
+      ]
+    },
+    {
+      "tu": "chịch",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "chjch",
+        "chịt nhau",
+        "chịch nhau",
+        "chich nhau"
+      ],
+      "bienTheLach": [
+        "chich"
+      ]
+    },
+    {
+      "tu": "nứng",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "nứg",
+        "nứng lồn",
+        "nung lon"
+      ],
+      "bienTheLach": [
+        "nung"
+      ]
+    },
+    {
+      "tu": "bú cu",
+      "nhom": "tinh-duc",
+      "mucDo": 3,
+      "bienThe": [
+        "bú buồi",
+        "bú lồn",
+        "bú cặc",
+        "bu cac",
+        "bú chim"
+      ]
+    },
+    {
+      "tu": "gái gọi",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "gai goi",
+        "gái bao",
+        "trai bao",
+        "gái bán hoa"
+      ]
+    },
+    {
+      "tu": "bán dâm",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "mua dâm",
+        "mại dâm",
+        "mai dam",
+        "bán thân"
+      ]
+    },
+    {
+      "tu": "kích dục",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "kich duc",
+        "thuốc kích dục"
+      ]
+    },
+    {
+      "tu": "bóp vú",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "sờ vú",
+        "bú vú",
+        "vú to",
+        "bóp ngực",
+        "sờ ngực"
+      ]
+    },
+    {
+      "tu": "khỏa thân",
+      "nhom": "tinh-duc",
+      "mucDo": 1,
+      "bienThe": [
+        "khoả thân",
+        "trần truồng",
+        "ảnh nóng",
+        "anh nong"
+      ]
+    },
+    {
+      "tu": "trym",
+      "nhom": "tinh-duc",
+      "mucDo": 1,
+      "bienThe": [
+        "chym",
+        "chim to",
+        "con trym"
+      ]
+    },
+    {
+      "tu": "18+",
+      "nhom": "tinh-duc",
+      "mucDo": 1,
+      "bienThe": [
+        "18 cộng",
+        "r18"
+      ]
+    },
+    {
+      "tu": "porn",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "porno",
+        "pornhub",
+        "p0rn",
+        "xvideos",
+        "xnxx"
+      ]
+    },
+    {
+      "tu": "xxx",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "jav",
+        "onlyfans",
+        "only fans"
+      ]
+    },
+    {
+      "tu": "nude",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "nudes",
+        "naked"
+      ]
+    },
+    {
+      "tu": "pussy",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "pussi",
+        "pu$$y"
+      ]
+    },
+    {
+      "tu": "dick",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "dicks",
+        "cock"
+      ]
+    },
+    {
+      "tu": "boobs",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "tits",
+        "titties",
+        "boob"
+      ]
+    },
+    {
+      "tu": "blowjob",
+      "nhom": "tinh-duc",
+      "mucDo": 3,
+      "bienThe": [
+        "blow job",
+        "handjob"
+      ]
+    },
+    {
+      "tu": "horny",
+      "nhom": "tinh-duc",
+      "mucDo": 2,
+      "bienThe": [
+        "hornyy"
+      ]
+    },
+    {
+      "tu": "fap",
+      "nhom": "tinh-duc",
+      "mucDo": 1,
+      "bienThe": [
+        "fapping"
+      ]
+    },
+    {
+      "tu": "giết mày",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "giet may",
+        "giết m",
+        "giết chết mày",
+        "giet chet may"
+      ]
+    },
+    {
+      "tu": "tao giết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "tao giet",
+        "tao sẽ giết",
+        "tao se giet",
+        "tao xử"
+      ]
+    },
+    {
+      "tu": "giết chết",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "giet chet",
+        "giết sạch",
+        "giet sach"
+      ]
+    },
+    {
+      "tu": "giết cả nhà",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "giet ca nha",
+        "giết hết nhà"
+      ]
+    },
+    {
+      "tu": "giết người",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "giet nguoi",
+        "sát nhân",
+        "sat nhan"
+      ]
+    },
+    {
+      "tu": "chém chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "chem chet",
+        "chém mày",
+        "chem may"
+      ]
+    },
+    {
+      "tu": "đâm chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "đâm mày",
+        "đâm chết mày"
+      ]
+    },
+    {
+      "tu": "bắn chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "bắn mày",
+        "bắn bỏ"
+      ]
+    },
+    {
+      "tu": "đánh chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "danh chet",
+        "đập chết",
+        "dap chet"
+      ]
+    },
+    {
+      "tu": "mày chết đi",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "may chet di",
+        "mày đi chết đi",
+        "chết mẹ mày đi"
+      ]
+    },
+    {
+      "tu": "đi chết đi",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "di chet di",
+        "chết đi cho rồi",
+        "chet di cho roi"
+      ]
+    },
+    {
+      "tu": "cho nó chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "cho no chet",
+        "mong nó chết",
+        "mong no chet",
+        "chúc nó chết",
+        "chuc no chet",
+        "cầu cho nó chết",
+        "cau cho no chet"
+      ]
+    },
+    {
+      "tu": "chúc mày chết",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "chuc may chet",
+        "mong mày chết",
+        "mong may chet"
+      ]
+    },
+    {
+      "tu": "chết mẹ mày",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "chet me may",
+        "chết cha mày"
+      ]
+    },
+    {
+      "tu": "khủng bố",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "khung bo",
+        "khủng bố tấn công"
+      ]
+    },
+    {
+      "tu": "đánh bom",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "danh bom",
+        "đặt bom",
+        "dat bom",
+        "bom tự sát"
+      ]
+    },
+    {
+      "tu": "thảm sát",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "tham sat",
+        "xả súng",
+        "xa sung"
+      ]
+    },
+    {
+      "tu": "tự tử",
+      "nhom": "bao-luc",
+      "mucDo": 2,
+      "bienThe": [
+        "tự sát",
+        "muốn chết",
+        "muon chet"
+      ]
+    },
+    {
+      "tu": "chặt đầu",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "chặt tay mày",
+        "băm vằm",
+        "bam vam"
+      ]
+    },
+    {
+      "tu": "kill you",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "kill u",
+        "i will kill you",
+        "gonna kill you"
+      ]
+    },
+    {
+      "tu": "kill yourself",
+      "nhom": "bao-luc",
+      "mucDo": 3,
+      "bienThe": [
+        "kys",
+        "kill urself"
+      ]
+    },
+    {
+      "tu": "bắc kỳ chó",
+      "nhom": "phan-biet",
+      "mucDo": 3,
+      "bienThe": [
+        "bac ky cho",
+        "nam kỳ chó",
+        "nam ky cho",
+        "trung kỳ chó"
+      ]
+    },
+    {
+      "tu": "parky",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "packy",
+        "bắc kì chó"
+      ]
+    },
+    {
+      "tu": "thằng mọi",
+      "nhom": "phan-biet",
+      "mucDo": 3,
+      "bienThe": [
+        "con mọi",
+        "đồ mọi",
+        "lũ mọi",
+        "mọi đen",
+        "bọn mọi"
+      ]
+    },
+    {
+      "tu": "tàu khựa",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "tau khua",
+        "khựa",
+        "chệt",
+        "tàu khự"
+      ]
+    },
+    {
+      "tu": "pê đê",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "pe de",
+        "pede",
+        "bê đê",
+        "bede",
+        "đồ bê đê",
+        "thằng bóng lộ"
+      ]
+    },
+    {
+      "tu": "xăng pha nhớt",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "xang pha nhot"
+      ]
+    },
+    {
+      "tu": "thằng què",
+      "nhom": "phan-biet",
+      "mucDo": 1,
+      "bienThe": [
+        "thằng mù",
+        "con mù",
+        "thằng đui",
+        "thằng câm",
+        "thằng điếc",
+        "đồ tàn phế"
+      ]
+    },
+    {
+      "tu": "ba que",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "3 que",
+        "3que",
+        "bơ que"
+      ]
+    },
+    {
+      "tu": "nigger",
+      "nhom": "phan-biet",
+      "mucDo": 3,
+      "bienThe": [
+        "nigga",
+        "niggas",
+        "niggers",
+        "n1gger"
+      ]
+    },
+    {
+      "tu": "faggot",
+      "nhom": "phan-biet",
+      "mucDo": 3,
+      "bienThe": [
+        "fagot",
+        "fags"
+      ]
+    },
+    {
+      "tu": "retard",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "retarded",
+        "tard"
+      ]
+    },
+    {
+      "tu": "chink",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "chinks"
+      ]
+    },
+    {
+      "tu": "tranny",
+      "nhom": "phan-biet",
+      "mucDo": 2,
+      "bienThe": [
+        "trannies"
+      ]
+    },
+    {
+      "tu": "phản động",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 1,
+      "bienThe": [
+        "phan dong",
+        "bọn phản động"
+      ]
+    },
+    {
+      "tu": "lật đổ chính quyền",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 3,
+      "bienThe": [
+        "lat do chinh quyen",
+        "lật đổ chế độ"
+      ]
+    },
+    {
+      "tu": "đả đảo",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 1,
+      "bienThe": [
+        "da dao"
+      ]
+    },
+    {
+      "tu": "phát xít",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 2,
+      "bienThe": [
+        "phat xit",
+        "phát xít đức"
+      ]
+    },
+    {
+      "tu": "nazi",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 3,
+      "bienThe": [
+        "nazis",
+        "neo nazi",
+        "neonazi"
+      ]
+    },
+    {
+      "tu": "hitler",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 2,
+      "bienThe": [
+        "heil hitler",
+        "sieg heil"
+      ]
+    },
+    {
+      "tu": "isis",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 3,
+      "bienThe": [
+        "is khủng bố",
+        "nhà nước hồi giáo tự xưng"
+      ]
+    },
+    {
+      "tu": "kkk",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 3,
+      "bienThe": [
+        "white power",
+        "white supremacy"
+      ]
+    },
+    {
+      "tu": "việt tân",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 2,
+      "bienThe": [
+        "đảng việt tân"
+      ]
+    },
+    {
+      "tu": "cộng phỉ",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 2,
+      "bienThe": [
+        "phỉ cộng",
+        "cộng sản chó"
+      ]
+    },
+    {
+      "tu": "bò đỏ",
+      "nhom": "chinh-tri-cuc-doan",
+      "mucDo": 1,
+      "bienThe": [
+        "dư luận viên",
+        "dlv",
+        "3 sọc"
+      ]
+    },
+    {
+      "tu": "ma túy",
+      "nhom": "ma-tuy",
+      "mucDo": 1,
+      "bienThe": [
+        "ma tuý",
+        "ma tuy",
+        "ma túy đá",
+        "mua ma túy",
+        "bán ma túy"
+      ]
+    },
+    {
+      "tu": "cần sa",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "can sa",
+        "cỏ mỹ",
+        "bồ đà",
+        "weed",
+        "marijuana"
+      ]
+    },
+    {
+      "tu": "thuốc lắc",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "thuoc lac",
+        "kẹo lắc",
+        "bay lắc",
+        "ecstasy",
+        "mdma"
+      ]
+    },
+    {
+      "tu": "ketamine",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "ketamin",
+        "ke tamin",
+        "hít ke",
+        "xì ke",
+        "xi ke"
+      ]
+    },
+    {
+      "tu": "heroin",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "hêrôin",
+        "bạch phiến",
+        "bach phien",
+        "hàng trắng"
+      ]
+    },
+    {
+      "tu": "cocaine",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "cocain",
+        "côcain",
+        "coke"
+      ]
+    },
+    {
+      "tu": "methamphetamine",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "meth",
+        "hồng phiến",
+        "hong phien",
+        "đá lạnh"
+      ]
+    },
+    {
+      "tu": "thuốc phiện",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "thuoc phien",
+        "nha phiến",
+        "nha phien",
+        "opium"
+      ]
+    },
+    {
+      "tu": "lsd",
+      "nhom": "ma-tuy",
+      "mucDo": 2,
+      "bienThe": [
+        "tem giấy",
+        "bùa lưỡi"
+      ]
+    },
+    {
+      "tu": "nạp thẻ",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "nap the",
+        "nạp thẻ cào",
+        "nap the cao",
+        "thẻ cào",
+        "the cao"
+      ]
+    },
+    {
+      "tu": "kiếm tiền online",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "kiem tien online",
+        "kiếm tiền tại nhà",
+        "kiem tien tai nha",
+        "kiếm tiền nhanh",
+        "kiem tien nhanh",
+        "kiếm tiền trên mạng"
+      ]
+    },
+    {
+      "tu": "việc nhẹ lương cao",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "viec nhe luong cao",
+        "việc làm online",
+        "viec lam online"
+      ]
+    },
+    {
+      "tu": "vay nhanh",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "vay tiền nhanh",
+        "vay tien nhanh",
+        "vay online",
+        "vay tín chấp",
+        "vay tin chap",
+        "app vay",
+        "vay không thế chấp",
+        "giải ngân trong ngày"
+      ]
+    },
+    {
+      "tu": "nhà cái",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "nha cai",
+        "nhà cái uy tín",
+        "nha cai uy tin"
+      ]
+    },
+    {
+      "tu": "cá độ",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "cá cược",
+        "ca cuoc",
+        "cá độ bóng đá",
+        "ca do bong da"
+      ]
+    },
+    {
+      "tu": "tài xỉu",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "tai xiu",
+        "xóc đĩa",
+        "xoc dia",
+        "bầu cua online"
+      ]
+    },
+    {
+      "tu": "lô đề",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "soi cầu",
+        "soi cau",
+        "bao lô",
+        "bao lo",
+        "số đề"
+      ]
+    },
+    {
+      "tu": "nổ hũ",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "no hu",
+        "game bài đổi thưởng",
+        "game bai doi thuong",
+        "bắn cá đổi thưởng",
+        "đổi thưởng"
+      ]
+    },
+    {
+      "tu": "casino",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "sòng bạc",
+        "song bac",
+        "đánh bạc",
+        "danh bac",
+        "cờ bạc",
+        "baccarat"
+      ]
+    },
+    {
+      "tu": "chuyển khoản",
+      "nhom": "lua-dao",
+      "mucDo": 1,
+      "bienThe": [
+        "chuyen khoan",
+        "số tài khoản",
+        "so tai khoan",
+        "stk",
+        "ck cho mình"
+      ]
+    },
+    {
+      "tu": "nhân đôi tài khoản",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "nhan doi tai khoan",
+        "x2 tài khoản",
+        "x10 tài khoản",
+        "lãi 30%",
+        "lãi khủng"
+      ]
+    },
+    {
+      "tu": "http",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "https",
+        "www",
+        "bit.ly",
+        "tinyurl"
+      ]
+    },
+    {
+      "tu": "click link",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "bấm link",
+        "bam link",
+        "bấm vào link",
+        "link đây",
+        "link nhận quà",
+        "nhận quà miễn phí"
+      ]
+    },
+    {
+      "tu": "zalo",
+      "nhom": "lua-dao",
+      "mucDo": 1,
+      "bienThe": [
+        "telegram",
+        "tele",
+        "add zalo",
+        "kết bạn zalo",
+        "ket ban zalo"
+      ]
+    },
+    {
+      "tu": "sđt",
+      "nhom": "lua-dao",
+      "mucDo": 1,
+      "bienThe": [
+        "sdt",
+        "số điện thoại",
+        "so dien thoai",
+        "hotline"
+      ]
+    },
+    {
+      "tu": "đa cấp",
+      "nhom": "lua-dao",
+      "mucDo": 1,
+      "bienThe": [
+        "kinh doanh đa cấp",
+        "đầu tư tiền ảo",
+        "tiền ảo x100"
+      ]
+    },
+    {
+      "tu": "inbox ngay",
+      "nhom": "lua-dao",
+      "mucDo": 1,
+      "bienThe": [
+        "ib ngay",
+        "ib mình",
+        "inbox mình",
+        "liên hệ ngay",
+        "lien he ngay"
+      ]
+    },
+    {
+      "tu": "free robux",
+      "nhom": "lua-dao",
+      "mucDo": 2,
+      "bienThe": [
+        "free kim cương",
+        "hack kim cương",
+        "free skin",
+        "nhận kim cương"
+      ]
+    },
+    {
+      "tu": "phật ngu",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 3,
+      "bienThe": [
+        "phật chó",
+        "bụt chó",
+        "phật cái",
+        "phật đểu",
+        "phat deu"
+      ]
+    },
+    {
+      "tu": "đm phật",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 3,
+      "bienThe": [
+        "dm phat",
+        "địt phật",
+        "dit phat",
+        "đụ phật"
+      ]
+    },
+    {
+      "tu": "sư hổ mang",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "su ho mang",
+        "sư quốc doanh",
+        "su quoc doanh"
+      ]
+    },
+    {
+      "tu": "thầy chùa lừa đảo",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "thay chua lua dao",
+        "chùa lừa đảo",
+        "chua lua dao",
+        "sư lừa đảo",
+        "su lua dao"
+      ]
+    },
+    {
+      "tu": "phật giáo lừa đảo",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "phat giao lua dao",
+        "đạo phật lừa đảo",
+        "dao phat lua dao",
+        "đạo lừa đảo"
+      ]
+    },
+    {
+      "tu": "buôn thần bán thánh",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 1,
+      "bienThe": [
+        "buon than ban thanh",
+        "buôn phật bán chùa"
+      ]
+    },
+    {
+      "tu": "đốt chùa",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 3,
+      "bienThe": [
+        "dot chua",
+        "phá chùa",
+        "đập chùa",
+        "dap chua"
+      ]
+    },
+    {
+      "tu": "đập tượng phật",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 3,
+      "bienThe": [
+        "dap tuong phat",
+        "phá tượng phật",
+        "đốt tượng phật",
+        "đái vào tượng"
+      ]
+    },
+    {
+      "tu": "thằng trọc",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "lũ trọc",
+        "bọn trọc",
+        "sư trọc"
+      ]
+    },
+    {
+      "tu": "báng bổ phật",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "bang bo phat",
+        "chửi phật",
+        "chui phat",
+        "nhổ vào phật"
+      ]
+    },
+    {
+      "tu": "thần phật cái con",
+      "nhom": "bang-thuong-ton-giao",
+      "mucDo": 2,
+      "bienThe": [
+        "thánh thần cái con",
+        "phật cái con"
+      ]
+    }
+  ],
+  "allowlist": [
+    "dâm bụt",
+    "hoa dâm bụt",
+    "cây dâm bụt",
+    "dâm dương hoắc",
+    "ngủ ngon",
+    "chúc ngủ ngon",
+    "giấc ngủ",
+    "đi ngủ",
+    "buồn ngủ",
+    "ngủ say",
+    "ngủ dậy",
+    "thức ngủ",
+    "phòng ngủ",
+    "ngủ trưa",
+    "mất ngủ",
+    "ngủ sớm",
+    "ngủ được",
+    "ngủ yên",
+    "ngủ ngoan",
+    "giờ ngủ",
+    "ngủ nghỉ",
+    "ngủ đủ",
+    "ngủ quên",
+    "ngủ muộn",
+    "ru ngủ",
+    "ngủ một giấc",
+    "tượng phật ngủ",
+    "phật nằm",
+    "cai ma túy",
+    "cai ma tuý",
+    "cai nghiện ma túy",
+    "cai nghiện ma tuý",
+    "tránh xa ma túy",
+    "tránh xa ma tuý",
+    "nói không với ma túy",
+    "nói không với ma tuý",
+    "phòng chống ma túy",
+    "phòng chống ma tuý",
+    "thoát khỏi ma túy",
+    "thoát khỏi ma tuý",
+    "bỏ được ma túy",
+    "không muốn chết",
+    "sợ chết",
+    "không giết hại",
+    "không sát sanh",
+    "tránh giết hại",
+    "ngừng giết chóc",
+    "chữa lành tự tử",
+    "phòng chống tự tử",
+    "ý nghĩ tự tử",
+    "chim sẻ",
+    "con chim",
+    "chim bồ câu",
+    "chim non",
+    "tiếng chim",
+    "kỷ niệm ngày cưới",
+    "đạo đức",
+    "đức phật",
+    "đức tin",
+    "thịt bò",
+    "con bò",
+    "ngu ngơ",
+    "lon nước",
+    "lon bia",
+    "lon sữa",
+    "cô bác",
+    "đã cấp",
+    "đảm đang",
+    "cắt cỏ",
+    "buổi sáng",
+    "buổi chiều",
+    "buổi tối",
+    "quả bưởi",
+    "hoa bưởi",
+    "vỏ bưởi",
+    "việt tân mai"
+  ],
+  "thayKyTu": {
+    "0": "o",
+    "1": "i",
+    "3": "e",
+    "4": "a",
+    "5": "s",
+    "7": "t",
+    "@": "a",
+    "$": "s",
+    "€": "e",
+    "!": "i",
+    "|": "l"
+  }
+}

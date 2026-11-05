@@ -24,8 +24,8 @@ Full moon or new moon coming up? Stop by Chùa An Nhiên to light incense, ring 
 ```
 
 > Promotional Text can be changed anytime without review. Seasonal variants:
-> - Tết: "The temple yard is dressed for Lunar New Year. Write a New Year wish for someone you love and hang it on the Wishing Tree. Free, with no ads."
-> - Vu Lan: "For Vu Lan season, pin a virtual rose and write a few words of thanks to your parents. Chùa An Nhiên is always open – free, with no ads."
+> - Tết: "The temple yard is dressed for Lunar New Year. Write a New Year wish for someone you love and hang it on the Wishing Tree. Free, with no ads." (141 characters)
+> - Vu Lan: "For Vu Lan season, pin a virtual rose and write a few words of thanks to your parents. Chùa An Nhiên is always open – free, with no ads." (136 characters)
 > Re-check the 170-character limit each time.
 
 ## Description

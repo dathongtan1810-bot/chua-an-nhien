@@ -1,0 +1,527 @@
+[
+  {
+    "id": 51,
+    "tieuDe": "Hạt giống chờ mưa",
+    "tho": [
+      "Đất lành gieo hạt hôm nay,",
+      "Chờ mưa chờ nắng, đủ ngày mầm lên.",
+      "Lòng người như hạt vững bền,",
+      "Ươm bằng nhẫn nại, đắp nền mai sau."
+    ],
+    "loiGiai": "Quẻ này nói về hạt giống vừa gieo xuống đất. Hạt nằm yên dưới lớp đất, chưa thấy gì trên mặt, nhưng bên trong đã bắt đầu nảy nở. Việc bạn đang làm cũng vậy: công sức bỏ ra hôm nay chưa thể thấy ngay kết quả. Đừng vội đào hạt lên xem đã mọc chưa. Cứ đều tay tưới nước, giữ đất ẩm, rồi đến ngày mầm sẽ tự lên. Sự bền bỉ hôm nay là nền móng cho mai sau.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Những điều tốt bạn vun cho gia đình như lời nói nhẹ nhàng, bữa cơm chung, sự quan tâm nhỏ có thể chưa thấy đổi khác ngay, nhưng đang âm thầm bén rễ. Cứ kiên trì.",
+      "cong-viec": "Dự án hay kế hoạch mới đang ở giai đoạn gieo hạt. Hãy làm đều tay, ghi chép tiến độ, đừng nản vì chưa thấy kết quả trong vài tuần đầu.",
+      "suc-khoe": "Thói quen tốt như ngủ sớm, đi bộ, ăn nhiều rau cần thời gian mới thấy hiệu quả. Duy trì đều đặn, và hỏi ý kiến bác sĩ nếu cơ thể có điều bất thường.",
+      "hoc-hanh": "Kiến thức tích lũy từng ngày giống hạt nằm trong đất. Ôn bài đều đặn mỗi ngày một ít sẽ vững hơn học dồn trước kỳ thi.",
+      "tinh-duyen": "Một mối quan hệ đẹp cần thời gian để hiểu nhau. Đừng thúc ép, hãy để tình cảm lớn lên tự nhiên qua sự chân thành.",
+      "tai-loc": "Tiền bạc đến từ sự chăm chỉ và tích góp đều đặn. Đặt ra khoản tiết kiệm nhỏ mỗi tháng, lâu dần sẽ thành vốn vững vàng."
+    },
+    "loiKhuyen": "Hôm nay hãy chọn một việc nhỏ có ích và làm đều đặn mỗi ngày, như tưới một hạt giống.",
+    "chuDe": ["cong-viec", "hoc-hanh"]
+  },
+  {
+    "id": 52,
+    "tieuDe": "Mầm non trước gió",
+    "tho": [
+      "Mầm non vừa nhú bên hiên,",
+      "Gió lay mấy độ vẫn yên trên cành.",
+      "Nghỉ ngơi cho rễ thêm lành,",
+      "Mai này thân khỏe, lá xanh rợp trời."
+    ],
+    "loiGiai": "Mầm non còn mềm yếu, gặp gió thì nghiêng ngả, nhưng nhờ rễ bám chắc nên vẫn đứng vững. Quẻ nhắc bạn chăm sóc phần gốc rễ của chính mình: giấc ngủ, bữa ăn, sự thư thái trong lòng. Có lúc cơ thể mệt mỏi là lời nhắc cần chậm lại. Nghỉ ngơi không phải là lười biếng, mà là cho rễ thời gian bám sâu. Khi gốc khỏe, cây sẽ tự vươn lên xanh tốt.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Người trong nhà cũng có lúc mệt. Hãy chia bớt việc nhà, nhường nhau giấc ngủ, để mọi người cùng có sức.",
+      "cong-viec": "Đừng ôm quá nhiều việc cùng lúc. Sắp xếp giờ nghỉ hợp lý, sức khỏe tốt thì làm việc mới bền lâu.",
+      "suc-khoe": "Cơ thể đang cần được chăm sóc. Ngủ đủ giấc, uống đủ nước, vận động nhẹ. Nếu mệt kéo dài hoặc có triệu chứng lạ, hãy đi khám bác sĩ sớm.",
+      "hoc-hanh": "Học khuya liên tục dễ làm đầu óc mỏi mệt. Xen kẽ giờ học và giờ nghỉ, ngủ đủ thì ghi nhớ tốt hơn.",
+      "tinh-duyen": "Hãy chăm sóc bản thân trước. Một người biết thương mình sẽ biết cách thương người khác dịu dàng hơn.",
+      "tai-loc": "Không nên đánh đổi sức khỏe để kiếm thêm. Làm vừa sức, chi tiêu cho bữa ăn lành và giấc ngủ yên cũng là đầu tư đúng."
+    },
+    "loiKhuyen": "Tối nay hãy đi ngủ sớm hơn thường lệ một chút, và để điện thoại xa giường.",
+    "chuDe": ["suc-khoe"]
+  },
+  {
+    "id": 53,
+    "tieuDe": "Sen hồng giữa đầm",
+    "tho": [
+      "Sen hồng mọc giữa bùn ao,",
+      "Hương thơm vẫn tỏa, sắc nào kém trong.",
+      "Người hiền giữ một tấm lòng,",
+      "Bụi đường chẳng nhuốm, thong dong tháng ngày."
+    ],
+    "loiGiai": "Hoa sen mọc lên từ bùn mà vẫn giữ được hương thơm và sắc thắm. Quẻ này khích lệ bạn giữ lòng ngay thẳng dù xung quanh có nhiều điều chưa như ý. Bạn không cần thay đổi cả đầm nước, chỉ cần giữ cho mình một tấm lòng trong. Khi mình sống tử tế, người khác sẽ dần cảm nhận được, cũng như hương sen tự lan xa mà không cần ai rao gọi.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà có lúc bất đồng, bạn hãy là người giữ lời nói ôn hòa. Sự điềm tĩnh của một người có thể làm dịu cả bầu không khí.",
+      "cong-viec": "Môi trường làm việc có thể phức tạp, nhưng hãy giữ sự trung thực và tận tâm. Uy tín được xây từ những việc làm đúng đắn mỗi ngày.",
+      "suc-khoe": "Giữ tâm trong lành giúp thân nhẹ nhõm. Bớt nghe những điều tiêu cực, dành thời gian cho thiên nhiên và những người khiến bạn bình yên.",
+      "hoc-hanh": "Học bằng sức mình, không gian lận. Kết quả có thể chậm hơn một chút nhưng là của bạn thật sự và bền vững.",
+      "tinh-duyen": "Hãy yêu bằng sự chân thành, không giả vờ để làm vừa lòng ai. Người hợp với bạn sẽ quý chính sự trong trẻo ấy.",
+      "tai-loc": "Kiếm tiền bằng con đường ngay thẳng. Tránh xa những lời mời làm giàu nhanh không rõ ràng, của chính đáng mới giữ được lâu."
+    },
+    "loiKhuyen": "Khi gặp chuyện khó chịu hôm nay, hãy hít thở sâu ba lần trước khi trả lời, giữ lời nói hiền hòa.",
+    "chuDe": ["cong-viec", "tinh-duyen"]
+  },
+  {
+    "id": 54,
+    "tieuDe": "Mai vàng nở muộn",
+    "tho": [
+      "Cành mai chưa nở đầu xuân,",
+      "Chớ buồn, nụ vẫn chuyên cần chờ hoa.",
+      "Muộn màng đâu phải là xa,",
+      "Nắng về đủ độ, nở ra vàng cành."
+    ],
+    "loiGiai": "Có cành mai nở sớm, có cành nở muộn, nhưng cành nào rồi cũng vàng rực khi đủ nắng. Quẻ này an ủi bạn nếu đang thấy mình chậm hơn người khác. Mỗi người có một mùa riêng. Thay vì so sánh, hãy chăm lo cho nụ của mình: học thêm, làm thêm, giữ lòng kiên nhẫn. Điều tốt đến muộn vẫn là điều tốt, và thường được trân trọng hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Những mong muốn cho gia đình như sửa sang nhà cửa hay sum họp đông đủ có thể cần thêm thời gian. Cứ từ từ chuẩn bị, đừng tự trách.",
+      "cong-viec": "Cơ hội thăng tiến có thể đến chậm hơn dự tính. Hãy tiếp tục trau dồi kỹ năng, để khi cơ hội đến bạn đã sẵn sàng.",
+      "suc-khoe": "Quá trình hồi phục mỗi người mỗi khác. Theo đúng hướng dẫn của bác sĩ, kiên nhẫn với cơ thể mình, đừng nóng vội.",
+      "hoc-hanh": "Có người hiểu bài nhanh, có người cần thêm thời gian. Học chậm mà chắc vẫn tốt hơn học nhanh mà quên.",
+      "tinh-duyen": "Duyên đến sớm hay muộn không quyết định hạnh phúc. Hãy sống vui, sống tốt, người phù hợp sẽ nhận ra bạn đúng lúc.",
+      "tai-loc": "Tài chính đang chậm cải thiện. Giữ thói quen tiết kiệm, tránh vay mượn để chạy theo người khác. Từng bước một sẽ vững vàng."
+    },
+    "loiKhuyen": "Hãy ngừng so sánh mình với người khác trong một ngày, và ghi lại một điều bạn đã tiến bộ.",
+    "chuDe": ["tai-loc", "tinh-duyen"]
+  },
+  {
+    "id": 55,
+    "tieuDe": "Lũy tre xanh",
+    "tho": [
+      "Tre xanh đứng sát bên nhau,",
+      "Gió mưa chẳng ngã, trước sau gốc liền.",
+      "Nhà ai biết giữ lời hiền,",
+      "Thuận hòa trên dưới, bình yên mái nhà."
+    ],
+    "loiGiai": "Một cây tre đứng riêng dễ bị gió quật, nhưng cả lũy tre đứng sát bên nhau thì gió to cũng không làm ngã được. Gốc tre đan vào nhau dưới đất, nâng đỡ lẫn nhau. Quẻ này nói về sức mạnh của sự gắn bó. Trong gia đình hay tập thể, khi mọi người biết nhường nhịn, nói lời hiền và đỡ đần nhau, thì việc khó mấy cũng vượt qua được.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đây là lúc vun đắp tình thân. Gọi điện cho người thân lâu chưa gặp, cùng nhau ăn bữa cơm, nói lời cảm ơn và xin lỗi khi cần.",
+      "cong-viec": "Làm việc nhóm sẽ thuận lợi hơn làm một mình. Hãy chia sẻ thông tin, giúp đỡ đồng nghiệp, cả nhóm cùng tiến.",
+      "suc-khoe": "Có người bên cạnh giúp tinh thần vững hơn. Rủ người thân cùng tập thể dục, cùng nhắc nhau giữ thói quen tốt.",
+      "hoc-hanh": "Học cùng bạn bè giúp hiểu bài sâu hơn. Lập nhóm học, giảng cho nhau nghe, ai giỏi môn nào thì giúp môn đó.",
+      "tinh-duyen": "Tình cảm bền vững khi hai người cùng đứng về một phía trước khó khăn. Hãy lắng nghe và đồng lòng thay vì tranh hơn thua.",
+      "tai-loc": "Gia đình cùng bàn bạc chi tiêu sẽ tránh được lãng phí. Minh bạch chuyện tiền bạc giúp mọi người yên tâm."
+    },
+    "loiKhuyen": "Hôm nay hãy làm một việc nhỏ giúp người trong nhà mà không cần ai nhờ.",
+    "chuDe": ["gia-dao"]
+  },
+  {
+    "id": 56,
+    "tieuDe": "Măng non đội đất",
+    "tho": [
+      "Măng non đội đất mà lên,",
+      "Ngày ngày một đốt, vững bền thành tre.",
+      "Học hành từng chút lắng nghe,",
+      "Một mai đủ đốt, xanh che lối về."
+    ],
+    "loiGiai": "Mầm măng nhỏ bé mà đủ sức đội cả lớp đất để vươn lên. Mỗi ngày cây măng lớn thêm một đốt, chẳng vội vàng mà cũng chẳng dừng lại. Quẻ này dành cho người đang học hỏi, đang bắt đầu. Đừng ngại mình còn non, chỉ cần mỗi ngày tiến thêm một chút, biết lắng nghe và chịu khó, rồi bạn sẽ thành cây tre vững chãi, che mát cho người khác.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Con cháu trong nhà đang lớn, cần được khích lệ hơn là trách mắng. Người lớn hãy kiên nhẫn chỉ bảo, con trẻ hãy lắng nghe.",
+      "cong-viec": "Người mới vào nghề hãy khiêm tốn học hỏi từ người đi trước. Mỗi việc nhỏ làm tốt là một đốt tre vững thêm.",
+      "suc-khoe": "Xây dựng sức khỏe từng chút: thêm vài phút vận động mỗi ngày, thêm một bữa rau, bớt một ly nước ngọt.",
+      "hoc-hanh": "Thời điểm tốt để học điều mới. Chia nhỏ mục tiêu, mỗi ngày nắm vững một phần, hỏi thầy cô khi chưa hiểu.",
+      "tinh-duyen": "Tình cảm mới chớm cần sự chân thành và tôn trọng. Hãy tìm hiểu nhau từng bước, đừng vội vàng hứa hẹn.",
+      "tai-loc": "Bắt đầu học cách quản lý tiền từ những khoản nhỏ. Ghi chép thu chi giúp bạn hiểu mình và tiến bộ dần."
+    },
+    "loiKhuyen": "Hôm nay hãy học một điều mới, dù chỉ mười lăm phút, và ghi lại điều mình vừa hiểu.",
+    "chuDe": ["hoc-hanh"]
+  },
+  {
+    "id": 57,
+    "tieuDe": "Cấy lúa đầu mùa",
+    "tho": [
+      "Cấy đều từng khóm lúa non,",
+      "Mồ hôi đổ xuống, ruộng còn ngát xanh.",
+      "Việc làm cứ thẳng lòng thành,",
+      "Đến mùa hạt mẩy, bông lành trĩu tay."
+    ],
+    "loiGiai": "Người nông dân cấy lúa phải cúi lưng cắm từng khóm mạ, đều tay mà cẩn thận. Công việc vất vả nhưng ruộng đồng xanh tươi là phần thưởng đầu tiên. Quẻ này khuyên bạn chăm chỉ, làm việc bằng tấm lòng thành thật. Đừng tìm đường tắt, hãy làm cho chu đáo từng phần việc. Khi đến mùa, công sức bỏ ra sẽ đơm thành hạt chắc.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Mỗi người góp một tay việc nhà, không ai phải gánh hết. Sự chăm chỉ của cả nhà làm nên mái ấm đủ đầy.",
+      "cong-viec": "Đây là giai đoạn cần làm việc chăm chỉ và tỉ mỉ. Hoàn thành từng phần cẩn thận, kết quả sẽ xứng đáng với công sức.",
+      "suc-khoe": "Làm việc chăm nhưng đừng quên giãn cơ, uống nước, nghỉ giữa giờ. Giữ lưng thẳng, sức khỏe mới theo bạn lâu dài.",
+      "hoc-hanh": "Không có cách học nào thay được sự chịu khó. Làm bài tập đầy đủ, ôn lại phần sai, mùa thi sẽ nhẹ nhàng hơn.",
+      "tinh-duyen": "Tình cảm cũng cần chăm bón: một lời hỏi han, một việc làm chu đáo. Đừng để người thương cảm thấy bị bỏ quên.",
+      "tai-loc": "Thu nhập đến từ công sức thật. Làm việc chăm chỉ, chi tiêu có kế hoạch, tránh xa cờ bạc và những lời hứa lãi cao bất thường."
+    },
+    "loiKhuyen": "Chọn việc quan trọng nhất hôm nay và làm cho xong, làm cho kỹ trước khi chuyển sang việc khác.",
+    "chuDe": ["cong-viec", "tai-loc"]
+  },
+  {
+    "id": 58,
+    "tieuDe": "Đồng vàng hạt nặng",
+    "tho": [
+      "Đồng vàng hạt nặng cúi mình,",
+      "Hạt đầy chẳng kể, lặng thinh giữa đồng.",
+      "Của nhiều chớ vội cậy công,",
+      "Khiêm nhường giữ lấy, như bông lúa vàng."
+    ],
+    "loiGiai": "Bông lúa càng nhiều hạt càng trĩu xuống, chẳng phô trương mà vẫn khiến người ta quý. Quẻ này đến khi bạn đang có thành quả, hoặc sắp có. Hãy vui với điều mình đạt được, nhưng giữ sự khiêm nhường. Nhớ đến những người đã giúp đỡ mình, đừng xem thường người khác. Khiêm tốn giúp bạn tiếp tục học hỏi và giữ được những gì đã có.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Khi mình khá hơn, hãy nhớ ơn cha mẹ, anh chị em đã nâng đỡ. Chia sẻ niềm vui một cách nhẹ nhàng, không kể công.",
+      "cong-viec": "Thành tích tốt là lúc nên ghi nhận công của cả nhóm. Người biết khiêm tốn sẽ được tin tưởng và giao việc lớn hơn.",
+      "suc-khoe": "Đang khỏe cũng đừng chủ quan. Giữ đều lịch khám sức khỏe định kỳ và những thói quen tốt đã giúp bạn khỏe như hôm nay.",
+      "hoc-hanh": "Học càng nhiều càng thấy mình còn thiếu. Điểm cao là niềm vui, nhưng hãy tiếp tục hỏi, tiếp tục tìm hiểu, và sẵn lòng giúp bạn học.",
+      "tinh-duyen": "Đừng phô trương hay so đo trong tình cảm. Sự giản dị và chân thật khiến người kia thấy gần gũi hơn.",
+      "tai-loc": "Có của rồi, càng nên chi tiêu giản dị và để dành phòng khi cần. Không khoe khoang, không vung tay, của sẽ giữ được lâu."
+    },
+    "loiKhuyen": "Hôm nay hãy gửi lời cảm ơn đến một người đã góp phần vào thành quả của bạn.",
+    "chuDe": ["tai-loc", "hoc-hanh"]
+  },
+  {
+    "id": 59,
+    "tieuDe": "Vườn rau sau hè",
+    "tho": [
+      "Vườn rau nho nhỏ sau hè,",
+      "Sớm hôm tưới nước, mẹ che nắng chiều.",
+      "Bữa cơm đạm bạc thương yêu,",
+      "Ăn lành ngủ đủ, nhiều điều bình an."
+    ],
+    "loiGiai": "Một mảnh vườn rau nhỏ sau nhà, được chăm sóc mỗi ngày, cho bữa cơm xanh và sạch. Quẻ này nhắc rằng hạnh phúc nhiều khi nằm trong những điều giản dị: bữa ăn lành, giấc ngủ đủ, người thân quây quần. Không cần tìm đâu xa, hãy chăm sóc tốt những gì đang có trong tay. Sự bình an bắt đầu từ chính căn bếp và mái nhà của mình.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Cả nhà cùng nấu một bữa cơm, cùng ngồi ăn không điện thoại. Những khoảnh khắc giản dị ấy làm tình thân thêm ấm.",
+      "cong-viec": "Công việc ổn định hiện tại đáng được trân trọng. Làm tốt phần việc của mình, đừng vì so bì mà mất đi sự yên ổn.",
+      "suc-khoe": "Ăn nhiều rau xanh, bớt đồ chiên rán, ngủ đúng giờ. Những thay đổi nhỏ trong bữa ăn mang lại lợi ích lâu dài cho cơ thể.",
+      "hoc-hanh": "Một góc học gọn gàng, giờ giấc đều đặn giúp việc học vào nếp. Ăn sáng đầy đủ trước khi đến lớp để đầu óc minh mẫn.",
+      "tinh-duyen": "Tình yêu đẹp trong những việc nhỏ: nấu cho nhau một món ăn, cùng nhau dọn dẹp. Giản dị mà ấm áp.",
+      "tai-loc": "Chi tiêu tiết kiệm từ bếp nhà: nấu ăn ở nhà nhiều hơn, mua vừa đủ, không để thừa thãi. Tiền nhỏ góp lại thành khoản đáng kể."
+    },
+    "loiKhuyen": "Hôm nay hãy tự tay nấu một bữa ăn đơn giản có rau xanh và mời người thân cùng ăn.",
+    "chuDe": ["gia-dao", "suc-khoe"]
+  },
+  {
+    "id": 60,
+    "tieuDe": "Cây cổ thụ đầu thôn",
+    "tho": [
+      "Cây già tỏa bóng đầu thôn,",
+      "Trăm năm che mát, giữ hồn quê xưa.",
+      "Nhớ người trồng giữa nắng mưa,",
+      "Hôm nay hưởng mát, ta vừa trồng thêm."
+    ],
+    "loiGiai": "Bóng mát của cây cổ thụ hôm nay là nhờ người xưa đã trồng từ rất lâu. Quẻ này nhắc bạn lòng biết ơn đối với ông bà, cha mẹ, thầy cô và những người đi trước. Biết ơn không chỉ bằng lời mà bằng việc tiếp nối: gìn giữ điều tốt họ để lại và gieo thêm điều tốt cho người sau. Khi bạn trồng một cây, bạn đang trao bóng mát cho tương lai.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Dành thời gian thăm hỏi ông bà, cha mẹ. Nghe họ kể chuyện ngày xưa, ghi lại những bài học quý của gia đình.",
+      "cong-viec": "Học hỏi từ những người đi trước trong nghề, và khi đã vững, hãy sẵn lòng hướng dẫn người mới.",
+      "suc-khoe": "Hỏi thăm sức khỏe người lớn tuổi trong nhà, đưa họ đi khám định kỳ. Chăm sóc mình cũng là để sau này đỡ cho con cháu.",
+      "hoc-hanh": "Nhớ ơn thầy cô bằng cách học hành nghiêm túc. Kiến thức hôm nay bạn nhận được là công sức của nhiều thế hệ.",
+      "tinh-duyen": "Tình cảm bền lâu khi biết trân trọng gia đình của nhau. Hãy tôn trọng và quan tâm đến cha mẹ của người thương.",
+      "tai-loc": "Của cải ông cha để lại, dù nhiều hay ít, hãy giữ gìn và dùng đúng chỗ. Đồng thời tự mình tích góp cho thế hệ sau."
+    },
+    "loiKhuyen": "Hôm nay hãy gọi điện hoặc ghé thăm một người lớn tuổi mà bạn biết ơn.",
+    "chuDe": ["gia-dao"]
+  },
+  {
+    "id": 61,
+    "tieuDe": "Chim sẻ nhặt hạt",
+    "tho": [
+      "Sẻ nâu nhặt hạt bên thềm,",
+      "Góp từng hạt nhỏ, ấm êm tổ tròn.",
+      "Chi tiêu biết giữ phần còn,",
+      "Tháng năm vun vén, cháu con được nhờ."
+    ],
+    "loiGiai": "Con chim sẻ nhỏ bé chẳng tham lam, mỗi lần chỉ nhặt vài hạt, nhưng nhờ siêng năng mà tổ luôn ấm. Quẻ này nói về sự tích góp và biết đủ. Không cần những khoản lớn bất ngờ, chỉ cần mỗi ngày dành ra một ít, chi tiêu có tính toán, bạn sẽ có một khoản dự phòng vững vàng. Đó là cách giữ yên ổn cho mình và cho gia đình.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Cả nhà cùng bàn kế hoạch chi tiêu tháng này, dạy con trẻ thói quen để dành tiền từ những đồng nhỏ.",
+      "cong-viec": "Thành công trong công việc được góp từ những việc nhỏ làm tốt mỗi ngày. Đừng xem nhẹ việc vặt.",
+      "suc-khoe": "Sức khỏe cũng là một khoản tích lũy. Mỗi ngày đi bộ một chút, ngủ đủ một chút, lâu dài cơ thể sẽ cảm ơn bạn.",
+      "hoc-hanh": "Học từ vựng hay công thức mỗi ngày vài điều, sau vài tháng bạn sẽ ngạc nhiên vì mình đã biết nhiều thế.",
+      "tinh-duyen": "Tình cảm vun từ những điều nhỏ như tin nhắn hỏi han, lời chúc ngủ ngon. Đều đặn mà chân thành.",
+      "tai-loc": "Thời điểm tốt để lập quỹ dự phòng. Trích một phần thu nhập ngay khi nhận lương, hạn chế mua sắm theo cảm hứng, không vay để tiêu xài."
+    },
+    "loiKhuyen": "Hôm nay hãy bỏ riêng một khoản nhỏ vào ống tiết kiệm hoặc tài khoản để dành, dù chỉ là số tiền rất nhỏ.",
+    "chuDe": ["tai-loc"]
+  },
+  {
+    "id": 62,
+    "tieuDe": "Én về báo xuân",
+    "tho": [
+      "Én về liệng giữa trời xanh,",
+      "Báo tin xuân đến, đầu cành nụ tươi.",
+      "Cửa nhà rộn tiếng nói cười,",
+      "Đường xa thêm bạn, có người cùng đi."
+    ],
+    "loiGiai": "Khi chim én bay về là lúc mùa xuân đã đến, cây cối đâm chồi, lòng người phơi phới. Quẻ này mang không khí khởi đầu mới. Có thể bạn sắp gặp người mới, việc mới, hay một cách nhìn mới. Hãy mở lòng đón nhận, nhưng vẫn tỉnh táo cân nhắc. Đi đường xa có bạn đồng hành thì bước chân nhẹ hơn, vậy nên hãy trân trọng những người đang đến với mình bằng thiện ý.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Nhà cửa có thể có tin vui hoặc thêm người thân về sum họp. Hãy chuẩn bị lòng hiếu khách và sự cởi mở.",
+      "cong-viec": "Có thể xuất hiện cơ hội hợp tác hoặc dự án mới. Tìm hiểu kỹ, chuẩn bị chu đáo trước khi nhận lời.",
+      "suc-khoe": "Một khởi đầu mới cho thói quen tốt: thử môn thể thao nhẹ nhàng, ra ngoài đón nắng sớm, hít thở không khí trong lành.",
+      "hoc-hanh": "Đây là lúc tốt để bắt đầu một khóa học hay một môn mới. Tìm bạn cùng học để giữ động lực.",
+      "tinh-duyen": "Người độc thân có thể gặp người hợp ý qua bạn bè hay công việc. Người đã có đôi hãy cùng nhau làm điều gì đó mới mẻ.",
+      "tai-loc": "Cơ hội mới cần đi kèm sự thận trọng. Tìm hiểu rõ ràng, không vội bỏ hết vốn liếng vào một việc chưa chắc chắn."
+    },
+    "loiKhuyen": "Hãy chủ động chào hỏi hoặc làm quen với một người mới trong tuần này bằng sự chân thành.",
+    "chuDe": ["tinh-duyen", "cong-viec"]
+  },
+  {
+    "id": 63,
+    "tieuDe": "Cá nhỏ ngược dòng",
+    "tho": [
+      "Cá con bơi ngược dòng khe,",
+      "Vây non dẫu mỏi, chẳng e sóng dồn.",
+      "Học hành mỗi buổi chăm ôn,",
+      "Bền gan vượt khó, trí khôn sáng dần."
+    ],
+    "loiGiai": "Chú cá nhỏ bơi ngược dòng nước, vây còn non, sóng còn mạnh, nhưng vẫn kiên trì từng chút một. Quẻ này dành cho những ai đang gặp khó trong việc học hay rèn luyện. Đi ngược dòng thì mệt, nhưng chính sự cố gắng ấy làm bạn mạnh lên. Hãy nghỉ khi cần rồi lại bơi tiếp. Mỗi lần vượt qua một đoạn khó, bạn lại hiểu thêm và vững vàng hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Gia đình đang cần sự kiên nhẫn của mỗi người. Hãy động viên nhau vượt qua giai đoạn khó, đừng buông lời trách móc.",
+      "cong-viec": "Công việc có nhiều thử thách. Chia nhỏ vấn đề, giải quyết từng phần, và đừng ngại hỏi ý kiến người có kinh nghiệm.",
+      "suc-khoe": "Rèn luyện thể chất cần tăng dần, không ép sức quá mức. Lắng nghe cơ thể, nghỉ khi mỏi, gặp bác sĩ nếu đau kéo dài.",
+      "hoc-hanh": "Môn khó không đáng sợ nếu ôn đều mỗi ngày. Làm lại bài sai, hỏi thầy cô hoặc bạn bè, rồi bạn sẽ thấy mình tiến bộ.",
+      "tinh-duyen": "Tình cảm gặp chút sóng gió là chuyện thường. Hãy kiên nhẫn trò chuyện, cùng nhau tìm cách hiểu và vượt qua.",
+      "tai-loc": "Tài chính đang eo hẹp, hãy kiên trì cắt giảm chi tiêu không cần thiết và tìm thêm cách nâng cao tay nghề để tăng thu nhập chính đáng."
+    },
+    "loiKhuyen": "Hãy chọn phần khó nhất trong việc học hôm nay, làm nó trong hai mươi lăm phút, rồi tự thưởng một lúc nghỉ.",
+    "chuDe": ["hoc-hanh"]
+  },
+  {
+    "id": 64,
+    "tieuDe": "Cá lội ao trong",
+    "tho": [
+      "Ao trong cá lội thong dong,",
+      "Chẳng tranh sóng cả, chẳng mong biển ngoài.",
+      "Thôi đừng ôm giữ lo hoài,",
+      "Buông tay một chút, tháng dài nhẹ trôi."
+    ],
+    "loiGiai": "Đàn cá trong ao nhỏ vẫn bơi lội thong thả, không cần biển rộng mới vui. Quẻ này khuyên bạn biết đủ và buông bớt những lo lắng không cần thiết. Nhiều khi ta mệt không phải vì thiếu, mà vì mong cầu quá nhiều hoặc lo trước những chuyện chưa xảy ra. Hãy sống trọn hôm nay, trân trọng những gì đang có, lòng sẽ nhẹ và ngày tháng sẽ dễ chịu hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đừng đòi hỏi người thân phải hoàn hảo. Chấp nhận những điểm chưa vừa ý, nhà sẽ bớt căng thẳng và thêm tiếng cười.",
+      "cong-viec": "Không cần tranh đua mọi thứ. Tập trung vào phần việc của mình, làm tốt và yên tâm, bớt so sánh với người khác.",
+      "suc-khoe": "Lo âu kéo dài ảnh hưởng đến giấc ngủ và sức khỏe. Tập thở chậm, đi dạo, trò chuyện với người tin cậy; nếu cần hãy tìm đến chuyên gia tâm lý.",
+      "hoc-hanh": "Đặt mục tiêu vừa sức, đừng tự tạo áp lực quá lớn. Học trong tâm thế thoải mái sẽ hiểu và nhớ lâu hơn.",
+      "tinh-duyen": "Đừng níu giữ hay kiểm soát người kia. Tình cảm tự nhiên và tôn trọng nhau mới khiến cả hai cùng thấy thoải mái.",
+      "tai-loc": "Biết đủ là giàu. Chi tiêu trong khả năng, không chạy theo đồ đắt tiền hay những khoản đầu tư hứa hẹn lời nhanh."
+    },
+    "loiKhuyen": "Viết ra một nỗi lo đang mang trong lòng, rồi tự hỏi: hôm nay mình làm được gì cho nó? Phần còn lại, tạm đặt xuống.",
+    "chuDe": ["suc-khoe", "tai-loc"]
+  },
+  {
+    "id": 65,
+    "tieuDe": "Bướm rời tổ kén",
+    "tho": [
+      "Kén im giữa lá mùa hè,",
+      "Một mai đôi cánh nhẹ xòe giữa hoa.",
+      "Thời gian ấp ủ chẳng xa,",
+      "Thương ai cho trọn, mặn mà về sau."
+    ],
+    "loiGiai": "Con sâu nằm yên trong kén một thời gian, tưởng như chẳng có gì xảy ra, rồi một ngày hóa thành cánh bướm bay giữa vườn hoa. Quẻ này nói về sự chuyển mình cần thời gian. Trong tình cảm hay trong chính bản thân, có những giai đoạn lặng lẽ để trưởng thành. Đừng sốt ruột, hãy dùng khoảng thời gian ấy để hiểu mình, sửa mình, rồi bạn sẽ đến với người khác bằng một tâm thế đẹp hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Gia đình có thể đang trong giai đoạn thay đổi như chuyển nhà hay đón thành viên mới. Hãy cho nhau thời gian thích nghi.",
+      "cong-viec": "Bạn đang trong giai đoạn chuyển đổi hoặc học việc mới. Kiên nhẫn trau dồi, đừng vội đánh giá mình khi chưa quen.",
+      "suc-khoe": "Cơ thể cần thời gian để thích nghi với thói quen mới. Duy trì đều đặn, theo dõi cảm nhận và hỏi bác sĩ khi cần.",
+      "hoc-hanh": "Có những kiến thức cần thời gian ngấm. Đừng nản khi chưa hiểu ngay, ôn lại sau vài ngày sẽ thấy sáng ra.",
+      "tinh-duyen": "Đừng vội vàng trong chuyện tình cảm. Thời gian tìm hiểu giúp hai người biết rõ nhau. Thương thật lòng thì tình sẽ đằm thắm lâu dài.",
+      "tai-loc": "Kế hoạch tài chính cần thời gian để thấy kết quả. Kiên trì tiết kiệm, đừng thay đổi liên tục chỉ vì nóng ruột."
+    },
+    "loiKhuyen": "Hãy viết ra một điều bạn muốn thay đổi ở bản thân và một bước nhỏ để bắt đầu từ tuần này.",
+    "chuDe": ["tinh-duyen"]
+  },
+  {
+    "id": 66,
+    "tieuDe": "Đàn ong làm mật",
+    "tho": [
+      "Đàn ong rộn rã sớm mai,",
+      "Mỗi con một việc, chẳng ai so bì.",
+      "Việc chung cùng gánh cùng đi,",
+      "Tổ đầy mật ngọt, nhớ ghi công người."
+    ],
+    "loiGiai": "Trong một tổ ong, mỗi con đảm nhận một việc: con đi tìm hoa, con xây tổ, con giữ cửa. Không ai so bì, nhờ vậy cả tổ đầy mật ngọt. Quẻ này nói về tinh thần hợp tác và trách nhiệm. Hãy làm tốt phần việc của mình, tôn trọng phần việc của người khác. Khi thành quả đến, đừng quên ghi nhận công sức của từng người.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Phân chia việc nhà rõ ràng, ai cũng có phần. Khi mỗi người góp sức, nhà cửa gọn gàng và không ai thấy thiệt thòi.",
+      "cong-viec": "Làm việc nhóm là chìa khóa lúc này. Xác định rõ vai trò, phối hợp nhịp nhàng, và khen ngợi đồng nghiệp khi họ làm tốt.",
+      "suc-khoe": "Chăm chỉ là tốt, nhưng ong cũng có lúc nghỉ trong tổ. Xen kẽ làm việc với nghỉ ngơi để giữ sức bền.",
+      "hoc-hanh": "Học nhóm hiệu quả khi mỗi người phụ trách một phần rồi chia sẻ cho nhau. Đừng để bạn khác gánh hết.",
+      "tinh-duyen": "Hai người cùng chia sẻ trách nhiệm, không ai phải gánh một mình. Cảm ơn nhau vì những điều nhỏ mỗi ngày.",
+      "tai-loc": "Thu nhập ổn định đến từ sự chăm chỉ đều đặn. Nếu làm ăn chung, hãy rõ ràng sổ sách và công bằng với nhau."
+    },
+    "loiKhuyen": "Hôm nay hãy nói lời cảm ơn cụ thể với một đồng nghiệp hoặc người thân về việc họ đã làm.",
+    "chuDe": ["cong-viec"]
+  },
+  {
+    "id": 67,
+    "tieuDe": "Cây vững nhờ rễ",
+    "tho": [
+      "Cây cao nhờ rễ ăn sâu,",
+      "Mưa giông mấy trận, gốc đâu có lìa.",
+      "Nền nhà là gốc sẻ chia,",
+      "Thương từ thuở bé, mai kia vẫn bền."
+    ],
+    "loiGiai": "Cây đứng vững trước mưa giông không phải nhờ tán lá rộng mà nhờ rễ cắm sâu xuống đất. Với mỗi người, gốc rễ là gia đình, là những giá trị được vun đắp từ nhỏ. Quẻ này mang ý an định: dù bên ngoài có xáo động, hãy trở về với nền tảng của mình. Giữ gìn tình thân, sự tin tưởng và lòng tử tế, bạn sẽ có chỗ dựa vững vàng.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Thời điểm tốt để củng cố tình cảm gia đình. Cùng nhau ôn lại kỷ niệm, giữ những thói quen chung như bữa cơm tối hay buổi trò chuyện cuối tuần.",
+      "cong-viec": "Trước những biến động, hãy dựa vào nền tảng vững: kỹ năng cốt lõi, sự trung thực và các mối quan hệ tốt.",
+      "suc-khoe": "Nền tảng sức khỏe là ăn, ngủ, vận động. Khi thấy chao đảo, hãy quay về giữ ba điều ấy cho đều đặn.",
+      "hoc-hanh": "Nắm chắc kiến thức gốc trước khi học phần nâng cao. Ôn lại những bài cơ bản sẽ giúp bạn hiểu sâu hơn.",
+      "tinh-duyen": "Tình cảm bền lâu cần nền tảng là sự tin tưởng và tôn trọng. Hãy giữ lời hứa trong những việc nhỏ nhất.",
+      "tai-loc": "Ưu tiên những khoản thiết yếu và quỹ dự phòng trước khi nghĩ đến mua sắm lớn. Nền tài chính vững thì lòng mới yên."
+    },
+    "loiKhuyen": "Tối nay hãy dành ít phút trò chuyện với người thân, hỏi han một điều mà lâu nay bạn chưa hỏi.",
+    "chuDe": ["gia-dao"]
+  },
+  {
+    "id": 68,
+    "tieuDe": "Lá thu nhẹ rơi",
+    "tho": [
+      "Thu sang lá rụng nhẹ nhàng,",
+      "Cây không níu giữ, để sang mùa chồi.",
+      "Chuyện xưa buông xuống được rồi,",
+      "Thênh thang lòng nhẹ, mây trôi giữa trời."
+    ],
+    "loiGiai": "Mùa thu, cây để lá vàng rơi xuống mà không níu giữ, nhờ vậy mùa sau mới có chồi non. Quẻ này nhắc bạn về sự buông bỏ. Có những chuyện cũ, những nỗi buồn hay giận hờn đã qua, mang mãi chỉ làm lòng nặng thêm. Buông xuống không có nghĩa là quên, mà là cho mình được nhẹ nhõm để đón những điều tươi mới đang chờ phía trước.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Nếu có hiềm khích cũ trong nhà, hãy chủ động bỏ qua. Một lời làm hòa có thể mở ra không khí ấm áp hơn.",
+      "cong-viec": "Thất bại hay sai sót cũ là bài học, không phải gánh nặng. Rút kinh nghiệm rồi bước tiếp với tâm thế mới.",
+      "suc-khoe": "Giữ nỗi buồn lâu trong lòng ảnh hưởng đến giấc ngủ và tinh thần. Hãy chia sẻ với người tin cậy, và tìm đến chuyên gia nếu cần.",
+      "hoc-hanh": "Một bài thi chưa tốt không định nghĩa bạn. Xem lại chỗ sai, rồi để nó lại phía sau và chuẩn bị cho lần tới.",
+      "tinh-duyen": "Nếu một mối quan hệ đã qua, hãy nhẹ nhàng chúc người ấy bình an và cho mình thời gian chữa lành. Mùa mới sẽ đến.",
+      "tai-loc": "Đừng tiếc nuối mãi khoản đã mất hay cố gỡ lại bằng cách mạo hiểm. Chấp nhận, rút kinh nghiệm và bắt đầu tích góp lại."
+    },
+    "loiKhuyen": "Hãy dọn bớt một góc nhỏ trong nhà hôm nay, bỏ đi những thứ không còn dùng, để lòng cũng nhẹ theo.",
+    "chuDe": ["tinh-duyen", "suc-khoe"]
+  },
+  {
+    "id": 69,
+    "tieuDe": "Vườn cam trĩu quả",
+    "tho": [
+      "Vườn cam trĩu quả cuối năm,",
+      "Nhớ bao sớm tối, tay chăm gốc cành.",
+      "Hái về chia khắp xóm quanh,",
+      "Có chia mới thấy ngọt thanh trong lòng."
+    ],
+    "loiGiai": "Vườn cam sau một năm chăm bón đã trĩu quả. Quẻ này mang niềm vui của mùa thu hoạch: công sức của bạn đang hoặc sắp được đền đáp. Hãy vui với thành quả và nhớ những ngày vất vả đã qua. Hơn nữa, niềm vui sẽ trọn vẹn hơn khi được sẻ chia. Biếu người thân, giúp hàng xóm, quả ngọt chia ra thì tình người càng đậm.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Gia đình có niềm vui chung. Hãy cùng nhau ăn mừng giản dị và cảm ơn những ai đã góp sức.",
+      "cong-viec": "Công việc có kết quả tốt sau thời gian nỗ lực. Ghi nhận công sức của nhóm và chia sẻ kinh nghiệm cho người khác.",
+      "suc-khoe": "Sức khỏe ổn định nhờ những thói quen tốt. Tiếp tục duy trì và rủ người thân cùng tham gia.",
+      "hoc-hanh": "Kết quả học tập khả quan. Hãy chia sẻ cách học của mình với bạn bè, giúp người khác cũng là cách ôn lại cho mình.",
+      "tinh-duyen": "Tình cảm đơm hoa kết trái nhờ sự vun vén. Hãy cảm ơn người thương và cùng nhau chia niềm vui với gia đình hai bên.",
+      "tai-loc": "Thu nhập có phần khá hơn. Hãy để dành một phần, dùng một phần chăm lo gia đình, và giúp đỡ người khó khăn trong khả năng."
+    },
+    "loiKhuyen": "Hôm nay hãy chia sẻ một điều tốt bạn có, như món ăn, kiến thức hay thời gian, với một người xung quanh.",
+    "chuDe": ["tai-loc", "gia-dao"]
+  },
+  {
+    "id": 70,
+    "tieuDe": "Tỉa cành cho cây",
+    "tho": [
+      "Tỉa đi cành rối cành thừa,",
+      "Cây dồn nhựa sống, cho vừa ngọn non.",
+      "Việc nhiều làm ít mà tròn,",
+      "Thân tâm nhẹ gánh, sức còn đi xa."
+    ],
+    "loiGiai": "Người làm vườn tỉa bớt cành thừa để cây dồn sức nuôi ngọn chính, ra hoa kết trái tốt hơn. Quẻ này khuyên bạn sắp xếp lại cuộc sống: bớt những việc không cần thiết, những lời hứa quá sức, những thói quen làm mất thời gian. Làm ít mà chu đáo còn hơn ôm đồm mà dang dở. Khi thân tâm bớt gánh nặng, bạn sẽ có sức đi đường dài.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đơn giản hóa sinh hoạt trong nhà, bớt đồ đạc thừa, bớt những lo toan không cần thiết, để có thêm thời gian bên nhau.",
+      "cong-viec": "Liệt kê công việc và chọn ra những việc quan trọng nhất. Học cách từ chối nhẹ nhàng những việc vượt quá sức mình.",
+      "suc-khoe": "Cơ thể đang quá tải. Cắt bớt việc, ngủ đủ, giảm thời gian dùng điện thoại. Nếu thấy kiệt sức kéo dài, hãy đi khám.",
+      "hoc-hanh": "Đừng học tràn lan quá nhiều thứ cùng lúc. Chọn vài môn trọng tâm và học cho thật chắc.",
+      "tinh-duyen": "Bớt những so đo, nghi ngờ không cần thiết. Tình cảm nhẹ nhàng hơn khi tập trung vào điều quan trọng giữa hai người.",
+      "tai-loc": "Rà soát chi tiêu, cắt bỏ những khoản không cần thiết như dịch vụ ít dùng hay mua sắm theo thói quen."
+    },
+    "loiKhuyen": "Viết danh sách việc cần làm, gạch bớt một việc không thật cần thiết, và cho mình nghỉ trong khoảng thời gian ấy.",
+    "chuDe": ["cong-viec", "suc-khoe"]
+  },
+  {
+    "id": 71,
+    "tieuDe": "Cò trắng giữa đồng",
+    "tho": [
+      "Cò về đứng giữa đồng xa,",
+      "Một chân thong thả, nhìn qua lúa vàng.",
+      "Chậm thôi, lòng vẫn nhẹ nhàng,",
+      "Thở sâu một nhịp, thênh thang khắp mình."
+    ],
+    "loiGiai": "Con cò trắng đứng yên giữa đồng, thong thả ngắm nhìn mà không vội vàng. Quẻ này nhắc bạn sống chậm lại. Nhịp sống vội vã dễ làm thân mỏi, tâm căng. Hãy cho mình những khoảng lặng: hít thở sâu, đi dạo, ngắm trời. Chậm lại không làm bạn tụt lùi, mà giúp bạn nhìn rõ hơn, làm việc tỉnh táo hơn và giữ được sức khỏe lâu dài.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Dành một buổi chiều không vội vã cho gia đình: đi dạo, uống trà, trò chuyện. Những giờ phút thong thả làm tình thân gần hơn.",
+      "cong-viec": "Làm vội dễ sai. Hãy chậm lại để kiểm tra kỹ, suy nghĩ thấu đáo trước những quyết định quan trọng.",
+      "suc-khoe": "Cơ thể cần được thư giãn. Tập thở chậm, giãn cơ, đi bộ ngoài trời. Nếu thường xuyên căng thẳng hay mất ngủ, hãy hỏi ý kiến bác sĩ.",
+      "hoc-hanh": "Học chậm mà hiểu kỹ tốt hơn đọc lướt. Đọc lại từng đoạn, tự tóm tắt bằng lời của mình.",
+      "tinh-duyen": "Đừng vội kết luận về người kia. Dành thời gian quan sát, lắng nghe, tình cảm sẽ rõ ràng hơn.",
+      "tai-loc": "Đừng quyết định chuyện tiền bạc khi đang vội hay nóng lòng. Suy nghĩ thêm vài ngày giúp tránh được những khoản chi không cần thiết."
+    },
+    "loiKhuyen": "Hôm nay hãy dành năm phút ngồi yên, thở chậm và chỉ chú ý vào hơi thở của mình.",
+    "chuDe": ["suc-khoe"]
+  },
+  {
+    "id": 72,
+    "tieuDe": "Hương hoa bưởi",
+    "tho": [
+      "Tháng ba hoa bưởi ngát hiên,",
+      "Hương bay nhè nhẹ, dịu hiền lòng ai.",
+      "Tình thương chẳng ở lời dài,",
+      "Chân thành từng chút, ngày mai thắm nồng."
+    ],
+    "loiGiai": "Hoa bưởi nhỏ và trắng, không rực rỡ nhưng hương thơm dịu dàng lan khắp hiên nhà. Quẻ này nói về tình cảm giản dị mà sâu sắc. Tình thương không cần lời hoa mỹ hay hứa hẹn lớn lao, mà thể hiện qua sự quan tâm đều đặn, chân thành. Hãy để tấm lòng của bạn tỏa hương nhẹ nhàng như hoa bưởi, người bên cạnh sẽ cảm nhận được.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Thể hiện tình thương với người nhà bằng hành động nhỏ: pha ấm trà, hỏi một câu, giúp một việc. Không cần nói nhiều.",
+      "cong-viec": "Sự tận tâm thầm lặng sẽ được ghi nhận. Làm tốt việc của mình, đối xử tử tế với đồng nghiệp, uy tín tự khắc lan tỏa.",
+      "suc-khoe": "Một tinh thần dịu dàng giúp cơ thể thư thái. Dành thời gian cho những niềm vui nhỏ như chăm cây, nghe nhạc nhẹ.",
+      "hoc-hanh": "Không cần học ồn ào, chỉ cần đều đặn và chăm chú. Sự cố gắng thầm lặng sẽ cho kết quả xứng đáng.",
+      "tinh-duyen": "Tình cảm đang trong giai đoạn đẹp và dịu dàng. Hãy chân thành, quan tâm từng chút, đừng vội vàng hay phô trương.",
+      "tai-loc": "Không cần chi tiêu phô trương để thể hiện tình cảm. Một món quà nhỏ chọn bằng tấm lòng có ý nghĩa hơn đồ đắt tiền."
+    },
+    "loiKhuyen": "Hôm nay hãy làm một việc nhỏ cho người bạn thương mà không cần nói ra, chỉ để họ thấy dễ chịu.",
+    "chuDe": ["tinh-duyen"]
+  },
+  {
+    "id": 73,
+    "tieuDe": "Giàn bầu leo cao",
+    "tho": [
+      "Dây bầu bám ngọn giàn tre,",
+      "Leo lên nhờ có bạn bè đỡ nâng.",
+      "Biết ơn người đỡ lên tầng,",
+      "Mai này quả chín, nhớ dâng người trồng."
+    ],
+    "loiGiai": "Dây bầu tự mình không đứng được, nhưng nhờ có giàn tre nâng đỡ mà leo cao, ra hoa kết quả. Quẻ này nhắc rằng không ai thành công một mình. Đừng ngại nhờ giúp đỡ khi cần, hãy khiêm tốn học hỏi từ thầy, từ bạn. Và khi đã vươn cao, hãy nhớ ơn những người đã làm giàn cho mình, rồi đến lượt mình nâng đỡ người khác.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Gia đình là giàn đỡ vững nhất. Đừng ngại chia sẻ khó khăn với người thân, và hãy nhớ đáp lại sự giúp đỡ ấy.",
+      "cong-viec": "Tìm một người hướng dẫn có kinh nghiệm hoặc nhờ đồng nghiệp góp ý. Sự hỗ trợ đúng lúc giúp bạn tiến nhanh hơn.",
+      "suc-khoe": "Khi không khỏe, hãy nhờ người thân giúp và đi khám bác sĩ. Nhận sự chăm sóc không phải là yếu đuối.",
+      "hoc-hanh": "Chủ động hỏi thầy cô và bạn bè khi chưa hiểu. Học cùng người giỏi hơn giúp bạn tiến bộ, và nhớ cảm ơn họ.",
+      "tinh-duyen": "Tình cảm đẹp là khi hai người nâng đỡ nhau cùng lớn lên. Hãy ủng hộ ước mơ của người thương.",
+      "tai-loc": "Học hỏi kinh nghiệm quản lý tiền từ người đáng tin. Tránh vay mượn tràn lan; nếu đã được giúp, hãy trả đúng hẹn."
+    },
+    "loiKhuyen": "Hôm nay hãy mạnh dạn hỏi một người có kinh nghiệm về điều bạn đang vướng mắc, và cảm ơn họ chân thành.",
+    "chuDe": ["hoc-hanh", "cong-viec"]
+  },
+  {
+    "id": 74,
+    "tieuDe": "Chim mỏi về tổ",
+    "tho": [
+      "Chiều hôm chim mỏi về rừng,",
+      "Tổ xưa còn đó, chẳng ngừng ríu ran.",
+      "Người đi dẫu cách dặm ngàn,",
+      "Nhớ về mái ấm, bình an quây quần."
+    ],
+    "loiGiai": "Chiều xuống, những cánh chim bay mỏi lại tìm về tổ cũ, nơi có tiếng ríu ran quen thuộc. Quẻ này gợi nhắc về mái nhà và sự sum họp. Dù bạn đang ở xa hay bận rộn đến đâu, hãy nhớ có một nơi luôn chờ mình trở về. Một cuộc gọi, một lần về thăm có thể mang lại niềm vui lớn cho người thân và sự bình yên cho chính bạn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Thời điểm tốt để sum họp. Sắp xếp về thăm nhà hoặc tổ chức một bữa cơm đông đủ. Nếu ở xa, hãy gọi video hỏi thăm.",
+      "cong-viec": "Đừng để công việc cuốn đi hết thời gian dành cho gia đình. Cân bằng lại lịch làm việc để có những buổi tối về nhà đúng giờ.",
+      "suc-khoe": "Khi mệt mỏi, hãy về với những nơi khiến bạn thấy an lòng. Nghỉ ngơi bên người thân giúp tinh thần hồi phục.",
+      "hoc-hanh": "Học xa nhà có lúc cô đơn. Hãy giữ liên lạc với gia đình, chia sẻ chuyện học để được động viên.",
+      "tinh-duyen": "Tình cảm vững vàng khi cả hai cùng hướng về một mái ấm chung. Hãy trò chuyện về những dự định cho tổ ấm của mình.",
+      "tai-loc": "Chi tiêu hợp lý để dành một khoản cho những chuyến về thăm nhà và những dịp sum họp. Đó là khoản chi đáng giá."
+    },
+    "loiKhuyen": "Hôm nay hãy gọi điện cho cha mẹ hoặc người thân ở xa, hỏi han họ đôi câu.",
+    "chuDe": ["gia-dao"]
+  },
+  {
+    "id": 75,
+    "tieuDe": "Hoa dại ven đường",
+    "tho": [
+      "Ven đường hoa dại nở vui,",
+      "Không cần ai ngắm, ngát mùi sớm mai.",
+      "Chẳng cần so sánh cùng ai,",
+      "Hồn nhiên khoe sắc, ngày dài thảnh thơi."
+    ],
+    "loiGiai": "Bông hoa dại bên đường chẳng ai trồng, chẳng ai chăm, vẫn nở tươi và tỏa hương mỗi sáng. Quẻ này khích lệ bạn tin vào giá trị của chính mình. Bạn không cần phải giống ai hay được ai khen mới đáng quý. Hãy sống đúng với mình, làm tốt những gì mình có thể, và vui với vẻ đẹp riêng. Sự tự tin hiền hòa ấy sẽ khiến bạn tỏa sáng một cách tự nhiên.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Mỗi người trong nhà có cá tính riêng. Hãy tôn trọng sự khác biệt và khen ngợi điểm mạnh của nhau thay vì so sánh.",
+      "cong-viec": "Phát huy thế mạnh riêng của bạn thay vì cố bắt chước người khác. Sự khác biệt có thể là lợi thế.",
+      "suc-khoe": "Đừng ép mình theo hình mẫu của người khác. Chăm sóc cơ thể theo cách phù hợp với mình và nghe theo lời khuyên của bác sĩ.",
+      "hoc-hanh": "Mỗi người có cách học và sở trường riêng. Tìm phương pháp hợp với mình, đừng nản khi thấy bạn khác giỏi hơn ở một môn.",
+      "tinh-duyen": "Hãy là chính mình trong tình cảm. Người thật lòng thương bạn sẽ quý con người thật của bạn, không cần gồng mình.",
+      "tai-loc": "Đừng chi tiêu để theo kịp người khác. Sống trong khả năng của mình, vui với những gì mình có là cách giữ tài chính vững."
+    },
+    "loiKhuyen": "Hãy viết ra ba điểm mạnh của bản thân và tự nhắc mình về chúng khi thấy chùn bước.",
+    "chuDe": ["hoc-hanh", "tinh-duyen"]
+  }
+]
