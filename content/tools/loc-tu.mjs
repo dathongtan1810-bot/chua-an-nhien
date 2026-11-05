@@ -123,20 +123,26 @@ function coChuGan(goc, k) {
   return false;
 }
 
-/** Bước 4: rút chuỗi ký tự lặp ≥3 lần còn `giu` lần (1 hoặc 2). giu=0: không rút. */
+/** Bước 4: rút chuỗi chữ cái lặp ≥3 lần (hoặc ≥2 lần nếu có ký tự lách, vd "l00n") còn `giu` lần.
+ *  giu = 0: không rút. Đơn vị bị bỏ được gộp vị trí vào đơn vị giữ lại (để che đúng). */
 function rutLap(dv, giu) {
   if (!giu) return dv;
   const out = [];
-  let dem = 0;
-  for (let k = 0; k < dv.length; k++) {
-    if (k > 0 && dv[k].ch === dv[k - 1].ch && LA_CHU.test(dv[k].ch)) dem++;
-    else dem = 1;
-    // chỉ rút khi cả chuỗi lặp dài ≥3
-    let j = k; while (j + 1 < dv.length && dv[j + 1].ch === dv[k].ch) j++;
-    let dau = k; while (dau > 0 && dv[dau - 1].ch === dv[k].ch) dau--;
-    const dai = j - dau + 1;
-    if (dai >= 3 && LA_CHU.test(dv[k].ch) && dem > giu) continue;
-    out.push(dv[k]);
+  let k = 0;
+  while (k < dv.length) {
+    let j = k;
+    while (j + 1 < dv.length && dv[j + 1].ch === dv[k].ch) j++;
+    const run = dv.slice(k, j + 1);
+    const dai = run.length;
+    const rut = LA_CHU.test(dv[k].ch) && (dai >= 3 || (dai >= 2 && run.some((u) => u.lach)));
+    if (rut) {
+      const giuLai = run.slice(0, giu).map((u) => ({ ...u }));
+      const cuoi = giuLai[giuLai.length - 1];
+      cuoi.e = run[dai - 1].e;
+      if (run.some((u) => u.lach)) giuLai.forEach((u) => { u.lach = true; });
+      out.push(...giuLai);
+    } else out.push(...run);
+    k = j + 1;
   }
   return out;
 }
