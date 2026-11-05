@@ -38,3 +38,5 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     Server mã hoá thành dòng trong bảng `banned_words`: `tu`/`bienThe` → "từ", `bienTheLach` → "~từ" (chỉ chặn khi có dấu hiệu lách: đổi ký tự, chữ rời, kéo dài chữ),
     `allowlist` → "+cụm". `thayKyTu` bổ sung bảng ký tự lách. `mucDo`/`nhom` hiện **bỏ qua** — mọi mức đều từ chối (đơn giản, an toàn cho chùa).
     Allowlist không dấu chỉ áp khi cả văn bản không dấu (giống loc-tu.mjs).
+26. **"3 người khác nhau"** khi báo cáo được đếm theo **nguồn** (IP băm cùng salt), không chỉ theo userId — tránh một người tạo nhiều deviceId để tự ẩn đèn người khác.
+    Đánh đổi: nhiều người cùng NAT (gia đình, quán cà phê) chỉ tính 1; báo cáo vẫn hiện trong admin. Migration DB qua `PRAGMA user_version` (v1 thêm `reports.source_hash`).

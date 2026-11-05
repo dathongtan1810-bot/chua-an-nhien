@@ -107,12 +107,24 @@ const toReport = (r: Raw): ReportRow => ({
   reason: r.reason as string,
   createdAt: r.created_at as number,
   resolved: !!r.resolved,
+  sourceHash: (r.source_hash as string) || undefined,
 });
+
+/** Migration đơn giản theo PRAGMA user_version. */
+function migrate(db: Database.Database): void {
+  const v = db.pragma('user_version', { simple: true }) as number;
+  if (v < 1) {
+    const cols = (db.prepare('PRAGMA table_info(reports)').all() as Array<{ name: string }>).map((c) => c.name);
+    if (!cols.includes('source_hash')) db.exec("ALTER TABLE reports ADD COLUMN source_hash TEXT NOT NULL DEFAULT ''");
+    db.pragma('user_version = 1');
+  }
+}
 
 export function createSqliteRepositories(dbPath: string): Repositories {
   if (dbPath !== ':memory:') fs.mkdirSync(path.dirname(path.resolve(dbPath)), { recursive: true });
   const db = new Database(dbPath);
   db.exec(SCHEMA);
+  migrate(db);
 
   const q = {
     userByHash: db.prepare('SELECT * FROM users WHERE device_hash = ?'),
@@ -145,12 +157,13 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     lanternIdsByUser: db.prepare('SELECT id FROM lanterns WHERE user_id = ?'),
 
     reportInsert: db.prepare(
-      `INSERT OR IGNORE INTO reports (reporter_id, target_type, target_id, reason, created_at)
-       VALUES (@reporterId, @targetType, @targetId, @reason, @createdAt)`,
+      `INSERT OR IGNORE INTO reports (reporter_id, target_type, target_id, reason, created_at, source_hash)
+       VALUES (@reporterId, @targetType, @targetId, @reason, @createdAt, @sourceHash)`,
     ),
     reportBumpLantern: db.prepare('UPDATE lanterns SET reports = reports + 1 WHERE id = ?'),
     reportCount: db.prepare(
-      'SELECT COUNT(DISTINCT reporter_id) AS n FROM reports WHERE target_type = ? AND target_id = ? AND resolved = 0',
+      // Đếm theo nguồn (IP băm) để nhiều deviceId từ cùng 1 IP chỉ tính 1 người
+      "SELECT COUNT(DISTINCT CASE WHEN source_hash = '' THEN reporter_id ELSE source_hash END) AS n FROM reports WHERE target_type = ? AND target_id = ? AND resolved = 0",
     ),
     reportsList: db.prepare('SELECT * FROM reports WHERE resolved = ? ORDER BY created_at DESC LIMIT ?'),
     reportsListAll: db.prepare('SELECT * FROM reports ORDER BY created_at DESC LIMIT ?'),
@@ -219,7 +232,7 @@ export function createSqliteRepositories(dbPath: string): Repositories {
   });
 
   const addReport = db.transaction((r: Omit<ReportRow, 'id' | 'resolved'>) => {
-    const res = q.reportInsert.run(r);
+    const res = q.reportInsert.run({ ...r, sourceHash: r.sourceHash ?? '' });
     if (res.changes === 0) return false;
     if (r.targetType === 'lantern') q.reportBumpLantern.run(r.targetId);
     return true;

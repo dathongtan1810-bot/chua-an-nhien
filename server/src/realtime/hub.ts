@@ -470,7 +470,8 @@ export class Hub {
       ownerId = u.id;
     }
     if (ownerId === uid) throw new HandledError('cannot_target_self', 'Không thể báo cáo chính mình');
-    const added = await repos.reports.add({ reporterId: uid, targetType: p.type, targetId: p.id, reason: p.reason, createdAt: now });
+    const sourceHash = hashDevice(`ip:${s.data.ip}`, this.d.config.DEVICE_SALT).slice(0, 32);
+    const added = await repos.reports.add({ reporterId: uid, targetType: p.type, targetId: p.id, reason: p.reason, createdAt: now, sourceHash });
     if (!added) throw new HandledError('already_reported', 'Bạn đã báo cáo mục này');
     metrics.reports.inc({ type: p.type });
     await repos.stats.incr(vnDay(now), 'reports');

@@ -36,6 +36,8 @@ export interface ReportRow {
   reason: string;
   createdAt: number;
   resolved: boolean;
+  /** Băm nguồn (IP) của người báo cáo – để đếm "người khác nhau" chống lạm dụng nhiều deviceId. */
+  sourceHash?: string;
 }
 
 export interface UsersRepo {

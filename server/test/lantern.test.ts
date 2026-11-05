@@ -92,9 +92,9 @@ describe('MODERATION_MODE=pre', () => {
 
 describe('báo cáo', () => {
   it('3 người khác nhau báo cáo → tự ẩn chờ duyệt', async () => {
-    s = await startServer();
+    s = await startServer({ TRUST_PROXY: 'true' });
     const a = await s.hello();
-    const rs = await Promise.all([s.hello(), s.hello(), s.hello()]);
+    const rs = await Promise.all([s.hello(undefined, undefined, '10.0.0.1'), s.hello(undefined, undefined, '10.0.0.2'), s.hello(undefined, undefined, '10.0.0.3')]);
     const { id } = await emitAck(a.c, 'release_lantern', { text: 'Đèn bị báo cáo', color: 'red' });
     expect(await emitAck(a.c, 'report', { type: 'lantern', id, reason: 'x' })).toMatchObject({ ok: false, code: 'cannot_target_self' });
     expect(await emitAck(rs[0]!.c, 'report', { type: 'lantern', id, reason: 'tục' })).toMatchObject({ ok: true, autoHidden: false });
@@ -106,10 +106,19 @@ describe('báo cáo', () => {
     expect((await s.ctx.repos.lanterns.findById(id))?.status).toBe('pending');
   });
 
-  it('báo cáo user đủ 3 → gắn cờ, đèn mới thành pending', async () => {
+  it('nhiều deviceId cùng 1 IP chỉ tính 1 người báo cáo', async () => {
     s = await startServer();
     const a = await s.hello();
-    const rs = await Promise.all([s.hello(), s.hello(), s.hello()]);
+    const rs = await Promise.all([s.hello(), s.hello(), s.hello(), s.hello()]);
+    const { id } = await emitAck(a.c, 'release_lantern', { text: 'Đèn', color: 'red' });
+    for (const r of rs) expect(await emitAck(r.c, 'report', { type: 'lantern', id })).toMatchObject({ ok: true, autoHidden: false });
+    expect((await s.ctx.repos.lanterns.findById(id))?.status).toBe('approved');
+  });
+
+  it('báo cáo user đủ 3 → gắn cờ, đèn mới thành pending', async () => {
+    s = await startServer({ TRUST_PROXY: 'true' });
+    const a = await s.hello();
+    const rs = await Promise.all([s.hello(undefined, undefined, '10.0.1.1'), s.hello(undefined, undefined, '10.0.1.2'), s.hello(undefined, undefined, '10.0.1.3')]);
     const first = await emitAck(a.c, 'release_lantern', { text: 'trước', color: 'red' });
     for (const r of rs) await emitAck(r.c, 'report', { type: 'user', id: a.w.userId, reason: 'spam' });
     expect((await s.ctx.repos.users.findById(a.w.userId))?.flagged).toBe(true);

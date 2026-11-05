@@ -11,7 +11,7 @@ export interface TestServer {
   url: string;
   clients: Client[];
   connect(opts?: { headers?: Record<string, string> }): Promise<Client>;
-  hello(deviceId?: string, nickname?: string): Promise<{ c: Client; w: WelcomePayload }>;
+  hello(deviceId?: string, nickname?: string, ip?: string): Promise<{ c: Client; w: WelcomePayload }>;
   close(): Promise<void>;
 }
 
@@ -36,8 +36,8 @@ export async function startServer(env: Record<string, string> = {}): Promise<Tes
         c.once('connect_error', (e) => reject(e));
       });
     },
-    async hello(deviceId = devId(), nickname) {
-      const c = await ts.connect();
+    async hello(deviceId = devId(), nickname, ip) {
+      const c = await ts.connect(ip ? { headers: { 'x-forwarded-for': ip } } : {});
       const w = new Promise<WelcomePayload>((r) => c.once('welcome', r));
       c.emit('hello', { deviceId, nickname, lang: 'vi' });
       return { c, w: await w };
