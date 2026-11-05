@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "thong-bao-day.schema.json",
+  "title": "Thông báo đẩy (push notification). Biến {nickname} tùy chọn; app thay bằng biệt danh hoặc bỏ mục có biến khi người dùng chưa đặt biệt danh.",
+  "type": "array",
+  "minItems": 60,
+  "maxItems": 150,
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "loai", "tieuDe", "noiDung"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+        "minLength": 3,
+        "maxLength": 60
+      },
+      "loai": {
+        "type": "string",
+        "enum": ["hang-ngay", "mung-1", "ram", "le", "mua", "nhac-quay-lai", "thanh-tuu"]
+      },
+      "tieuDe": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 40
+      },
+      "noiDung": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 110
+      }
+    }
+  }
+}

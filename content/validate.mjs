@@ -215,6 +215,19 @@ for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu'])
   if (vi && en) for (const k of ['loiChao', 'thongDiep', 'loiNguyen', 'nhiemVu', 'queDacBiet']) sameIds(`i18n/en/mua/${mua}.json`, vi[k] || [], en[k] || []);
 }
 
+// ---------- 7. Thông báo đẩy ----------
+{
+  const vi = checkSchema('thong-bao-day.json', 'thong-bao-day.schema.json');
+  const en = checkSchema('i18n/en/thong-bao-day.json', 'thong-bao-day.schema.json');
+  for (const [rel, d] of [['thong-bao-day.json', vi], ['i18n/en/thong-bao-day.json', en]]) {
+    if (!d) continue;
+    dupCheck(rel, d, (x) => x.id, 'id');
+    dupCheck(rel, d, (x) => x.noiDung, 'nội dung');
+    camCheck(rel, d);
+  }
+  if (vi && en) sameIds('i18n/en/thong-bao-day.json', vi, en);
+}
+
 // ---------- Kết quả ----------
 for (const w of warnings) console.log(`⚠ ${w}`);
 for (const e of errors) console.log(`✗ ${e}`);
