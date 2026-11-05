@@ -159,6 +159,7 @@ export class Hub {
   private broadcastPresence(): void {
     const { metrics, io, config } = this.d;
     metrics.connections.set(io.engine.clientsCount);
+    for (const [k, v] of Object.entries(this.debugSizes())) metrics.internal.set({ name: k }, v);
     // Dọn kết nối chết (socket đã mất mà chưa kịp gỡ khỏi presence)
     this.presence.sweep((id) => io.sockets.sockets.has(id));
     if (!this.presence.changed) return;
@@ -649,6 +650,8 @@ export class Hub {
       floodStrikes: this.floodStrikes.size,
       rooms: this.rooms.size,
       incense: this.incense.length,
+      limiterKeys: [...this.limiters.values()].reduce((n, l) => n + l.size, 0) + this.floodLimiter.size + this.lanternUser.size + this.lanternIp.size,
+      bellKeys: this.bellUser.size + this.bellIp.size,
     };
   }
 

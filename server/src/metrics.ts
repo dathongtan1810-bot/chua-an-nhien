@@ -16,6 +16,7 @@ export function createMetrics() {
     incense: new Counter({ name: 'chua_incense_sticks_total', help: 'Số nén hương', registers: [registry] }),
     bells: new Counter({ name: 'chua_bells_total', help: 'Số lần chuông ngân', registers: [registry] }),
     reports: new Counter({ name: 'chua_reports_total', help: 'Báo cáo', labelNames: ['type'], registers: [registry] }),
+    internal: new Gauge({ name: 'chua_internal_entries', help: 'Kích thước cấu trúc trong bộ nhớ (phát hiện rò rỉ)', labelNames: ['name'], registers: [registry] }),
     connRejected: new Counter({ name: 'chua_connections_rejected_total', help: 'Kết nối bị từ chối', labelNames: ['reason'], registers: [registry] }),
     http: new Histogram({
       name: 'chua_http_request_duration_seconds',

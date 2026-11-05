@@ -47,3 +47,18 @@ Mỗi client có IP giả qua `x-forwarded-for` (TRUST_PROXY=true) để không 
 - Chuông được fan-out tới mọi client; độ trễ đo từ lúc client gửi tới lúc từng client nhận (cùng đồng hồ máy).
 - `rate_limited` là bình thường: script cố ý gõ chuông sát giới hạn 3 s toàn server và thắp hương ngẫu nhiên.
 - Xem `HANDOFF.md` cho các tối ưu đã làm và hướng scale ngang.
+
+## Soak (rò rỉ bộ nhớ)
+
+`npm run build && npm run soak -- --waves 6 --clients 300` — mỗi đợt 300 client kết nối, hello, đổi khu, thắp hương (1/3), tạo phòng (1/10), thả đèn (1/50), rồi ngắt.
+Sau mỗi đợt đọc gauge `chua_internal_entries` trên `/metrics`:
+
+| Sau đợt | presence / userSockets / connPerIp / blockCache / floodStrikes | rooms | incense | limiterKeys | heap |
+|---|---|---|---|---|---|
+| 1 | 0 / 0 / 0 / 0 / 0 | 30 | 100 | 1472 | 26 MB |
+| 3 | 0 / 0 / 0 / 0 / 0 | 90 | 300 | 4416 | 43 MB |
+| 6 | 0 / 0 / 0 / 0 / 0 | 180 | 600 | 8832 | 37 MB |
+
+- Các cấu trúc theo kết nối trở về **0** sau mỗi đợt → không rò rỉ.
+- `rooms` (phòng trống giữ 10 phút), `incense` (cửa sổ 3 phút) và `limiterKeys` (cửa sổ ≤ 1 giờ) tăng theo thiết kế
+  và được dọn bởi `sweep()` mỗi 60 s khi hết hạn; có trần (`MAX_ROOMS=5000`, hương ≤ 5000 mục).
