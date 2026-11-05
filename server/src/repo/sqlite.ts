@@ -400,6 +400,9 @@ export function createSqliteRepositories(dbPath: string): Repositories {
         return q.auditList.all(limit) as Array<import('./types.js').AuditRow>;
       },
     },
+    async backup(destPath) {
+      await db.backup(destPath);
+    },
     async close() {
       db.close();
     },

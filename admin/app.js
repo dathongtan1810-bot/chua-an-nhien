@@ -429,7 +429,7 @@
   };
 
   const AUDIT_LABEL = {
-    login: 'Đăng nhập', login_failed: 'Đăng nhập sai', lantern_approve: 'Duyệt đèn', lantern_hide: 'Ẩn đèn',
+    backup: 'Tải sao lưu', login: 'Đăng nhập', login_failed: 'Đăng nhập sai', lantern_approve: 'Duyệt đèn', lantern_hide: 'Ẩn đèn',
     report_resolve: 'Giải quyết báo cáo', user_ban: 'Khóa thiết bị', user_unban: 'Mở khóa', words_update: 'Sửa từ cấm', words_reseed: 'Nạp lại từ cấm',
   };
   async function loadAudit() {

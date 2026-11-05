@@ -123,5 +123,7 @@ export interface Repositories {
   stats: StatsRepo;
   words: WordsRepo;
   audit: AuditRepo;
+  /** Sao lưu nóng toàn bộ dữ liệu ra file (SQLite: online backup API). */
+  backup(destPath: string): Promise<void>;
   close(): Promise<void>;
 }

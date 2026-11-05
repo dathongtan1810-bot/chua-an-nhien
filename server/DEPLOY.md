@@ -104,7 +104,7 @@ socket.emit('hello', { deviceId, nickname: null, lang: 'vi' });
 
 ## Vận hành
 
-- **Sao lưu**: SQLite ở chế độ WAL. Sao lưu nóng: `sqlite3 /data/chua.db ".backup /data/backup-$(date +%F).db"` (Fly: `fly ssh console`).
+- **Sao lưu**: trang admin → tab Thống kê → "Tải bản sao lưu" (`GET /admin/api/backup`, sao lưu nóng an toàn). Hoặc thủ công: SQLite ở chế độ WAL. Sao lưu nóng: `sqlite3 /data/chua.db ".backup /data/backup-$(date +%F).db"` (Fly: `fly ssh console`).
 - **Giám sát**: scrape `/metrics` (Prometheus/Grafana Cloud). Chỉ số chính: `chua_online_users`, `chua_socket_connections`,
   `chua_rate_limited_total`, `chua_lantern_rejected_total`, `chua_http_request_duration_seconds`.
 - **Tắt khẩn cấp tính năng online**: đặt `ONLINE_FEATURES=none` (hoặc bỏ `lantern`) rồi restart; app vẫn chạy offline.

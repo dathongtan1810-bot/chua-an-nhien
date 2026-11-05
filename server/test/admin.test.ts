@@ -136,6 +136,15 @@ describe('admin', () => {
     expect(log.entries[0]).toMatchObject({ target: a.w.userId, ip: '127.0.0.1' });
   });
 
+  it('tải bản sao lưu SQLite', async () => {
+    const { cookie } = await login();
+    expect((await fetch(`${s.url}/admin/api/backup`)).status).toBe(401);
+    const r = await api(cookie, '/backup');
+    expect(r.status).toBe(200);
+    const buf = Buffer.from(await r.arrayBuffer());
+    expect(buf.subarray(0, 15).toString()).toBe('SQLite format 3');
+  });
+
   it('thống kê theo ngày', async () => {
     const { cookie } = await login();
     const { c } = await s.hello();

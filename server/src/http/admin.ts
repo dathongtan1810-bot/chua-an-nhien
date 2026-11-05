@@ -1,4 +1,7 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
+import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import { z } from 'zod';
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import { IdSchema } from '../../../shared/protocol.js';
@@ -174,6 +177,18 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       ctx.log.info({ userId: u.id, banned: b.data.banned }, 'admin ban');
       await audit(req, b.data.banned ? 'user_ban' : 'user_unban', u.id, u.nickname);
       return { ok: true };
+    });
+
+    r.get('/admin/api/backup', async (req, reply) => {
+      const file = path.join(os.tmpdir(), `chua-backup-${randomBytes(6).toString('hex')}.db`);
+      await repos.backup(file);
+      await audit(req, 'backup');
+      const stream = fs.createReadStream(file);
+      stream.on('close', () => fs.rm(file, { force: true }, () => undefined));
+      reply.header('content-type', 'application/vnd.sqlite3');
+      reply.header('content-disposition', `attachment; filename="chua-an-nhien-${vnDay()}.db"`);
+      reply.header('cache-control', 'no-store');
+      return reply.send(stream);
     });
 
     r.get('/admin/api/audit', async () => {
