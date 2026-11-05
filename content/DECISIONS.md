@@ -36,3 +36,8 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D23. Lịch ra mắt: phát hành 1.0 vào mùng 1 tháng Chạp (thứ Sáu 08/01/2027), bản 1.1 Tết vào Rằm tháng Chạp (22/01/2027); Tết Đinh Mùi = thứ Bảy 06/02/2027 (Giao thừa tối 05/02 vì tháng Chạp Bính Ngọ chỉ 29 ngày). Dự phòng: lùi toàn bộ 14 ngày.
 - D24. Không dùng chữ Vạn (卍) trong đồ họa/ảnh store để tránh hiểu nhầm ở thị trường quốc tế (khuyến nghị cho đội thiết kế).
 - D25. Ảnh chụp màn hình không chứa chữ "Miễn phí/Không quảng cáo" (chính sách đồ họa Google Play).
+
+## Bộ lọc từ
+- D26. `mucDo`: 1 = che `***`, 2 = chặn gửi, 3 = chặn + ghi nhận để kiểm duyệt. Từ nhạy cảm nhưng có thể xuất hiện trong lời nguyện thiện (ma túy, tự tử…) để mức 1, kèm allowlist ("cai nghiện ma túy", "bỏ cờ bạc"…).
+- D27. Dạng không dấu dễ trùng từ vô hại (lon, cac, buoi, deo, dit…) để trong `bienTheLach`: chỉ bắt khi có dấu hiệu lách (l0n, c.a.c). Không ánh xạ chữ→chữ (z→d) để tránh sai tên riêng/tiếng Anh.
+- D28. Nhóm `chinh-tri-cuc-doan` cần đội kiểm duyệt duyệt lại **[CẦN XÁC NHẬN]**.

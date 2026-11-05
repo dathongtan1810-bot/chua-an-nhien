@@ -48,6 +48,15 @@
               "minLength": 1,
               "maxLength": 60
             }
+          },
+          "bienTheLach": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "description": "Dạng không dấu dễ trùng từ vô hại; chỉ bắt khi có dấu hiệu lách (thay ký tự, tách chữ)"
           }
         }
       }

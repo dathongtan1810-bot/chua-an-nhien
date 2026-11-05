@@ -116,11 +116,17 @@ function thayKyTu(dv, bang) {
 }
 
 function coChuGan(goc, k) {
-  // trong cùng một "từ" (không có khoảng trắng) có chữ cái
+  // Trong cùng một "từ" (không có khoảng trắng) phải có chữ cái, và số chữ cái thật
+  // không ít hơn số ký tự lách — để mã như "D17", "4k", "A4" không bị đọc thành chữ.
   let a = k; while (a > 0 && goc[a - 1] !== ' ') a--;
   let b = k; while (b < goc.length - 1 && goc[b + 1] !== ' ') b++;
-  for (let i = a; i <= b; i++) if (LA_CHU.test(goc[i])) return true;
-  return false;
+  let chu = 0;
+  let lach = 0;
+  for (let i = a; i <= b; i++) {
+    if (LA_CHU.test(goc[i])) chu++;
+    else if (LACH_MANH.test(goc[i])) lach++;
+  }
+  return chu > 0 && chu >= lach;
 }
 
 /** Bước 4: rút chuỗi chữ cái lặp ≥3 lần (hoặc ≥2 lần nếu có ký tự lách, vd "l00n") còn `giu` lần.

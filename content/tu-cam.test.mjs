@@ -99,7 +99,7 @@ const SACH = [
   'Cầu cho con trai cai nghiện ma túy', 'ức hiếp', 'Ngọc Bích', 'năm 2024!', 'Phật ngủ',
   'Con xin sám hối, mong tâm bớt tham sân si', 'Cầu cho ba mẹ bình an, mạnh khỏe',
   'Mong chồng con bỏ cờ bạc', 'Con chó nhà con mất rồi, mong bé được yên', 'chim bay lạc đàn',
-  'Xin cho con thi đậu đại học', 'Lễ Vu Lan báo hiếu', 'Rằm tháng Giêng',
+  'Xin cho con thi đậu đại học', 'Mã D17', 'giấy A4', 'video 4k', 'Lễ Vu Lan báo hiếu', 'Rằm tháng Giêng',
 ];
 for (const s of SACH) test(`không chặn nhầm: "${s}"`, () => cho(s));
 
