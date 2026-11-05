@@ -29,3 +29,10 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D18. Email liên hệ giữ chỗ: `hotro@chuaannhien.example` (tên miền .example dành riêng) — thay bằng email thật trước khi nộp store.
 - D19. Xóa dữ liệu: trong app (Cài đặt → Xóa dữ liệu của tôi) xóa ngay; hoặc gửi email kèm mã thiết bị hiển thị trong Cài đặt, xử lý trong tối đa 30 ngày. Trang web xóa dữ liệu: `site/support.html#xoa-du-lieu` (Google Play yêu cầu URL).
 - D20. Độ tuổi: nội dung tôn giáo nhẹ, không bạo lực; có nội dung người dùng tạo (lời nguyện) được lọc tự động + báo cáo → IARC có "Users Interact"; App Store đề xuất 12+ (vì UGC) — xem `store/`.
+
+## Store & ra mắt
+- D21. Danh mục cửa hàng: Lifestyle (không xếp "Game") để phản ánh tính chất chiêm nghiệm.
+- D22. Độ tuổi App Store: 13+ (hệ xếp hạng mới của Apple không còn 12+; nếu App Store Connect còn hệ cũ thì chọn 12+). Google Play: IARC 3/PEGI 3 + "Users Interact".
+- D23. Lịch ra mắt: phát hành 1.0 vào mùng 1 tháng Chạp (thứ Sáu 08/01/2027), bản 1.1 Tết vào Rằm tháng Chạp (22/01/2027); Tết Đinh Mùi = thứ Bảy 06/02/2027 (Giao thừa tối 05/02 vì tháng Chạp Bính Ngọ chỉ 29 ngày). Dự phòng: lùi toàn bộ 14 ngày.
+- D24. Không dùng chữ Vạn (卍) trong đồ họa/ảnh store để tránh hiểu nhầm ở thị trường quốc tế (khuyến nghị cho đội thiết kế).
+- D25. Ảnh chụp màn hình không chứa chữ "Miễn phí/Không quảng cáo" (chính sách đồ họa Google Play).
