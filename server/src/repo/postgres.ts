@@ -130,8 +130,27 @@ const toAudit = (r: Raw): AuditRow => ({
 
 type Queryable = Pick<Pool, 'query'> | PoolClient;
 
+/** Khoá advisory cố định cho việc tạo schema (nhiều instance khởi động cùng lúc). */
+const SCHEMA_LOCK_KEY = 72_310_501;
+
+async function ensureSchema(pool: Pool): Promise<void> {
+  // CREATE TABLE IF NOT EXISTS chạy đồng thời vẫn có thể lỗi trùng kiểu (pg_type) → tuần tự hoá bằng advisory lock
+  const c = await pool.connect();
+  try {
+    await c.query('BEGIN');
+    await c.query('SELECT pg_advisory_xact_lock($1)', [SCHEMA_LOCK_KEY]).catch(() => undefined); // pg-mem không có hàm này
+    await c.query(SCHEMA);
+    await c.query('COMMIT');
+  } catch (e) {
+    await c.query('ROLLBACK').catch(() => undefined);
+    throw e;
+  } finally {
+    c.release();
+  }
+}
+
 export async function createPostgresRepositories(pool: Pool): Promise<Repositories> {
-  await pool.query(SCHEMA);
+  await ensureSchema(pool);
 
   const rows = async (c: Queryable, sql: string, params: unknown[] = []): Promise<Raw[]> =>
     (await c.query(sql, params)).rows as Raw[];

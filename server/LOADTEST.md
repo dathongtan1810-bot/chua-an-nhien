@@ -62,3 +62,20 @@ Sau mỗi đợt đọc gauge `chua_internal_entries` trên `/metrics`:
 - Các cấu trúc theo kết nối trở về **0** sau mỗi đợt → không rò rỉ.
 - `rooms` (phòng trống giữ 10 phút), `incense` (cửa sổ 3 phút) và `limiterKeys` (cửa sổ ≤ 1 giờ) tăng theo thiết kế
   và được dọn bởi `sweep()` mỗi 60 s khi hết hạn; có trần (`MAX_ROOMS=5000`, hương ≤ 5000 mục).
+
+## Cụm 2 instance (Postgres + Redis)
+
+Hai tiến trình `dist/index.js` (cổng 8201, 8202) với `DATABASE_URL` (Postgres 16) và `REDIS_URL` dùng chung;
+chạy đồng thời `loadtest --url http://127.0.0.1:8201 --clients 400` và `--url http://127.0.0.1:8202 --clients 400` (20 s).
+
+| Chỉ số | Instance A | Instance B |
+|---|---|---|
+| Kết nối | 400/400 | 400/400 |
+| `presence.online` cuối | **800** | **800** (gộp toàn cụm) |
+| Lượt nhận chuông | 2000 | 2000 (chuông gõ ở instance kia cũng tới) |
+| Fan-out chuông p95 | 33 ms | (không đo được chính xác: hai trình tải cùng gõ chuông, mỗi bên đo từ lần gõ của mình) |
+| Lỗi | chỉ `already_liked` (thả tim trùng có chủ đích) | như A |
+| Ngắt kết nối ngoài ý muốn | 0 | 0 |
+
+Phát hiện & sửa khi chạy: hai instance khởi động cùng lúc đua nhau `CREATE TABLE IF NOT EXISTS` trên Postgres
+→ lỗi `pg_type_typname_nsp_index`; nay tạo schema dưới `pg_advisory_xact_lock` (test: `postgres.real.test.ts`).

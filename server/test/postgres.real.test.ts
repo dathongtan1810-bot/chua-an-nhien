@@ -61,3 +61,17 @@ describe.skipIf(!url)('Postgres thật – đồng thời', () => {
     await repos.close();
   });
 });
+
+describe.skipIf(!url)('Postgres thật – khởi động đồng thời', () => {
+  it('5 instance tạo schema cùng lúc không lỗi (advisory lock)', async () => {
+    const admin = new pg.Pool({ connectionString: url });
+    const schema = `boot_${process.pid}_${Date.now()}`;
+    await admin.query(`CREATE SCHEMA ${schema}`);
+    await admin.end();
+    const all = await Promise.allSettled(
+      Array.from({ length: 5 }, () => createPostgresRepositories(new pg.Pool({ connectionString: url, options: `-c search_path=${schema}` }))),
+    );
+    expect(all.filter((r) => r.status === 'rejected').map((r) => String((r as PromiseRejectedResult).reason))).toEqual([]);
+    for (const r of all) if (r.status === 'fulfilled') await r.value.close();
+  });
+});
