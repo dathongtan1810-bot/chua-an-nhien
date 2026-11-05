@@ -1,6 +1,6 @@
 # HANDOFF — server Chùa An Nhiên
 
-_Cập nhật lần cuối: xem `git log -- server/HANDOFF.md`._
+_Cập nhật lần cuối: 2026-11-05 ~06:40 UTC (xem `git log -- server/HANDOFF.md`)._
 
 ## Trạng thái
 
@@ -37,6 +37,14 @@ _Cập nhật lần cuối: xem `git log -- server/HANDOFF.md`._
 - Review bảo mật bằng subagent → sửa 7 lỗi (race 3 đèn/giờ, giả mạo X-Forwarded-For, lách khoá bằng tự xoá, lộ nội dung giữa 2 người chặn nhau khi tác giả offline, lách HTTP rate limit bằng `%61`, phòng không dọn khi đổi deviceId, crash do unhandled rejection). Test hồi quy: `test/regressions.test.ts`.
 - Bộ lọc: 0 chặn nhầm trên 300 lời nguyện mẫu + 919 câu nội dung khác; nhanh gấp 40 lần (0,8 ms/câu).
 - Báo cáo đếm theo IP băm (chống 1 người nhiều deviceId); i18n thông điệp lỗi vi/en; test rò rỉ bộ nhớ; migration SQLite theo `user_version`.
+
+- PostgreSQL (`DATABASE_URL`, `src/repo/postgres.ts`): toàn bộ test tích hợp chạy trên Postgres 16 thật (`TEST_ALL_PG=1`), CI `server-postgres.yml`.
+- Admin: nhật ký thao tác, tải sao lưu SQLite, "Nạp lại từ file gốc" cho từ cấm. Soak test + gauge `chua_internal_entries`.
+- Kiểm tra 04:30 (thực hiện 06:35 do phiên bị gián đoạn vì giới hạn sử dụng): `content/tu-cam.json` trên `origin/claude/sweet-tesla-9rdbof` **trùng** với `server/data/tu-cam.json`.
+
+## Phiên bị gián đoạn
+
+Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; đợt review thứ hai (bộ lọc mới, Postgres, endpoint admin mới) chưa xong — xem mục cuối nếu có kết quả, nếu không thì nên chạy lại review cho `src/services/filter.ts`, `src/repo/postgres.ts`.
 
 ## Việc nên làm tiếp
 
