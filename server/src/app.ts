@@ -17,6 +17,7 @@ import { Hub, type IO } from './realtime/hub.js';
 import { LocalCluster, RedisCluster, type Cluster } from './realtime/cluster.js';
 import { Redis } from 'ioredis';
 import { createAdapter } from '@socket.io/redis-adapter';
+import { guardFireAndForget } from './realtime/redis.js';
 import { registerApi } from './http/api.js';
 import { registerAdmin } from './http/admin.js';
 import { SlidingWindowLimiter } from './services/rateLimit.js';
@@ -158,7 +159,10 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     const sub = pub.duplicate();
     const state = pub.duplicate();
     redisClients.push(pub, sub, state);
-    for (const r of redisClients) r.on('error', (err) => log.error({ err }, 'redis error'));
+    for (const r of redisClients) {
+      r.on('error', (err) => log.error({ err }, 'redis error'));
+      guardFireAndForget(r); // xem src/realtime/redis.ts
+    }
     // chờ kết nối xong: tránh lệnh nằm trong hàng đợi offline bị huỷ khi đóng sớm
     await Promise.all(
       redisClients.map((r) =>
@@ -193,6 +197,13 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     await new Promise<void>((resolve) => io.close(() => resolve()));
     await hub.drain(); // chờ dọn phòng/presence đang chạy trước khi đóng Redis/DB
     await cluster.close();
+    // adapter.close() (gọi trong io.close) gửi (p)unsubscribe mà không chờ; Redis trả lời theo thứ tự,
+    // nên chờ lệnh (p)unsubscribe của mình xong = lệnh của adapter cũng đã xong → mới quit an toàn.
+    const subClient = redisClients[1];
+    if (subClient && subClient.status === 'ready') {
+      await subClient.punsubscribe().catch(() => undefined);
+      await subClient.unsubscribe().catch(() => undefined);
+    }
     // quit(): chờ các lệnh đang gửi xong rồi mới đóng (disconnect() làm chúng reject "Connection is closed")
     await Promise.all(redisClients.map((r) => r.quit().catch(() => r.disconnect())));
     await repos.close();

@@ -107,3 +107,45 @@ describe.skipIf(!url)('đóng server ở chế độ cụm', () => {
     expect(errs.map(String)).toEqual([]);
   });
 });
+
+describe.skipIf(!url)('guardFireAndForget', () => {
+  it('lệnh bị bỏ rơi khi đóng kết nối không thành unhandled; lệnh có await vẫn nhận lỗi', async () => {
+    const { Redis } = await import('ioredis');
+    const { guardFireAndForget } = await import('../src/realtime/redis.js');
+    const run = async (guard: boolean) => {
+      const errs: unknown[] = [];
+      const h = (e: unknown) => errs.push(e);
+      process.on('unhandledRejection', h);
+      // proxy làm chậm phản hồi 30 ms để lệnh còn đang chờ khi đóng kết nối (như trên CI)
+      const net = await import('node:net');
+      const target = new URL(url!);
+      const proxy = net.createServer((c) => {
+        const u = net.connect(Number(target.port || 6379), target.hostname);
+        c.on('data', (d) => u.write(d));
+        u.on('data', (d) => setTimeout(() => c.writable && c.write(d), 30));
+        c.on('close', () => u.destroy());
+        u.on('close', () => c.destroy());
+        c.on('error', () => undefined);
+        u.on('error', () => undefined);
+      });
+      await new Promise<void>((ok) => proxy.listen(0, '127.0.0.1', () => ok()));
+      const port = (proxy.address() as import('node:net').AddressInfo).port;
+      const r = new Redis({ host: '127.0.0.1', port });
+      await new Promise((ok) => r.once('ready', ok));
+      if (guard) guardFireAndForget(r);
+      void r.publish('x', 'y'); // giống adapter: không chờ
+      const awaited = r.get('k').then(() => 'ok', (e: Error) => e.message);
+      r.disconnect();
+      const res = await awaited;
+      await sleep(80);
+      process.off('unhandledRejection', h);
+      proxy.close();
+      return { unhandled: errs.length, awaited: res };
+    };
+    const bad = await run(false);
+    const good = await run(true);
+    expect(bad.unhandled).toBeGreaterThan(0); // tái hiện lỗi CI
+    expect(good.unhandled).toBe(0);
+    expect(good.awaited).toMatch(/Connection is closed/);
+  });
+});
