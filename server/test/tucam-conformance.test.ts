@@ -106,3 +106,13 @@ describe.skipIf(!hasData)('bổ sung sau review lần 2', () => {
     expect(strs.length).toBeGreaterThan(500);
   });
 });
+
+describe.skipIf(!hasData)('mức độ', () => {
+  const parsed = parseWordList(JSON.parse(fs.readFileSync(tuCamUrl, 'utf8')));
+  const f = new ContentFilter({ words: parsed.words, unaccentedAlso: [], substitutions: parsed.substitutions });
+  it('mucDo 1 → mild, mucDo ≥ 2 → severe, câu có cả hai → severe', () => {
+    expect(f.check('thằng ngu').severity).toBe('mild');
+    expect(f.check('địt mẹ').severity).toBe('severe');
+    expect(f.check('thằng ngu địt mẹ').severity).toBe('severe');
+  });
+});

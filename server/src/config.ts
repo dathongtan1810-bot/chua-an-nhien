@@ -33,6 +33,8 @@ const EnvSchema = z.object({
   /** "all" | "none" | danh sách: presence,incense,bell,lantern,report,room */
   ONLINE_FEATURES: z.string().default('all'),
   MODERATION_MODE: z.enum(['pre', 'post']).default('post'),
+  /** Đèn chỉ chứa từ mức nhẹ (mucDo 1): "reject" = từ chối, nhắc người dùng sửa; "pending" = nhận nhưng chờ duyệt. */
+  MILD_WORD_ACTION: z.enum(['reject', 'pending']).default('reject'),
   MAX_CONN_PER_IP: int(20),
   MAX_PAYLOAD_BYTES: int(4096),
   /** Số sự kiện tối đa / 10 giây cho mỗi socket (chống flood chung). */

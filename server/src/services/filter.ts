@@ -17,6 +17,7 @@
  * Mã hoá danh sách từ (bảng `banned_words`, trang admin): mỗi dòng 1 mục;
  *   "từ"   = từ cấm;  "~từ" = biến thể chỉ tính khi có dấu hiệu lách;  "+cụm" = allowlist (không bao giờ chặn);
  *   "=từ"  = chỉ khớp đúng chữ (không so dạng bỏ dấu) — dùng cho "tu" không dấu của tu-cam.json (vd "=ngu").
+ *   "!"    đứng TRƯỚC các tiền tố trên = từ mức nhẹ (mucDo 1), vd "!=ngu", "!~cl".
  */
 import { LIMITS } from '../../../shared/protocol.js';
 
@@ -28,6 +29,8 @@ export interface FilterResult {
   /** Văn bản đã làm sạch (NFC, gộp khoảng trắng) để lưu. */
   clean: string;
   match?: string;
+  /** Với banned_word: 'mild' nếu chỉ khớp từ mức nhẹ (tiền tố "!", = mucDo 1 của tu-cam.json). */
+  severity?: 'mild' | 'severe';
 }
 
 /** Ký tự lách "mạnh": chỉ cần cạnh 1 chữ cái. */
@@ -175,6 +178,8 @@ interface Pattern {
   accentStrict: boolean;
   /** Mẫu tự có chữ lặp ≥ 3 (vd "xxx"): so với token chưa rút gọn, không so không dấu/nén. */
   rawOnly: boolean;
+  /** Từ mức nhẹ (tiền tố "!"). */
+  mild: boolean;
   /** Khoá tra chỉ mục, tính sẵn. */
   keys: { T: string; R: string; L: string; C: string; D: string };
 }
@@ -182,6 +187,11 @@ interface Pattern {
 function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAULT_SUBS): Pattern | null {
   let kind: Kind = 'word';
   let word = entry.trim();
+  let mild = false;
+  if (word.startsWith('!')) {
+    mild = true;
+    word = word.slice(1);
+  }
   if (word.startsWith('~')) {
     kind = 'lach';
     word = word.slice(1);
@@ -209,6 +219,7 @@ function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAUL
     hasMark,
     accentStrict,
     rawOnly,
+    mild,
     keys: {
       T: `T|${tokens.join(' ')}`,
       R: `R|${tokens.join(' ')}`,
@@ -495,8 +506,9 @@ export class ContentFilter {
     if ([...clean].length > this.maxChars) return { ok: false, reason: 'too_long', clean };
 
     const t = this.prepare(clean);
-    const bad = this.patterns.find((p) => this.matchOne(p, t, true));
-    if (bad) return { ok: false, reason: 'banned_word', clean, match: bad.word };
+    // ưu tiên từ mức nặng; chỉ khi không có mới xét từ mức nhẹ
+    const bad = this.patterns.find((p) => !p.mild && this.matchOne(p, t, true)) ?? this.patterns.find((p) => p.mild && this.matchOne(p, t, true));
+    if (bad) return { ok: false, reason: 'banned_word', clean, match: bad.word, severity: bad.mild ? 'mild' : 'severe' };
     if (LINK_RE.test(clean) || LINK_RE.test(stripDiacritics(clean))) return { ok: false, reason: 'link', clean };
     if (hasPhone(clean)) return { ok: false, reason: 'phone', clean };
     const ad = this.ads.find((p) => this.matchOne(p, t, false));
@@ -540,9 +552,10 @@ export function parseWordList(json: unknown): ParsedWordList {
         // Quy ước content/tu-cam.json: "tu" chỉ so trong không gian có dấu → "tu" không dấu (vd "ngu")
         // không được khớp "ngủ"/"ngư". Đánh dấu "=" (exact).
         const isTuCam = typeof o.tu === 'string';
-        words.push(isTuCam && !/[^\x00-\x7f]/.test(w) ? `=${w}` : w);
-        for (const k of ['variants', 'bienThe', 'aliases']) words.push(...strs(o[k]));
-        for (const k of ['bienTheLach', 'evasionOnly']) words.push(...strs(o[k]).map((x) => `~${x}`));
+        const sev = o.mucDo === 1 ? '!' : '';
+        words.push(sev + (isTuCam && !/[^\x00-\x7f]/.test(w) ? `=${w}` : w));
+        for (const k of ['variants', 'bienThe', 'aliases']) words.push(...strs(o[k]).map((x) => sev + x));
+        for (const k of ['bienTheLach', 'evasionOnly']) words.push(...strs(o[k]).map((x) => `${sev}~${x}`));
         return;
       }
       for (const [k, val] of Object.entries(o)) {

@@ -449,14 +449,16 @@ export class Hub {
     if (n >= LIMITS.LANTERNS_PER_HOUR) throw new RateLimitedError('release_lantern', 60_000);
 
     const res = filter.check(p.text);
-    if (!res.ok) {
+    // Từ mức nhẹ + MILD_WORD_ACTION=pending → nhận đèn nhưng chờ duyệt (không từ chối)
+    const mildPending = !res.ok && res.reason === 'banned_word' && res.severity === 'mild' && config.MILD_WORD_ACTION === 'pending';
+    if (!res.ok && !mildPending) {
       metrics.rejected.inc({ reason: res.reason! });
       throw new HandledError('content_rejected', REJECT_MSG[res.reason!] ?? 'Nội dung không hợp lệ');
     }
     const lu = this.lanternUser.hit(uid);
     if (!lu.ok) throw new RateLimitedError('release_lantern', lu.retryAfterMs);
     const user = await repos.users.findById(uid);
-    const status = config.MODERATION_MODE === 'pre' || user?.flagged ? 'pending' : 'approved';
+    const status = config.MODERATION_MODE === 'pre' || user?.flagged || mildPending ? 'pending' : 'approved';
     const row = await repos.lanterns.create({
       id: newId('l'),
       userId: uid,

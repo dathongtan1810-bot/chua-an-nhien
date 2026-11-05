@@ -17,6 +17,7 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `CORS_ORIGINS` | `*` | danh sách origin cách nhau dấu phẩy, vd `https://chua-an-nhien.vn,capacitor://localhost` |
 | `ONLINE_FEATURES` | `all` | `none` hoặc `presence,incense,bell,lantern,report,room` |
 | `MODERATION_MODE` | `post` | `pre` = mọi đèn chờ duyệt |
+| `MILD_WORD_ACTION` | `reject` | đèn chỉ chứa từ mức nhẹ (mucDo 1 của tu-cam.json): `reject` = từ chối, nhắc sửa; `pending` = nhận nhưng chờ admin duyệt |
 | `MAX_CONN_PER_IP` | `20` | |
 | `MAX_PAYLOAD_BYTES` | `4096` | gói socket & body HTTP |
 | `SOCKET_EVENTS_PER_10S` | `40` | chống flood mỗi socket |

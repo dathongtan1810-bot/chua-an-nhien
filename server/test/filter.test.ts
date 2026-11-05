@@ -122,7 +122,7 @@ describe('định dạng content/tu-cam.json', () => {
   const g = new ContentFilter({ words: parsed.words, substitutions: parsed.substitutions, unaccentedAlso: [] });
 
   it('parse: biến thể lách & allowlist được mã hoá, bỏ metadata', () => {
-    expect(parsed.words).toEqual(['lồn', 'loz', '~lon', 'cặc', '~cac', '=ngu', '+con ngủ', '+ngủ ngon']);
+    expect(parsed.words).toEqual(['lồn', 'loz', '~lon', 'cặc', '~cac', '!=ngu', '+con ngủ', '+ngủ ngon']);
     expect(parsed.substitutions).toEqual({ '9': 'g' });
   });
 

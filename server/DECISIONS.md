@@ -67,3 +67,4 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - Từ 3 ký tự bị tách ("đ ịt", "l ồn") được ghép bản **có dấu**; không ghép bản không dấu (tránh "lon len").
     - Cụm không dấu nhiều âm tiết chỉ tính khi **token sát hai bên cũng không dấu** ("lý do cho con" ≠ "đồ chó"; "do cho", "oc cho qua" vẫn chặn).
     - Chỉ mục đoạn dài tối đa = số token của mẫu dài nhất + 1 (4..12) thay vì cố định 8.
+33. **`mucDo` của tu-cam.json**: mucDo 1 mã hoá tiền tố `!` (mức nhẹ). `MILD_WORD_ACTION=reject` (mặc định, giữ hành vi cũ) hoặc `pending` (đèn chỉ chứa từ nhẹ được nhận ở trạng thái chờ duyệt). Từ mức ≥ 2 luôn bị từ chối. Chưa làm "che ***" vì cần vị trí trên chuỗi gốc.

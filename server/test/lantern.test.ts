@@ -193,3 +193,20 @@ describe('POST /api/me/delete', () => {
     expect(r3.status).toBe(400);
   });
 });
+
+describe('MILD_WORD_ACTION (mucDo 1)', () => {
+  it('reject (mặc định): từ nhẹ bị từ chối; pending: nhận và chờ duyệt; từ nặng luôn từ chối', async () => {
+    s = await startServer();
+    const a = await s.hello();
+    expect(await emitAck(a.c, 'release_lantern', { text: 'thằng ngu', color: 'red' })).toMatchObject({ ok: false, code: 'content_rejected' });
+    await s.close();
+    s = await startServer({ MILD_WORD_ACTION: 'pending' });
+    const b = await s.hello();
+    const other = await s.hello();
+    const seen = collect(other.c, 'lantern_released', 300);
+    const r = await emitAck(b.c, 'release_lantern', { text: 'thằng ngu', color: 'red' });
+    expect(r).toMatchObject({ ok: true, status: 'pending' });
+    expect(await seen).toHaveLength(0);
+    expect(await emitAck(b.c, 'release_lantern', { text: 'địt mẹ', color: 'red' })).toMatchObject({ ok: false, code: 'content_rejected' });
+  });
+});
