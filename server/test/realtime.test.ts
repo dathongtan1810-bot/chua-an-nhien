@@ -161,3 +161,18 @@ describe('độ bền', () => {
     expect(await emitAck(c, 'hello', { deviceId: devId(), lang: 'vi' })).toMatchObject({ ok: false, code: 'invalid_payload' });
   });
 });
+
+describe('i18n', () => {
+  it('lang=en → thông điệp lỗi tiếng Anh', async () => {
+    const c = await s.connect();
+    const w = waitFor(c, 'welcome');
+    c.emit('hello', { deviceId: devId(), lang: 'en' });
+    await w;
+    const e = waitFor(c, 'error');
+    c.emit('release_lantern', { text: 'xem https://x.com', color: 'red' });
+    expect(await e).toEqual({ code: 'content_rejected', message: 'Links are not allowed' });
+    const e2 = waitFor(c, 'error');
+    c.emit('like_lantern', { id: 'nope' });
+    expect((await e2).message).toBe('Lantern not found');
+  });
+});

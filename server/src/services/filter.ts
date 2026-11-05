@@ -62,6 +62,8 @@ const DEFAULT_SUBS: Subs = { strong: DEFAULT_STRONG_SUBS, weak: DEFAULT_WEAK_SUB
 
 export interface Tokens {
   tokens: string[];
+  /** Token chưa rút gọn chữ lặp. */
+  raw: string[];
   evasive: boolean[];
 }
 
@@ -121,13 +123,14 @@ export function tokenizeDetailed(text: string, subs: Subs = DEFAULT_SUBS): Token
   }
   flush();
   // 4) rút gọn chữ lặp
+  const rawTokens = [...tokens];
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i]!;
     const c = collapseRepeats(t);
     if (/(\p{L})\1{2,}/u.test(t)) evasive[i] = true;
     tokens[i] = c;
   }
-  return { tokens, evasive };
+  return { tokens, raw: rawTokens, evasive };
 }
 
 export function tokenize(text: string): string[] {
@@ -145,6 +148,8 @@ interface Pattern {
   compactMarked: string; // có dấu, nối liền
   hasMark: boolean;
   accentStrict: boolean;
+  /** Mẫu tự có chữ lặp ≥ 3 (vd "xxx"): so với token chưa rút gọn, không so không dấu/nén. */
+  rawOnly: boolean;
 }
 
 function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAULT_SUBS): Pattern | null {
@@ -157,7 +162,9 @@ function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAUL
     kind = 'allow';
     word = word.slice(1);
   }
-  const { tokens } = tokenizeDetailed(word, subs);
+  const det = tokenizeDetailed(word, subs);
+  const rawOnly = det.raw.some((t, i) => t !== det.tokens[i] && /(\p{L})\1{2,}/u.test(t));
+  const tokens = rawOnly ? det.raw : det.tokens;
   if (!tokens.length) return null;
   const plain = tokens.map(stripDiacritics);
   const hasMark = tokens.some((t) => VIET_DIACRITIC.test(t));
@@ -171,6 +178,7 @@ function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAUL
     compactMarked: collapseRepeats(tokens.join('')),
     hasMark,
     accentStrict,
+    rawOnly,
   };
 }
 
@@ -257,6 +265,7 @@ export interface FilterConfig {
 }
 
 interface Text {
+  raw: string[];
   tokens: string[];
   plain: string[];
   marked: boolean[];
@@ -319,10 +328,10 @@ export class ContentFilter {
   }
 
   private prepare(clean: string): Text {
-    const { tokens, evasive } = tokenizeDetailed(clean, this.subs);
+    const { tokens, raw, evasive } = tokenizeDetailed(clean, this.subs);
     const plain = tokens.map(stripDiacritics);
     const marked = tokens.map((t) => VIET_DIACRITIC.test(t));
-    const txt: Text = { tokens, plain, marked, evasive };
+    const txt: Text = { raw, tokens, plain, marked, evasive };
     // Che cụm allowlist (thay bằng MASK để không ghép được với token lân cận).
     // Dạng không dấu của allowlist chỉ áp khi CẢ văn bản không dấu — văn bản có dấu đủ ngữ cảnh
     // ("con ngu ngủ ngon") không được tha nhờ allowlist "con ngủ".
@@ -352,6 +361,10 @@ export class ContentFilter {
       return false;
     };
     const lachOk = (start: number, len: number) => p.kind !== 'lach' || any(start, len, (k) => t.evasive[k]!);
+    if (p.rawOnly) {
+      const r = seqFind(t.raw, p.tokens, (k) => t.tokens[k] !== MASK);
+      return r >= 0 && lachOk(r, p.tokens.length);
+    }
     // 1) đúng dấu
     const i = seqFind(t.tokens, p.tokens, () => true);
     if (i >= 0 && lachOk(i, p.tokens.length)) return true;

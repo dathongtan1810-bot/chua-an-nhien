@@ -22,12 +22,14 @@ import { Presence } from '../services/presence.js';
 import { CooldownLimiter, SlidingWindowLimiter } from '../services/rateLimit.js';
 import { Rooms } from '../services/rooms.js';
 import { iso, vnDay } from '../time.js';
+import { translate } from '../i18n.js';
 
 export type IO = Server<ClientToServerEvents, ServerToClientEvents, Record<string, never>, SocketData>;
 export type Sock = Socket<ClientToServerEvents, ServerToClientEvents, Record<string, never>, SocketData>;
 export interface SocketData {
   ip: string;
   deviceHash?: string;
+  lang?: string;
   userId?: string;
   nickname?: string;
 }
@@ -263,12 +265,12 @@ export class Hub {
             s.emit('rate_limited', { event: err.event === '*' ? ev : err.event, retryAfterMs: err.retryAfterMs });
             ack?.({ ok: false, code: 'rate_limited', retryAfterMs: err.retryAfterMs });
           } else if (err instanceof HandledError) {
-            s.emit('error', { code: err.code, message: err.message });
+            s.emit('error', { code: err.code, message: translate(err.message, s.data.lang) });
             ack?.({ ok: false, code: err.code });
             if (err.code === 'banned') s.disconnect(true);
           } else {
             log.error({ err, ev }, 'handler error');
-            s.emit('error', { code: 'internal', message: 'Lỗi máy chủ' });
+            s.emit('error', { code: 'internal', message: translate('Lỗi máy chủ', s.data.lang) });
             ack?.({ ok: false, code: 'internal' });
           }
         }
@@ -330,6 +332,7 @@ export class Hub {
     // Không cho đổi thiết bị giữa chừng trên cùng kết nối (tránh reset giới hạn theo user bằng deviceId mới)
     if (s.data.deviceHash && s.data.deviceHash !== hash) throw new HandledError('invalid_payload', 'Không thể đổi deviceId trên cùng kết nối');
     s.data.deviceHash = hash;
+    s.data.lang = p.lang;
     let nickname = sanitizeNickname(p.nickname, LIMITS.NICKNAME_MAX_CHARS);
     if (nickname && !this.d.filter.check(nickname).ok) nickname = '';
     let user: UserRow | undefined = await repos.users.findByDeviceHash(hash);

@@ -150,3 +150,15 @@ describe('định dạng content/tu-cam.json', () => {
     expect(h.check('năm 2029').ok).toBe(true);
   });
 });
+
+describe('hồi quy', () => {
+  it('"xxx" không khớp chữ "x" đứng riêng', () => {
+    expect(f.check('đi xe máy x2 nhé').ok).toBe(true);
+    expect(f.check('phim xxx').ok).toBe(false);
+    expect(f.check('x x x').ok).toBe(false);
+  });
+  it('không mẫu nào trong danh sách mặc định rút gọn còn 1 ký tự', () => {
+    const g = new ContentFilter({ words: list.words, unaccentedAlso: list.unaccentedAlso });
+    for (const ch of 'abcdefghijklmnopqrstuvwxyzđ') expect(g.check(`chữ ${ch} thôi`).ok, ch).toBe(true);
+  });
+});

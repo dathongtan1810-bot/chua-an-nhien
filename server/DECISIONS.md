@@ -49,3 +49,4 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - `hello` lần 2 với deviceId khác trên cùng socket dọn sạch trạng thái user cũ (phòng, cache).
     - `unhandledRejection` chỉ ghi log, không làm sập tiến trình.
     - Không cho đổi `deviceId` trên cùng kết nối (`hello` lần 2 phải cùng deviceId), tránh reset giới hạn theo user.
+28. **Thông điệp lỗi theo `lang`**: `lang` bắt đầu bằng `en` → tiếng Anh (bảng `src/i18n.ts`), còn lại tiếng Việt. Mã lỗi (`code`) không đổi.
