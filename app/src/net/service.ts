@@ -150,7 +150,9 @@ export class NetService {
     if (this.client && this.limiter.tryConsume('enter_area').ok) this.client.emit('enter_area', { area });
   }
 
-  lightIncense(count: number): void {
+  lightIncense(count: number, nickname = this.hello?.nickname ?? ''): void {
+    // ngoại tuyến: tự giữ hương của mình để lư vẫn còn hương khi quay lại khu
+    if (!this.client) this.incense.push({ userId: 'me', nickname, count, at: new Date().toISOString() });
     this.client?.emit('light_incense', { count });
   }
 

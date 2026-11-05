@@ -74,6 +74,9 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     const s = store.state.settings;
     const reducedMotion = s.reducedMotion;
     this.info = todayInfo();
+    // ?hour=21 — xem trước ngày/đêm (dev, ảnh chụp màn hình)
+    const hourParam = Number(new URLSearchParams(location.search).get('hour'));
+    if (location.search.includes('hour=') && hourParam >= 0 && hourParam < 24) this.info = { ...this.info, hour: hourParam };
     this.night = nightFactor(this.info.hour);
     this.worldWidth = worldWidthOf(this.area);
     const cam = this.cameras.main;
