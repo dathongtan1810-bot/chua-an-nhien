@@ -38,7 +38,7 @@ Nguồn sự thật: [`shared/protocol.ts`](./protocol.ts) (type TypeScript + zo
 | `lantern_released` | `{id, text, color, nickname, at, likes}` — khi `MODERATION_MODE=pre` (hoặc người dùng bị gắn cờ), chỉ **tác giả** nhận ngay; mọi người nhận khi admin duyệt. |
 | `lantern_removed` | `{id}` — đèn bị ẩn (báo cáo/admin), tác giả xoá dữ liệu, hoặc do chặn. |
 | `rate_limited` | `{event, retryAfterMs}` |
-| `error` | `{code, message}` — `code` ∈ `invalid_payload, not_hello, banned, feature_disabled, content_rejected, not_found, already_liked, already_reported, cannot_target_self, room_not_found, room_full, too_many_connections, internal`. `message` là tiếng Việt, hiển thị được cho người dùng. |
+| `error` | `{code, message}` — `code` ∈ `invalid_payload, not_hello, banned, feature_disabled, content_rejected, not_found, already_liked, already_reported, cannot_target_self, room_not_found, room_full, too_many_connections, internal`. `message` hiển thị được cho người dùng: tiếng Anh nếu `hello.lang` bắt đầu bằng `en`, còn lại tiếng Việt. |
 
 Khi bị khoá (`banned`) server gửi `error` rồi ngắt kết nối. Vượt số kết nối/IP → `connect_error` với message `too_many_connections`.
 
