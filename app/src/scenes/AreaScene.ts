@@ -398,6 +398,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         else this.river?.add(e.lantern, e.mine);
       } else if (e.type === 'lanternRemoved') {
         this.river?.remove(e.id);
+      } else if (e.type === 'error' && ['content_rejected', 'banned', 'feature_disabled'].includes(e.code)) {
+        toast(e.code === 'content_rejected' ? t('lantern.rejected') : e.message || e.code);
       } else if (e.type === 'rateLimited' && e.event === 'release_lantern') {
         toast(t('lantern.tooFast', { s: Math.ceil(e.retryAfterMs / 1000) }));
       }

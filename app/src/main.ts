@@ -52,6 +52,7 @@ function begin(): void {
   audio.unlock();
   const s = store.state;
   net.start({ deviceId: s.deviceId, nickname: s.nickname, lang: s.lang }, s.settings.online, s.blocked);
+  net.subscribe((e) => e.type === 'nickname' && store.dispatch({ type: 'nickname', nickname: e.nickname }));
   hud.mount();
   gameInst.scene.start('area', { area: startArea, ritual: ritualParam });
   if (!s.onboarded) {

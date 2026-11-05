@@ -16,6 +16,7 @@ const HELLO = { deviceId: 'dev-1', nickname: 'Lữ khách Sen Hồng', lang: 'vi
 
 function record(c: MockServerClient) {
   const got: { [K in keyof S2CEvents]: S2CEvents[K][] } = {
+    lantern_liked: [],
     welcome: [],
     presence: [],
     incense_lit: [],

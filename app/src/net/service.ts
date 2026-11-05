@@ -17,7 +17,8 @@ export type NetEvent =
   | { type: 'lantern'; lantern: LanternPayload; mine: boolean }
   | { type: 'lanternRemoved'; id: string }
   | { type: 'rateLimited'; event: string; retryAfterMs: number }
-  | { type: 'error'; code: string; message: string };
+  | { type: 'error'; code: string; message: string }
+  | { type: 'nickname'; nickname: string };
 
 type Listener = (e: NetEvent) => void;
 
@@ -62,6 +63,7 @@ export class NetService {
     this.unsubs.push(c.onStatus((s) => this.setStatus(s)));
     on('welcome', (w) => {
       this.userId = w.userId;
+      if (w.nickname && w.nickname !== hello.nickname) this.emit({ type: 'nickname', nickname: w.nickname });
       this.online = w.online;
       this.areas = { ...emptyAreas(), ...w.areas };
       this.incense = w.incense.filter((i) => !this.blocked.has(i.userId));
@@ -85,6 +87,10 @@ export class NetService {
     on('lantern_removed', (r) => {
       this.lanterns.delete(r.id);
       this.emit({ type: 'lanternRemoved', id: r.id });
+    });
+    on('lantern_liked', (x) => {
+      const l = this.lanterns.get(x.id);
+      if (l) l.likes = x.likes;
     });
     on('rate_limited', (r) => this.emit({ type: 'rateLimited', event: String(r.event), retryAfterMs: r.retryAfterMs }));
     on('error', (e) => this.emit({ type: 'error', code: String(e.code), message: e.message }));

@@ -124,7 +124,14 @@ export interface ErrorPayload {
   message: string;
 }
 
+/** EXT (server mở rộng, không phá hợp đồng gốc): số tim mới của một đèn. */
+export interface LanternLikedPayload {
+  id: string;
+  likes: number;
+}
+
 export interface S2CEvents {
+  lantern_liked: LanternLikedPayload;
   welcome: WelcomePayload;
   presence: PresencePayload;
   incense_lit: IncenseLitPayload;
@@ -194,6 +201,7 @@ export const S2C_EVENT_NAMES: readonly (keyof S2CEvents)[] = [
   'lantern_removed',
   'rate_limited',
   'error',
+  'lantern_liked',
 ];
 
 /** Token màu hợp lệ hoặc mã hex #rgb / #rrggbb. */
