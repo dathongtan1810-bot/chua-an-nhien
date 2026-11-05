@@ -46,3 +46,26 @@ describe.skipIf(!hasData)('tương thích content/tu-cam.json', () => {
     expect(wrong).toEqual([]);
   });
 });
+
+describe.skipIf(!hasData)('fuzz biến thể lách trên mọi từ cấm mucDo ≥ 2', () => {
+  const data = JSON.parse(fs.readFileSync(tuCamUrl, 'utf8')) as { tuCam: Array<{ tu: string; mucDo: number }> };
+  const parsed = parseWordList(data);
+  const f = new ContentFilter({ words: parsed.words, unaccentedAlso: [], substitutions: parsed.substitutions });
+  const words = data.tuCam.filter((m) => m.mucDo >= 2).map((m) => m.tu);
+  const variants: Record<string, (w: string) => string> = {
+    upper: (w) => w.toUpperCase(),
+    dots: (w) => w.split(' ').map((x) => [...x].join('.')).join(' '),
+    spaces: (w) => [...w].filter((c) => c !== ' ').join(' '),
+    dashes: (w) => w.split(' ').map((x) => [...x].join('-')).join(' '),
+    repeatLast: (w) => w.replace(/(\p{L})$/u, '$1$1$1$1'),
+    inSentence: (w) => `hôm nay ${w} quá`,
+    zeroWidth: (w) => [...w].join(String.fromCharCode(0x200b)),
+    singleLeet: (w) => w.replace(/[oiae](?=\p{L})/u, (c) => ({ o: '0', i: '1', a: '4', e: '3' })[c]!),
+  };
+  for (const [name, fn] of Object.entries(variants)) {
+    it(name, () => {
+      const missed = words.map((w) => [w, fn(w)] as const).filter(([, v]) => f.check(v).ok).map(([w, v]) => `${w} → ${v}`);
+      expect(missed).toEqual([]);
+    });
+  }
+});

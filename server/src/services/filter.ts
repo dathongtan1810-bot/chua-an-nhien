@@ -71,16 +71,37 @@ export interface Tokens {
 /** Tách token kèm cờ lách. */
 export function tokenizeDetailed(text: string, subs: Subs = DEFAULT_SUBS): Tokens {
   const chars = [...text.normalize('NFC').toLowerCase()];
-  // 1) đổi ký tự lách theo ngữ cảnh; ký tự khác không phải chữ/số → dấu tách
+  // 1) đổi ký tự lách theo "cụm": dãy liền nhau gồm chữ/số/ký tự lách. Ký tự lách mạnh (số, @, $)
+  //    chỉ được đổi khi cụm có ít nhất 1 chữ cái ("4$$h0l3" → "asshole", nhưng "2026" giữ nguyên);
+  //    ký tự lách yếu (!, |) cần chữ/ký tự lách ở cả hai bên ("ngu!" giữ nguyên).
+  const isPart = (c: string | undefined) => !!c && (/[\p{L}\p{N}\p{M}]/u.test(c) || subs.strong[c] !== undefined || subs.weak[c] !== undefined);
   const mapped: Array<{ ch: string; sub: boolean }> = [];
-  for (let i = 0; i < chars.length; i++) {
-    const c = chars[i]!;
-    const prevL = IS_LETTER.test(chars[i - 1] ?? '');
-    const nextL = IS_LETTER.test(chars[i + 1] ?? '');
-    if (subs.strong[c] !== undefined && (prevL || nextL)) mapped.push({ ch: subs.strong[c]!, sub: true });
-    else if (subs.weak[c] !== undefined && prevL && nextL) mapped.push({ ch: subs.weak[c]!, sub: true });
-    else if (/[\p{L}\p{N}\p{M}]/u.test(c)) mapped.push({ ch: c, sub: false });
-    else mapped.push({ ch: ' ', sub: false });
+  let i0 = 0;
+  while (i0 < chars.length) {
+    if (!isPart(chars[i0])) {
+      mapped.push({ ch: ' ', sub: false });
+      i0++;
+      continue;
+    }
+    let j0 = i0;
+    while (j0 < chars.length && isPart(chars[j0])) j0++;
+    const run = chars.slice(i0, j0);
+    const hasLetter = run.some((c) => IS_LETTER.test(c));
+    const isDigit = (c: string | undefined) => !!c && /\p{N}/u.test(c);
+    const isSym = (c: string | undefined) => !!c && subs.strong[c] !== undefined && !isDigit(c);
+    const letterish = (c: string | undefined) => !!c && (IS_LETTER.test(c) || isSym(c));
+    for (let k = 0; k < run.length; k++) {
+      const c = run[k]!;
+      const prevOk = k > 0 && (IS_LETTER.test(run[k - 1]!) || subs.strong[run[k - 1]!] !== undefined);
+      const nextOk = k < run.length - 1 && (IS_LETTER.test(run[k + 1]!) || subs.strong[run[k + 1]!] !== undefined);
+      // chữ số: chỉ đổi khi kề chữ cái/ký hiệu lách ("d1t" → "dit", "Mã D17" giữ "di7"; "4$$h0l3" → "asshole")
+      const strongOk = hasLetter && (isSym(c) || (isDigit(c) && (letterish(run[k - 1]) || letterish(run[k + 1]))));
+      if (subs.strong[c] !== undefined && strongOk) mapped.push({ ch: subs.strong[c]!, sub: true });
+      else if (hasLetter && subs.weak[c] !== undefined && prevOk && nextOk) mapped.push({ ch: subs.weak[c]!, sub: true });
+      else if (/[\p{L}\p{N}\p{M}]/u.test(c)) mapped.push({ ch: c, sub: false });
+      else mapped.push({ ch: ' ', sub: false });
+    }
+    i0 = j0;
   }
   // 2) gom thành token thô
   const raw: Array<{ t: string; sub: boolean }> = [];
@@ -123,8 +144,8 @@ export function tokenizeDetailed(text: string, subs: Subs = DEFAULT_SUBS): Token
     evasive.push(r.sub);
   }
   flush();
-  // 4) rút gọn chữ lặp
-  const rawTokens = [...tokens];
+  // 4) rút gọn chữ lặp (raw giữ tối đa 3 lần lặp để "xxxxxx" vẫn khớp "xxx")
+  const rawTokens = tokens.map((t) => t.replace(/(\p{L})\1{3,}/gu, '$1$1$1'));
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i]!;
     const c = collapseRepeats(t);

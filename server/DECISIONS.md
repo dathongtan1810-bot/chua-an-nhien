@@ -57,3 +57,7 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - `test/tucam-conformance.test.ts` chạy toàn bộ ca `bat(...)`/`SACH` của `content/tu-cam.test.mjs` (bản sao trong fixtures) + 300 lời nguyện mẫu: 0 lọt, 0 chặn nhầm.
     - Bộ lọc dựng chỉ mục đoạn một lần/văn bản: 32 ms → 0,8 ms/câu với ~800 mẫu.
     - Lưu ý vận hành: bảng `banned_words` chỉ seed khi trống. DB cũ (đã seed danh sách mặc định) cần xoá bảng hoặc dán lại danh sách trong admin để dùng tu-cam.json.
+30. **Ký tự lách theo cụm** (phát hiện bằng fuzz): ký hiệu `$ @ €` được đổi khi cụm có chữ cái ("4$$h0l3" → "asshole");
+    chữ số chỉ đổi khi kề chữ cái hoặc ký hiệu lách — "d1t" → "dit" nhưng "Mã D17", "giấy A4", "năm 2024" giữ nguyên.
+    Chấp nhận lọt dạng 2 chữ số liền ("t40", "fr33") để không chặn nhầm mã/số; báo cáo + kiểm duyệt bù lại.
+    Fuzz test (`tucam-conformance.test.ts`): chữ hoa, chèn `.`/`-`/khoảng trắng/zero-width, lặp chữ, leet 1 ký tự trên mọi từ mucDo ≥ 2 → 0 lọt.
