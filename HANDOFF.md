@@ -29,7 +29,7 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
 ## Còn lại
 - Chạy e2e với server thật (chưa làm: hết giờ). Kiểm tra nhánh `qa/` khi có (`qa/BUGS.md` chưa tồn tại).
 - Nội dung tiếng Anh của phiên nội dung (`content/i18n`) chưa được nối vào chế độ English (thơ/quẻ vẫn tiếng Việt).
-- 3 lỗi review nhỏ chưa sửa: chia sẻ trên iOS Safari có thể mất "user gesture" (nên tạo blob trước khi await);
+- 2 lỗi review nhỏ chưa sửa:
   sheet chưa có focus trap; nút "online" bật lại chưa xin lại danh sách đèn ngay.
 - Build native thật (Android Studio / Xcode trên macOS), ký bằng keystore (xem docs/app/PUBLISHING.md).
 - Đo FPS trên máy thật tầm trung (headless SwiftShader không đại diện).

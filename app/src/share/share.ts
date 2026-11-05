@@ -52,20 +52,24 @@ export async function shareCard(data: ShareKind): Promise<void> {
   const url = inviteUrl();
   const title = t('app.name');
   const text = data.kind === 'lantern' ? t('share.inviteText') : t('app.tagline');
-  if (await nativeShare({ title, text, url, dataUrl })) return;
-  const blob: Blob | null = await new Promise((r) => canvas.toBlob(r, 'image/png'));
-  if (blob) {
-    const file = new File([blob], `chua-an-nhien-${data.kind}.png`, { type: 'image/png' });
+  // Web: gọi navigator.share ngay (đồng bộ từ dataURL) để không mất "user gesture" trên iOS Safari
+  const isNativeApp = !!(window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor?.isNativePlatform?.();
+  if (!isNativeApp) {
+    const bin = atob(dataUrl.split(',')[1]);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    const file = new File([bytes], `chua-an-nhien-${data.kind}.png`, { type: 'image/png' });
     const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
     if (nav.share && nav.canShare?.({ files: [file] })) {
       try {
         await nav.share({ files: [file], title, text: `${text} ${url}` });
         return;
-      } catch {
-        return;
+      } catch (err) {
+        if ((err as DOMException)?.name === 'AbortError') return; // người dùng hủy
+        // lỗi khác (NotAllowedError…) → tải ảnh xuống bên dưới
       }
     }
-  }
+  } else if (await nativeShare({ title, text, url, dataUrl })) return;
   // Dự phòng: tải ảnh xuống
   const a = document.createElement('a');
   a.href = dataUrl;
