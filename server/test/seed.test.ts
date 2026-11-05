@@ -7,16 +7,23 @@ import { testConfig } from '../src/config.js';
 import { emitAck, startServer } from './helpers.js';
 
 describe('seed từ cấm', () => {
-  it('BANNED_WORDS_PATH định dạng tu-cam.json được gộp với mặc định', () => {
+  it('BANNED_WORDS_PATH định dạng tu-cam.json được ưu tiên (một nguồn duy nhất)', () => {
     const f = path.join(os.tmpdir(), `tu-cam-${process.pid}.json`);
     fs.writeFileSync(f, JSON.stringify({ tuCam: [{ tu: 'hoa quỳnh', bienTheLach: ['hq'] }], allowlist: ['quỳnh hoa'], thayKyTu: { '9': 'g' } }));
     const seed = loadSeedWords(testConfig({ BANNED_WORDS_PATH: f }));
     expect(seed.words).toContain('hoa quỳnh');
     expect(seed.words).toContain('~hq');
     expect(seed.words).toContain('+quỳnh hoa');
-    expect(seed.words).toContain('địt'); // vẫn có danh sách mặc định
+    expect(seed.words).not.toContain('địt'); // không gộp danh sách mặc định
+    expect(seed.unaccentedAlso).toEqual([]);
     expect(seed.substitutions).toEqual({ '9': 'g' });
-    expect(seed.source).toContain(path.basename(f));
+    expect(seed.source).toBe(path.basename(f));
+  });
+
+  it('mặc định dùng data/tu-cam.json nếu có, không thì banned-words.json', () => {
+    const seed = loadSeedWords(testConfig());
+    expect(['tu-cam.json', 'banned-words.json']).toContain(seed.source);
+    expect(seed.words.length).toBeGreaterThan(50);
   });
 
   it('file hỏng bị bỏ qua', () => {

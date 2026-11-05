@@ -50,3 +50,10 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - `unhandledRejection` chỉ ghi log, không làm sập tiến trình.
     - Không cho đổi `deviceId` trên cùng kết nối (`hello` lần 2 phải cùng deviceId), tránh reset giới hạn theo user.
 28. **Thông điệp lỗi theo `lang`**: `lang` bắt đầu bằng `en` → tiếng Anh (bảng `src/i18n.ts`), còn lại tiếng Việt. Mã lỗi (`code`) không đổi.
+29. **Đã tích hợp `content/tu-cam.json`** (nhánh `claude/sweet-tesla-9rdbof`, commit c4d4d3e) → sao chép thành `server/data/tu-cam.json`.
+    - Server dùng **một nguồn duy nhất**: `BANNED_WORDS_PATH` → `data/tu-cam.json` → `data/banned-words.json` (dự phòng). Không gộp với danh sách mặc định của server.
+    - Theo quy ước của `loc-tu.mjs`: `tu` không dấu (vd "ngu") chỉ khớp đúng chữ (tiền tố `=`), không khớp "ngủ"/"ngư".
+    - Bản nén không dấu chỉ ghép token không dấu.
+    - `test/tucam-conformance.test.ts` chạy toàn bộ ca `bat(...)`/`SACH` của `content/tu-cam.test.mjs` (bản sao trong fixtures) + 300 lời nguyện mẫu: 0 lọt, 0 chặn nhầm.
+    - Bộ lọc dựng chỉ mục đoạn một lần/văn bản: 32 ms → 0,8 ms/câu với ~800 mẫu.
+    - Lưu ý vận hành: bảng `banned_words` chỉ seed khi trống. DB cũ (đã seed danh sách mặc định) cần xoá bảng hoặc dán lại danh sách trong admin để dùng tu-cam.json.

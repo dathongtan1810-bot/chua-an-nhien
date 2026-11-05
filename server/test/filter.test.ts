@@ -103,7 +103,7 @@ describe('ContentFilter', () => {
   it('parseWordList nhiều định dạng', () => {
     expect(parseWordList(['a', 'b']).words).toEqual(['a', 'b']);
     expect(parseWordList({ tucam: ['a'], quangcao: ['b'] }).words).toEqual(['a', 'b']);
-    expect(parseWordList([{ word: 'a', variants: ['a1'] }, { tu: 'b' }]).words).toEqual(['a', 'a1', 'b']);
+    expect(parseWordList([{ word: 'a', variants: ['a1'] }, { tu: 'b' }, { tu: 'bé' }]).words).toEqual(['a', 'a1', '=b', 'bé']);
   });
 });
 
@@ -122,7 +122,7 @@ describe('định dạng content/tu-cam.json', () => {
   const g = new ContentFilter({ words: parsed.words, substitutions: parsed.substitutions, unaccentedAlso: [] });
 
   it('parse: biến thể lách & allowlist được mã hoá, bỏ metadata', () => {
-    expect(parsed.words).toEqual(['lồn', 'loz', '~lon', 'cặc', '~cac', 'ngu', '+con ngủ', '+ngủ ngon']);
+    expect(parsed.words).toEqual(['lồn', 'loz', '~lon', 'cặc', '~cac', '=ngu', '+con ngủ', '+ngủ ngon']);
     expect(parsed.substitutions).toEqual({ '9': 'g' });
   });
 

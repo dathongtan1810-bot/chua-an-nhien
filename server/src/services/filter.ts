@@ -15,7 +15,8 @@
  *  5. Link, email, số điện thoại (kể cả chèn khoảng trắng/dấu chấm, viết bằng chữ) và từ khoá quảng cáo.
  *
  * Mã hoá danh sách từ (bảng `banned_words`, trang admin): mỗi dòng 1 mục;
- *   "từ"   = từ cấm;  "~từ" = biến thể chỉ tính khi có dấu hiệu lách;  "+cụm" = allowlist (không bao giờ chặn).
+ *   "từ"   = từ cấm;  "~từ" = biến thể chỉ tính khi có dấu hiệu lách;  "+cụm" = allowlist (không bao giờ chặn);
+ *   "=từ"  = chỉ khớp đúng chữ (không so dạng bỏ dấu) — dùng cho "tu" không dấu của tu-cam.json (vd "=ngu").
  */
 import { LIMITS } from '../../../shared/protocol.js';
 
@@ -137,7 +138,7 @@ export function tokenize(text: string): string[] {
   return tokenizeDetailed(text).tokens;
 }
 
-type Kind = 'word' | 'lach' | 'allow';
+type Kind = 'word' | 'lach' | 'allow' | 'exact';
 
 interface Pattern {
   word: string;
@@ -150,6 +151,8 @@ interface Pattern {
   accentStrict: boolean;
   /** Mẫu tự có chữ lặp ≥ 3 (vd "xxx"): so với token chưa rút gọn, không so không dấu/nén. */
   rawOnly: boolean;
+  /** Khoá tra chỉ mục, tính sẵn. */
+  keys: { T: string; R: string; L: string; C: string; D: string };
 }
 
 function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAULT_SUBS): Pattern | null {
@@ -160,6 +163,9 @@ function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAUL
     word = word.slice(1);
   } else if (word.startsWith('+')) {
     kind = 'allow';
+    word = word.slice(1);
+  } else if (word.startsWith('=')) {
+    kind = 'exact';
     word = word.slice(1);
   }
   const det = tokenizeDetailed(word, subs);
@@ -179,6 +185,13 @@ function compile(entry: string, unaccentedAlso: Set<string>, subs: Subs = DEFAUL
     hasMark,
     accentStrict,
     rawOnly,
+    keys: {
+      T: `T|${tokens.join(' ')}`,
+      R: `R|${tokens.join(' ')}`,
+      L: `${hasMark ? 'U' : 'P'}|${plain.join(' ')}`,
+      C: `C|${collapseRepeats(tokens.join(''))}`,
+      D: `D|${collapseRepeats(plain.join(''))}`,
+    },
   };
 }
 
@@ -191,18 +204,31 @@ function seqFind(hay: string[], needle: string[], ok: (i: number) => boolean): n
   return -1;
 }
 
-/** Bản nén khớp theo ranh giới token: nối token i..j phải BẰNG từ cấm đã nén. */
-function alignedCompact(hay: string[], compact: string, ok: (i: number) => boolean): [number, number] | null {
-  for (let i = 0; i < hay.length; i++) {
-    let acc = '';
-    for (let j = i; j < hay.length; j++) {
-      if (!ok(j) || hay[j] === MASK) break;
-      acc = collapseRepeats(acc + hay[j]!);
-      if (acc.length > compact.length + 2) break;
-      if (acc === compact) return [i, j];
+const MAX_SPAN = 8;
+
+/** Dựng chỉ mục mọi đoạn ≤ MAX_SPAN token (bỏ đoạn chứa MASK). */
+function buildIndex(t: Text): void {
+  const add = (key: string, a: number, b: number) => {
+    const arr = t.idx.get(key);
+    if (arr) arr.push([a, b]);
+    else t.idx.set(key, [[a, b]]);
+  };
+  const n = t.tokens.length;
+  for (let a = 0; a < n; a++) {
+    let unmarked = true;
+    for (let b = a; b < Math.min(n, a + MAX_SPAN); b++) {
+      if (t.tokens[b] === MASK) break;
+      if (t.marked[b]) unmarked = false;
+      const tok = t.tokens.slice(a, b + 1);
+      const pl = t.plain.slice(a, b + 1);
+      add(`T|${tok.join(' ')}`, a, b);
+      add(`R|${t.raw.slice(a, b + 1).join(' ')}`, a, b);
+      add(`P|${pl.join(' ')}`, a, b);
+      if (unmarked) add(`U|${pl.join(' ')}`, a, b);
+      add(`C|${collapseRepeats(tok.join(''))}`, a, b);
+      if (unmarked) add(`D|${collapseRepeats(pl.join(''))}`, a, b);
     }
   }
-  return null;
 }
 
 // ---- Link / email / điện thoại / quảng cáo -------------------------------
@@ -265,6 +291,8 @@ export interface FilterConfig {
 }
 
 interface Text {
+  /** Chỉ mục đoạn: khoá "<không gian>|<chuỗi>" → các khoảng [đầu, cuối] (dựng 1 lần / văn bản). */
+  idx: Map<string, Array<[number, number]>>;
   raw: string[];
   tokens: string[];
   plain: string[];
@@ -331,7 +359,7 @@ export class ContentFilter {
     const { tokens, raw, evasive } = tokenizeDetailed(clean, this.subs);
     const plain = tokens.map(stripDiacritics);
     const marked = tokens.map((t) => VIET_DIACRITIC.test(t));
-    const txt: Text = { raw, tokens, plain, marked, evasive };
+    const txt: Text = { idx: new Map(), raw, tokens, plain, marked, evasive };
     // Che cụm allowlist (thay bằng MASK để không ghép được với token lân cận).
     // Dạng không dấu của allowlist chỉ áp khi CẢ văn bản không dấu — văn bản có dấu đủ ngữ cảnh
     // ("con ngu ngủ ngon") không được tha nhờ allowlist "con ngủ".
@@ -352,36 +380,31 @@ export class ContentFilter {
         }
       }
     }
+    buildIndex(txt);
     return txt;
   }
 
   private matchOne(p: Pattern, t: Text, useCompact: boolean): boolean {
-    const any = (from: number, len: number, f: (i: number) => boolean) => {
-      for (let k = from; k < from + len; k++) if (f(k)) return true;
-      return false;
+    const hit = (key: string) => {
+      const spans = t.idx.get(key);
+      if (!spans) return false;
+      if (p.kind !== 'lach') return true;
+      // biến thể lách: đoạn khớp phải có ít nhất 1 token mang dấu hiệu lách
+      return spans.some(([a, b]) => {
+        for (let k = a; k <= b; k++) if (t.evasive[k]) return true;
+        return false;
+      });
     };
-    const lachOk = (start: number, len: number) => p.kind !== 'lach' || any(start, len, (k) => t.evasive[k]!);
-    if (p.rawOnly) {
-      const r = seqFind(t.raw, p.tokens, (k) => t.tokens[k] !== MASK);
-      return r >= 0 && lachOk(r, p.tokens.length);
-    }
+    if (p.rawOnly) return hit(p.keys.R);
     // 1) đúng dấu
-    const i = seqFind(t.tokens, p.tokens, () => true);
-    if (i >= 0 && lachOk(i, p.tokens.length)) return true;
-    // 2) không dấu: chỉ trên đoạn văn bản không dấu nếu từ cấm có dấu
-    if (!p.accentStrict) {
-      const okU = (k: number) => !p.hasMark || !t.marked[k];
-      const j = seqFind(t.plain, p.plain, okU);
-      if (j >= 0 && lachOk(j, p.plain.length)) return true;
-    }
-    // 3) bản nén theo ranh giới token
+    if (hit(p.keys.T)) return true;
+    const loose = !p.accentStrict && p.kind !== 'exact';
+    // 2) không dấu: từ cấm có dấu chỉ so trên đoạn văn bản không dấu
+    if (loose && hit(p.keys.L)) return true;
+    // 3) bản nén theo ranh giới token; nén không dấu chỉ ghép token KHÔNG dấu ("dù mà" ≠ "duma")
     if (useCompact && p.compact.length >= 4) {
-      const m1 = alignedCompact(t.tokens, p.compactMarked, () => true);
-      if (m1 && lachOk(m1[0], m1[1] - m1[0] + 1)) return true;
-      if (!p.accentStrict) {
-        const m2 = alignedCompact(t.plain, p.compact, (k) => !p.hasMark || !t.marked[k]);
-        if (m2 && lachOk(m2[0], m2[1] - m2[0] + 1)) return true;
-      }
+      if (hit(p.keys.C)) return true;
+      if (loose && hit(p.keys.D)) return true;
     }
     return false;
   }
@@ -434,7 +457,10 @@ export function parseWordList(json: unknown): ParsedWordList {
       const o = v as Record<string, unknown>;
       const w = o.word ?? o.tu ?? o.text ?? o.value;
       if (typeof w === 'string') {
-        words.push(w);
+        // Quy ước content/tu-cam.json: "tu" chỉ so trong không gian có dấu → "tu" không dấu (vd "ngu")
+        // không được khớp "ngủ"/"ngư". Đánh dấu "=" (exact).
+        const isTuCam = typeof o.tu === 'string';
+        words.push(isTuCam && !/[^\x00-\x7f]/.test(w) ? `=${w}` : w);
         for (const k of ['variants', 'bienThe', 'aliases']) words.push(...strs(o[k]));
         for (const k of ['bienTheLach', 'evasionOnly']) words.push(...strs(o[k]).map((x) => `~${x}`));
         return;

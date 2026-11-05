@@ -169,7 +169,7 @@ describe('i18n', () => {
     c.emit('hello', { deviceId: devId(), lang: 'en' });
     await w;
     const e = waitFor(c, 'error');
-    c.emit('release_lantern', { text: 'xem https://x.com', color: 'red' });
+    c.emit('release_lantern', { text: 'ghé shopabc.vn nhé', color: 'red' });
     expect(await e).toEqual({ code: 'content_rejected', message: 'Links are not allowed' });
     const e2 = waitFor(c, 'error');
     c.emit('like_lantern', { id: 'nope' });

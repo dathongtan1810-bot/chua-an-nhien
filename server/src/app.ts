@@ -34,27 +34,31 @@ export interface AppContext {
   unaccentedAlso: string[];
 }
 
-/** Tìm danh sách từ cấm khởi tạo: BANNED_WORDS_PATH → data/tu-cam.json (từ content/) → data/banned-words.json. */
+/**
+ * Danh sách từ cấm khởi tạo — dùng MỘT nguồn, theo thứ tự ưu tiên:
+ *   BANNED_WORDS_PATH → data/tu-cam.json (bản sao content/tu-cam.json của nhóm nội dung) → data/banned-words.json.
+ * Nguồn hỏng/không đọc được thì thử nguồn kế tiếp. Danh sách mặc định của server chỉ là dự phòng
+ * (nhóm nội dung là nguồn chuẩn và cố ý loại các dạng không dấu dễ chặn nhầm như "dit").
+ */
 export function loadSeedWords(config: Config): { words: string[]; unaccentedAlso: string[]; substitutions: Record<string, string>; source: string } {
   const candidates = [config.BANNED_WORDS_PATH, path.join(SERVER_ROOT, 'data/tu-cam.json'), path.join(SERVER_ROOT, 'data/banned-words.json')].filter(Boolean);
-  const merged = { words: [] as string[], unaccentedAlso: [...DEFAULT_UNACCENTED_ALSO], substitutions: {} as Record<string, string>, source: 'none' };
-  const sources: string[] = [];
   for (const file of candidates) {
     if (!fs.existsSync(file)) continue;
     try {
       const parsed = parseWordList(JSON.parse(fs.readFileSync(file, 'utf8')));
-      merged.words.push(...parsed.words);
-      if (parsed.unaccentedAlso) merged.unaccentedAlso.push(...parsed.unaccentedAlso);
-      if (parsed.substitutions) Object.assign(merged.substitutions, parsed.substitutions);
-      sources.push(path.basename(file));
+      if (!parsed.words.length) continue;
+      const isServerDefault = path.basename(file) === 'banned-words.json';
+      return {
+        words: parsed.words,
+        unaccentedAlso: parsed.unaccentedAlso ?? (isServerDefault ? DEFAULT_UNACCENTED_ALSO : []),
+        substitutions: parsed.substitutions ?? {},
+        source: path.basename(file),
+      };
     } catch {
       // bỏ qua file hỏng, dùng nguồn tiếp theo
     }
   }
-  merged.words = [...new Set(merged.words)];
-  merged.unaccentedAlso = [...new Set(merged.unaccentedAlso)];
-  merged.source = sources.join('+') || 'none';
-  return merged;
+  return { words: [], unaccentedAlso: DEFAULT_UNACCENTED_ALSO, substitutions: {}, source: 'none' };
 }
 
 /**
