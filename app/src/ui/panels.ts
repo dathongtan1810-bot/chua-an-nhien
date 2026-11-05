@@ -1,7 +1,7 @@
 import { audio } from '../audio/engine';
 import { setHapticsEnabled } from '../audio/haptics';
 import { AREA_INFO, type AreaId } from '../core/areas';
-import { game } from '../core/bus';
+import { game, requestGoTo } from '../core/bus';
 import { getLang, setLang, t } from '../core/i18n';
 import { SHOP_ITEMS, type ShopCategory } from '../core/shop';
 import { DAILY_QUESTS, type Settings } from '../core/state';
@@ -23,7 +23,7 @@ export function openMap(): void {
     family: net.room?.members.filter((m) => m.userId !== net.userId) ?? [],
     onPick: (a: AreaId) => {
       s.close();
-      game.api?.goTo(a);
+      requestGoTo(a);
     },
   });
   svg.style.width = '100%';
@@ -34,7 +34,7 @@ export function openMap(): void {
     list.append(
       h(
         'button',
-        { class: 'chip' + (a === store.state.area ? ' active' : ''), onclick: () => (s.close(), game.api?.goTo(a)) },
+        { class: 'chip' + (a === store.state.area ? ' active' : ''), onclick: () => (s.close(), requestGoTo(a)) },
         t(AREA_INFO[a].nameKey),
       ),
     );

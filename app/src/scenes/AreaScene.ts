@@ -124,6 +124,10 @@ export class AreaScene extends Phaser.Scene implements GameApi {
 
     this.showAreaTitle(reducedMotion);
     this.events.once('shutdown', () => this.cleanup());
+    const queued = game.pending;
+    game.pending = {};
+    if (queued.goTo && queued.goTo !== this.area) this.time.delayedCall(50, () => this.goTo(queued.goTo!));
+    else if (queued.ritual) this.pendingRitual = queued.ritual;
     if (this.pendingRitual && isRitualId(this.pendingRitual)) {
       const id = this.pendingRitual;
       this.time.delayedCall(250, () => this.startRitual(id));

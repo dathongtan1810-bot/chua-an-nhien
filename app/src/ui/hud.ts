@@ -1,6 +1,6 @@
 import { ADS_ENABLED } from '../config';
 import { AREA_INFO, type AreaId } from '../core/areas';
-import { bus, game } from '../core/bus';
+import { bus, game, requestGoTo, requestRitual } from '../core/bus';
 import { getLang, t } from '../core/i18n';
 import { store } from '../core/store';
 import { todayInfo } from '../core/today';
@@ -104,12 +104,12 @@ export class Hud {
     for (const id of AREA_RITUALS[area]) {
       const def = RITUALS[id];
       this.bottom.append(
-        h('button', { class: 'act', onclick: () => game.api?.startRitual(id) }, h('span', { class: 'ic', 'aria-hidden': 'true' }, def.icon), t(def.labelKey)),
+        h('button', { class: 'act', onclick: () => requestRitual(id) }, h('span', { class: 'ic', 'aria-hidden': 'true' }, def.icon), t(def.labelKey)),
       );
     }
     for (const to of AREA_INFO[area].links) {
       this.bottom.append(
-        h('button', { class: 'act nav', onclick: () => game.api?.goTo(to), 'aria-label': t('go.to', { name: t(AREA_INFO[to].nameKey) }) }, '➜ ' + t(AREA_INFO[to].nameKey)),
+        h('button', { class: 'act nav', onclick: () => requestGoTo(to), 'aria-label': t('go.to', { name: t(AREA_INFO[to].nameKey) }) }, '➜ ' + t(AREA_INFO[to].nameKey)),
       );
     }
     if (area === 'bo-song') {

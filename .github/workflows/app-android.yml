@@ -33,6 +33,9 @@ jobs:
           cache: gradle
 
       - uses: android-actions/setup-android@v3
+        with:
+          # gói 'tools' mặc định đã bị gỡ khỏi sdkmanager → chỉ định rõ
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
 
       - run: npm ci
       - run: npm run build

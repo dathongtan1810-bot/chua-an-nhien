@@ -25,4 +25,14 @@ export interface GameApi {
   exitRitual(): void;
   readonly ritual: string | null;
 }
-export const game: { api: GameApi | null } = { api: null };
+export const game: { api: GameApi | null; pending: { goTo?: AreaId; ritual?: string } } = { api: null, pending: {} };
+
+/** Gọi từ HUD: nếu cảnh đang khởi động lại thì xếp hàng, cảnh sẽ thực hiện khi sẵn sàng. */
+export function requestGoTo(area: AreaId): void {
+  if (game.api) game.api.goTo(area);
+  else game.pending.goTo = area;
+}
+export function requestRitual(id: string): void {
+  if (game.api) game.api.startRitual(id);
+  else game.pending.ritual = id;
+}
