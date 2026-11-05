@@ -71,5 +71,5 @@ Số ký tự caption VN đếm bằng Node (giới hạn 40).
 | Mùa | Thay ảnh | Caption VN thay thế (ký tự) |
 |---|---|---|
 | Tết | Ảnh 1 & 6 trang trí mai, đào, câu đối | "Sân chùa rộn ràng đón Tết" (25) |
-| Phật Đản | Ảnh 1 & 6 hoa sen, cờ ngũ sắc giản lược (theo trang trí sự kiện `phat-dan` trong `content/su-kien-am-lich.json`; và bộ mùa `content/mua/phat-dan.json`) [CẦN XÁC NHẬN tính phù hợp hình ảnh] | "Mùa Phật Đản, sen nở khắp sân chùa" (34) |
+| Phật Đản | Ảnh 1 & 6 hoa sen, cờ ngũ sắc giản lược (theo trang trí sự kiện `phat-dan` trong `content/su-kien-am-lich.json` và bộ mùa `content/mua/phat-dan.json`) [CẦN XÁC NHẬN tính phù hợp hình ảnh] | "Mùa Phật Đản, sen nở khắp sân chùa" (34) |
 | Vu Lan | Ảnh 1 & 6 hoa hồng, hoa đăng (`content/mua/vu-lan.json`) | "Mùa Vu Lan, cài bông hồng biết ơn" (33) |
