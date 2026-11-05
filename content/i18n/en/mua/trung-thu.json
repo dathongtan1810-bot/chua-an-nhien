@@ -1,0 +1,197 @@
+{
+  "id": "trung-thu",
+  "ten": "Mid-Autumn Season",
+  "khoangNgayAm": { "tu": { "thang": 8, "ngay": 10 }, "den": { "thang": 8, "ngay": 16 } },
+  "moTa": "In the middle of the eighth lunar month, An Nhiên Temple hangs star lanterns, sets out a full-moon feast and opens its yard for children's lantern parades. It is the season of the roundest moon of the year, of gathering over tea and mooncakes, and of gratitude for the fields and for the hands that bring in the harvest.",
+  "loiChao": [
+    { "id": 1, "noiDung": "The autumn moon has risen over the bell tower. Come watch it in the temple yard." },
+    { "id": 2, "noiDung": "An Nhiên Temple wishes you a warm Mid-Autumn full of togetherness." },
+    { "id": 3, "noiDung": "The children are lining up for the lantern parade. Would you like to join?" },
+    { "id": 4, "noiDung": "The full-moon feast is ready. Sit down and pour yourself a cup of tea." },
+    { "id": 5, "noiDung": "Hello, moon season. Have you called home today?" },
+    { "id": 6, "noiDung": "Red star lanterns glow across the yard. Come pick one for yourself." },
+    { "id": 7, "noiDung": "The autumn wind is cool. Slow down a little and listen to the leaves." },
+    { "id": 8, "noiDung": "The little monk just cut the mooncake into shares. Yours is waiting here." },
+    { "id": 9, "noiDung": "Happy Mid-Autumn! May someone watch the moon with you tonight." },
+    { "id": 10, "noiDung": "Ripe rice, a round moon. Come into the temple and say thank you." },
+    { "id": 11, "noiDung": "The full moon of the eighth month is so bright. Thank you for visiting." },
+    { "id": 12, "noiDung": "Lion-dance drums sound at the gate. Come in and watch the children dance." }
+  ],
+  "thongDiep": [
+    { "id": 1, "noiDung": "The eighth-month moon is the roundest of the year, but what makes Mid-Autumn complete is someone sitting beside you." },
+    { "id": 2, "noiDung": "Let children carry their own lanterns. The line may not be straight, but the joy belongs to them." },
+    { "id": 3, "noiDung": "A small mooncake cut in four becomes four smiles. That is what togetherness looks like." },
+    { "id": 4, "noiDung": "Before the feast, tell the children how a grain of rice travels from the field to the table." },
+    { "id": 5, "noiDung": "Someone could not make it home for the full moon. A video call is still watching the same moon together." },
+    { "id": 6, "noiDung": "A star lantern made of bamboo and paper can be lovelier than a bought one, because your time is inside it." },
+    { "id": 7, "noiDung": "Being grateful for the harvest means thanking the sun, rain, soil and people you have never met." },
+    { "id": 8, "noiDung": "Children remember Mid-Autumn not for expensive gifts, but for grown-ups who were willing to play." },
+    { "id": 9, "noiDung": "Moon-watching is a way of resting. No need to think; just look and breathe." },
+    { "id": 10, "noiDung": "A hot cup of tea on an autumn night says a great deal. Pour for elders first and offer it with both hands." },
+    { "id": 11, "noiDung": "Some children have no lantern tonight. If you can, share one with them." },
+    { "id": 12, "noiDung": "The moon shines on every roof alike. Our care can reach beyond our own front door too." },
+    { "id": 13, "noiDung": "A feast does not need many dishes. A plate of pomelo, a few persimmons and laughter are plenty." },
+    { "id": 14, "noiDung": "Every adult was once a child holding a lantern. Tonight, let that child in you have some fun." },
+    { "id": 15, "noiDung": "Mid-Autumn is a time to thank your parents, who once stayed up late making lanterns for you." },
+    { "id": 16, "noiDung": "Put your phone away when sitting with family on the full moon. The moon is round for only a few nights." },
+    { "id": 17, "noiDung": "The rice stalk bows its head when ripe. The more we understand, the humbler we can be." },
+    { "id": 18, "noiDung": "In the lantern parade, hold the hand of the little one behind you. Togetherness means no one is left behind." },
+    { "id": 19, "noiDung": "Autumn teaches us to let go gently like falling leaves. What is old returns to the soil to feed a new season." },
+    { "id": 20, "noiDung": "Ask your grandparents about Mid-Autumn long ago. Their stories are a gift worth more than a box of cakes." },
+    { "id": 21, "noiDung": "The moon need not outshine the stars. Each has its own place in the night sky." },
+    { "id": 22, "noiDung": "Praise for children tonight should be specific: \"You carry your lantern so well\" is warmer than \"Good kid.\"" },
+    { "id": 23, "noiDung": "After the full moon, it will slowly wane. Do not be sad; keep the warmth you felt." },
+    { "id": 24, "noiDung": "Farmers do not rush to harvest unripe rice. Every good thing has its season." },
+    { "id": 25, "noiDung": "Set the feast with your child and let them arrange the fruit. A slightly crooked tray is one they will never forget." },
+    { "id": 26, "noiDung": "Carp lanterns swim through the night, reminding us to persevere, gently but always moving forward." },
+    { "id": 27, "noiDung": "Gratitude needs no grand words. Finishing your rice without waste already thanks those who grew it." },
+    { "id": 28, "noiDung": "Some spend Mid-Autumn alone. A message like \"The moon is lovely, I miss you\" can warm their whole night." },
+    { "id": 29, "noiDung": "The moon is full; let your heart become whole too by mending one small unfinished quarrel." },
+    { "id": 30, "noiDung": "When the moon season ends, the star lanterns go up to the attic. Keep the joy of gathering at home all year." }
+  ],
+  "loiNguyen": [
+    { "id": 1, "noiDung": "I vow to watch this full moon with my whole family." },
+    { "id": 2, "noiDung": "I hope every child has a lantern and a grown-up to walk with them." },
+    { "id": 3, "noiDung": "I am grateful to the farmers who grow the rice I eat every day." },
+    { "id": 4, "noiDung": "I vow to spend a whole evening playing with the children, without rushing." },
+    { "id": 5, "noiDung": "I hope my loved ones far away have a peaceful moonlit night." },
+    { "id": 6, "noiDung": "I vow to eat with respect this year and never waste food." },
+    { "id": 7, "noiDung": "I hope next year's harvest has kind sun and rain, and green, healthy fields." },
+    { "id": 8, "noiDung": "I vow to check on my grandparents more and listen to their old stories." },
+    { "id": 9, "noiDung": "I hope children living far from their parents still feel loved." },
+    { "id": 10, "noiDung": "I vow to share some of this season's cakes and fruit with lonely neighbors." },
+    { "id": 11, "noiDung": "I thank my parents for the moon festivals of my childhood and all their memories." },
+    { "id": 12, "noiDung": "I hope every family has a corner of a yard to sit and watch the moon together." },
+    { "id": 13, "noiDung": "I vow to be patient with young children and answer their questions gently." },
+    { "id": 14, "noiDung": "I hope young people far from home have a small feast and friends to share it." },
+    { "id": 15, "noiDung": "I vow to make peace with a relative before the full moon wanes." },
+    { "id": 16, "noiDung": "I hope our land, rivers and streams are cared for so harvests stay abundant." },
+    { "id": 17, "noiDung": "I vow to make a star lantern by hand and give it to a child." },
+    { "id": 18, "noiDung": "I hope children in hard places have a Mid-Autumn with enough lanterns, cakes and joy." },
+    { "id": 19, "noiDung": "I thank autumn for its cool days and a beautiful moon." },
+    { "id": 20, "noiDung": "I vow to put my phone away when eating with my family." },
+    { "id": 21, "noiDung": "I hope every home rings with children's laughter on the full-moon night." },
+    { "id": 22, "noiDung": "I vow to stay grateful for what I have, whether much or little." },
+    { "id": 23, "noiDung": "I hope those working on the full-moon night get a moment to look up and see it." },
+    { "id": 24, "noiDung": "I vow to teach children to thank those who grow our rice and fruit." },
+    { "id": 25, "noiDung": "I hope my brothers and sisters always find time to gather, as on this moonlit night." },
+    { "id": 26, "noiDung": "I vow to listen fully when children tell me their stories, without cutting in." },
+    { "id": 27, "noiDung": "I hope all birds, fish, trees and grasses rest peacefully under the autumn moon." },
+    { "id": 28, "noiDung": "I vow to send a greeting to a friend I have not seen in a long time." },
+    { "id": 29, "noiDung": "I hope that next moon season, my home still has everyone gathered around the feast." },
+    { "id": 30, "noiDung": "I vow to keep in my heart the innocence of the child who once carried a lantern." }
+  ],
+  "nhiemVu": [
+    {
+      "id": "ruoc-den-ong-sao",
+      "ten": "Star Lantern Parade",
+      "moTa": "Carry a virtual star lantern around the temple yard with the little monks and the children.",
+      "phanThuong": "A red star lantern for your porch"
+    },
+    {
+      "id": "bay-mam-co-trang",
+      "ten": "Set the Full-Moon Feast",
+      "moTa": "Arrange a virtual Mid-Autumn tray with pomelo, persimmons, baked and sticky mooncakes as you like.",
+      "phanThuong": "A full-moon feast tray on the temple porch"
+    },
+    {
+      "id": "ngam-trang-thu",
+      "ten": "Watch the Autumn Moon",
+      "moTa": "Sit for five minutes beneath the virtual moon above the bell tower, breathing slowly and listening to the wind.",
+      "phanThuong": "A great autumn moon above the bell tower"
+    },
+    {
+      "id": "ke-chuyen-cho-tre",
+      "ten": "Tell a Child a Story",
+      "moTa": "Tell a child a story about a Mid-Autumn from your own childhood, then mark it complete.",
+      "phanThuong": "A small rattan chair under the tree"
+    },
+    {
+      "id": "cam-on-mua-mang",
+      "ten": "Thanks for the Harvest",
+      "moTa": "Write a thank-you to the people who make your meals and hang it on the Wishing Tree.",
+      "phanThuong": "A sheaf of golden rice by the door"
+    },
+    {
+      "id": "goi-ve-sum-vay",
+      "ten": "A Call of Togetherness",
+      "moTa": "Phone or video-call a relative far away during the full-moon days of the eighth month.",
+      "phanThuong": "An autumn tea set on the table"
+    },
+    {
+      "id": "lam-den-thu-cong",
+      "ten": "Make a Handmade Lantern",
+      "moTa": "Assemble a virtual lantern from bamboo strips and colored paper, step by step.",
+      "phanThuong": "A paper carp lantern in the hallway"
+    },
+    {
+      "id": "chia-banh",
+      "ten": "Share Cakes with Others",
+      "moTa": "Share virtual mooncake pieces with three friends on your list, each with a Mid-Autumn wish.",
+      "phanThuong": "A small plate of sticky mooncakes on the altar"
+    },
+    {
+      "id": "mua-lan-san-chua",
+      "ten": "Watch the Lion Dance",
+      "moTa": "Visit the virtual temple yard to watch the children's lion dance and send them a round of applause.",
+      "phanThuong": "A small lion head by the gate"
+    },
+    {
+      "id": "nguyen-doan-vien",
+      "ten": "Hang a Wish for Reunion",
+      "moTa": "Write a wish for your family or for children and hang it on the Wishing Tree.",
+      "phanThuong": "An orange silk ribbon on the Wishing Tree"
+    }
+  ],
+  "trangTri": [
+    "Red star lanterns across the temple yard",
+    "Paper carp lanterns in the hallway",
+    "A great autumn moon above the bell tower",
+    "A full-moon feast tray on the temple porch",
+    "Pomelos and red persimmons on the tray",
+    "A small lion head by the gate",
+    "A sheaf of golden rice by the door",
+    "An autumn tea set on the table",
+    "An orange silk ribbon on the Wishing Tree",
+    "Spinning shadow lanterns under the eaves",
+    "A small rattan chair under the tree"
+  ],
+  "queDacBiet": [
+    {
+      "id": "den-ong-sao",
+      "tieuDe": "The Star Lantern",
+      "tho": [
+        "A five-pointed star lantern, red and bright",
+        "Children parade with laughter through the night",
+        "The temple yard glows gold on every side",
+        "And watching parents smile with joy and pride"
+      ],
+      "loiGiai": "A child's joy is very simple: a lantern, a yard and a grown-up watching. This reading reminds you that happiness often comes from such plain things. If life has felt heavy lately, try returning to small joys, and spend time playing with someone without bringing your worries along.",
+      "loiKhuyen": "Spend one evening this week fully playing with the children in your family, and let them lead the game."
+    },
+    {
+      "id": "trang-thu-sum-vay",
+      "tieuDe": "Autumn Moon Gathering",
+      "tho": [
+        "The autumn moon shines like a mirror's face",
+        "The family sits and talks in a loving space",
+        "A cup of tea, a fragrant piece of cake",
+        "Even those far away feel warm for our sake"
+      ],
+      "loiGiai": "Togetherness does not require a lavish feast, only that the family is willing to sit down together. This reading speaks of the power of simple conversation. When someone listens, those far away feel warm and those nearby feel closer. If there is distance in your home, a moonlit night is a good time to begin a new conversation.",
+      "loiKhuyen": "Invite your family to sit and drink tea for fifteen minutes, each sharing one happy moment from the week. Video-call anyone far away."
+    },
+    {
+      "id": "lua-vang-nho-on",
+      "tieuDe": "Golden Rice, Grateful Heart",
+      "tho": [
+        "Golden rice bends heavy in the distant field",
+        "I thank my parents' weathered hands for every yield",
+        "Pomelos crown the feast through the long night",
+        "We remember the land that keeps our bond tight"
+      ],
+      "loiGiai": "The full-moon feast exists thanks to many suns and rains and many tending hands. This reading invites you to look at what you enjoy and remember those who helped make it. Gratitude helps us live more humbly and with more appreciation. When we are grateful, we naturally want to sow goodness for others in return.",
+      "loiKhuyen": "At a meal today, name three people or things that helped bring the food to your table, then say a word of thanks."
+    }
+  ]
+}
