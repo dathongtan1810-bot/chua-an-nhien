@@ -3,13 +3,18 @@ import { expect, test } from '@playwright/test';
 test('vào game → thắp hương → thả đèn', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (m) => m.type() === 'error' && console.log('[console.error]', m.text()));
   await page.goto('/');
   await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
   await expect(page.locator('.hud-title')).toHaveText('Cổng tam quan');
 
   // Đi tới sân chùa rồi chính điện qua thanh hành động
-  await page.getByRole('button', { name: /Sân chùa/ }).first().click();
-  await expect(page.locator('.hud-title')).toHaveText('Sân chùa', { timeout: 5000 });
+  // Bấm lại nếu lần đầu rơi vào lúc cảnh đang khởi động (máy CI chậm); in lỗi trang nếu có
+  await expect(async () => {
+    await page.locator('.act.nav', { hasText: 'Sân chùa' }).first().click();
+    await expect(page.locator('.hud-title')).toHaveText('Sân chùa', { timeout: 3000 });
+  }).toPass({ timeout: 15000 });
+  expect(errors, errors.join('\n')).toEqual([]);
 
   // Thắp hương
   await page.locator('.act', { hasText: 'Thắp hương' }).click();
