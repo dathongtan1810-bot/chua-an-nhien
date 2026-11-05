@@ -74,6 +74,21 @@ export class Presence {
     return this.cache;
   }
 
+  /** userId → khu (kết nối mới nhất), dùng để gộp presence giữa các instance. */
+  userAreas(): Map<string, Area | null> {
+    const latest = new Map<string, Conn>();
+    for (const c of this.conns.values()) {
+      const prev = latest.get(c.userId);
+      if (!prev || c.at >= prev.at) latest.set(c.userId, c);
+    }
+    return new Map([...latest].map(([u, c]) => [u, c.area]));
+  }
+
+  hasUser(userId: string): boolean {
+    for (const c of this.conns.values()) if (c.userId === userId) return true;
+    return false;
+  }
+
   areaOf(userId: string): Area | null {
     let best: Conn | undefined;
     for (const c of this.conns.values()) if (c.userId === userId && (!best || c.at >= best.at)) best = c;

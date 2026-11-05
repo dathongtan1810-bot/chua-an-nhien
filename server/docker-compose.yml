@@ -17,6 +17,7 @@ services:
       TRUST_PROXY: ${TRUST_PROXY:-false}
       LOG_LEVEL: ${LOG_LEVEL:-info}
       DATABASE_URL: ${DATABASE_URL:-}
+      REDIS_URL: ${REDIS_URL:-}
     volumes:
       - chua-data:/data
     restart: unless-stopped
@@ -33,6 +34,12 @@ services:
     volumes:
       - chua-pg:/var/lib/postgresql/data
     restart: unless-stopped
+  redis:
+    image: redis:7
+    profiles: ["cluster"]
+    restart: unless-stopped
+# Nhiều instance:  docker compose --profile pg --profile cluster up --build --scale server=3
+#   (đặt DATABASE_URL=postgres://chua:chua@postgres:5432/chua, REDIS_URL=redis://redis:6379; bỏ cổng cố định nếu scale)
 volumes:
   chua-data:
   chua-pg:

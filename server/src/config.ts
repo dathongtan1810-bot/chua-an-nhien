@@ -23,6 +23,9 @@ const EnvSchema = z.object({
   DB_PATH: z.string().default('./data/chua.db'),
   /** Nếu đặt (postgres://...), dùng PostgreSQL thay cho SQLite. */
   DATABASE_URL: z.string().default(''),
+  /** Nếu đặt (redis://...), chạy chế độ nhiều instance: phát sự kiện, presence, cooldown chuông, phòng riêng dùng chung qua Redis. */
+  REDIS_URL: z.string().default(''),
+  REDIS_PREFIX: z.string().default('chua:'),
   /** Salt băm deviceId. BẮT BUỘC đổi trong production. */
   DEVICE_SALT: z.string().min(8).default('dev-salt-change-me'),
   ADMIN_PASSWORD: z.string().default(''),

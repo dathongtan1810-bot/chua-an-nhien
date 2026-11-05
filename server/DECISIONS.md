@@ -68,3 +68,7 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     - Cụm không dấu nhiều âm tiết chỉ tính khi **token sát hai bên cũng không dấu** ("lý do cho con" ≠ "đồ chó"; "do cho", "oc cho qua" vẫn chặn).
     - Chỉ mục đoạn dài tối đa = số token của mẫu dài nhất + 1 (4..12) thay vì cố định 8.
 33. **`mucDo` của tu-cam.json**: mucDo 1 mã hoá tiền tố `!` (mức nhẹ). `MILD_WORD_ACTION=reject` (mặc định, giữ hành vi cũ) hoặc `pending` (đèn chỉ chứa từ nhẹ được nhận ở trạng thái chờ duyệt). Từ mức ≥ 2 luôn bị từ chối. Chưa làm "che ***" vì cần vị trí trên chuỗi gốc.
+34. **Nhiều instance (`REDIS_URL`)**: lớp `Cluster` (`src/realtime/cluster.ts`) — `LocalCluster` (mặc định, như cũ) và `RedisCluster`.
+    Redis adapter cho Socket.IO; presence gộp (mỗi instance chỉ phát `presence` cho socket của mình — `io.local`); cooldown chuông nguyên tử (Lua);
+    phòng riêng trong Redis (Lua cho vào phòng); hương `welcome` và quan hệ chặn đọc DB. Giới hạn kết nối/IP & rate limit sự kiện vẫn theo từng instance.
+    Phòng trống hết hạn theo TTL Redis (thời gian thật).
