@@ -10,6 +10,7 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `PORT` / `HOST` | `8080` / `0.0.0.0` | |
 | `NODE_ENV` | `development` | đặt `production` (bật cookie Secure, bắt buộc `DEVICE_SALT`) |
 | `DB_PATH` | `./data/chua.db` (Docker: `/data/chua.db`) | phải nằm trên volume bền |
+| `DATABASE_URL` | rỗng | `postgres://...` → dùng PostgreSQL (src/repo/postgres.ts) thay SQLite; sao lưu bằng `pg_dump` |
 | `DEVICE_SALT` | — | **bắt buộc** ở production, chuỗi ngẫu nhiên dài; **không đổi** sau khi chạy (đổi = mọi thiết bị thành người mới) |
 | `ADMIN_PASSWORD` | rỗng (tắt admin) | mật khẩu trang `/admin/` |
 | `SESSION_SECRET` | suy ra từ mật khẩu+salt | khoá ký cookie admin |
@@ -113,7 +114,7 @@ socket.emit('hello', { deviceId, nickname: null, lang: 'vi' });
 
 ## Scale (khi > ~5–10k người đồng thời)
 
-1. Đổi repository sang Postgres (viết `src/repo/postgres.ts` theo interface `src/repo/types.ts`; logic không đổi).
+1. Đặt `DATABASE_URL` để dùng Postgres (đã có `src/repo/postgres.ts`, kiểm thử trên Postgres 16 thật + pg-mem).
 2. Thêm `@socket.io/redis-adapter` để nhiều instance phát sự kiện cho nhau.
 3. Chuyển presence/hương/rate limit/phòng sang Redis (hiện ở `src/services/*` trong bộ nhớ).
 4. Bật sticky session (Fly: `fly-replay`/Render: không cần nếu chỉ dùng websocket transport).

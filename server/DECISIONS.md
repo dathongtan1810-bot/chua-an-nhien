@@ -61,3 +61,4 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     chữ số chỉ đổi khi kề chữ cái hoặc ký hiệu lách — "d1t" → "dit" nhưng "Mã D17", "giấy A4", "năm 2024" giữ nguyên.
     Chấp nhận lọt dạng 2 chữ số liền ("t40", "fr33") để không chặn nhầm mã/số; báo cáo + kiểm duyệt bù lại.
     Fuzz test (`tucam-conformance.test.ts`): chữ hoa, chèn `.`/`-`/khoảng trắng/zero-width, lặp chữ, leet 1 ký tự trên mọi từ mucDo ≥ 2 → 0 lọt.
+31. **PostgreSQL**: `src/repo/postgres.ts` cài đặt cùng interface; bật bằng `DATABASE_URL`. Kiểm thử: pg-mem (luôn chạy) + Postgres thật (`PG_TEST_URL`, workflow `server-postgres.yml`). SQLite vẫn là mặc định (đơn giản, 1 instance). Sao lưu Postgres dùng `pg_dump` (endpoint backup của admin trả lỗi).

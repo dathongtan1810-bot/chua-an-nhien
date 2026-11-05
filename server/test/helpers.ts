@@ -2,6 +2,7 @@ import { io as ioc, type Socket } from 'socket.io-client';
 import type { AddressInfo } from 'node:net';
 import { buildApp, type AppContext } from '../src/app.js';
 import { testConfig } from '../src/config.js';
+import type { Repositories } from '../src/repo/types.js';
 import type { ClientToServerEvents, ServerToClientEvents, WelcomePayload } from '../../shared/protocol.js';
 
 export type Client = Socket<ServerToClientEvents, ClientToServerEvents>;
@@ -18,8 +19,8 @@ export interface TestServer {
 let seq = 0;
 export const devId = () => `dev-${process.pid}-${Date.now()}-${++seq}`;
 
-export async function startServer(env: Record<string, string> = {}): Promise<TestServer> {
-  const ctx = await buildApp(testConfig({ PRESENCE_INTERVAL_MS: '100', MAX_CONN_PER_IP: '200', SOCKET_EVENTS_PER_10S: '200', ...env }));
+export async function startServer(env: Record<string, string> = {}, opts: { repos?: Repositories } = {}): Promise<TestServer> {
+  const ctx = await buildApp(testConfig({ PRESENCE_INTERVAL_MS: '100', MAX_CONN_PER_IP: '200', SOCKET_EVENTS_PER_10S: '200', ...env }), opts);
   await ctx.app.listen({ host: '127.0.0.1', port: 0 });
   const port = (ctx.app.server.address() as AddressInfo).port;
   const url = `http://127.0.0.1:${port}`;

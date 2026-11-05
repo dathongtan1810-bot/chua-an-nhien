@@ -10,6 +10,7 @@ import type { Config } from './config.js';
 import { createLogger, type Logger } from './logger.js';
 import { createMetrics, type Metrics } from './metrics.js';
 import { createSqliteRepositories } from './repo/sqlite.js';
+import { createPostgresRepositoriesFromUrl } from './repo/postgres.js';
 import type { Repositories } from './repo/types.js';
 import { ContentFilter, DEFAULT_UNACCENTED_ALSO, parseWordList } from './services/filter.js';
 import { Hub, type IO } from './realtime/hub.js';
@@ -81,7 +82,8 @@ export function clientIp(headers: Record<string, string | string[] | undefined>,
 export async function buildApp(config: Config, opts: { repos?: Repositories } = {}): Promise<AppContext> {
   const log = createLogger(config.LOG_LEVEL);
   const metrics = createMetrics();
-  const repos = opts.repos ?? createSqliteRepositories(config.DB_PATH);
+  const repos =
+    opts.repos ?? (config.DATABASE_URL ? await createPostgresRepositoriesFromUrl(config.DATABASE_URL) : createSqliteRepositories(config.DB_PATH));
 
   const seed = loadSeedWords(config);
   if ((await repos.words.count()) === 0 && seed.words.length) await repos.words.replaceAll(seed.words);

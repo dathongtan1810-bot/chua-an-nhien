@@ -21,6 +21,8 @@ const EnvSchema = z.object({
   PORT: int(8080),
   LOG_LEVEL: z.string().default('info'),
   DB_PATH: z.string().default('./data/chua.db'),
+  /** Nếu đặt (postgres://...), dùng PostgreSQL thay cho SQLite. */
+  DATABASE_URL: z.string().default(''),
   /** Salt băm deviceId. BẮT BUỘC đổi trong production. */
   DEVICE_SALT: z.string().min(8).default('dev-salt-change-me'),
   ADMIN_PASSWORD: z.string().default(''),
