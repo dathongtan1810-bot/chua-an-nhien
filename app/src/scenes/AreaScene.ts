@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { AREA_ART, worldWidthOf } from '../art/registry';
 import { makeBeamTexture, makeBellTexture, makeStickCupTexture } from '../art/areas-buildings';
 import { drawSky, nightFactor, type SkyHandle } from '../art/sky';
-import { makeFirefly, makeLeaf, makePetal, makeRedLantern, makeRose, makeSparkle } from '../art/sprites';
+import { makeFirefly, makeGlow, makeLeaf, makePetal, makeRedLantern, makeRose, makeSparkle } from '../art/sprites';
 import { GAME_H, GAME_W, type ArtLayers, type AreaArtResult, type Hotspot } from '../art/types';
 import { audio, type MusicTheme } from '../audio/engine';
 import { AREA_INFO, type AreaId } from '../core/areas';
@@ -249,6 +249,16 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       });
       this.unsubs.push(() => ev.remove());
     };
+    // sương sớm (5h–8h30) ở các khu ngoài trời
+    const outdoor = !['chinh-dien', 'am-xam', 'thien-duong'].includes(this.area);
+    if (outdoor && this.info.hour >= 5 && this.info.hour <= 8.5) {
+      const key = makeGlow(this);
+      for (let i = 0; i < 4; i++) {
+        const fog = this.add.image(Math.random() * this.worldWidth, 520 + i * 70, key).setScale(9, 1.6).setAlpha(0.22).setTint(0xf4f1ea);
+        this.layers.mid.add(fog);
+        if (!rm) this.tweens.add({ targets: fog, x: fog.x + 160, duration: 26000 + i * 4000, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+      }
+    }
     if (decos.has('hoa-dao-mai') || theme === 'petals') fall(makePetal(this), 900);
     if (decos.has('hoa-hong')) fall(makeRose(this), 1500);
     if (theme === 'leaves') fall(makeLeaf(this), 1400);
