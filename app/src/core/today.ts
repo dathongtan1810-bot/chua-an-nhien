@@ -29,7 +29,14 @@ export function eventRitualFor(nhiemVu: string): RitualKind | 'any' {
   return 'any';
 }
 
-export function todayInfo(now: Date | number = Date.now()): TodayInfo {
+/** Ngày giả lập cho QA/xem trước sự kiện (`?date=2026-02-17`). */
+let forcedNow: number | null = null;
+export function setForcedDate(iso: string | null): void {
+  const t = iso ? Date.parse(iso + 'T05:00:00Z') : NaN;
+  forcedNow = Number.isFinite(t) ? t : null;
+}
+
+export function todayInfo(now: Date | number = forcedNow ?? Date.now()): TodayInfo {
   const dateKey = vnDateKey(now);
   const [y, m, d] = dateKey.split('-').map(Number);
   const lunar = solarToLunar(d, m, y);

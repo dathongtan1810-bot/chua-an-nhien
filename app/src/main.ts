@@ -6,7 +6,7 @@ import { isAreaId, type AreaId } from './core/areas';
 import { bus, game } from './core/bus';
 import { setLang, t } from './core/i18n';
 import { store } from './core/store';
-import { todayInfo } from './core/today';
+import { setForcedDate, todayInfo } from './core/today';
 import { net } from './net/service';
 import { AreaScene } from './scenes/AreaScene';
 import { h, toast, uiRoot } from './ui/dom';
@@ -16,6 +16,7 @@ import { installShare } from './share/share';
 import { registerSW } from './pwa';
 
 const params = new URLSearchParams(location.search);
+if (params.get('date')) setForcedDate(params.get('date'));
 const st = store.state;
 setLang(st.lang);
 store.dispatch({ type: 'rollDay', dateKey: todayInfo().dateKey });
