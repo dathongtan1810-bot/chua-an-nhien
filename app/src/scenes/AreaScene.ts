@@ -44,6 +44,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   private updaters: ((time: number, delta: number) => void)[] = [];
   private pendingRitual: string | null = null;
   private transitioning = false;
+  /** true khi create() xong — trước đó lệnh từ HUD được xếp hàng. */
+  private ready = false;
   private markers: Phaser.GameObjects.GameObject[] = [];
   /** Ẩn khi nghi thức chạy (nghi thức vẽ bản động riêng). */
   private ritualHidden: Phaser.GameObjects.Image[] = [];
@@ -64,6 +66,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     this.unsubs = [];
     this.active = null;
     this.transitioning = false;
+    this.ready = false;
     this.burner = null;
     this.river = null;
     this.markers = [];
@@ -120,6 +123,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     store.dispatch({ type: 'area', area: this.area });
     net.enterArea(this.area);
     game.api = this;
+    this.ready = true;
     bus.emit({ type: 'areaChanged', area: this.area });
 
     this.showAreaTitle(reducedMotion);
@@ -424,6 +428,10 @@ export class AreaScene extends Phaser.Scene implements GameApi {
 
   // ---------------------------------------------------------------- API cho HUD
   goTo(area: AreaId): void {
+    if (!this.ready) {
+      game.pending.goTo = area;
+      return;
+    }
     if (this.transitioning || area === this.area) return;
     this.exitRitual();
     this.transitioning = true;

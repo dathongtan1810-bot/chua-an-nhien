@@ -67,6 +67,7 @@ function begin(): void {
     });
   }
   hud.mount();
+  game.api = null; // cảnh sắp khởi động lại: lệnh từ HUD được xếp hàng tới khi sẵn sàng
   gameInst.scene.start('area', { area: startArea, ritual: ritualParam });
   if (!s.onboarded) {
     store.dispatch({ type: 'onboarded' });
