@@ -1,0 +1,222 @@
+[
+  {
+    "id": "mung-mot-hang-thang",
+    "ten": "First Day of Each Lunar Month",
+    "loai": "phat-giao",
+    "thang": null,
+    "ngay": 1,
+    "moTa": "On the first day of every lunar month, many Vietnamese families light incense, eat vegetarian meals or visit a pagoda to begin the month with a calm mind. It is a moment to look back on the past month, set one small intention and remember to slow down.",
+    "trangTri": ["Yellow chrysanthemums on the altar", "A plate of five-colored fruit", "A small oil lamp beside the incense burner", "Fresh bodhi leaves on the courtyard tree"],
+    "nhiemVu": ["Light a virtual incense stick in the main hall", "Write one small intention for the new month", "Sit quietly for 3 minutes with the pagoda bell", "Visit the Wishing Tree and send kind wishes to others"]
+  },
+  {
+    "id": "ram-hang-thang",
+    "ten": "Full Moon of Each Lunar Month",
+    "loai": "phat-giao",
+    "thang": null,
+    "ngay": 15,
+    "moTa": "The full-moon day in the middle of each lunar month. In Buddhist tradition, monastics recite the precepts on the full moon and new moon; lay people often eat vegetarian, visit pagodas and listen to teachings. The round moon evokes a clear, complete and peaceful mind.",
+    "trangTri": ["A full moon above the pagoda roof", "Paper lanterns along the entrance path", "White lotuses in the pond", "Wisps of incense smoke drifting across the courtyard"],
+    "nhiemVu": ["Watch the full moon from the courtyard for one silent minute", "Light virtual lamps along the path", "Read a short teaching on loving-kindness", "Note three things you are grateful for this month"]
+  },
+  {
+    "id": "tet-nguyen-dan",
+    "ten": "Lunar New Year (Tết)",
+    "loai": "dan-gian",
+    "thang": 1,
+    "ngay": 1,
+    "moTa": "The first day of the lunar new year; the event continues through the second and third days of Tết. Families reunite, exchange New Year wishes and make their first pagoda visit of the year. The first day of Tết is also the celebration day of Maitreya Buddha, the future Buddha whose joyful smile stands for happiness and generosity of heart.",
+    "trangTri": ["Yellow apricot and pink peach blossom branches", "Red parallel couplets beside the three-entrance gate", "Red lanterns along the corridors", "A five-fruit tray", "A smiling Maitreya statue in the front hall"],
+    "nhiemVu": ["Make your first pagoda visit of the year: light virtual incense in the main hall", "Send a New Year wish to a loved one", "Draw a New Year verse for reflection", "Write one thing to let go of and one thing to nurture this year", "Smile with Maitreya and give someone a sincere compliment"]
+  },
+  {
+    "id": "ram-thang-gieng",
+    "ten": "First Full Moon – Thượng Nguyên Festival",
+    "loai": "dan-gian",
+    "thang": 1,
+    "ngay": 15,
+    "moTa": "The first full moon of the year, also called the Thượng Nguyên or Lantern Festival. A Vietnamese saying holds that a whole year of pagoda visits cannot match the first full moon, so pagodas are often busy with people praying for their families' well-being. The day is also linked with poetry and moonlit lantern festivities.",
+    "trangTri": ["Floating lotus lanterns on the pond", "The first full moon of spring", "Colorful lanterns along the path", "A tea table with paper for poems"],
+    "nhiemVu": ["Release a virtual floating lantern with a wish for peace", "Write or copy a line of poetry about the spring moon", "Light incense for your family's well-being", "Read others' wishes and send them kind thoughts"]
+  },
+  {
+    "id": "phat-thich-ca-xuat-gia",
+    "ten": "Shakyamuni Buddha's Renunciation",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 8,
+    "moTa": "Commemorates the day Prince Siddhartha left the palace to seek a path to freedom from suffering for all beings. It is a time to reflect on letting go of unnecessary attachments and on the resolve to pursue what is good.",
+    "trangTri": ["A painting of the Prince leaving the palace on a white horse", "Golden lotuses on both sides of the main hall", "White lanterns", "Five-colored Buddhist flags"],
+    "nhiemVu": ["Choose one small habit to let go of this week", "Tidy up a corner of your home or your phone", "Sit quietly for 5 minutes following your breath", "Read a short summary of the Prince's renunciation story"]
+  },
+  {
+    "id": "phat-nhap-niet-ban",
+    "ten": "Buddha's Parinirvana",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 15,
+    "moTa": "Remembers the Buddha's passing into final Nirvana at Kushinagar after more than forty years of teaching. His last reminder is often recalled as an encouragement to strive diligently on one's own. A day for quiet remembrance and reflection on impermanence.",
+    "trangTri": ["A reclining Buddha resting beneath sala trees", "White lotuses", "Small candles around the statue", "Leaves falling softly across the courtyard"],
+    "nhiemVu": ["Light a virtual memorial candle", "Sit in silence for 3 minutes reflecting on impermanence", "Write one thing you want to cherish more today", "Water the bodhi tree in the courtyard"]
+  },
+  {
+    "id": "via-quan-the-am-dan-sanh",
+    "ten": "Guanyin (Quan Âm) Birthday",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 19,
+    "moTa": "Celebrates the birth of Guanyin (Quan Âm), the Bodhisattva of Compassion, known in full in Vietnam as Quan Thế Âm. Guanyin embodies great compassion, listening to the cries of all beings. Many people visit pagodas, eat vegetarian food and practice listening to others with empathy.",
+    "trangTri": ["A Guanyin statue holding a vase with a willow branch", "Pink lotuses in the pond", "White lanterns along the corridor", "A vase of white tuberoses"],
+    "nhiemVu": ["Listen fully to a loved one without interrupting", "Send a caring message to someone going through a hard time", "Light virtual incense before the Guanyin shrine", "Write a wish for someone else, not for yourself"]
+  },
+  {
+    "id": "tet-han-thuc",
+    "ten": "Cold Food Festival (Hàn Thực)",
+    "loai": "dan-gian",
+    "thang": 3,
+    "ngay": 3,
+    "moTa": "In Vietnam, the Cold Food Festival is associated with bánh trôi and bánh chay, small round glutinous rice dumplings. Many families make them and offer them to their ancestors in gratitude. Shaping the little white dumplings together is also a time to gather and share old stories.",
+    "trangTri": ["A plate of rice dumplings on the altar", "A small bowl of sweet soup on a wooden tray", "White pomelo blossoms", "A bamboo tray of drying rice flour"],
+    "nhiemVu": ["Shape virtual rice dumplings with the young novices", "Offer a plate of dumplings on the ancestral altar", "Ask a grandparent or parent about a memory from long ago", "Share the childhood dish you miss the most"]
+  },
+  {
+    "id": "via-bo-tat-van-thu",
+    "ten": "Manjushri Bodhisattva Day",
+    "loai": "phat-giao",
+    "thang": 4,
+    "ngay": 4,
+    "moTa": "The day of Manjushri Bodhisattva, who represents wisdom and is often shown riding a blue lion, holding the sword of wisdom that cuts through ignorance. A day that encourages learning, clear thinking and honestly reviewing what we understand.",
+    "trangTri": ["A statue of Manjushri riding a lion", "Wooden bookshelves in the pagoda library", "A warm study lamp", "Calligraphy brushes and an ink stone"],
+    "nhiemVu": ["Read one page of a book you have been saving", "Learn something new and write it down in one sentence", "Light a virtual lamp of wisdom in the library", "Send encouragement to someone studying for exams"]
+  },
+  {
+    "id": "phat-dan",
+    "ten": "Buddha's Birthday (Vesak)",
+    "loai": "phat-giao",
+    "thang": 4,
+    "ngay": 15,
+    "moTa": "Celebrates the birth of Shakyamuni Buddha in Lumbini Garden. In Vietnam, it is celebrated on the full moon of the fourth lunar month with the bathing-the-Buddha ceremony, lantern processions, flags and flowers. It is a major festival honoring the birth of the Awakened One and reminding everyone to nurture the seed of mindfulness.",
+    "trangTri": ["Five-colored Buddhist flags across the courtyard", "A bathing altar with the infant Buddha statue", "Multicolored lotus lanterns", "A flower arch at the three-entrance gate", "A lotus pond in full bloom"],
+    "nhiemVu": ["Join the virtual bathing-the-Buddha ceremony", "Hang a lotus lantern along the path", "Do a small kind deed for someone near you", "Send Buddha's Birthday greetings to your friends", "Sit quietly for 5 minutes listening to the pagoda bell"]
+  },
+  {
+    "id": "tet-doan-ngo",
+    "ten": "Đoan Ngọ (Double Fifth) Festival",
+    "loai": "dan-gian",
+    "thang": 5,
+    "ngay": 5,
+    "moTa": "The Đoan Ngọ Festival, popularly known as the day for \"killing inner bugs,\" falls in midsummer. Families eat fresh fruit, fermented sticky rice and lye rice cakes, and pay attention to their health as the weather turns hot. It is also a time to gather and look after one another.",
+    "trangTri": ["Baskets of plums, lychees and watermelon", "A small bowl of fermented sticky rice", "A bundle of mugwort hung by the door", "Lye rice cakes wrapped in leaves"],
+    "nhiemVu": ["Drink a glass of water and stretch for 1 minute", "Arrange a virtual tray of summer fruit", "Message a relative to ask how they are", "Gather herbs in the pagoda garden"]
+  },
+  {
+    "id": "via-quan-the-am-thanh-dao",
+    "ten": "Guanyin Enlightenment Day",
+    "loai": "phat-giao",
+    "thang": 6,
+    "ngay": 19,
+    "moTa": "Commemorates the enlightenment of Guanyin, one of the three Guanyin days of the year. A reminder to cultivate compassion through concrete actions, helping others without expecting anything in return.",
+    "trangTri": ["A standing Guanyin statue on a lotus throne", "A summer pond of pink lotuses", "Blue glass lamps", "White jasmine flowers"],
+    "nhiemVu": ["Do one helpful thing without telling anyone", "Light virtual incense before the Guanyin shrine", "Float a virtual lotus leaf on the pond with a wish for peace", "Write a wish for all living beings"]
+  },
+  {
+    "id": "vu-lan",
+    "ten": "Vu Lan (Ullambana) – Seventh-Month Full Moon",
+    "loai": "phat-giao",
+    "thang": 7,
+    "ngay": 15,
+    "moTa": "The Vu Lan festival of filial gratitude, rooted in the story of Venerable Maudgalyayana and his love for his mother. It is a season to remember parents and grandparents; many wear a rose on their shirt: red if their parents are living, white if they have passed away. In folk tradition, it is also a day to remember wandering souls with compassion.",
+    "trangTri": ["Red and white roses", "Floating lanterns on the pond", "An ancestral altar with incense and flowers", "A banner reading \"Vu Lan – Gratitude to Parents\""],
+    "nhiemVu": ["Pin a virtual rose to your shirt", "Call or message your parents to say thank you", "Release a floating lantern in memory of loved ones who have passed", "Write a fond memory of your grandparents or parents", "Have a simple vegetarian meal"]
+  },
+  {
+    "id": "via-bo-tat-dia-tang",
+    "ten": "Ksitigarbha (Địa Tạng) Bodhisattva Day",
+    "loai": "phat-giao",
+    "thang": 7,
+    "ngay": 30,
+    "moTa": "The day of Ksitigarbha Bodhisattva, associated with the great vow to help beings in realms of suffering and with filial devotion. A time to dedicate merit to those who have passed away. Note: if the seventh lunar month has only 29 days that year, the event takes place on the 29th.",
+    "trangTri": ["A Ksitigarbha statue holding a ringed staff and a jewel", "Soft golden candlelight", "White chrysanthemums", "A string of wooden prayer beads"],
+    "nhiemVu": ["Light a virtual candle dedicated to those who have passed", "Write a gentle message of remembrance", "Chant or sit in silence for 3 minutes", "Pick up one piece of real litter near where you live"]
+  },
+  {
+    "id": "tet-trung-thu",
+    "ten": "Mid-Autumn Festival",
+    "loai": "dan-gian",
+    "thang": 8,
+    "ngay": 15,
+    "moTa": "The Mid-Autumn Festival, also known as the Reunion Festival or Children's Festival, when the moon is at its brightest and roundest. Children parade with star lanterns and share a moon feast; adults admire the moon over tea and mooncakes. A time for families to gather together.",
+    "trangTri": ["Star lanterns and carp lanterns", "A moon feast tray with baked and sticky mooncakes", "A large full moon above the bell tower", "A lion dance head", "Pomelos and red persimmons"],
+    "nhiemVu": ["Parade a virtual star lantern around the courtyard", "Set up a Mid-Autumn feast with the young novices", "Watch the moon and write a wish for your family", "Tell a Mid-Autumn story to a child"]
+  },
+  {
+    "id": "via-quan-the-am-xuat-gia",
+    "ten": "Guanyin Renunciation Day",
+    "loai": "phat-giao",
+    "thang": 9,
+    "ngay": 19,
+    "moTa": "Commemorates the renunciation of Guanyin, the last of the three Guanyin days of the year. A time to reflect on setting aside selfishness to live for others, and on keeping a gentle heart amid daily busyness.",
+    "trangTri": ["A Guanyin statue meditating on a rocky mountain", "An autumn bamboo grove", "Pale yellow lanterns", "Autumn chrysanthemums"],
+    "nhiemVu": ["Let someone else go first in one small thing today", "Light virtual incense before the Guanyin shrine", "Walk slowly through the pagoda bamboo grove", "Write a thank-you note to someone who once helped you"]
+  },
+  {
+    "id": "via-phat-duoc-su",
+    "ten": "Medicine Buddha Day",
+    "loai": "phat-giao",
+    "thang": 9,
+    "ngay": 30,
+    "moTa": "The day of the Medicine Buddha, Lord of Lapis Lazuli Light, associated with twelve great vows for the health of body and mind. A time to care for your own health and that of your loved ones, rest when needed and live in moderation. If the ninth lunar month has only 29 days, the event takes place on the 29th.",
+    "trangTri": ["A Medicine Buddha statue holding a medicine jar", "Deep blue lapis lamps", "A garden of traditional medicinal herbs", "A pot of herbal tea"],
+    "nhiemVu": ["Walk for 10 minutes or stretch gently", "Go to bed earlier than usual tonight", "Message someone who is unwell", "Water the herb garden in the pagoda"]
+  },
+  {
+    "id": "tet-ha-nguyen",
+    "ten": "Hạ Nguyên Festival – Tenth-Month Full Moon",
+    "loai": "dan-gian",
+    "thang": 10,
+    "ngay": 15,
+    "moTa": "The full moon of the tenth lunar month, also called the Hạ Nguyên or New Rice Festival, linked with the year's final harvest in many rural areas. People offer green rice flakes, sticky rice and newly harvested rice to their ancestors, giving thanks to heaven and earth and to those who grow the rice.",
+    "trangTri": ["Sheaves of golden ripe rice", "Plates of green rice flakes and new sticky rice", "The last full moon of autumn", "Bamboo trays of drying paddy"],
+    "nhiemVu": ["Offer a virtual plate of new-rice sticky rice on the altar", "Write a thank-you to the farmers", "Finish your meal today without wasting food", "List three things you have harvested this year"]
+  },
+  {
+    "id": "via-phat-a-di-da",
+    "ten": "Amitabha Buddha Day",
+    "loai": "phat-giao",
+    "thang": 11,
+    "ngay": 17,
+    "moTa": "The day of Amitabha Buddha, the Buddha of the Western Pure Land in the Pure Land tradition, deeply familiar to Vietnamese people through the recitation \"Nam mô A Di Đà Phật\". A time to practice reciting the Buddha's name, keep a peaceful mind and turn toward goodness.",
+    "trangTri": ["An Amitabha statue with a radiant halo", "A seven-jeweled lotus pond", "Warm golden light throughout the main hall", "Prayer beads and a wooden fish drum"],
+    "nhiemVu": ["Recite \"Nam mô A Di Đà Phật\" 108 times with virtual prayer beads", "Keep rhythm on the wooden fish drum for 2 minutes", "Sit quietly in the main hall for 5 minutes", "Write a peaceful wish for everyone"]
+  },
+  {
+    "id": "phat-thanh-dao",
+    "ten": "Buddha's Enlightenment Day (Bodhi Day)",
+    "loai": "phat-giao",
+    "thang": 12,
+    "ngay": 8,
+    "moTa": "Commemorates Shakyamuni Buddha's awakening beneath the bodhi tree after days of meditation. The story of Sujata's bowl of milk rice before that night recalls the Middle Way, neither too harsh nor too indulgent. A day to nurture mindfulness.",
+    "trangTri": ["A great bodhi tree in the middle of the courtyard", "A statue of the Buddha meditating under the bodhi tree", "A bowl of milk rice on a lotus leaf", "The morning star in the early sky"],
+    "nhiemVu": ["Meditate under the virtual bodhi tree for 5 minutes", "Wake early to see the morning star or the sunrise", "Eat one meal slowly, attentive to every bite", "Water the bodhi tree and write one thing you have just understood"]
+  },
+  {
+    "id": "ong-cong-ong-tao",
+    "ten": "Kitchen Gods Day",
+    "loai": "dan-gian",
+    "thang": 12,
+    "ngay": 23,
+    "moTa": "In Vietnamese folk belief, the 23rd day of the twelfth lunar month is when the Kitchen Gods return to heaven to report on the family's year. Many households clean the kitchen, prepare an offering tray and release carp. A time to tidy the home, look back on the year and prepare for Tết.",
+    "trangTri": ["Paper hats and robes of the Kitchen Gods", "A basin of red carp", "A freshly cleaned kitchen", "Peach branches just beginning to bud"],
+    "nhiemVu": ["Release a virtual carp into the lotus pond", "Tidy your real kitchen or desk", "Write a three-line review of your year", "Sweep the pagoda courtyard to welcome the new year"]
+  },
+  {
+    "id": "tat-nien-tru-tich",
+    "ten": "Year's End – New Year's Eve (Trừ Tịch)",
+    "loai": "dan-gian",
+    "thang": 12,
+    "ngay": 30,
+    "moTa": "The last day of the lunar year, with the year-end family meal and Trừ Tịch night, the moment of farewell to the old year and welcome to the new. Many people go to pagodas to hear the New Year's Eve bell. If the twelfth lunar month has only 29 days that year, the event takes place on the 29th.",
+    "trangTri": ["A year-end family meal tray", "Virtual fireworks in the night sky", "The great bell in the bell tower", "Red lanterns across the courtyard", "Green square sticky rice cakes (bánh chưng)"],
+    "nhiemVu": ["Ring the virtual New Year's Eve bell", "Write a thank-you to the passing year", "Light incense to welcome the New Year", "Send a New Year wish to someone you love", "Sit in stillness at the moment the year turns"]
+  }
+]

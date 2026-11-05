@@ -1,0 +1,196 @@
+{
+  "id": "ram-thang-gieng",
+  "ten": "Mùa Rằm tháng Giêng",
+  "khoangNgayAm": { "tu": { "thang": 1, "ngay": 13 }, "den": { "thang": 1, "ngay": 16 } },
+  "moTa": "Những ngày quanh Rằm tháng Giêng, còn gọi là Tết Nguyên Tiêu, Chùa An Nhiên thắp đèn lồng khắp lối đi và bày bàn trà, giấy bút bên hồ sen. Đây là dịp ngắm vầng trăng tròn đầu tiên của năm, viết vài câu thơ mộc mạc và gửi những lời nguyện lành cho một năm mới còn đang rất non.",
+  "loiChao": [
+    { "id": 1, "noiDung": "Trăng rằm đầu năm đã lên. Mời bạn vào sân chùa ngồi ngắm cùng." },
+    { "id": 2, "noiDung": "Đèn lồng đã thắp dọc lối đi, chỉ còn chờ bước chân của bạn." },
+    { "id": 3, "noiDung": "Chào bạn đêm Nguyên Tiêu. Bàn trà và giấy bút đã sẵn bên hồ." },
+    { "id": 4, "noiDung": "Nửa tháng Giêng đã qua. Bạn có muốn ngồi lại nhìn một chút không?" },
+    { "id": 5, "noiDung": "Trăng tròn, đèn sáng, gió xuân còn mát. Chúc bạn một đêm thật an." },
+    { "id": 6, "noiDung": "Chú tiểu vừa treo xong chiếc đèn cuối cùng. Mời bạn ghé xem." },
+    { "id": 7, "noiDung": "Rằm Giêng về, Chùa An Nhiên gửi bạn một lời chúc đầu năm thật hiền." },
+    { "id": 8, "noiDung": "Có một tờ giấy trắng đang đợi câu thơ của bạn bên hồ sen." },
+    { "id": 9, "noiDung": "Chào bạn. Hôm nay mình cùng đi chậm dưới hàng đèn lồng nhé." },
+    { "id": 10, "noiDung": "Mặt hồ đêm nay có hai vầng trăng: một trên trời, một dưới nước." },
+    { "id": 11, "noiDung": "Đầu năm, giữa tháng, đủ đầy. Mời bạn vào thắp một ngọn đèn lành." },
+    { "id": 12, "noiDung": "Trăng rằm vẫn còn sáng. Cảm ơn bạn đã ghé chùa trong những ngày này." }
+  ],
+  "thongDiep": [
+    { "id": 1, "noiDung": "Trăng tròn đầu năm không vội. Nó lên từ từ, sáng từ từ, như mọi điều tốt cần thời gian." },
+    { "id": 2, "noiDung": "Một chiếc đèn lồng nhỏ chỉ soi được vài bước chân. Nhưng vài bước là đủ để đi tiếp." },
+    { "id": 3, "noiDung": "Đêm Nguyên Tiêu, thử viết bốn câu thơ về điều bạn yêu nhất trong căn nhà mình." },
+    { "id": 4, "noiDung": "Thơ không cần hay mới được viết. Viết thật lòng là đã đẹp rồi." },
+    { "id": 5, "noiDung": "Nửa tháng đầu năm đã qua. Nếu bạn lỡ quên ý định nào, hôm nay có thể bắt đầu lại." },
+    { "id": 6, "noiDung": "Ánh đèn lồng ấm vì có ngọn lửa bên trong. Lời nói cũng ấm khi có tấm lòng phía sau." },
+    { "id": 7, "noiDung": "Ngắm trăng thì đừng cầm điện thoại quá lâu. Để mắt mình được nghỉ trong ánh sáng dịu." },
+    { "id": 8, "noiDung": "Mỗi chiếc đèn trên lối đi có một màu riêng. Mỗi người trong nhà cũng vậy, cứ để họ sáng theo cách của họ." },
+    { "id": 9, "noiDung": "Lời nguyện đầu năm nên ngắn. Ngắn để nhớ được, nhớ được để làm được." },
+    { "id": 10, "noiDung": "Đêm rằm tháng Giêng, hãy rót một chén trà cho người bên cạnh trước khi rót cho mình." },
+    { "id": 11, "noiDung": "Trăng không cần ai khen mới sáng. Bạn cũng không cần ai khen mới làm điều tử tế." },
+    { "id": 12, "noiDung": "Đèn lồng treo cao để người đi xa nhìn thấy đường về. Bạn có thể là ngọn đèn cho ai đó." },
+    { "id": 13, "noiDung": "Trăng tròn rồi sẽ khuyết, khuyết rồi lại tròn. Những ngày chưa trọn vẹn cũng chỉ là một chặng." },
+    { "id": 14, "noiDung": "Gửi một tin nhắn hỏi thăm người bạn cũ dịp rằm. Đôi khi chỉ một câu cũng nối lại được nhiều năm." },
+    { "id": 15, "noiDung": "Câu thơ hay nhất đêm nay có khi là câu bạn nói với mẹ: \"Mẹ ngồi đây ngắm trăng với con.\"" },
+    { "id": 16, "noiDung": "Đi chùa đầu năm, mang theo lòng nhẹ quan trọng hơn mang theo nhiều lễ vật." },
+    { "id": 17, "noiDung": "Ánh trăng chia đều cho mọi mái nhà. Niềm vui cũng nên được chia như thế." },
+    { "id": 18, "noiDung": "Ngồi bên hồ, nhìn bóng đèn lay trên mặt nước. Lòng lặng thì mọi thứ hiện ra rõ hơn." },
+    { "id": 19, "noiDung": "Đầu năm hay nghĩ về những điều mình muốn có. Thử nghĩ thêm về điều mình muốn trao đi." },
+    { "id": 20, "noiDung": "Một chiếc đèn tắt không làm cả lối đi tối. Một ngày mệt mỏi không làm cả năm hỏng." },
+    { "id": 21, "noiDung": "Người xưa ngâm thơ dưới trăng để lòng thư thái. Bạn có thể hát khẽ một câu mình thích." },
+    { "id": 22, "noiDung": "Hãy viết điều mong ước lên giấy rồi đọc lại vào rằm tháng Giêng năm sau. Bạn sẽ thấy mình lớn lên." },
+    { "id": 23, "noiDung": "Đừng đợi đủ đầy mới vui. Vầng trăng mỏng đầu tháng cũng có vẻ đẹp riêng của nó." },
+    { "id": 24, "noiDung": "Thắp đèn cho mình, cũng nhớ để đèn ngoài hiên cho người qua đường đỡ tối." },
+    { "id": 25, "noiDung": "Trăng rằm soi rõ cả những vết nứt trên tường cũ. Thấy rồi thì sửa, không cần buồn." },
+    { "id": 26, "noiDung": "Mỗi lời nguyện là một hạt giống. Đêm nay gieo xuống, những ngày sau nhớ tưới bằng việc làm." },
+    { "id": 27, "noiDung": "Sau những ngày Tết rộn ràng, đêm rằm là lúc để lắng lại và nghe lòng mình nói gì." },
+    { "id": 28, "noiDung": "Có người ngắm trăng một mình. Nếu biết ai như thế, hãy rủ họ cùng ngồi." },
+    { "id": 29, "noiDung": "Ngọn đèn nhỏ không so với mặt trăng. Nó chỉ cần làm tròn việc soi góc sân của nó." },
+    { "id": 30, "noiDung": "Rằm qua rồi, đèn lồng sẽ cất. Nhưng điều lành bạn hứa đầu năm thì cứ giữ cả năm." }
+  ],
+  "loiNguyen": [
+    { "id": 1, "noiDung": "Con nguyện đầu năm sống chậm lại, đủ chậm để thấy trăng lên mỗi tháng." },
+    { "id": 2, "noiDung": "Con mong gia đình con cùng ngồi ngắm trăng rằm, không ai vội đi đâu." },
+    { "id": 3, "noiDung": "Con nguyện giữ được ý định tốt của tháng Giêng cho đến tận tháng Chạp." },
+    { "id": 4, "noiDung": "Con mong ánh đèn lồng đêm nay soi ấm những ai đang thấy lạc lõng." },
+    { "id": 5, "noiDung": "Con xin cảm ơn nửa tháng đầu năm đã cho con những ngày bình thường mà quý." },
+    { "id": 6, "noiDung": "Con nguyện năm nay viết nhiều hơn, đọc nhiều hơn và than phiền ít hơn." },
+    { "id": 7, "noiDung": "Con mong cha mẹ con có nhiều đêm trăng yên ả bên con cháu." },
+    { "id": 8, "noiDung": "Con nguyện làm ngọn đèn nhỏ cho người cần, dù chỉ soi được vài bước." },
+    { "id": 9, "noiDung": "Con mong những người bạn cũ của con đều khỏe, dù lâu rồi không gặp." },
+    { "id": 10, "noiDung": "Con nguyện mỗi tháng dành một đêm rằm để nhìn lại mình một cách hiền hậu." },
+    { "id": 11, "noiDung": "Con mong năm mới, mọi nhà quanh xóm con đều sáng đèn và ấm tiếng cười." },
+    { "id": 12, "noiDung": "Con nguyện nói ít lời hơn nhưng mỗi lời đều thật và tử tế." },
+    { "id": 13, "noiDung": "Con mong các em nhỏ có một năm học vui, được hỏi và được lắng nghe." },
+    { "id": 14, "noiDung": "Con xin gửi lời chúc lành đến người con chưa từng gặp đang ngắm cùng vầng trăng này." },
+    { "id": 15, "noiDung": "Con nguyện tập thói quen viết ba dòng biết ơn trước khi đi ngủ." },
+    { "id": 16, "noiDung": "Con mong người đang làm việc xa nhà đêm nay có một bữa cơm ngon." },
+    { "id": 17, "noiDung": "Con nguyện năm nay bớt so sánh mình với người khác và vui với bước đi của mình." },
+    { "id": 18, "noiDung": "Con mong mùa màng năm nay thuận hòa, người làm nông đỡ vất vả." },
+    { "id": 19, "noiDung": "Con nguyện chăm sóc một chậu cây nhỏ suốt năm như chăm một lời hứa." },
+    { "id": 20, "noiDung": "Con mong mọi người trong nhà con biết nói lời cảm ơn với nhau mỗi ngày." },
+    { "id": 21, "noiDung": "Con nguyện khi giận sẽ đợi đến sáng hôm sau rồi mới nói." },
+    { "id": 22, "noiDung": "Con mong ánh trăng đầu năm mang chút bình an đến những nơi đang khó khăn." },
+    { "id": 23, "noiDung": "Con nguyện năm nay học một kỹ năng mới và kiên nhẫn với chính mình khi học." },
+    { "id": 24, "noiDung": "Con mong người già neo đơn có ai đó ghé qua rót cho chén trà đêm rằm." },
+    { "id": 25, "noiDung": "Con nguyện giữ lòng trong như mặt hồ, để thấy rõ điều nên làm." },
+    { "id": 26, "noiDung": "Con xin cảm ơn những người đã thắp đèn cho con trong những ngày con lạc hướng." },
+    { "id": 27, "noiDung": "Con mong năm mới, muôn loài nhỏ bé quanh con cũng được sống yên lành." },
+    { "id": 28, "noiDung": "Con nguyện dành thời gian cho người thân nhiều hơn cho màn hình." },
+    { "id": 29, "noiDung": "Con mong bạn bè con ai cũng tìm được một niềm vui giản dị trong năm nay." },
+    { "id": 30, "noiDung": "Con nguyện mỗi rằm trong năm đều thắp một ngọn đèn lành trong lòng mình." }
+  ],
+  "nhiemVu": [
+    {
+      "id": "thap-den-long",
+      "ten": "Thắp đèn lồng đầu năm",
+      "moTa": "Chọn màu và thắp một chiếc đèn lồng ảo dọc lối vào chùa, kèm một lời chúc ngắn cho người đi sau.",
+      "phanThuong": "Đèn lồng đỏ treo ở hiên nhà bạn"
+    },
+    {
+      "id": "viet-tho-nguyen-tieu",
+      "ten": "Bốn câu thơ đêm rằm",
+      "moTa": "Tự viết bốn câu thơ mộc mạc về trăng, về nhà hay về người thân và đặt lên bàn thơ bên hồ.",
+      "phanThuong": "Bút lông và nghiên mực trên bàn thơ"
+    },
+    {
+      "id": "ngam-trang-dau-nam",
+      "ten": "Ngắm trăng đầu năm",
+      "moTa": "Ngồi bên hồ sen ảo năm phút, thở chậm và ngắm trăng rằm lên trên mặt nước.",
+      "phanThuong": "Vầng trăng rằm trên mái chùa"
+    },
+    {
+      "id": "tha-den-hoa-dang",
+      "ten": "Thả đèn hoa đăng",
+      "moTa": "Thả một chiếc đèn hoa đăng ảo trên hồ, gửi theo một lời nguyện lành cho gia đình.",
+      "phanThuong": "Đèn hoa đăng trôi trên hồ sen"
+    },
+    {
+      "id": "pha-tra-moi-nguoi",
+      "ten": "Chén trà mời người",
+      "moTa": "Pha một ấm trà ảo và mời ba người bạn trong danh sách cùng ngồi ngắm trăng.",
+      "phanThuong": "Bộ ấm chén men lam trên bàn trà"
+    },
+    {
+      "id": "nhin-lai-nua-thang",
+      "ten": "Nhìn lại nửa tháng",
+      "moTa": "Ghi lại một điều bạn đã làm được và một điều muốn làm tiếp kể từ ngày mùng Một.",
+      "phanThuong": "Cuốn sổ tay bìa đỏ trên kệ sách"
+    },
+    {
+      "id": "loi-chuc-nguoi-la",
+      "ten": "Lời chúc cho người lạ",
+      "moTa": "Đọc ba lời nguyện trên Cây nguyện và gửi mỗi lời một lời chúc lành.",
+      "phanThuong": "Chuông gió nhỏ treo trên Cây nguyện"
+    },
+    {
+      "id": "goi-ve-nha",
+      "ten": "Một cuộc gọi đêm rằm",
+      "moTa": "Gọi điện hỏi thăm một người thân ở xa, rồi đánh dấu hoàn thành khi đã gọi xong.",
+      "phanThuong": "Khung ảnh gia đình bên cửa sổ"
+    },
+    {
+      "id": "cay-nguyen-dau-nam",
+      "ten": "Treo lời nguyện đầu năm",
+      "moTa": "Viết một lời nguyện thật ngắn cho cả năm và treo lên Cây nguyện của chùa.",
+      "phanThuong": "Dải lụa vàng trên Cây nguyện"
+    },
+    {
+      "id": "di-cham-duoi-den",
+      "ten": "Đi chậm dưới hàng đèn",
+      "moTa": "Đi hết lối đèn lồng trong sân chùa ảo theo nhịp thở, không bấm vội.",
+      "phanThuong": "Hàng đèn lồng nhiều màu trước sân nhà"
+    }
+  ],
+  "trangTri": [
+    "Đèn lồng đỏ dọc lối vào chùa",
+    "Đèn lồng nhiều màu treo dưới mái hiên",
+    "Vầng trăng rằm trên mái chùa",
+    "Đèn hoa đăng trôi trên hồ sen",
+    "Bàn trà và giấy bút bên hồ",
+    "Bút lông và nghiên mực trên bàn thơ",
+    "Chuông gió nhỏ treo trên Cây nguyện",
+    "Dải lụa vàng trên Cây nguyện",
+    "Chậu quất nhỏ bên bậc thềm",
+    "Bộ ấm chén men lam trên bàn trà"
+  ],
+  "queDacBiet": [
+    {
+      "id": "den-vang-dau-nam",
+      "tieuDe": "Đèn vàng đầu năm",
+      "tho": [
+        "Đầu năm treo ngọn đèn vàng",
+        "Soi cho bước nhỏ nhẹ nhàng đường xuân",
+        "Một câu thơ viết bên sân",
+        "Gửi người thương mến muôn phần bình yên"
+      ],
+      "loiGiai": "Ngọn đèn vàng đầu năm không soi được cả con đường dài, nó chỉ soi vài bước trước mặt. Quẻ này nhắc bạn đừng lo nghĩ quá xa về cả một năm phía trước. Hãy đi từng bước nhẹ, làm tròn những việc nhỏ hôm nay. Câu thơ viết bên sân là lời nhắn gửi cho người thương: đôi khi một lời hỏi han mộc mạc đã đủ làm ấm lòng nhau.",
+      "loiKhuyen": "Viết một tin nhắn ngắn, thật lòng gửi tới một người bạn thương mến. Không cần hoa mỹ, chỉ cần đúng là lời của bạn."
+    },
+    {
+      "id": "trang-ram-thong-tha",
+      "tieuDe": "Trăng rằm thong thả",
+      "tho": [
+        "Rằm Giêng trăng sáng tròn đầy",
+        "Mời nhau ngồi lặng dưới cây ngắm trời",
+        "Đầu năm nhẹ bước thảnh thơi",
+        "Mong cho khắp chốn mọi nơi an lành"
+      ],
+      "loiGiai": "Sau những ngày Tết bận rộn, vầng trăng rằm tháng Giêng như một lời mời ngồi xuống. Quẻ này nói về sự thong thả: không phải lười biếng, mà là biết dừng đúng lúc để lấy lại hơi thở. Khi lòng mình thảnh thơi, mình mới có đủ chỗ để nghĩ tới người khác và mong cho mọi nơi được an lành.",
+      "loiKhuyen": "Tối nay, tắt điện thoại mười phút và ngồi ngoài hiên hoặc bên cửa sổ. Chỉ ngắm trời và thở chậm."
+    },
+    {
+      "id": "giay-hong-tho-hien",
+      "tieuDe": "Giấy hồng thơ hiền",
+      "tho": [
+        "Giấy hồng viết một câu thơ",
+        "Gửi vào đêm hội ước mơ hiền lành",
+        "Nguyện lòng như lá non xanh",
+        "Gieo điều tử tế cho thành mùa vui"
+      ],
+      "loiGiai": "Ước mơ đầu năm của bạn không cần lớn lao. Quẻ này ví lòng người như chiếc lá non: còn mềm, còn xanh, dễ uốn theo điều tốt. Những việc tử tế nhỏ được gieo đều đặn sẽ dần thành một mùa vui cho cả bạn và những người xung quanh. Hãy kiên nhẫn với hạt giống của mình.",
+      "loiKhuyen": "Chọn một việc tử tế thật nhỏ bạn có thể làm mỗi tuần trong năm nay, và ghi nó vào trang đầu cuốn sổ."
+    }
+  ]
+}

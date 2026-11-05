@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://chuaannhien.example/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/en/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/privacy-policy.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/en/privacy-policy.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/terms.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/terms.html"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/en/terms.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/terms.html"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/support.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/support.html"/>
+  </url>
+  <url>
+    <loc>https://chuaannhien.example/en/support.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://chuaannhien.example/support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chuaannhien.example/en/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chuaannhien.example/support.html"/>
+  </url>
+</urlset>

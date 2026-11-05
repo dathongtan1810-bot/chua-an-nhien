@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tu-cam.schema.json",
+  "title": "Danh sách từ cần lọc",
+  "type": "object",
+  "required": [
+    "version",
+    "tuCam",
+    "allowlist"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ghiChu": {
+      "type": "string"
+    },
+    "tuCam": {
+      "type": "array",
+      "minItems": 50,
+      "items": {
+        "type": "object",
+        "required": [
+          "tu",
+          "nhom",
+          "mucDo"
+        ],
+        "properties": {
+          "tu": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "nhom": {
+            "type": "string",
+            "minLength": 2
+          },
+          "mucDo": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "bienThe": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            }
+          },
+          "bienTheLach": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "description": "Dạng không dấu dễ trùng từ vô hại; chỉ bắt khi có dấu hiệu lách (thay ký tự, tách chữ)"
+          }
+        }
+      }
+    },
+    "allowlist": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80
+      }
+    },
+    "thayKyTu": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

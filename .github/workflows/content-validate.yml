@@ -1,0 +1,31 @@
+name: content-validate
+
+on:
+  push:
+    paths:
+      - 'content/**'
+      - 'site/**'
+      - '.github/workflows/content-*.yml'
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'site/**'
+      - '.github/workflows/content-*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Kiểm tra schema, trùng lặp, độ dài, luật lục bát
+        run: node content/validate.mjs
+      - name: Kiểm thử bộ lọc từ
+        run: node --test content/tu-cam.test.mjs
+      - name: Kiểm tra liên kết nội bộ của site
+        run: node content/tools/check-site.mjs

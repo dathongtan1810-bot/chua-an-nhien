@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 1,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện về nhà sớm hơn, ăn cơm cùng bố mẹ nhiều hơn."
+  },
+  {
+    "id": 2,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong mình bớt nóng nảy, nói với vợ con bằng giọng dịu dàng."
+  },
+  {
+    "id": 3,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho nhà con luôn có tiếng cười, dù bữa cơm đơn sơ."
+  },
+  {
+    "id": 4,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện gọi điện cho mẹ mỗi tối Chủ nhật, dù bận đến đâu."
+  },
+  {
+    "id": 5,
+    "chuDe": "gia-dao",
+    "noiDung": "Con là người đi làm xa, con mong Tết này về kịp ôm ông bà."
+  },
+  {
+    "id": 6,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện kiên nhẫn hơn với đứa em nhỏ hay quấy."
+  },
+  {
+    "id": 7,
+    "chuDe": "gia-dao",
+    "noiDung": "Mong anh em trong nhà bỏ qua chuyện cũ, ngồi lại với nhau."
+  },
+  {
+    "id": 8,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện học nấu những món bà hay làm để giữ hương vị nhà mình."
+  },
+  {
+    "id": 9,
+    "chuDe": "gia-dao",
+    "noiDung": "Là mẹ, con mong mình biết lắng nghe con nhiều hơn là la mắng."
+  },
+  {
+    "id": 10,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện phụ mẹ việc nhà mà không cần ai nhắc."
+  },
+  {
+    "id": 11,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho bố con bớt lo nghĩ, ngủ một giấc thật ngon."
+  },
+  {
+    "id": 12,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong vợ chồng con biết nhường nhau một câu khi giận."
+  },
+  {
+    "id": 13,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện cất điện thoại sang một bên khi ngồi với gia đình."
+  },
+  {
+    "id": 14,
+    "chuDe": "gia-dao",
+    "noiDung": "Ông bà đã già, con nguyện về thăm thường xuyên hơn."
+  },
+  {
+    "id": 15,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong các con lớn lên thật thà, biết thương người."
+  },
+  {
+    "id": 16,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện xin lỗi bố trước, không để im lặng kéo dài."
+  },
+  {
+    "id": 17,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho căn nhà nhỏ của con luôn ấm áp, ai về cũng thấy bình yên."
+  },
+  {
+    "id": 18,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện dạy con bằng việc làm, không chỉ bằng lời nói."
+  },
+  {
+    "id": 19,
+    "chuDe": "gia-dao",
+    "noiDung": "Con là con dâu mới, con mong mình sống hòa thuận với nhà chồng."
+  },
+  {
+    "id": 20,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong bố mẹ con ở quê luôn có hàng xóm tốt bên cạnh."
+  },
+  {
+    "id": 21,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện tiết kiệm để đưa cả nhà đi chơi một chuyến."
+  },
+  {
+    "id": 22,
+    "chuDe": "gia-dao",
+    "noiDung": "Mong chị em con thương nhau như hồi còn bé."
+  },
+  {
+    "id": 23,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện không mang mệt mỏi ở chỗ làm về trút lên người nhà."
+  },
+  {
+    "id": 24,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho ba mẹ con già đi thật chậm, để con kịp báo hiếu."
+  },
+  {
+    "id": 25,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện kể chuyện cho con nghe mỗi tối trước khi ngủ."
+  },
+  {
+    "id": 26,
+    "chuDe": "gia-dao",
+    "noiDung": "Con là ông, con mong các cháu chăm ngoan và hay về chơi."
+  },
+  {
+    "id": 27,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong mình khen người thân nhiều hơn, chê ít đi."
+  },
+  {
+    "id": 28,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện cùng chồng vun vén, cùng gánh việc nhà như nhau."
+  },
+  {
+    "id": 29,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho bữa cơm cuối tuần nhà con không vắng ai."
+  },
+  {
+    "id": 30,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện chăm sóc mẹ chu đáo trong những ngày mẹ yếu."
+  },
+  {
+    "id": 31,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong con trai con sớm hiểu bố mẹ, thôi giận dỗi."
+  },
+  {
+    "id": 32,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện giữ lời hứa với các con, dù là lời hứa nhỏ nhất."
+  },
+  {
+    "id": 33,
+    "chuDe": "gia-dao",
+    "noiDung": "Mong gia đình con đón thành viên mới trong niềm vui trọn vẹn."
+  },
+  {
+    "id": 34,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện học cách nói \"cảm ơn\" và \"con thương mẹ\" thành lời."
+  },
+  {
+    "id": 35,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong bố mẹ con bớt cãi nhau, biết thương nhau lúc tuổi già."
+  },
+  {
+    "id": 36,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện làm chỗ dựa cho em gái trong lúc em gặp khó khăn."
+  },
+  {
+    "id": 37,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện ghi lại chuyện xưa của ông bà để con cháu sau này còn biết."
+  },
+  {
+    "id": 38,
+    "chuDe": "gia-dao",
+    "noiDung": "Con mong nhà mình dù ở xa nhau vẫn giữ cuộc gọi chung mỗi tuần."
+  },
+  {
+    "id": 39,
+    "chuDe": "gia-dao",
+    "noiDung": "Con nguyện bớt so sánh con mình với con nhà người ta."
+  },
+  {
+    "id": 40,
+    "chuDe": "gia-dao",
+    "noiDung": "Xin cho mái ấm của con luôn là nơi mọi người muốn quay về."
+  },
+  {
+    "id": 41,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện làm việc tận tâm, việc nhỏ cũng làm đến nơi đến chốn."
+  },
+  {
+    "id": 42,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong tìm được công việc hợp với sức mình và giúp được người khác."
+  },
+  {
+    "id": 43,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho con giữ được bình tĩnh trong buổi phỏng vấn sắp tới."
+  },
+  {
+    "id": 44,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện đi làm đúng giờ, không để đồng nghiệp phải chờ."
+  },
+  {
+    "id": 45,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong mình dám lên tiếng khi thấy điều sai ở chỗ làm."
+  },
+  {
+    "id": 46,
+    "chuDe": "cong-viec",
+    "noiDung": "Mới ra trường, con nguyện khiêm tốn học hỏi từ người đi trước."
+  },
+  {
+    "id": 47,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện không đổ lỗi cho người khác khi việc chưa thành."
+  },
+  {
+    "id": 48,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho nhóm của con làm việc ăn ý, biết giúp đỡ nhau."
+  },
+  {
+    "id": 49,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong mình biết nghỉ ngơi, không để công việc nuốt hết thời gian."
+  },
+  {
+    "id": 50,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện học thêm một kỹ năng mới trong năm nay."
+  },
+  {
+    "id": 51,
+    "chuDe": "cong-viec",
+    "noiDung": "Con là thợ may, con mong đường kim mũi chỉ luôn chắc tay."
+  },
+  {
+    "id": 52,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện đối xử tử tế với nhân viên như mong người khác đối với mình."
+  },
+  {
+    "id": 53,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong vượt qua đợt thất nghiệp này bằng sự kiên trì."
+  },
+  {
+    "id": 54,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho con đủ can đảm bắt đầu lại ở một ngành nghề mới."
+  },
+  {
+    "id": 55,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện giữ chữ tín với khách hàng, hứa gì làm nấy."
+  },
+  {
+    "id": 56,
+    "chuDe": "cong-viec",
+    "noiDung": "Con là tài xế, con nguyện lái xe cẩn thận, chở khách an toàn."
+  },
+  {
+    "id": 57,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong mình bớt trì hoãn, việc hôm nay làm xong trong hôm nay."
+  },
+  {
+    "id": 58,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện ghi nhận công sức đồng nghiệp, không nhận phần hơn về mình."
+  },
+  {
+    "id": 59,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho dự án con đang làm về đích suôn sẻ nhờ cả nhóm cùng cố gắng."
+  },
+  {
+    "id": 60,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong tìm lại niềm vui trong công việc mình đã làm nhiều năm."
+  },
+  {
+    "id": 61,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện làm nông chăm chỉ, chăm từng luống rau như chăm con."
+  },
+  {
+    "id": 62,
+    "chuDe": "cong-viec",
+    "noiDung": "Con là giáo viên, con mong mình luôn giữ được lửa với học trò."
+  },
+  {
+    "id": 63,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện không để chuyện riêng làm ảnh hưởng đến việc chung."
+  },
+  {
+    "id": 64,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong mình đón nhận lời góp ý bằng cái đầu lạnh và trái tim mở."
+  },
+  {
+    "id": 65,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho những người làm ca đêm như con luôn về nhà an toàn."
+  },
+  {
+    "id": 66,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện từ chối những việc trái lương tâm, dù lương cao đến đâu."
+  },
+  {
+    "id": 67,
+    "chuDe": "cong-viec",
+    "noiDung": "Con là y tá, con mong đôi tay mình luôn nhẹ nhàng với người bệnh."
+  },
+  {
+    "id": 68,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong mình biết sắp xếp việc để còn thời gian cho gia đình."
+  },
+  {
+    "id": 69,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện tập trung trọn vẹn vào việc đang làm, không xao nhãng."
+  },
+  {
+    "id": 70,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện làm tốt việc hiện tại trước khi mong được thăng chức."
+  },
+  {
+    "id": 71,
+    "chuDe": "cong-viec",
+    "noiDung": "Xin cho con đủ kiên nhẫn để hướng dẫn người mới vào nghề."
+  },
+  {
+    "id": 72,
+    "chuDe": "cong-viec",
+    "noiDung": "Con là công nhân xây dựng, con nguyện luôn mang đồ bảo hộ cẩn thận."
+  },
+  {
+    "id": 73,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong cơ sở nhỏ con mới mở đi chậm mà chắc."
+  },
+  {
+    "id": 74,
+    "chuDe": "cong-viec",
+    "noiDung": "Con nguyện trung thực trong từng con số mình báo cáo."
+  },
+  {
+    "id": 75,
+    "chuDe": "cong-viec",
+    "noiDung": "Con mong cuối mỗi ngày làm việc, con biết mình đã làm hết sức."
+  },
+  {
+    "id": 76,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện ngủ trước mười một giờ, thôi thức khuya lướt điện thoại."
+  },
+  {
+    "id": 77,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong mẹ con sau ca mổ hồi phục từng ngày."
+  },
+  {
+    "id": 78,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện đi bộ ba mươi phút mỗi sáng."
+  },
+  {
+    "id": 79,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho con đủ bình tĩnh để đi qua đợt điều trị này."
+  },
+  {
+    "id": 80,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện bỏ thuốc lá, vì mình và vì các con."
+  },
+  {
+    "id": 81,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong bố con chịu đi khám định kỳ, đừng ngại."
+  },
+  {
+    "id": 82,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện ăn nhiều rau, uống đủ nước, bớt đồ ngọt."
+  },
+  {
+    "id": 83,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con đang ốm, con mong mỗi ngày khỏe hơn hôm qua một chút."
+  },
+  {
+    "id": 84,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho bà con đi lại vững vàng, không bị té ngã."
+  },
+  {
+    "id": 85,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện uống thuốc đúng giờ và làm theo lời bác sĩ."
+  },
+  {
+    "id": 86,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong tâm trí mình nhẹ hơn, bớt lo âu vô cớ."
+  },
+  {
+    "id": 87,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện bớt rượu bia để còn khỏe mà lo cho nhà."
+  },
+  {
+    "id": 88,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho em bé trong bụng con lớn lên khỏe mạnh."
+  },
+  {
+    "id": 89,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện tập thể dục đều, không bỏ giữa chừng như mọi năm."
+  },
+  {
+    "id": 90,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong những người đang nằm viện đêm nay bớt đau."
+  },
+  {
+    "id": 91,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con là người già, con nguyện giữ thân tâm thư thái mỗi ngày."
+  },
+  {
+    "id": 92,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện tìm đến chuyên gia tâm lý khi thấy lòng quá nặng."
+  },
+  {
+    "id": 93,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho con trai con sớm hết sốt, lại chạy nhảy vui chơi."
+  },
+  {
+    "id": 94,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong mình biết lắng nghe cơ thể, mệt thì nghỉ."
+  },
+  {
+    "id": 95,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện giữ gìn đôi mắt, rời màn hình sau mỗi giờ làm việc."
+  },
+  {
+    "id": 96,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong ông con bớt đau lưng, ngủ yên giấc."
+  },
+  {
+    "id": 97,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện ăn sáng đầy đủ, không bỏ bữa vì vội."
+  },
+  {
+    "id": 98,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho các bác sĩ, y tá luôn đủ sức khỏe để chữa cho người khác."
+  },
+  {
+    "id": 99,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong mình sống chung bình thản với căn bệnh mãn tính này."
+  },
+  {
+    "id": 100,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện tập hít thở sâu mỗi khi thấy căng thẳng."
+  },
+  {
+    "id": 101,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong vợ con sinh nở mẹ tròn con vuông."
+  },
+  {
+    "id": 102,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện kiên trì tập vật lý trị liệu cho đến khi tự đi lại được."
+  },
+  {
+    "id": 103,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho con giữ được tinh thần lạc quan trong những ngày nằm viện."
+  },
+  {
+    "id": 104,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong ba mẹ ăn ngon ngủ yên, tuổi già ít bệnh tật."
+  },
+  {
+    "id": 105,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện đi khám sức khỏe mỗi năm một lần, không chủ quan."
+  },
+  {
+    "id": 106,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong bạn con đủ mạnh mẽ trong cuộc chiến với bệnh tật."
+  },
+  {
+    "id": 107,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện dành mười phút mỗi tối ngồi yên, để lòng lắng lại."
+  },
+  {
+    "id": 108,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con làm văn phòng, con nguyện thường xuyên đứng dậy vươn vai."
+  },
+  {
+    "id": 109,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho những người chăm bệnh như con không kiệt sức."
+  },
+  {
+    "id": 110,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong con gái con hết dị ứng, ăn uống ngon miệng."
+  },
+  {
+    "id": 111,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện nấu ăn ở nhà nhiều hơn, bớt đồ ăn nhanh."
+  },
+  {
+    "id": 112,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con mong mình nhẹ nhàng với chính mình trong những ngày trầm cảm."
+  },
+  {
+    "id": 113,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện giữ cân nặng vừa phải để đầu gối bớt đau."
+  },
+  {
+    "id": 114,
+    "chuDe": "suc-khoe",
+    "noiDung": "Xin cho mẹ con qua khỏi đợt bệnh này, lại ra vườn tưới cây."
+  },
+  {
+    "id": 115,
+    "chuDe": "suc-khoe",
+    "noiDung": "Con nguyện đi thang bộ thay thang máy, mỗi ngày một chút."
+  },
+  {
+    "id": 116,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện chăm học mỗi ngày, thi xong không hối tiếc."
+  },
+  {
+    "id": 117,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình bớt sợ môn Toán, chưa hiểu thì hỏi thầy cô."
+  },
+  {
+    "id": 118,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện đọc hết mười cuốn sách trong năm nay."
+  },
+  {
+    "id": 119,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Xin cho con giữ được bình tĩnh trong phòng thi, làm bài cẩn thận."
+  },
+  {
+    "id": 120,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện không quay cóp, đúng sai đều là sức mình."
+  },
+  {
+    "id": 121,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con là sinh viên năm nhất, con mong sớm quen nếp học xa nhà."
+  },
+  {
+    "id": 122,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện học tiếng Anh mười lăm phút mỗi ngày."
+  },
+  {
+    "id": 123,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong con mình học vì thích, không vì sợ bị la."
+  },
+  {
+    "id": 124,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện tắt điện thoại khi ngồi vào bàn học."
+  },
+  {
+    "id": 125,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Xin cho con đủ kiên trì để hoàn thành luận văn."
+  },
+  {
+    "id": 126,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện giúp bạn học yếu trong lớp mà không chê cười."
+  },
+  {
+    "id": 127,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình chọn ngành học bằng đam mê và sự hiểu rõ bản thân."
+  },
+  {
+    "id": 128,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện ôn bài đều đặn, không dồn đến sát ngày thi."
+  },
+  {
+    "id": 129,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con đi làm rồi, con nguyện học thêm buổi tối để nâng tay nghề."
+  },
+  {
+    "id": 130,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình dám giơ tay phát biểu trong lớp."
+  },
+  {
+    "id": 131,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện lễ phép với thầy cô và chăm chú nghe giảng."
+  },
+  {
+    "id": 132,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Xin cho con không nản khi điểm kém, mà biết sửa từ lỗi sai."
+  },
+  {
+    "id": 133,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện ghi chép gọn gàng để ôn lại cho dễ."
+  },
+  {
+    "id": 134,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong con gái thi vào lớp mười với tâm thế nhẹ nhàng."
+  },
+  {
+    "id": 135,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện học một nghề thật giỏi để tự nuôi sống mình."
+  },
+  {
+    "id": 136,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con đã lớn tuổi, con mong mình vẫn học được điều mới mỗi ngày."
+  },
+  {
+    "id": 137,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện ngủ đủ giấc trước ngày thi, không thức trắng."
+  },
+  {
+    "id": 138,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong gặp được người hướng dẫn tận tâm và học được cách làm việc từ họ."
+  },
+  {
+    "id": 139,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện làm xong bài tập về nhà rồi mới chơi game."
+  },
+  {
+    "id": 140,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình học để hiểu, không chỉ để lấy điểm."
+  },
+  {
+    "id": 141,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện tự tin nộp hồ sơ học bổng, chưa được thì làm lại."
+  },
+  {
+    "id": 142,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Xin cho học sinh vùng xa có con đường đến trường dễ đi hơn."
+  },
+  {
+    "id": 143,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện kiên nhẫn ngồi học cùng con mỗi tối."
+  },
+  {
+    "id": 144,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình vượt qua nỗi sợ nói trước đám đông khi thuyết trình."
+  },
+  {
+    "id": 145,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện học lại môn đã rớt với tinh thần mới."
+  },
+  {
+    "id": 146,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con là du học sinh, con mong mình vững vàng học tốt nơi đất khách."
+  },
+  {
+    "id": 147,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện chia sẻ tài liệu cho bạn bè thay vì giữ cho riêng mình."
+  },
+  {
+    "id": 148,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con mong mình đặt mục tiêu vừa sức và đi từng bước một."
+  },
+  {
+    "id": 149,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Con nguyện mỗi tuần học một điều không có trong sách giáo khoa."
+  },
+  {
+    "id": 150,
+    "chuDe": "hoc-hanh",
+    "noiDung": "Xin cho con dù kết quả thế nào cũng biết mình đã cố gắng hết sức."
+  },
+  {
+    "id": 151,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện yêu thương chân thành, không lừa dối ai."
+  },
+  {
+    "id": 152,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong gặp được người cùng mình đi đường dài, hiểu và tôn trọng nhau."
+  },
+  {
+    "id": 153,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện học cách thương bản thân trước khi thương người khác."
+  },
+  {
+    "id": 154,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Xin cho con đủ bình thản để buông một mối tình không còn hợp."
+  },
+  {
+    "id": 155,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong vợ chồng con giữ được sự lãng mạn sau nhiều năm."
+  },
+  {
+    "id": 156,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện lắng nghe người yêu nhiều hơn thay vì tranh cãi."
+  },
+  {
+    "id": 157,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình đủ can đảm nói lời thương với người mình thích."
+  },
+  {
+    "id": 158,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện tôn trọng quyết định của người ấy, dù không như con mong."
+  },
+  {
+    "id": 159,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Mong tình yêu xa của chúng con đủ bền để vượt qua khoảng cách."
+  },
+  {
+    "id": 160,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình không vội vàng, để duyên đến đúng lúc."
+  },
+  {
+    "id": 161,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện chung thủy và giữ lời đã hứa với người bạn đời."
+  },
+  {
+    "id": 162,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong hai đứa chúng con biết bất đồng mà không làm tổn thương nhau."
+  },
+  {
+    "id": 163,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện chữa lành vết thương cũ để mở lòng thêm lần nữa."
+  },
+  {
+    "id": 164,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Xin cho hai bên gia đình chúng con thông cảm và chấp nhận nhau."
+  },
+  {
+    "id": 165,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong người cũ của con tìm được hạnh phúc ở nơi mới."
+  },
+  {
+    "id": 166,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện cùng người ấy chia việc nhà, không đợi ai phải nhắc."
+  },
+  {
+    "id": 167,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình bớt ghen tuông vô cớ, tin tưởng nhau hơn."
+  },
+  {
+    "id": 168,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện sống tốt một mình, vui vẻ dù chưa có ai bên cạnh."
+  },
+  {
+    "id": 169,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Xin cho đám cưới của chúng con ấm cúng, đủ đầy yêu thương."
+  },
+  {
+    "id": 170,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình biết nói lời xin lỗi trước khi quá muộn."
+  },
+  {
+    "id": 171,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện dành một buổi tối mỗi tuần chỉ cho hai vợ chồng."
+  },
+  {
+    "id": 172,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình nhận ra tấm lòng thật giữa nhiều lời ngọt ngào."
+  },
+  {
+    "id": 173,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện không đem người yêu ra so sánh với bất kỳ ai."
+  },
+  {
+    "id": 174,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Xin cho con can đảm rời khỏi mối quan hệ khiến con tổn thương."
+  },
+  {
+    "id": 175,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong khi về già hai vợ chồng vẫn nắm tay nhau đi dạo."
+  },
+  {
+    "id": 176,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện ghi nhớ những ngày quan trọng của người mình thương."
+  },
+  {
+    "id": 177,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong mình đủ chín chắn trước khi bước vào hôn nhân."
+  },
+  {
+    "id": 178,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con nguyện nói thật cảm xúc của mình, không bắt người kia phải đoán."
+  },
+  {
+    "id": 179,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Con mong tình yêu giúp cả hai chúng con trở nên tốt đẹp hơn."
+  },
+  {
+    "id": 180,
+    "chuDe": "tinh-duyen",
+    "noiDung": "Xin cho chúng con biết vun đắp tình cảm từ những điều nhỏ mỗi ngày."
+  },
+  {
+    "id": 181,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện buôn bán thật thà, cân đủ, nói đúng về hàng hóa."
+  },
+  {
+    "id": 182,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong mình để dành được một ít mỗi tháng phòng khi ốm đau."
+  },
+  {
+    "id": 183,
+    "chuDe": "tai-loc",
+    "noiDung": "Con bán rau ngoài chợ, con nguyện tươi cười với từng người khách."
+  },
+  {
+    "id": 184,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện tiêu ít hơn mình kiếm được, không vay nợ để khoe khoang."
+  },
+  {
+    "id": 185,
+    "chuDe": "tai-loc",
+    "noiDung": "Xin cho quán nhỏ của con có khách quen nhờ món ăn sạch, giá phải chăng."
+  },
+  {
+    "id": 186,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong trả hết nợ trong năm nay bằng chính sức lao động của mình."
+  },
+  {
+    "id": 187,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện tránh xa cờ bạc và những lời rủ rê làm giàu nhanh."
+  },
+  {
+    "id": 188,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong làm ăn đủ sống, có dư một chút để giúp người khó khăn hơn."
+  },
+  {
+    "id": 189,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện ghi chép chi tiêu mỗi ngày để biết tiền đi đâu."
+  },
+  {
+    "id": 190,
+    "chuDe": "tai-loc",
+    "noiDung": "Xin cho con kiên nhẫn với nghề, tích lũy từng chút một."
+  },
+  {
+    "id": 191,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện trả lương đúng hạn cho người làm, không để ai phải chờ."
+  },
+  {
+    "id": 192,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong học thêm cách quản lý tiền để gia đình bớt chật vật."
+  },
+  {
+    "id": 193,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện không bán hàng kém chất lượng dù được lãi nhiều hơn."
+  },
+  {
+    "id": 194,
+    "chuDe": "tai-loc",
+    "noiDung": "Con bán hàng trên mạng, con mong giữ được uy tín qua từng đơn."
+  },
+  {
+    "id": 195,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện chăm vườn cây đúng mùa, thu hoạch bao nhiêu cũng vui lòng."
+  },
+  {
+    "id": 196,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong mình biết đủ, không chạy theo những thứ không cần."
+  },
+  {
+    "id": 197,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện dành riêng một phần thu nhập cho con đi học."
+  },
+  {
+    "id": 198,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong cửa hàng của con giữ được chữ tín với nhà cung cấp."
+  },
+  {
+    "id": 199,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện làm thêm việc chính đáng để sớm sửa lại mái nhà."
+  },
+  {
+    "id": 200,
+    "chuDe": "tai-loc",
+    "noiDung": "Xin cho con tỉnh táo trước những lời mời đầu tư hứa hẹn quá đẹp."
+  },
+  {
+    "id": 201,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong vợ chồng con bàn bạc chuyện tiền nong cởi mở với nhau."
+  },
+  {
+    "id": 202,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện mua sắm có kế hoạch, không mua chỉ vì giảm giá."
+  },
+  {
+    "id": 203,
+    "chuDe": "tai-loc",
+    "noiDung": "Con là thợ sửa xe, con nguyện báo giá đúng, hỏng đâu sửa đó."
+  },
+  {
+    "id": 204,
+    "chuDe": "tai-loc",
+    "noiDung": "Con mong mình giữ được cái tâm khi việc làm ăn bắt đầu khấm khá."
+  },
+  {
+    "id": 205,
+    "chuDe": "tai-loc",
+    "noiDung": "Con nguyện chia sẻ kinh nghiệm buôn bán cho người mới bắt đầu."
+  },
+  {
+    "id": 206,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện đội mũ bảo hiểm mỗi lần lên xe, không ngoại lệ."
+  },
+  {
+    "id": 207,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho người đi xa như con chuyến nào cũng về nhà bình an."
+  },
+  {
+    "id": 208,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong lòng mình lặng lại, bớt lo những chuyện chưa xảy ra."
+  },
+  {
+    "id": 209,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện không cầm lái khi đã uống rượu bia."
+  },
+  {
+    "id": 210,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong khu phố con ở luôn yên ổn, hàng xóm giúp đỡ nhau."
+  },
+  {
+    "id": 211,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện tha thứ cho người làm con buồn để lòng nhẹ nhõm."
+  },
+  {
+    "id": 212,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong những chuyến ra khơi của ngư dân gặp trời yên biển lặng."
+  },
+  {
+    "id": 213,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện sống chậm lại, thở sâu và nhìn kỹ từng ngày."
+  },
+  {
+    "id": 214,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong mùa mưa bão năm nay quê con không ai bị thiệt hại."
+  },
+  {
+    "id": 215,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện kiểm tra bếp ga, ổ điện trước khi ra khỏi nhà."
+  },
+  {
+    "id": 216,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho con tìm được sự bình yên giữa thành phố ồn ào."
+  },
+  {
+    "id": 217,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong mình không để những lời chê bai làm mất ngủ."
+  },
+  {
+    "id": 218,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện nhường đường, không chen lấn, không nóng giận khi kẹt xe."
+  },
+  {
+    "id": 219,
+    "chuDe": "binh-an",
+    "noiDung": "Con đi làm xa, con mong cha mẹ ở nhà ngày nào cũng bình an."
+  },
+  {
+    "id": 220,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện dành buổi sáng đầu tuần đi dạo trong yên lặng."
+  },
+  {
+    "id": 221,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong các con đi học về an toàn, qua đường cẩn thận."
+  },
+  {
+    "id": 222,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho lòng con không oán giận ai, để tối nào cũng ngủ yên."
+  },
+  {
+    "id": 223,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện tập cho con biết bơi để mùa hè được an toàn."
+  },
+  {
+    "id": 224,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong năm mới trôi qua êm đềm, không có biến cố lớn."
+  },
+  {
+    "id": 225,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện bớt đọc tin tiêu cực để tâm được nghỉ ngơi."
+  },
+  {
+    "id": 226,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong mình đủ vững vàng khi gặp chuyện không như ý."
+  },
+  {
+    "id": 227,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện không đăng thông tin riêng của các con lên mạng."
+  },
+  {
+    "id": 228,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho những người lính và lính cứu hỏa trực đêm nay được bình an."
+  },
+  {
+    "id": 229,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong căn phòng trọ nhỏ của con là nơi yên tĩnh để nghỉ ngơi."
+  },
+  {
+    "id": 230,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện giữ lời nói ôn hòa, không gây gổ với ai."
+  },
+  {
+    "id": 231,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong cụ già sống một mình cạnh nhà con luôn có người hỏi han."
+  },
+  {
+    "id": 232,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện chấp nhận những gì không thay đổi được và bình thản bước tiếp."
+  },
+  {
+    "id": 233,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho chuyến bay sắp tới của bố mẹ con suôn sẻ."
+  },
+  {
+    "id": 234,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong trong nhà, trong xóm bớt đi tiếng cãi vã."
+  },
+  {
+    "id": 235,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện mỗi tối viết ra ba điều khiến con thấy yên lòng."
+  },
+  {
+    "id": 236,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong mình buông được nỗi sợ thất bại để sống nhẹ nhàng hơn."
+  },
+  {
+    "id": 237,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện chạy xe đúng tốc độ, về muộn một chút cũng không sao."
+  },
+  {
+    "id": 238,
+    "chuDe": "binh-an",
+    "noiDung": "Xin cho mỗi người bước qua cổng chùa đều mang về chút an yên."
+  },
+  {
+    "id": 239,
+    "chuDe": "binh-an",
+    "noiDung": "Con mong các con đi làm ăn xa luôn có bạn tốt bên cạnh."
+  },
+  {
+    "id": 240,
+    "chuDe": "binh-an",
+    "noiDung": "Con nguyện giữ cho mình một khoảng nhỏ mỗi ngày, không vội vã."
+  },
+  {
+    "id": 241,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn bố mẹ đã tần tảo nuôi con khôn lớn."
+  },
+  {
+    "id": 242,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện chào và cảm ơn cô lao công ở công ty mỗi sáng."
+  },
+  {
+    "id": 243,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn thầy cô đã kiên nhẫn với con suốt những năm đi học."
+  },
+  {
+    "id": 244,
+    "chuDe": "bien-on",
+    "noiDung": "Con mong mình luôn nhớ ơn những người đã giúp con lúc khó khăn."
+  },
+  {
+    "id": 245,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn một ngày bình thường: có cơm ăn, có nhà để về."
+  },
+  {
+    "id": 246,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện đáp lại tình bạn bằng sự chân thành."
+  },
+  {
+    "id": 247,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn người lạ đã giúp con dắt xe lúc xe hỏng giữa đường."
+  },
+  {
+    "id": 248,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn những bác sĩ đã cứu sống bố con."
+  },
+  {
+    "id": 249,
+    "chuDe": "bien-on",
+    "noiDung": "Con mong sáng nào thức dậy cũng thấy biết ơn vì mình còn khỏe."
+  },
+  {
+    "id": 250,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện biết ơn cả những khó khăn đã dạy con trưởng thành."
+  },
+  {
+    "id": 251,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn vợ đã ở bên con những năm tháng chật vật nhất."
+  },
+  {
+    "id": 252,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn người nông dân làm ra hạt gạo con ăn mỗi ngày."
+  },
+  {
+    "id": 253,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện chăm sóc ông bà như ông bà đã từng chăm con."
+  },
+  {
+    "id": 254,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn chính mình đã không bỏ cuộc trong năm qua."
+  },
+  {
+    "id": 255,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn bà con hàng xóm đã trông nhà giúp lúc con đi xa."
+  },
+  {
+    "id": 256,
+    "chuDe": "bien-on",
+    "noiDung": "Con mong mình biết trân trọng những gì đang có thay vì than phiền."
+  },
+  {
+    "id": 257,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn người đã dạy nghề, cho con cái cần câu để tự lập."
+  },
+  {
+    "id": 258,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn tiếng cười của các con sau một ngày mệt mỏi."
+  },
+  {
+    "id": 259,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện trao tiếp lòng tốt mà người khác đã dành cho con."
+  },
+  {
+    "id": 260,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn những người bạn đã ở lại khi con thất bại."
+  },
+  {
+    "id": 261,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn đất nước yên bình để con được lớn lên, học hành."
+  },
+  {
+    "id": 262,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn mẹ đã bao đêm thức trắng mỗi lần con ốm."
+  },
+  {
+    "id": 263,
+    "chuDe": "bien-on",
+    "noiDung": "Con cảm ơn anh chị đồng nghiệp đã chỉ bảo con những ngày đầu."
+  },
+  {
+    "id": 264,
+    "chuDe": "bien-on",
+    "noiDung": "Con nguyện viết một lá thư tay cảm ơn người thầy cũ."
+  },
+  {
+    "id": 265,
+    "chuDe": "bien-on",
+    "noiDung": "Con biết ơn từng bữa cơm, từng ngụm nước, từng hơi thở hôm nay."
+  },
+  {
+    "id": 266,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con thương nhớ bà, con nguyện sống hiền lành như lời bà dặn."
+  },
+  {
+    "id": 267,
+    "chuDe": "cau-sieu",
+    "noiDung": "Ngày giỗ bố, con nguyện sống tử tế để xứng đáng là con của bố."
+  },
+  {
+    "id": 268,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nhớ mẹ, con nguyện giữ gìn những món ăn và lời ru mẹ để lại."
+  },
+  {
+    "id": 269,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con tưởng nhớ ông, người đã dạy con trồng cây và sống kiên nhẫn."
+  },
+  {
+    "id": 270,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con mong nỗi nhớ người thân đã khuất hóa thành sức để sống tốt hơn."
+  },
+  {
+    "id": 271,
+    "chuDe": "cau-sieu",
+    "noiDung": "Tưởng nhớ người bạn ra đi quá sớm, con nguyện sống trọn từng ngày."
+  },
+  {
+    "id": 272,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nguyện chăm sóc mẹ thay cả phần của bố đã đi xa."
+  },
+  {
+    "id": 273,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con dành phút lặng này nhớ về ông bà tổ tiên đã vun đắp cho gia đình."
+  },
+  {
+    "id": 274,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con mong mình bớt day dứt vì chưa kịp nói lời tạm biệt với ông."
+  },
+  {
+    "id": 275,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nhớ chú, con nguyện giúp đỡ các em như chú từng giúp con."
+  },
+  {
+    "id": 276,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nguyện kể cho các cháu nghe về cụ, để tình thương ấy không phai."
+  },
+  {
+    "id": 277,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con tưởng nhớ những người mất trong thiên tai, mong người ở lại vững lòng."
+  },
+  {
+    "id": 278,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nhớ đứa con chưa kịp chào đời, con nguyện thương lấy mình và bước tiếp."
+  },
+  {
+    "id": 279,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con mong nụ cười của mẹ mãi ở lại trong ký ức cả nhà."
+  },
+  {
+    "id": 280,
+    "chuDe": "cau-sieu",
+    "noiDung": "Con nguyện giữ khu vườn của ba luôn xanh tốt, như ba vẫn còn đây."
+  },
+  {
+    "id": 281,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong muôn loài được sống yên ổn, không bị săn bắt."
+  },
+  {
+    "id": 282,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện mang túi vải đi chợ, bớt dùng túi ni lông."
+  },
+  {
+    "id": 283,
+    "chuDe": "the-gioi",
+    "noiDung": "Xin cho những nơi đang có chiến tranh sớm có ngày hòa bình."
+  },
+  {
+    "id": 284,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện mỗi năm trồng thêm một cái cây."
+  },
+  {
+    "id": 285,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong trẻ em khắp nơi đều được đến trường và có bữa ăn no."
+  },
+  {
+    "id": 286,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện không bỏ rơi thú cưng, đã nuôi thì thương đến cuối."
+  },
+  {
+    "id": 287,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong mọi người đối xử với nhau tử tế hơn, bất kể khác biệt."
+  },
+  {
+    "id": 288,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện tiết kiệm điện nước như một cách thương trái đất."
+  },
+  {
+    "id": 289,
+    "chuDe": "the-gioi",
+    "noiDung": "Xin cho những người tị nạn sớm tìm được mái nhà an toàn."
+  },
+  {
+    "id": 290,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện nhặt rác mỗi lần đi biển, đi núi."
+  },
+  {
+    "id": 291,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong những vùng đang hạn hán sớm có nước sạch."
+  },
+  {
+    "id": 292,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện ăn chay mỗi tuần một ngày để bớt sát sinh."
+  },
+  {
+    "id": 293,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong những người cô đơn trên thế giới đều có người lắng nghe."
+  },
+  {
+    "id": 294,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện không lan truyền tin giả và lời lẽ thù ghét trên mạng."
+  },
+  {
+    "id": 295,
+    "chuDe": "the-gioi",
+    "noiDung": "Xin cho rừng xanh được giữ gìn, sông suối lại trong như xưa."
+  },
+  {
+    "id": 296,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện mỗi tháng đi tình nguyện một lần ở nơi cần người giúp."
+  },
+  {
+    "id": 297,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong người già neo đơn khắp nơi được chăm sóc chu đáo."
+  },
+  {
+    "id": 298,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện rải ít thóc cho chim, đặt chén nước cho mèo hoang trước ngõ."
+  },
+  {
+    "id": 299,
+    "chuDe": "the-gioi",
+    "noiDung": "Con mong mọi sinh linh đều bớt khổ đau, được an lạc."
+  },
+  {
+    "id": 300,
+    "chuDe": "the-gioi",
+    "noiDung": "Con nguyện mỗi ngày làm một việc tốt nhỏ cho người lạ."
+  }
+]

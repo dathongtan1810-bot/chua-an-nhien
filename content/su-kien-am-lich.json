@@ -1,0 +1,222 @@
+[
+  {
+    "id": "mung-mot-hang-thang",
+    "ten": "Mùng Một hằng tháng",
+    "loai": "phat-giao",
+    "thang": null,
+    "ngay": 1,
+    "moTa": "Ngày đầu mỗi tháng âm lịch, nhiều gia đình Việt thắp hương, ăn chay hoặc đi chùa để bắt đầu tháng mới với tâm thế thanh thản. Đây là dịp nhìn lại tháng cũ, đặt một ý định nhỏ cho tháng mới và nhắc mình sống chậm lại.",
+    "trangTri": ["Bình hoa cúc vàng trên bàn thờ", "Đĩa trái cây năm màu", "Đèn dầu nhỏ cạnh lư hương", "Lá bồ đề non trên cây trong sân"],
+    "nhiemVu": ["Thắp một nén hương ảo trước chánh điện", "Viết một ý định nhỏ cho tháng mới", "Ngồi tĩnh tâm 3 phút cùng tiếng chuông", "Ghé Cây nguyện đọc và gửi lời chúc lành cho người khác"]
+  },
+  {
+    "id": "ram-hang-thang",
+    "ten": "Rằm hằng tháng",
+    "loai": "phat-giao",
+    "thang": null,
+    "ngay": 15,
+    "moTa": "Ngày trăng tròn giữa tháng âm lịch. Theo truyền thống Phật giáo, chư Tăng Ni tụng giới vào ngày rằm và mùng một; người tại gia thường ăn chay, đi chùa, nghe pháp. Trăng tròn gợi hình ảnh tâm sáng, đủ đầy và an tĩnh.",
+    "trangTri": ["Trăng tròn trên mái chùa", "Đèn lồng giấy dọc lối vào", "Hoa sen trắng trong hồ", "Khói hương nhẹ bay trên sân"],
+    "nhiemVu": ["Ngắm trăng rằm từ sân chùa trong một phút yên lặng", "Thắp đèn ảo dọc lối đi", "Đọc một lời dạy về lòng từ", "Ghi lại ba điều bạn biết ơn trong tháng này"]
+  },
+  {
+    "id": "tet-nguyen-dan",
+    "ten": "Tết Nguyên Đán",
+    "loai": "dan-gian",
+    "thang": 1,
+    "ngay": 1,
+    "moTa": "Ngày đầu năm mới âm lịch, kéo dài sự kiện qua mùng 2 và mùng 3 Tết. Người Việt sum họp gia đình, chúc Tết, đi lễ chùa đầu năm. Mùng 1 Tết cũng là ngày vía Phật Di Lặc, vị Phật tương lai với nụ cười hoan hỷ, tượng trưng cho niềm vui và lòng bao dung.",
+    "trangTri": ["Cành mai vàng và cành đào hồng", "Câu đối đỏ hai bên cổng tam quan", "Đèn lồng đỏ treo dọc hành lang", "Mâm ngũ quả", "Tượng Phật Di Lặc tươi cười nơi tiền đường"],
+    "nhiemVu": ["Đi lễ chùa đầu năm: thắp hương ảo trước chánh điện", "Gửi một lời chúc Tết đến người thân", "Gieo một quẻ xăm đầu năm để chiêm nghiệm", "Viết một điều muốn buông bỏ và một điều muốn vun đắp trong năm mới", "Mỉm cười cùng Phật Di Lặc và tặng một lời khen chân thành"]
+  },
+  {
+    "id": "ram-thang-gieng",
+    "ten": "Rằm tháng Giêng – Tết Thượng Nguyên",
+    "loai": "dan-gian",
+    "thang": 1,
+    "ngay": 15,
+    "moTa": "Rằm đầu tiên của năm, còn gọi là Tết Thượng Nguyên hay Tết Nguyên Tiêu. Dân gian có câu \"Lễ Phật quanh năm không bằng rằm tháng Giêng\", nên chùa chiền thường đông người đi lễ, cầu an cho gia đình. Ngày này còn gắn với thơ ca và hội đèn trăng rằm.",
+    "trangTri": ["Đèn hoa đăng thả trên hồ sen", "Trăng rằm tròn đầu năm", "Đèn lồng nhiều màu dọc lối đi", "Bàn trà và giấy viết thơ"],
+    "nhiemVu": ["Thả một chiếc đèn hoa đăng ảo kèm lời nguyện bình an", "Viết hoặc chép một câu thơ về trăng xuân", "Thắp hương cầu an cho gia đình", "Đọc lời nguyện của người khác và gửi lời chúc lành"]
+  },
+  {
+    "id": "phat-thich-ca-xuat-gia",
+    "ten": "Phật Thích Ca xuất gia",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 8,
+    "moTa": "Kỷ niệm ngày Thái tử Tất-đạt-đa rời bỏ cung điện, đi tìm con đường giải thoát khổ đau cho muôn loài. Đây là dịp suy ngẫm về sự buông bỏ những ràng buộc không cần thiết và lòng quyết tâm theo đuổi điều thiện.",
+    "trangTri": ["Tranh Thái tử cưỡi ngựa trắng rời hoàng cung", "Hoa sen vàng hai bên chánh điện", "Lồng đèn trắng", "Cờ Phật giáo năm màu"],
+    "nhiemVu": ["Chọn một thói quen nhỏ muốn buông bỏ trong tuần này", "Dọn gọn một góc trong nhà hoặc trên điện thoại", "Ngồi tĩnh tâm 5 phút theo dõi hơi thở", "Đọc tóm tắt câu chuyện Thái tử xuất gia"]
+  },
+  {
+    "id": "phat-nhap-niet-ban",
+    "ten": "Phật nhập Niết Bàn",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 15,
+    "moTa": "Ngày tưởng niệm Đức Phật Thích Ca nhập Niết Bàn tại Câu-thi-na sau hơn bốn mươi năm hoằng pháp. Lời dạy cuối cùng của Ngài thường được nhắc lại là hãy tự mình tinh tấn. Đây là dịp lặng lẽ tưởng nhớ và suy ngẫm về lẽ vô thường.",
+    "trangTri": ["Tượng Phật nằm an nghỉ dưới hàng cây sa-la", "Hoa sen trắng", "Nến nhỏ quanh bệ tượng", "Lá rơi nhẹ trên sân chùa"],
+    "nhiemVu": ["Thắp nến ảo tưởng niệm", "Ngồi yên lặng 3 phút suy ngẫm về vô thường", "Viết một điều bạn muốn trân quý hơn ngay hôm nay", "Tưới cây bồ đề trong sân chùa"]
+  },
+  {
+    "id": "via-quan-the-am-dan-sanh",
+    "ten": "Vía Bồ Tát Quán Thế Âm đản sanh",
+    "loai": "phat-giao",
+    "thang": 2,
+    "ngay": 19,
+    "moTa": "Ngày kỷ niệm Bồ Tát Quán Thế Âm đản sanh. Quán Thế Âm là hình ảnh của lòng đại bi, lắng nghe tiếng khổ đau của chúng sinh. Người Việt thường đi chùa, ăn chay và tập lắng nghe người khác bằng sự cảm thông.",
+    "trangTri": ["Tượng Quán Âm cầm bình nước và cành dương liễu", "Hoa sen hồng trong hồ", "Đèn lồng trắng dọc hành lang", "Bình hoa huệ trắng"],
+    "nhiemVu": ["Lắng nghe trọn vẹn một người thân mà không ngắt lời", "Gửi một lời hỏi thăm đến người đang gặp khó khăn", "Thắp hương ảo trước điện Quán Âm", "Viết một lời nguyện cho người khác, không cho mình"]
+  },
+  {
+    "id": "tet-han-thuc",
+    "ten": "Tết Hàn Thực",
+    "loai": "dan-gian",
+    "thang": 3,
+    "ngay": 3,
+    "moTa": "Tết Hàn Thực ở Việt Nam gắn với món bánh trôi, bánh chay. Nhiều gia đình làm bánh dâng lên tổ tiên để tỏ lòng nhớ ơn. Làm những viên bánh tròn trắng cũng là dịp quây quần, cùng nhau nặn bánh và kể chuyện xưa.",
+    "trangTri": ["Đĩa bánh trôi, bánh chay trên bàn thờ", "Bát chè nhỏ trên mâm gỗ", "Cành hoa bưởi trắng", "Chiếc mẹt tre phơi bột"],
+    "nhiemVu": ["Nặn bánh trôi ảo cùng các chú tiểu", "Dâng đĩa bánh lên bàn thờ tổ tiên", "Hỏi ông bà, cha mẹ một kỷ niệm ngày xưa", "Chia sẻ một món ăn tuổi thơ bạn nhớ nhất"]
+  },
+  {
+    "id": "via-bo-tat-van-thu",
+    "ten": "Vía Bồ Tát Văn Thù Sư Lợi",
+    "loai": "phat-giao",
+    "thang": 4,
+    "ngay": 4,
+    "moTa": "Ngày vía Bồ Tát Văn Thù Sư Lợi, vị Bồ Tát tượng trưng cho trí tuệ, thường được tạc cưỡi sư tử xanh, tay cầm kiếm trí tuệ cắt đứt vô minh. Đây là dịp khuyến khích học hỏi, suy nghĩ sáng suốt và tự soi lại hiểu biết của mình.",
+    "trangTri": ["Tượng Văn Thù cưỡi sư tử", "Kệ sách gỗ trong thư phòng chùa", "Đèn bàn học ấm áp", "Bút lông và nghiên mực"],
+    "nhiemVu": ["Đọc một trang sách mà bạn đã để dành lâu nay", "Học một điều mới và ghi lại trong một câu", "Thắp đèn trí tuệ ảo trong thư phòng", "Gửi lời động viên đến một người đang ôn thi"]
+  },
+  {
+    "id": "phat-dan",
+    "ten": "Lễ Phật Đản",
+    "loai": "phat-giao",
+    "thang": 4,
+    "ngay": 15,
+    "moTa": "Kỷ niệm ngày Đức Phật Thích Ca đản sanh tại vườn Lâm-tỳ-ni. Ở Việt Nam, Phật Đản được tổ chức vào rằm tháng Tư âm lịch với nghi thức tắm Phật, rước đèn và treo cờ hoa. Đây là ngày lễ lớn, mừng sự ra đời của bậc giác ngộ và nhắc nhở mỗi người nuôi dưỡng hạt giống tỉnh thức.",
+    "trangTri": ["Cờ Phật giáo năm màu khắp sân", "Lễ đài tắm Phật với tượng Phật sơ sinh", "Đèn hoa sen nhiều màu", "Vòm hoa trước cổng tam quan", "Hồ sen nở rộ"],
+    "nhiemVu": ["Tham gia nghi thức tắm Phật ảo", "Treo một chiếc đèn hoa sen dọc lối đi", "Làm một việc tốt nhỏ cho người bên cạnh", "Gửi lời chúc mừng Phật Đản đến bạn bè", "Ngồi tĩnh tâm 5 phút nghe tiếng chuông chùa"]
+  },
+  {
+    "id": "tet-doan-ngo",
+    "ten": "Tết Đoan Ngọ",
+    "loai": "dan-gian",
+    "thang": 5,
+    "ngay": 5,
+    "moTa": "Tết Đoan Ngọ, dân gian còn gọi là ngày \"giết sâu bọ\", rơi vào giữa mùa hè. Các gia đình thường ăn hoa quả, rượu nếp, bánh tro và quan tâm đến sức khỏe khi trời chuyển nóng. Đây cũng là dịp sum họp và chăm sóc cho nhau.",
+    "trangTri": ["Rổ mận, vải, dưa hấu", "Bát rượu nếp nhỏ", "Bó lá ngải treo trước cửa", "Bánh tro gói lá"],
+    "nhiemVu": ["Uống một cốc nước và vươn vai 1 phút", "Bày mâm trái cây mùa hè ảo", "Nhắn hỏi thăm sức khỏe một người thân", "Hái lá thuốc trong vườn chùa"]
+  },
+  {
+    "id": "via-quan-the-am-thanh-dao",
+    "ten": "Vía Bồ Tát Quán Thế Âm thành đạo",
+    "loai": "phat-giao",
+    "thang": 6,
+    "ngay": 19,
+    "moTa": "Ngày kỷ niệm Bồ Tát Quán Thế Âm thành đạo, một trong ba ngày vía Quán Âm trong năm. Đây là dịp nhắc mình nuôi dưỡng tâm từ bi qua những việc làm cụ thể, giúp người mà không cần đáp đền.",
+    "trangTri": ["Tượng Quán Âm đứng trên đài sen", "Hồ sen hồng mùa hạ", "Đèn lưu ly xanh", "Hoa nhài trắng"],
+    "nhiemVu": ["Làm một việc giúp đỡ mà không kể với ai", "Thắp hương ảo trước điện Quán Âm", "Thả một chiếc lá sen ảo xuống hồ kèm lời chúc an lành", "Viết một lời nguyện cho muôn loài"]
+  },
+  {
+    "id": "vu-lan",
+    "ten": "Lễ Vu Lan – Rằm tháng Bảy",
+    "loai": "phat-giao",
+    "thang": 7,
+    "ngay": 15,
+    "moTa": "Lễ Vu Lan báo hiếu, bắt nguồn từ câu chuyện Tôn giả Mục Kiền Liên thương nhớ mẹ. Đây là mùa tưởng nhớ cha mẹ, ông bà; nhiều người cài hoa hồng trên áo: hồng đỏ khi còn cha mẹ, hồng trắng khi cha mẹ đã khuất. Dân gian cũng gọi rằm tháng Bảy là ngày xá tội vong nhân.",
+    "trangTri": ["Hoa hồng đỏ và hồng trắng", "Đèn hoa đăng trên hồ", "Bàn thờ tổ tiên với hương và hoa", "Băng rôn \"Vu Lan báo hiếu\""],
+    "nhiemVu": ["Cài một bông hồng ảo lên áo", "Gọi điện hoặc nhắn một lời cảm ơn đến cha mẹ", "Thả đèn hoa đăng tưởng nhớ người thân đã khuất", "Viết một kỷ niệm đẹp về ông bà, cha mẹ", "Ăn một bữa chay đơn giản"]
+  },
+  {
+    "id": "via-bo-tat-dia-tang",
+    "ten": "Vía Bồ Tát Địa Tạng",
+    "loai": "phat-giao",
+    "thang": 7,
+    "ngay": 30,
+    "moTa": "Ngày vía Bồ Tát Địa Tạng, vị Bồ Tát gắn với đại nguyện cứu độ chúng sinh nơi khổ cảnh và lòng hiếu kính. Đây là dịp hồi hướng phước lành đến người đã khuất. Lưu ý: nếu tháng Bảy âm lịch năm đó là tháng thiếu (29 ngày), sự kiện diễn ra vào ngày 29.",
+    "trangTri": ["Tượng Địa Tạng cầm tích trượng và minh châu", "Đèn nến vàng dịu", "Hoa cúc trắng", "Chuỗi tràng hạt gỗ"],
+    "nhiemVu": ["Thắp nến ảo hồi hướng cho người đã khuất", "Viết một lời tưởng nhớ nhẹ nhàng", "Tụng niệm hoặc lặng yên 3 phút", "Nhặt một mẩu rác thật quanh nơi bạn ở"]
+  },
+  {
+    "id": "tet-trung-thu",
+    "ten": "Tết Trung Thu",
+    "loai": "dan-gian",
+    "thang": 8,
+    "ngay": 15,
+    "moTa": "Tết Trung Thu, còn gọi là Tết Đoàn Viên hay Tết Thiếu Nhi, khi trăng sáng và tròn nhất năm. Trẻ em rước đèn ông sao, phá cỗ; người lớn ngắm trăng, thưởng trà, bánh nướng, bánh dẻo. Đây là dịp gia đình quây quần bên nhau.",
+    "trangTri": ["Đèn ông sao và đèn cá chép", "Mâm cỗ trăng rằm với bánh nướng, bánh dẻo", "Trăng tròn lớn trên tháp chuông", "Đầu lân", "Chùm bưởi và hồng đỏ"],
+    "nhiemVu": ["Rước đèn ông sao ảo quanh sân chùa", "Bày mâm cỗ Trung Thu cùng các chú tiểu", "Ngắm trăng và viết một điều ước cho gia đình", "Kể một câu chuyện Trung Thu cho trẻ nhỏ"]
+  },
+  {
+    "id": "via-quan-the-am-xuat-gia",
+    "ten": "Vía Bồ Tát Quán Thế Âm xuất gia",
+    "loai": "phat-giao",
+    "thang": 9,
+    "ngay": 19,
+    "moTa": "Ngày kỷ niệm Bồ Tát Quán Thế Âm xuất gia, ngày vía Quán Âm cuối cùng trong năm. Đây là dịp suy ngẫm về sự từ bỏ ích kỷ để sống vì người khác, và giữ tâm hiền hòa giữa những bận rộn thường ngày.",
+    "trangTri": ["Tượng Quán Âm tọa thiền trên núi đá", "Rừng trúc mùa thu", "Đèn lồng vàng nhạt", "Hoa cúc thu"],
+    "nhiemVu": ["Nhường một điều nhỏ cho người khác hôm nay", "Thắp hương ảo trước điện Quán Âm", "Đi dạo chậm quanh rừng trúc trong chùa", "Viết một lời cảm ơn gửi người từng giúp bạn"]
+  },
+  {
+    "id": "via-phat-duoc-su",
+    "ten": "Vía Phật Dược Sư",
+    "loai": "phat-giao",
+    "thang": 9,
+    "ngay": 30,
+    "moTa": "Ngày vía Đức Phật Dược Sư Lưu Ly Quang, vị Phật gắn với mười hai đại nguyện về sức khỏe thân tâm. Đây là dịp quan tâm đến sức khỏe của mình và người thân, nghỉ ngơi đúng lúc, sống điều độ. Nếu tháng Chín âm lịch là tháng thiếu, sự kiện diễn ra vào ngày 29.",
+    "trangTri": ["Tượng Phật Dược Sư cầm bình thuốc", "Đèn lưu ly xanh biếc", "Vườn cây thuốc nam", "Ấm trà thảo mộc"],
+    "nhiemVu": ["Đi bộ 10 phút hoặc vươn vai nhẹ nhàng", "Đi ngủ sớm hơn thường lệ tối nay", "Nhắn hỏi thăm một người đang ốm", "Tưới vườn cây thuốc trong chùa"]
+  },
+  {
+    "id": "tet-ha-nguyen",
+    "ten": "Tết Hạ Nguyên – Rằm tháng Mười",
+    "loai": "dan-gian",
+    "thang": 10,
+    "ngay": 15,
+    "moTa": "Rằm tháng Mười, còn gọi là Tết Hạ Nguyên hay Tết Thường Tân, gắn với mùa gặt cuối năm ở nhiều vùng quê. Người ta dâng cốm, xôi, gạo mới lên tổ tiên để tạ ơn đất trời và người làm ra hạt lúa.",
+    "trangTri": ["Bó lúa chín vàng", "Đĩa cốm và xôi gạo mới", "Trăng rằm cuối thu", "Nong nia phơi thóc"],
+    "nhiemVu": ["Dâng đĩa xôi gạo mới ảo lên bàn thờ", "Viết một lời cảm ơn người nông dân", "Ăn hết bữa cơm hôm nay, không bỏ phí", "Kể ba điều bạn đã thu hoạch được trong năm"]
+  },
+  {
+    "id": "via-phat-a-di-da",
+    "ten": "Vía Phật A Di Đà",
+    "loai": "phat-giao",
+    "thang": 11,
+    "ngay": 17,
+    "moTa": "Ngày vía Đức Phật A Di Đà, vị Phật của cõi Tây Phương Cực Lạc trong truyền thống Tịnh Độ, rất gần gũi với người Việt qua câu niệm \"Nam mô A Di Đà Phật\". Đây là dịp thực tập niệm Phật, giữ tâm an tịnh và hướng thiện.",
+    "trangTri": ["Tượng Phật A Di Đà với ánh hào quang", "Hồ sen bảy báu", "Đèn vàng ấm khắp chánh điện", "Tràng hạt và mõ gỗ"],
+    "nhiemVu": ["Niệm \"Nam mô A Di Đà Phật\" 108 lần cùng tràng hạt ảo", "Gõ mõ theo nhịp trong 2 phút", "Ngồi yên lặng 5 phút trong chánh điện", "Viết một lời nguyện an lành cho mọi người"]
+  },
+  {
+    "id": "phat-thanh-dao",
+    "ten": "Phật Thích Ca thành đạo",
+    "loai": "phat-giao",
+    "thang": 12,
+    "ngay": 8,
+    "moTa": "Kỷ niệm ngày Đức Phật Thích Ca thành đạo dưới cội bồ đề sau nhiều ngày thiền định. Câu chuyện bát cháo sữa của nàng Sujata trước đêm thành đạo nhắc về con đường trung đạo, không quá khắt khe, không buông thả. Đây là dịp nuôi dưỡng sự tỉnh thức.",
+    "trangTri": ["Cây bồ đề lớn giữa sân chùa", "Tượng Phật ngồi thiền dưới cội bồ đề", "Bát cháo sữa trên lá sen", "Ánh sao mai trên bầu trời sớm"],
+    "nhiemVu": ["Ngồi thiền ảo dưới cây bồ đề 5 phút", "Dậy sớm ngắm sao mai hoặc bình minh", "Ăn một bữa chậm rãi, chú tâm vào từng miếng", "Tưới cây bồ đề và viết một điều bạn vừa hiểu ra"]
+  },
+  {
+    "id": "ong-cong-ong-tao",
+    "ten": "Ông Công Ông Táo",
+    "loai": "dan-gian",
+    "thang": 12,
+    "ngay": 23,
+    "moTa": "Theo tín ngưỡng dân gian, ngày 23 tháng Chạp là ngày Táo Quân về trời, báo việc trong năm của gia đình. Nhiều nhà dọn dẹp bếp, làm mâm cúng và thả cá chép. Đây là dịp dọn dẹp nhà cửa, nhìn lại một năm và chuẩn bị đón Tết.",
+    "trangTri": ["Mũ áo Táo Quân bằng giấy", "Chậu cá chép đỏ", "Gian bếp được lau sạch sẽ", "Cành đào chớm nụ"],
+    "nhiemVu": ["Thả cá chép ảo xuống hồ sen", "Dọn gọn gian bếp hoặc bàn làm việc thật", "Viết bản \"tự tổng kết\" một năm bằng ba dòng", "Quét sân chùa đón năm mới"]
+  },
+  {
+    "id": "tat-nien-tru-tich",
+    "ten": "Tất niên – Đêm Trừ tịch",
+    "loai": "dan-gian",
+    "thang": 12,
+    "ngay": 30,
+    "moTa": "Ngày cuối năm âm lịch với bữa cơm tất niên sum họp và đêm Trừ tịch, khoảnh khắc giao thừa tiễn năm cũ, đón năm mới. Nhiều người lên chùa nghe chuông giao thừa. Nếu tháng Chạp năm đó là tháng thiếu (29 ngày), sự kiện diễn ra vào ngày 29.",
+    "trangTri": ["Mâm cơm tất niên", "Pháo hoa ảo trên bầu trời đêm", "Chuông lớn ở tháp chuông", "Đèn lồng đỏ khắp sân", "Bánh chưng xanh"],
+    "nhiemVu": ["Đánh chuông giao thừa ảo", "Viết một lời cảm ơn năm cũ", "Thắp hương đón giao thừa", "Gửi một lời chúc năm mới đến người bạn thương", "Ngồi tĩnh lặng trong khoảnh khắc chuyển giao năm"]
+  }
+]

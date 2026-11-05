@@ -1,0 +1,197 @@
+{
+  "id": "phat-dan",
+  "ten": "Buddha's Birthday (Vesak) Season",
+  "khoangNgayAm": { "tu": { "thang": 4, "ngay": 8 }, "den": { "thang": 4, "ngay": 15 } },
+  "moTa": "From the 8th to the full moon of the fourth lunar month, An Nhiên Pagoda celebrates the birth of the Buddha. Lotus lanterns hang across the yard, the lotus pond is in full bloom, and a Buddha-bathing altar is set up as a cultural rite that reminds each of us to cleanse our own hearts. It is a season of compassion: share a vegetarian meal, do a small good deed and look at others more gently.",
+  "loiChao": [
+    { "id": 1, "noiDung": "Buddha's Birthday season is here. The pagoda lotuses have bloomed; come and see." },
+    { "id": 2, "noiDung": "An Nhiên Pagoda wishes you a joyful Buddha's Birthday full of compassion." },
+    { "id": 3, "noiDung": "Lotus lanterns hang all over the yard. Step softly into the main hall." },
+    { "id": 4, "noiDung": "Hello, fourth month. Let's do one small good deed together today." },
+    { "id": 5, "noiDung": "Lotus scent drifts across the porch. Sit down and take a deep breath." },
+    { "id": 6, "noiDung": "The Buddha-bathing altar is ready. Come scoop a ladle of clear water with us." },
+    { "id": 7, "noiDung": "Happy Buddha's Birthday! May your heart feel light as a petal on the pond." },
+    { "id": 8, "noiDung": "The pagoda kitchen is cooking a vegetarian soup. Come share the meal." },
+    { "id": 9, "noiDung": "Hello. A gentle smile today is also a gift for Buddha's Birthday." },
+    { "id": 10, "noiDung": "Flags and flowers brighten the yard. Thank you for coming this festival season." },
+    { "id": 11, "noiDung": "The fourth-month full moon is near. Light a lotus lantern for someone dear." },
+    { "id": 12, "noiDung": "The lotus grows from mud yet stays fragrant. Be gentle with yourself today." }
+  ],
+  "thongDiep": [
+    { "id": 1, "noiDung": "The lotus rises from mud without smelling of it. Hardship doesn't make you less; it can make you deeper." },
+    { "id": 2, "noiDung": "Compassion begins with very small things: giving up a seat, holding a door, waiting for someone who walks slowly." },
+    { "id": 3, "noiDung": "The Buddha-bathing rite invites a question: what would I like to wash clean in my heart today?" },
+    { "id": 4, "noiDung": "A vegetarian meal isn't only about leaving out meat. It is a day you choose to live more gently with all beings." },
+    { "id": 5, "noiDung": "Celebrating Buddha's Birthday means celebrating the capacity to awaken that lives in everyone, including you." },
+    { "id": 6, "noiDung": "Don't wait until you have plenty to do good. A timely word of care is also a gift." },
+    { "id": 7, "noiDung": "When harsh words rise, picture a lotus petal. Soft but not weak, gentle yet standing tall." },
+    { "id": 8, "noiDung": "Clear water is poured slowly. Anything done with full attention becomes beautiful." },
+    { "id": 9, "noiDung": "Today, try eating one meal very slowly, tasting each dish and noticing the hands that cooked it." },
+    { "id": 10, "noiDung": "Love takes no sides. Caring for those you like is natural; try caring for those you don't yet understand." },
+    { "id": 11, "noiDung": "A lotus lantern is lit not to ask for favors, but to remind us to keep a little light in our hearts." },
+    { "id": 12, "noiDung": "You don't need to be perfect to begin practicing. Just be a little kinder today than yesterday." },
+    { "id": 13, "noiDung": "Give an old book, a good coat or an afternoon of tutoring. Good deeds come in many shapes." },
+    { "id": 14, "noiDung": "Slow your steps as you pass the lotus pond. Some beauty only appears when we are slow enough." },
+    { "id": 15, "noiDung": "Compassion for others comes more easily once we learn compassion for ourselves." },
+    { "id": 16, "noiDung": "Eat vegetarian for a day and you take away a little hurry and add a little gratitude." },
+    { "id": 17, "noiDung": "The finest Buddha's Birthday greeting is a kind act that no one needs to know about." },
+    { "id": 18, "noiDung": "Watching a child laugh, we know that pure joy is real. Hold on to that." },
+    { "id": 19, "noiDung": "The bathing water flows down and sinks into the earth. Good deeds are the same: once done, let them drift away lightly." },
+    { "id": 20, "noiDung": "Everyone has a lotus pond inside. Sometimes clearing a few withered leaves is all it takes for flowers to bloom." },
+    { "id": 21, "noiDung": "Today, feed a small animal, water a plant or pick up a piece of litter by the road." },
+    { "id": 22, "noiDung": "When the mind is calm, flowers appear everywhere. When it is restless, even the flower in front of you blurs." },
+    { "id": 23, "noiDung": "Listening fully to someone without interrupting is also a way of practicing compassion." },
+    { "id": 24, "noiDung": "This season, try holding back one judgment a day. You will feel your heart widen." },
+    { "id": 25, "noiDung": "A simple vegetarian meal reminds us that we need less than we think to feel enough." },
+    { "id": 26, "noiDung": "At a festival pagoda, walk lightly, speak softly and make way for others. Respect shows in every gesture." },
+    { "id": 27, "noiDung": "Someone may be sad without saying so. A caring glance can be enough to let them know they aren't alone." },
+    { "id": 28, "noiDung": "Good deeds need not be big. A smile for a tired shopkeeper can change their whole day." },
+    { "id": 29, "noiDung": "The lotus doesn't choose where it grows, but it chooses how to bloom. You can choose how you respond each day." },
+    { "id": 30, "noiDung": "When the full moon of the fourth month passes, the lotus lanterns are stored. Keep one good habit you practiced this season." }
+  ],
+  "loiNguyen": [
+    { "id": 1, "noiDung": "I vow to do at least one small good deed every day this Buddha's Birthday season." },
+    { "id": 2, "noiDung": "I hope everyone around me is treated with gentleness." },
+    { "id": 3, "noiDung": "I vow to eat vegetarian one day a week to practice living gently with all beings." },
+    { "id": 4, "noiDung": "I hope my heart is like a lotus, passing through mud yet keeping its fragrance." },
+    { "id": 5, "noiDung": "I vow to wash away a hot-tempered habit, as I would wash dust from my hands." },
+    { "id": 6, "noiDung": "I hope the babies born this season grow up surrounded by love." },
+    { "id": 7, "noiDung": "I vow to listen to my parents more, even when I think I already know." },
+    { "id": 8, "noiDung": "I hope patients in hospital have loved ones by their side to care for them." },
+    { "id": 9, "noiDung": "I vow to drop one criticism each day and add one word of encouragement." },
+    { "id": 10, "noiDung": "I hope all small creatures can live in peace, never harmed without reason." },
+    { "id": 11, "noiDung": "I am grateful to those who were kind to me before I knew how to repay them." },
+    { "id": 12, "noiDung": "I vow to give the things I no longer use to people who need them." },
+    { "id": 13, "noiDung": "I hope every family shares a warm meal together during the festival." },
+    { "id": 14, "noiDung": "I vow to be compassionate with myself when I make mistakes, then get up and mend them." },
+    { "id": 15, "noiDung": "I hope those who are angry with each other find a reason to make peace." },
+    { "id": 16, "noiDung": "I vow to keep my words gentle as clear water, hurting no one." },
+    { "id": 17, "noiDung": "I hope children far away have books to read, enough to eat and someone to teach them." },
+    { "id": 18, "noiDung": "I vow to sit still for five minutes each morning to nurture a little mindfulness." },
+    { "id": 19, "noiDung": "I hope people doing hard work are treated fairly and with respect." },
+    { "id": 20, "noiDung": "I vow to plant a tree this season and care for it as it grows." },
+    { "id": 21, "noiDung": "I hope the world has a little less anger and a little more understanding." },
+    { "id": 22, "noiDung": "I vow to help a stranger without needing them to know who I am." },
+    { "id": 23, "noiDung": "I thank the soil, water, sun and wind that grew today's vegetarian meal." },
+    { "id": 24, "noiDung": "I hope my grandparents live serenely, with a small joy every day." },
+    { "id": 25, "noiDung": "I vow to be more patient with elders and with young children." },
+    { "id": 26, "noiDung": "I hope lonely people find a friend who knows how to listen." },
+    { "id": 27, "noiDung": "I vow to eat just enough and never waste food." },
+    { "id": 28, "noiDung": "I hope every misunderstanding in my home is spoken of gently and resolved." },
+    { "id": 29, "noiDung": "I vow to look at others with loving eyes before looking with judging ones." },
+    { "id": 30, "noiDung": "I hope the seeds of compassion I sow this season stay green until the next." }
+  ],
+  "nhiemVu": [
+    {
+      "id": "tam-phat-van-hoa",
+      "ten": "The Buddha-Bathing Rite",
+      "moTa": "Join the virtual Buddha-bathing rite: pour three ladles of clear water, each with one thing you wish to cleanse from your heart.",
+      "phanThuong": "A flower-decked bathing altar for your yard"
+    },
+    {
+      "id": "thap-den-hoa-sen",
+      "ten": "Light a Lotus Lantern",
+      "moTa": "Choose a color and light a virtual lotus lantern along the path, with a wish for joy and ease.",
+      "phanThuong": "A pink lotus lantern for the porch"
+    },
+    {
+      "id": "mot-viec-thien",
+      "ten": "One Small Good Deed",
+      "moTa": "Do a real-life kindness for someone nearby, then write a few lines in your festival journal.",
+      "phanThuong": "A white lotus pot by the steps"
+    },
+    {
+      "id": "bua-com-chay",
+      "ten": "A Vegetarian Meal",
+      "moTa": "Eat one vegetarian meal during the festival, slowly, thinking of the hands that made it.",
+      "phanThuong": "A vegetarian meal tray in the pagoda kitchen"
+    },
+    {
+      "id": "ngoi-yen-ho-sen",
+      "ten": "Sit Still by the Lotus Pond",
+      "moTa": "Sit quietly for five minutes by the virtual lotus pond, following your breath and a distant bell.",
+      "phanThuong": "A blooming lotus pond before the main hall"
+    },
+    {
+      "id": "chuc-mung-phat-dan",
+      "ten": "Buddha's Birthday Greetings",
+      "moTa": "Send a Buddha's Birthday greeting you wrote yourself to three friends on your list.",
+      "phanThuong": "Five-colored festival flags at the triple gate"
+    },
+    {
+      "id": "tang-do-cu",
+      "ten": "Pass On Old Things",
+      "moTa": "Choose something still in good shape that you no longer use and give it to someone in need, then mark it done.",
+      "phanThuong": "A rattan gift basket by the door"
+    },
+    {
+      "id": "loi-noi-hien",
+      "ten": "A Day of Gentle Words",
+      "moTa": "Spend a whole day practicing not speaking words of blame. At the end of the day, write what you noticed.",
+      "phanThuong": "A lotus wind chime on the Wishing Tree"
+    },
+    {
+      "id": "cham-sinh-vat",
+      "ten": "Caring for All Beings",
+      "moTa": "Feed an animal, water a plant or tidy up a small corner.",
+      "phanThuong": "A pair of sparrows on the pagoda roof"
+    },
+    {
+      "id": "nguyen-tu-bi",
+      "ten": "Hang a Wish of Compassion",
+      "moTa": "Write a wish carrying loving care for others and hang it on the Wishing Tree.",
+      "phanThuong": "A white silk ribbon on the Wishing Tree"
+    }
+  ],
+  "trangTri": [
+    "Colorful lotus lanterns along the path",
+    "A flower-decked Buddha-bathing altar in the yard",
+    "A blooming lotus pond before the main hall",
+    "Five-colored festival flags at the triple gate",
+    "A fresh flower arch by the pagoda gate",
+    "A white lotus pot by the steps",
+    "A vegetarian meal tray in the pagoda kitchen",
+    "A pink lotus lantern on the porch",
+    "A lotus wind chime on the Wishing Tree",
+    "A white silk ribbon on the Wishing Tree",
+    "A pair of sparrows on the pagoda roof"
+  ],
+  "queDacBiet": [
+    {
+      "id": "sen-no-ben-them",
+      "tieuDe": "Lotus by the Steps",
+      "tho": [
+        "In the fourth month lotuses bloom by the stair",
+        "Their gentle scent drifts down the road through the air",
+        "We celebrate the Buddha's birth today",
+        "And sow small kindness, scent along the way"
+      ],
+      "loiGiai": "No one has to carry the lotus scent; the wind spreads it along every path. This verse reminds you that your kindness travels the same way, quietly and lastingly. Buddha's Birthday is a time for each of us to add a little gentle fragrance: a soft word, a caring gesture. Put many small acts together and the shared road grows sweeter.",
+      "loiKhuyen": "Today, speak gently to someone you often talk to in a hurry. Notice how the air between you changes."
+    },
+    {
+      "id": "gao-nuoc-trong",
+      "tieuDe": "A Ladle of Clear Water",
+      "tho": [
+        "I lift a ladle of water, clear and slow",
+        "As if to wipe the dust within and let it glow",
+        "As gentle as a raindrop drifting down",
+        "It soaks warm soil till flowers fill the ground"
+      ],
+      "loiGiai": "The Buddha-bathing rite is a beautiful cultural custom: pouring water over a statue of the infant Buddha to remind ourselves to cleanse our hearts. This verse speaks of quiet clarity. Soft rain nourishes a whole garden. When you wipe away a little anger or envy, your heart grows brighter, and the good around you has more room to bloom.",
+      "loiKhuyen": "Wash your hands very slowly once today, and while you do, think of one thing you want to set down."
+    },
+    {
+      "id": "bua-chay-ngot-bui",
+      "tieuDe": "A Simple, Sweet Meal",
+      "tho": [
+        "A plain vegetarian meal, yet full of cheer",
+        "We share its sweetness with those gathered here",
+        "Begin with small good deeds; the rest will grow",
+        "Like seedlings in a garden, row by row"
+      ],
+      "loiGiai": "The joy of a vegetarian meal lies not in fancy dishes but in having others sit and share it. This verse advises starting good deeds with what is within reach. There is no need to wait for more time or better conditions. Like a seedbed, today you see only small sprouts, but with steady care the day of green abundance will come.",
+      "loiKhuyen": "Invite a relative or coworker to share a simple vegetarian meal this week, and talk slowly together."
+    }
+  ]
+}
