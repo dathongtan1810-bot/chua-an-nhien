@@ -16,8 +16,23 @@ services:
       METRICS_TOKEN: ${METRICS_TOKEN:-}
       TRUST_PROXY: ${TRUST_PROXY:-false}
       LOG_LEVEL: ${LOG_LEVEL:-info}
+      DATABASE_URL: ${DATABASE_URL:-}
     volumes:
       - chua-data:/data
     restart: unless-stopped
+
+# Tuỳ chọn: chạy kèm PostgreSQL —  docker compose --profile pg up --build
+# rồi đặt DATABASE_URL=postgres://chua:chua@postgres:5432/chua trong .env
+  postgres:
+    image: postgres:16
+    profiles: ["pg"]
+    environment:
+      POSTGRES_USER: chua
+      POSTGRES_PASSWORD: chua
+      POSTGRES_DB: chua
+    volumes:
+      - chua-pg:/var/lib/postgresql/data
+    restart: unless-stopped
 volumes:
   chua-data:
+  chua-pg:
