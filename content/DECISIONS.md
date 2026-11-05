@@ -28,7 +28,7 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D17. Giả định dữ liệu: deviceId ẩn danh (do app sinh, không phải IMEI/quảng cáo ID), nickname tự đặt, lời nguyện (có thể hiển thị công khai ẩn danh trên "Cây nguyện"). Không quảng cáo, không mua trong app ở bản 1.0, không bán/chia sẻ dữ liệu cho bên thứ ba, có thể dùng nhà cung cấp hạ tầng đám mây làm bên xử lý dữ liệu.
 - D18. Email liên hệ giữ chỗ: `hotro@chuaannhien.example` (tên miền .example dành riêng) — thay bằng email thật trước khi nộp store.
 - D19. Xóa dữ liệu: trong app (Cài đặt → Xóa dữ liệu của tôi) xóa ngay; hoặc gửi email kèm mã thiết bị hiển thị trong Cài đặt, xử lý trong tối đa 30 ngày. Trang web xóa dữ liệu: `site/support.html#xoa-du-lieu` (Google Play yêu cầu URL).
-- D20. Độ tuổi: nội dung tôn giáo nhẹ, không bạo lực; có nội dung người dùng tạo (lời nguyện) được lọc tự động + báo cáo → IARC có "Users Interact"; App Store đề xuất 12+ (vì UGC) — xem `store/`.
+- D20. Độ tuổi: nội dung tôn giáo nhẹ, không bạo lực; có nội dung người dùng tạo (lời nguyện) được lọc tự động + báo cáo → IARC có "Users Interact"; App Store: xem D22 (13+, thay cho 12+ đề xuất ban đầu) — xem `store/`.
 
 ## Store & ra mắt
 - D21. Danh mục cửa hàng: Lifestyle (không xếp "Game") để phản ánh tính chất chiêm nghiệm.
@@ -42,3 +42,8 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D27. Dạng không dấu dễ trùng từ vô hại (lon, cac, buoi, deo, dit…) để trong `bienTheLach`: chỉ bắt khi có dấu hiệu lách (l0n, c.a.c). Không ánh xạ chữ→chữ (z→d) để tránh sai tên riêng/tiếng Anh.
 - D28. Nhóm `chinh-tri-cuc-doan` cần đội kiểm duyệt duyệt lại **[CẦN XÁC NHẬN]**.
 - D29. Thơ quẻ: không đặt dấu câu ở cuối dòng (dấu phẩy giữa dòng giữ nguyên); `merge.mjs` tự chuẩn hóa. Viết hoa danh xưng tôn giáo: "Tịnh Độ", "Niết Bàn", "Tây Phương Cực Lạc".
+
+## Bộ mùa & tham chiếu chéo
+- D30. Khi nhiều bộ mùa cùng hiệu lực (vd Tết 23/12→15/1 và Rằm tháng Giêng 13/1→16/1), bộ có khoảng ngày NGẮN hơn được ưu tiên hiển thị (lời chào, thông điệp, quẻ đặc biệt); nhiệm vụ của cả hai bộ đều mở.
+- D31. Site/store dẫn quẻ thật: quẻ 53 "Sen hồng giữa đầm" (landing, ảnh 4), quẻ 82 "Con đường qua đồi" (video 2). Nếu sửa 2 quẻ này phải cập nhật `site/index.html`, `site/en/index.html`, `store/video-scripts.md`, `store/screenshots.md`.
+- D32. Biệt danh là tùy chọn; không đặt thì hiển thị "Một người viết" / "Someone". App không có tài khoản → vi phạm dẫn tới "hạn chế thiết bị" thay vì "khóa tài khoản".
