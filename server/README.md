@@ -3,7 +3,7 @@
 Server cho game đi chùa online "Chùa An Nhiên" (chùa hư cấu): người online cùng thắp hương, gõ chuông,
 thả đèn hoa đăng, thấy nhau theo từng khu; kèm trang quản trị kiểm duyệt.
 
-- **Node 22 · TypeScript strict · Fastify 5 · Socket.IO 4 · SQLite (better-sqlite3) hoặc PostgreSQL (`DATABASE_URL`) · zod · pino · prom-client**
+- **Node 22 · TypeScript strict · Fastify 5 · Socket.IO 4 · SQLite (better-sqlite3) hoặc PostgreSQL (`DATABASE_URL`) · Redis cho nhiều instance (`REDIS_URL`) · zod · pino · prom-client**
 - Hợp đồng giao thức: [`../shared/protocol.ts`](../shared/protocol.ts) · mô tả: [`../shared/PROTOCOL.md`](../shared/PROTOCOL.md)
 - Trang quản trị: [`../admin/`](../admin) phục vụ tại `/admin/`
 - Quyết định thiết kế: [`DECISIONS.md`](DECISIONS.md) · Triển khai: [`DEPLOY.md`](DEPLOY.md) · Tải: [`LOADTEST.md`](LOADTEST.md) · Bàn giao: [`HANDOFF.md`](HANDOFF.md)
@@ -26,6 +26,7 @@ ADMIN_PASSWORD=doi-mat-khau npm start      # http://localhost:8080
 | `npm run loadtest` | 500 rồi 1000 client, ghi `LOADTEST.md` (cần build trước) |
 | `npm run soak -- --waves 6 --clients 300` | soak test rò rỉ bộ nhớ (cần build trước) |
 | `PG_TEST_URL=postgres://… TEST_ALL_PG=1 npm test` | chạy toàn bộ test tích hợp trên Postgres thật |
+| `REDIS_TEST_URL=redis://… TEST_ALL_REDIS=1 npm test` | chạy toàn bộ test ở chế độ cụm Redis (+ `test/cluster.test.ts`: 2 instance) |
 | `docker compose up --build` | chạy bằng Docker (cần `.env`, xem `.env.example`) |
 
 Cấu hình hoàn toàn qua biến môi trường — bảng đầy đủ trong [`DEPLOY.md`](DEPLOY.md#biến-môi-trường).
@@ -39,6 +40,7 @@ server/
     app.ts              ráp Fastify + Socket.IO + repo + hub; seed từ cấm
     config.ts           đọc env (zod), cờ ONLINE_FEATURES / MODERATION_MODE
     realtime/hub.ts     mọi sự kiện socket: validate → feature flag → rate limit → xử lý → phát
+    realtime/cluster.ts trạng thái dùng chung: LocalCluster (1 instance) / RedisCluster (nhiều instance)
     services/
       filter.ts         lọc nội dung đèn (từ cấm có/không dấu, chèn ký tự, link, SĐT, quảng cáo)
       presence.ts       đếm online & theo khu
