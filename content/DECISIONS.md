@@ -41,3 +41,4 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D26. `mucDo`: 1 = che `***`, 2 = chặn gửi, 3 = chặn + ghi nhận để kiểm duyệt. Từ nhạy cảm nhưng có thể xuất hiện trong lời nguyện thiện (ma túy, tự tử…) để mức 1, kèm allowlist ("cai nghiện ma túy", "bỏ cờ bạc"…).
 - D27. Dạng không dấu dễ trùng từ vô hại (lon, cac, buoi, deo, dit…) để trong `bienTheLach`: chỉ bắt khi có dấu hiệu lách (l0n, c.a.c). Không ánh xạ chữ→chữ (z→d) để tránh sai tên riêng/tiếng Anh.
 - D28. Nhóm `chinh-tri-cuc-doan` cần đội kiểm duyệt duyệt lại **[CẦN XÁC NHẬN]**.
+- D29. Thơ quẻ: không đặt dấu câu ở cuối dòng (dấu phẩy giữa dòng giữ nguyên); `merge.mjs` tự chuẩn hóa. Viết hoa danh xưng tôn giáo: "Tịnh Độ", "Niết Bàn", "Tây Phương Cực Lạc".

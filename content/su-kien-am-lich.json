@@ -55,7 +55,7 @@
     "loai": "phat-giao",
     "thang": 2,
     "ngay": 15,
-    "moTa": "Ngày tưởng niệm Đức Phật Thích Ca nhập Niết Bàn tại Câu-thi-na sau hơn bốn mươi năm hoằng pháp. Lời nhắc cuối cùng của Ngài thường được nhắc lại là hãy tự mình tinh tấn. Đây là dịp lặng lẽ tưởng nhớ và suy ngẫm về lẽ vô thường.",
+    "moTa": "Ngày tưởng niệm Đức Phật Thích Ca nhập Niết Bàn tại Câu-thi-na sau hơn bốn mươi năm hoằng pháp. Lời dạy cuối cùng của Ngài thường được nhắc lại là hãy tự mình tinh tấn. Đây là dịp lặng lẽ tưởng nhớ và suy ngẫm về lẽ vô thường.",
     "trangTri": ["Tượng Phật nằm an nghỉ dưới hàng cây sa-la", "Hoa sen trắng", "Nến nhỏ quanh bệ tượng", "Lá rơi nhẹ trên sân chùa"],
     "nhiemVu": ["Thắp nến ảo tưởng niệm", "Ngồi yên lặng 3 phút suy ngẫm về vô thường", "Viết một điều bạn muốn trân quý hơn ngay hôm nay", "Tưới cây bồ đề trong sân chùa"]
   },
@@ -66,7 +66,7 @@
     "thang": 2,
     "ngay": 19,
     "moTa": "Ngày kỷ niệm Bồ Tát Quán Thế Âm đản sanh. Quán Thế Âm là hình ảnh của lòng đại bi, lắng nghe tiếng khổ đau của chúng sinh. Người Việt thường đi chùa, ăn chay và tập lắng nghe người khác bằng sự cảm thông.",
-    "trangTri": ["Tượng Quán Âm cầm bình nước cành dương liễu", "Hoa sen hồng trong hồ", "Đèn lồng trắng dọc hành lang", "Bình hoa huệ trắng"],
+    "trangTri": ["Tượng Quán Âm cầm bình nước và cành dương liễu", "Hoa sen hồng trong hồ", "Đèn lồng trắng dọc hành lang", "Bình hoa huệ trắng"],
     "nhiemVu": ["Lắng nghe trọn vẹn một người thân mà không ngắt lời", "Gửi một lời hỏi thăm đến người đang gặp khó khăn", "Thắp hương ảo trước điện Quán Âm", "Viết một lời nguyện cho người khác, không cho mình"]
   },
   {
@@ -75,7 +75,7 @@
     "loai": "dan-gian",
     "thang": 3,
     "ngay": 3,
-    "moTa": "Tết Hàn Thực ở Việt Nam gắn với món bánh trôi, bánh chay. Nhiều gia đình làm bánh dâng lên tổ tiên để tỏ lòng nhớ ơn. Những viên bánh tròn trắng cũng là dịp quây quần, cùng nhau nặn bánh và kể chuyện xưa.",
+    "moTa": "Tết Hàn Thực ở Việt Nam gắn với món bánh trôi, bánh chay. Nhiều gia đình làm bánh dâng lên tổ tiên để tỏ lòng nhớ ơn. Làm những viên bánh tròn trắng cũng là dịp quây quần, cùng nhau nặn bánh và kể chuyện xưa.",
     "trangTri": ["Đĩa bánh trôi, bánh chay trên bàn thờ", "Bát chè nhỏ trên mâm gỗ", "Cành hoa bưởi trắng", "Chiếc mẹt tre phơi bột"],
     "nhiemVu": ["Nặn bánh trôi ảo cùng các chú tiểu", "Dâng đĩa bánh lên bàn thờ tổ tiên", "Hỏi ông bà, cha mẹ một kỷ niệm ngày xưa", "Chia sẻ một món ăn tuổi thơ bạn nhớ nhất"]
   },
@@ -146,7 +146,7 @@
     "thang": 8,
     "ngay": 15,
     "moTa": "Tết Trung Thu, còn gọi là Tết Đoàn Viên hay Tết Thiếu Nhi, khi trăng sáng và tròn nhất năm. Trẻ em rước đèn ông sao, phá cỗ; người lớn ngắm trăng, thưởng trà, bánh nướng, bánh dẻo. Đây là dịp gia đình quây quần bên nhau.",
-    "trangTri": ["Đèn ông sao và đèn cá chép", "Mâm cỗ trăng rằm với bánh nướng, bánh dẻo", "Trăng tròn lớn trên tháp chuông", "Đầu sư tử múa lân", "Chùm bưởi và hồng đỏ"],
+    "trangTri": ["Đèn ông sao và đèn cá chép", "Mâm cỗ trăng rằm với bánh nướng, bánh dẻo", "Trăng tròn lớn trên tháp chuông", "Đầu lân", "Chùm bưởi và hồng đỏ"],
     "nhiemVu": ["Rước đèn ông sao ảo quanh sân chùa", "Bày mâm cỗ Trung Thu cùng các chú tiểu", "Ngắm trăng và viết một điều ước cho gia đình", "Kể một câu chuyện Trung Thu cho trẻ nhỏ"]
   },
   {
@@ -185,7 +185,7 @@
     "loai": "phat-giao",
     "thang": 11,
     "ngay": 17,
-    "moTa": "Ngày vía Đức Phật A Di Đà, vị Phật của cõi Tây Phương Cực Lạc trong truyền thống Tịnh độ, rất gần gũi với người Việt qua câu niệm \"Nam mô A Di Đà Phật\". Đây là dịp thực tập niệm Phật, giữ tâm an tịnh và hướng thiện.",
+    "moTa": "Ngày vía Đức Phật A Di Đà, vị Phật của cõi Tây Phương Cực Lạc trong truyền thống Tịnh Độ, rất gần gũi với người Việt qua câu niệm \"Nam mô A Di Đà Phật\". Đây là dịp thực tập niệm Phật, giữ tâm an tịnh và hướng thiện.",
     "trangTri": ["Tượng Phật A Di Đà với ánh hào quang", "Hồ sen bảy báu", "Đèn vàng ấm khắp chánh điện", "Tràng hạt và mõ gỗ"],
     "nhiemVu": ["Niệm \"Nam mô A Di Đà Phật\" 108 lần cùng tràng hạt ảo", "Gõ mõ theo nhịp trong 2 phút", "Ngồi yên lặng 5 phút trong chánh điện", "Viết một lời nguyện an lành cho mọi người"]
   },

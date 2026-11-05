@@ -19,7 +19,8 @@ function build(prefix, lang, out) {
     const o = {};
     for (const k of ORDER) o[k] = k === 'ghiChu' ? GHI_CHU[lang] : q[k];
     for (const k of Object.keys(o)) if (typeof o[k] === 'string') o[k] = o[k].normalize('NFC').trim();
-    o.tho = o.tho.map((l) => l.normalize('NFC').trim());
+    // D29: bỏ dấu câu cuối mỗi dòng thơ cho thống nhất giữa các lô
+    o.tho = o.tho.map((l) => l.normalize('NFC').trim().replace(/[\s.,;:!…]+$/u, ''));
     return o;
   });
   writeFileSync(join(root, out), JSON.stringify(res, null, 2) + '\n');
