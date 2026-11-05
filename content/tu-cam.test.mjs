@@ -105,7 +105,7 @@ for (const s of SACH) test(`không chặn nhầm: "${s}"`, () => cho(s));
 
 // ---- Che ----
 test('che thay đoạn vi phạm bằng *** và giữ phần còn lại', () => {
-  assert.equal(che('Đồ ngu, đi ngủ đi', data), 'Đồ ***, đi ngủ đi');
+  assert.equal(che('Bạn ngu quá, đi ngủ đi', data), 'Bạn *** quá, đi ngủ đi');
   assert.equal(che('vcl thật', data), '*** thật');
   assert.equal(che('đmmmm', data), '***');
   assert.equal(che('c.a.c gì vậy', data), '*** gì vậy');
