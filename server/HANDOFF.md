@@ -1,6 +1,6 @@
 # HANDOFF — server Chùa An Nhiên
 
-_Cập nhật lần cuối: 2026-11-05 ~06:40 UTC (xem `git log -- server/HANDOFF.md`)._
+_Cập nhật lần cuối: 2026-11-05 ~06:56 UTC (xem `git log -- server/HANDOFF.md`)._
 
 ## Trạng thái
 
@@ -44,27 +44,40 @@ _Cập nhật lần cuối: 2026-11-05 ~06:40 UTC (xem `git log -- server/HANDOF
 
 ## Phiên bị gián đoạn
 
-Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; đợt review thứ hai (bộ lọc mới, Postgres, endpoint admin mới) chưa xong — xem mục cuối nếu có kết quả, nếu không thì nên chạy lại review cho `src/services/filter.ts`, `src/repo/postgres.ts`.
+Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; sau đó làm tiếp theo yêu cầu "sửa tiếp các ghi chú trong HANDOFF".
 
-### Kết quả review lần 2 (06:36 UTC, chỉ kịp xem sâu filter.ts)
+### Review lần 2 — đã xử lý hết
 
-- Đã sửa: allowlist che cả token `raw`; endpoint backup luôn xoá file tạm (kể cả khi lỗi).
-- **Chưa sửa (nên làm):**
-  1. Ký tự `*` không được coi là ký tự lách: "f*ck", "đ*t mẹ" lọt. Gợi ý: coi `*` giữa hai chữ cái là wildcard 1 ký tự, hoặc nhờ nhóm nội dung thêm dạng có `*` vào `bienThe` (bộ lọc tham chiếu `loc-tu.mjs` cũng lọt).
-  2. Từ bị tách mà mảnh dài hơn 1 ký tự ("đ ịt", "l ồn") lọt vì bản nén chỉ áp cho từ ≥ 4 ký tự. **Đã thử hạ xuống 3: chặn nhầm "lon len"** (qua biến thể `l`ồn`) → giữ 4. Cách đúng: chỉ ghép bản nén có dấu (khoá `C`) cho từ 3 ký tự, không ghép bản không dấu.
-  3. Hiệu năng ổn với 120 ký tự; nếu tăng `maxChars` (vd lọc văn bản dài) nên giới hạn `MAX_SPAN` theo độ dài mẫu dài nhất.
-- Chưa review: so sánh ngữ nghĩa `postgres.ts` ↔ `sqlite.ts` (đã có test pg-mem + Postgres thật chạy toàn bộ bộ test).
+| Ghi chú | Kết quả |
+|---|---|
+| `*` thay chữ ("f*ck", "đ*t mẹ") lọt | ✅ `*` giữa chữ cái = ký tự đại diện 1 ký tự (DECISIONS #32) |
+| Từ 3 ký tự bị tách ("đ ịt", "l ồn") lọt | ✅ ghép bản có dấu; không ghép không dấu (không chặn nhầm "lon len") |
+| `MAX_SPAN` cố định | ✅ theo mẫu dài nhất + 1 (4..12) |
+| Allowlist không che `raw`; backup để lại file tạm | ✅ |
+| Chưa so sánh `postgres.ts` ↔ `sqlite.ts` | ✅ đã review; thêm test đồng thời trên Postgres thật (tim/báo cáo/tạo user trùng) |
+| (mới phát hiện) "lý do cho con" bị chặn nhầm là "đồ chó" | ✅ cụm không dấu chỉ tính khi token sát hai bên cũng không dấu |
+| (mới phát hiện) 2 instance khởi động cùng lúc trên Postgres → lỗi tạo bảng | ✅ advisory lock |
+
+### "Việc nên làm tiếp" cũ — trạng thái
+
+| Mục | Trạng thái |
+|---|---|
+| Deploy thử Fly.io | ⏳ **cần tài khoản/token Fly của bạn** (phiên này không có). Làm theo DEPLOY.md: `fly launch` → `fly volumes create` → `fly secrets set` → `fly deploy -c server/fly.toml`. |
+| Postgres + Redis cho > 1 instance | ✅ `DATABASE_URL` + `REDIS_URL` (DEPLOY.md "Scale"); test 2 instance thật + toàn bộ bộ test ở chế độ cụm; load test cụm 800 client (LOADTEST.md) |
+| Dùng `mucDo` của tu-cam.json | ✅ `MILD_WORD_ACTION=reject\|pending` (mặc định reject như cũ) |
+| Admin phân trang đèn; audit log | ✅ con trỏ `before` + nút "Tải thêm"; nhật ký thao tác |
+| "Nghi ngờ → pending" | ✅ chính là `MILD_WORD_ACTION=pending` cho từ mức nhẹ |
 
 ## Việc nên làm tiếp
 
-1. Deploy thử Fly.io theo DEPLOY.md (job `docker` của CI đã xanh).
-2. Postgres repo (`src/repo/postgres.ts`) + Redis adapter nếu cần > 1 instance.
-3. Dùng `mucDo` của tu-cam.json (vd mức 1 → chờ duyệt thay vì từ chối) nếu nhóm sản phẩm muốn.
-4. Admin: phân trang đèn khi > 500; nhật ký thao tác admin (audit log).
-5. Bộ lọc: bổ sung từ cấm theo phản hồi kiểm duyệt; cân nhắc chế độ "nghi ngờ → pending" thay vì từ chối.
+1. **Deploy** lên Fly.io/Render (cần thông tin tài khoản) và đặt `DEVICE_SALT`, `ADMIN_PASSWORD`, `CORS_ORIGINS` thật.
+2. **Báo nhóm nội dung**: 2 câu trong chính nội dung của họ bị danh sách của họ chặn — "…chạy theo những cách **kiếm tiền nhanh**" (thong-diep-ngay) và "Tránh **cờ bạc**, vay nóng…" — nên thêm allowlist ("cách kiếm tiền nhanh", "tránh cờ bạc", "bỏ cờ bạc"…) nếu lời nguyện kiểu này cần qua.
+3. Lọt có chủ đích: leet 2 chữ số liền ("t40", "fr33") — đổi thì chặn nhầm "Mã D17"/"giấy A4".
+4. Chế độ cụm: giới hạn kết nối/IP và rate limit theo sự kiện vẫn tính riêng từng instance (lỏng hơn N lần); nếu cần chặt, chuyển `SlidingWindowLimiter` sang Redis.
+5. Nếu bật `MILD_WORD_ACTION` hoặc cập nhật tu-cam.json trên DB đã chạy: vào admin bấm **"Nạp lại từ file gốc"** (để có tiền tố `!` mức nhẹ).
 
 ## Rủi ro / lưu ý
 
-- Trạng thái realtime trong bộ nhớ → **chỉ chạy 1 instance**.
+- Không đặt `REDIS_URL` → trạng thái realtime trong bộ nhớ → **chỉ chạy 1 instance**. Muốn nhiều instance: `DATABASE_URL` + `REDIS_URL`.
 - `DEVICE_SALT` đổi = mất liên kết mọi thiết bị với dữ liệu cũ.
 - Đồng hồ: "hôm nay" theo UTC+7.
