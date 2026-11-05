@@ -5,6 +5,7 @@ import { IdSchema } from '../../../shared/protocol.js';
 import type { AppContext } from '../app.js';
 import { SlidingWindowLimiter } from '../services/rateLimit.js';
 import { iso, vnDay } from '../time.js';
+import { loadSeedWords } from '../app.js';
 
 export const ADMIN_COOKIE = 'chua_admin';
 const SESSION_TTL_MS = 12 * 3600_000;
@@ -176,6 +177,17 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       await repos.words.replaceAll(words);
       filter.setWords(words, ctx.unaccentedAlso);
       return { ok: true, count: filter.wordCount };
+    });
+
+    r.post('/admin/api/words/reseed', async (_req, reply) => {
+      const seed = loadSeedWords(config);
+      if (!seed.words.length) return reply.code(404).send({ error: 'no_seed_file' });
+      await repos.words.replaceAll(seed.words);
+      filter.setSubstitutions(seed.substitutions);
+      filter.setWords(seed.words, seed.unaccentedAlso);
+      ctx.unaccentedAlso = seed.unaccentedAlso;
+      ctx.log.info({ source: seed.source, count: seed.words.length }, 'admin reseed words');
+      return { ok: true, count: seed.words.length, source: seed.source };
     });
 
     r.post('/admin/api/words/test', async (req, reply) => {

@@ -114,6 +114,17 @@ describe('admin', () => {
     expect(t).toMatchObject({ ok: false, reason: 'banned_word' });
   });
 
+  it('nạp lại danh sách từ file gốc', async () => {
+    const { cookie } = await login();
+    await api(cookie, '/words', { method: 'PUT', body: JSON.stringify({ words: ['chỉ một từ'] }) });
+    expect((await (await api(cookie, '/words')).json()).words).toEqual(['chỉ một từ']);
+    const r = await (await api(cookie, '/words/reseed', { method: 'POST', body: '{}' })).json();
+    expect(r.ok).toBe(true);
+    expect(r.count).toBeGreaterThan(50);
+    const { c } = await s.hello();
+    expect(await emitAck(c, 'release_lantern', { text: 'chỉ một từ', color: 'red' })).toMatchObject({ ok: true });
+  });
+
   it('thống kê theo ngày', async () => {
     const { cookie } = await login();
     const { c } = await s.hello();

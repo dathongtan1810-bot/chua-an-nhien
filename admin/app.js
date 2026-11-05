@@ -392,6 +392,15 @@
     }
   });
 
+  $('#words-reseed').addEventListener('click', async (ev) => {
+    if (!confirm('Thay toàn bộ danh sách hiện tại bằng file gốc trên server (tu-cam.json)?')) return;
+    const r = await act(ev.currentTarget, () => api('/words/reseed', { method: 'POST', body: {} }));
+    if (r) {
+      toast('Đã nạp ' + r.count + ' mục từ ' + r.source, 'success');
+      loadWords();
+    }
+  });
+
   const REASON_LABEL = { empty: 'Trống', too_long: 'Quá dài', banned_word: 'Có từ cấm', link: 'Chứa đường dẫn', phone: 'Chứa số điện thoại', ads: 'Quảng cáo', spam: 'Spam' };
   $('#test-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
