@@ -22,6 +22,19 @@ for (const f of files.filter((x) => x.endsWith('.html'))) {
     if (!ok) errors.push(`${rel}: liên kết hỏng → ${target}`);
   }
 }
+// D31: thơ mẫu trên landing (<p class="tho"><span>…</span></p>) phải khớp đúng một quẻ trong dữ liệu
+const CONTENT = resolve(SITE, '../content');
+for (const [page, data] of [['index.html', 'que-xam.json'], ['en/index.html', 'i18n/en/que-xam.json']]) {
+  const f = join(SITE, page);
+  if (!existsSync(f) || !existsSync(join(CONTENT, data))) continue;
+  const html = readFileSync(f, 'utf8');
+  const que = JSON.parse(readFileSync(join(CONTENT, data), 'utf8'));
+  const known = new Set(que.map((q) => q.tho.join('\n')));
+  for (const m of html.matchAll(/<p class="tho">([\s\S]*?)<\/p>/g)) {
+    const lines = [...m[1].matchAll(/<span>([^<]*)<\/span>/g)].map((x) => x[1].trim());
+    if (!known.has(lines.join('\n'))) errors.push(`${page}: thơ mẫu không khớp quẻ nào trong content/${data}: "${lines[0]}…"`);
+  }
+}
 errors.forEach((e) => console.log(`✗ ${e}`));
 console.log(`${files.length} file, ${errors.length} lỗi.`);
 process.exit(errors.length ? 1 : 0);
