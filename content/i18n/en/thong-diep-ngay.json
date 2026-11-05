@@ -1,0 +1,1466 @@
+[
+  {
+    "id": 1,
+    "noiDung": "A new year begins with one breath. Breathe in slowly, breathe out gently, and smile at yourself."
+  },
+  {
+    "id": 2,
+    "noiDung": "Try writing down three things you were grateful for last year. Small things deserve remembering too."
+  },
+  {
+    "id": 3,
+    "noiDung": "No need for many goals. One gentle intention for the whole year is enough to begin."
+  },
+  {
+    "id": 4,
+    "noiDung": "This morning, before picking up your phone, sit still for one minute and listen to your breathing."
+  },
+  {
+    "id": 5,
+    "noiDung": "A tidy home lightens the heart. Try clearing one small drawer and letting go of what you no longer use."
+  },
+  {
+    "id": 6,
+    "noiDung": "Call someone you haven't seen in a while. A warm hello can warm their whole day."
+  },
+  {
+    "id": 7,
+    "noiDung": "Peace is not far away. It is in the cup of tea in your hands, if you are willing to drink slowly."
+  },
+  {
+    "id": 8,
+    "noiDung": "The early-year wind is still chilly. Keep your neck and feet warm; caring for the body is practice too."
+  },
+  {
+    "id": 9,
+    "noiDung": "Sometimes slowing down by one beat is the quickest way to see the path clearly."
+  },
+  {
+    "id": 10,
+    "noiDung": "At today's meal, try eating the first bite very slowly and fully tasting it."
+  },
+  {
+    "id": 11,
+    "noiDung": "Gentle words cost nothing, yet they can keep a precious relationship whole."
+  },
+  {
+    "id": 12,
+    "noiDung": "Each morning is a fresh page. You don't need to write it perfectly, only with a kind heart."
+  },
+  {
+    "id": 13,
+    "noiDung": "Look up at the sky for a moment. Clouds drift and fade, and so do the worries in your heart."
+  },
+  {
+    "id": 14,
+    "noiDung": "Forgive yourself for what you didn't manage last year. You tried harder than you think."
+  },
+  {
+    "id": 15,
+    "noiDung": "If you feel tired, allow yourself to rest. Resting isn't laziness; it's refilling your strength."
+  },
+  {
+    "id": 16,
+    "noiDung": "Water a houseplant and watch it for a few minutes. Life grows quietly, without hurry."
+  },
+  {
+    "id": 17,
+    "noiDung": "When angry, try counting ten breaths before speaking. The anger will soften, and so will your words."
+  },
+  {
+    "id": 18,
+    "noiDung": "Loved ones don't need big gifts. They need you to sit beside them and listen to a whole story."
+  },
+  {
+    "id": 19,
+    "noiDung": "Write a short thank-you to a colleague who helped you. Gratitude spoken aloud tends to spread."
+  },
+  {
+    "id": 20,
+    "noiDung": "Contentment is the warmest room you can return to at any time."
+  },
+  {
+    "id": 21,
+    "noiDung": "This morning, open the window, take a breath of fresh air, and quietly greet the new day."
+  },
+  {
+    "id": 22,
+    "noiDung": "Some things can't be rushed. Seeds need their season, and hearts need time too."
+  },
+  {
+    "id": 23,
+    "noiDung": "Try silencing phone notifications for an hour. That quiet is a gift to your mind."
+  },
+  {
+    "id": 24,
+    "noiDung": "Look at the person in front of you with gentle eyes. Everyone carries a quiet burden of their own."
+  },
+  {
+    "id": 25,
+    "noiDung": "Tidy your family altar or a small corner of home with sincerity. A clean home brightens the heart."
+  },
+  {
+    "id": 26,
+    "noiDung": "Pick up something for an elderly neighbor when you go to the market. Small kindness, big joy."
+  },
+  {
+    "id": 27,
+    "noiDung": "This weekend, try walking with no destination, just to feel your steps touch the ground."
+  },
+  {
+    "id": 28,
+    "noiDung": "Everyone has unhappy days. Hold your sadness the way you would hold a crying child."
+  },
+  {
+    "id": 29,
+    "noiDung": "Listen not only with your ears but with your heart. Today, listen without rushing to reply."
+  },
+  {
+    "id": 30,
+    "noiDung": "The rice on your table passed through many hands. Before eating, take a second to thank them."
+  },
+  {
+    "id": 31,
+    "noiDung": "The first month is closing. You've come a little way; give yourself a word of praise."
+  },
+  {
+    "id": 32,
+    "noiDung": "Sit up straight, relax your shoulders, take three long breaths. Your body will thank you."
+  },
+  {
+    "id": 33,
+    "noiDung": "Truly strong people dare to soften in the face of someone else's pain."
+  },
+  {
+    "id": 34,
+    "noiDung": "Spend some time cooking or wrapping rice cakes with family. The kitchen's warmth warms family bonds."
+  },
+  {
+    "id": 35,
+    "noiDung": "The days before Lunar New Year get busy. Amid the bustle, remember to pause, sip water, and breathe."
+  },
+  {
+    "id": 36,
+    "noiDung": "Send a message wishing peace to a friend far away. Distance shrinks when the heart reaches out."
+  },
+  {
+    "id": 37,
+    "noiDung": "Don't compare your spring to someone else's garden. Each tree blooms in its own time."
+  },
+  {
+    "id": 38,
+    "noiDung": "Wipe a glass clean, line up a pair of shoes. Doing small tasks with attention is meditation too."
+  },
+  {
+    "id": 39,
+    "noiDung": "A smile for the shopkeeper or the parking attendant may be the best part of their day."
+  },
+  {
+    "id": 40,
+    "noiDung": "Before sleep, recall one pleasant moment from the day and keep it like a small lamp."
+  },
+  {
+    "id": 41,
+    "noiDung": "Closing an old chapter isn't forgetting; it's setting it down gently so your hands are free for the new."
+  },
+  {
+    "id": 42,
+    "noiDung": "The best spring wish comes from a sincere heart. Wish someone well with your whole heart."
+  },
+  {
+    "id": 43,
+    "noiDung": "When visiting a temple early in the year, the most precious thing to bring home is inner calm."
+  },
+  {
+    "id": 44,
+    "noiDung": "Peach and apricot blossoms bloom and then fall. Cherishing beauty while it's here is living fully."
+  },
+  {
+    "id": 45,
+    "noiDung": "Try a day of speaking less and listening more. You'll be surprised by what you hear."
+  },
+  {
+    "id": 46,
+    "noiDung": "You don't need to please everyone. Just live kindly and stay true to yourself."
+  },
+  {
+    "id": 47,
+    "noiDung": "Visit your grandparents or parents, even briefly. Time together is a gift nothing can replace."
+  },
+  {
+    "id": 48,
+    "noiDung": "Loving yourself isn't selfish. A heart that's cared for has the strength to care for others."
+  },
+  {
+    "id": 49,
+    "noiDung": "Brew a pot of tea and invite your household to share it. No need for many words; just sit together."
+  },
+  {
+    "id": 50,
+    "noiDung": "If you spoke harshly to someone, today is a good day for a sincere apology."
+  },
+  {
+    "id": 51,
+    "noiDung": "Light spring rain makes the trees greener. Tears, too, can sometimes help the heart grow."
+  },
+  {
+    "id": 52,
+    "noiDung": "Step outside and find a new bud on a branch. New life always begins with something small."
+  },
+  {
+    "id": 53,
+    "noiDung": "When your mind is tangled, place a hand on your chest and feel your heartbeat. You're still here, still okay."
+  },
+  {
+    "id": 54,
+    "noiDung": "One task done wholeheartedly is worth more than ten left half-done. Pick one today and give it your all."
+  },
+  {
+    "id": 55,
+    "noiDung": "Don't let complaining become a habit. Try turning each complaint into a thank-you."
+  },
+  {
+    "id": 56,
+    "noiDung": "A wide heart makes a wide road. Loosen a little stubbornness and you'll see more ways forward."
+  },
+  {
+    "id": 57,
+    "noiDung": "Pick up a piece of litter on your way. A small act, but a thank-you to the earth and sky."
+  },
+  {
+    "id": 58,
+    "noiDung": "Someone bothering you? Try to imagine what they're struggling with. Understanding leads to compassion."
+  },
+  {
+    "id": 59,
+    "noiDung": "Short February reminds us that time moves fast. Spend it on what truly matters."
+  },
+  {
+    "id": 60,
+    "noiDung": "March arrives with soft sunlight. Let a little of it touch your skin and your heart."
+  },
+  {
+    "id": 61,
+    "noiDung": "Today, try drinking a cup of tea very slowly and feel its warmth spread through your palms."
+  },
+  {
+    "id": 62,
+    "noiDung": "When you make a mistake, own it gently. Honesty makes the heart as light as a cloud."
+  },
+  {
+    "id": 63,
+    "noiDung": "One less coffee, one more glass of water. Your body deserves to be listened to as well."
+  },
+  {
+    "id": 64,
+    "noiDung": "No one walks the whole road without stumbling. Get up, brush off the dust, and keep walking gently."
+  },
+  {
+    "id": 65,
+    "noiDung": "Try sitting still for five minutes each morning. Nothing to achieve; just be present."
+  },
+  {
+    "id": 66,
+    "noiDung": "A sincere compliment can help someone believe in themselves. Compliment someone today."
+  },
+  {
+    "id": 67,
+    "noiDung": "Thank a woman who has cared for you: a mother, sister, teacher, or partner."
+  },
+  {
+    "id": 68,
+    "noiDung": "Patience is like flowing water, soft yet steady, slowly rounding even the sharpest stones."
+  },
+  {
+    "id": 69,
+    "noiDung": "On your way to work, notice one beautiful thing you usually miss: a tree's canopy, an old wall."
+  },
+  {
+    "id": 70,
+    "noiDung": "Worrying about tomorrow doesn't make it easier. Take good care of today."
+  },
+  {
+    "id": 71,
+    "noiDung": "Eat one more serving of greens, sleep fifteen minutes earlier. Self-care starts with small things."
+  },
+  {
+    "id": 72,
+    "noiDung": "Don't keep the thorn in your heart forever. Forgiving lets you walk lightly."
+  },
+  {
+    "id": 73,
+    "noiDung": "Birds sing on the branches each spring morning. Try waking a little early to hear their music."
+  },
+  {
+    "id": 74,
+    "noiDung": "Everyone needs to be heard. Ask someone \"How have you been?\" and truly wait for the answer."
+  },
+  {
+    "id": 75,
+    "noiDung": "Offer your seat to an elder, hold the door for the next person. Kindness lives in tiny gestures."
+  },
+  {
+    "id": 76,
+    "noiDung": "Before a big decision, sleep on it. A calm mind sees more clearly."
+  },
+  {
+    "id": 77,
+    "noiDung": "Leave water out for the birds or stray cats nearby. Caring for all beings is caring for yourself."
+  },
+  {
+    "id": 78,
+    "noiDung": "You are not your thoughts. Watch them pass like traffic on the street."
+  },
+  {
+    "id": 79,
+    "noiDung": "An old photo can bring back so many memories. Look at one with family and share the stories."
+  },
+  {
+    "id": 80,
+    "noiDung": "At the spring equinox, day and night are equal. Seek that same balance between work and rest."
+  },
+  {
+    "id": 81,
+    "noiDung": "When someone says something hurtful, don't rush to respond. A breath is a gentle buffer."
+  },
+  {
+    "id": 82,
+    "noiDung": "Read a few pages of a book instead of scrolling before bed. Sleep will come more softly."
+  },
+  {
+    "id": 83,
+    "noiDung": "Be grateful even for hardships. They teach patience, humility, and deeper compassion."
+  },
+  {
+    "id": 84,
+    "noiDung": "Wash dishes in warm water and notice each bowl becoming clean. Chores can be peaceful moments too."
+  },
+  {
+    "id": 85,
+    "noiDung": "Don't blame yourself too harshly. Speak to yourself as you would to a close friend who is sad."
+  },
+  {
+    "id": 86,
+    "noiDung": "Plant a seed in a small pot. Water it a little each day and you'll learn patience."
+  },
+  {
+    "id": 87,
+    "noiDung": "Greed makes us always feel short. Contentment shows us how much we already have."
+  },
+  {
+    "id": 88,
+    "noiDung": "Set aside one screen-free evening. Talk, play a board game, or watch the moon with family."
+  },
+  {
+    "id": 89,
+    "noiDung": "Everyone who enters our life brings a lesson. Be thankful even for the most difficult people."
+  },
+  {
+    "id": 90,
+    "noiDung": "As March ends, look back on the first quarter. What made you happy? Do more of that."
+  },
+  {
+    "id": 91,
+    "noiDung": "April's sun starts to sharpen. Carry a water bottle and sip throughout the day."
+  },
+  {
+    "id": 92,
+    "noiDung": "A small lie can cost great trust. Choose the truth, and say it kindly."
+  },
+  {
+    "id": 93,
+    "noiDung": "Walk barefoot on grass for a few minutes if you can. Feel the ground holding you up."
+  },
+  {
+    "id": 94,
+    "noiDung": "When you're busiest, you need a quiet minute most. Put down your pen, close your eyes, take three breaths."
+  },
+  {
+    "id": 95,
+    "noiDung": "Your smile is a small lamp. Light it, and any room grows brighter."
+  },
+  {
+    "id": 96,
+    "noiDung": "Write a handwritten letter to someone you care about. Handwriting carries a warmth messages rarely do."
+  },
+  {
+    "id": 97,
+    "noiDung": "You don't need to win every argument. Sometimes keeping the peace is worth more than being right."
+  },
+  {
+    "id": 98,
+    "noiDung": "Gaze at a flower for a long time, each petal, each vein. Beauty waits for those who look closely."
+  },
+  {
+    "id": 99,
+    "noiDung": "Work with a heart of service, not just to get it done. Your work will feel more meaningful."
+  },
+  {
+    "id": 100,
+    "noiDung": "A hundred days of the year have passed. Thank your body for carrying you through each one."
+  },
+  {
+    "id": 101,
+    "noiDung": "Try one vegetarian meal to lighten the body and deepen your care for all beings."
+  },
+  {
+    "id": 102,
+    "noiDung": "Parents grow older every day. Call them and ask something simple: \"What did you eat today?\""
+  },
+  {
+    "id": 103,
+    "noiDung": "Emotions are like weather, sun and rain. You are the sky, wide enough to hold them all."
+  },
+  {
+    "id": 104,
+    "noiDung": "Help a stranger with directions or show someone how to use their phone. Patience is a gift."
+  },
+  {
+    "id": 105,
+    "noiDung": "Each slow step is a return to the present. Walk slowly; no one is rushing you."
+  },
+  {
+    "id": 106,
+    "noiDung": "Keep even small promises. Trust is built from things that seem insignificant."
+  },
+  {
+    "id": 107,
+    "noiDung": "Letting go isn't giving up. It's loosening your grip on what no longer belongs to you."
+  },
+  {
+    "id": 108,
+    "noiDung": "Put on soft music and cook a simple meal for yourself. You deserve to be cared for."
+  },
+  {
+    "id": 109,
+    "noiDung": "Let children say everything they're thinking. A child who is heard grows up steady."
+  },
+  {
+    "id": 110,
+    "noiDung": "Good deeds need no witness. Do them and let them go; your heart will be at ease."
+  },
+  {
+    "id": 111,
+    "noiDung": "Sit by the window when it rains and listen. Nothing to do, just listen."
+  },
+  {
+    "id": 112,
+    "noiDung": "Mother Earth feeds us every day. Switch off one light, skip one plastic bag, to return that kindness."
+  },
+  {
+    "id": 113,
+    "noiDung": "The more you understand, the more you see there is to learn. Humility keeps the heart open."
+  },
+  {
+    "id": 114,
+    "noiDung": "Spend five minutes stretching after sitting long. Reach, roll your neck, thank your hardworking body."
+  },
+  {
+    "id": 115,
+    "noiDung": "When someone shares sad news, don't rush to advise. Sometimes just sitting beside them is enough."
+  },
+  {
+    "id": 116,
+    "noiDung": "Waking up healthy each morning is already a blessing. Start the day with gratitude."
+  },
+  {
+    "id": 117,
+    "noiDung": "Practice saying \"no\" gently when needed. Healthy boundaries are a form of self-love."
+  },
+  {
+    "id": 118,
+    "noiDung": "Today, notice footsteps, wind, rustling leaves. The world is full of gentle sounds."
+  },
+  {
+    "id": 119,
+    "noiDung": "Don't wait for enough time to do good. One minute of kindness is still precious."
+  },
+  {
+    "id": 120,
+    "noiDung": "Hug a loved one a little longer than usual. A hug says what words can't."
+  },
+  {
+    "id": 121,
+    "noiDung": "On the first of May, thank the quiet workers around us: street sweepers, delivery people."
+  },
+  {
+    "id": 122,
+    "noiDung": "Leave an empty space in your schedule, with no plans at all. Let your heart breathe there."
+  },
+  {
+    "id": 123,
+    "noiDung": "Joy grows when shared. Tell someone about a small happy thing that happened today."
+  },
+  {
+    "id": 124,
+    "noiDung": "The sun rises earlier, the days grow longer. Try an early walk while the air is still cool."
+  },
+  {
+    "id": 125,
+    "noiDung": "Don't wait until the work is done to feel glad. Small joys are right there in the middle of it."
+  },
+  {
+    "id": 126,
+    "noiDung": "When someone thanks you, accept it with a smile; don't brush it away."
+  },
+  {
+    "id": 127,
+    "noiDung": "Try cooking a dish your mother used to make. Familiar flavors tie generations together."
+  },
+  {
+    "id": 128,
+    "noiDung": "Sorrow passes, and joy doesn't stay forever. Knowing this, we live gently with each moment."
+  },
+  {
+    "id": 129,
+    "noiDung": "Put your phone down when eating with loved ones. Looking at each other beats any screen."
+  },
+  {
+    "id": 130,
+    "noiDung": "A calm heart isn't one without waves, but one that stands steady among them."
+  },
+  {
+    "id": 131,
+    "noiDung": "Give your good used clothes to someone in need. What you no longer wear may keep someone warm."
+  },
+  {
+    "id": 132,
+    "noiDung": "Learn something new, however small: a word, a recipe, a paper fold. The mind loves curiosity."
+  },
+  {
+    "id": 133,
+    "noiDung": "Someone slow in front of you? See it as an invitation to practice patience, not a nuisance."
+  },
+  {
+    "id": 134,
+    "noiDung": "Mothers are our first teachers of love. Thank yours today, whether she's near, far, or living in memory."
+  },
+  {
+    "id": 135,
+    "noiDung": "When your heart is hot like the noon sun, find shade: a glass of water, a quiet corner, a deep breath."
+  },
+  {
+    "id": 136,
+    "noiDung": "Someone else's success takes nothing from you. Rejoice with them openly."
+  },
+  {
+    "id": 137,
+    "noiDung": "Rearrange your desk. A tidy corner makes the mind much clearer."
+  },
+  {
+    "id": 138,
+    "noiDung": "Listen to an elder tell stories of the old days. They hold lessons no book teaches."
+  },
+  {
+    "id": 139,
+    "noiDung": "You've done well enough. Today, let yourself stop a little early and breathe."
+  },
+  {
+    "id": 140,
+    "noiDung": "If you see someone struggling, help if you can; if not, at least don't add to their burden."
+  },
+  {
+    "id": 141,
+    "noiDung": "Watch a candle flame for a few minutes. A small flame can help the mind settle."
+  },
+  {
+    "id": 142,
+    "noiDung": "Today, choose your words like picking ripe fruit: sweet, wholesome, and just enough."
+  },
+  {
+    "id": 143,
+    "noiDung": "Drink a cup of warm water on waking and feel it gently wake your body."
+  },
+  {
+    "id": 144,
+    "noiDung": "Every burst of anger hurts you first. Be gentle with your own heart."
+  },
+  {
+    "id": 145,
+    "noiDung": "Go to a park, sit on a bench, and watch children play. Their bright joy is contagious."
+  },
+  {
+    "id": 146,
+    "noiDung": "You don't need every answer. Sometimes living with the question is a way of growing."
+  },
+  {
+    "id": 147,
+    "noiDung": "Keep a small notebook of good things each day. When you're sad, open it and read."
+  },
+  {
+    "id": 148,
+    "noiDung": "Offer your neighbor a cool drink. Neighborly bonds begin with moments like this."
+  },
+  {
+    "id": 149,
+    "noiDung": "Some things are in your hands, some aren't. Put your effort where you can, and ease up on the rest."
+  },
+  {
+    "id": 150,
+    "noiDung": "Try breathing in fours: inhale for four, hold for four, exhale for four. Repeat a few times."
+  },
+  {
+    "id": 151,
+    "noiDung": "May closes with the first cicadas. Thank the spring that has passed and greet summer lightly."
+  },
+  {
+    "id": 152,
+    "noiDung": "On the first of June, play with a child, or remember the child within you."
+  },
+  {
+    "id": 153,
+    "noiDung": "Summer heat calls for a cool heart. A little less temper makes everything easier."
+  },
+  {
+    "id": 154,
+    "noiDung": "Eat a seasonal fruit and taste the sweetness the sun and rain have put in it."
+  },
+  {
+    "id": 155,
+    "noiDung": "If you find yourself rushing, ask: where am I hurrying to? Sometimes that question helps you stop."
+  },
+  {
+    "id": 156,
+    "noiDung": "Water the plants in the cool evening. As the soil drinks, your heart softens too."
+  },
+  {
+    "id": 157,
+    "noiDung": "Teachers aren't only at the front of a classroom. Anyone who taught you something good deserves thanks."
+  },
+  {
+    "id": 158,
+    "noiDung": "Read a good page slowly, pause at a line you love, and let it sink in."
+  },
+  {
+    "id": 159,
+    "noiDung": "No one is perfect, not even those you love most. To love is to accept the clumsiness too."
+  },
+  {
+    "id": 160,
+    "noiDung": "Nap for fifteen minutes if you can. A short rest makes the afternoon lighter."
+  },
+  {
+    "id": 161,
+    "noiDung": "Leave a bowl of water on your balcony for birds on scorching days."
+  },
+  {
+    "id": 162,
+    "noiDung": "Things that don't go your way may be doors to another path. Open your heart and look."
+  },
+  {
+    "id": 163,
+    "noiDung": "Invite the family to tidy a corner together. Shared work is lighter, and bonds grow fuller."
+  },
+  {
+    "id": 164,
+    "noiDung": "Listen to your body: rest when tired, drink when thirsty, eat slowly when hungry. Simple, yet often forgotten."
+  },
+  {
+    "id": 165,
+    "noiDung": "An act of kindness is never wasted, whether or not the receiver knows."
+  },
+  {
+    "id": 166,
+    "noiDung": "Watch the sunset today. Thank the day that passed, whether it was easy or not."
+  },
+  {
+    "id": 167,
+    "noiDung": "In an argument, try saying \"I understand you feel...\" before sharing your view."
+  },
+  {
+    "id": 168,
+    "noiDung": "Skip buying one thing you don't really need. Simple living lightens the heart and the earth's load."
+  },
+  {
+    "id": 169,
+    "noiDung": "Some wounds need time; don't force yourself to heal right away. Be patient with yourself."
+  },
+  {
+    "id": 170,
+    "noiDung": "Every drop of a worker's sweat is precious. Treasure the meals and things around you."
+  },
+  {
+    "id": 171,
+    "noiDung": "Remember your father, or someone who sheltered you like one, and send them a thank-you."
+  },
+  {
+    "id": 172,
+    "noiDung": "The summer solstice is the longest day. Use that extra light to do something good for someone."
+  },
+  {
+    "id": 173,
+    "noiDung": "You don't have to be strong all the time. It's okay to cry a little, then dry your eyes and go on."
+  },
+  {
+    "id": 174,
+    "noiDung": "Eat a proper breakfast, sitting down rather than on the go. Breakfast deserves that respect."
+  },
+  {
+    "id": 175,
+    "noiDung": "Everyone carries a seed of gentleness. Water it today with a good deed."
+  },
+  {
+    "id": 176,
+    "noiDung": "Visit a friend who's ill, or send a caring word. Attention is a warm kind of medicine."
+  },
+  {
+    "id": 177,
+    "noiDung": "Try ten minutes of full silence, no music, no news. Listen to what your heart is saying."
+  },
+  {
+    "id": 178,
+    "noiDung": "How you treat servers and cleaners says much about your heart. Be kind to everyone."
+  },
+  {
+    "id": 179,
+    "noiDung": "Summer rain comes and goes quickly. So does anger, if you don't cling to it."
+  },
+  {
+    "id": 180,
+    "noiDung": "Name your feelings: \"I'm sad,\" \"I'm worried.\" Naming them already lightens them by half."
+  },
+  {
+    "id": 181,
+    "noiDung": "Half the year has passed. Look back not with regret, but to walk on wiser and gentler."
+  },
+  {
+    "id": 182,
+    "noiDung": "As July begins, choose one small good habit for the month: walking, reading, or sleeping early."
+  },
+  {
+    "id": 183,
+    "noiDung": "When criticized, listen for what's true and gently let the rest drift away."
+  },
+  {
+    "id": 184,
+    "noiDung": "The sea, the mountains, or just your balcony: spend some time near nature today."
+  },
+  {
+    "id": 185,
+    "noiDung": "A bowl of cool mung bean sweet soup for the family this afternoon. Simple joy, deep bonds."
+  },
+  {
+    "id": 186,
+    "noiDung": "Sometimes we need to talk less, smile more, and see things with more forgiving eyes."
+  },
+  {
+    "id": 187,
+    "noiDung": "Waiting at a red light, don't fret. Use those thirty seconds to breathe and relax your shoulders."
+  },
+  {
+    "id": 188,
+    "noiDung": "Compassion isn't only for the likable. Try sending a kind thought to someone you don't yet like."
+  },
+  {
+    "id": 189,
+    "noiDung": "Enough sleep is the simplest self-kindness. Turn off the lights a bit earlier tonight."
+  },
+  {
+    "id": 190,
+    "noiDung": "One small good deed a day makes three hundred sixty-five in a year. Start today."
+  },
+  {
+    "id": 191,
+    "noiDung": "Everyone has a past. Don't frame others by their old mistakes."
+  },
+  {
+    "id": 192,
+    "noiDung": "Take a walk after dinner, listening to nothing, just feeling the breeze and your steps."
+  },
+  {
+    "id": 193,
+    "noiDung": "Instead of asking \"Why did this happen to me?\", ask \"What can I learn from this?\""
+  },
+  {
+    "id": 194,
+    "noiDung": "Hot days make people irritable. Speak more slowly and softly, and those around you will calm too."
+  },
+  {
+    "id": 195,
+    "noiDung": "Splash cool water on your face, look in the mirror, and say: \"Today I'll be gentle with myself.\""
+  },
+  {
+    "id": 196,
+    "noiDung": "Thank those who stood by you in hard times. They were the stars in your darkest nights."
+  },
+  {
+    "id": 197,
+    "noiDung": "Some answers only appear once the water within has settled. Don't rush; let time do its part."
+  },
+  {
+    "id": 198,
+    "noiDung": "Cook an extra portion and bring it to someone living alone nearby. Meals are warmer when shared."
+  },
+  {
+    "id": 199,
+    "noiDung": "Sit down, close your eyes, and count breaths from one to ten. If you lose count, start over; that's fine."
+  },
+  {
+    "id": 200,
+    "noiDung": "Your hands have done so much. Rub them gently and thank them once."
+  },
+  {
+    "id": 201,
+    "noiDung": "Not every day is bright. Grey days have their own beauty if we're willing to see."
+  },
+  {
+    "id": 202,
+    "noiDung": "Today, yield a little: give way, give the last word, give the bigger share. Your heart will widen."
+  },
+  {
+    "id": 203,
+    "noiDung": "Float a paper boat with a child, or watch water flow. Innocence is medicine for the soul."
+  },
+  {
+    "id": 204,
+    "noiDung": "When you're sad, step into the sunlight for a while. Natural light knows how to comfort."
+  },
+  {
+    "id": 205,
+    "noiDung": "A late apology is better than none. If something is left unsaid, say it today."
+  },
+  {
+    "id": 206,
+    "noiDung": "Focus on one thing only. When doing this, just do this, and your mind won't scatter."
+  },
+  {
+    "id": 207,
+    "noiDung": "Good listeners speak little and understand much. Today, ask more than you assert."
+  },
+  {
+    "id": 208,
+    "noiDung": "Send gratitude to those who sacrificed so we can live in peace today."
+  },
+  {
+    "id": 209,
+    "noiDung": "An afternoon shower cools the whole street. A gentle word can cool a whole household."
+  },
+  {
+    "id": 210,
+    "noiDung": "Make time for a small hobby: sketch, sing, plant something. Joy needs nourishing."
+  },
+  {
+    "id": 211,
+    "noiDung": "Don't let tomorrow's worries steal tonight's dinner. Eat in peace."
+  },
+  {
+    "id": 212,
+    "noiDung": "At the market, buy an extra bunch from the elderly vegetable seller. A little sharing warms the market."
+  },
+  {
+    "id": 213,
+    "noiDung": "August arrives with long rains. Brew hot tea and sit listening to the rain with loved ones."
+  },
+  {
+    "id": 214,
+    "noiDung": "Be patient with the elderly, as they were patient with us when we were small."
+  },
+  {
+    "id": 215,
+    "noiDung": "No one can give you peace like you can. Make a quiet corner at home to return to."
+  },
+  {
+    "id": 216,
+    "noiDung": "If you see someone doing well, tell them. Don't keep praise to yourself."
+  },
+  {
+    "id": 217,
+    "noiDung": "Eat slowly, chew well, set down your chopsticks between bites. Meals become rest for the mind."
+  },
+  {
+    "id": 218,
+    "noiDung": "Envy withers the heart. Replace it with a sincere congratulation, and you'll feel lighter."
+  },
+  {
+    "id": 219,
+    "noiDung": "Open the doors to wind and light. An airy home makes its people feel open too."
+  },
+  {
+    "id": 220,
+    "noiDung": "The hardest to love are often the least loved. Be patient with them."
+  },
+  {
+    "id": 221,
+    "noiDung": "Each time you wash your hands, use those seconds to breathe and come back to the present."
+  },
+  {
+    "id": 222,
+    "noiDung": "Living slowly isn't laziness. It's so you can see, hear, and love more."
+  },
+  {
+    "id": 223,
+    "noiDung": "Call your siblings and check in. Family ties need tending like a garden."
+  },
+  {
+    "id": 224,
+    "noiDung": "You don't have to be right all the time. Admitting \"I don't know yet\" takes courage."
+  },
+  {
+    "id": 225,
+    "noiDung": "Now and then today, ask yourself: \"How am I breathing?\" Then breathe a little deeper."
+  },
+  {
+    "id": 226,
+    "noiDung": "Visit your grandparents' graves or light incense in remembrance. Remembering our roots helps us live kindly."
+  },
+  {
+    "id": 227,
+    "noiDung": "Sometimes the best thing you can do for someone is not to judge them."
+  },
+  {
+    "id": 228,
+    "noiDung": "Bring a cloth bag to the market. Each \"no\" to plastic is a thank-you to the earth."
+  },
+  {
+    "id": 229,
+    "noiDung": "The season of filial remembrance reminds us of our parents' kindness. Do something to make them happy today."
+  },
+  {
+    "id": 230,
+    "noiDung": "If your parents have passed, live kindly. That's the most beautiful way to remember them."
+  },
+  {
+    "id": 231,
+    "noiDung": "People who often say thanks tend to be happy. Count how many thank-yous you've said today."
+  },
+  {
+    "id": 232,
+    "noiDung": "Accept that some people won't understand you, and that's okay."
+  },
+  {
+    "id": 233,
+    "noiDung": "Sit under a tree, lean on its trunk, and breathe with it. The tree doesn't hurry; neither must you."
+  },
+  {
+    "id": 234,
+    "noiDung": "Make peace with an old friend. No need to decide who was right; just open your heart."
+  },
+  {
+    "id": 235,
+    "noiDung": "Care for your sleep: a dark room, clean sheets, a light heart. Good sleep is a gift to tomorrow."
+  },
+  {
+    "id": 236,
+    "noiDung": "Everything changes, even suffering. Hold on to the hope that tomorrow can be different."
+  },
+  {
+    "id": 237,
+    "noiDung": "Send a loved one a small gift for no reason. Sweet surprises turn ordinary days into happy ones."
+  },
+  {
+    "id": 238,
+    "noiDung": "When busy, do one thing at a time. Small steady steps go farther than rushed, tiring ones."
+  },
+  {
+    "id": 239,
+    "noiDung": "Gentle words to children become their inner voice as they grow. Speak to them softly."
+  },
+  {
+    "id": 240,
+    "noiDung": "Look at the moon tonight, full or crescent. Every moon is beautiful; every person has worth."
+  },
+  {
+    "id": 241,
+    "noiDung": "Don't take work to bed. Write your worries on paper, fold it up, and deal with it tomorrow."
+  },
+  {
+    "id": 242,
+    "noiDung": "Learn to say \"thank you\" before \"but.\" Gratitude opens the way for every conversation."
+  },
+  {
+    "id": 243,
+    "noiDung": "Summer is nearly over. Thank the sunny days for their energy and get ready for autumn's breeze."
+  },
+  {
+    "id": 244,
+    "noiDung": "September arrives with clearer skies; let your heart clear too. Drop one needless worry."
+  },
+  {
+    "id": 245,
+    "noiDung": "A new school year is about to begin; wish the children a happy year. Learning is for becoming a good person."
+  },
+  {
+    "id": 246,
+    "noiDung": "A yellow leaf falling reminds us that letting go can be just as beautiful and gentle."
+  },
+  {
+    "id": 247,
+    "noiDung": "Read a book about nature or a heartwarming story. Autumn is a season for pages."
+  },
+  {
+    "id": 248,
+    "noiDung": "Sip tea on a cool morning, watch the steam rise, and feel the stillness."
+  },
+  {
+    "id": 249,
+    "noiDung": "Criticizing is easy; understanding is hard. Choose that harder, more beautiful path."
+  },
+  {
+    "id": 250,
+    "noiDung": "Before leaving home, smile at your family. A warm goodbye starts a good day."
+  },
+  {
+    "id": 251,
+    "noiDung": "Kindness needs no reason. Do a good deed no one knows about, and keep it as a small secret."
+  },
+  {
+    "id": 252,
+    "noiDung": "When weary, lie down, place a hand on your belly, and feel it rise and fall with your breath."
+  },
+  {
+    "id": 253,
+    "noiDung": "What's broken can be mended, but it takes patience and gentle hands. So do relationships."
+  },
+  {
+    "id": 254,
+    "noiDung": "Mid-Autumn draws near; make a lantern or buy a small box of mooncakes for children in need."
+  },
+  {
+    "id": 255,
+    "noiDung": "The full moon shines on the whole family. Sit together under it, share some cake, and tell stories."
+  },
+  {
+    "id": 256,
+    "noiDung": "Don't carry yesterday's sadness into this morning. Every dawn is a chance to begin again."
+  },
+  {
+    "id": 257,
+    "noiDung": "You can be busy, but never so busy you forget to check on those you love."
+  },
+  {
+    "id": 258,
+    "noiDung": "Step outside and breathe in the scent of blossoms or fresh-cut grass. Seasonal scents slow us down."
+  },
+  {
+    "id": 259,
+    "noiDung": "Listening to yourself matters as much as listening to others. Ask your heart today: what do I need?"
+  },
+  {
+    "id": 260,
+    "noiDung": "Dust an old book and tidy your shelf. Paper friends need care too."
+  },
+  {
+    "id": 261,
+    "noiDung": "Sometimes doing nothing is exactly what's needed. Allow yourself to rest."
+  },
+  {
+    "id": 262,
+    "noiDung": "Our eyes usually look outward. Today, take a moment to look inward and see how your heart is."
+  },
+  {
+    "id": 263,
+    "noiDung": "Send a card or note to someone who helped you and whom you never got around to thanking."
+  },
+  {
+    "id": 264,
+    "noiDung": "When an old hurt resurfaces, breathe slowly and whisper: \"I am slowly setting this down.\""
+  },
+  {
+    "id": 265,
+    "noiDung": "The autumn equinox brings equal day and night. A gentle reminder to balance giving and receiving."
+  },
+  {
+    "id": 266,
+    "noiDung": "The autumn breeze arrives; add a light jacket. Care for your body as the seasons turn."
+  },
+  {
+    "id": 267,
+    "noiDung": "Someone near you may be lonely. An invitation to eat or walk could be a great light to them."
+  },
+  {
+    "id": 268,
+    "noiDung": "Before complaining about the weather, remember rain feeds the rice and sun sweetens the fruit."
+  },
+  {
+    "id": 269,
+    "noiDung": "A beautiful garden needs weeding. So does the heart, of its negative thoughts."
+  },
+  {
+    "id": 270,
+    "noiDung": "Slow down when driving and give way when you can. Safety is worth more than a few minutes."
+  },
+  {
+    "id": 271,
+    "noiDung": "Give without expecting anything back, and your heart won't be disappointed."
+  },
+  {
+    "id": 272,
+    "noiDung": "Make a simple meal and invite someone to share it. Sharing a table brings people closest."
+  },
+  {
+    "id": 273,
+    "noiDung": "If today is hard, just get through one hour at a time. You don't need to carry the whole week."
+  },
+  {
+    "id": 274,
+    "noiDung": "October begins. Choose one thing to let go of this month: a habit, a grudge."
+  },
+  {
+    "id": 275,
+    "noiDung": "The elders around us are treasures. Check on and help an older person today."
+  },
+  {
+    "id": 276,
+    "noiDung": "A crack in an old bowl doesn't make it less precious. Your wounds don't make you less worthy of love."
+  },
+  {
+    "id": 277,
+    "noiDung": "Try five minutes of meditation before sleep. Let the day close in silence."
+  },
+  {
+    "id": 278,
+    "noiDung": "Don't wait for others to change before finding peace. Peace begins when you change how you see."
+  },
+  {
+    "id": 279,
+    "noiDung": "Pick up a pretty leaf and press it in a book. Autumn will stay with you longer."
+  },
+  {
+    "id": 280,
+    "noiDung": "Thank whoever cooked for you today, whether a parent, a spouse, or the vendor at the corner."
+  },
+  {
+    "id": 281,
+    "noiDung": "Those with patience see everything arrive in its own time."
+  },
+  {
+    "id": 282,
+    "noiDung": "Today, try making each exhale a little longer than the inhale. Long exhales help the body relax naturally."
+  },
+  {
+    "id": 283,
+    "noiDung": "Speak well of those who aren't present. It's the mark of a noble heart."
+  },
+  {
+    "id": 284,
+    "noiDung": "A hot cocoa, a light blanket, a good book. Happiness is sometimes that simple."
+  },
+  {
+    "id": 285,
+    "noiDung": "No need to wait for a special occasion to wear nice clothes or use nice dishes. Ordinary days are worth cherishing too."
+  },
+  {
+    "id": 286,
+    "noiDung": "Love isn't only words. Turn it into one concrete action today."
+  },
+  {
+    "id": 287,
+    "noiDung": "When someone shares their pain, don't say \"mine is worse.\" Let their sorrow be seen."
+  },
+  {
+    "id": 288,
+    "noiDung": "Walk to nearby places instead of driving. Good for the body, kind to the earth."
+  },
+  {
+    "id": 289,
+    "noiDung": "Everyone is learning their own lessons. Be gentle with your pace and theirs."
+  },
+  {
+    "id": 290,
+    "noiDung": "Clean your shoes, fold your clothes. Caring for things is a way of living mindfully."
+  },
+  {
+    "id": 291,
+    "noiDung": "Thank someone who has been patient with you. You may never know how much they bore."
+  },
+  {
+    "id": 292,
+    "noiDung": "Don't exhaust yourself to prove something. You have worth even before you do anything at all."
+  },
+  {
+    "id": 293,
+    "noiDung": "Give a flower to a woman you cherish: a grandmother, mother, sister, colleague. A thank-you with fragrance."
+  },
+  {
+    "id": 294,
+    "noiDung": "Listening fully means not planning your reply while listening. Try it today."
+  },
+  {
+    "id": 295,
+    "noiDung": "Holding back one flare of temper may save a relationship."
+  },
+  {
+    "id": 296,
+    "noiDung": "Dress warm, eat warm, speak warmly. The cold season is coming; keep yourself and others warm."
+  },
+  {
+    "id": 297,
+    "noiDung": "Count what you have, not what you lack. The first list is longer than you think."
+  },
+  {
+    "id": 298,
+    "noiDung": "This afternoon, watch the clouds and loosen every thought. Clouds hold no fixed shape, nor must your heart."
+  },
+  {
+    "id": 299,
+    "noiDung": "Find someone who needs help and help without them having to ask."
+  },
+  {
+    "id": 300,
+    "noiDung": "Three hundred days have passed. You're still here, still trying. That is precious."
+  },
+  {
+    "id": 301,
+    "noiDung": "Live so that each night, looking back, your heart holds nothing to regret."
+  },
+  {
+    "id": 302,
+    "noiDung": "Make yourself a warm ginger drink. Its gentle spice warms the belly; its scent warms the heart."
+  },
+  {
+    "id": 303,
+    "noiDung": "When you want to criticize, try replacing it with a curious question."
+  },
+  {
+    "id": 304,
+    "noiDung": "A good friend can share silence with you without awkwardness. Treasure such people."
+  },
+  {
+    "id": 305,
+    "noiDung": "November is here; remember the teachers who taught you. A short message can make them glad."
+  },
+  {
+    "id": 306,
+    "noiDung": "No step is too small. Each one brings you closer to what you hope for."
+  },
+  {
+    "id": 307,
+    "noiDung": "Watch the stove's flame, listen to the pot simmer. Cooking can become a meditation."
+  },
+  {
+    "id": 308,
+    "noiDung": "Don't judge a day as bad when it's only half over. The afternoon can still be lovely."
+  },
+  {
+    "id": 309,
+    "noiDung": "Help a child plant a tree and tend it together. The lesson in patience will grow with it."
+  },
+  {
+    "id": 310,
+    "noiDung": "Be gentle with your body as the weather shifts. Drink warm water, sleep enough, keep moving."
+  },
+  {
+    "id": 311,
+    "noiDung": "Some things can't be changed, only accepted. Acceptance is a kind of peace too."
+  },
+  {
+    "id": 312,
+    "noiDung": "Send wishes of peace to all beings, from the tiny ant to the ancient tree."
+  },
+  {
+    "id": 313,
+    "noiDung": "Reread messages before sending. One softer word can keep a smile intact."
+  },
+  {
+    "id": 314,
+    "noiDung": "Each evening, tell someone at home one thing you appreciate about them."
+  },
+  {
+    "id": 315,
+    "noiDung": "Try doing something with your non-dominant hand: brushing teeth, stirring tea. It brings full attention."
+  },
+  {
+    "id": 316,
+    "noiDung": "Be thankful to those who told you the truth, even when hard to hear. Kind truth is a rare gift."
+  },
+  {
+    "id": 317,
+    "noiDung": "On chilly mornings, wake slowly, stretch, and greet your body like an old friend."
+  },
+  {
+    "id": 318,
+    "noiDung": "What you pay attention to grows. Attend to the good in yourself and in others."
+  },
+  {
+    "id": 319,
+    "noiDung": "A day without complaining: see how long you last. If you slip, smile and begin again."
+  },
+  {
+    "id": 320,
+    "noiDung": "Tidy your contacts and delete apps you don't use. A clean digital space lightens the mind."
+  },
+  {
+    "id": 321,
+    "noiDung": "Don't save loving words for special occasions. Say them today, while they can still hear."
+  },
+  {
+    "id": 322,
+    "noiDung": "While waiting, instead of grabbing your phone, look around and notice what's happening."
+  },
+  {
+    "id": 323,
+    "noiDung": "Let one small mistake of someone else's pass without mentioning it. Your heart grows a little wider."
+  },
+  {
+    "id": 324,
+    "noiDung": "Thank the teachers who patiently planted knowledge and character in generations of students."
+  },
+  {
+    "id": 325,
+    "noiDung": "Looking back on a year of learning: what did you discover? Thank all who taught you, including life itself."
+  },
+  {
+    "id": 326,
+    "noiDung": "Take a five-minute break at work; stand up and look far away so your eyes and heart can rest."
+  },
+  {
+    "id": 327,
+    "noiDung": "Look around the room you're in. A roof, a light, a glass of water: such ordinary things deserve gratitude."
+  },
+  {
+    "id": 328,
+    "noiDung": "Write down one worry, and beside it one small step you can take right now."
+  },
+  {
+    "id": 329,
+    "noiDung": "Be kind to yourself when you fail, and you'll have the strength to try again."
+  },
+  {
+    "id": 330,
+    "noiDung": "Take your parents for a walk, or bring your grandparents to the park. A gentle afternoon can become a lasting memory."
+  },
+  {
+    "id": 331,
+    "noiDung": "Watch raindrops resting on a leaf. Everything is beautiful when we're slow enough to see it."
+  },
+  {
+    "id": 332,
+    "noiDung": "Message a friend going through a hard time. Don't wait for them to speak up."
+  },
+  {
+    "id": 333,
+    "noiDung": "Good habits are built through small repetitions. Today, repeat yesterday's good deed."
+  },
+  {
+    "id": 334,
+    "noiDung": "November is ending. Thank the autumn days for their gentleness and stillness."
+  },
+  {
+    "id": 335,
+    "noiDung": "The final month arrives. Slow down before things get hectic, and keep your own breathing rhythm."
+  },
+  {
+    "id": 336,
+    "noiDung": "Put on a warm coat and wrap a scarf around a loved one. Such small care warms more than any heater."
+  },
+  {
+    "id": 337,
+    "noiDung": "Donate good old blankets to people without homes or to families in cold regions."
+  },
+  {
+    "id": 338,
+    "noiDung": "Year's end is a good time to offer the apologies and thanks you still owe. Say them and feel lighter."
+  },
+  {
+    "id": 339,
+    "noiDung": "Sit with a hot cup of tea, look at the grey winter sky, and feel the warmth right in your hands."
+  },
+  {
+    "id": 340,
+    "noiDung": "Nights grow longer; let your sleep grow a little longer too. Winter is for rest and renewal."
+  },
+  {
+    "id": 341,
+    "noiDung": "Every ending opens a beginning. Don't fear what's about to close."
+  },
+  {
+    "id": 342,
+    "noiDung": "Recall the people who came and went this year. Send each a silent thank-you."
+  },
+  {
+    "id": 343,
+    "noiDung": "Cook a hot soup for your family. The warmth of a meal is the warmth of love."
+  },
+  {
+    "id": 344,
+    "noiDung": "Someone is waiting to hear from you. Make the call you keep putting off."
+  },
+  {
+    "id": 345,
+    "noiDung": "A year with unfinished things is okay. Life isn't a race; it's a journey."
+  },
+  {
+    "id": 346,
+    "noiDung": "Light a small lamp in the evening, sit quietly a few minutes, and let it warm your heart."
+  },
+  {
+    "id": 347,
+    "noiDung": "Instead of buying more things, give time: an outing, a meal, a long conversation."
+  },
+  {
+    "id": 348,
+    "noiDung": "Embrace the imperfect parts of yourself. They are part of you too."
+  },
+  {
+    "id": 349,
+    "noiDung": "Make a habit of pausing before each meal to whisper \"thank you.\" Every meal tastes better."
+  },
+  {
+    "id": 350,
+    "noiDung": "Send a handwritten year-end card to a close friend. A few sincere lines mean more than a costly gift."
+  },
+  {
+    "id": 351,
+    "noiDung": "In the cold, think of those working outdoors. Offering them a hot tea says everything."
+  },
+  {
+    "id": 352,
+    "noiDung": "Clean the house at year's end, but also clean the heart: drop resentment, keep love."
+  },
+  {
+    "id": 353,
+    "noiDung": "Sometimes we slow down so the person beside us can keep up. That is love too."
+  },
+  {
+    "id": 354,
+    "noiDung": "Listen to instrumental music, close your eyes, and let each note lead you to stillness."
+  },
+  {
+    "id": 355,
+    "noiDung": "The winter solstice is the longest night. Remember that after it, the days slowly lengthen."
+  },
+  {
+    "id": 356,
+    "noiDung": "In the festive season, remember the lonely. An invitation or small gift can warm their winter."
+  },
+  {
+    "id": 357,
+    "noiDung": "Write down three things you're proud of this year. Don't be shy; you deserve recognition."
+  },
+  {
+    "id": 358,
+    "noiDung": "Sit with family and share a happy memory from the year. Shared laughter is a treasure."
+  },
+  {
+    "id": 359,
+    "noiDung": "However you celebrate, fill today with gentleness and good wishes for everyone."
+  },
+  {
+    "id": 360,
+    "noiDung": "Some hopes haven't come true yet. Hold them gently: not clutching, not discarding."
+  },
+  {
+    "id": 361,
+    "noiDung": "The old year is ending; don't carry needless burdens forward. Set them down here."
+  },
+  {
+    "id": 362,
+    "noiDung": "Gaze at the winter night sky. Stars shine even in the cold, like the hope in your heart."
+  },
+  {
+    "id": 363,
+    "noiDung": "Choose one word for the coming year: \"gentle,\" \"slow,\" \"steady\"... Let it guide you."
+  },
+  {
+    "id": 364,
+    "noiDung": "Thank yourself for making it through a year of effort. You did very well."
+  },
+  {
+    "id": 365,
+    "noiDung": "The year is closing. Sit quietly for a few minutes, breathe slowly, and smile at all that has passed."
+  },
+  {
+    "id": 366,
+    "noiDung": "A leap year gives one extra day. Use the gift to speak lovingly, do good, and rest fully."
+  }
+]
