@@ -1,21 +1,21 @@
 {
   "id": "vu-lan",
-  "ten": "Vu Lan Season",
+  "ten": "Vu Lan (Ullambana) Season",
   "khoangNgayAm": { "tu": { "thang": 7, "ngay": 1 }, "den": { "thang": 7, "ngay": 30 } },
-  "moTa": "Throughout the seventh lunar month, An Nhiên Temple opens the Vu Lan season of gratitude to parents. It is a time to thank our parents, pin on a rose, float a lantern for loved ones who have passed, share a simple vegetarian meal and do small good deeds. Animal release here comes with care: right species, right place, no harm to nature. In a 29-day month, the app ends the season on the last day.",
+  "moTa": "Throughout the seventh lunar month, An Nhiên Pagoda opens the Vu Lan season of gratitude to parents. It is a time to thank our parents, pin on a rose, float a lantern for loved ones who have passed, share a simple vegetarian meal and do small good deeds. Animal release here comes with care: right species, right place, no harm to nature. If the month has only 29 days, the season ends on the 29th.",
   "loiChao": [
     { "id": 1, "noiDung": "Vu Lan season is here. Have you checked in on your parents today?" },
-    { "id": 2, "noiDung": "An Nhiên Temple welcomes you in this month of gratitude to parents." },
-    { "id": 3, "noiDung": "A small rose is waiting at the temple gate for you to pin on." },
+    { "id": 2, "noiDung": "An Nhiên Pagoda welcomes you in this month of gratitude to parents." },
+    { "id": 3, "noiDung": "A small rose is waiting at the pagoda gate for you to pin on." },
     { "id": 4, "noiDung": "Hello. Sit down for a moment and remember those who have loved you." },
     { "id": 5, "noiDung": "Seventh-month drizzle has dampened the yard. Walk slowly, friend." },
     { "id": 6, "noiDung": "You're invited to float a lantern on the lotus pond tonight." },
-    { "id": 7, "noiDung": "In this season of devotion, may your day be gentle with your loved ones." },
-    { "id": 8, "noiDung": "The temple kitchen is cooking vegetarian rice. Come share a simple meal." },
+    { "id": 7, "noiDung": "In this season of filial love, may your day with loved ones be gentle." },
+    { "id": 8, "noiDung": "The pagoda kitchen is cooking vegetarian rice. Come share a simple meal." },
     { "id": 9, "noiDung": "Hello. Is there a thank-you you've been saving for too long?" },
     { "id": 10, "noiDung": "Peaceful Vu Lan! May your family be warm and full of love." },
     { "id": 11, "noiDung": "The evening bell just rang. Share a minute of gratitude for your parents." },
-    { "id": 12, "noiDung": "The season of remembrance has come. The temple always has room for it." }
+    { "id": 12, "noiDung": "The season of remembrance has come. The pagoda always keeps a place for it." }
   ],
   "thongDiep": [
     { "id": 1, "noiDung": "Honoring your parents need not wait until you succeed. A meal with them today already honors them." },
@@ -23,9 +23,9 @@
     { "id": 3, "noiDung": "The rose pinned on during Vu Lan is a gentle reminder: a parent's love always stays close to the heart." },
     { "id": 4, "noiDung": "If your parents have passed, live kindly in the way they hoped. That is the rose that lasts the longest." },
     { "id": 5, "noiDung": "Call your father for no reason at all. Just to ask whether he has eaten today." },
-    { "id": 6, "noiDung": "Remembering those who have passed is not about endless sorrow, but about keeping the good they gave." },
+    { "id": 6, "noiDung": "Remembering those who have passed isn't about endless sorrow, but about keeping the good they gave." },
     { "id": 7, "noiDung": "A simple vegetarian meal lightens the body and settles the heart. Eat slowly, grateful for every grain." },
-    { "id": 8, "noiDung": "Release animals with knowledge: choose native species, return them to the right habitat, never buy them caught for release." },
+    { "id": 8, "noiDung": "Release animals wisely: choose native species, return them to the right habitat, and never buy animals caught just to be freed." },
     { "id": 9, "noiDung": "Never release pet fish, red-eared sliders or other non-native species into rivers and lakes. Love one creature without harming the whole stream." },
     { "id": 10, "noiDung": "Sometimes the finest release is never catching, caging or harming any animal in the first place." },
     { "id": 11, "noiDung": "Tell the children about their grandparents. A story retold is how those before us stay beside us." },
@@ -46,7 +46,7 @@
     { "id": 26, "noiDung": "Tidy the family altar and wipe your grandparents' photo frame. That small act brings you closer to them." },
     { "id": 27, "noiDung": "To help animals, you can support a rescue center, pick up litter by the river or plant another tree." },
     { "id": 28, "noiDung": "Our parents age a little each day without us noticing. Today, take a long look at those hands." },
-    { "id": 29, "noiDung": "Devotion is not measured in gifts but in presence: being there in joy and being there in illness." },
+    { "id": 29, "noiDung": "Devotion isn't measured in gifts but in presence: being there in joy and being there in illness." },
     { "id": 30, "noiDung": "Vu Lan season is closing, but thanking your parents need not wait until next year." }
   ],
   "loiNguyen": [
@@ -72,7 +72,7 @@
     { "id": 20, "noiDung": "May lonely elders have someone come to visit them this Vu Lan." },
     { "id": 21, "noiDung": "I vow to take care of my health, so my parents worry less." },
     { "id": 22, "noiDung": "May my mother get more rest after so many years of hard work." },
-    { "id": 23, "noiDung": "I vow to learn to understand my parents, even the things I did not understand before." },
+    { "id": 23, "noiDung": "I vow to learn to understand my parents, even the things I didn't understand before." },
     { "id": 24, "noiDung": "I send my love to the family member I never got to say goodbye to." },
     { "id": 25, "noiDung": "I vow to cook a vegetarian meal with my family and sit down to eat together." },
     { "id": 26, "noiDung": "May children separated from their parents soon be reunited with their families." },
@@ -82,26 +82,26 @@
     { "id": 30, "noiDung": "May my heart after this Vu Lan be softer and more loving toward others." }
   ],
   "nhiemVu": [
-    { "id": "cai-bong-hong", "ten": "Pin a rose on your shirt", "moTa": "Choose a virtual rose at the temple gate and pin it on your character, with one line about your parents.", "phanThuong": "A pinned rose for your character" },
+    { "id": "cai-bong-hong", "ten": "Pin a rose on your shirt", "moTa": "Choose a virtual rose at the pagoda gate and pin it on your character, with one line about your parents.", "phanThuong": "A pinned rose for your character" },
     { "id": "loi-cam-on-cha-me", "ten": "Thank your parents", "moTa": "Call, text or tell your parents, or whoever raised you, one sincere thank-you.", "phanThuong": "A family photo frame on the meditation room wall" },
     { "id": "tha-den-hoa-dang", "ten": "Float a lantern", "moTa": "Float a virtual lantern on the lotus pond and write a few words remembering a loved one who has passed.", "phanThuong": "A lantern drifting on the lotus pond" },
     { "id": "bua-com-chay", "ten": "One vegetarian meal", "moTa": "Eat one simple vegetarian meal today and note the dish you enjoyed most.", "phanThuong": "A vegetarian meal tray in the dining hall" },
-    { "id": "ky-niem-gia-dinh", "ten": "Share a memory", "moTa": "Write a fond memory of your grandparents or parents in the temple's book of gratitude.", "phanThuong": "A cloth-bound book of gratitude on the writing desk" },
-    { "id": "phong-sinh-hieu-biet", "ten": "Release with knowledge", "moTa": "Read the guide card on responsible release, then return a virtual fish to the water where it belongs.", "phanThuong": "A school of native fish in the temple pond" },
+    { "id": "ky-niem-gia-dinh", "ten": "Share a memory", "moTa": "Write a fond memory of your grandparents or parents in the pagoda's book of gratitude.", "phanThuong": "A cloth-bound book of gratitude on the writing desk" },
+    { "id": "phong-sinh-hieu-biet", "ten": "Release with knowledge", "moTa": "Read the guide card on responsible release, then return a virtual fish to the water where it belongs.", "phanThuong": "A school of native fish in the pagoda pond" },
     { "id": "viec-thien-nho", "ten": "A small good deed each day", "moTa": "Do one good deed in real life, like giving up a seat, helping someone or picking up litter, then mark it done.", "phanThuong": "A small lotus pot by the steps" },
     { "id": "nho-on-thay-co", "ten": "Remember your mentors", "moTa": "Send a thank-you to a teacher, mentor or anyone who guided you like family.", "phanThuong": "A pot of lotus tea on the meditation table" },
     { "id": "lau-ban-tho", "ten": "Tidy the family altar", "moTa": "Clean the ancestral altar at home, or the virtual altar in the app, and put out a fresh vase of flowers.", "phanThuong": "A vase of white chrysanthemums on the altar" },
     { "id": "chuong-chieu-vu-lan", "ten": "The evening bell of Vu Lan", "moTa": "On the full-moon night of the seventh month, sit quietly for 5 minutes with the bell and send love to your parents and grandparents.", "phanThuong": "A string of white lanterns around the bell tower" }
   ],
   "trangTri": [
-    "Red and white roses at the temple gate",
+    "Red and white roses at the pagoda gate",
     "Floating lanterns on the lotus pond",
     "A string of white lanterns around the bell tower",
     "A vase of white chrysanthemums on the altar",
     "A vegetarian meal tray in the dining hall",
     "A book of gratitude on the writing desk",
     "Lotus blooms in the seventh-month rain",
-    "A school of native fish in the temple pond",
+    "A school of native fish in the pagoda pond",
     "A family photo frame in the meditation room",
     "Rows of small candles along the path"
   ],
@@ -110,12 +110,12 @@
       "id": "bong-hong-nho-on",
       "tieuDe": "The Rose of Gratitude",
       "tho": [
-        "At Vu Lan I think of mother and father",
-        "Of evening rice, warm kitchen, loving home",
+        "At Vu Lan I think of those who raised me",
+        "Of evening rice and home, so warm and free",
         "The flower on my shirt holds all I owe",
-        "A thank-you for the long road they have known"
+        "A thank-you for the love they chose to show"
       ],
-      "loiGiai": "A warm evening meal and a roof against sun and rain are so familiar that we rarely remember who carried them. This reading invites you to pause during Vu Lan and see the long road your parents walked for you. The flower on your shirt is only a small sign; what matters is gratitude spoken aloud and shown in deeds, while your parents are there to hear it.",
+      "loiGiai": "A warm evening meal and a roof against sun and rain are so familiar that we rarely remember who carried them. This verse invites you to pause during Vu Lan and see the long road your parents walked for you. The flower on your shirt is only a small sign; what matters is gratitude spoken aloud and shown in deeds, while your parents are there to hear it.",
       "loiKhuyen": "Today, tell your parents or whoever raised you a very specific thank-you for something they did for you."
     },
     {
@@ -125,9 +125,9 @@
         "A lantern drifts along the river's flow",
         "Its quiet light a lotus, pink aglow",
         "I send with it my longing, deep and wide",
-        "Love remains, and sorrow need not bide"
+        "The sorrow fades, but love stays at my side"
       ],
-      "loiGiai": "The lantern drifts across the water, carrying your remembrance of loved ones who have passed. This reading does not ask you to forget, nor to grieve forever. Longing is sent off gently, while love stays in the way you live each day. Those who have gone far are still present in the good habits, the advice and the smiles they left in you.",
+      "loiGiai": "The lantern drifts across the water, carrying your remembrance of loved ones who have passed. This verse doesn't ask you to forget, nor to grieve forever. Longing is sent off gently, while love stays in the way you live each day. Those who have gone far are still present in the good habits, the advice and the smiles they left in you.",
       "loiKhuyen": "Write a few lines about one good thing a departed loved one taught you, then choose a day this week to live it out."
     },
     {
@@ -135,11 +135,11 @@
       "tieuDe": "The Right Water",
       "tho": [
         "Release a fish into the stream it knows",
-        "Back to its home, not crowding where it goes",
-        "Love every creature, keep the land in bloom",
-        "Kindness with wisdom lets a smile have room"
+        "Its native home, where it belongs and grows",
+        "Love every creature, keep the rivers clear",
+        "With kindness and with wisdom, joy is near"
       ],
-      "loiGiai": "Compassion for all creatures is precious, but compassion without understanding can sometimes do harm. This reading reminds you that every species has its own familiar water; releasing the wrong species in the wrong place can upset a whole ecosystem. The finest release is never catching animals to set free, choosing native species and the right place, or simply keeping rivers clean and plants green. Kindness joined with knowledge makes joy complete.",
+      "loiGiai": "Compassion for all creatures is precious, but compassion without understanding can sometimes do harm. This verse reminds you that every species has its own familiar water; releasing the wrong species in the wrong place can upset a whole ecosystem. The finest release is never catching animals to set free, choosing native species and the right place, or simply keeping rivers clean and plants green. Kindness joined with knowledge makes joy complete.",
       "loiKhuyen": "Before doing a good deed, learn a little about it first. This season, try picking up litter by a lake or planting a tree instead of buying fish to release."
     }
   ]

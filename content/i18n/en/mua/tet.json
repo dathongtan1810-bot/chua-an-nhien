@@ -1,34 +1,34 @@
 {
   "id": "tet",
-  "ten": "Lunar New Year Season",
+  "ten": "Lunar New Year (Tết) Season",
   "khoangNgayAm": { "tu": { "thang": 12, "ngay": 23 }, "den": { "thang": 1, "ngay": 15 } },
-  "moTa": "From the Kitchen Gods' farewell on the 23rd of the last lunar month to the first full moon of the new year, An Nhiên Temple wears its spring colors. It is a season for tidying the home and the heart, thanking the old year, keeping a quiet New Year's Eve and starting the new year gently. Here, lucky envelopes hold kind wishes, and a fresh green sprig reminds us to grow what is good.",
+  "moTa": "From the Kitchen Gods' farewell on the 23rd of the last lunar month to the first full moon of the new year, An Nhiên Pagoda wears its spring colors. It is a season for tidying the home and the heart, thanking the old year, keeping a quiet New Year's Eve and starting the new year gently. Here, red envelopes hold kind wishes, and a fresh green sprig reminds us to grow what is good.",
   "loiChao": [
-    { "id": 1, "noiDung": "Spring has reached the temple yard. Come in, shake off the road and rest awhile." },
-    { "id": 2, "noiDung": "An Nhiên Temple wishes you a gentle new year, warm enough and joyful enough." },
+    { "id": 1, "noiDung": "Spring has reached the pagoda yard. Come in, shake off the road and rest awhile." },
+    { "id": 2, "noiDung": "An Nhiên Pagoda wishes you a gentle new year, warm enough and joyful enough." },
     { "id": 3, "noiDung": "Apricot blossoms are opening; the little monk is sweeping the yard for you." },
     { "id": 4, "noiDung": "The year is ending. Let's tidy one corner of the heart together." },
     { "id": 5, "noiDung": "Hello on this spring day. Have you smiled at someone yet today?" },
-    { "id": 6, "noiDung": "Every kitchen is glowing. The temple sends you a little New Year warmth." },
+    { "id": 6, "noiDung": "Every kitchen is glowing. The pagoda sends you a little New Year warmth." },
     { "id": 7, "noiDung": "The old year is closing. Thank you for walking with us all the way here." },
     { "id": 8, "noiDung": "Happy New Year! An envelope of kind wishes is waiting for you to open." },
     { "id": 9, "noiDung": "The spring breeze is soft. Take one deep breath before you begin." },
     { "id": 10, "noiDung": "The Kitchen Gods have set off on their journey. Time to tidy up at home too." },
     { "id": 11, "noiDung": "Happy New Year! May you begin with one small, kind deed." },
-    { "id": 12, "noiDung": "The first full moon of the year is near and waiting for you to watch it with us." }
+    { "id": 12, "noiDung": "The first full moon of the year is near. Come and watch it with us." }
   ],
   "thongDiep": [
     { "id": 1, "noiDung": "Wiping a window also wipes a little dust from your own eyes. Look outside and the spring sky seems clearer." },
-    { "id": 2, "noiDung": "Give away what you have not used in a long time to someone who needs it. An airy home makes an airy heart." },
+    { "id": 2, "noiDung": "Give away what you haven't used in a long time to someone who needs it. An airy home makes an airy heart." },
     { "id": 3, "noiDung": "Before the new year arrives, name three people who helped you this year and send each of them a thank-you." },
-    { "id": 4, "noiDung": "Tết does not need a lavish feast. A meal with the whole family at the table is the finest feast there is." },
-    { "id": 5, "noiDung": "The Kitchen God goes up to tell the story of your kitchen. What warm story would you like it to tell?" },
+    { "id": 4, "noiDung": "Tết doesn't need a lavish feast. A meal with the whole family at the table is the finest feast there is." },
+    { "id": 5, "noiDung": "The Kitchen Gods rise to heaven to tell the story of your kitchen. What warm story would you like them to tell?" },
     { "id": 6, "noiDung": "The old year had clumsy moments and stumbles. You are still here, and that already deserves praise." },
     { "id": 7, "noiDung": "At the stroke of the new year, try a moment of silence. Hear your breath, and the new year knocking." },
     { "id": 8, "noiDung": "A New Year wish is precious for its sincerity, not its flourish. A simple \"stay well\" is warm enough." },
-    { "id": 9, "noiDung": "A lucky envelope places a wish in someone's hands. What is worth keeping longest is the heart inside it." },
-    { "id": 10, "noiDung": "A young sprig brought home is not for holding on to luck, but a reminder to help good things sprout." },
-    { "id": 11, "noiDung": "A new year does not require a new you. Being a little kinder than yesterday is enough." },
+    { "id": 9, "noiDung": "A red envelope places a wish in someone's hands. What is worth keeping longest is the heart inside it." },
+    { "id": 10, "noiDung": "A young sprig brought home isn't a charm to cling to; it is a reminder to help good things sprout." },
+    { "id": 11, "noiDung": "A new year doesn't require a new you. Being a little kinder than yesterday is enough." },
     { "id": 12, "noiDung": "Some cannot make it home for Tết. A phone call longer than usual is also a way of being together." },
     { "id": 13, "noiDung": "Sweep the house from the inside out, and untangle knots starting from your own heart. Both need patience." },
     { "id": 14, "noiDung": "Let the sticky rice cake remind you: good things need time, a steady fire and someone to watch over them." },
@@ -44,7 +44,7 @@
     { "id": 24, "noiDung": "Tidying the ancestral altar is a chance to tell the children an old story from the family." },
     { "id": 25, "noiDung": "Fireworks blaze and fade; the smiles of loved ones remain. Look at them a little longer." },
     { "id": 26, "noiDung": "If you feel sad this Tết, that is all right. Allow yourself to slow down and be comforted." },
-    { "id": 27, "noiDung": "Open the door to guests, and open your heart to what is not quite as you wished. Spring is wide; so can you be." },
+    { "id": 27, "noiDung": "Open the door to guests, and open your heart to what isn't quite as you wished. Spring is wide, and so can your heart be." },
     { "id": 28, "noiDung": "Plant one small habit at the start of the year: drink enough water, walk ten minutes, or read a few pages." },
     { "id": 29, "noiDung": "The one who gives a wish is glad, and so is the one who receives it. New Year joy multiplies when shared." },
     { "id": 30, "noiDung": "The first full moon of the year is here. Looking back on these two weeks, which intention have you kept?" }
@@ -65,14 +65,14 @@
     { "id": 13, "noiDung": "At the turn of the year, may my heart be still and content with what I have." },
     { "id": 14, "noiDung": "I vow to make peace with someone I was angry with, so the new year feels lighter." },
     { "id": 15, "noiDung": "May everyone who works hard at year's end get a real day of rest." },
-    { "id": 16, "noiDung": "I vow to keep my green sprig like a promise to live kindly with everyone." },
+    { "id": 16, "noiDung": "I vow to keep my green sprig as a promise to live kindly with everyone." },
     { "id": 17, "noiDung": "May those who are alone during Tết have someone visit and ask after them." },
     { "id": 18, "noiDung": "This new year I vow to spend wisely, work honestly and share what I can." },
     { "id": 19, "noiDung": "May my siblings and I care for each other and sit down to talk things through." },
     { "id": 20, "noiDung": "I vow to look after my health, sleep enough and eat in moderation." },
     { "id": 21, "noiDung": "I send my gratitude to the ancestors who built the family I have today." },
     { "id": 22, "noiDung": "May I find the courage this year to begin what I have long been dreaming of." },
-    { "id": 23, "noiDung": "I vow to give a heartfelt gift of the spirit to someone I love at the start of the year." },
+    { "id": 23, "noiDung": "I vow to give someone I love a gift of time and care at the start of the year." },
     { "id": 24, "noiDung": "May everyone traveling home for Tết arrive and return safely." },
     { "id": 25, "noiDung": "I vow not to let last year's sorrows follow me too far into the new one." },
     { "id": 26, "noiDung": "May all beings have a peaceful spring, and may the trees grow green and strong." },
@@ -82,16 +82,16 @@
     { "id": 30, "noiDung": "On this first full moon, may my heart feel whole and peaceful like the moon." }
   ],
   "nhiemVu": [
-    { "id": "tien-ong-tao", "ten": "Farewell to the Kitchen Gods", "moTa": "On the 23rd of the last lunar month, set out a virtual farewell tray in the temple kitchen and write one warm thing about your own kitchen.", "phanThuong": "A glowing hearth for the temple kitchen" },
-    { "id": "don-nha-don-long", "ten": "Tidy the home, tidy the heart", "moTa": "Sweep the virtual temple yard, then write down one thing you want to let go of before the new year.", "phanThuong": "A small bamboo broom hung by the porch" },
+    { "id": "tien-ong-tao", "ten": "Farewell to the Kitchen Gods", "moTa": "On the 23rd of the last lunar month, set out a virtual farewell tray in the pagoda kitchen and write one warm thing about your own kitchen.", "phanThuong": "A glowing hearth for the pagoda kitchen" },
+    { "id": "don-nha-don-long", "ten": "Tidy the home, tidy the heart", "moTa": "Sweep the virtual pagoda yard, then write down one thing you want to let go of before the new year.", "phanThuong": "A small bamboo broom hung by the porch" },
     { "id": "loi-cam-on-nam-cu", "ten": "Thank the old year", "moTa": "Write three things you are grateful for from the past year and hang them on the Wishing Tree.", "phanThuong": "A red silk ribbon on the Wishing Tree" },
-    { "id": "goi-banh-chung", "ten": "Wrap rice cakes with the little monk", "moTa": "Help the little monk lay the leaves, measure the rice and wrap a virtual bánh chưng to share with temple visitors.", "phanThuong": "A plate of green rice cakes on the tea table" },
-    { "id": "tinh-tam-giao-thua", "ten": "Stillness on New Year's Eve", "moTa": "Sit quietly for 5 minutes listening to the temple bell as the old year turns into the new.", "phanThuong": "A New Year's Eve lantern in the yard" },
+    { "id": "goi-banh-chung", "ten": "Wrap rice cakes with the little monk", "moTa": "Help the little monk lay the leaves, measure the rice and wrap a virtual bánh chưng to share with pagoda visitors.", "phanThuong": "A plate of green rice cakes on the tea table" },
+    { "id": "tinh-tam-giao-thua", "ten": "Stillness on New Year's Eve", "moTa": "Sit quietly for 5 minutes listening to the pagoda bell as the old year turns into the new.", "phanThuong": "A New Year's Eve lantern in the yard" },
     { "id": "phong-bao-loi-chuc", "ten": "An envelope of wishes", "moTa": "Write a New Year wish, tuck it into a virtual red envelope and send it to a friend in the app.", "phanThuong": "A red envelope embroidered with apricot blossoms" },
-    { "id": "hai-loc-dau-xuan", "ten": "Pick a spring sprig", "moTa": "Pick a young sprig in the temple garden and give it a meaning: one good thing you want to grow.", "phanThuong": "A vase of fresh sprigs by the window" },
-    { "id": "chuc-tet-nguoi-than", "ten": "New Year wishes for loved ones", "moTa": "Call or message a sincere wish to a grandparent, parent or a friend you have not seen in a while.", "phanThuong": "Red couplets on both sides of the gate" },
-    { "id": "que-dau-nam", "ten": "First fortune stick of the year", "moTa": "Draw a fortune stick for the new year and note one intention you take from its advice.", "phanThuong": "A lacquered fortune-stick cylinder on the altar" },
-    { "id": "ngam-trang-thuong-nguyen", "ten": "First full moon of the year", "moTa": "On the 15th night of the first lunar month, step into the temple yard, watch the moon and review your New Year intentions.", "phanThuong": "Full-moon lanterns along the path" }
+    { "id": "hai-loc-dau-xuan", "ten": "Pick a spring sprig", "moTa": "Pick a young sprig in the pagoda garden and give it a meaning: one good thing you want to grow.", "phanThuong": "A vase of fresh sprigs by the window" },
+    { "id": "chuc-tet-nguoi-than", "ten": "New Year wishes for loved ones", "moTa": "Call or message a sincere wish to a grandparent, parent or a friend you haven't seen in a while.", "phanThuong": "Red couplets on both sides of the gate" },
+    { "id": "que-dau-nam", "ten": "First verse of the year", "moTa": "Draw a verse for the new year and note one intention you take from its advice.", "phanThuong": "A lacquered cylinder of verse sticks on the altar" },
+    { "id": "ngam-trang-thuong-nguyen", "ten": "First full moon of the year", "moTa": "On the 15th night of the first lunar month, step into the pagoda yard, watch the moon and review your New Year intentions.", "phanThuong": "Full-moon lanterns along the path" }
   ],
   "trangTri": [
     "Yellow apricot blossoms before the main hall",
@@ -103,7 +103,7 @@
     "Green rice cakes stacked on a bamboo tray",
     "Red envelopes hanging on the Wishing Tree",
     "A vase of fresh sprigs by the window",
-    "A glowing hearth in the temple kitchen",
+    "A glowing hearth in the pagoda kitchen",
     "Pots of yellow chrysanthemums along the steps"
   ],
   "queDacBiet": [
@@ -112,23 +112,23 @@
       "tieuDe": "Tidying for Spring",
       "tho": [
         "At year's end I sweep the porch clean",
-        "And open my heart like a door to spring's green",
+        "And open my heart to spring's fresh green",
         "The old steps shine on every side",
-        "A new year arrives with joy open wide"
+        "The new year enters, joy open wide"
       ],
-      "loiGiai": "Sweeping the porch is a familiar end-of-year task, but this reading reminds you to tidy the hidden corners of your heart as well. Whatever still weighs on you, name it, thank it for the lesson it left, then gently put it away. When the steps are clean, spring sunlight has room to come in. When the heart is clear, the joy of the new year has room to stay.",
+      "loiGiai": "Sweeping the porch is a familiar end-of-year task, but this verse reminds you to tidy the hidden corners of your heart as well. Whatever still weighs on you, name it, thank it for the lesson it left, then gently put it away. When the steps are clean, spring sunlight has room to come in. When the heart is clear, the joy of the new year has room to stay.",
       "loiKhuyen": "Choose one small corner of your home to clean thoroughly today, and at the same time write down one thing you want to let go of before New Year's Eve."
     },
     {
       "id": "nen-huong-giao-thua",
       "tieuDe": "Incense at Midnight",
       "tho": [
-        "At the year's turning, incense rising slow",
-        "I thank the old year for the warm meals I know",
+        "As the year turns, the incense rises slow",
+        "I thank the old year for the warmth I know",
         "Into the new I step with easy stride",
-        "Sowing good seeds in kind soil, side by side"
+        "Sowing good seeds, with kindness as my guide"
       ],
-      "loiGiai": "The moment of New Year's Eve is when the old and new years touch hands. This reading invites you to look back at the warm meals and the hands that held you up all year, and to say thank you. Gratitude is the best seed to carry into the new year. There is no need to rush into grand promises; just take light steps, sow gentle seeds and tend them with patience.",
+      "loiGiai": "The moment of New Year's Eve is when the old and new years touch hands. This verse invites you to look back at the warm meals and the hands that held you up all year, and to say thank you. Gratitude is the best seed to carry into the new year. There is no need to rush into grand promises; just take light steps, sow gentle seeds and tend them with patience.",
       "loiKhuyen": "On New Year's Eve, spend a few quiet minutes thanking one specific person, then choose one small kind act to do on the morning of the first day."
     },
     {
@@ -136,11 +136,11 @@
       "tieuDe": "A Spring Sprig",
       "tho": [
         "In early spring I pick a tender shoot",
-        "And bring it home where hopes can take root",
-        "The truest gift is a green bud in the heart",
-        "Tend it each day and let it grow, part by part"
+        "And bring it home, where hopes can take root",
+        "The truest gift's a green bud in the heart",
+        "Tend it each day; that's how good things start"
       ],
-      "loiGiai": "The New Year sprig is only a young branch; its value lies in the meaning you give it. This reading says the real gift is the green bud sprouting in your heart: a dream, a good habit, a relationship you want to nurture. Every young bud is fragile at first. It grows by being watered steadily each day, not by one big wish.",
+      "loiGiai": "The New Year sprig is only a young branch; its value lies in the meaning you give it. This verse says the real gift is the green bud sprouting in your heart: a dream, a good habit, a relationship you want to nurture. Every young bud is fragile at first. It grows by being watered steadily each day, not by one big wish.",
       "loiKhuyen": "Give your sprig a name this year in the form of one concrete task, and spend ten minutes on it every day during the first lunar month."
     }
   ]

@@ -17,12 +17,12 @@
   {
     "id": 4,
     "chuDe": "gia-dao",
-    "noiDung": "I vow to call Mum every Sunday evening, however busy I am."
+    "noiDung": "I vow to call Mom every Sunday evening, however busy I am."
   },
   {
     "id": 5,
     "chuDe": "gia-dao",
-    "noiDung": "Working far from home, I hope to make it back this Tết to hug my grandparents."
+    "noiDung": "Working far from home, I hope to make it back this Lunar New Year (Tết) to hug my grandparents."
   },
   {
     "id": 6,
@@ -47,7 +47,7 @@
   {
     "id": 10,
     "chuDe": "gia-dao",
-    "noiDung": "I vow to help Mum with chores without being reminded."
+    "noiDung": "I vow to help Mom with chores without being reminded."
   },
   {
     "id": 11,
@@ -57,7 +57,7 @@
   {
     "id": 12,
     "chuDe": "gia-dao",
-    "noiDung": "I hope my spouse and I learn to let one word go when we are angry."
+    "noiDung": "I hope my spouse and I learn to hold back a word when we're angry."
   },
   {
     "id": 13,
@@ -127,7 +127,7 @@
   {
     "id": 26,
     "chuDe": "gia-dao",
-    "noiDung": "As a grandfather, I hope my grandchildren are good and visit often."
+    "noiDung": "As a grandfather, I hope my grandchildren grow up good and visit often."
   },
   {
     "id": 27,
@@ -147,7 +147,7 @@
   {
     "id": 30,
     "chuDe": "gia-dao",
-    "noiDung": "I vow to care for my mother attentively through her frail days."
+    "noiDung": "I vow to care for my mother attentively as she grows frail."
   },
   {
     "id": 31,
@@ -167,7 +167,7 @@
   {
     "id": 34,
     "chuDe": "gia-dao",
-    "noiDung": "I vow to learn to say \"thank you\" and \"I love you, Mum\" out loud."
+    "noiDung": "I vow to learn to say \"thank you\" and \"I love you, Mom\" out loud."
   },
   {
     "id": 35,
@@ -427,7 +427,7 @@
   {
     "id": 86,
     "chuDe": "suc-khoe",
-    "noiDung": "I hope my mind grows lighter and less anxious for no reason."
+    "noiDung": "I hope my mind grows lighter and less prone to needless worry."
   },
   {
     "id": 87,
@@ -502,7 +502,7 @@
   {
     "id": 101,
     "chuDe": "suc-khoe",
-    "noiDung": "I hope my wife's childbirth goes safely for both mother and baby."
+    "noiDung": "I hope my wife's delivery goes safely for both mother and baby."
   },
   {
     "id": 102,
@@ -517,7 +517,7 @@
   {
     "id": 104,
     "chuDe": "suc-khoe",
-    "noiDung": "I hope my parents eat well, sleep well and stay mostly free of illness in old age."
+    "noiDung": "I hope my parents eat well, sleep well and stay healthy in their old age."
   },
   {
     "id": 105,
@@ -557,7 +557,7 @@
   {
     "id": 112,
     "chuDe": "suc-khoe",
-    "noiDung": "I hope to be gentle with myself on my depressed days."
+    "noiDung": "I hope to be gentle with myself on days when depression weighs on me."
   },
   {
     "id": 113,
@@ -572,7 +572,7 @@
   {
     "id": 115,
     "chuDe": "suc-khoe",
-    "noiDung": "I vow to take the stairs instead of the lift, a little every day."
+    "noiDung": "I vow to take the stairs instead of the elevator, a little every day."
   },
   {
     "id": 116,
@@ -662,12 +662,12 @@
   {
     "id": 133,
     "chuDe": "hoc-hanh",
-    "noiDung": "I vow to keep tidy notes so revision is easier."
+    "noiDung": "I vow to keep tidy notes so reviewing is easier."
   },
   {
     "id": 134,
     "chuDe": "hoc-hanh",
-    "noiDung": "I hope my daughter sits her high school entrance exam with a light heart."
+    "noiDung": "I hope my daughter takes her high school entrance exam with a light heart."
   },
   {
     "id": 135,
@@ -1087,7 +1087,7 @@
   {
     "id": 218,
     "chuDe": "binh-an",
-    "noiDung": "I vow to give way, not push in, and stay calm in traffic jams."
+    "noiDung": "I vow to yield, not cut in, and stay calm in traffic jams."
   },
   {
     "id": 219,
@@ -1187,7 +1187,7 @@
   {
     "id": 238,
     "chuDe": "binh-an",
-    "noiDung": "May everyone who passes through the temple gate take home a little peace."
+    "noiDung": "May everyone who passes through the pagoda gate take home a little peace."
   },
   {
     "id": 239,
@@ -1307,7 +1307,7 @@
   {
     "id": 262,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to Mum for all the sleepless nights whenever I was sick."
+    "noiDung": "I'm grateful to Mom for all the sleepless nights whenever I was sick."
   },
   {
     "id": 263,
@@ -1337,7 +1337,7 @@
   {
     "id": 268,
     "chuDe": "cau-sieu",
-    "noiDung": "Missing Mum, I vow to keep alive the dishes and lullabies she left us."
+    "noiDung": "Missing Mom, I vow to keep alive the dishes and lullabies she left us."
   },
   {
     "id": 269,
@@ -1357,7 +1357,7 @@
   {
     "id": 272,
     "chuDe": "cau-sieu",
-    "noiDung": "I vow to care for Mum for both of us, now that Dad is gone."
+    "noiDung": "I vow to care for Mom for both of us, now that Dad is gone."
   },
   {
     "id": 273,
@@ -1392,7 +1392,7 @@
   {
     "id": 279,
     "chuDe": "cau-sieu",
-    "noiDung": "I hope Mum's smile stays forever in our family's memories."
+    "noiDung": "I hope Mom's smile stays forever in our family's memories."
   },
   {
     "id": 280,
