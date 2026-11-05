@@ -27,3 +27,10 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
 21. **Hương** giữ trong bộ nhớ (3 phút) và ghi DB (giữ 2 ngày) để khôi phục lư hương sau khi server khởi động lại.
 22. **Phòng riêng** chỉ trong bộ nhớ (không cần bền); khi scale nhiều instance cần Redis adapter (xem DEPLOY.md).
 23. **Một instance**: trạng thái realtime (presence, hương, rate limit) ở bộ nhớ → chạy 1 instance. Scale ngang cần `@socket.io/redis-adapter` + chuyển limiter sang Redis + Postgres.
+24. **Chống chặn nhầm** (phát hiện khi chạy 300 lời nguyện mẫu của nhánh nội dung — trước khi sửa chặn nhầm 139/300):
+    - Bản nén chỉ so **theo ranh giới token** (nối token i..j phải BẰNG từ cấm đã nén), không so chuỗi con ("Con nguyện" ≠ "con ngu").
+    - Văn bản **có dấu** chỉ so với dạng có dấu của từ cấm; so không dấu chỉ áp lên đoạn văn bản **không dấu** ("chỗ để" ≠ "chó đẻ").
+      Hệ quả: người gõ không dấu có thể bị chặn nhầm các cụm trùng âm — chấp nhận, vì họ vẫn sửa được và báo cáo/kiểm duyệt bù lại.
+    - Quảng cáo chia từ khoá mạnh (chặn ngay) và yếu ("giảm giá", "liên hệ"… cần ≥ 2 từ).
+    - Bỏ khỏi danh sách mặc định các từ hay xuất hiện trong lời nguyện thật ("con chó", "óc chó", "ma túy", "tự tử", "khủng bố"...).
+    - Test `filter.test.ts` chạy toàn bộ `test/fixtures/loi-nguyen-mau*.json` (sao chép từ `content/` nhánh nội dung) và yêu cầu 0 chặn nhầm.

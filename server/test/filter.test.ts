@@ -22,6 +22,24 @@ describe('ContentFilter', () => {
     }
   });
 
+  it('không chặn nhầm 300 lời nguyện mẫu (vi + en) của nhánh nội dung', () => {
+    for (const file of ['loi-nguyen-mau.json', 'loi-nguyen-mau.en.json']) {
+      const arr = JSON.parse(fs.readFileSync(new URL(`./fixtures/${file}`, import.meta.url), 'utf8')) as Array<{ noiDung: string }>;
+      expect(arr.length).toBeGreaterThan(50);
+      const rejected = arr.map((x) => ({ t: x.noiDung, r: f.check(x.noiDung) })).filter((x) => !x.r.ok);
+      expect(rejected.map((x) => `${x.r.reason}:${x.r.match} | ${x.t}`)).toEqual([]);
+    }
+  });
+
+  it('văn bản có dấu không bị so khớp không dấu (tránh chặn nhầm)', () => {
+    for (const t of ['Đặt chỗ để xe gọn gàng', 'Mệt ở chỗ làm', 'Con nguyện sống tốt', 'Ghi chép cho dễ', 'Mong con lớn nhanh', 'Các con ngoan']) {
+      expect(bad(t), t).toMatchObject({ ok: true });
+    }
+    // nhưng gõ không dấu vẫn bắt
+    expect(bad('cho de').reason).toBe('banned_word');
+    expect(bad('thang ngu').reason).toBe('banned_word');
+  });
+
   it('chặn từ cấm có dấu và không dấu', () => {
     expect(bad('đồ lồn').reason).toBe('banned_word');
     expect(bad('dit me may').reason).toBe('banned_word');
@@ -56,7 +74,8 @@ describe('ContentFilter', () => {
   it('chặn quảng cáo', () => {
     expect(bad('Kết bạn zalo nhé').reason).toBe('ads');
     expect(bad('nha cai uy tin').reason).toBe('ads');
-    expect(bad('Khuyến mãi lớn').reason).toBe('ads');
+    expect(bad('Khuyến mãi lớn, liên hệ ngay').reason).toBe('ads');
+    expect(bad('Con nguyện không mua chỉ vì giảm giá').ok).toBe(true); // 1 từ yếu thì cho qua
   });
 
   it('kiểm tra độ dài & rỗng & spam', () => {

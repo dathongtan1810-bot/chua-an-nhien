@@ -77,6 +77,8 @@ interface Pattern {
   tokens: string[]; // dạng có dấu (đã chuẩn hoá)
   plain: string[]; // dạng bỏ dấu
   compact: string; // bỏ dấu, nối liền
+  compactMarked: string; // có dấu, nối liền
+  hasMark: boolean;
   accentStrict: boolean;
 }
 
@@ -86,7 +88,15 @@ function compile(word: string, unaccentedAlso: Set<string>): Pattern | null {
   const plain = tokens.map(stripDiacritics);
   const hasMark = tokens.some((t) => VIET_DIACRITIC.test(t));
   const accentStrict = tokens.length === 1 && hasMark && !unaccentedAlso.has(plain[0]!);
-  return { word, tokens, plain, compact: collapseRepeats(plain.join('')), accentStrict };
+  return { word, tokens, plain, compact: collapseRepeats(plain.join('')), compactMarked: collapseRepeats(tokens.join('')), hasMark, accentStrict };
+}
+
+function seqMatchWhere(hay: string[], needle: string[], ok: (i: number) => boolean): boolean {
+  outer: for (let i = 0; i + needle.length <= hay.length; i++) {
+    for (let j = 0; j < needle.length; j++) if (!ok(i + j) || hay[i + j] !== needle[j]) continue outer;
+    return true;
+  }
+  return false;
 }
 
 function seqIndexOf(hay: string[], needle: string[]): number {
@@ -95,6 +105,23 @@ function seqIndexOf(hay: string[], needle: string[]): number {
     return i;
   }
   return -1;
+}
+
+/**
+ * Bản nén khớp theo ranh giới token: nối các token liên tiếp i..j và so BẰNG với từ cấm đã nén.
+ * Bắt "mấtdạy", "khốnnạn" (viết liền) mà không khớp nhầm "con nguyện" với "con ngu".
+ */
+function alignedCompactMatch(plain: string[], compact: string, ok: (i: number) => boolean): boolean {
+  for (let i = 0; i < plain.length; i++) {
+    let acc = '';
+    for (let j = i; j < plain.length; j++) {
+      if (!ok(j)) break;
+      acc = collapseRepeats(acc + plain[j]!);
+      if (acc.length > compact.length + 2) break;
+      if (acc === compact) return true;
+    }
+  }
+  return false;
 }
 
 // ---- Link / email / điện thoại / quảng cáo -------------------------------
@@ -130,11 +157,15 @@ function hasPhone(text: string): boolean {
   return false;
 }
 
+/** Từ khoá quảng cáo "mạnh": 1 lần là chặn. */
 export const DEFAULT_ADS_KEYWORDS = [
-  'zalo', 'telegram', 'tele', 'inbox', 'ib mình', 'ib em', 'kết bạn', 'add friend', 'liên hệ', 'hotline', 'sđt', 'sdt', 'số điện thoại',
-  'khuyến mãi', 'giảm giá', 'mã giảm', 'freeship', 'mua ngay', 'đặt hàng', 'order', 'shopee', 'lazada', 'tiktok shop',
-  'kiếm tiền', 'việc nhẹ lương cao', 'vay tiền', 'vay vốn', 'nhà cái', 'cá cược', 'cá độ', 'casino', 'lô đề', 'tài xỉu', 'nổ hũ', 'bắn cá',
-  'đăng ký ngay', 'click', 'follow', 'subscribe', 'sub kênh', 'kênh youtube', 'fanpage', 'crypto', 'bitcoin', 'forex', 'đa cấp',
+  'zalo', 'telegram', 'inbox', 'ib mình', 'ib em', 'hotline', 'sđt', 'sdt', 'mã giảm giá', 'freeship', 'mua ngay', 'shopee', 'lazada', 'tiktok shop',
+  'việc nhẹ lương cao', 'kiếm tiền online', 'vay tiền', 'vay vốn', 'nhà cái', 'cá cược', 'cá độ', 'casino', 'lô đề', 'tài xỉu', 'nổ hũ', 'bắn cá',
+  'đăng ký ngay', 'sub kênh', 'kênh youtube', 'fanpage', 'forex', 'đa cấp', 'uy tín giá rẻ',
+];
+/** Từ khoá "yếu": dễ xuất hiện trong lời nguyện thật (vd "không mua chỉ vì giảm giá") → cần ≥ 2 từ mới chặn. */
+export const DEFAULT_WEAK_ADS_KEYWORDS = [
+  'giảm giá', 'khuyến mãi', 'liên hệ', 'kết bạn', 'follow', 'order', 'đặt hàng', 'click', 'subscribe', 'bitcoin', 'crypto', 'kiếm tiền', 'số điện thoại', 'giá rẻ', 'ưu đãi', 'link',
 ];
 
 export interface FilterConfig {
@@ -142,12 +173,14 @@ export interface FilterConfig {
   /** Từ cấm 1 âm tiết nhưng vẫn chặn khi viết không dấu (vd "dit", "dm"). */
   unaccentedAlso?: string[];
   adsKeywords?: string[];
+  weakAdsKeywords?: string[];
   maxChars?: number;
 }
 
 export class ContentFilter {
   private patterns: Pattern[] = [];
   private ads: Pattern[] = [];
+  private weakAds: Pattern[] = [];
   private maxChars: number;
 
   constructor(cfg: FilterConfig) {
@@ -155,6 +188,10 @@ export class ContentFilter {
     this.setWords(cfg.words, cfg.unaccentedAlso ?? DEFAULT_UNACCENTED_ALSO);
     const ua = new Set<string>();
     this.ads = (cfg.adsKeywords ?? DEFAULT_ADS_KEYWORDS)
+      .map((w) => compile(w, ua))
+      .filter((p): p is Pattern => !!p)
+      .map((p) => ({ ...p, accentStrict: false }));
+    this.weakAds = (cfg.weakAdsKeywords ?? DEFAULT_WEAK_ADS_KEYWORDS)
       .map((w) => compile(w, ua))
       .filter((p): p is Pattern => !!p)
       .map((p) => ({ ...p, accentStrict: false }));
@@ -176,16 +213,19 @@ export class ContentFilter {
     return this.patterns.length;
   }
 
-  private matchList(list: Pattern[], tokens: string[], plain: string[], compact: string, useCompact: boolean): string | undefined {
+  /** Trả về từ cấm đầu tiên khớp. `marked[i]` = token i của văn bản có dấu tiếng Việt. */
+  private matchList(list: Pattern[], tokens: string[], plain: string[], marked: boolean[], useCompact: boolean): string | undefined {
     for (const p of list) {
       if (seqIndexOf(tokens, p.tokens) >= 0) return p.word;
-      if (p.accentStrict) {
-        // chỉ khớp không dấu khi token trong văn bản hoàn toàn không có dấu
-        continue;
+      if (p.accentStrict) continue; // từ 1 âm tiết có dấu: chỉ khớp đúng dấu
+      // So không dấu: nếu từ cấm có dấu thì chỉ áp lên đoạn văn bản KHÔNG dấu
+      // (người gõ không dấu), tránh "chỗ để" ≈ "chó đẻ".
+      const needUnmarked = p.hasMark;
+      if (seqMatchWhere(plain, p.plain, (i) => !needUnmarked || !marked[i])) return p.word;
+      if (useCompact && p.compact.length >= 4) {
+        if (alignedCompactMatch(tokens, p.compactMarked, () => true)) return p.word;
+        if (alignedCompactMatch(plain, p.compact, (i) => !needUnmarked || !marked[i])) return p.word;
       }
-      const i = seqIndexOf(plain, p.plain);
-      if (i >= 0) return p.word;
-      if (useCompact && p.compact.length >= 5 && compact.includes(p.compact)) return p.word;
     }
     return undefined;
   }
@@ -197,14 +237,16 @@ export class ContentFilter {
 
     const tokens = tokenize(clean);
     const plain = tokens.map(stripDiacritics);
-    const compact = collapseRepeats(plain.join(''));
+    const marked = tokens.map((t) => VIET_DIACRITIC.test(t));
 
-    const bad = this.matchList(this.patterns, tokens, plain, compact, true);
+    const bad = this.matchList(this.patterns, tokens, plain, marked, true);
     if (bad) return { ok: false, reason: 'banned_word', clean, match: bad };
     if (LINK_RE.test(clean) || LINK_RE.test(stripDiacritics(clean))) return { ok: false, reason: 'link', clean };
     if (hasPhone(clean)) return { ok: false, reason: 'phone', clean };
-    const ad = this.matchList(this.ads, tokens, plain, compact, false);
+    const ad = this.matchList(this.ads, tokens, plain, marked, false);
     if (ad) return { ok: false, reason: 'ads', clean, match: ad };
+    const weak = this.weakAds.filter((p) => this.matchList([p], tokens, plain, marked, false));
+    if (weak.length >= 2) return { ok: false, reason: 'ads', clean, match: weak.map((p) => p.word).join(', ') };
     // spam: một ký tự/âm tiết lặp lại quá nhiều
     if (/(.)\1{9,}/u.test(clean) || (tokens.length >= 6 && new Set(tokens).size === 1)) return { ok: false, reason: 'spam', clean };
     return { ok: true, clean };
