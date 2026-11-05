@@ -18,7 +18,7 @@ Nguồn sự thật: [`shared/protocol.ts`](./protocol.ts) (type TypeScript + zo
 
 | Sự kiện | Payload | Ghi chú |
 |---|---|---|
-| `hello` | `{deviceId, nickname, lang}` | `deviceId` 8–128 ký tự `[A-Za-z0-9._:-]` (UUID khuyến nghị). `nickname` có thể rỗng/null → server cấp biệt danh tiếng Việt ngẫu nhiên; biệt danh tục bị thay. `lang` 2–10 ký tự. Gửi lại `hello` để đổi biệt danh. |
+| `hello` | `{deviceId, nickname, lang}` | `deviceId` 8–128 ký tự `[A-Za-z0-9._:-]` (UUID khuyến nghị). `nickname` có thể rỗng/null → server cấp biệt danh tiếng Việt ngẫu nhiên; biệt danh tục bị thay. `lang` 2–10 ký tự. Gửi lại `hello` (cùng deviceId) để đổi biệt danh; đổi deviceId trên cùng kết nối → `invalid_payload` (hãy kết nối lại). |
 | `enter_area` | `{area}` | |
 | `light_incense` | `{count}` | số nguyên 1–9. Mỗi người 1 lần/15 s. |
 | `ring_bell` | `{force}` | số 0–1. Mỗi người 1 lần/20 s, toàn server tối đa 1 lần/3 s. |

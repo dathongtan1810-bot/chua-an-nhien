@@ -27,6 +27,7 @@ export type IO = Server<ClientToServerEvents, ServerToClientEvents, Record<strin
 export type Sock = Socket<ClientToServerEvents, ServerToClientEvents, Record<string, never>, SocketData>;
 export interface SocketData {
   ip: string;
+  deviceHash?: string;
   userId?: string;
   nickname?: string;
 }
@@ -326,6 +327,9 @@ export class Hub {
     const { repos, config } = this.d;
     const now = Date.now();
     const hash = hashDevice(p.deviceId, config.DEVICE_SALT);
+    // Không cho đổi thiết bị giữa chừng trên cùng kết nối (tránh reset giới hạn theo user bằng deviceId mới)
+    if (s.data.deviceHash && s.data.deviceHash !== hash) throw new HandledError('invalid_payload', 'Không thể đổi deviceId trên cùng kết nối');
+    s.data.deviceHash = hash;
     let nickname = sanitizeNickname(p.nickname, LIMITS.NICKNAME_MAX_CHARS);
     if (nickname && !this.d.filter.check(nickname).ok) nickname = '';
     let user: UserRow | undefined = await repos.users.findByDeviceHash(hash);

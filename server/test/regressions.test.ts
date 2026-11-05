@@ -80,19 +80,15 @@ describe('review regressions', () => {
     expect(codes.at(-1)).toBe(429);
   });
 
-  it('#6 hello đổi deviceId trên cùng socket rời phòng cũ', async () => {
+  it('#6 hello đổi deviceId trên cùng socket bị từ chối, phòng giữ nguyên', async () => {
     s = await startServer();
     const a = await s.hello();
     const b = await s.hello();
     const { code } = await emitAck(a.c, 'room_create', {});
     await emitAck(b.c, 'room_join', { code });
-    const st = waitFor(a.c, 'room_state');
-    const w = waitFor(b.c, 'welcome');
-    b.c.emit('hello', { deviceId: devId(), lang: 'vi' });
-    await w;
-    expect((await st).members.map((m) => m.userId)).toEqual([a.w.userId]);
-    const after = collect(b.c, 'room_state', 300);
+    expect(await emitAck(b.c, 'hello', { deviceId: devId(), lang: 'vi' })).toMatchObject({ ok: false, code: 'invalid_payload' });
+    const st = waitFor(b.c, 'room_state');
     a.c.emit('enter_area', { area: 'san' });
-    expect(await after).toHaveLength(0);
+    expect((await st).members.map((m) => m.userId).sort()).toEqual([a.w.userId, b.w.userId].sort());
   });
 });

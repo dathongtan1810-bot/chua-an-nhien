@@ -151,11 +151,13 @@ describe('độ bền', () => {
     expect(x.w.userId).toBe(y.w.userId);
   });
 
-  it('hello lần 2 đổi biệt danh, presence không nhân đôi', async () => {
-    const { c } = await s.hello(devId(), 'Cũ');
+  it('hello lần 2 đổi biệt danh, presence không nhân đôi; không đổi được deviceId', async () => {
+    const d = devId();
+    const { c } = await s.hello(d, 'Cũ');
     const w = waitFor(c, 'welcome');
-    c.emit('hello', { deviceId: devId(), nickname: 'Mới', lang: 'vi' });
+    c.emit('hello', { deviceId: d, nickname: 'Mới', lang: 'vi' });
     expect((await w).nickname).toBe('Mới');
     expect(s.ctx.hub.onlineSnapshot.online).toBe(1);
+    expect(await emitAck(c, 'hello', { deviceId: devId(), lang: 'vi' })).toMatchObject({ ok: false, code: 'invalid_payload' });
   });
 });
