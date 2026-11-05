@@ -100,6 +100,20 @@ export interface WordsRepo {
   count(): Promise<number>;
 }
 
+export interface AuditRow {
+  id: number;
+  at: number;
+  ip: string;
+  action: string;
+  target: string;
+  detail: string;
+}
+
+export interface AuditRepo {
+  add(r: Omit<AuditRow, 'id'>): Promise<void>;
+  list(limit: number): Promise<AuditRow[]>;
+}
+
 export interface Repositories {
   users: UsersRepo;
   lanterns: LanternsRepo;
@@ -108,5 +122,6 @@ export interface Repositories {
   incense: IncenseRepo;
   stats: StatsRepo;
   words: WordsRepo;
+  audit: AuditRepo;
   close(): Promise<void>;
 }

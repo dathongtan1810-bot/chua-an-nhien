@@ -48,6 +48,9 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
   const loginLimiter = new SlidingWindowLimiter(5, 60_000);
   const secure = config.NODE_ENV === 'production';
 
+  const audit = (req: FastifyRequest, action: string, target = '', detail = '') =>
+    repos.audit.add({ at: Date.now(), ip: req.ip, action, target, detail: detail.slice(0, 300) }).catch((err) => ctx.log.error({ err }, 'audit failed'));
+
   const guard = async (req: FastifyRequest, reply: FastifyReply) => {
     if (!config.ADMIN_PASSWORD) return reply.code(503).send({ error: 'admin_disabled', message: 'Chưa đặt ADMIN_PASSWORD' });
     if (!verifySession(config.sessionSecret, req.cookies[ADMIN_COOKIE])) return reply.code(401).send({ error: 'unauthorized' });
@@ -62,6 +65,7 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
     const body = LoginSchema.safeParse(req.body);
     if (!body.success || !safeEq(body.data.password, config.ADMIN_PASSWORD)) {
       ctx.log.warn({ ip: req.ip }, 'admin login failed');
+      await audit(req, 'login_failed');
       return reply.code(401).send({ error: 'invalid_password' });
     }
     reply.setCookie(ADMIN_COOKIE, makeSession(config.sessionSecret), {
@@ -71,6 +75,7 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       path: '/admin',
       maxAge: SESSION_TTL_MS / 1000,
     });
+    await audit(req, 'login');
     return { ok: true };
   });
 
@@ -100,6 +105,7 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       if (status === 'approved' && l.status !== 'approved') await hub.lanternApproved(l.id);
       if (status === 'hidden' && l.status === 'approved') hub.lanternRemoved(l.id);
       ctx.log.info({ id: l.id, status }, 'admin lantern status');
+      await audit(req, status === 'approved' ? 'lantern_approve' : 'lantern_hide', l.id, l.text);
       return { ok: true };
     };
     r.post('/admin/api/lanterns/:id/approve', setStatus('approved'));
@@ -137,6 +143,7 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       if (!b.success) return reply.code(400).send({ error: 'invalid_payload' });
       const n = await repos.reports.resolveTarget(b.data.targetType, b.data.targetId);
       if (b.data.targetType === 'user') await repos.users.setFlagged(b.data.targetId, false);
+      await audit(req, 'report_resolve', `${b.data.targetType}:${b.data.targetId}`);
       return { ok: true, resolved: n };
     });
 
@@ -165,7 +172,13 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
         hub.disconnectUser(u.id, 'banned', 'Thiết bị đã bị khoá');
       }
       ctx.log.info({ userId: u.id, banned: b.data.banned }, 'admin ban');
+      await audit(req, b.data.banned ? 'user_ban' : 'user_unban', u.id, u.nickname);
       return { ok: true };
+    });
+
+    r.get('/admin/api/audit', async () => {
+      const rows = await repos.audit.list(200);
+      return { entries: rows.map((e) => ({ ...e, at: iso(e.at) })) };
     });
 
     r.get('/admin/api/words', async () => ({ words: await repos.words.list() }));
@@ -176,10 +189,11 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       const words = [...new Set(b.data.words)];
       await repos.words.replaceAll(words);
       filter.setWords(words, ctx.unaccentedAlso);
+      await audit(req, 'words_update', '', `${words.length} mục`);
       return { ok: true, count: filter.wordCount };
     });
 
-    r.post('/admin/api/words/reseed', async (_req, reply) => {
+    r.post('/admin/api/words/reseed', async (req, reply) => {
       const seed = loadSeedWords(config);
       if (!seed.words.length) return reply.code(404).send({ error: 'no_seed_file' });
       await repos.words.replaceAll(seed.words);
@@ -187,6 +201,7 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       filter.setWords(seed.words, seed.unaccentedAlso);
       ctx.unaccentedAlso = seed.unaccentedAlso;
       ctx.log.info({ source: seed.source, count: seed.words.length }, 'admin reseed words');
+      await audit(req, 'words_reseed', seed.source, `${seed.words.length} mục`);
       return { ok: true, count: seed.words.length, source: seed.source };
     });
 

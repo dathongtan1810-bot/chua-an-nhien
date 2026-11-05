@@ -113,11 +113,21 @@ const toReport = (r: Raw): ReportRow => ({
 /** Migration đơn giản theo PRAGMA user_version. */
 function migrate(db: Database.Database): void {
   const v = db.pragma('user_version', { simple: true }) as number;
+  if (v < 2) {
+    db.exec(`CREATE TABLE IF NOT EXISTS admin_audit (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      at INTEGER NOT NULL,
+      ip TEXT NOT NULL,
+      action TEXT NOT NULL,
+      target TEXT NOT NULL DEFAULT '',
+      detail TEXT NOT NULL DEFAULT ''
+    )`);
+  }
   if (v < 1) {
     const cols = (db.prepare('PRAGMA table_info(reports)').all() as Array<{ name: string }>).map((c) => c.name);
     if (!cols.includes('source_hash')) db.exec("ALTER TABLE reports ADD COLUMN source_hash TEXT NOT NULL DEFAULT ''");
-    db.pragma('user_version = 1');
   }
+  if (v < 2) db.pragma('user_version = 2');
 }
 
 export function createSqliteRepositories(dbPath: string): Repositories {
@@ -193,6 +203,8 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     wordsCount: db.prepare('SELECT COUNT(*) AS n FROM banned_words'),
     wordsClear: db.prepare('DELETE FROM banned_words'),
     wordsInsert: db.prepare('INSERT OR IGNORE INTO banned_words (word) VALUES (?)'),
+    auditInsert: db.prepare('INSERT INTO admin_audit (at, ip, action, target, detail) VALUES (@at, @ip, @action, @target, @detail)'),
+    auditList: db.prepare('SELECT * FROM admin_audit ORDER BY id DESC LIMIT ?'),
   };
 
   const del = {
@@ -378,6 +390,14 @@ export function createSqliteRepositories(dbPath: string): Repositories {
       },
       async count() {
         return (q.wordsCount.get() as { n: number }).n;
+      },
+    },
+    audit: {
+      async add(r) {
+        q.auditInsert.run(r);
+      },
+      async list(limit) {
+        return q.auditList.all(limit) as Array<import('./types.js').AuditRow>;
       },
     },
     async close() {

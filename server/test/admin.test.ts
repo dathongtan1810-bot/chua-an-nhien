@@ -125,6 +125,17 @@ describe('admin', () => {
     expect(await emitAck(c, 'release_lantern', { text: 'chỉ một từ', color: 'red' })).toMatchObject({ ok: true });
   });
 
+  it('nhật ký quản trị ghi lại thao tác', async () => {
+    await login('sai');
+    const { cookie } = await login();
+    const a = await s.hello();
+    await api(cookie, `/users/${a.w.userId}/ban`, { method: 'POST', body: JSON.stringify({ banned: true }) });
+    const log = await (await api(cookie, '/audit')).json();
+    const actions = log.entries.map((e: any) => e.action);
+    expect(actions.slice(0, 3)).toEqual(['user_ban', 'login', 'login_failed']);
+    expect(log.entries[0]).toMatchObject({ target: a.w.userId, ip: '127.0.0.1' });
+  });
+
   it('thống kê theo ngày', async () => {
     const { cookie } = await login();
     const { c } = await s.hello();

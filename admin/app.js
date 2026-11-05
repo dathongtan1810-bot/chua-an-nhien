@@ -428,6 +428,25 @@
     'ho-sen': 'Hồ sen', 'bo-song': 'Bờ sông', 'am-xam': 'Am xăm', 'thien-duong': 'Thiền đường',
   };
 
+  const AUDIT_LABEL = {
+    login: 'Đăng nhập', login_failed: 'Đăng nhập sai', lantern_approve: 'Duyệt đèn', lantern_hide: 'Ẩn đèn',
+    report_resolve: 'Giải quyết báo cáo', user_ban: 'Khóa thiết bị', user_unban: 'Mở khóa', words_update: 'Sửa từ cấm', words_reseed: 'Nạp lại từ cấm',
+  };
+  async function loadAudit() {
+    let data;
+    try { data = await api('/audit'); } catch (e) { return; }
+    const ul = $('#audit-list');
+    clear(ul);
+    const entries = data.entries || [];
+    if (!entries.length) { ul.append(el('li', { class: 'muted', text: 'Chưa có thao tác nào' })); return; }
+    for (const e of entries.slice(0, 100)) {
+      ul.append(el('li', { class: 'small' },
+        el('span', { class: 'muted', text: fmtTime(e.at) + ' · ' + e.ip + ' · ' }),
+        el('strong', { text: AUDIT_LABEL[e.action] || e.action }),
+        el('span', { text: (e.target ? ' ' + e.target : '') + (e.detail ? ' — ' + e.detail : '') })));
+    }
+  }
+
   async function loadStats() {
     let data;
     try { data = await api('/stats?days=' + encodeURIComponent($('#stats-days').value)); } catch (e) {
@@ -443,6 +462,7 @@
     }
     const days = data.days || [];
     drawChart(days);
+    loadAudit();
     const tbody = $('#stats-table tbody');
     clear(tbody);
     for (const d of [...days].reverse()) {
