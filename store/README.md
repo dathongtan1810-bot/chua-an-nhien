@@ -28,6 +28,8 @@ Bộ tài liệu cho bản **1.0.0**: miễn phí, không quảng cáo, không m
 ## Ngày tháng
 Các ngày âm lịch → dương lịch trong bộ tài liệu được tính bằng thuật toán âm lịch Việt Nam (UTC+7) ngày 05/11/2026: Rằm tháng Chạp = 22/01/2027, Ông Công Ông Táo = 30/01/2027, Giao thừa = tối 05/02/2027 (29 tháng Chạp – tháng thiếu), **Tết Đinh Mùi = thứ Bảy 06/02/2027**, Rằm tháng Giêng = 20/02/2027, Phật Đản = 20/05/2027, Vu Lan = 16/08/2027. Đã đối chiếu tên lễ và ngày âm với `content/su-kien-am-lich.json` (22 sự kiện; Tất niên – Đêm Trừ tịch ghi ngày 30/12, tháng thiếu lùi về 29/12 theo D13).
 
+Bộ nội dung theo mùa đang có file (05/11/2026): `content/mua/` – **Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu**; bản EN `content/i18n/en/mua/` – Tết, Rằm tháng Giêng, Phật Đản, Vu Lan (**chưa có Trung Thu EN**). Tài liệu store chỉ hứa bản 1.1 (Tết) và 1.2 (Vu Lan); các mùa khác chưa có lịch phát hành.
+
 ## Việc cần làm trước khi nộp (tóm tắt các [CẦN XÁC NHẬN])
 - [ ] Email hỗ trợ thật thay cho `hotro@chuaannhien.example`; tên miền thật thay `chuaannhien.example` (D18).
 - [ ] Dev xác nhận danh sách SDK (analytics, crash, push) và cập nhật `data-safety.md`.
