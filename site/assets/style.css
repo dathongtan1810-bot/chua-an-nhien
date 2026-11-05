@@ -298,3 +298,7 @@ p { margin: 0 0 1rem; }
 .lotus .water { fill: none; stroke: var(--leaf); stroke-width: 3; stroke-linecap: round; opacity: .7; }
 .lotus .halo { fill: var(--gold); opacity: .18; }
 .back-link { max-width: 760px; margin: 0 auto; padding: 0 1.25rem 2.5rem; }
+@media (max-width: 520px) {
+  .prose table { font-size: .88rem; }
+  .prose th, .prose td { padding: .45rem .45rem; }
+}
