@@ -1,0 +1,23 @@
+# Chạy: cd server && docker compose up --build
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: production
+      DEVICE_SALT: ${DEVICE_SALT:?đặt DEVICE_SALT trong server/.env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?đặt ADMIN_PASSWORD trong server/.env}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      MODERATION_MODE: ${MODERATION_MODE:-post}
+      ONLINE_FEATURES: ${ONLINE_FEATURES:-all}
+      METRICS_TOKEN: ${METRICS_TOKEN:-}
+      TRUST_PROXY: ${TRUST_PROXY:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      - chua-data:/data
+    restart: unless-stopped
+volumes:
+  chua-data:

@@ -1,0 +1,10 @@
+{
+  "note": "Danh sách từ cấm mặc định của server. Nếu có content/tu-cam.json (từ nhánh nội dung) thì được sao chép thành data/tu-cam.json và ưu tiên dùng. Admin có thể sửa trực tiếp trong trang quản trị (lưu DB).",
+  "words": [
+    "địt", "đụ", "đéo", "lồn", "buồi", "cặc", "đĩ", "điếm", "cave", "chó đẻ", "đồ chó", "con chó", "mẹ mày", "đm", "dm", "đmm", "dmm", "đcm", "dcm", "vãi lồn", "vl", "vcl", "vkl", "clm", "cmm", "dkm", "loz",
+    "óc chó", "ngu như bò", "thằng ngu", "con ngu", "mất dạy", "khốn nạn", "súc vật", "đồ khốn", "chết mẹ", "chết đi", "đi chết đi", "giết", "tự tử",
+    "fuck", "shit", "bitch", "dick", "pussy", "asshole", "motherfucker", "sex", "porn", "xxx", "nude",
+    "phản động", "bò đỏ", "ba que", "khủng bố", "ma túy", "thuốc lắc", "cần sa"
+  ],
+  "unaccentedAlso": ["dit", "deo", "dm", "dmm", "dcm", "vcl", "vkl", "vl", "clm", "cmm", "dkm", "loz", "cave", "fuck", "shit", "bitch", "dick", "pussy", "sex", "porn", "xxx", "nude"]
+}
