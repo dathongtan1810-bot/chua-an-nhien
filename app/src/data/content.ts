@@ -116,11 +116,46 @@ function findExternal(name: ContentKey): unknown {
 
 const cache = new Map<ContentKey, Picked<unknown>>();
 
+/** Từ khóa mô tả trang trí (phiên nội dung viết văn xuôi) → token hiệu ứng của app. */
+const DECOR_KEYWORDS: [RegExp, string][] = [
+  [/đèn lồng|lồng đèn/i, 'den-long'],
+  [/sen/i, 'hoa-sen'],
+  [/hoa hồng/i, 'hoa-hong'],
+  [/trăng/i, 'trang-ram'],
+  [/đào|mai/i, 'hoa-dao-mai'],
+  [/pháo/i, 'phao-hoa-nhe'],
+  [/cờ|phướn/i, 'co-phuon'],
+];
+
+/**
+ * Chuẩn hóa dữ liệu của phiên nội dung về schema app:
+ * - que-xam: `tho` có thể là mảng dòng → nối bằng "\n"
+ * - su-kien: `thang` null = hằng tháng (0); `trangTri`/`nhiemVu` có thể là danh sách mô tả
+ */
+export function normalizeExternal(name: ContentKey, list: unknown): unknown {
+  if (!Array.isArray(list)) return list;
+  return list.map((x) => {
+    if (!isObj(x)) return x;
+    if (name === 'que-xam' && Array.isArray(x.tho)) return { ...x, tho: x.tho.join('\n') };
+    if (name === 'su-kien-am-lich') {
+      const o: Record<string, unknown> = { ...x };
+      if (o.thang === null || o.thang === undefined) o.thang = 0;
+      if (Array.isArray(o.trangTri)) {
+        const text = o.trangTri.join(' ');
+        o.trangTri = DECOR_KEYWORDS.filter(([re]) => re.test(text)).map(([, tok]) => tok).join(',');
+      }
+      if (Array.isArray(o.nhiemVu)) o.nhiemVu = String(o.nhiemVu[0] ?? '');
+      return o;
+    }
+    return x;
+  });
+}
+
 function load<T>(name: ContentKey, sample: unknown, validate: Validator<T>): Picked<T> {
   let hit = cache.get(name);
   if (!hit) {
     const safeSample = Array.isArray(sample) ? sample.filter((x) => validate(x)) : [];
-    hit = pickContent<unknown>(findExternal(name), safeSample, validate);
+    hit = pickContent<unknown>(normalizeExternal(name, findExternal(name)), safeSample, validate);
     cache.set(name, hit);
   }
   return hit as Picked<T>;
