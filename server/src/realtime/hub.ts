@@ -329,8 +329,14 @@ export class Hub {
     let user: UserRow | undefined = await repos.users.findByDeviceHash(hash);
     if (user?.banned) throw new HandledError('banned', 'Thiết bị đã bị khoá');
     if (!user) {
-      user = await repos.users.create({ id: newId('u'), deviceHash: hash, nickname: nickname || randomNickname(), lang: p.lang, createdAt: now });
-      await repos.stats.incr(vnDay(now), 'new_users');
+      try {
+        user = await repos.users.create({ id: newId('u'), deviceHash: hash, nickname: nickname || randomNickname(), lang: p.lang, createdAt: now });
+        await repos.stats.incr(vnDay(now), 'new_users');
+      } catch (err) {
+        // hai tab cùng thiết bị hello đồng thời → bản ghi đã được tạo bởi tab kia
+        user = await repos.users.findByDeviceHash(hash);
+        if (!user) throw err;
+      }
     } else {
       user = { ...user, nickname: nickname || user.nickname, lang: p.lang };
       await repos.users.touch(user.id, user.nickname, user.lang, now);
@@ -482,8 +488,9 @@ export class Hub {
         const u = await repos.users.findById(p.id);
         if (u && !u.flagged) {
           await repos.users.setFlagged(u.id, true);
-          for (const l of await repos.lanterns.listByStatus('approved', now, 10_000)) {
-            if (l.userId !== u.id) continue;
+          for (const id of await repos.lanterns.listIdsByUser(u.id)) {
+            const l = await repos.lanterns.findById(id);
+            if (l?.status !== 'approved') continue;
             await repos.lanterns.setStatus(l.id, 'pending');
             this.d.io.to(LOBBY).emit('lantern_removed', { id: l.id });
           }

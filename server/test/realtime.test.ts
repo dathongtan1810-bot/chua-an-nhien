@@ -143,3 +143,19 @@ describe('nhiều client', () => {
     expect(p.at(-1)?.online ?? s.ctx.hub.onlineSnapshot.online).toBe(20);
   });
 });
+
+describe('độ bền', () => {
+  it('hai tab cùng thiết bị hello đồng thời → cùng userId', async () => {
+    const d = devId();
+    const [x, y] = await Promise.all([s.hello(d), s.hello(d)]);
+    expect(x.w.userId).toBe(y.w.userId);
+  });
+
+  it('hello lần 2 đổi biệt danh, presence không nhân đôi', async () => {
+    const { c } = await s.hello(devId(), 'Cũ');
+    const w = waitFor(c, 'welcome');
+    c.emit('hello', { deviceId: devId(), nickname: 'Mới', lang: 'vi' });
+    expect((await w).nickname).toBe('Mới');
+    expect(s.ctx.hub.onlineSnapshot.online).toBe(1);
+  });
+});
