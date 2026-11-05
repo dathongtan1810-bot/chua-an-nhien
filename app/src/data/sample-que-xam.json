@@ -1,0 +1,830 @@
+[
+  {
+    "id": 1,
+    "tieuDe": "Quẻ số 1 – Thượng",
+    "tho": "Bình minh rạng rỡ đầu non,\nSương tan nắng ấm, lối mòn hiện ra.\nLòng ngay chẳng ngại đường xa,\nBước đi chậm rãi, ắt là tới nơi.",
+    "loiGiai": "Như mặt trời lên xua tan sương sớm, mọi việc dần sáng tỏ. Giữ lòng ngay thẳng, kiên nhẫn từng bước thì mọi sự sẽ thuận lợi.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Tâm an thì cảnh an; những ngày tới nhẹ nhàng, ít điều vướng bận.",
+      "gia-dao": "Nhà cửa êm ấm, nên dành thời gian trò chuyện cùng người thân.",
+      "cong-danh": "Công việc có hướng đi rõ ràng, chăm chỉ sẽ được ghi nhận.",
+      "hoc-tap": "Việc học tiến bộ đều, ôn luyện mỗi ngày một ít sẽ vững vàng.",
+      "suc-khoe": "Sức khỏe khởi sắc; dậy sớm, vận động nhẹ sẽ thêm khỏe khoắn.",
+      "tinh-duyen": "Duyên đến tự nhiên, chân thành là cầu nối tốt nhất."
+    },
+    "loiKhuyen": "Mỗi sáng dành vài phút hít thở sâu và đặt một ý định tốt cho ngày mới.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 2,
+    "tieuDe": "Quẻ số 2 – Thượng",
+    "tho": "Sen hồng nở giữa ao sâu,\nBùn kia chẳng nhuốm sắc màu thanh cao.\nGiữ lòng trong sạch thuở nào,\nGió đưa hương ngát ngọt ngào bốn phương.",
+    "loiGiai": "Hoa sen mọc từ bùn mà vẫn ngát hương. Giữ tâm trong sáng giữa cuộc sống bận rộn thì phẩm hạnh tự tỏa sáng, được người quý mến.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Dù xung quanh ồn ào, lòng bạn vẫn có thể tĩnh lặng và bình yên.",
+      "gia-dao": "Sự hiền hòa của bạn là hương thơm giữ ấm cả gia đình.",
+      "cong-danh": "Làm việc tử tế, minh bạch sẽ được tin cậy lâu dài.",
+      "hoc-tap": "Học điều hay, tránh điều dở; nền tảng đạo đức giúp con đường học vững chắc.",
+      "suc-khoe": "Giữ tinh thần trong lành, ăn uống thanh đạm giúp thân thể nhẹ nhõm.",
+      "tinh-duyen": "Người tốt sẽ nhận ra vẻ đẹp chân thật của bạn."
+    },
+    "loiKhuyen": "Hôm nay hãy nói một lời tử tế với người đầu tiên bạn gặp.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 3,
+    "tieuDe": "Quẻ số 3 – Thượng",
+    "tho": "Mưa xuân thấm đất nhẹ nhàng,\nMầm non thức dậy, xóm làng xanh tươi.\nGieo nhân lành, gặt nụ cười,\nViệc lành nhỏ bé, đẹp đời mai sau.",
+    "loiGiai": "Mưa xuân nuôi mầm, việc thiện nhỏ hôm nay vun đắp niềm vui ngày mai. Đây là thời điểm thuận để bắt đầu điều tốt.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Mọi sự đang dần thuận hòa như cây cối gặp mưa xuân.",
+      "gia-dao": "Những quan tâm nhỏ mỗi ngày làm gia đình thêm gắn bó.",
+      "cong-danh": "Hợp để khởi đầu dự định mới, nhưng nên chuẩn bị kỹ lưỡng.",
+      "hoc-tap": "Kiến thức tích lũy dần sẽ nảy mầm đúng lúc.",
+      "suc-khoe": "Cơ thể hồi phục tốt nếu nghỉ ngơi đủ và uống đủ nước.",
+      "tinh-duyen": "Tình cảm được vun trồng bằng sự chăm sóc sẽ nở hoa."
+    },
+    "loiKhuyen": "Làm một việc tốt nhỏ mà không cần ai biết.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 4,
+    "tieuDe": "Quẻ số 4 – Thượng",
+    "tho": "Trăng rằm vằng vặc trời thu,\nSoi qua mái lá, sương mù cũng tan.\nLòng người như ánh trăng vàng,\nBao dung rộng mở, muôn ngàn an vui.",
+    "loiGiai": "Trăng tròn soi sáng khắp nơi, không phân biệt chốn nào. Lòng bao dung rộng mở mang lại an vui cho mình và cho người.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Tâm rộng mở giúp bạn nhẹ lòng trước những chuyện nhỏ.",
+      "gia-dao": "Tha thứ và thấu hiểu giúp gia đình đoàn viên trọn vẹn.",
+      "cong-danh": "Hợp tác cởi mở với đồng nghiệp mang lại kết quả tốt.",
+      "hoc-tap": "Mở lòng học hỏi từ mọi người, kể cả bạn bè đồng trang lứa.",
+      "suc-khoe": "Tinh thần thư thái là liều thuốc quý cho sức khỏe.",
+      "tinh-duyen": "Bao dung và lắng nghe làm tình cảm thêm bền chặt."
+    },
+    "loiKhuyen": "Buổi tối hãy ngắm bầu trời và nghĩ về một người mà bạn biết ơn.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 5,
+    "tieuDe": "Quẻ số 5 – Thượng",
+    "tho": "Thuyền xuôi gió thuận buồm căng,\nSông dài nước lặng, trăng giăng lối về.\nChèo tay vững, giữ lời thề,\nBến bờ phía trước bốn bề bình yên.",
+    "loiGiai": "Thuyền gặp gió thuận, mọi việc trôi chảy. Tuy vậy vẫn cần giữ tay chèo vững, tức là giữ chữ tín và sự tập trung.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Giai đoạn êm ả, hãy tận hưởng và biết đủ.",
+      "gia-dao": "Cả nhà đồng lòng, việc chung dễ thành.",
+      "cong-danh": "Thuận lợi; giữ chữ tín sẽ đi xa.",
+      "hoc-tap": "Bạn đang đúng hướng, chỉ cần duy trì nhịp học đều đặn.",
+      "suc-khoe": "Ổn định; chú ý giữ giờ giấc sinh hoạt điều độ.",
+      "tinh-duyen": "Hai người cùng hướng sẽ cùng nhau đi xa."
+    },
+    "loiKhuyen": "Khi mọi việc suôn sẻ, hãy nhớ cảm ơn những người đã giúp mình.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 6,
+    "tieuDe": "Quẻ số 6 – Thượng",
+    "tho": "Trúc xanh đứng giữa gió đông,\nThân ngay lòng rỗng mà không gãy cành.\nKhiêm nhường ấy chính là lành,\nCúi mình trước gió, vươn nhanh sau mùa.",
+    "loiGiai": "Cây trúc rỗng ruột nên mềm dẻo, khiêm cung nên bền bỉ. Biết nhún nhường đúng lúc thì vượt qua được thử thách.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Mềm mỏng trước sóng gió giúp bạn giữ được bình yên.",
+      "gia-dao": "Nhường nhịn một chút, gia đình thêm hòa thuận.",
+      "cong-danh": "Khiêm tốn học hỏi, cơ hội phát triển sẽ tự đến.",
+      "hoc-tap": "Không ngại hỏi điều chưa biết, bạn sẽ tiến bộ nhanh.",
+      "suc-khoe": "Giãn cơ, vận động mềm dẻo rất tốt cho bạn.",
+      "tinh-duyen": "Biết lắng nghe và nhường nhau là gốc của hạnh phúc."
+    },
+    "loiKhuyen": "Hôm nay hãy lắng nghe nhiều hơn nói.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 7,
+    "tieuDe": "Quẻ số 7 – Thượng",
+    "tho": "Cây cao nhờ gốc rễ sâu,\nNgười nên nhờ đức trước sau mẹ cha.\nHiếu thảo giữ trọn trong nhà,\nPhúc lành tự đến chẳng xa đâu mà.",
+    "loiGiai": "Cây vững nhờ rễ, người trưởng thành nhờ ơn sinh thành dưỡng dục. Lòng hiếu thảo là nền tảng của mọi điều tốt đẹp.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Nhớ về cội nguồn giúp lòng bạn vững vàng, an ổn.",
+      "gia-dao": "Thăm hỏi, chăm sóc cha mẹ là niềm vui lớn của gia đình.",
+      "cong-danh": "Sự nghiệp bền vững khi có nền tảng đạo đức tốt.",
+      "hoc-tap": "Học hành chăm chỉ cũng là một cách báo hiếu đẹp.",
+      "suc-khoe": "Hãy nhắc cả nhà cùng giữ gìn sức khỏe, nhất là ông bà, cha mẹ.",
+      "tinh-duyen": "Người biết thương cha mẹ cũng biết thương người bạn đời."
+    },
+    "loiKhuyen": "Gọi điện hoặc nhắn một lời hỏi thăm cha mẹ, ông bà ngay hôm nay.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 8,
+    "tieuDe": "Quẻ số 8 – Thượng",
+    "tho": "Mai vàng hé nụ đón xuân,\nĐào hồng khoe sắc, mây vần trời xanh.\nNăm qua khép lại an lành,\nNăm mới mở cửa, ước thành nhờ siêng.",
+    "loiGiai": "Hoa mai, hoa đào báo hiệu mùa xuân mới. Điều mong ước có thể thành khi bạn siêng năng và nhẫn nại.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Một khởi đầu tươi mới, nhẹ nhàng đang chờ bạn.",
+      "gia-dao": "Không khí sum vầy, đầm ấm.",
+      "cong-danh": "Kế hoạch mới có triển vọng nếu bạn bền bỉ.",
+      "hoc-tap": "Đặt mục tiêu nhỏ, rõ ràng và theo đuổi đến cùng.",
+      "suc-khoe": "Tinh thần phơi phới; hãy giữ những thói quen tốt đã có.",
+      "tinh-duyen": "Tình cảm tươi mới, hãy trân trọng từng khoảnh khắc."
+    },
+    "loiKhuyen": "Viết ra một mong ước và một việc nhỏ để bắt đầu thực hiện nó.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 9,
+    "tieuDe": "Quẻ số 9 – Thượng",
+    "tho": "Suối nguồn róc rách khe sâu,\nChảy hoài chẳng nghỉ, đá đầu cũng mòn.\nBền gan như nước núi non,\nViệc khó rồi cũng vuông tròn có ngày.",
+    "loiGiai": "Nước mềm mà chảy mãi thì đá cũng mòn. Sự kiên trì bền bỉ sẽ giúp bạn vượt qua những việc tưởng chừng khó.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Mọi băn khoăn rồi sẽ lắng xuống, cứ bình tĩnh.",
+      "gia-dao": "Kiên nhẫn với người thân, thay đổi tốt sẽ đến từ từ.",
+      "cong-danh": "Việc lớn cần thời gian, đừng vội nản.",
+      "hoc-tap": "Mỗi ngày một chút, bài khó cũng thành quen.",
+      "suc-khoe": "Duy trì thói quen tốt đều đặn quan trọng hơn gắng quá sức.",
+      "tinh-duyen": "Tình cảm bền lâu nhờ sự kiên nhẫn và thủy chung."
+    },
+    "loiKhuyen": "Chọn một việc đang dang dở và làm tiếp thêm mười lăm phút.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 10,
+    "tieuDe": "Quẻ số 10 – Thượng",
+    "tho": "Chuông chùa ngân giữa canh khuya,\nTiếng vang xa tận bến bờ sông kia.\nTâm người lắng lại đôi khi,\nNghe ra điều thiện, biết đi đường lành.",
+    "loiGiai": "Tiếng chuông nhắc ta dừng lại, lắng nghe chính mình. Khi tâm tĩnh lặng, ta sẽ thấy rõ con đường nên đi.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Dành thời gian tĩnh lặng, bạn sẽ thấy an yên.",
+      "gia-dao": "Lời nói nhẹ nhàng, đúng lúc giúp hóa giải hiểu lầm.",
+      "cong-danh": "Suy nghĩ thấu đáo trước khi quyết định, kết quả sẽ tốt.",
+      "hoc-tap": "Học trong yên tĩnh, tập trung sẽ nhớ lâu.",
+      "suc-khoe": "Ngủ đủ giấc và giữ tâm thư thái.",
+      "tinh-duyen": "Lắng lòng để hiểu điều mình thật sự mong muốn."
+    },
+    "loiKhuyen": "Ngồi yên và đếm mười hơi thở trước khi làm việc quan trọng.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 11,
+    "tieuDe": "Quẻ số 11 – Thượng",
+    "tho": "Đồng xa lúa chín vàng ươm,\nMồ hôi tháng hạ hóa cơm no lòng.\nCông lao vun xới ruộng đồng,\nSẻ chia cùng xóm, phúc càng thêm sâu.",
+    "loiGiai": "Lúa chín là thành quả của bao ngày chăm chỉ. Thời điểm gặt hái đã đến; biết sẻ chia thì niềm vui nhân đôi.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Cuộc sống đủ đầy, hãy biết đủ và biết ơn.",
+      "gia-dao": "Cùng nhau vui với thành quả, gia đình thêm gắn kết.",
+      "cong-danh": "Nỗ lực trước đây bắt đầu có kết quả.",
+      "hoc-tap": "Thành quả học tập đến từ sự chuyên cần, hãy tiếp tục giữ nhịp.",
+      "suc-khoe": "Ăn uống đủ chất, quý trọng từng bữa cơm.",
+      "tinh-duyen": "Tình cảm chín muồi khi hai người cùng vun đắp."
+    },
+    "loiKhuyen": "Chia sẻ một điều tốt bạn có với người khác hôm nay.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 12,
+    "tieuDe": "Quẻ số 12 – Thượng",
+    "tho": "Đèn lồng đỏ thắp hiên chùa,\nÁnh lung linh tỏa, gió lùa chẳng phai.\nMột ngọn sáng, thắp ngàn mai,\nLòng lành truyền mãi chẳng ai cạn nguồn.",
+    "loiGiai": "Một ngọn đèn có thể thắp cho nghìn ngọn khác mà không mất đi ánh sáng. Lòng tốt càng chia sẻ càng sáng.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Điều lành bạn trao đi sẽ quay về như ánh sáng.",
+      "gia-dao": "Bạn là người giữ lửa ấm cho gia đình.",
+      "cong-danh": "Giúp đỡ đồng nghiệp sẽ tạo nên một tập thể vững mạnh.",
+      "hoc-tap": "Giảng lại cho bạn bè điều mình biết giúp mình nhớ sâu hơn.",
+      "suc-khoe": "Niềm vui giúp người cũng nuôi dưỡng sức khỏe tinh thần.",
+      "tinh-duyen": "Sự ấm áp chân thành sẽ thu hút người đồng điệu."
+    },
+    "loiKhuyen": "Chỉ cho ai đó một điều hữu ích mà bạn biết.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 13,
+    "tieuDe": "Quẻ số 13 – Trung",
+    "tho": "Núi xa sương phủ mờ mờ,\nĐường lên còn khuất, chớ ngờ lối sai.\nChậm chân mà vững đôi vai,\nNắng lên sương tỏ, đường dài hiện ra.",
+    "loiGiai": "Phía trước chưa rõ ràng như núi trong sương. Đừng vội vàng, cứ đi chậm và chắc; khi đến lúc, mọi việc sẽ sáng tỏ.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Còn đôi chút băn khoăn, nhưng mọi việc sẽ dần sáng tỏ.",
+      "gia-dao": "Có điều chưa nói hết, hãy chờ dịp thích hợp để chia sẻ.",
+      "cong-danh": "Chưa nên vội quyết; hãy tìm hiểu thêm thông tin.",
+      "hoc-tap": "Bài khó chưa hiểu, hãy hỏi thầy cô hoặc bạn bè.",
+      "suc-khoe": "Lắng nghe cơ thể, nghỉ ngơi khi thấy mệt; cần thì hỏi ý kiến bác sĩ.",
+      "tinh-duyen": "Tình cảm cần thêm thời gian để hiểu nhau."
+    },
+    "loiKhuyen": "Viết ra điều bạn còn băn khoăn, rồi chọn một bước nhỏ rõ ràng nhất.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 14,
+    "tieuDe": "Quẻ số 14 – Trung",
+    "tho": "Thuyền neo chờ nước thủy triều,\nRa khơi vội vã gió nhiều sóng xô.\nKiên tâm chờ đợi chẳng lo,\nNước lên thuyền nổi, đưa đò sang ngang.",
+    "loiGiai": "Chưa phải lúc vội vàng. Chờ đúng thời điểm và chuẩn bị chu đáo, việc sẽ thuận buồm xuôi gió.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Nhẫn nại một chút, bình yên sẽ tới.",
+      "gia-dao": "Chuyện nhà nên bàn bạc từ tốn, đừng nóng vội.",
+      "cong-danh": "Chuẩn bị kỹ, cơ hội phù hợp sẽ đến.",
+      "hoc-tap": "Ôn vững nền tảng trước khi học phần nâng cao.",
+      "suc-khoe": "Hồi phục cần thời gian, đừng nóng ruột.",
+      "tinh-duyen": "Duyên chưa tới thì đừng cưỡng cầu; hãy hoàn thiện bản thân."
+    },
+    "loiKhuyen": "Hôm nay hãy làm chậm lại một nhịp trong mọi việc.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 15,
+    "tieuDe": "Quẻ số 15 – Trung",
+    "tho": "Trăng non mới nhú đầu cành,\nChưa tròn mà vẫn sáng lành đêm thâu.\nTừ từ trăng sẽ tròn mau,\nViệc gì cũng vậy, trước sau có thì.",
+    "loiGiai": "Trăng khuyết rồi sẽ tròn. Việc đang ở nửa chặng, hãy trân trọng tiến bộ hiện có và tiếp tục bước tới.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Mọi thứ đang tiến triển, chưa trọn nhưng đủ an.",
+      "gia-dao": "Gia đình đang dần hiểu nhau hơn.",
+      "cong-danh": "Đang ở giữa chặng, giữ nhịp đều sẽ tới đích.",
+      "hoc-tap": "Đã hiểu được một nửa, kiên trì thêm sẽ thông suốt.",
+      "suc-khoe": "Có cải thiện, hãy tiếp tục chăm sóc bản thân.",
+      "tinh-duyen": "Tình cảm đang lớn dần, đừng vội đòi hỏi trọn vẹn."
+    },
+    "loiKhuyen": "Ghi lại ba điều bạn đã làm tốt trong tuần này.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 16,
+    "tieuDe": "Quẻ số 16 – Trung",
+    "tho": "Cầu tre lắt lẻo bắc ngang,\nBước đi cẩn trọng, vững vàng qua sông.\nCầm tay người bạn đồng lòng,\nBờ kia ngõ trúc thong dong nắng chiều.",
+    "loiGiai": "Đường đi có chỗ chênh vênh, nhưng cẩn trọng và có người đồng hành thì vượt qua dễ dàng.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Cẩn thận trong việc nhỏ, bình an sẽ theo bạn.",
+      "gia-dao": "Cùng nắm tay người thân vượt qua giai đoạn bận rộn.",
+      "cong-danh": "Làm việc nhóm sẽ hiệu quả hơn làm một mình.",
+      "hoc-tap": "Học nhóm sẽ giúp bạn hiểu bài nhanh hơn.",
+      "suc-khoe": "Chú ý an toàn khi đi lại, vận động.",
+      "tinh-duyen": "Cùng nhau vượt qua khó khăn, tình cảm thêm sâu đậm."
+    },
+    "loiKhuyen": "Nhờ một người bạn tin cậy giúp một việc nhỏ, và nhớ cảm ơn họ.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 17,
+    "tieuDe": "Quẻ số 17 – Trung",
+    "tho": "Chén trà nóng, khói lơ thơ,\nNhâm nhi chậm rãi, đợi chờ hương lên.\nĐời người vội vã chẳng nên,\nSống từng giây phút, bình yên tự về.",
+    "loiGiai": "Trà ngon cần thưởng thức chậm rãi. Sống chánh niệm từng phút giây sẽ thấy cuộc sống đậm đà hơn.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Chậm lại để cảm nhận, bình yên ở ngay hiện tại.",
+      "gia-dao": "Một bữa cơm, một ấm trà cùng nhau là hạnh phúc giản dị.",
+      "cong-danh": "Làm từng việc một, tránh ôm đồm.",
+      "hoc-tap": "Học kỹ từng phần thay vì học vội nhiều thứ.",
+      "suc-khoe": "Ăn chậm, nhai kỹ, nghỉ giải lao giữa giờ làm việc.",
+      "tinh-duyen": "Tình cảm cần thời gian để thấm, đừng vội."
+    },
+    "loiKhuyen": "Uống một tách trà hoặc ly nước thật chậm và chỉ chú tâm vào nó.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 18,
+    "tieuDe": "Quẻ số 18 – Trung",
+    "tho": "Mây trôi che khuất mặt trời,\nGió lên một lúc, mây rời trời trong.\nBuồn vui như nước dòng sông,\nChảy qua rồi hết, đừng mong giữ hoài.",
+    "loiGiai": "Mây chỉ che mặt trời trong chốc lát. Những điều chưa như ý cũng sẽ qua, đừng níu giữ nỗi buồn.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Có chút vướng bận nhưng sẽ qua nhanh.",
+      "gia-dao": "Giận hờn nhỏ trong nhà sẽ tan nếu không ai giữ trong lòng.",
+      "cong-danh": "Trở ngại chỉ là tạm thời, hãy bình tĩnh mà xử lý.",
+      "hoc-tap": "Một bài kiểm tra chưa tốt không quyết định tất cả.",
+      "suc-khoe": "Tâm trạng ảnh hưởng đến sức khỏe; hãy ra ngoài đón nắng, hít thở.",
+      "tinh-duyen": "Hiểu lầm sẽ được hóa giải bằng cuộc trò chuyện chân thành."
+    },
+    "loiKhuyen": "Khi buồn, hãy đi dạo vài phút và ngắm bầu trời.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 19,
+    "tieuDe": "Quẻ số 19 – Trung",
+    "tho": "Hạt nhỏ vùi giữa đất nâu,\nLặng thầm nảy rễ, mai sau thành cành.\nĐừng chê việc nhỏ chẳng thành,\nCây to nghìn tán cũng sinh từ mầm.",
+    "loiGiai": "Mọi điều lớn lao đều bắt đầu từ việc nhỏ. Đừng nản khi chưa thấy kết quả, gốc rễ đang lớn dần.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Bình an bắt đầu từ những thói quen nhỏ mỗi ngày.",
+      "gia-dao": "Một lời hỏi han nhỏ cũng vun đắp tình thân.",
+      "cong-danh": "Việc nhỏ làm chu đáo sẽ mở ra việc lớn.",
+      "hoc-tap": "Học từng chút một, tích tiểu thành đại.",
+      "suc-khoe": "Thay đổi một thói quen nhỏ, như uống thêm nước hay đi bộ thêm.",
+      "tinh-duyen": "Những quan tâm nhỏ nhặt nói lên tình cảm lớn."
+    },
+    "loiKhuyen": "Bắt đầu một thói quen tốt chỉ mất năm phút mỗi ngày.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 20,
+    "tieuDe": "Quẻ số 20 – Trung",
+    "tho": "Dòng sông uốn khúc quanh co,\nVẫn ra biển lớn, chẳng lo lạc đường.\nĐời người lắm lối vấn vương,\nGiữ lòng hướng thiện, tỏ tường bến xa.",
+    "loiGiai": "Con đường có thể vòng vèo, nhưng giữ đúng hướng thì rồi sẽ đến đích. Đừng sốt ruột vì phải đi đường vòng.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Thay đổi kế hoạch không phải là thất bại; hãy bình tâm đón nhận.",
+      "gia-dao": "Mỗi người một cách nghĩ, tôn trọng nhau là đủ.",
+      "cong-danh": "Có thể phải đi đường vòng, nhưng mục tiêu vẫn trong tầm tay.",
+      "hoc-tap": "Thử cách học khác nếu cách cũ chưa hiệu quả.",
+      "suc-khoe": "Linh hoạt điều chỉnh nếp sinh hoạt cho phù hợp.",
+      "tinh-duyen": "Duyên có khi đến muộn, nhưng đến đúng lúc."
+    },
+    "loiKhuyen": "Nhìn lại mục tiêu lớn và nhẹ nhàng điều chỉnh bước đi.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 21,
+    "tieuDe": "Quẻ số 21 – Trung",
+    "tho": "Cây đa đầu ngõ trăm năm,\nBóng râm che mát người nằm nghỉ trưa.\nNhớ ơn người trồng ngày xưa,\nTa trồng cây mới, cho vừa mai sau.",
+    "loiGiai": "Ta hưởng bóng mát từ cây người xưa trồng. Hãy biết ơn và tiếp nối việc tốt cho thế hệ sau.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Lòng biết ơn đem lại sự bình an sâu lắng.",
+      "gia-dao": "Trân trọng ông bà, kể cho con cháu nghe chuyện gia đình.",
+      "cong-danh": "Học hỏi người đi trước và giúp đỡ người đi sau.",
+      "hoc-tap": "Biết ơn thầy cô, học bằng cả sự trân trọng.",
+      "suc-khoe": "Dành thời gian ở nơi có cây xanh, không khí trong lành.",
+      "tinh-duyen": "Tình cảm bền lâu cần sự vun trồng của cả hai."
+    },
+    "loiKhuyen": "Tưới một chậu cây hoặc trồng một mầm xanh nhỏ.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 22,
+    "tieuDe": "Quẻ số 22 – Trung",
+    "tho": "Cánh diều no gió lưng trời,\nDây kia giữ chặt, diều thời bay cao.\nTự do mà biết trước sau,\nBiết mình tiết độ, dài lâu bay xa.",
+    "loiGiai": "Diều bay cao nhờ có sợi dây giữ. Tự do đi cùng kỷ luật và chừng mực sẽ đưa bạn đi xa.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Sống điều độ, biết đủ là chìa khóa của an yên.",
+      "gia-dao": "Nề nếp gia đình là sợi dây giữ mọi người gần nhau.",
+      "cong-danh": "Có kế hoạch rõ ràng, công việc tiến triển vững vàng.",
+      "hoc-tap": "Lập thời gian biểu và giữ đúng, bạn sẽ thấy tiến bộ.",
+      "suc-khoe": "Ăn ngủ điều độ, hạn chế thức khuya.",
+      "tinh-duyen": "Tôn trọng không gian riêng của nhau giúp tình cảm thêm bền."
+    },
+    "loiKhuyen": "Tối nay hãy đi ngủ đúng giờ.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 23,
+    "tieuDe": "Quẻ số 23 – Trung",
+    "tho": "Mưa rơi tí tách hiên nhà,\nNgồi nghe mưa hát, lòng ta dịu dần.\nĐôi khi dừng bước phân vân,\nNghỉ ngơi một chút, tinh thần sáng ra.",
+    "loiGiai": "Ngày mưa nhắc ta nghỉ ngơi. Lúc này nên dừng lại một chút, nạp lại năng lượng rồi hãy tiếp tục.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Nghỉ ngơi đúng lúc giúp tâm an.",
+      "gia-dao": "Ở nhà quây quần, cùng làm việc nhà thật vui.",
+      "cong-danh": "Tạm lùi một bước để nhìn rõ hơn, chưa cần vội tiến.",
+      "hoc-tap": "Học xen kẽ nghỉ ngơi sẽ hiệu quả hơn học dồn.",
+      "suc-khoe": "Cơ thể cần được nghỉ, đừng gắng sức.",
+      "tinh-duyen": "Cho nhau khoảng lặng để thêm nhớ thương."
+    },
+    "loiKhuyen": "Tắt điện thoại mười phút và chỉ ngồi nghỉ.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 24,
+    "tieuDe": "Quẻ số 24 – Trung",
+    "tho": "Hồ yên mặt nước như gương,\nSoi trời soi núi, soi đường người đi.\nLòng mình phẳng lặng khác chi,\nThấy rõ đúng sai, biết gì nên theo.",
+    "loiGiai": "Nước lặng mới soi rõ bóng. Khi tâm bình lặng, bạn sẽ phân biệt được điều nên và không nên.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Giữ tâm tĩnh lặng, mọi việc tự sáng tỏ.",
+      "gia-dao": "Bình tĩnh khi trò chuyện giúp cả nhà hiểu nhau.",
+      "cong-danh": "Đừng quyết định khi đang nóng giận hay quá vui.",
+      "hoc-tap": "Tự nhìn lại điểm mạnh, điểm yếu để học đúng chỗ.",
+      "suc-khoe": "Ngồi thiền hay hít thở sâu giúp tinh thần sáng suốt.",
+      "tinh-duyen": "Hiểu rõ lòng mình trước khi hứa hẹn."
+    },
+    "loiKhuyen": "Trước khi ngủ, nhìn lại một ngày và tự nhủ một lời tử tế với chính mình.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 25,
+    "tieuDe": "Quẻ số 25 – Bình",
+    "tho": "Lá vàng rơi rụng cuối thu,\nCây buông lá cũ, chờ mùa lộc non.\nBuông điều chẳng giữ được tròn,\nLòng nhẹ như gió, chỉ còn bình an.",
+    "loiGiai": "Cây biết buông lá cũ để đón lộc mới. Có những điều nên nhẹ nhàng buông bỏ để lòng thanh thản.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Buông bớt lo âu, bạn sẽ thấy nhẹ nhõm.",
+      "gia-dao": "Bỏ qua chuyện cũ, gia đình sẽ êm ấm hơn.",
+      "cong-danh": "Có việc nên dừng để tập trung cho việc quan trọng hơn.",
+      "hoc-tap": "Bỏ thói quen trì hoãn, bắt đầu lại từ hôm nay.",
+      "suc-khoe": "Từ bỏ một thói quen chưa tốt, cơ thể sẽ cảm ơn bạn.",
+      "tinh-duyen": "Điều không thuộc về mình, hãy chúc phúc và bước tiếp."
+    },
+    "loiKhuyen": "Dọn dẹp một góc nhỏ trong phòng, bỏ đi những thứ không cần.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 26,
+    "tieuDe": "Quẻ số 26 – Bình",
+    "tho": "Ngọn đèn trước gió lung lay,\nLấy tay che chắn, đêm này vẫn soi.\nKhó khăn chẳng phải muôn đời,\nGiữ lòng kiên định, sáng ngời ngày mai.",
+    "loiGiai": "Có lúc mọi việc chao đảo, nhưng biết giữ gìn và kiên định thì ánh sáng vẫn còn. Khó khăn chỉ là tạm thời.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Cần thêm cẩn trọng, nhưng không có gì phải lo lắng quá.",
+      "gia-dao": "Cả nhà cùng che chở cho nhau sẽ qua giai đoạn bận rộn.",
+      "cong-danh": "Công việc có thử thách; tập trung vào điều mình làm được.",
+      "hoc-tap": "Áp lực học tập là tạm thời, hãy chia nhỏ mục tiêu.",
+      "suc-khoe": "Giữ ấm, nghỉ ngơi; nếu thấy không khỏe nên đi khám sớm.",
+      "tinh-duyen": "Tình cảm cần được che chở bằng sự tin tưởng."
+    },
+    "loiKhuyen": "Viết ra một khó khăn và một người có thể giúp bạn.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 27,
+    "tieuDe": "Quẻ số 27 – Bình",
+    "tho": "Đông về gió lạnh qua sân,\nHạt mầm say ngủ, đợi xuân lại về.\nNghỉ ngơi đâu phải bỏ bê,\nDưỡng nuôi sức lực, chỉnh tề sang năm.",
+    "loiGiai": "Mùa đông là lúc tích lũy, chưa phải lúc vươn lên. Hãy chăm sóc bản thân, chuẩn bị cho mùa mới.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Thời gian lặng lẽ, phù hợp để tĩnh dưỡng.",
+      "gia-dao": "Dành nhiều thời gian bên gia đình, ấm áp bên nhau.",
+      "cong-danh": "Chưa phải lúc mở rộng; hãy trau dồi kỹ năng.",
+      "hoc-tap": "Củng cố kiến thức cũ, nền móng chắc mới xây cao được.",
+      "suc-khoe": "Giữ ấm cơ thể, ngủ đủ, ăn uống ấm nóng.",
+      "tinh-duyen": "Tình cảm cần sự kiên nhẫn chờ đợi."
+    },
+    "loiKhuyen": "Tự thưởng cho mình một giấc ngủ trọn vẹn.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 28,
+    "tieuDe": "Quẻ số 28 – Bình",
+    "tho": "Đường làng lầy lội sau mưa,\nBước chân chầm chậm, cũng vừa tới nơi.\nChẳng cần chạy đuổi theo người,\nĐi đường của mình, thảnh thơi lòng mình.",
+    "loiGiai": "Đường có chút trơn trượt, đi chậm sẽ an toàn. Đừng so sánh mình với người khác; mỗi người một nhịp.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Thong thả, đừng so sánh, bạn sẽ thấy bình yên.",
+      "gia-dao": "Mỗi thành viên có nhịp sống riêng, hãy tôn trọng.",
+      "cong-danh": "Tập trung vào tiến độ của chính mình.",
+      "hoc-tap": "Đừng áp lực vì điểm số của bạn bè; hãy so với chính mình hôm qua.",
+      "suc-khoe": "Vận động vừa sức, không cần ép mình.",
+      "tinh-duyen": "Đừng vội vàng chỉ vì thấy người khác đã có đôi."
+    },
+    "loiKhuyen": "Ghi lại một tiến bộ nhỏ của bản thân so với tháng trước.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 29,
+    "tieuDe": "Quẻ số 29 – Bình",
+    "tho": "Lưới kia rách một vài nơi,\nNgồi vá từng mắt, ra khơi lại đầy.\nLỗi lầm ai cũng có ngày,\nBiết sửa thì quý, đổi thay mới thành.",
+    "loiGiai": "Lưới rách thì vá lại. Ai cũng có lúc sai sót; nhận ra và sửa chữa là điều đáng quý.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Tha thứ cho bản thân, lòng sẽ nhẹ hơn.",
+      "gia-dao": "Một lời xin lỗi chân thành hàn gắn nhiều điều.",
+      "cong-danh": "Rà soát lại công việc, sửa lỗi nhỏ trước khi thành lớn.",
+      "hoc-tap": "Xem lại bài làm sai để hiểu, đó là cách học tốt nhất.",
+      "suc-khoe": "Điều chỉnh dần những thói quen chưa tốt.",
+      "tinh-duyen": "Thẳng thắn nhận lỗi giúp hai người gần nhau hơn."
+    },
+    "loiKhuyen": "Nói lời xin lỗi hoặc cảm ơn mà bạn còn chưa kịp nói với ai đó.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 30,
+    "tieuDe": "Quẻ số 30 – Bình",
+    "tho": "Trời hanh đất nứt nắng khô,\nGánh nước tưới cỏ, đợi cho mưa về.\nChăm lo chẳng chút bỏ bê,\nMưa sang cây lá xum xuê một vườn.",
+    "loiGiai": "Lúc khó khăn vẫn cần chăm chút những gì mình có. Sự bền bỉ hôm nay sẽ được đền đáp khi thời thế thuận lợi.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Giai đoạn bình thường, cứ đều đặn làm điều nên làm.",
+      "gia-dao": "Chăm sóc nhau những ngày bận rộn là điều quý giá.",
+      "cong-danh": "Công việc chậm, nhưng nỗ lực không uổng phí.",
+      "hoc-tap": "Chưa thấy tiến bộ rõ, nhưng đừng bỏ cuộc.",
+      "suc-khoe": "Uống đủ nước, chú ý thời tiết.",
+      "tinh-duyen": "Vun đắp đều đặn dù chưa thấy đáp lại ngay."
+    },
+    "loiKhuyen": "Chăm sóc một điều bạn đang có: một chậu cây, một đồ vật hay một mối quan hệ.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 31,
+    "tieuDe": "Quẻ số 31 – Bình",
+    "tho": "Chợ chiều người vội ngược xuôi,\nAi lo được mất, ai vui với lòng?\nBiết đủ là đủ thong dong,\nTham nhiều mệt mỏi, ít mong nhẹ nhàng.",
+    "loiGiai": "Biết đủ thì thấy đủ. Bớt mong cầu, bớt so đo, tâm sẽ thong dong.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Biết đủ, bình an ở ngay trong tầm tay.",
+      "gia-dao": "Trân trọng những gì gia đình đang có.",
+      "cong-danh": "Đừng ôm quá nhiều việc cùng lúc.",
+      "hoc-tap": "Chọn lọc những gì cần học, tránh dàn trải.",
+      "suc-khoe": "Ăn vừa đủ, nghỉ đúng lúc.",
+      "tinh-duyen": "Yêu thương không cần hoàn hảo, chỉ cần chân thành."
+    },
+    "loiKhuyen": "Liệt kê ba điều bạn đã có đủ trong cuộc sống.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 32,
+    "tieuDe": "Quẻ số 32 – Bình",
+    "tho": "Đêm dài rồi cũng tàn canh,\nGà kêu sáng sớm, trời xanh lại về.\nNhẫn nại như đất bốn bề,\nChờ trăng chờ nắng, chẳng hề nản lòng.",
+    "loiGiai": "Không có đêm nào dài mãi. Nhẫn nại một chút, ngày mới tươi sáng sẽ đến.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Đôi lúc thấy chông chênh, nhưng ánh sáng đang tới gần.",
+      "gia-dao": "Kiên nhẫn với nhau, gia đình sẽ qua giai đoạn khó.",
+      "cong-danh": "Hãy giữ vững, tình hình sẽ cải thiện.",
+      "hoc-tap": "Mệt mỏi là bình thường; nghỉ ngơi rồi học tiếp.",
+      "suc-khoe": "Giấc ngủ ngon là liều thuốc tốt; hãy thư giãn trước khi ngủ.",
+      "tinh-duyen": "Chờ đợi trong tin tưởng, đừng để nghi ngờ làm tổn thương nhau."
+    },
+    "loiKhuyen": "Tối nay hãy đi ngủ sớm hơn thường lệ một chút.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 33,
+    "tieuDe": "Quẻ số 33 – Bình",
+    "tho": "Giữa dòng đá nổi chập chờn,\nNgười chèo khéo léo, sóng cơn cũng hiền.\nViệc đời lắm chuyện ưu phiền,\nKhéo lời khéo ý, an nhiên mọi đường.",
+    "loiGiai": "Đường đi có vài trở ngại nhỏ, nhưng khéo léo và mềm mỏng sẽ vượt qua. Hãy cẩn trọng trong lời nói.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Cẩn trọng lời ăn tiếng nói, tránh tranh cãi không cần thiết.",
+      "gia-dao": "Nói năng nhẹ nhàng giúp tránh hiểu lầm trong nhà.",
+      "cong-danh": "Khéo léo trong giao tiếp sẽ hóa giải bất đồng.",
+      "hoc-tap": "Tìm cách học phù hợp với mình để vượt qua môn khó.",
+      "suc-khoe": "Cẩn thận khi tham gia giao thông và khi vận động mạnh.",
+      "tinh-duyen": "Lời nói dịu dàng có sức mạnh hơn lời trách móc."
+    },
+    "loiKhuyen": "Trước khi nói điều gì khó, hãy hít một hơi thật sâu.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 34,
+    "tieuDe": "Quẻ số 34 – Bình",
+    "tho": "Ngày thường cơm nước đơn sơ,\nNhà tranh vách đất, mộng mơ chẳng nhiều.\nBình thường mà đẹp bao nhiêu,\nMỗi ngày bình dị, sớm chiều thảnh thơi.",
+    "loiGiai": "Quẻ bình thường, nhưng bình thường chính là may mắn. Hãy trân trọng những điều giản dị quanh mình.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Ngày tháng bình lặng là một món quà.",
+      "gia-dao": "Bữa cơm gia đình đơn giản mà ấm áp.",
+      "cong-danh": "Công việc ổn định, hãy làm tốt phần việc của mình.",
+      "hoc-tap": "Giữ nhịp học bình thường, đều đặn là đủ.",
+      "suc-khoe": "Sức khỏe ổn, tiếp tục sinh hoạt lành mạnh.",
+      "tinh-duyen": "Hạnh phúc nằm ở những điều bình dị bên nhau."
+    },
+    "loiKhuyen": "Ăn một bữa cơm cùng người thân mà không dùng điện thoại.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 35,
+    "tieuDe": "Quẻ số 35 – Bình",
+    "tho": "Đường lên núi lắm dốc cao,\nMồ hôi thấm áo, ước ao đỉnh trời.\nDừng chân ngắm cảnh nghỉ ngơi,\nĐỉnh kia vẫn đó, chẳng rời đâu xa.",
+    "loiGiai": "Việc khó cần sức bền. Hãy nghỉ khi mệt và tận hưởng chặng đường, đích đến vẫn chờ bạn.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Đừng tự tạo áp lực; nghỉ ngơi cũng là một phần của hành trình.",
+      "gia-dao": "Cùng người thân đi dạo hay dã ngoại sẽ rất vui.",
+      "cong-danh": "Mục tiêu xa cần sức bền; hãy chia giai đoạn rõ ràng.",
+      "hoc-tap": "Ôn thi như leo núi: đi từng bậc, nghỉ đúng lúc.",
+      "suc-khoe": "Vận động vừa sức, lắng nghe cơ thể.",
+      "tinh-duyen": "Cùng nhau đi chậm, ngắm cảnh, tình cảm thêm đẹp."
+    },
+    "loiKhuyen": "Đi bộ ngoài trời mười lăm phút và để ý cảnh vật xung quanh.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 36,
+    "tieuDe": "Quẻ số 36 – Bình",
+    "tho": "Tiếng vọng giữa núi rừng xanh,\nLời mình nói ra, vọng thành lời ta.\nNói lời ái ngữ hiền hòa,\nNúi rừng đáp lại cũng là lời thương.",
+    "loiGiai": "Điều mình trao đi sẽ quay về với mình. Nói lời hay, làm việc tốt thì sẽ nhận về điều tốt.",
+    "loiGiaiTheoChuDe": {
+      "binh-an": "Gieo hiền hòa, gặt bình yên.",
+      "gia-dao": "Lời yêu thương trong nhà sẽ được đáp lại bằng yêu thương.",
+      "cong-danh": "Đối xử tử tế với mọi người, quan hệ công việc sẽ tốt đẹp.",
+      "hoc-tap": "Giúp bạn học bài, bạn cũng sẽ giúp lại mình.",
+      "suc-khoe": "Suy nghĩ tích cực ảnh hưởng tốt đến cơ thể.",
+      "tinh-duyen": "Thương người như thương mình, tình cảm sẽ đủ đầy."
+    },
+    "loiKhuyen": "Khen ngợi chân thành một người hôm nay.",
+    "chuDe": [
+      "binh-an",
+      "gia-dao",
+      "cong-danh",
+      "hoc-tap",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  }
+]
