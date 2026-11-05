@@ -247,15 +247,15 @@ export async function createPostgresRepositories(pool: Pool): Promise<Repositori
           )
         ).map(toLantern);
       },
-      async listByStatus(status, now, limit) {
+      async listByStatus(status, now, limit, before = Number.MAX_SAFE_INTEGER) {
         const rs =
           status === 'all'
-            ? await rows(pool, 'SELECT * FROM lanterns WHERE expires_at > $1 ORDER BY created_at DESC LIMIT $2', [now, limit])
-            : await rows(pool, 'SELECT * FROM lanterns WHERE status = $1 AND expires_at > $2 ORDER BY created_at DESC LIMIT $3', [
-                status,
-                now,
-                limit,
-              ]);
+            ? await rows(pool, 'SELECT * FROM lanterns WHERE expires_at > $1 AND created_at < $2 ORDER BY created_at DESC LIMIT $3', [now, before, limit])
+            : await rows(
+                pool,
+                'SELECT * FROM lanterns WHERE status = $1 AND expires_at > $2 AND created_at < $3 ORDER BY created_at DESC LIMIT $4',
+                [status, now, before, limit],
+              );
         return rs.map(toLantern);
       },
       async setStatus(id, status) {

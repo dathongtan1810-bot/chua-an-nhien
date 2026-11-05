@@ -125,6 +125,23 @@ describe('admin', () => {
     expect(await emitAck(c, 'release_lantern', { text: 'chỉ một từ', color: 'red' })).toMatchObject({ ok: true });
   });
 
+  it('phân trang danh sách đèn', async () => {
+    const { cookie } = await login();
+    const now = Date.now();
+    const { w } = await s.hello();
+    for (let i = 0; i < 7; i++) {
+      await s.ctx.repos.lanterns.create({ id: `p${i}`, userId: w.userId, nickname: 'x', text: `đèn ${i}`, color: 'red', status: 'pending', createdAt: now - i * 1000, expiresAt: now + 1e6 });
+    }
+    const p1 = await (await api(cookie, '/lanterns?status=pending&limit=3')).json();
+    expect(p1.lanterns.map((l: any) => l.id)).toEqual(['p0', 'p1', 'p2']);
+    const p2 = await (await api(cookie, `/lanterns?status=pending&limit=3&before=${encodeURIComponent(p1.nextBefore)}`)).json();
+    expect(p2.lanterns.map((l: any) => l.id)).toEqual(['p3', 'p4', 'p5']);
+    const p3 = await (await api(cookie, `/lanterns?status=pending&limit=3&before=${encodeURIComponent(p2.nextBefore)}`)).json();
+    expect(p3.lanterns.map((l: any) => l.id)).toEqual(['p6']);
+    expect(p3.nextBefore).toBeNull();
+    expect((await api(cookie, '/lanterns?before=abc')).status).toBe(400);
+  });
+
   it('nhật ký quản trị ghi lại thao tác', async () => {
     await login('sai');
     const { cookie } = await login();

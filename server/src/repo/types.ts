@@ -58,7 +58,8 @@ export interface LanternsRepo {
   findById(id: string): Promise<LanternRow | undefined>;
   /** Đèn approved, chưa hết hạn, tạo sau `since`, mới nhất trước. */
   listApproved(opts: { since: number; now: number; limit: number }): Promise<LanternRow[]>;
-  listByStatus(status: LanternStatus | 'all', now: number, limit: number): Promise<LanternRow[]>;
+  /** Mới nhất trước; `before` (ms) để phân trang: chỉ lấy đèn tạo trước mốc này. */
+  listByStatus(status: LanternStatus | 'all', now: number, limit: number, before?: number): Promise<LanternRow[]>;
   setStatus(id: string, status: LanternStatus): Promise<void>;
   countByUserSince(userId: string, since: number): Promise<number>;
   /** true nếu thêm tim mới; false nếu đã thả trước đó. */

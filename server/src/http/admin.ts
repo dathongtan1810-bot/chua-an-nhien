@@ -38,7 +38,11 @@ export function verifySession(secret: string, token: string | undefined, now = D
 }
 
 const LoginSchema = z.object({ password: z.string().min(1).max(256) });
-const StatusQuery = z.object({ status: z.enum(['pending', 'approved', 'hidden', 'all']).default('pending') });
+const StatusQuery = z.object({
+  status: z.enum(['pending', 'approved', 'hidden', 'all']).default('pending'),
+  before: z.string().datetime({ offset: true }).optional(),
+  limit: z.coerce.number().int().min(1).max(500).default(100),
+});
 const IdParam = z.object({ id: IdSchema });
 const BanBody = z.object({ banned: z.boolean().default(true) });
 const WordsBody = z.object({ words: z.array(z.string().trim().min(1).max(60)).max(5000) });
@@ -92,10 +96,17 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
 
     r.get('/admin/api/me', async () => ({ ok: true, moderationMode: config.MODERATION_MODE, features: [...config.features] }));
 
-    r.get('/admin/api/lanterns', async (req) => {
-      const { status } = StatusQuery.parse(req.query);
-      const rows = await repos.lanterns.listByStatus(status, Date.now(), 500);
-      return { lanterns: rows.map((l) => ({ ...l, createdAt: iso(l.createdAt), expiresAt: iso(l.expiresAt) })) };
+    r.get('/admin/api/lanterns', async (req, reply) => {
+      const q = StatusQuery.safeParse(req.query);
+      if (!q.success) return reply.code(400).send({ error: 'invalid_query' });
+      const { status, before, limit } = q.data;
+      const rows = await repos.lanterns.listByStatus(status, Date.now(), limit, before ? Date.parse(before) : undefined);
+      const last = rows.at(-1);
+      return {
+        lanterns: rows.map((l) => ({ ...l, createdAt: iso(l.createdAt), expiresAt: iso(l.expiresAt) })),
+        // con trỏ trang sau (null = hết)
+        nextBefore: rows.length === limit && last ? iso(last.createdAt) : null,
+      };
     });
 
     const setStatus = (status: 'approved' | 'hidden') => async (req: FastifyRequest, reply: FastifyReply) => {
