@@ -12,12 +12,12 @@ Hôm nay: **thứ Năm 05/11/2026** (năm Bính Ngọ). Ngày âm lịch dưới
 | **Mùng 1 tháng Chạp → D0 – Ra mắt** | **T6 08/01/2027** | Ngày đi chùa đầu tháng, sát mùa Tết |
 | Rằm tháng Chạp | T6 22/01/2027 (D+14) | Phát hành bản 1.1 Tết |
 | 23 tháng Chạp – Ông Công Ông Táo | T7 30/01/2027 (D+22) | |
-| 29 tháng Chạp – **Giao thừa** (tháng Chạp năm Bính Ngọ là tháng thiếu, không có ngày 30) | T6 05/02/2027 (D+28) | |
+| 29 tháng Chạp – **Giao thừa** (sự kiện "Tất niên – Đêm Trừ tịch" ghi 30/12; tháng Chạp năm Bính Ngọ là tháng thiếu nên app lùi về 29/12 – D13) | T6 05/02/2027 (D+28) | |
 | **Mùng 1 Tết Đinh Mùi** | **T7 06/02/2027 (D+29)** | Đỉnh lưu lượng dự kiến |
 | Mùng 2 Tết | CN 07/02/2027 (D+30) | Kết thúc giai đoạn 30 ngày |
-| Rằm tháng Giêng (Tết Nguyên Tiêu) | T7 20/02/2027 (D+43) | Chiến dịch tiếp nối sau 30 ngày |
-| Phật Đản (Rằm tháng Tư) | T5 20/05/2027 | Bản/chiến dịch theo mùa |
-| Vu Lan (Rằm tháng Bảy) | T2 16/08/2027 | Bản 1.2 (mùng 1 tháng Bảy: T2 02/08/2027) |
+| Rằm tháng Giêng – Tết Thượng Nguyên | T7 20/02/2027 (D+43) | Chiến dịch tiếp nối sau 30 ngày |
+| Lễ Phật Đản (Rằm tháng Tư) | T5 20/05/2027 | Bản/chiến dịch theo mùa |
+| Lễ Vu Lan – Rằm tháng Bảy | T2 16/08/2027 | Bản 1.2 (mùng 1 tháng Bảy: T2 02/08/2027) |
 
 **Vì sao chọn D0 = mùng 1 tháng Chạp (08/01/2027)?** Có 4 tuần tích lũy đánh giá, sửa lỗi và tối ưu ASO trước Tết – thời điểm người Việt tìm "đi lễ đầu năm", "xin xăm đầu năm" nhiều nhất. Ra mắt sát Tết hơn thì rủi ro lỗi/duyệt chậm đúng lúc cao điểm; ra mắt sớm hơn (tháng 11) thì mất "câu chuyện mùa lễ". Nếu bản dựng trễ: phương án B là **D0 = Rằm tháng Chạp (22/01/2027)** và gộp luôn nội dung Tết vào 1.0 – khi đó dời toàn bộ bảng dưới đây 14 ngày, bỏ bản 1.1 riêng.
 
@@ -121,7 +121,7 @@ Ký hiệu kênh: **TT** TikTok · **FB** Facebook Page/Reels · **ZL** Zalo OA 
 | D+27 | T5 04/02 | 28/12 | Kiểm tra lại chuyển cảnh trang trí Giao thừa/mùng 1 trên máy thật (giờ Việt Nam). | Dev |
 | D+28 | T6 05/02 | **29/12 – Giao thừa** | Bài "Thắp nén hương Giao thừa" đăng 21:00; giảm quảng cáo sau 22:00. Trực UGC tăng cường. | TT, FB, ZL |
 | D+29 | T7 06/02 | **Mùng 1 Tết Đinh Mùi** | Bài chúc mừng năm mới; video "Lời nguyện đầu năm treo kín Cây nguyện" (dùng lời nguyện mẫu/được người dùng đồng ý). Theo dõi crash từng giờ. | Tất cả |
-| D+30 | CN 07/02 | Mùng 2 Tết | **Tổng kết 30 ngày** (bảng KPI mục 1). Lên kế hoạch Rằm tháng Giêng (20/02/2027): nhiệm vụ "lời nguyện cho cả năm", video "Rằm tháng Giêng – đi chùa trong điện thoại". | Nội bộ |
+| D+30 | CN 07/02 | Mùng 2 Tết | **Tổng kết 30 ngày** (bảng KPI mục 1). Lên kế hoạch Rằm tháng Giêng (20/02/2027): nhiệm vụ "Ngắm trăng Rằm tháng Giêng" (đã có trong bộ mùa Tết `content/mua/tet.json`), video "Rằm tháng Giêng – đi chùa trong điện thoại". | Nội bộ |
 
 ---
 
@@ -176,4 +176,4 @@ Nguyên tắc ứng xử: **lắng nghe trước, giải thích sau**; xin lỗi
 ## 7. Sau D+30
 - Rằm tháng Giêng (T7 20/02/2027): chiến dịch nhỏ, đổi ảnh/Promotional Text về bản thường sau mùng 10 Tết.
 - Đánh giá lại từ khóa (`aso-keywords.md` mục 4), cập nhật Keywords iOS trong bản 1.1.x.
-- Chuẩn bị Phật Đản (T5 20/05/2027) và bản 1.2 Vu Lan (phát hành khoảng T2 02/08/2027, Rằm tháng Bảy T2 16/08/2027).
+- Chuẩn bị Phật Đản (T5 20/05/2027 – hiện chỉ có sự kiện trong `content/su-kien-am-lich.json`, **chưa có** bộ mùa riêng trong `content/mua/`) và bản 1.2 Vu Lan (bộ mùa `content/mua/vu-lan.json`) (phát hành khoảng T2 02/08/2027, Rằm tháng Bảy T2 16/08/2027).

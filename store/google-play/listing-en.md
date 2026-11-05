@@ -20,7 +20,7 @@ Light incense, ring the bell, draw a poem fortune, hang a wish in a calm temple
 ```
 
 ## Full description
-Limit: 4000 · Actual: **2867** characters
+Limit: 4000 · Actual: **2865** characters
 
 ```text
 Chùa An Nhiên ("the Temple of Serenity") is a fictional Vietnamese temple that fits in your pocket – a quiet corner where you can pause for a few minutes in a busy day. Light a stick of incense, listen to the bell, read a gentle message, then carry on with a lighter heart.
@@ -45,7 +45,7 @@ Follow the first and fifteenth days of each lunar month and the festivals of the
 
 OUR PROMISES
 • Free, with no ads and no in-app purchases.
-• No account needed – just choose a nickname.
+• No account, email or phone number needed.
 • We never ask for donations or offerings of any kind.
 • Delete your data anytime from Settings.
 • All poems, readings, messages and sounds are original works by our team.
@@ -68,5 +68,5 @@ Wishing you a serene day.
 | Tags (max 5, from the Play Console list) | Religion & spirituality · Mindfulness · Calendar · Culture/Tradition · Relaxation | Pick the closest names available in the current Play Console list. Avoid "Meditation" unless guided meditation is added. |
 | Contact email | hotro@chuaannhien.example [CONFIRM] | |
 | Website | https://chuaannhien.example/ | |
-| Privacy policy | https://chuaannhien.example/privacy.html | |
+| Privacy policy | https://chuaannhien.example/privacy-policy.html | |
 | Data deletion URL | https://chuaannhien.example/support.html#xoa-du-lieu | See `store/data-safety.md`. |

@@ -1,6 +1,6 @@
 # Xếp hạng độ tuổi – Google Play (IARC) & App Store
 
-Căn cứ: D17, D20 trong `content/DECISIONS.md`. Các đáp án dưới đây mô tả **nội dung do ứng dụng cung cấp**; riêng nội dung người dùng tạo (lời nguyện trên Cây nguyện) được khai ở mục tương tác/UGC. Mục nào phụ thuộc bản dựng thực tế đánh dấu **[CẦN XÁC NHẬN]**.
+Căn cứ: D17, D20, D22 trong `content/DECISIONS.md` (D22 chốt **App Store 13+**, **Google Play IARC 3/PEGI 3 + "Users Interact"**). Các đáp án dưới đây mô tả **nội dung do ứng dụng cung cấp**; riêng nội dung người dùng tạo (lời nguyện trên Cây nguyện) được khai ở mục tương tác/UGC. Mục nào phụ thuộc bản dựng thực tế đánh dấu **[CẦN XÁC NHẬN]**.
 
 > Nguyên tắc: trả lời trung thực, thà khai chặt hơn một chút còn hơn bị gỡ app hoặc bị đổi xếp hạng sau khi phát hành. Mỗi khi thêm tính năng (chat, chia sẻ ảnh, mua hàng…) phải làm lại bảng câu hỏi.
 

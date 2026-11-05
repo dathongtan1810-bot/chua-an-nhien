@@ -18,7 +18,7 @@ Thắp hương, thỉnh chuông, xin quẻ lục bát, treo lời nguyện ở n
 ```
 
 ## Mô tả đầy đủ (Full description)
-Giới hạn: 4000 · Thực tế: **2664** ký tự
+Giới hạn: 4000 · Thực tế: **2671** ký tự
 
 ```text
 Chùa An Nhiên là một ngôi chùa hư cấu nằm gọn trong điện thoại của bạn – một góc nhỏ yên tĩnh để dừng lại vài phút giữa ngày bận rộn. Thắp một nén hương, nghe một hồi chuông, đọc một lời nhắn bình an, rồi tiếp tục ngày của mình với lòng nhẹ nhàng hơn.
@@ -43,7 +43,7 @@ Theo dõi mùng Một, ngày Rằm và các dịp lễ trong năm: Tết Nguyên
 
 CAM KẾT CỦA CHÚNG TÔI
 • Miễn phí, không quảng cáo, không mua trong ứng dụng.
-• Không cần tạo tài khoản – chỉ cần đặt một biệt danh.
+• Không cần tạo tài khoản, không cần email hay số điện thoại.
 • Không nhận tiền công đức hay cúng dường dưới bất kỳ hình thức nào.
 • Bạn có thể xóa dữ liệu của mình bất cứ lúc nào trong Cài đặt.
 • Toàn bộ thơ, lời giải, thông điệp và âm thanh do đội ngũ tự sáng tác.
@@ -66,7 +66,7 @@ Chúc bạn một ngày an nhiên.
 | Thẻ (tối đa 5, chọn trong danh sách Play Console) | Tâm linh/Tôn giáo (Religion & spirituality) · Thiền & chánh niệm (Mindfulness) · Lịch (Calendar) · Truyền thống/Văn hóa · Thư giãn (Relaxation) | Tên thẻ chính xác phụ thuộc danh sách Play Console hiện hành – chọn thẻ gần nghĩa nhất. Không chọn thẻ "Meditation" nếu app không có bài thiền hướng dẫn, tránh gây hiểu nhầm. |
 | Email liên hệ | hotro@chuaannhien.example [CẦN XÁC NHẬN] | |
 | Trang web | https://chuaannhien.example/ | |
-| Chính sách quyền riêng tư | https://chuaannhien.example/privacy.html | |
+| Chính sách quyền riêng tư | https://chuaannhien.example/privacy-policy.html | |
 | URL xóa dữ liệu | https://chuaannhien.example/support.html#xoa-du-lieu | Xem `store/data-safety.md`. |
 
 ## Đồ họa cần nộp

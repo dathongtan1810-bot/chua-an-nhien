@@ -29,7 +29,7 @@ Full moon or new moon coming up? Stop by Chùa An Nhiên to light incense, ring 
 > Re-check the 170-character limit each time.
 
 ## Description
-Limit: 4000 · Actual: **2320** characters
+Limit: 4000 · Actual: **2325** characters
 
 ```text
 Chùa An Nhiên ("the Temple of Serenity") is a fictional Vietnamese temple that fits in your pocket – a quiet corner to pause for a few minutes in a busy day. Light incense, listen to the bell, read a gentle message, then carry on with a lighter heart.
@@ -54,7 +54,7 @@ New moon and full moon days, Lunar New Year (Tết), the First Full Moon, Vesak,
 
 OUR PROMISES
 • Free, with no ads and no in-app purchases.
-• No account needed – just a nickname.
+• No account, email or phone number needed.
 • We never ask for donations or offerings of any kind.
 • Delete your data anytime from Settings.
 • All poems, readings, messages and sounds are original.
@@ -86,6 +86,6 @@ buddhist,buddha,pagoda,incense,fortune,poem,wish,lunar,calendar,vietnamese,tet,v
 |---|---|
 | Support URL | https://chuaannhien.example/support.html |
 | Marketing URL | https://chuaannhien.example/ |
-| Privacy Policy URL | https://chuaannhien.example/privacy.html |
+| Privacy Policy URL | https://chuaannhien.example/privacy-policy.html |
 
 > [CONFIRM WITH DEV] `chuaannhien.example` is a placeholder domain (D18).

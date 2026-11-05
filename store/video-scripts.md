@@ -30,7 +30,7 @@ Ký hiệu: **VO** = voice-over (lời đọc), **SFX** = hiệu ứng âm thanh
 | 6–7s | Vòng sóng âm lan tỏa trên màn hình | – | Chuông ngân tiếp, nhạc lùi nhỏ | – |
 | 7–8s | Mõ gỗ; ngón tay gõ 3 nhịp | "Gõ mõ, thở chậm lại" | **SFX mõ** cốc… cốc… cốc | "thở chậm lại." |
 | 8–9s | Màn hình "Thông điệp hôm nay" mở ra | – | Nhạc nền | – |
-| 9–10s | Thông điệp mẫu hiện chữ: "Hôm nay, hãy làm từng việc một. Việc nào xong, việc ấy nhẹ." | (chính là thông điệp trong app) | Nhạc nền | Đọc nhỏ thông điệp |
+| 9–10s | Thông điệp mẫu hiện chữ (thông điệp ngày số 238 trong `content/thong-diep-ngay.json`): "Lúc nhiều việc, hãy làm từng việc một. Bước nhỏ đều đặn sẽ đi xa hơn bước vội rồi mệt." | (chính là thông điệp trong app) | Nhạc nền | Đọc nhỏ thông điệp |
 | 10–11s | Cảnh quay thật: người dùng ngả lưng ghế, thở ra, mỉm cười | – | Nhạc nền | – |
 | 11–12s | Quay lại màn hình máy tính, người dùng gõ phím thong thả hơn | "Rồi quay lại, nhẹ hơn một chút" | Tiếng gõ phím chậm, đều | "Rồi quay lại, nhẹ hơn một chút." |
 | 12–13s | Logo Chùa An Nhiên + icon app | "Chùa An Nhiên" | Chuông nhỏ | "Chùa An Nhiên –" |
@@ -48,24 +48,26 @@ Ký hiệu: **VO** = voice-over (lời đọc), **SFX** = hiệu ứng âm thanh
 
 **Mục tiêu:** khẳng định điểm khác biệt – 100 quẻ thơ tự sáng tác, tích cực, không hù dọa. **Hook 2 giây đầu:** tiếng lắc ống xăm lách cách + câu hỏi trực diện trên màn.
 
-Quẻ mẫu dùng trong video (do đội tự sáng tác, đã kiểm bằng `content/tools/lucbat.mjs` – không lỗi): 
-> Đường xa đi chậm cũng về / Lòng còn ấm áp bốn bề nắng lên / Giữ cho tâm được vững bền / Bao điều nhỏ bé dựng nên an lành
-> [CẦN XÁC NHẬN] nếu quẻ này không có trong bộ 100 quẻ chính thức, thay bằng một quẻ có thật trong `content/que-xam.json` để video khớp app.
+Quẻ mẫu dùng trong video: **Quẻ số 82 – "Con đường qua đồi"** (quẻ thật trong `content/que-xam.json`, chủ đề `cong-viec`; bản EN `content/i18n/en/que-xam.json` id 82):
+> Đường quanh qua mấy ngọn đồi / Đi hoài chẳng vội, đến hồi tới nơi / Việc làm có lúc chơi vơi / Giữ bền từng bước, chân trời mở ra
+>
+> Lời giải tóm tắt: con đường qua đồi không thẳng, nhưng người đi đều chân thì rồi cũng tới; đừng nóng lòng so mình với người khác – kiên nhẫn là tiếp tục đi khi chưa thấy đích.
+> Lời khuyên: "Viết ra ba việc bạn đã làm được trong tháng qua để thấy mình đã đi xa hơn mình nghĩ."
 
 | Giây | Hình ảnh | Chữ trên màn (OST) | Âm thanh | VO |
 |---|---|---|---|---|
 | 0–1s | Cận ống xăm trên màn hình điện thoại, đang rung lắc | "Đầu tuần rối bời?" | **SFX lắc ống xăm** lách cách (từ app) | – |
 | 1–2s | Một thẻ xăm bật ra khỏi ống | "Xin một quẻ thơ xem sao" | SFX thẻ rơi "tách" | – |
 | 2–3s | Thẻ quẻ lật mở, giấy dó kem, viền đỏ son | – | Nhạc nền đàn tranh tự sáng tác vào | "Mỗi quẻ ở Chùa An Nhiên…" |
-| 3–4s | Hiện câu thơ 1 (chữ chạy từng tiếng) | "Đường xa đi chậm cũng về" | Nhạc nền | "…là một bài thơ lục bát." |
-| 4–5s | Câu 2 | "Lòng còn ấm áp bốn bề nắng lên" | Nhạc nền | Đọc chậm câu 1–2 |
+| 3–4s | Hiện câu thơ 1 (chữ chạy từng tiếng) | "Đường quanh qua mấy ngọn đồi" | Nhạc nền | "…là một bài thơ lục bát." |
+| 4–5s | Câu 2 | "Đi hoài chẳng vội, đến hồi tới nơi" | Nhạc nền | Đọc chậm câu 1–2 |
 | 5–6s | Giữ khung, ánh nắng nhẹ lướt qua thẻ | (giữ 2 câu) | Nhạc nền | (tiếp) |
-| 6–7s | Câu 3 | "Giữ cho tâm được vững bền" | Nhạc nền | Đọc câu 3 |
-| 7–8s | Câu 4 | "Bao điều nhỏ bé dựng nên an lành" | Nhạc nền | Đọc câu 4 |
+| 6–7s | Câu 3 | "Việc làm có lúc chơi vơi" | Nhạc nền | Đọc câu 3 |
+| 7–8s | Câu 4 | "Giữ bền từng bước, chân trời mở ra" | Nhạc nền | Đọc câu 4 |
 | 8–9s | Vuốt xuống phần lời giải; tab chủ đề hiện ra | "Lời giải theo chủ đề" | Tiếng giấy lật | "Đọc lời giải theo điều bạn đang nghĩ:" |
 | 9–10s | Ngón tay lướt qua các tab: Gia đạo · Công việc · Sức khỏe · Học hành · Tình duyên · Tài lộc | 6 chủ đề nổi lên lần lượt | Tiếng "tách" nhẹ mỗi tab | "gia đạo, công việc, học hành…" |
-| 10–11s | Chạm tab "Công việc"; đoạn lời giải hiện ra | (đoạn lời giải trong app) | Nhạc nền | – |
-| 11–12s | Phóng to dòng lời khuyên | "Lời khuyên: làm chắc từng việc nhỏ hôm nay" [thay bằng lời khuyên thật của quẻ] | Nhạc nền | "và một lời khuyên nhỏ." |
+| 10–11s | Chạm tab "Công việc"; đoạn lời giải hiện ra | "Công việc đang ở đoạn dốc. Đặt mục tiêu nhỏ cho từng tuần…" | Nhạc nền | – |
+| 11–12s | Phóng to dòng lời khuyên | "Lời khuyên: Viết ra ba việc bạn đã làm được trong tháng qua" | Nhạc nền | "và một lời khuyên nhỏ." |
 | 12–13s | Phóng to dòng ghi chú cuối quẻ | "Quẻ mang tính chiêm nghiệm, không phải lời tiên đoán" | Nhạc nền lắng | "Quẻ để chiêm nghiệm," |
 | 13–14s | Giữ khung ghi chú | – | – | "không phải để đoán trước tương lai." |
 | 14–15s | Cảnh quay thật: người dùng đọc điện thoại, gật nhẹ | "Không có quẻ \"xấu\" để hù dọa" | Nhạc nền | "Và không có quẻ nào để hù dọa bạn." |
@@ -102,13 +104,13 @@ Quẻ mẫu dùng trong video (do đội tự sáng tác, đã kiểm bằng `co
 | 11–12s | Gõ tiếp | "con hứa hè này về thăm." | Tiếng gõ | – |
 | 12–13s | Bấm "Treo lên cây"; thẻ bay lên cành | – | SFX "vút" nhẹ + chuông gió | – |
 | 13–14s | Thẻ đung đưa trên cành cạnh các thẻ khác | – | Chuông gió | "Lời nguyện ấy treo cạnh rất nhiều lời nguyện khác…" |
-| 14–15s | Lướt chậm qua các thẻ (lời nguyện mẫu do đội viết) | "Mong em thi xong thật bình tĩnh" | Nhạc nền | – |
-| 15–16s | Lướt tiếp | "Cảm ơn một năm đã cố gắng" | Nhạc nền | "…của những người cũng đang nhớ nhà." |
-| 16–17s | Lướt tiếp | "Cho bà ngoại ăn Tết vui" | Nhạc nền | – |
+| 14–15s | Lướt chậm qua các thẻ (lời nguyện mẫu mùa Tết trong `content/mua/tet.json`) | "Con mong những người đang xa quê có một cái Tết ấm áp, dù ở nơi nào." | Nhạc nền | – |
+| 15–16s | Lướt tiếp | "Con xin cảm ơn năm cũ đã cho con những bài học, dù có lúc vất vả." | Nhạc nền | "…của những người cũng đang nhớ nhà." |
+| 16–17s | Lướt tiếp | "Con mong ông bà, cha mẹ đón Tết thật khỏe, ăn ngon ngủ yên." | Nhạc nền | – |
 | 17–18s | Biểu tượng khiên nhỏ + nút "Báo cáo" mờ ở góc thẻ | "Lời nguyện ẩn danh, có lọc & báo cáo" | Nhạc nền | – |
 | 18–19s | Mở nhiệm vụ Tết: danh sách có dấu tích | "Nhiệm vụ Tết" | SFX tích nhẹ | "Còn có nhiệm vụ Tết nho nhỏ:" |
-| 19–20s | Tích "Viết lời chúc đầu năm cho người thân" | "✓ Viết lời chúc cho người thân" | SFX tích | "viết lời chúc cho người thân," |
-| 20–21s | Tích "Gọi điện chúc Tết ông bà" [CẦN XÁC NHẬN nhiệm vụ có trong app] | "✓ Gọi điện chúc Tết ông bà" | SFX tích | "gọi một cuộc điện thoại…" |
+| 19–20s | Tích nhiệm vụ "Phong bao lời chúc" (viết lời chúc đầu năm, gói vào phong bao lì xì ảo) | "✓ Phong bao lời chúc" | SFX tích | "viết lời chúc cho người thân," |
+| 20–21s | Tích nhiệm vụ "Chúc Tết người thân" (có trong `content/mua/tet.json`) | "✓ Chúc Tết người thân" | SFX tích | "gọi một cuộc điện thoại…" |
 | 21–22s | Chuyển cảnh thật: người dùng gọi video, màn hình hiện ba mẹ (diễn viên/người nhà có đồng ý, làm mờ nếu cần) | – | Tiếng cười nhẹ, nhạc nền | – |
 | 22–23s | Người dùng cười, vẫy tay | "Xa nhà, lòng vẫn gần" | Nhạc nền lên | "Xa nhà, lòng vẫn gần." |
 | 23–24s | Thông điệp đầu năm trong app hiện ra | (thông điệp ngày mùng 1 trong app) | Nhạc nền | Đọc nhỏ thông điệp |

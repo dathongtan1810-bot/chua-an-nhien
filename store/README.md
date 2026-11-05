@@ -1,6 +1,6 @@
 # store/ – Tài liệu phát hành & marketing "Chùa An Nhiên"
 
-Bộ tài liệu cho bản **1.0.0**: miễn phí, không quảng cáo, không mua trong ứng dụng. Căn cứ các quyết định D1–D20 trong `content/DECISIONS.md` (đặc biệt D17–D20 về dữ liệu, liên hệ, xóa dữ liệu, độ tuổi). Mục **[CẦN XÁC NHẬN]** phải được dev/pháp lý kiểm tra trước khi nộp store.
+Bộ tài liệu cho bản **1.0.0**: miễn phí, không quảng cáo, không mua trong ứng dụng. Căn cứ các quyết định D1–D29 trong `content/DECISIONS.md` (đặc biệt D17–D20 về dữ liệu, liên hệ, xóa dữ liệu, độ tuổi; D21–D25 về store & ra mắt: Lifestyle, App Store 13+ / IARC 3, lịch ra mắt, không chữ Vạn, không chữ "Miễn phí/Không quảng cáo" trên ảnh; D26–D28 về bộ lọc từ). Kết quả soát nhất quán: `REVIEW-nhat-quan.md`. Mục **[CẦN XÁC NHẬN]** phải được dev/pháp lý kiểm tra trước khi nộp store.
 
 ## Mục lục
 
@@ -26,7 +26,7 @@ Bộ tài liệu cho bản **1.0.0**: miễn phí, không quảng cáo, không m
 5. Trường có giới hạn ký tự được đếm bằng Node: `[...s.normalize('NFC')].length` (Unicode NFC, tính cả dấu cách và xuống dòng). Khi sửa nội dung, đếm lại.
 
 ## Ngày tháng
-Các ngày âm lịch → dương lịch trong bộ tài liệu được tính bằng thuật toán âm lịch Việt Nam (UTC+7) ngày 05/11/2026: Rằm tháng Chạp = 22/01/2027, Ông Công Ông Táo = 30/01/2027, Giao thừa = tối 05/02/2027 (29 tháng Chạp – tháng thiếu), **Tết Đinh Mùi = thứ Bảy 06/02/2027**, Rằm tháng Giêng = 20/02/2027, Phật Đản = 20/05/2027, Vu Lan = 16/08/2027. Đối chiếu lại với `content/su-kien-am-lich.json` khi có.
+Các ngày âm lịch → dương lịch trong bộ tài liệu được tính bằng thuật toán âm lịch Việt Nam (UTC+7) ngày 05/11/2026: Rằm tháng Chạp = 22/01/2027, Ông Công Ông Táo = 30/01/2027, Giao thừa = tối 05/02/2027 (29 tháng Chạp – tháng thiếu), **Tết Đinh Mùi = thứ Bảy 06/02/2027**, Rằm tháng Giêng = 20/02/2027, Phật Đản = 20/05/2027, Vu Lan = 16/08/2027. Đã đối chiếu tên lễ và ngày âm với `content/su-kien-am-lich.json` (22 sự kiện; Tất niên – Đêm Trừ tịch ghi ngày 30/12, tháng thiếu lùi về 29/12 theo D13).
 
 ## Việc cần làm trước khi nộp (tóm tắt các [CẦN XÁC NHẬN])
 - [ ] Email hỗ trợ thật thay cho `hotro@chuaannhien.example`; tên miền thật thay `chuaannhien.example` (D18).

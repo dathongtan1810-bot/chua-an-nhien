@@ -30,7 +30,7 @@ Sắp đến mùng Một, ngày Rằm? Ghé Chùa An Nhiên thắp một nén h�
 > Kiểm lại số ký tự (≤170) mỗi lần thay.
 
 ## Description
-Giới hạn: 4000 · Thực tế: **2213** ký tự
+Giới hạn: 4000 · Thực tế: **2214** ký tự
 
 ```text
 Chùa An Nhiên là một ngôi chùa hư cấu nằm gọn trong điện thoại của bạn – một góc nhỏ yên tĩnh để dừng lại vài phút giữa ngày bận rộn. Thắp một nén hương, nghe một hồi chuông, đọc một lời nhắn bình an, rồi tiếp tục ngày của mình với lòng nhẹ nhàng hơn.
@@ -55,7 +55,7 @@ Mùng Một, ngày Rằm, Tết Nguyên Đán, Rằm tháng Giêng, Phật Đả
 
 CAM KẾT
 • Miễn phí, không quảng cáo, không mua trong ứng dụng.
-• Không cần tài khoản – chỉ cần một biệt danh.
+• Không cần tài khoản, email hay số điện thoại.
 • Không nhận tiền công đức hay cúng dường dưới bất kỳ hình thức nào.
 • Xóa dữ liệu của bạn bất cứ lúc nào trong Cài đặt.
 • Thơ, lời giải, thông điệp và âm thanh đều do đội ngũ tự sáng tác.
@@ -94,7 +94,7 @@ chuong,binh an,cau an,loi nguyen,cay nguyen,lich am,ram,mung mot,phat dan,vu lan
 |---|---|
 | Support URL | https://chuaannhien.example/support.html |
 | Marketing URL | https://chuaannhien.example/ |
-| Privacy Policy URL | https://chuaannhien.example/privacy.html |
+| Privacy Policy URL | https://chuaannhien.example/privacy-policy.html |
 | (Tham khảo) Trang xóa dữ liệu | https://chuaannhien.example/support.html#xoa-du-lieu |
 
 > [CẦN XÁC NHẬN] Tên miền `chuaannhien.example` là giữ chỗ (D18) – thay bằng tên miền thật, và đảm bảo các trang đã có trên `site/` trước khi nộp duyệt.

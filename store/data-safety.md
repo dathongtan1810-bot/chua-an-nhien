@@ -54,7 +54,7 @@ Chú thích cột: **Thu thập** = gửi ra khỏi thiết bị · **Chia sẻ*
 > **Xóa dữ liệu của bạn – Chùa An Nhiên**
 > Cách 1 (ngay lập tức): mở ứng dụng → Cài đặt → Xóa dữ liệu của tôi → Xác nhận. Toàn bộ lời nguyện, biệt danh và mã thiết bị ẩn danh của bạn trên máy chủ sẽ bị xóa.
 > Cách 2: gửi email đến hotro@chuaannhien.example với tiêu đề "Xóa dữ liệu" kèm **mã thiết bị** hiển thị trong Cài đặt. Chúng tôi xử lý trong tối đa 30 ngày.
-> Dữ liệu bị xóa: mã thiết bị ẩn danh, biệt danh, lời nguyện, báo cáo bạn đã gửi. Dữ liệu có thể được giữ lại: nhật ký kiểm duyệt dạng ẩn danh hóa của lời nguyện vi phạm (tối đa [90] ngày) để ngăn tái vi phạm [CẦN XÁC NHẬN].
+> Dữ liệu bị xóa: mã thiết bị ẩn danh, biệt danh, lời nguyện, báo cáo bạn đã gửi. Dữ liệu được giữ lại tạm thời (khớp `site/privacy-policy.html` mục 6 và `site/support.html#xoa-du-lieu`): bản sao lưu mã hóa tối đa 30 ngày; nhật ký lỗi kỹ thuật (không chứa lời nguyện) tối đa 90 ngày; hồ sơ vi phạm (lời nguyện bị gỡ do vi phạm và báo cáo liên quan) tối đa 12 tháng để xử lý khiếu nại và ngăn tái vi phạm [CẦN XÁC NHẬN thời hạn với dev/pháp lý].
 
 ---
 
@@ -66,7 +66,7 @@ Chú thích cột: **Thu thập** = gửi ra khỏi thiết bị · **Chia sẻ*
 | Do you or your third-party partners collect data from this app? | **Yes** |
 | Tracking (theo định nghĩa ATT: liên kết dữ liệu với dữ liệu của công ty khác cho quảng cáo, hoặc chia sẻ cho data broker) | **No – Data Used to Track You: none** |
 | Có cần hiển thị lời nhắc App Tracking Transparency? | **Không** (không theo dõi, không dùng IDFA) |
-| Privacy Policy URL | https://chuaannhien.example/privacy.html |
+| Privacy Policy URL | https://chuaannhien.example/privacy-policy.html |
 | Privacy Choices URL (tùy chọn) | https://chuaannhien.example/support.html#xoa-du-lieu |
 | Privacy manifest (`PrivacyInfo.xcprivacy`) | [CẦN XÁC NHẬN] dev khai "Required Reason APIs" (ví dụ UserDefaults → `CA92.1`) và kiểm tra privacy manifest của mọi SDK bên thứ ba. |
 
@@ -93,6 +93,7 @@ Apple coi dữ liệu là **Linked to You** nếu gắn với danh tính ngườ
 ---
 
 ## 3. Nhất quán với tài liệu khác
-- Chính sách quyền riêng tư (`site/privacy.html`) phải liệt kê đúng các loại dữ liệu trên, bên xử lý dữ liệu đám mây (tên nhà cung cấp, vị trí máy chủ) [CẦN XÁC NHẬN], thời gian lưu trữ, quyền xóa (D19), email liên hệ (D18).
+- Thời hạn lưu đã thống nhất giữa chính sách quyền riêng tư, trang Hỗ trợ và file này: dữ liệu chính lưu đến khi người dùng xóa (có thể xóa nếu thiết bị không kết nối 24 tháng liên tiếp); sao lưu 30 ngày; nhật ký lỗi 90 ngày; hồ sơ vi phạm 12 tháng; yêu cầu qua email xử lý tối đa 30 ngày.
+- Chính sách quyền riêng tư (`site/privacy-policy.html`) phải liệt kê đúng các loại dữ liệu trên, bên xử lý dữ liệu đám mây (tên nhà cung cấp, vị trí máy chủ) [CẦN XÁC NHẬN], thời gian lưu trữ, quyền xóa (D19), email liên hệ (D18).
 - Mô tả store đã ghi "Không cần tài khoản", "Xóa dữ liệu bất cứ lúc nào trong Cài đặt" – giữ đúng như vậy trong bản dựng.
 - Khi thêm IAP, quảng cáo, analytics, push hoặc đăng nhập ở bản sau → cập nhật lại cả hai bảng **trước** khi phát hành bản đó.
