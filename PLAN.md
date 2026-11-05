@@ -13,8 +13,8 @@ Phạm vi phiên này: `app/`, `docs/app/`, `.github/workflows/app-*.yml`, file 
 - [x] P6 Online: socket client, MockServer, presence, hương/chuông/đèn chung, báo cáo/chặn/xóa
 - [x] P7 Ảnh chia sẻ, link mời, i18n
 - [x] P8 Capacitor android/ios, icon/splash, CI Android, PUBLISHING.md
-- [ ] P9 Tích hợp nhánh server/content/qa, e2e, hiệu năng, a11y
-- [ ] P10 Đánh bóng, README ảnh chụp, HANDOFF.md
+- [~] P9 (merge server/content xong; còn e2e với server thật, qa) Tích hợp nhánh server/content/qa, e2e, hiệu năng, a11y
+- [x] P10 Đánh bóng, README ảnh chụp, HANDOFF.md
 
 ## Phân công song song (subagent)
 Âm lịch (Meeus) · Âm thanh Web Audio · Mạng + MockServer + lọc từ · Dữ liệu mẫu + chọn quẻ ·

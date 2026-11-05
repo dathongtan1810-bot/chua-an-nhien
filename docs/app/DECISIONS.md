@@ -28,3 +28,7 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
 17. **Người viếng khác** được thể hiện bằng đốm sáng ấm mờ đi chậm trên nền (không vẽ hình người) — trang nghiêm, riêng tư.
 18. **Đo hiệu năng**: Chromium headless dùng SwiftShader (render phần mềm) nên FPS đo được (~15) không đại diện;
     mỗi khu giữ < 150 game object, texture tĩnh được nướng một lần. Cần đo lại trên máy thật tầm trung.
+19. **Chuẩn hóa nội dung thật** (`normalizeExternal` trong `src/data/content.ts`): `tho` dạng mảng → nối dòng;
+    sự kiện `thang: null` = hằng tháng; `trangTri` là mô tả văn xuôi → suy ra token hiệu ứng theo từ khóa;
+    `nhiemVu` là danh sách → lấy việc đầu tiên. Không sửa thư mục `content/` (thuộc phiên nội dung).
+20. `?date=` chỉ có hiệu lực ở bản dev (tránh làm hỏng streak người chơi ở bản phát hành).
