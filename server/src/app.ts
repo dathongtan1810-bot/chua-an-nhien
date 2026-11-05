@@ -57,15 +57,21 @@ export function loadSeedWords(config: Config): { words: string[]; unaccentedAlso
   return merged;
 }
 
-export function clientIp(headers: Record<string, string | string[] | undefined>, remote: string | undefined, trustProxy: boolean): string {
-  if (trustProxy) {
+/**
+ * IP client khi có `hops` proxy tin cậy phía trước: lấy phần tử thứ `hops` tính từ PHẢI của X-Forwarded-For
+ * (proxy nối IP thật vào cuối; phần bên trái do client tự đặt nên không tin). Khớp hành vi `trustProxy: <số>` của Fastify.
+ */
+export function clientIp(headers: Record<string, string | string[] | undefined>, remote: string | undefined, hops: number): string {
+  const strip = (x: string) => x.trim().replace(/^::ffff:/, '');
+  if (hops > 0) {
     const xf = headers['x-forwarded-for'];
-    const first = (Array.isArray(xf) ? xf[0] : xf)?.split(',')[0]?.trim();
-    if (first) return first;
-    const fly = headers['fly-client-ip'];
-    if (typeof fly === 'string' && fly) return fly;
+    const list = (Array.isArray(xf) ? xf.join(',') : (xf ?? ''))
+      .split(',')
+      .map((x) => x.trim())
+      .filter(Boolean);
+    if (list.length) return strip(list[Math.max(0, list.length - hops)]!);
   }
-  return (remote ?? 'unknown').replace(/^::ffff:/, '');
+  return strip(remote ?? 'unknown');
 }
 
 export async function buildApp(config: Config, opts: { repos?: Repositories } = {}): Promise<AppContext> {
@@ -81,7 +87,8 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
   const app: FastifyInstance = Fastify({
     loggerInstance: log as unknown as FastifyBaseLogger,
     bodyLimit: config.MAX_PAYLOAD_BYTES,
-    trustProxy: config.TRUST_PROXY,
+    // tin đúng N hop gần nhất (tương đương trustProxy: N)
+    trustProxy: config.TRUST_PROXY > 0 ? (_addr: string, i: number) => i < config.TRUST_PROXY : false,
   });
 
   const corsAll = config.corsOrigins.includes('*');
@@ -96,8 +103,10 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
   const sweep = setInterval(() => httpLimiter.sweep(), 60_000);
   sweep.unref();
   app.addHook('onRequest', async (req, reply) => {
-    if (!req.url.startsWith('/api/') && !req.url.startsWith('/admin/api/')) return;
-    if (req.url.startsWith('/api/health')) return;
+    // Dựa trên route đã khớp (đường dẫn đã giải mã) – tránh lách bằng "/%61pi/..."
+    const route = req.routeOptions.url ?? '';
+    if (!route.startsWith('/api/') && !route.startsWith('/admin/api/')) return;
+    if (route === '/api/health') return;
     const r = httpLimiter.hit(req.ip);
     if (!r.ok) {
       metrics.rateLimited.inc({ event: 'http' });

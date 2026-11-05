@@ -62,7 +62,7 @@ export function registerApi(ctx: AppContext): void {
     if (!body.success) return reply.code(400).send({ error: 'invalid_payload', message: 'Cần deviceId hợp lệ' });
     const empty = { lanterns: 0, likes: 0, reports: 0, blocks: 0, incense: 0, user: 0 };
     const user = await repos.users.findByDeviceHash(hashDevice(body.data.deviceId, config.DEVICE_SALT));
-    // Luôn trả ok (không tiết lộ deviceId có tồn tại hay không)
+    // deviceId không tồn tại vẫn trả ok (không lỗi). Người biết deviceId vốn đã "là" thiết bị đó nên số đếm không lộ thêm gì.
     if (!user) return { ok: true, deleted: empty };
     const lanternIds = await repos.lanterns.listIdsByUser(user.id);
     hub.disconnectUser(user.id);

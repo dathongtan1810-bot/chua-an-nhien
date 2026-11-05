@@ -20,7 +20,7 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `MAX_PAYLOAD_BYTES` | `4096` | gói socket & body HTTP |
 | `SOCKET_EVENTS_PER_10S` | `40` | chống flood mỗi socket |
 | `HTTP_RATE_PER_MIN` | `120` | mỗi IP cho `/api/*`, `/admin/api/*` |
-| `TRUST_PROXY` | `false` | **đặt `true` sau load balancer** (Fly/Render) để lấy IP thật từ `X-Forwarded-For` |
+| `TRUST_PROXY` | `false` | số proxy tin cậy phía trước (`true` = 1). **Đặt `true` sau load balancer** (Fly/Render: 1 hop). IP thật = phần tử thứ N tính từ **phải** của `X-Forwarded-For` (phần bên trái client tự đặt được nên không tin). Đặt sai số hop = giới hạn theo IP bị lách hoặc gộp nhầm người dùng. |
 | `METRICS_TOKEN` | rỗng | nếu đặt, `/metrics` cần `Authorization: Bearer <token>` |
 | `BANNED_WORDS_PATH` | rỗng | file JSON từ cấm để seed lần đầu (chỉ khi bảng trống) |
 | `LOG_LEVEL` | `info` | |

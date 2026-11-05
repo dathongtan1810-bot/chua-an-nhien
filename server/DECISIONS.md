@@ -40,3 +40,11 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     Allowlist không dấu chỉ áp khi cả văn bản không dấu (giống loc-tu.mjs).
 26. **"3 người khác nhau"** khi báo cáo được đếm theo **nguồn** (IP băm cùng salt), không chỉ theo userId — tránh một người tạo nhiều deviceId để tự ẩn đèn người khác.
     Đánh đổi: nhiều người cùng NAT (gia đình, quán cà phê) chỉ tính 1; báo cáo vẫn hiện trong admin. Migration DB qua `PRAGMA user_version` (v1 thêm `reports.source_hash`).
+27. **Sửa sau review bảo mật** (test hồi quy: `test/regressions.test.ts`):
+    - `release_lantern` được **tuần tự hoá theo user** (khoá in-flight); lời gọi đồng thời nhận `rate_limited` (retryAfterMs 1000). Giới hạn IP ghi nhận trước mọi `await`.
+    - `TRUST_PROXY` là **số hop** (`true` = 1); IP lấy từ phải sang của `X-Forwarded-For`, khớp `trustProxy` của Fastify. Trước đó lấy phần tử trái nhất → giả mạo được.
+    - User đang bị **khoá/gắn cờ** gọi `POST /api/me/delete`: xoá hết nội dung nhưng **giữ dòng user ẩn danh** (`nickname='(đã xoá)'`) cùng cờ, để không lách khoá bằng tự xoá.
+    - Lọc chặn khi phát đèn/tim lấy quan hệ chặn từ DB nếu tác giả đã offline.
+    - HTTP rate limit dựa trên route đã khớp (không lách bằng `/%61pi/...`).
+    - `hello` lần 2 với deviceId khác trên cùng socket dọn sạch trạng thái user cũ (phòng, cache).
+    - `unhandledRejection` chỉ ghi log, không làm sập tiến trình.

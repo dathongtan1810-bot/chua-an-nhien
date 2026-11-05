@@ -36,7 +36,17 @@ const EnvSchema = z.object({
   /** Số sự kiện tối đa / 10 giây cho mỗi socket (chống flood chung). */
   SOCKET_EVENTS_PER_10S: int(40),
   HTTP_RATE_PER_MIN: int(120),
-  TRUST_PROXY: bool(false),
+  /** Số proxy tin cậy phía trước (hop). "true" = 1, "false"/"0" = không tin X-Forwarded-For. */
+  TRUST_PROXY: z
+    .string()
+    .optional()
+    .transform((v) => {
+      const t = (v ?? '').trim().toLowerCase();
+      if (t === '' || t === 'false' || t === 'no' || t === 'off') return 0;
+      if (t === 'true' || t === 'yes' || t === 'on') return 1;
+      return Number.parseInt(t, 10);
+    })
+    .pipe(z.number().int().min(0).max(10)),
   BANNED_WORDS_PATH: z.string().default(''),
   PRESENCE_INTERVAL_MS: int(3000),
   METRICS_TOKEN: z.string().default(''),

@@ -16,6 +16,8 @@ async function main() {
     await ctx.app.close();
     process.exit(0);
   };
+  // Không để một lỗi bất đồng bộ lẻ làm sập cả chùa: ghi log và chạy tiếp
+  process.on('unhandledRejection', (err) => ctx.log.error({ err }, 'unhandledRejection'));
   process.on('SIGTERM', () => void shutdown('SIGTERM'));
   process.on('SIGINT', () => void shutdown('SIGINT'));
 }

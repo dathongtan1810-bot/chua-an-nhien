@@ -105,6 +105,7 @@ export class Hub {
   private lanternIp = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR * IP_FACTOR, 3600_000);
   private timers: NodeJS.Timeout[] = [];
   private floodStrikes = new Map<string, number>();
+  private lanternInflight = new Set<string>();
 
   constructor(private readonly d: HubDeps) {
     this.floodLimiter = new SlidingWindowLimiter(d.config.SOCKET_EVENTS_PER_10S, 10_000);
@@ -161,7 +162,7 @@ export class Hub {
     const snap = this.presence.snapshot();
     metrics.online.set(snap.online);
     for (const [a, n] of Object.entries(snap.areas)) metrics.areaOnline.set({ area: a }, n);
-    void this.d.repos.stats.max(vnDay(), 'peak_online', snap.online);
+    this.d.repos.stats.max(vnDay(), 'peak_online', snap.online).catch((err) => this.d.log.error({ err }, 'stats.max failed'));
     if (config.features.has('presence')) io.to(LOBBY).emit('presence', snap);
   }
 
@@ -194,8 +195,9 @@ export class Hub {
   }
 
   /** Phát tới sảnh, bỏ qua những người có quan hệ chặn với `authorId`. */
-  private emitFromAuthor<E extends keyof ServerToClientEvents>(authorId: string, ev: E, ...args: Parameters<ServerToClientEvents[E]>) {
-    const ex = [...this.blocked(authorId)].map(userRoom);
+  private async emitFromAuthor<E extends keyof ServerToClientEvents>(authorId: string, ev: E, ...args: Parameters<ServerToClientEvents[E]>) {
+    // Tác giả có thể đã offline (cache bị xoá) → lấy từ DB
+    const ex = [...(await this.blockedOf(authorId))].map(userRoom);
     const target = ex.length ? this.d.io.to(LOBBY).except(ex) : this.d.io.to(LOBBY);
     (target.emit as (e: string, ...a: unknown[]) => void)(ev, ...args);
   }
@@ -331,6 +333,7 @@ export class Hub {
     if (!user) {
       try {
         user = await repos.users.create({ id: newId('u'), deviceHash: hash, nickname: nickname || randomNickname(), lang: p.lang, createdAt: now });
+
         await repos.stats.incr(vnDay(now), 'new_users');
       } catch (err) {
         // hai tab cùng thiết bị hello đồng thời → bản ghi đã được tạo bởi tab kia
@@ -346,7 +349,16 @@ export class Hub {
     const prevUid = s.data.userId;
     if (prevUid && prevUid !== user.id) {
       s.leave(userRoom(prevUid));
-      this.userSockets.get(prevUid)?.delete(s.id);
+      const set = this.userSockets.get(prevUid);
+      set?.delete(s.id);
+      const oldRoom = this.rooms.roomOf(prevUid);
+      if (oldRoom) s.leave(privRoom(oldRoom.code));
+      if (!set || set.size === 0) {
+        this.userSockets.delete(prevUid);
+        this.blockCache.delete(prevUid);
+        const left = this.rooms.leave(prevUid);
+        if (left) this.emitRoomState(left.code);
+      }
     }
     s.data.userId = user.id;
     s.data.nickname = user.nickname;
@@ -385,7 +397,7 @@ export class Hub {
     await this.d.repos.incense.add(uid, p.count, now);
     await this.d.repos.stats.incr(vnDay(now), 'incense', p.count);
     this.d.metrics.incense.inc(p.count);
-    this.emitFromAuthor(uid, 'incense_lit', item);
+    await this.emitFromAuthor(uid, 'incense_lit', item);
   }
 
   private async onBell(s: Sock, p: { force: number }) {
@@ -404,12 +416,26 @@ export class Hub {
   }
 
   private async onLantern(s: Sock, p: { text: string; color: string }) {
-    const { repos, config, metrics, filter } = this.d;
     const uid = s.data.userId!;
     const now = Date.now();
+    // Tuần tự hoá theo user: không cho nhiều release_lantern của cùng 1 người chạy song song
+    // (nếu không, các lời gọi đồng thời cùng vượt qua bước kiểm tra trước khi có bản ghi nào được chèn).
+    if (this.lanternInflight.has(uid)) throw new RateLimitedError('release_lantern', 1000);
     const lu = this.lanternUser.peek(uid);
-    const li = this.lanternIp.peek(s.data.ip);
-    if (!lu.ok || !li.ok) throw new RateLimitedError('release_lantern', Math.max(lu.retryAfterMs, li.retryAfterMs));
+    if (!lu.ok) throw new RateLimitedError('release_lantern', lu.retryAfterMs);
+    // IP: ghi nhận ngay (đồng bộ, trước mọi await) để nhiều user cùng IP không vượt rào song song
+    const li = this.lanternIp.hit(s.data.ip);
+    if (!li.ok) throw new RateLimitedError('release_lantern', li.retryAfterMs);
+    this.lanternInflight.add(uid);
+    try {
+      return await this.createLantern(s, uid, p, now);
+    } finally {
+      this.lanternInflight.delete(uid);
+    }
+  }
+
+  private async createLantern(s: Sock, uid: string, p: { text: string; color: string }, now: number) {
+    const { repos, config, metrics, filter } = this.d;
     // Bền qua kết nối lại/khởi động lại: đếm trong DB
     const n = await repos.lanterns.countByUserSince(uid, now - 3600_000);
     if (n >= LIMITS.LANTERNS_PER_HOUR) throw new RateLimitedError('release_lantern', 60_000);
@@ -419,8 +445,8 @@ export class Hub {
       metrics.rejected.inc({ reason: res.reason! });
       throw new HandledError('content_rejected', REJECT_MSG[res.reason!] ?? 'Nội dung không hợp lệ');
     }
-    this.lanternUser.hit(uid);
-    this.lanternIp.hit(s.data.ip);
+    const lu = this.lanternUser.hit(uid);
+    if (!lu.ok) throw new RateLimitedError('release_lantern', lu.retryAfterMs);
     const user = await repos.users.findById(uid);
     const status = config.MODERATION_MODE === 'pre' || user?.flagged ? 'pending' : 'approved';
     const row = await repos.lanterns.create({
@@ -436,7 +462,7 @@ export class Hub {
     await repos.stats.incr(vnDay(now), 'lanterns');
     metrics.lanterns.inc({ status });
     const payload = this.toPayload(row);
-    if (status === 'approved') this.emitFromAuthor(uid, 'lantern_released', payload);
+    if (status === 'approved') await this.emitFromAuthor(uid, 'lantern_released', payload);
     else this.d.io.to(userRoom(uid)).emit('lantern_released', payload); // tác giả vẫn thấy đèn của mình
     return { id: row.id, status };
   }
@@ -451,7 +477,7 @@ export class Hub {
     const added = await repos.lanterns.addLike(l.id, uid, Date.now());
     if (!added) throw new HandledError('already_liked', 'Bạn đã thả tim đèn này');
     const likes = l.likes + 1;
-    this.emitFromAuthor(l.userId, 'lantern_liked', { id: l.id, likes });
+    await this.emitFromAuthor(l.userId, 'lantern_liked', { id: l.id, likes });
     return { likes };
   }
 
@@ -577,7 +603,7 @@ export class Hub {
   // ---------------------------------------------------------------- admin / REST hooks
   async lanternApproved(id: string): Promise<void> {
     const l = await this.d.repos.lanterns.findById(id);
-    if (l && l.status === 'approved' && l.expiresAt > Date.now()) this.emitFromAuthor(l.userId, 'lantern_released', this.toPayload(l));
+    if (l && l.status === 'approved' && l.expiresAt > Date.now()) await this.emitFromAuthor(l.userId, 'lantern_released', this.toPayload(l));
   }
 
   lanternRemoved(id: string): void {

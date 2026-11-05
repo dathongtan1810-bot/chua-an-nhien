@@ -207,6 +207,7 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     blocks: db.prepare('DELETE FROM blocks WHERE blocker_id = ? OR blocked_id = ?'),
     incense: db.prepare('DELETE FROM incense WHERE user_id = ?'),
     user: db.prepare('DELETE FROM users WHERE id = ?'),
+    anonymize: db.prepare("UPDATE users SET nickname = '(đã xoá)', lang = 'vi' WHERE id = ?"),
     unlikeCounts: db.prepare(
       'UPDATE lanterns SET likes = MAX(likes - 1, 0) WHERE id IN (SELECT lantern_id FROM lantern_likes WHERE user_id = ?)',
     ),
@@ -220,7 +221,9 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     const lanterns = del.lanterns.run(id).changes;
     const blocks = del.blocks.run(id, id).changes;
     const incense = del.incense.run(id).changes;
-    const user = del.user.run(id).changes;
+    // Thiết bị bị khoá/gắn cờ: giữ dòng user (đã ẩn danh) để không lách được khoá bằng cách tự xoá dữ liệu
+    const keep = q.userById.get(id) as Raw | undefined;
+    const user = keep && (keep.banned || keep.flagged) ? del.anonymize.run(id).changes : del.user.run(id).changes;
     return { lanterns, likes, reports, blocks, incense, user };
   });
 
