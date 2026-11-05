@@ -1,5 +1,14 @@
 import { expect, test } from '@playwright/test';
 
+// E2E_CPU_THROTTLE=4 mô phỏng máy CI chậm
+test.beforeEach(async ({ page }) => {
+  const rate = Number(process.env.E2E_CPU_THROTTLE || 0);
+  if (rate > 1) {
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate });
+  }
+});
+
 test('vào game → thắp hương → thả đèn', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
@@ -9,11 +18,8 @@ test('vào game → thắp hương → thả đèn', async ({ page }) => {
   await expect(page.locator('.hud-title')).toHaveText('Cổng tam quan');
 
   // Đi tới sân chùa rồi chính điện qua thanh hành động
-  // Bấm lại nếu lần đầu rơi vào lúc cảnh đang khởi động (máy CI chậm); in lỗi trang nếu có
-  await expect(async () => {
-    await page.locator('.act.nav', { hasText: 'Sân chùa' }).first().click();
-    await expect(page.locator('.hud-title')).toHaveText('Sân chùa', { timeout: 3000 });
-  }).toPass({ timeout: 15000 });
+  await page.locator('.act.nav', { hasText: 'Sân chùa' }).first().click();
+  await expect(page.locator('.hud-title')).toHaveText('Sân chùa', { timeout: 10000 });
   expect(errors, errors.join('\n')).toEqual([]);
 
   // Thắp hương

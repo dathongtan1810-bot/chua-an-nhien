@@ -27,13 +27,10 @@ Với server thật (phiên backend): `cd server && npm install && npm start` (c
 Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`).
 
 ## Còn lại
-- **CI `app-ci` đang ĐỎ ở bước e2e (việc đầu tiên cần làm)**: test `vào game → thắp hương → thả đèn` thất bại trên
-  GitHub Actions. Bấm nút "➜ Sân chùa" ở cổng mà tiêu đề HUD vẫn là "Cổng tam quan", kể cả khi bấm lại liên tục
-  15 giây. Trang không báo lỗi JS nào. Trên máy dev test pass (6/6 với `--repeat-each=3`), và CI từng xanh ở
-  `db94b15` và `055d228`, nên lỗi lúc có lúc không, chỉ trên máy chậm. Nghi vấn: quanh màn chào gọi `scene.start`
-  hai lần (`main.ts` `begin()` và nhánh `ready`), cờ `ready` / `transitioning` của `AreaScene`, hoặc sự kiện
-  `camerafadeoutcomplete` không tới (cảnh kẹt `transitioning = true`). Cách tái hiện gợi ý: chạy Playwright với
-  `page.emulate`/CDP `Emulation.setCPUThrottlingRate` 6x và log `game.api`, `scene.ready`, `transitioning` khi bấm.
+- (Đã sửa) e2e đỏ trên CI: Phaser bỏ qua `camera.fadeOut()` khi fadeIn còn chạy, và trên máy chậm đồng hồ Phaser
+  chạy chậm hơn thời gian thực → chuyển khu kẹt/rất chậm. Nay `resetFX()` trước khi fade + hẹn giờ dự phòng theo
+  `setTimeout`; cảnh tự đăng ký lại `game.api` và xử lý lệnh HUD xếp hàng trong `update`. Tái hiện/kiểm tra:
+  `E2E_CPU_THROTTLE=4 npx playwright test` hoặc `npx playwright test --repeat-each=4 --workers=4`.
 - Chạy e2e với server thật (chưa làm: hết giờ). Kiểm tra nhánh `qa/` khi có (`qa/BUGS.md` chưa tồn tại).
 - Nội dung tiếng Anh của phiên nội dung (`content/i18n`) chưa được nối vào chế độ English (thơ/quẻ vẫn tiếng Việt).
 - 2 lỗi review nhỏ chưa sửa:

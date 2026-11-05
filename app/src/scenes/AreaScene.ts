@@ -441,8 +441,22 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     // trượt nhẹ theo hướng đi + mờ dần
     const dir = (AREA_INFO[area].map.x - AREA_INFO[this.area].map.x) >= 0 ? 1 : -1;
     if (!rm) this.tweens.add({ targets: cam, scrollX: cam.scrollX + dir * 80, duration: 420, ease: 'Sine.easeIn' });
-    cam.fadeOut(rm ? 150 : 420, 20, 12, 6);
-    cam.once('camerafadeoutcomplete', () => this.scene.restart({ area }));
+    // Phaser bỏ qua fadeOut nếu fadeIn lúc vào khu còn chạy → hủy hiệu ứng cũ trước,
+    // và có hẹn giờ dự phòng để không bao giờ kẹt ở trạng thái "đang chuyển khu".
+    const dur = rm ? 150 : 420;
+    let restarted = false;
+    const go = () => {
+      if (restarted) return;
+      restarted = true;
+      this.scene.restart({ area });
+    };
+    cam.resetFX();
+    cam.once('camerafadeoutcomplete', go);
+    cam.fadeOut(dur, 20, 12, 6);
+    // dự phòng theo đồng hồ thật: khi khung hình thưa (máy yếu), đồng hồ Phaser chạy chậm hơn thời gian thực
+    window.setTimeout(() => {
+      if (this.sys.isActive() && this.transitioning) go();
+    }, dur + 400);
   }
 
   startRitual(id: string): void {
@@ -534,6 +548,15 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   }
 
   override update(time: number, delta: number): void {
+    // Tự phục hồi: nếu main.ts đã gỡ game.api (màn chào gọi scene.start trong lúc cảnh đang chạy và Phaser
+    // không khởi động lại), đăng ký lại và xử lý lệnh HUD đang xếp hàng.
+    if (this.ready && game.api !== this && !this.transitioning) game.api = this;
+    if (this.ready && game.api === this && (game.pending.goTo || game.pending.ritual)) {
+      const q = game.pending;
+      game.pending = {};
+      if (q.goTo && q.goTo !== this.area) this.goTo(q.goTo);
+      else if (q.ritual) this.startRitual(q.ritual);
+    }
     this.sky?.update(time, delta);
     this.art?.update?.(time, delta);
     for (const u of this.updaters) u(time, delta);
