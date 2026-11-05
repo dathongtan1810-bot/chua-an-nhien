@@ -47,3 +47,4 @@ Nhật ký các quyết định biên tập được đưa ra tự chủ (không
 - D30. Khi nhiều bộ mùa cùng hiệu lực (vd Tết 23/12→15/1 và Rằm tháng Giêng 13/1→16/1), bộ có khoảng ngày NGẮN hơn được ưu tiên hiển thị (lời chào, thông điệp, quẻ đặc biệt); nhiệm vụ của cả hai bộ đều mở.
 - D31. Site/store dẫn quẻ thật: quẻ 53 "Sen hồng giữa đầm" (landing, ảnh 4), quẻ 82 "Con đường qua đồi" (video 2). Nếu sửa 2 quẻ này phải cập nhật `site/index.html`, `site/en/index.html`, `store/video-scripts.md`, `store/screenshots.md`.
 - D32. Biệt danh là tùy chọn; không đặt thì hiển thị "Một người viết" / "Someone". App không có tài khoản → vi phạm dẫn tới "hạn chế thiết bị" thay vì "khóa tài khoản".
+- D33. Bản tiếng Anh: tiếng Anh Mỹ; thuật ngữ "pagoda" (không dùng "temple"), "verse" (không dùng "fortune stick/lot"), "Lunar New Year (Tết)", "Vu Lan (Ullambana)", "Buddha's Birthday (Vesak)", "Guanyin (Quan Âm)" ở lần nhắc đầu; "red envelope" thay "lucky envelope". Xem `content/REVIEW-en.md`.
