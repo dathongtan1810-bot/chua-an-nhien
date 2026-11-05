@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+**/.git
+**/*.db
+**/*.db-*
+server/.env
+app
+content
+site
+store
+qa

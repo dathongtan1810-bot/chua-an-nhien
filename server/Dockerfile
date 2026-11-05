@@ -2,9 +2,9 @@
 #   docker build -f server/Dockerfile -t chua-an-nhien-server .
 FROM node:22-bookworm-slim AS build
 WORKDIR /app/server
-RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ && rm -rf /var/lib/apt/lists/*
 COPY server/package.json server/package-lock.json ./
-RUN npm ci
+# better-sqlite3 có prebuilt cho linux/glibc; chỉ cài toolchain khi phải build từ nguồn
+RUN npm ci || (apt-get update && apt-get install -y --no-install-recommends python3 make g++ && npm ci)
 COPY shared /app/shared
 COPY server /app/server
 RUN npm run build && npm prune --omit=dev
