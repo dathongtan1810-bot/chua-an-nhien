@@ -204,15 +204,16 @@ function bienDich(data) {
     for (const b of muc.bienTheLach || []) them(b, true);
   });
   const allowA = [];
+  const allowAKhongDau = [];
   const allowB = [];
   for (const a of data.allowlist || []) {
     const t = nh(a);
     if (!t) continue;
     allowA.push(taoRegex(t));
-    allowA.push(taoRegex(boDau(t)));
+    allowAKhongDau.push(taoRegex(boDau(t)));
     allowB.push(taoRegex(boDau(t)));
   }
-  const c = { bang, mauA, mauB, allowA, allowB };
+  const c = { bang, mauA, mauB, allowA, allowAKhongDau, allowB };
   cache.set(data, c);
   return c;
 }
@@ -230,7 +231,13 @@ function timViPham(text, data) {
   const ketQua = []; // {info, s, e}
   for (const giu of [0, 1, 2]) {
     const { dv } = phanTich(text, c.bang, giu);
-    const sA = xoaAllow(chuoi(dv), c.allowA);
+    const s0 = chuoi(dv);
+    // Văn bản gõ hoàn toàn không dấu: áp cả dạng không dấu của allowlist lên không gian A
+    // (vd "chuc ngu ngon"). Văn bản có dấu thì chỉ áp dạng có dấu, để "con ngu" (có dấu
+    // đầy đủ ngữ cảnh) không được tha nhờ allowlist "con ngủ".
+    const khongDau = s0 === boDau(s0);
+    let sA = xoaAllow(s0, c.allowA);
+    if (khongDau) sA = xoaAllow(sA, c.allowAKhongDau);
     const sB = xoaAllow(boDau(chuoi(dv)), c.allowB);
     for (const [s, ds] of [[sA, c.mauA], [sB, c.mauB]]) {
       for (const m of ds) {

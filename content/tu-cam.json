@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "ghiChu": "Bộ lọc từ cho lời nguyện và nickname. Dùng cùng content/tools/loc-tu.mjs; kiểm thử: node --test content/tu-cam.test.mjs. mucDo: 1 = nhẹ (che *** hoặc nhắc người dùng sửa), 2 = chặn không cho đăng, 3 = chặn và ghi nhận để kiểm duyệt. kiemTra() trả hopLe=false khi có bất kỳ vi phạm nào; app tự quyết theo mucDoCaoNhat. Không gian so khớp: \"tu\" và biến thể có dấu được so trên văn bản có dấu (sau chuẩn hóa). Biến thể chỉ gồm ký tự ASCII trong \"bienThe\" được so trên văn bản đã bỏ dấu (vì người dùng hay gõ không dấu). Chiến lược chống lọc nhầm: các dạng không dấu ngắn trùng âm với từ vô hại (lon=lớn/lon nước, cac=các, buoi=buổi/bưởi, deo=đeo/dẻo, du=du lịch/dù, dit=đít, dam=đam/dám, di=đi, lin, nung, chich) KHÔNG nằm trong \"bienThe\". Chúng chỉ nằm trong \"bienTheLach\": chỉ bị tính khi đoạn khớp có dấu hiệu lách (ký tự thay thế như l0n, c@c, d1t; hoặc chữ cái bị tách như c.a.c, c-a-c, c a c). Viết thường \"cac ban\", \"lon nuoc\", \"buoi sang\" không bị chặn. Từ có dấu dễ trùng khi gõ không dấu (vd \"ngu\" trùng \"ngủ\" viết không dấu) được bảo vệ thêm bằng allowlist (\"ngủ ngon\", \"đi ngủ\"...). Cụm allowlist được thay bằng khoảng trắng trên cả bản có dấu và bản bỏ dấu trước khi so khớp. Nhiều cụm có dấu cố ý KHÔNG có biến thể không dấu vì bản không dấu trùng với câu bình thường: \"đồ ngu\" (đồ ngủ), \"đâm chết\" (đậm chất?), \"con ngu\" (con ngủ), \"cá độ\" (cá đó), \"lô đề\" (lo để), \"đa cấp\" (đã cấp), \"dâm đãng\" (đảm đang), \"chó má\" (cho mà), \"cờ bạc\" (cô bác), \"tự tử\" (từ từ), \"treo cổ\" (treo cờ). Chuẩn hóa: NFKC + chữ thường + NFC; bỏ ký tự vô hình; nối chữ cái đơn bị tách bằng . - _ * ~ + (≥2 chữ) hoặc khoảng trắng (≥3 chữ); thay ký tự theo \"thayKyTu\" — chữ số và @ $ € chỉ cần một bên là chữ cái, còn ! | cần chữ cái hai bên (để \"ngu!\" không thành \"ngui\"); ký tự lặp ≥3 lần được thử rút còn 1 và còn 2 (đmmmm → đm/đmm). Không ánh xạ chữ cái sang chữ cái (vd z→d, j→i) vì sẽ làm sai tiếng Anh và tên riêng; các dạng teencode như \"đjt\", \"cak\", \"zl\" được liệt kê trực tiếp trong bienThe. Nhóm \"lua-dao\" gồm cả liên kết/thông tin liên hệ (http, www, zalo, sđt) vì lời nguyện hiển thị công khai trên Cây nguyện không nên chứa quảng cáo hay liên hệ. Nhóm \"ma-tuy\" để mucDo 1 cho từ chung \"ma túy\" và có allowlist \"cai nghiện ma túy\"... để không chặn lời nguyện cầu cho người thân cai nghiện. Danh sách mang tính khởi đầu, cần đội kiểm duyệt bổ sung dần từ báo cáo của người dùng. [CẦN XÁC NHẬN] mức độ cho nhóm chinh-tri-cuc-doan.",
+  "ghiChu": "Bộ lọc từ cho lời nguyện và nickname. Dùng cùng content/tools/loc-tu.mjs; kiểm thử: node --test content/tu-cam.test.mjs. mucDo: 1 = nhẹ (che *** hoặc nhắc người dùng sửa), 2 = chặn không cho đăng, 3 = chặn và ghi nhận để kiểm duyệt. kiemTra() trả hopLe=false khi có bất kỳ vi phạm nào; app tự quyết theo mucDoCaoNhat. Không gian so khớp: \"tu\" và biến thể có dấu được so trên văn bản có dấu (sau chuẩn hóa). Biến thể chỉ gồm ký tự ASCII trong \"bienThe\" được so trên văn bản đã bỏ dấu (vì người dùng hay gõ không dấu). Chiến lược chống lọc nhầm: các dạng không dấu ngắn trùng âm với từ vô hại (lon=lớn/lon nước, cac=các, buoi=buổi/bưởi, deo=đeo/dẻo, du=du lịch/dù, dit=đít, dam=đam/dám, di=đi, lin, nung, chich) KHÔNG nằm trong \"bienThe\". Chúng chỉ nằm trong \"bienTheLach\": chỉ bị tính khi đoạn khớp có dấu hiệu lách (ký tự thay thế như l0n, c@c, d1t; hoặc chữ cái bị tách như c.a.c, c-a-c, c a c). Viết thường \"cac ban\", \"lon nuoc\", \"buoi sang\" không bị chặn. Từ có dấu dễ trùng khi gõ không dấu (vd \"ngu\" trùng \"ngủ\" viết không dấu) được bảo vệ thêm bằng allowlist (\"ngủ ngon\", \"đi ngủ\"...). Cụm allowlist được thay bằng khoảng trắng (giữ nguyên độ dài) trước khi so khớp: dạng có dấu áp trên bản có dấu, dạng bỏ dấu áp trên bản bỏ dấu; riêng khi cả câu được gõ hoàn toàn không dấu thì dạng bỏ dấu của allowlist cũng áp lên bản \"có dấu\" (vì lúc đó hai bản trùng nhau). Nhiều cụm có dấu cố ý KHÔNG có biến thể không dấu vì bản không dấu trùng với câu bình thường: \"đồ ngu\" (đồ ngủ), \"đâm chết\" (đậm chất?), \"con ngu\" (con ngủ), \"cá độ\" (cá đó), \"lô đề\" (lo để), \"đa cấp\" (đã cấp), \"dâm đãng\" (đảm đang), \"chó má\" (cho mà), \"cờ bạc\" (cô bác), \"tự tử\" (từ từ), \"treo cổ\" (treo cờ). Chuẩn hóa: NFKC + chữ thường + NFC; bỏ ký tự vô hình; nối chữ cái đơn bị tách bằng . - _ * ~ + (≥2 chữ) hoặc khoảng trắng (≥3 chữ); thay ký tự theo \"thayKyTu\" — chữ số và @ $ € chỉ cần một bên là chữ cái, còn ! | cần chữ cái hai bên (để \"ngu!\" không thành \"ngui\"); ký tự lặp ≥3 lần được thử rút còn 1 và còn 2 (đmmmm → đm/đmm). Không ánh xạ chữ cái sang chữ cái (vd z→d, j→i) vì sẽ làm sai tiếng Anh và tên riêng; các dạng teencode như \"đjt\", \"cak\", \"zl\" được liệt kê trực tiếp trong bienThe. Nhóm \"lua-dao\" gồm cả liên kết/thông tin liên hệ (http, www, zalo, sđt) vì lời nguyện hiển thị công khai trên Cây nguyện không nên chứa quảng cáo hay liên hệ. Nhóm \"ma-tuy\" để mucDo 1 cho từ chung \"ma túy\" và có allowlist \"cai nghiện ma túy\"... để không chặn lời nguyện cầu cho người thân cai nghiện. Danh sách mang tính khởi đầu, cần đội kiểm duyệt bổ sung dần từ báo cáo của người dùng. [CẦN XÁC NHẬN] mức độ cho nhóm chinh-tri-cuc-doan.",
   "tuCam": [
     {
       "tu": "địt",
@@ -924,8 +924,7 @@
       "mucDo": 2,
       "bienThe": [
         "nứg",
-        "nứng lồn",
-        "nung lon"
+        "nứng lồn"
       ],
       "bienTheLach": [
         "nung"
@@ -939,7 +938,6 @@
         "bú buồi",
         "bú lồn",
         "bú cặc",
-        "bu cac",
         "bú chim"
       ]
     },
@@ -1258,9 +1256,7 @@
       "nhom": "bao-luc",
       "mucDo": 1,
       "bienThe": [
-        "tự sát",
-        "muốn chết",
-        "muon chet"
+        "tự sát"
       ]
     },
     {
@@ -2019,6 +2015,21 @@
     "ngủ yên",
     "ngủ ngoan",
     "giờ ngủ",
+    "con ngủ",
+    "bé ngủ",
+    "em ngủ",
+    "anh ngủ",
+    "chị ngủ",
+    "mẹ ngủ",
+    "bố ngủ",
+    "ngủ rồi",
+    "ngủ đi",
+    "ngủ thôi",
+    "đang ngủ",
+    "ngủ ngày",
+    "ngủ đông",
+    "ngủ quá",
+    "ngủ không",
     "ngủ nghỉ",
     "ngủ đủ",
     "ngủ quên",
