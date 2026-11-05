@@ -122,6 +122,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     game.api = this;
     bus.emit({ type: 'areaChanged', area: this.area });
 
+    this.showAreaTitle(reducedMotion);
     this.events.once('shutdown', () => this.cleanup());
     if (this.pendingRitual && isRitualId(this.pendingRitual)) {
       const id = this.pendingRitual;
@@ -291,6 +292,42 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       this.markers.push(ring, txt);
       if (!rm) this.tweens.add({ targets: ring, scale: 1.18, alpha: 0.6, yoyo: true, repeat: -1, duration: 1400, ease: 'Sine.easeInOut' });
     }
+  }
+
+  /** Tên khu hiện mờ giữa màn hình khi vừa bước vào. */
+  private showAreaTitle(rm: boolean): void {
+    if (this.pendingRitual) return;
+    const ev = this.info.events[0];
+    const title = this.add
+      .text(GAME_W / 2, 300, t(AREA_INFO[this.area].nameKey), {
+        fontFamily: 'Georgia, "Noto Serif", serif',
+        fontSize: '40px',
+        color: '#fff4dc',
+        stroke: '#2b1d14',
+        strokeThickness: 6,
+      })
+      .setOrigin(0.5)
+      .setAlpha(0);
+    const objs: Phaser.GameObjects.Text[] = [title];
+    if (ev && this.area === 'cong') {
+      objs.push(
+        this.add
+          .text(GAME_W / 2, 350, t('event.today', { name: ev.ten }), { fontFamily: 'system-ui, sans-serif', fontSize: '20px', color: '#f2cd6b', stroke: '#2b1d14', strokeThickness: 4 })
+          .setOrigin(0.5)
+          .setAlpha(0),
+      );
+    }
+    this.layers.fx.add(objs);
+    this.tweens.add({
+      targets: objs,
+      alpha: 1,
+      y: rm ? '+=0' : '-=12',
+      duration: 700,
+      delay: 250,
+      hold: 1300,
+      yoyo: true,
+      onComplete: () => objs.forEach((o) => o.destroy()),
+    });
   }
 
   private navTargetFor(name: string): AreaId | null {

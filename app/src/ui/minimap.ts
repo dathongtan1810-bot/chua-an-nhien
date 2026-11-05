@@ -15,8 +15,8 @@ export function mapSvg(
   opts: { large?: boolean; onPick?: (a: AreaId) => void } = {},
 ): SVGSVGElement {
   const W = 100;
-  const svg = el('svg', { viewBox: `0 0 ${W} ${W}`, role: opts.large ? 'group' : 'img', 'aria-label': t('map.title') }) as SVGSVGElement;
-  svg.append(el('rect', { x: 2, y: 2, width: 96, height: 96, rx: 10, fill: opts.large ? '#e9dcc0' : 'rgba(40,28,18,0.55)' }));
+  const svg = el('svg', { viewBox: opts.large ? '-10 -2 120 110' : `0 0 ${W} ${W}`, role: opts.large ? 'group' : 'img', 'aria-label': t('map.title') }) as SVGSVGElement;
+  svg.append(el('rect', { x: opts.large ? -10 : 2, y: opts.large ? -2 : 2, width: opts.large ? 120 : 96, height: opts.large ? 110 : 96, rx: 10, fill: opts.large ? '#e9dcc0' : 'rgba(40,28,18,0.55)' }));
   // dòng sông & hồ
   svg.append(el('path', { d: 'M60 4 Q 80 30 98 40 L 98 22 Q 82 16 72 4 Z', fill: '#7fa7b5', opacity: 0.7 }));
   svg.append(el('ellipse', { cx: 80, cy: 62, rx: 12, ry: 8, fill: '#8db8a0', opacity: 0.8 }));
@@ -38,7 +38,7 @@ export function mapSvg(
     const isCur = a === current;
     g.append(el('circle', { cx: x * W, cy: y * W, r: isCur ? 6 : 4.2, fill: isCur ? '#f2cd6b' : '#9e2a1f', stroke: '#fff6e0', 'stroke-width': 1 }));
     if (opts.large) {
-      const label = el('text', { x: x * W, y: y * W + 10.5, 'text-anchor': 'middle', 'font-size': 4.6, fill: '#2b1d14', 'font-weight': 600 });
+      const label = el('text', { x: x * W, y: y * W + 10.5, 'text-anchor': 'middle', 'font-size': 3.9, fill: '#2b1d14', 'font-weight': 600 });
       label.textContent = t(AREA_INFO[a].nameKey);
       g.append(label);
       const n = counts[a] ?? 0;

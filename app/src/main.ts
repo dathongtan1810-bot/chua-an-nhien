@@ -54,7 +54,10 @@ function begin(): void {
   net.start({ deviceId: s.deviceId, nickname: s.nickname, lang: s.lang }, s.settings.online, s.blocked);
   hud.mount();
   gameInst.scene.start('area', { area: startArea, ritual: ritualParam });
-  if (!s.onboarded) store.dispatch({ type: 'onboarded' });
+  if (!s.onboarded) {
+    store.dispatch({ type: 'onboarded' });
+    setTimeout(() => toast(t('start.tip'), 6000), 1400);
+  }
   bus.on((e) => {
     if (e.type === 'reward' && e.reasons.some((r) => r.startsWith('quest') || r === 'allQuests' || r === 'event')) {
       toast('🪷 ' + t('reward.plus', { n: e.amount }));

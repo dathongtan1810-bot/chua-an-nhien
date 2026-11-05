@@ -40,7 +40,7 @@ export class BurnerDisplay {
       speedX: { min: -6, max: 10 },
       accelerationX: reducedMotion ? 0 : 7,
       scale: { start: 0.35 * scale, end: 2.2 * scale },
-      alpha: { start: 0.32, end: 0 },
+      alpha: { start: 0.5, end: 0 },
       lifespan: reducedMotion ? 2600 : 4600,
       frequency: 400,
       quantity: 1,
