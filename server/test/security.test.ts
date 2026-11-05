@@ -143,3 +143,19 @@ describe('khởi động lại', () => {
   });
 });
 
+
+describe('rò rỉ bộ nhớ', () => {
+  it('churn 150 kết nối → các map nội bộ trở về 0', async () => {
+    s = await startServer({ TRUST_PROXY: 'true' });
+    for (let round = 0; round < 3; round++) {
+      const cs = await Promise.all(Array.from({ length: 50 }, (_, i) => s.hello(undefined, undefined, `10.9.${round}.${i}`)));
+      await Promise.all(cs.map(({ c }, i) => emitAck(c, i % 2 ? 'room_create' : 'enter_area', i % 2 ? {} : { area: 'san' })));
+      for (const { c } of cs) c.disconnect();
+      await sleep(150);
+    }
+    const sz = s.ctx.hub.debugSizes();
+    expect(sz).toMatchObject({ presence: 0, userSockets: 0, connPerIp: 0, blockCache: 0, floodStrikes: 0 });
+    await s.ctx.hub.sweep(Date.now() + 11 * 60_000);
+    expect(s.ctx.hub.debugSizes().rooms).toBe(0);
+  });
+});

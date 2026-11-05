@@ -606,6 +606,19 @@ export class Hub {
     return this.blockCache.get(userId) ?? new Set(await this.d.repos.blocks.related(userId));
   }
 
+  /** Kích thước các cấu trúc trong bộ nhớ (dùng cho test rò rỉ & debug). */
+  debugSizes() {
+    return {
+      presence: this.presence.connections,
+      userSockets: this.userSockets.size,
+      connPerIp: this.connPerIp.size,
+      blockCache: this.blockCache.size,
+      floodStrikes: this.floodStrikes.size,
+      rooms: this.rooms.size,
+      incense: this.incense.length,
+    };
+  }
+
   get onlineSnapshot() {
     return this.presence.snapshot();
   }
