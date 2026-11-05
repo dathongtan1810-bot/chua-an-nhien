@@ -51,7 +51,7 @@ Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; đ�
 - Đã sửa: allowlist che cả token `raw`; endpoint backup luôn xoá file tạm (kể cả khi lỗi).
 - **Chưa sửa (nên làm):**
   1. Ký tự `*` không được coi là ký tự lách: "f*ck", "đ*t mẹ" lọt. Gợi ý: coi `*` giữa hai chữ cái là wildcard 1 ký tự, hoặc nhờ nhóm nội dung thêm dạng có `*` vào `bienThe` (bộ lọc tham chiếu `loc-tu.mjs` cũng lọt).
-  2. Từ bị tách mà mảnh dài hơn 1 ký tự ("đ ịt", "l ồn") lọt vì bản nén chỉ áp cho từ ≥ 4 ký tự. Thử hạ ngưỡng xuống 3 rồi chạy lại `tucam-conformance.test.ts` để kiểm tra chặn nhầm.
+  2. Từ bị tách mà mảnh dài hơn 1 ký tự ("đ ịt", "l ồn") lọt vì bản nén chỉ áp cho từ ≥ 4 ký tự. **Đã thử hạ xuống 3: chặn nhầm "lon len"** (qua biến thể `l`ồn`) → giữ 4. Cách đúng: chỉ ghép bản nén có dấu (khoá `C`) cho từ 3 ký tự, không ghép bản không dấu.
   3. Hiệu năng ổn với 120 ký tự; nếu tăng `maxChars` (vd lọc văn bản dài) nên giới hạn `MAX_SPAN` theo độ dài mẫu dài nhất.
 - Chưa review: so sánh ngữ nghĩa `postgres.ts` ↔ `sqlite.ts` (đã có test pg-mem + Postgres thật chạy toàn bộ bộ test).
 
