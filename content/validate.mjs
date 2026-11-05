@@ -177,7 +177,8 @@ for (const rel of ['su-kien-am-lich.json', 'i18n/en/su-kien-am-lich.json']) {
 }
 
 // ---------- 4. Thông điệp ngày & 5. Lời nguyện ----------
-for (const [base, n, max] of [['thong-diep-ngay', 366, 160], ['loi-nguyen-mau', 300, 120]]) {
+// lời nguyện vốn có công thức mở đầu ("Con nguyện…") nên ngưỡng lặp cao hơn
+for (const [base, n, nguong] of [['thong-diep-ngay', 366, 0.08], ['loi-nguyen-mau', 300, 0.45]]) {
   const vi = checkSchema(`${base}.json`, `${base}.schema.json`);
   const en = checkSchema(`i18n/en/${base}.json`, `${base}.schema.json`);
   for (const [rel, d] of [[`${base}.json`, vi], [`i18n/en/${base}.json`, en]]) {
@@ -188,7 +189,7 @@ for (const [base, n, max] of [['thong-diep-ngay', 366, 160], ['loi-nguyen-mau', 
     // mở đầu lặp lại
     const starts = new Map();
     d.forEach((x) => { const w = norm(x.noiDung).split(' ').slice(0, 2).join(' '); starts.set(w, (starts.get(w) || 0) + 1); });
-    for (const [w, c] of starts) if (c > Math.ceil(n * 0.08)) warn(rel, `${c} mục cùng mở đầu "${w}" (nên đa dạng hơn)`);
+    for (const [w, c] of starts) if (c > Math.ceil(n * nguong)) warn(rel, `${c} mục cùng mở đầu "${w}" (nên đa dạng hơn)`);
   }
   if (vi) hasVietnamese(`${base}.json`, vi, (x) => x.noiDung);
   if (vi && en) {
