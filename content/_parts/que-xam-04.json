@@ -5,8 +5,8 @@
     "tho": [
       "Mái nhà dẫu cũ vẫn che",
       "Mưa ngoài hiên rộng, trong nghe ấm lòng",
-      "Bữa cơm ấm áp quây vòng",
-      "Thương nhau gìn giữ mái cong qua ngày"
+      "Mâm cơm rau luộc canh trong",
+      "Thương nhau, mặc gió mưa ròng ngoài sân"
     ],
     "loiGiai": "Mái nhà không cần mới, chỉ cần người trong nhà còn biết che chở cho nhau. Ngoài kia mưa gió có lúc dữ, nhưng khi cả nhà ngồi quanh một bữa cơm, lòng ai cũng thấy yên. Quẻ này nhắc bạn rằng chỗ dựa vững nhất nhiều khi ở ngay bên cạnh: một lời hỏi han, một bữa cơm chung, một lần nhường nhịn. Giữ được mái nhà là nhờ những việc nhỏ làm đều đặn mỗi ngày.",
     "loiGiaiTheoChuDe": {
@@ -130,9 +130,9 @@
     "tieuDe": "Con đường qua đồi",
     "tho": [
       "Đường quanh qua mấy ngọn đồi",
-      "Đi hoài chẳng vội, đến hồi tới nơi",
+      "Dốc cao chẳng ngại, nghỉ ngồi lấy hơi",
       "Việc làm có lúc chơi vơi",
-      "Giữ bền từng bước, chân trời mở ra"
+      "Ngoái nhìn chặng cũ, đã vời vợi xa"
     ],
     "loiGiai": "Con đường qua đồi không thẳng, có đoạn lên dốc, có đoạn quanh co, nhưng người đi đều chân thì rồi cũng tới. Quẻ này dành cho người đang thấy công việc chậm, chưa thấy kết quả. Đừng nóng lòng so mình với người khác; hãy nhìn lại quãng đường đã đi và giữ nhịp bước. Kiên nhẫn không phải là đứng yên, mà là tiếp tục đi khi chưa thấy đích.",
     "loiGiaiTheoChuDe": {
@@ -193,9 +193,9 @@
     "tieuDe": "Ngôi nhà từng viên gạch",
     "tho": [
       "Ngôi nhà góp gạch từng viên",
-      "Chắt chiu dành dụm bạc tiền đủ chi",
-      "Không vay quá sức làm gì",
-      "Nhà êm cửa ấm mỗi khi trở về"
+      "Đặt tay cho chắc, tường liền mái cao",
+      "Bạc tiền chớ vội vay vào",
+      "Nhà xây vừa sức, ngọt ngào bữa cơm"
     ],
     "loiGiai": "Ngôi nhà vững không dựng trong một ngày, mà nhờ từng viên gạch được đặt cẩn thận. Tài sản cũng thế: làm ăn chăm chỉ, chi tiêu có kế hoạch, không vay mượn quá sức mình. Quẻ này khuyên bạn đi chậm mà chắc, đừng vì muốn có nhanh mà tự đặt gánh nặng lên vai. Một mái nhà bình yên quý hơn một căn nhà lớn mà lòng không yên.",
     "loiGiaiTheoChuDe": {
@@ -340,9 +340,9 @@
     "tieuDe": "Tiếng chuông chiều",
     "tho": [
       "Chuông chiều ngân tới cuối làng",
-      "Tiếng vang rồi lặng, nhẹ nhàng như mây",
-      "Giận hờn giữ mãi càng đầy",
-      "Buông ra một chút, cỏ cây dịu dàng"
+      "Vang rồi lắng lại, lang thang gió đồng",
+      "Giận hờn ôm mãi thành giông",
+      "Thả như tiếng vọng, tan không vướng gì"
     ],
     "loiGiai": "Tiếng chuông chiều ngân xa rồi tan vào không trung, không níu giữ gì. Quẻ này nói về buông bỏ: những giận hờn, ấm ức giữ trong lòng lâu ngày sẽ nặng như đá. Buông không có nghĩa là quên hết hay chịu thiệt, mà là không để chuyện cũ làm khổ mình thêm. Khi lòng nhẹ đi, bạn sẽ thấy mọi thứ xung quanh dịu dàng hơn.",
     "loiGiaiTheoChuDe": {
@@ -360,12 +360,12 @@
     "id": 93,
     "tieuDe": "Khói hương bay thẳng",
     "tho": [
-      "Khói hương bay thẳng lên trời",
-      "Làm ăn ngay chính, việc đời nhẹ tênh",
-      "Lời ngay chẳng sợ chông chênh",
-      "Người tin việc vững, lênh đênh chẳng còn"
+      "Gió im, sợi khói lên cao",
+      "Như người chính trực, lòng nào quanh co",
+      "Bán mua ngay thật chẳng lo",
+      "Lời nào đã hứa, giữ cho vẹn tròn"
     ],
-    "loiGiai": "Làn khói hương lúc trời lặng gió bay thẳng lên, không vướng víu. Người làm ăn ngay thẳng cũng vậy: không phải che giấu điều gì nên lòng nhẹ, đi đâu cũng thẳng lưng. Quẻ này khuyên bạn giữ chữ tín trong công việc và tiền bạc. Lời hứa nhỏ cũng giữ, việc nhỏ cũng làm cho trọn. Lâu dần người ta tin, và lòng tin ấy là vốn quý nhất.",
+    "loiGiai": "Lúc trời lặng gió, làn khói hương bay thẳng lên, không vướng víu; đó là lẽ tự nhiên chứ không phải điềm báo, chỉ là một hình ảnh để soi lòng. Người làm ăn ngay thẳng cũng vậy: không phải che giấu điều gì nên lòng nhẹ, đi đâu cũng thẳng lưng. Quẻ này khuyên bạn giữ chữ tín trong công việc và tiền bạc. Lời hứa nhỏ cũng giữ, việc nhỏ cũng làm cho trọn. Lâu dần người ta tin, và lòng tin ấy là vốn quý nhất.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Thẳng thắn với người thân, không giấu những chuyện quan trọng. Sự minh bạch giữ được hòa khí lâu dài.",
       "cong-viec": "Giữ đúng hẹn, nói đúng việc. Khi sai thì nhận và sửa, uy tín sẽ lớn dần.",
@@ -423,10 +423,10 @@
     "id": 96,
     "tieuDe": "Cửa sổ đón gió",
     "tho": [
-      "Sáng ra mở cửa đón hương",
-      "Gió trong mát dịu, nắng vương hiên nhà",
-      "Thân tâm cũng thế, mở ra",
-      "Ra vườn dạo bước, hít hà khí trong"
+      "Sớm mai mở cửa song thưa",
+      "Gió vào mát rượi, nắng vừa lên hiên",
+      "Ngồi lâu trước máy triền miên",
+      "Đứng lên dạo bước, đất hiền dưới chân"
     ],
     "loiGiai": "Căn phòng đóng kín lâu ngày sẽ ngột ngạt, mở cửa ra là gió mát và nắng sớm ùa vào. Thân và tâm cũng cần được mở như thế: ra ngoài đi lại, hít thở khí trời, gặp gỡ người thân bạn bè. Quẻ này khuyên bạn bớt thu mình trong bốn bức tường hay trước màn hình. Một chút vận động, một chút ánh nắng buổi sáng sẽ giúp bạn thấy khỏe và vui hơn.",
     "loiGiaiTheoChuDe": {
@@ -510,7 +510,7 @@
       "Gương lâu bụi phủ lờ mờ",
       "Lau đi một chút, bây giờ sáng trong",
       "Mỗi ngày lau một góc lòng",
-      "An nhiên tự thấy, thong dong mỗi ngày"
+      "An nhiên tự đến, chẳng mong cầu gì"
     ],
     "loiGiai": "Tấm gương để lâu sẽ bám bụi, không phải vì gương xấu mà vì ngày nào cũng có bụi bay vào. Lòng người cũng vậy: lo toan, bực bội, mệt mỏi cứ đọng lại từng chút. Quẻ này khuyên bạn mỗi ngày dành một khoảng nhỏ để lau lòng: ngồi yên, thở chậm, buông điều không cần giữ. Lòng trong thì nhìn việc rõ, sống nhẹ nhàng và an nhiên hơn.",
     "loiGiaiTheoChuDe": {

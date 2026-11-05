@@ -18,7 +18,7 @@
   {
     "id": 2,
     "tieuDe": "Sương sớm trên cỏ",
-    "tho": ["Hạt sương đọng giữa cỏ non", "Long lanh buổi sớm, vẫn còn trong veo", "Thân ta nào khác sương treo", "Ăn lành ngủ đủ, vui theo tháng ngày"],
+    "tho": ["Hạt sương đọng giữa cỏ non", "Long lanh buổi sớm, nắng còn chưa lên", "Thân như sương ấy, chớ quên", "Ngủ sâu ăn sạch, cho bền tháng năm"],
     "loiGiai": "Giọt sương đọng trên ngọn cỏ trong veo và long lanh, nhưng cũng mong manh trước nắng gió. Thân thể con người cũng vậy: quý giá mà cần được nâng niu. Quẻ này nhắc bạn đừng coi nhẹ sức khỏe vì mải lo việc. Giữ thân như giữ giọt sương: ăn uống lành mạnh, ngủ đủ giấc, vận động nhẹ nhàng, lòng vui vẻ. Khi thân an thì mọi việc khác mới có chỗ dựa vững vàng.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Hãy để ý đến sức khỏe của người thân, nhất là ông bà, cha mẹ. Một lời nhắc uống nước, một lần đưa đi khám định kỳ là cách thương nhau thiết thực.",
@@ -34,7 +34,7 @@
   {
     "id": 3,
     "tieuDe": "Mây trắng thong dong",
-    "tho": ["Trời xanh mây trắng bay qua", "Chẳng mang chẳng giữ, nhẹ xa ngút ngàn", "Lòng ai lo nghĩ muôn vàn", "Buông như mây trắng, an nhàn thân tâm"],
+    "tho": ["Trời xanh mây trắng bay qua", "Chẳng mang chẳng giữ, trôi xa ngút ngàn", "Lòng ai lo nghĩ muôn vàn", "Buông như mây trắng, an nhàn thân tâm"],
     "loiGiai": "Đám mây trắng trôi qua bầu trời, không mang theo gì, không níu giữ gì, nên bay được thật xa. Quẻ này dành cho người đang ôm nhiều lo nghĩ trong lòng. Có những điều bạn không thể thay đổi ngay, cứ nghĩ mãi chỉ khiến thân mệt, tâm nặng. Hãy học đám mây: làm hết phần mình rồi nhẹ nhàng buông bớt phần còn lại. Lòng nhẹ thì đầu óc sáng, sức khỏe cũng theo đó mà khá lên.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Chuyện nhà có điều chưa vừa ý, đừng giữ mãi trong lòng. Nói ra nhẹ nhàng hoặc tạm gác lại, mọi người sẽ dễ thở hơn.",
@@ -50,7 +50,7 @@
   {
     "id": 4,
     "tieuDe": "Gió nồm đầu hạ",
-    "tho": ["Gió nồm thổi mát đầu hè", "Lá non rung nhẹ, ai nghe rộn lòng", "Tình duyên như gió thong dong", "Đến khi đúng lúc, đợi mong chẳng hoài"],
+    "tho": ["Gió nồm thổi mát đầu hè", "Lá non rung nhẹ, ai nghe rộn lòng", "Tình duyên như gió ngoài song", "Đến khi đúng lúc, đợi mong chẳng hoài"],
     "loiGiai": "Ngọn gió nồm đầu hè mang hơi mát dịu dàng, khẽ lay hàng lá non. Không ai nắm được gió, nhưng ai cũng cảm được khi gió về. Quẻ này nói về duyên: không thể ép, cũng chẳng thể vội. Hãy sống tốt, mở lòng và giữ sự chân thành; khi đến lúc, duyên lành sẽ tự tìm đến như gió nồm thổi qua sân. Sự chờ đợi bằng lòng tin và tử tế chẳng bao giờ là hoài phí.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Không khí gia đình cần những làn gió mát: một câu đùa vui, một buổi dạo chơi cùng nhau. Đừng để nhà chỉ toàn chuyện bổn phận.",
@@ -66,7 +66,7 @@
   {
     "id": 5,
     "tieuDe": "Mưa xuân lất phất",
-    "tho": ["Mưa xuân lất phất bên thềm", "Đất mềm thấm hạt, ngày đêm nhẹ nhàng", "Học hành góp chút mỗi trang", "Việc làm bền bỉ, vững vàng tháng năm"],
+    "tho": ["Mưa xuân lất phất bên thềm", "Âm thầm thấm đất, ngày đêm nuôi mầm", "Học hành mỗi buổi chuyên tâm", "Việc làm đều đặn, tới tầm trổ bông"],
     "loiGiai": "Mưa xuân rất nhỏ, chẳng ào ạt, nhưng ngày đêm thấm sâu vào đất, nuôi mầm cây lớn dần. Quẻ này khuyên bạn đừng xem nhẹ những nỗ lực nhỏ. Mỗi trang sách đọc, mỗi việc làm cẩn thận hôm nay đều thấm vào bạn như mưa xuân thấm vào đất. Không cần làm điều lớn lao trong một ngày; chỉ cần đều đặn, kiên nhẫn, thành quả sẽ đến vững vàng theo năm tháng.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Tình thân được vun bằng những điều nhỏ: hỏi han mỗi ngày, giúp nhau việc vặt. Đừng đợi dịp lớn mới bày tỏ yêu thương.",
@@ -194,7 +194,7 @@
   {
     "id": 13,
     "tieuDe": "Gió bấc mùa đông",
-    "tho": ["Đông về gió bấc lạnh lùng", "Nhà ai sớm liệu, ấm cùng bên nhau", "Hè sang biết trữ trước sau", "Chi tiêu vừa phải, cơm rau ấm lòng"],
+    "tho": ["Đông về gió bấc lạnh lùng", "Nhà ai sớm liệu, ấm cùng bên nhau", "Từ hè gom củi phơi rau", "Tiêu pha vừa đủ, mai sau yên lòng"],
     "loiGiai": "Khi gió bấc thổi về, nhà nào sớm chuẩn bị thì vẫn ấm êm bên nhau. Quẻ này nói về sự lo xa trong chuyện tiền bạc. Lúc thuận lợi, đừng tiêu xài hết; hãy biết để dành, như người trữ củi từ mùa hè cho mùa đông. Chi tiêu vừa phải, sống giản dị, thì dù bữa cơm chỉ có rau cũng vẫn ấm lòng. Sự chuẩn bị hôm nay giúp bạn vững vàng khi gặp lúc khó khăn.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà nên cùng nhau bàn chuyện để dành, chuẩn bị cho những việc lớn sắp tới. Sự đồng lòng giúp mọi người yên tâm.",
@@ -290,7 +290,7 @@
   {
     "id": 19,
     "tieuDe": "Trời quang mây tạnh",
-    "tho": ["Mưa tan trời lại quang mây", "Bước ra hít thở vài giây an lành", "Vừa qua mệt mỏi mong manh", "Nghỉ thêm ít bữa, đi nhanh chưa cần"],
+    "tho": ["Trời vừa tạnh, đã quang mây", "Giọt mưa còn đọng, lá đầy long lanh", "Ốm qua thân vẫn mong manh", "Nghỉ thêm ít bữa, cho lành hãy đi"],
     "loiGiai": "Mưa đã tạnh, trời quang đãng trở lại, không khí trong lành. Quẻ này dành cho người vừa trải qua một thời gian mệt mỏi, ốm đau hay căng thẳng. Mọi thứ đang dần tốt lên, nhưng cơ thể còn cần thời gian hồi phục. Đừng vội lao vào công việc như trước; hãy nghỉ thêm ít hôm, ăn uống đủ chất, ra ngoài hít thở không khí trong lành. Hồi phục chậm mà chắc mới bền.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Người nhà vừa khỏe lại, hãy san sẻ bớt việc cho họ, chăm sóc bữa ăn và để họ được nghỉ ngơi trọn vẹn.",
@@ -354,7 +354,7 @@
   {
     "id": 23,
     "tieuDe": "Trăng khuyết lại tròn",
-    "tho": ["Trăng kia khuyết đó lại tròn", "Duyên nào lỡ nhịp vẫn son sắt lòng", "Hiểu nhau khi biết đợi mong", "Nhường nhau đôi chút, trong vòng tay êm"],
+    "tho": ["Trăng kia khuyết mấy lại tròn", "Duyên dù lỡ nhịp, vẫn còn đợi trông", "Giận hờn như gió qua sông", "Nhường nhau một bước, mặn nồng đêm trăng"],
     "loiGiai": "Trăng có lúc khuyết, có lúc tròn, đó là lẽ tự nhiên. Tình cảm cũng vậy, có lúc đầy đặn, có lúc hụt hẫng vì hiểu lầm hay xa cách. Quẻ này khuyên đừng vì một lúc khuyết mà nghĩ mọi thứ đã mất. Nếu lòng còn son sắt, chỉ cần biết chờ đợi, thấu hiểu và nhường nhịn nhau đôi chút, tình cảm sẽ lại tròn đầy như trăng rằm.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Quan hệ trong nhà có lúc lạnh nhạt. Hãy kiên nhẫn, chủ động quan tâm, những khoảng trống sẽ dần được lấp đầy.",
@@ -370,7 +370,7 @@
   {
     "id": 24,
     "tieuDe": "Ngôi sao dẫn lối",
-    "tho": ["Giữa khuya sao Bắc trong ngần", "Người đi đêm tối, xa gần chẳng lo", "Học hành có đích, chẳng mò", "Việc làm có hướng, ấm no tháng ngày"],
+    "tho": ["Giữa khuya sao Bắc trong ngần", "Soi người đi tối, xa gần biết phương", "Học hành như kẻ lên đường", "Biết nơi mình đến, dặm trường chẳng xa"],
     "loiGiai": "Giữa đêm khuya, ngôi sao phương Bắc sáng trong, giúp người đi đêm định hướng mà không sợ lạc. Quẻ này nói về tầm quan trọng của mục tiêu. Người có mục tiêu rõ ràng, dù đường xa hay gần cũng biết mình đang đi đâu. Hãy xác định điều bạn thật sự muốn trong học hành và công việc, viết nó ra, rồi để nó dẫn lối mỗi khi bạn phân vân. Có hướng đi, mọi nỗ lực sẽ không bị phí.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà nên cùng nhau đặt ra mục tiêu chung, như dành dụm cho việc học của con hay sửa sang nhà cửa, để mọi người cùng hướng về.",
@@ -386,7 +386,7 @@
   {
     "id": 25,
     "tieuDe": "Gió đổi chiều",
-    "tho": ["Gió kia đổi hướng thất thường", "Lúc lên lúc xuống, khó lường trước sau", "Tiền nong chớ vội chạy mau", "Đều tay dành dụm, cùng nhau vững vàng"],
+    "tho": ["Gió kia đổi hướng thất thường", "Lúc lên lúc xuống, khó lường trước sau", "Tiền nong chớ chạy theo nhau", "Giữ đều tay góp, gió mau chẳng nề"],
     "loiGiai": "Gió có lúc thổi hướng này, có lúc đổi hướng khác, khó mà đoán trước. Chuyện tiền bạc cũng thế, có lúc thuận lúc nghịch. Quẻ này khuyên đừng chạy theo những cơn gió nhất thời, như lời rủ rê làm giàu nhanh hay những trò may rủi. Hãy giữ nhịp đều đặn: làm việc lương thiện, dành dụm từng chút, cùng người nhà bàn bạc trước những khoản chi lớn. Vững vàng như thế thì gió đổi chiều cũng chẳng ngại.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà cùng thống nhất cách chi tiêu, có khoản dự phòng chung. Khi gặp lúc khó, mọi người cùng chung sức sẽ vượt qua.",
