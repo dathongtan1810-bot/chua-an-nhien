@@ -184,11 +184,14 @@ export async function registerAdmin(ctx: AppContext): Promise<void> {
       try {
         await repos.backup(file);
       } catch (err) {
+        fs.rm(file, { force: true }, () => undefined); // không để lại bản sao DB dở dang
         return reply.code(501).send({ error: 'backup_unsupported', message: (err as Error).message });
       }
-      await audit(req, 'backup');
+      void audit(req, 'backup'); // audit tự bắt lỗi; không chặn việc gửi/dọn file
       const stream = fs.createReadStream(file);
-      stream.on('close', () => fs.rm(file, { force: true }, () => undefined));
+      const cleanup = () => fs.rm(file, { force: true }, () => undefined);
+      stream.on('close', cleanup);
+      stream.on('error', cleanup);
       reply.header('content-type', 'application/vnd.sqlite3');
       reply.header('content-disposition', `attachment; filename="chua-an-nhien-${vnDay()}.db"`);
       reply.header('cache-control', 'no-store');

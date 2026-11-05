@@ -46,6 +46,15 @@ _Cập nhật lần cuối: 2026-11-05 ~06:40 UTC (xem `git log -- server/HANDOF
 
 Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; đợt review thứ hai (bộ lọc mới, Postgres, endpoint admin mới) chưa xong — xem mục cuối nếu có kết quả, nếu không thì nên chạy lại review cho `src/services/filter.ts`, `src/repo/postgres.ts`.
 
+### Kết quả review lần 2 (06:36 UTC, chỉ kịp xem sâu filter.ts)
+
+- Đã sửa: allowlist che cả token `raw`; endpoint backup luôn xoá file tạm (kể cả khi lỗi).
+- **Chưa sửa (nên làm):**
+  1. Ký tự `*` không được coi là ký tự lách: "f*ck", "đ*t mẹ" lọt. Gợi ý: coi `*` giữa hai chữ cái là wildcard 1 ký tự, hoặc nhờ nhóm nội dung thêm dạng có `*` vào `bienThe` (bộ lọc tham chiếu `loc-tu.mjs` cũng lọt).
+  2. Từ bị tách mà mảnh dài hơn 1 ký tự ("đ ịt", "l ồn") lọt vì bản nén chỉ áp cho từ ≥ 4 ký tự. Thử hạ ngưỡng xuống 3 rồi chạy lại `tucam-conformance.test.ts` để kiểm tra chặn nhầm.
+  3. Hiệu năng ổn với 120 ký tự; nếu tăng `maxChars` (vd lọc văn bản dài) nên giới hạn `MAX_SPAN` theo độ dài mẫu dài nhất.
+- Chưa review: so sánh ngữ nghĩa `postgres.ts` ↔ `sqlite.ts` (đã có test pg-mem + Postgres thật chạy toàn bộ bộ test).
+
 ## Việc nên làm tiếp
 
 1. Deploy thử Fly.io theo DEPLOY.md (job `docker` của CI đã xanh).

@@ -396,6 +396,7 @@ export class ContentFilter {
           for (let j = i; j < i + needle.length; j++) {
             txt.tokens[j] = MASK;
             txt.plain[j] = MASK;
+            txt.raw[j] = MASK;
           }
           i = seqFind(hay, needle, okf);
         }
