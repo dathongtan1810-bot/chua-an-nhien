@@ -596,7 +596,7 @@ export class AudioEngine {
     try {
       const t = ctx.currentTime + 0.005;
       const f = (accent ? 640 : 740) * rnd(0.96, 1.04);
-      const peak = (accent ? 0.9 : 0.6) * rnd(0.9, 1.05);
+      const peak = (accent ? 1.4 : 1.0) * rnd(0.9, 1.05);
       const outs = this.out(ctx, peak, 0.22);
       this.noise(ctx, outs[0], t, 0.35, 0.002, 0.07, 'bandpass', f * 1.05, 7);
       const o = this.tone(ctx, outs[0], 'sine', f * 1.45, t, 0.6, 0.002, rnd(0.11, 0.13), f * 0.92, 0.035);
