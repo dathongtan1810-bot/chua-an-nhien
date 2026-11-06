@@ -38,3 +38,6 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
 23. **Nội dung tiếng Anh tải lười** (`import.meta.glob` không eager) để gói tải đầu không tăng; sự kiện giữ ngày và
     token trang trí của bản tiếng Việt cùng `id`.
 24. **Hiệu ứng nhẹ tự động** theo FPS đo bằng đồng hồ thật (đồng hồ Phaser chậm khi FPS thấp); lưu sessionStorage.
+25. **AdMob (rewarded)** tích hợp bằng `@capacitor-community/admob` 8.3.0, tắt mặc định, ID thử nghiệm, `npa: true`;
+    thưởng +5 Hạt sen, tối đa 3 lần/ngày (tính vào reducer, không vượt trần). Nút chỉ hiện khi `canOfferRewardedAd()`
+    (cờ bật, app native, khu không trang nghiêm, không trong nghi thức). Khai báo App ID thử nghiệm trong manifest/Info.plist.

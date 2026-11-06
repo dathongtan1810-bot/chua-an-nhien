@@ -8,6 +8,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- AdMob App ID (ID THỬ NGHIỆM của Google). Bắt buộc khi có SDK AdMob, kể cả khi tắt quảng cáo.
+             Trước khi phát hành có quảng cáo: thay bằng App ID thật (xem docs/app/PUBLISHING.md). -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation|density"

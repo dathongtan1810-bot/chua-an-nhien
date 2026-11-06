@@ -1,4 +1,5 @@
-import { ADS_ENABLED } from '../config';
+import { AD_REWARD_PER_DAY, AD_REWARD_SEEDS } from '../config';
+import { adsEnabled, canOfferRewardedAd, isNativeApp, showRewardedAd } from '../ads/rewarded';
 import { AREA_INFO, type AreaId } from '../core/areas';
 import { bus, game, requestGoTo, requestRitual } from '../core/bus';
 import { getLang, t } from '../core/i18n';
@@ -7,7 +8,7 @@ import { todayInfo } from '../core/today';
 import { formatLunar } from '../lunar/lunar';
 import { net } from '../net/service';
 import { AREA_RITUALS, RITUALS } from '../rituals';
-import { h, uiRoot } from './dom';
+import { h, toast, uiRoot } from './dom';
 import { mapSvg } from './minimap';
 import { openJournal, openMap, openSettings, openShop, openToday } from './panels';
 import { openRoom } from './room';
@@ -117,9 +118,34 @@ export class Hud {
         h('button', { class: 'act nav', onclick: () => window.dispatchEvent(new CustomEvent('can:share', { detail: { kind: 'invite' } })) }, '💌 ' + t('share.invite')),
       );
     }
-    // Khung quảng cáo thưởng: TẮT mặc định; không bao giờ ở chính điện / thiền đường.
-    if (ADS_ENABLED && !AREA_INFO[area].solemn) {
-      this.bottom.append(h('button', { class: 'act nav', 'data-ad': 'rewarded' }, '🎁'));
+    // Quảng cáo thưởng: TẮT mặc định; người chơi tự bấm; không bao giờ ở chính điện / thiền đường / trong nghi thức.
+    const offer = canOfferRewardedAd({
+      enabled: adsEnabled(),
+      native: isNativeApp(),
+      area,
+      ritualActive: !!game.api?.ritual,
+      watchedToday: store.state.daily.dateKey === todayInfo().dateKey ? store.state.daily.adRewards : 0,
+    });
+    if (offer) {
+      const btn: HTMLButtonElement = h(
+        'button',
+        {
+          class: 'act nav',
+          'data-ad': 'rewarded',
+          onclick: async () => {
+            btn.disabled = true;
+            btn.textContent = t('ads.loading');
+            const ok = await showRewardedAd();
+            if (ok) {
+              const r = store.dispatch({ type: 'adReward', dateKey: todayInfo().dateKey, perDay: AD_REWARD_PER_DAY, seeds: AD_REWARD_SEEDS });
+              if (r.amount > 0) toast('🪷 ' + t('reward.plus', { n: r.amount }));
+            } else toast(t('ads.unavailable'));
+            this.renderActions(store.state.area);
+          },
+        },
+        '🎁 ' + t('ads.watch', { n: AD_REWARD_SEEDS }),
+      );
+      this.bottom.append(btn);
     }
   }
 }

@@ -15,6 +15,7 @@ import { net } from '../net/service';
 import { clearJournal, listEntries, type JournalEntry } from '../storage/journal';
 import { h, openSheet, toast } from './dom';
 import { mapSvg } from './minimap';
+import { adsEnabled } from '../ads/rewarded';
 import { applyReminders } from '../core/reminders';
 import { openWishes } from './wishes';
 
@@ -183,7 +184,7 @@ export function openShop(): void {
   const render = () => {
     s.body.replaceChildren();
     const st = store.state;
-    s.body.append(h('p', { class: 'muted' }, t('shop.hint')), h('p', {}, h('strong', {}, `🪷 ${st.hatSen} ${t('hud.hatSen')}`)));
+    s.body.append(h('p', { class: 'muted' }, t('shop.hint') + (adsEnabled() ? ' ' + t('shop.hintAds') : '')), h('p', {}, h('strong', {}, `🪷 ${st.hatSen} ${t('hud.hatSen')}`)));
     const cats: ShopCategory[] = ['incense', 'lantern', 'music', 'theme'];
     for (const c of cats) {
       const ul = h('ul', { class: 'list' });
