@@ -36,13 +36,13 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
   quẻ/thông điệp/sự kiện/lời nguyện tiếng Anh, cùng id nên quẻ trùng giữa hai ngôn ngữ. Đọc to & ảnh chuỗi ngày theo ngôn ngữ.
 - **Review**: focus trap trong bảng (a11y, có e2e); bật/tắt online khởi động lại khu → tải lại đèn.
 - **Native**: Android APK debug + APK/AAB release chưa ký build thật trên CI (`app-android`, artifact);
-  thêm `app-ios.yml` build iOS Simulator trên macOS (không ký). Ký phát hành: xem docs/app/PUBLISHING.md.
+  `app-ios.yml` build iOS Simulator trên macOS (không ký) — đã xanh trên CI. Ký phát hành: xem docs/app/PUBLISHING.md.
 - **Hiệu năng**: `?fps` hiện bộ đếm FPS để đo trên máy thật; FPS trung bình < 40 trong 4 giây đầu → các khu sau
   bỏ hiệu ứng trang trí (hạt rơi, đốm sáng, sương) trong phiên (`src/core/perf.ts`).
 - Đã merge lại nhánh server/content mới nhất (không xung đột). Vẫn chưa có nhánh `qa/`.
 
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
-- Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật; kiểm tra kết quả workflow `app-ios`.
+- Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật.
 - Khi phiên QA có `qa/BUGS.md`: merge và sửa.
 
