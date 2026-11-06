@@ -2,7 +2,8 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: 'e2e',
-  timeout: 60_000,
+  // CI không có GPU (WebGL vẽ bằng CPU) nên các bài dài như smoke chậm hơn máy dev 3–4 lần
+  timeout: process.env.CI ? 120_000 : 60_000,
   use: {
     baseURL: 'http://localhost:4173',
     viewport: { width: 540, height: 960 },
