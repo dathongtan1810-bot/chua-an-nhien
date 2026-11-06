@@ -20,7 +20,6 @@
     "e2e:server": "VITE_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} vite build --outDir dist-e2e-server && E2E_DIST=dist-e2e-server E2E_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} playwright test"
   },
   "dependencies": {
-    "@capacitor-community/admob": "8.3.0",
     "@capacitor-community/keep-awake": "^8.0.1",
     "@capacitor/app": "^8.1.2",
     "@capacitor/core": "^8.6.0",

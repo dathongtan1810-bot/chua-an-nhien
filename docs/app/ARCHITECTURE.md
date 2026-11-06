@@ -6,7 +6,7 @@ app/
 ├─ public/                 # manifest, sw.js (offline), icons, privacy.html
 ├─ src/
 │  ├─ main.ts              # khởi động Phaser (540×960, Scale.FIT), màn chào, HUD, net, PWA, native
-│  ├─ config.ts            # cờ VITE_*: ONLINE_FEATURES, USE_MOCK_SERVER, SERVER_URL, ADS_ENABLED
+│  ├─ config.ts            # cờ VITE_*: ONLINE_FEATURES, USE_MOCK_SERVER, SERVER_URL
 │  ├─ core/                # areas (8 khu), state (reducer thuần), store (localStorage), i18n vi/en,
 │  │                       # shop, today (âm lịch + sự kiện + thông điệp), bus (HUD ↔ scene)
 │  ├─ lunar/lunar.ts       # âm lịch VN tự cài theo Meeus (UTC+7)

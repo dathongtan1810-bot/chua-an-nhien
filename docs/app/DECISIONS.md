@@ -18,7 +18,7 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
     nội dung thì dùng, không thì dùng `src/data/sample-*.json` cùng schema.
 11. **Online**: `ONLINE_FEATURES` (mặc định bật) + `USE_MOCK_SERVER` (mặc định bật khi không cấu hình
     `VITE_SERVER_URL`). Cấu hình bằng biến môi trường Vite, xem `src/config.ts`.
-12. **Quảng cáo thưởng**: chỉ khung, `ADS_ENABLED=false`, dùng AdMob test ID; không bao giờ hiện ở chính điện/thiền.
+12. ~~Quảng cáo thưởng (khung AdMob)~~ — **bỏ**, xem mục 26.
 13. **Giới hạn tần suất phía client khớp server** (`shared/PROTOCOL.md`): hương 1/15 s, chuông 1/20 s, đèn 3/giờ.
     Chuông/hương vẫn chơi được tại máy khi bị giới hạn; chỉ không gửi lên server (không làm phiền bằng thông báo).
 14. **Hương của chính mình** hiện ngay trong lư khi cắm (không chờ server); tiếng vọng `incense_lit` của mình bị bỏ qua.
@@ -38,6 +38,7 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
 23. **Nội dung tiếng Anh tải lười** (`import.meta.glob` không eager) để gói tải đầu không tăng; sự kiện giữ ngày và
     token trang trí của bản tiếng Việt cùng `id`.
 24. **Hiệu ứng nhẹ tự động** theo FPS đo bằng đồng hồ thật (đồng hồ Phaser chậm khi FPS thấp); lưu sessionStorage.
-25. **AdMob (rewarded)** tích hợp bằng `@capacitor-community/admob` 8.3.0, tắt mặc định, ID thử nghiệm, `npa: true`;
-    thưởng +5 Hạt sen, tối đa 3 lần/ngày (tính vào reducer, không vượt trần). Nút chỉ hiện khi `canOfferRewardedAd()`
-    (cờ bật, app native, khu không trang nghiêm, không trong nghi thức). Khai báo App ID thử nghiệm trong manifest/Info.plist.
+25. ~~AdMob rewarded (đã tích hợp ở f2795d2)~~ — **gỡ bỏ**, xem mục 26.
+26. **Không dùng quảng cáo** (quyết định của chủ dự án): gỡ plugin `@capacitor-community/admob`, code `src/ads/`, cờ
+    `VITE_ADS_ENABLED`, App ID trong AndroidManifest/Info.plist. Hạt sen chỉ đến từ tu tập nhẹ nhàng; app không có SDK
+    quảng cáo hay theo dõi → Data safety không khai báo Advertising ID.

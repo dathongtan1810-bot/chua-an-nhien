@@ -56,8 +56,6 @@ export interface Daily {
   eventDone: boolean;
   meditationMin: number;
   fortuneTopics: string[];
-  /** Số lần đã xem quảng cáo thưởng hôm nay */
-  adRewards: number;
 }
 
 export interface GameState {
@@ -121,7 +119,6 @@ export function emptyDaily(dateKey: string): Daily {
     eventDone: false,
     meditationMin: 0,
     fortuneTopics: [],
-    adRewards: 0,
   };
 }
 
@@ -157,9 +154,7 @@ export type Action =
   | { type: 'nickname'; nickname: string }
   | { type: 'reward'; amount: number }
   /** Thưởng nhỏ (vd. giữ nhịp mõ đều) — tính chung trần thưởng nghi thức mỗi ngày. */
-  | { type: 'bonus'; dateKey: string }
-  /** Xem xong quảng cáo thưởng (người chơi tự chọn) — có trần mỗi ngày */
-  | { type: 'adReward'; dateKey: string; perDay: number; seeds: number };
+  | { type: 'bonus'; dateKey: string };
 
 export interface Reward {
   amount: number;
@@ -271,15 +266,6 @@ export function reduce(state: GameState, action: Action): Result {
         s = { ...s, hatSen: s.hatSen + 1, daily: { ...s.daily, ritualRewards: s.daily.ritualRewards + 1 } };
         reward.amount = 1;
         reward.reasons.push('bonus');
-      }
-      break;
-    }
-    case 'adReward': {
-      s = rollDay(s, action.dateKey);
-      if (s.daily.adRewards < action.perDay) {
-        s = { ...s, hatSen: s.hatSen + action.seeds, daily: { ...s.daily, adRewards: s.daily.adRewards + 1 } };
-        reward.amount = action.seeds;
-        reward.reasons.push('ad');
       }
       break;
     }

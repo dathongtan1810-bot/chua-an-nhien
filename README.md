@@ -37,7 +37,7 @@ npm run e2e        # Playwright smoke
 npm run e2e:server # e2e với server thật (cd server && npm start trước; E2E_SERVER_URL mặc định :8080)
 ```
 Cấu hình (biến môi trường Vite): `VITE_SERVER_URL` (server Socket.IO thật; để trống → MockServer),
-`VITE_ONLINE_FEATURES`, `VITE_USE_MOCK_SERVER`, `VITE_ADS_ENABLED` (mặc định tắt), `VITE_PUBLIC_URL`.
+`VITE_ONLINE_FEATURES`, `VITE_USE_MOCK_SERVER`, `VITE_PUBLIC_URL`. App không có quảng cáo.
 
 Đo hiệu năng trên máy thật: thêm `?fps` vào URL để hiện bộ đếm FPS.
 

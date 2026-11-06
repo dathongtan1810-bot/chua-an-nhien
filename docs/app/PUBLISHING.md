@@ -15,7 +15,7 @@ cờ bạc hay gây quỹ.
       `lienhe@chuaannhien.example` bằng email thật.
 - [ ] Trang/URL xóa dữ liệu (Play bắt buộc): có thể dùng `https://<domain>/privacy.html#vi` mục 3 (hướng dẫn nút
       "Xóa dữ liệu của tôi" + email), hoặc tạo form riêng.
-- [ ] Cấu hình build production: `VITE_SERVER_URL` trỏ máy chủ thật; `ADS_ENABLED=false` (mặc định).
+- [ ] Cấu hình build production: `VITE_SERVER_URL` trỏ máy chủ thật.
 
 ### Tăng phiên bản (mỗi lần nộp)
 - `app/package.json` → `version`.
@@ -56,7 +56,7 @@ Apple Guideline **1.2** và chính sách UGC của Google Play yêu cầu:
 | *Personal info → Name* | Biệt danh ngẫu nhiên — có thể khai "Other info: nickname", App functionality |
 | *Messages / User-generated content (Other in-app messages)* | Lời nguyện — App functionality; công khai 24h |
 | Vị trí, danh bạ, ảnh, sức khỏe, tài chính | **Không** |
-| Quảng cáo / Analytics | Bản build **có SDK AdMob** (plugin `@capacitor-community/admob`) nhưng quảng cáo **tắt** (`VITE_ADS_ENABLED=false`). Google Play vẫn coi app có SDK quảng cáo: khai báo *Advertising ID* trong Data safety. Nếu không định dùng quảng cáo: gỡ plugin trước khi phát hành (xem mục Quảng cáo). |
+| Quảng cáo / Analytics | **Không** — app không có quảng cáo và không có SDK quảng cáo/phân tích/theo dõi. Không khai báo Advertising ID. |
 
 ### Apple — App Privacy (nutrition label)
 - *Identifiers → Device ID* (không liên kết danh tính, không tracking) · *User Content → Other User Content* (lời nguyện)
@@ -80,16 +80,8 @@ Apple Guideline **1.2** và chính sách UGC của Google Play yêu cầu:
   trong listing/ảnh chụp. Trong app có dòng chú thích "chỉ để suy ngẫm".
 - **Không có tiền cúng dường/quyên góp**, không bán "lộc", "may mắn", không mua Hạt sen bằng tiền thật
   (Hạt sen chỉ kiếm bằng nghi thức). Apple 3.2.1(vi) & Play Payments: quyên góp trong app có nhiều ràng buộc — ta không làm.
-- **Quảng cáo**: chỉ quảng cáo **có thưởng, người chơi tự bấm xem** (+5 Hạt sen, tối đa 3 lần/ngày), SDK AdMob đã tích hợp
-  (`src/ads/rewarded.ts`), **tắt mặc định** (`VITE_ADS_ENABLED=false`), chỉ trên app điện thoại, chỉ **ID thử nghiệm** của Google,
-  yêu cầu quảng cáo không cá nhân hóa (`npa`). Không bao giờ hiện ở chính điện, thiền đường hay khi đang làm nghi thức.
-  - App ID thử nghiệm đã khai báo sẵn (bắt buộc, thiếu là app crash khi mở): Android `AndroidManifest.xml`
-    (`com.google.android.gms.ads.APPLICATION_ID`), iOS `Info.plist` (`GADApplicationIdentifier`, `SKAdNetworkItems`).
-  - **Muốn bật thật**: tạo App ID + ad unit thật, thay trong `src/config.ts` (`ADMOB_TEST_IDS` → ID thật, bỏ `isTesting`)
-    và trong manifest/Info.plist; build với `VITE_ADS_ENABLED=true`; cập nhật Data safety (*Contains ads*), App Privacy,
-    ATT (iOS, nếu dùng quảng cáo cá nhân hóa) và UMP consent (EU/UK). Phân loại nội dung quảng cáo phù hợp mọi lứa tuổi.
-  - **Không dùng quảng cáo**: `npm uninstall @capacitor-community/admob`, xóa `src/ads/` + nút trong `src/ui/hud.ts`,
-    gỡ meta-data/Info.plist ở trên, `npx cap sync` — khi đó Data safety không cần khai báo Advertising ID.
+- **Quảng cáo**: **không có**. App không chứa SDK quảng cáo (đã gỡ AdMob). Hạt sen chỉ nhận từ tu tập nhẹ nhàng,
+  không mua bằng tiền, không đổi bằng xem quảng cáo.
 - Ngôi chùa là hư cấu; không dùng tên/logo chùa thật, không dùng hình tượng có bản quyền.
 - Tôn trọng: không gamify quá đà nghi lễ (không bảng xếp hạng thắp hương...).
 
@@ -212,7 +204,7 @@ Không chèn chữ "bói", "may mắn", "cầu tài lộc" lên ảnh. Không hi
 - [ ] Offline vẫn vào chùa được; online lỗi không crash.
 - [ ] Splash ẩn sau khi game sẵn sàng (`initNative()` → `SplashScreen.hide`).
 - [ ] Báo cáo/chặn/xóa dữ liệu hoạt động với server thật.
-- [ ] `VITE_ADS_ENABLED=false` (mặc định). Bản build có SDK AdMob nhưng không hiện quảng cáo — khai báo Advertising ID, hoặc gỡ plugin nếu không dùng.
+- [ ] Không có SDK quảng cáo/analytics trong bản build (`grep -ri admob app/package.json` phải rỗng).
 - [ ] Privacy policy & email liên hệ là thật.
 
 ## Thông báo nhắc mùng 1 / rằm (Local Notifications)
