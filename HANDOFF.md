@@ -41,6 +41,13 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
   bỏ hiệu ứng trang trí (hạt rơi, đốm sáng, sương) trong phiên (`src/core/perf.ts`).
 - Đã merge lại nhánh server/content mới nhất (không xung đột). Vẫn chưa có nhánh `qa/`.
 
+## Đợt 3 — ý tưởng tiếp theo (PLAN.md, đã xong cả 6)
+- **Lời nguyện của tôi** (Nhật ký → nút): lời nguyện theo tuần, đánh dấu "Đã thành — tri ân" (sổ biết ơn,
+  không hứa linh ứng); lưu trong IndexedDB (`updateEntry`).
+- **Nhắc nhẹ mùng 1 & rằm**: công tắc trong Cài đặt (chỉ app điện thoại, mặc định tắt), Capacitor Local
+  Notifications, ~24 lần nhắc lúc 6:30 giờ VN, lên lịch lại mỗi lần mở app (`src/logic/reminders.ts`, tính cả tháng nhuận).
+- **Mưa phùn xuân**: tháng 1–3 âm lịch, ~45% số ngày (cố định theo ngày), khu ngoài trời; `?weather=rain` để xem.
+
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
 - Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật.

@@ -26,8 +26,8 @@ Vẽ cảnh kiến trúc · Vẽ trời/nước/sprite. Tech lead: kiến trúc,
 
 ## Ý tưởng tiếp theo (ưu tiên điều người chơi cảm nhận rõ nhất)
 1. ✅ Đèn hoa đăng của người thân trong phòng gia đình được viền sáng riêng trên sông.
-2. ✅ (sương sớm) Mưa nhẹ / sương sớm theo mùa (tháng âm lịch) — chỉ hiệu ứng, có giảm chuyển động.
-3. "Lời nguyện tuần" — xem lại các lời nguyện của mình, đánh dấu điều đã thành (không hứa linh ứng).
-4. Chế độ hiệu năng thấp tự động (giảm glow/particle khi FPS < 40 trong 5 giây đầu).
-5. Thông báo nhắc nhẹ mùng 1 / rằm (Capacitor Local Notifications, người dùng tự bật).
+2. ✅ Mưa phùn xuân (tháng 1–3 âm lịch, ~45% số ngày) / sương sớm theo mùa (tháng âm lịch) — chỉ hiệu ứng, có giảm chuyển động.
+3. ✅ "Lời nguyện tuần" (Nhật ký → Lời nguyện của tôi) — xem lại các lời nguyện của mình, đánh dấu điều đã thành (không hứa linh ứng).
+4. ✅ Chế độ hiệu năng thấp tự động (giảm glow/particle khi FPS < 40 trong 5 giây đầu).
+5. ✅ Thông báo nhắc nhẹ mùng 1 / rằm (Capacitor Local Notifications, người dùng tự bật).
 6. ✅ Đọc to thông điệp ngày (SpeechSynthesis tiếng Việt nếu máy có).

@@ -22,6 +22,7 @@ import { addEntry } from '../storage/journal';
 import { h, toast, uiRoot } from '../ui/dom';
 import { BurnerDisplay } from './burner';
 import { VisitorOrbs } from './visitors';
+import { isDrizzleDay } from '../logic/weather';
 import { isLowPerf, setLowPerf, shouldLowerQuality, showFpsMeter } from '../core/perf';
 
 const NAV_LABEL_OFFSET = 70;
@@ -265,6 +266,9 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         if (!rm) this.tweens.add({ targets: fog, x: fog.x + 160, duration: 26000 + i * 4000, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
       }
     }
+    // mưa phùn xuân (tháng 1–3 âm lịch) — `?weather=rain` để xem trước
+    const forceRain = new URLSearchParams(location.search).get('weather') === 'rain';
+    if (outdoor && !rm && (forceRain || isDrizzleDay(this.info.lunar.month, this.info.dateKey))) this.addDrizzle();
     if (decos.has('hoa-dao-mai') || theme === 'petals') fall(makePetal(this), 900);
     if (decos.has('hoa-hong')) fall(makeRose(this), 1500);
     if (theme === 'leaves') fall(makeLeaf(this), 1400);
@@ -287,6 +291,33 @@ export class AreaScene extends Phaser.Scene implements GameApi {
           });
       }
     }
+  }
+
+  /** Mưa phùn: vệt mưa mảnh, nghiêng nhẹ theo gió, bầu trời hơi xám. */
+  private addDrizzle(): void {
+    const key = 'fx-drizzle';
+    if (!this.textures.exists(key)) {
+      const g = this.add.graphics();
+      g.fillStyle(0xeef3f7, 1).fillRect(0, 0, 2, 30);
+      g.generateTexture(key, 2, 30);
+      g.destroy();
+    }
+    const veil = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0x7d8894, 0.26);
+    this.layers.fx.add(veil);
+    this.layers.fx.sendToBack(veil);
+    const rain = this.add.particles(0, -30, key, {
+      x: { min: -60, max: GAME_W + 60 },
+      speedY: { min: 520, max: 680 },
+      speedX: { min: -70, max: -50 },
+      rotate: 6,
+      lifespan: 1900,
+      frequency: 10,
+      quantity: 1,
+      alpha: { start: 0.55, end: 0.2 },
+      scaleY: { min: 0.6, max: 1.1 },
+    });
+    this.layers.fx.add(rain);
+    this.layers.fx.sendToBack(rain);
   }
 
   /** Vòng sáng nhẹ + nhãn cho các điểm có thể chạm. */
