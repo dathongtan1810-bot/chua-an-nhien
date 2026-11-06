@@ -8,6 +8,7 @@ import sampleQueXam from './sample-que-xam.json';
 import sampleThongDiep from './sample-thong-diep-ngay.json';
 import sampleSuKien from './sample-su-kien-am-lich.json';
 import sampleLoiNguyen from './sample-loi-nguyen-mau.json';
+import { getLang } from '../core/i18n';
 
 export interface QueXam {
   id: number;
@@ -161,17 +162,81 @@ function load<T>(name: ContentKey, sample: unknown, validate: Validator<T>): Pic
   return hit as Picked<T>;
 }
 
-export function getQueXam(): QueXam[] {
+// ---------- Bản tiếng Anh (content/i18n/en, cùng id & schema) — tải lười khi chọn English ----------
+const enLoaders = import.meta.glob('../../../content/i18n/en/*.json', { import: 'default' }) as Record<
+  string,
+  () => Promise<unknown>
+>;
+const enCache = new Map<ContentKey, unknown[]>();
+let enLoad: Promise<void> | null = null;
+
+const VALIDATORS: Record<ContentKey, Validator<unknown>> = {
+  'que-xam': isQueXam,
+  'thong-diep-ngay': isThongDiep,
+  'su-kien-am-lich': isSuKien,
+  'loi-nguyen-mau': isLoiNguyenMau,
+};
+
+/**
+ * Ghép bản tiếng Anh. Sự kiện: giữ ngày/tháng và token trang trí của bản tiếng Việt cùng `id`
+ * (từ khóa trang trí là tiếng Việt), chỉ lấy chữ (ten, moTa, nhiemVu) từ bản tiếng Anh.
+ */
+export function buildEnglish(name: ContentKey, raw: unknown, vi: readonly unknown[]): unknown[] {
+  let list = normalizeExternal(name, raw);
+  if (!Array.isArray(list)) return [];
+  if (name === 'su-kien-am-lich') {
+    const byId = new Map<unknown, Record<string, unknown>>();
+    for (const v of vi) if (isObj(v) && v.id !== undefined) byId.set(v.id, v);
+    list = list.map((x) => {
+      const v = isObj(x) ? byId.get(x.id) : undefined;
+      return v && isObj(x) ? { ...v, ten: x.ten, moTa: x.moTa, nhiemVu: x.nhiemVu } : x;
+    });
+  }
+  return (list as unknown[]).filter((x) => VALIDATORS[name](x));
+}
+
+/** Tải nội dung theo ngôn ngữ (chỉ 'en' cần tải thêm). Gọi lại an toàn. */
+export function loadLangContent(lang: string): Promise<void> {
+  if (lang !== 'en') return Promise.resolve();
+  enLoad ??= (async () => {
+    const vis: Record<ContentKey, unknown[]> = {
+      'que-xam': getQueXamVi(),
+      'thong-diep-ngay': load('thong-diep-ngay', sampleThongDiep, isThongDiep).items,
+      'su-kien-am-lich': load('su-kien-am-lich', sampleSuKien, isSuKien).items,
+      'loi-nguyen-mau': load('loi-nguyen-mau', sampleLoiNguyen, isLoiNguyenMau).items,
+    };
+    for (const name of Object.keys(VALIDATORS) as ContentKey[]) {
+      const entry = Object.entries(enLoaders).find(([path]) => path.endsWith(`/${name}.json`));
+      if (!entry) continue;
+      try {
+        const items = buildEnglish(name, await entry[1](), vis[name]);
+        if (items.length) enCache.set(name, items);
+      } catch {
+        /* thiếu / lỗi → dùng tiếng Việt */
+      }
+    }
+  })();
+  return enLoad;
+}
+
+function pickLang<T>(name: ContentKey, vi: T[]): T[] {
+  return getLang() === 'en' ? ((enCache.get(name) as T[] | undefined) ?? vi) : vi;
+}
+
+function getQueXamVi(): QueXam[] {
   return load('que-xam', sampleQueXam, isQueXam).items;
 }
+export function getQueXam(): QueXam[] {
+  return pickLang('que-xam', getQueXamVi());
+}
 export function getThongDiep(): ThongDiep[] {
-  return load('thong-diep-ngay', sampleThongDiep, isThongDiep).items;
+  return pickLang('thong-diep-ngay', load('thong-diep-ngay', sampleThongDiep, isThongDiep).items);
 }
 export function getSuKien(): SuKien[] {
-  return load('su-kien-am-lich', sampleSuKien, isSuKien).items;
+  return pickLang('su-kien-am-lich', load('su-kien-am-lich', sampleSuKien, isSuKien).items);
 }
 export function getLoiNguyenMau(): LoiNguyenMau[] {
-  return load('loi-nguyen-mau', sampleLoiNguyen, isLoiNguyenMau).items;
+  return pickLang('loi-nguyen-mau', load('loi-nguyen-mau', sampleLoiNguyen, isLoiNguyenMau).items);
 }
 
 /** Which source each content file was taken from. */

@@ -7,6 +7,7 @@ import { bus, game, requestGoTo } from './core/bus';
 import { setLang, t } from './core/i18n';
 import { store } from './core/store';
 import { setForcedDate, todayInfo } from './core/today';
+import { loadLangContent } from './data/content';
 import { net } from './net/service';
 import { AreaScene } from './scenes/AreaScene';
 import { closeSheet, h, toast, uiRoot } from './ui/dom';
@@ -48,6 +49,8 @@ const gameInst = new Phaser.Game({
 gameInst.scene.add('area', AreaScene, false);
 
 const hud = new Hud();
+// nội dung tiếng Anh (quẻ, thông điệp, sự kiện) tải lười; xong thì vẽ lại HUD
+void loadLangContent(store.state.lang).then(() => hud.render());
 
 let begun = false;
 function begin(): void {

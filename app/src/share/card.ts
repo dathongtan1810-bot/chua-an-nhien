@@ -5,7 +5,7 @@ export const CARD_H = 1920;
 export type ShareKind =
   | { kind: 'fortune'; title: string; poem: string; meaning: string; advice: string; disclaimer: string }
   | { kind: 'lantern'; text: string; color: string; nickname: string }
-  | { kind: 'streak'; streak: number; lunar: string; message: string };
+  | { kind: 'streak'; streak: number; lunar: string; message: string; label?: string };
 
 const LANTERN_HEX: Record<string, string> = {
   hong: '#f28bb0', vang: '#f6c453', trang: '#f4efe4', xanh: '#7cc4c9', tim: '#b48be0', do: '#e0533d',
@@ -197,7 +197,7 @@ export function drawShareCard(canvas: HTMLCanvasElement, data: ShareKind, url: s
     ctx.fillText(String(data.streak), CARD_W / 2, 640);
     ctx.font = '600 56px system-ui, sans-serif';
     ctx.fillStyle = '#fff6e0';
-    ctx.fillText(data.streak === 1 ? 'ngày an lạc' : 'ngày an lạc liên tiếp', CARD_W / 2, 740);
+    ctx.fillText(data.label ?? (data.streak === 1 ? 'ngày an lạc' : 'ngày an lạc liên tiếp'), CARD_W / 2, 740);
     ctx.font = '40px system-ui, sans-serif';
     ctx.fillText(data.lunar, CARD_W / 2, 840);
     ctx.font = 'italic 46px Georgia, serif';

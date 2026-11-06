@@ -108,7 +108,9 @@ export function installShare(): void {
     }
     if (d.kind === 'streak') {
       const info = todayInfo();
-      return void shareCard({ kind: 'streak', streak: d.streak ?? 0, lunar: formatLunar(info.lunar, getLang()), message: info.message });
+      const n = d.streak ?? 0;
+      const label = getLang() === 'vi' ? (n === 1 ? 'ngày an lạc' : 'ngày an lạc liên tiếp') : n === 1 ? 'peaceful day' : 'peaceful days in a row';
+      return void shareCard({ kind: 'streak', streak: n, lunar: formatLunar(info.lunar, getLang()), message: info.message, label });
     }
   });
 }

@@ -7,7 +7,7 @@ import { SHOP_ITEMS, type ShopCategory } from '../core/shop';
 import { DAILY_QUESTS, type Settings } from '../core/state';
 import { store } from '../core/store';
 import { todayInfo } from '../core/today';
-import { contentSource } from '../data/content';
+import { contentSource, loadLangContent } from '../data/content';
 import { currentStreak } from '../logic/streak';
 import { randomNickname, randomNicknameEn } from '../logic/nickname';
 import { formatLunar, yearCanChi } from '../lunar/lunar';
@@ -68,7 +68,7 @@ export function openToday(): void {
               'aria-label': lang === 'vi' ? 'Đọc to thông điệp' : 'Read the message aloud',
               onclick: () => {
                 const u = new SpeechSynthesisUtterance(info.message);
-                u.lang = 'vi-VN';
+                u.lang = lang === 'vi' ? 'vi-VN' : 'en-US';
                 u.rate = 0.9;
                 speechSynthesis.cancel();
                 speechSynthesis.speak(u);
@@ -313,7 +313,7 @@ export function openSettings(onLangChange: () => void): void {
                 store.dispatch({ type: 'lang', lang: l });
                 setLang(l);
                 s.close();
-                onLangChange();
+                void loadLangContent(l).then(onLangChange);
               },
             },
             l === 'vi' ? 'Tiếng Việt' : 'English',
