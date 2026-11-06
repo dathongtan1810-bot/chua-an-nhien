@@ -34,7 +34,7 @@ export function mapSvg(
   for (const a of AREAS) {
     const { x, y } = AREA_INFO[a].map;
     const g = el('g', { class: 'mapnode', tabindex: opts.large ? 0 : -1, role: opts.large ? 'button' : 'presentation' });
-    if (opts.large) g.setAttribute('aria-label', t(AREA_INFO[a].nameKey));
+
     const isCur = a === current;
     g.append(el('circle', { cx: x * W, cy: y * W, r: isCur ? 6 : 4.2, fill: isCur ? '#f2cd6b' : '#9e2a1f', stroke: '#fff6e0', 'stroke-width': 1 }));
     if (opts.large) {
@@ -42,9 +42,16 @@ export function mapSvg(
       label.textContent = t(AREA_INFO[a].nameKey);
       g.append(label);
       const fam = (opts.family ?? []).filter((m) => m.area === a);
+      const n0 = counts[a] ?? 0;
+      // tên đọc cho trình đọc màn hình: tên khu + số người; huy hiệu chỉ để nhìn (aria-hidden)
+      g.setAttribute(
+        'aria-label',
+        t(AREA_INFO[a].nameKey) + (n0 > 0 ? ', ' + t('hud.here', { n: n0 }) : '') + (fam.length ? ' · 🏠 ' + fam.map((m) => m.nickname).join(', ') : ''),
+      );
       if (fam.length) {
         const ft = el('text', { x: x * W - 13, y: y * W - 4, 'font-size': 4.2 });
         ft.textContent = '🏠' + fam.length;
+        ft.setAttribute('aria-hidden', 'true');
         const title = document.createElementNS(NS, 'title');
         title.textContent = fam.map((m) => m.nickname).join(', ');
         ft.append(title);
@@ -54,6 +61,7 @@ export function mapSvg(
       if (n > 0) {
         const badge = el('text', { x: x * W + 7, y: y * W - 4, 'font-size': 4, fill: '#3f7d5c', 'font-weight': 700 });
         badge.textContent = '👤' + n;
+        badge.setAttribute('aria-hidden', 'true');
         g.append(badge);
       }
       const pick = () => opts.onPick?.(a);

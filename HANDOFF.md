@@ -48,6 +48,12 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
   Notifications, ~24 lần nhắc lúc 6:30 giờ VN, lên lịch lại mỗi lần mở app (`src/logic/reminders.ts`, tính cả tháng nhuận).
 - **Mưa phùn xuân**: tháng 1–3 âm lịch, ~45% số ngày (cố định theo ngày), khu ngoài trời; `?weather=rain` để xem.
 
+## Đợt 4
+- Gỡ toàn bộ quảng cáo (AdMob) theo quyết định chủ dự án — app không có quảng cáo/SDK theo dõi.
+- **E2E offline (PWA)**: `e2e/offline.spec.ts` — mở một lần, tắt mạng, tải lại vẫn vào chùa, chuyển khu, mở nghi thức.
+- **Quét a11y tự động (axe-core, WCAG 2.1 A/AA)**: `e2e/a11y.spec.ts` — màn chào, HUD, các bảng, bản đồ, nghi thức;
+  sửa nhãn đọc của bản đồ (tên khu + số người, huy hiệu ẩn khỏi trình đọc màn hình). Canvas game không quét được.
+
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
 - Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật.

@@ -33,6 +33,7 @@
     "socket.io-client": "^4.8.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@capacitor/android": "^8.6.0",
     "@capacitor/cli": "^8.6.0",
     "@capacitor/ios": "^8.6.0",
