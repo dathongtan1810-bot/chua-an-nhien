@@ -11,3 +11,4 @@ app/ios/App/Pods/
 .env
 *.keystore
 *.jks
+app/dist-e2e-server/

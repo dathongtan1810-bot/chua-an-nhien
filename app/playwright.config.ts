@@ -9,7 +9,7 @@ export default defineConfig({
     launchOptions: process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {},
   },
   webServer: {
-    command: 'npx vite preview --port 4173 --strictPort',
+    command: `npx vite preview --port 4173 --strictPort --outDir ${process.env.E2E_DIST ?? 'dist'}`,
     port: 4173,
     reuseExistingServer: true,
   },

@@ -16,7 +16,8 @@
     "cap:sync": "npm run build && cap sync",
     "android:apk": "cd android && ./gradlew assembleDebug",
     "cap:open:ios": "cap open ios",
-    "cap:open:android": "cap open android"
+    "cap:open:android": "cap open android",
+    "e2e:server": "VITE_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} vite build --outDir dist-e2e-server && E2E_DIST=dist-e2e-server E2E_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} playwright test"
   },
   "dependencies": {
     "@capacitor-community/keep-awake": "^8.0.1",

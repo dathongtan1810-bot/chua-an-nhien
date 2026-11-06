@@ -123,5 +123,6 @@ window.addEventListener('can:back', () => {
   void import('./native').then((m) => m.exitApp?.());
 });
 (window as unknown as { __game?: Phaser.Game }).__game = gameInst;
-(window as unknown as { __app?: unknown }).__app = game;
+(window as unknown as { __app?: unknown; __net?: unknown }).__app = game;
+(window as unknown as { __net?: unknown }).__net = net;
 if (import.meta.env.DEV) (window as unknown as { __audio?: unknown }).__audio = audio;
