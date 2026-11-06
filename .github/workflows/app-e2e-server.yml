@@ -21,6 +21,8 @@ jobs:
           npm run build
           DB_PATH=$RUNNER_TEMP/can.db ADMIN_PASSWORD=ci-admin-pw PORT=8080 LOG_LEVEL=warn nohup npm start > $RUNNER_TEMP/server.log 2>&1 &
           for i in $(seq 1 30); do curl -sf http://localhost:8080/api/health && break; sleep 1; done
+      # 1 worker: bài online mở 2 trang game; Chromium trên CI vẽ WebGL bằng CPU nên chạy song song làm trang khác
+      # tụt ~5 fps và các test bị timeout (đã đo: 15 → 5 fps khi có thêm 2 trang, kể cả khi chúng không làm gì).
       - name: App e2e against real server
         working-directory: app
         run: |

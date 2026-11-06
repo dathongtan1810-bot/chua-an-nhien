@@ -53,6 +53,9 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
 - **E2E offline (PWA)**: `e2e/offline.spec.ts` — mở một lần, tắt mạng, tải lại vẫn vào chùa, chuyển khu, mở nghi thức.
 - **Quét a11y tự động (axe-core, WCAG 2.1 A/AA)**: `e2e/a11y.spec.ts` — màn chào, HUD, các bảng, bản đồ, nghi thức;
   sửa nhãn đọc của bản đồ (tên khu + số người, huy hiệu ẩn khỏi trình đọc màn hình). Canvas game không quét được.
+- `e2e:server` chạy **1 worker**: Chromium trên CI vẽ WebGL bằng CPU; mở thêm 2 trang game (bài online) làm trang
+  khác tụt 15 → 5 fps (đo được, kể cả khi 2 trang đó đứng yên) → timeout ngẫu nhiên. Lưu ý server giới hạn thả đèn
+  theo IP (mọi test chạy từ 127.0.0.1): chạy lặp nhiều lần trên cùng một server có thể chạm giới hạn → dùng server mới.
 
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
