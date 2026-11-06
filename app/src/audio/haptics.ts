@@ -22,7 +22,7 @@ interface CapHaptics {
 function capacitorHaptics(): CapHaptics | null {
   try {
     if (typeof window === 'undefined') return null;
-    const h = (window as any).Capacitor?.Plugins?.Haptics as CapHaptics | undefined;
+    const h = (window as unknown as { Capacitor?: { Plugins?: { Haptics?: CapHaptics } } }).Capacitor?.Plugins?.Haptics;
     return h ?? null;
   } catch {
     return null;

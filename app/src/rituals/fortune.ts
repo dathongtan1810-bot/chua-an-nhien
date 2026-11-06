@@ -167,7 +167,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
   }
 
   function requestMotion(): void {
-    const DME = (window as any).DeviceMotionEvent;
+    const DME = (window as unknown as { DeviceMotionEvent?: { requestPermission?: () => Promise<string> } }).DeviceMotionEvent;
     if (DME && typeof DME.requestPermission === 'function') {
       try {
         DME.requestPermission()
@@ -194,7 +194,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
     tweens.push(scene.tweens.add({ targets: cup, alpha: 1, duration: 400 }));
 
     // Android etc.: motion works without permission. iOS needs a gesture → in button handler.
-    const DME = (window as any).DeviceMotionEvent;
+    const DME = (window as unknown as { DeviceMotionEvent?: { requestPermission?: () => Promise<string> } }).DeviceMotionEvent;
     if (DME && typeof DME.requestPermission !== 'function') enableMotion();
 
     progressBar = h('div', {

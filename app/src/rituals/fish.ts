@@ -140,7 +140,7 @@ export const fishRitual: RitualFactory = (host: RitualHost): Ritual => {
   // taps are accepted on a slightly larger area than the swim ellipse; pellets get clamped inside it
   const tapArea: Ellipse = { cx: pond.x, cy: pond.y, rx: pond.r * 1.1, ry: pond.r * 0.75 };
   const layer = host.layers.main;
-  const ambient = (scene as any).ambientFish as AmbientFish | undefined;
+  const ambient = (scene as unknown as { ambientFish?: AmbientFish }).ambientFish;
   ambient?.setVisible(false);
 
   const school = new School(scene, layer, bounds, 10 + Math.floor(Math.random() * 5), host.reducedMotion);

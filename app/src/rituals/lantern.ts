@@ -257,8 +257,9 @@ export const lanternRitual: RitualFactory = (host: RitualHost): Ritual => {
           host.layers.main.add(rip);
           objs.push(rip);
           tweens.push(scene.tweens.add({ targets: rip, scale: 1.3, alpha: 0, duration: 1100, ease: 'Sine.easeOut' }));
-          (scene as any).lastLanternDrop = { x: targetX, y: targetY, at: Date.now() };
-          const riverObj = (scene as any).river as RiverLanterns | undefined;
+          const sceneExt = scene as unknown as SceneExt;
+          sceneExt.lastLanternDrop = { x: targetX, y: targetY, at: Date.now() };
+          const riverObj = sceneExt.river;
           if (!net.enabled && riverObj) {
             riverObj.add(
               { id: 'local-' + Date.now(), text, color: col, nickname: store.state.nickname, at: new Date().toISOString(), likes: 0 },
@@ -485,13 +486,20 @@ export function openLanternDetail(l: LanternPayload, mine: boolean): void {
   body.append(extra);
 }
 
+/** Trường AreaScene gắn thêm mà nghi thức cần đọc/ghi. */
+interface SceneExt {
+  river?: RiverLanterns;
+  lastLanternDrop?: { x: number; y: number; at: number };
+}
+
 /** The active scene's river, if any (report hides immediately even when offline). */
 function findRiver(): RiverLanterns | undefined {
   try {
-    const game = (window as any).__game ?? (window as any).game;
+    const w = window as unknown as { __game?: Phaser.Game; game?: Phaser.Game };
+    const game = w.__game ?? w.game;
     const scenes: Phaser.Scene[] = game?.scene?.getScenes?.(true) ?? [];
     for (const s of scenes) {
-      const r = (s as any).river as RiverLanterns | undefined;
+      const r = (s as unknown as SceneExt).river;
       if (r) return r;
     }
   } catch {
