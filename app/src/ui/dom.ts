@@ -48,6 +48,7 @@ export interface ModalHandle {
 
 /** Bảng (sheet) trượt từ dưới lên. */
 let activeClose: (() => void) | null = null;
+const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 export function openSheet(title: string, opts: { onClose?: () => void; className?: string } = {}): ModalHandle {
   const root = uiRoot();
@@ -67,7 +68,21 @@ export function openSheet(title: string, opts: { onClose?: () => void; className
     opts.onClose?.();
   };
   const onKey = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') close();
+    if (e.key === 'Escape') return close();
+    if (e.key !== 'Tab') return;
+    // Giữ focus trong bảng (a11y): Tab ở phần tử cuối quay về đầu và ngược lại
+    const items = [...sheet.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((el) => !el.hasAttribute('disabled'));
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    const cur = document.activeElement;
+    if (e.shiftKey && (cur === first || !sheet.contains(cur))) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && (cur === last || !sheet.contains(cur))) {
+      e.preventDefault();
+      first.focus();
+    }
   };
   const closeBtn = h('button', { class: 'btn icon close', 'aria-label': t('common.close'), onclick: close }, '✕');
   const sheet = h(

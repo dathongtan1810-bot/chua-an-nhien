@@ -55,3 +55,17 @@ test('link mời mở thẳng ra bờ sông', async ({ page }) => {
   await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
   await expect(page.locator('.hud-title')).toHaveText('Bờ sông thả đèn');
 });
+
+test('a11y: bảng Cài đặt giữ focus bàn phím và trả focus khi đóng', async ({ page }) => {
+  await page.goto('/?skip&area=san');
+  const opener = page.getByRole('button', { name: 'Cài đặt', exact: true });
+  await opener.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  for (let i = 0; i < 40; i++) {
+    await page.keyboard.press('Tab');
+    expect(await page.evaluate(() => !!document.activeElement?.closest('.sheet'))).toBe(true);
+  }
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(opener).toBeFocused();
+});
