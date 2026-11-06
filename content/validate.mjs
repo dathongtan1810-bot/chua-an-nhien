@@ -228,6 +228,22 @@ for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu'])
   if (vi && en) sameIds('i18n/en/thong-bao-day.json', vi, en);
 }
 
+// ---------- 8. Chuỗi giao diện ----------
+{
+  const KHOA = /^[a-z0-9-]+(\.[a-z0-9-]+)+$/;
+  const vi = checkSchema('giao-dien.json', 'giao-dien.schema.json');
+  const en = checkSchema('i18n/en/giao-dien.json', 'giao-dien.schema.json');
+  for (const [rel, d] of [['giao-dien.json', vi], ['i18n/en/giao-dien.json', en]]) {
+    if (!d) continue;
+    camCheck(rel, d);
+    for (const k of Object.keys(d)) if (!KHOA.test(k)) err(rel, `khóa "${k}" không đúng dạng nhom.khoa`);
+  }
+  if (vi && en) {
+    for (const k of Object.keys(vi)) if (!(k in en)) err('i18n/en/giao-dien.json', `thiếu khóa "${k}"`);
+    for (const k of Object.keys(en)) if (!(k in vi)) err('i18n/en/giao-dien.json', `thừa khóa "${k}" (không có trong bản tiếng Việt)`);
+  }
+}
+
 // ---------- Kết quả ----------
 for (const w of warnings) console.log(`⚠ ${w}`);
 for (const e of errors) console.log(`✗ ${e}`);

@@ -17,8 +17,8 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 ### #1 · D-46 · T2 23/11/2026 · Rằm tháng Mười – Tết Hạ Nguyên · [Tải app – đăng ký trước]
 - **Kênh / định dạng:** TT, FB Reels, YT · video ngắn 12 giây (teaser "Một ngôi chùa yên tĩnh đang được dựng")
 - **Nguồn:** TĐ 327; SK `tet-ha-nguyen`
-- **Caption VI:** Rằm tháng Mười, mùa gặt cuối năm. Có một ngôi chùa nhỏ đang được dựng trong điện thoại: sân gạch, nén hương, tiếng chuông. "Nhìn quanh căn phòng bạn đang ngồi… những điều bình thường ấy thật đáng biết ơn." Đăng ký trước để biết ngày Chùa An Nhiên mở cửa.
-- **EN:** Tenth-month full moon. A quiet pagoda is being built inside your phone. "Look around the room you're in… such ordinary things deserve gratitude." Pre-register to hear when Chùa An Nhiên opens.
+- **Caption VI:** Rằm tháng Mười, mùa gặt cuối năm. Có một ngôi chùa nhỏ đang được dựng trong điện thoại: sân gạch, nén hương, tiếng chuông. "Nhìn quanh căn phòng bạn đang ngồi. Mái che, ánh đèn, chén nước: những điều bình thường ấy thật đáng biết ơn." Đăng ký trước để biết ngày Chùa An Nhiên mở cửa.
+- **EN:** Tenth-month full moon. A quiet pagoda is being built inside your phone. "Look around the room you're in. A roof, a light, a glass of water: such ordinary things deserve gratitude." Pre-register to hear when An Nhiên Pagoda opens.
 - **Hashtag:** #ChuaAnNhien #RamThangMuoi #TetHaNguyen #dichuaonline #binhan
 - **Gợi ý hình:** time-lapse dựng sân chùa (đồ họa app), trăng rằm cuối thu, bó lúa chín và đĩa cốm (trang trí của sự kiện); SFX chuông từ app.
 - **CTA:** Đăng ký trước trên Google Play / đặt trước trên App Store (nếu đã mở) – link ở bio.
@@ -37,7 +37,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Nguồn:** TĐ 357; SK `ram-hang-thang` (nhiệm vụ "Ghi lại ba điều bạn biết ơn trong tháng này")
 - **Caption VI:** Rằm tháng Mười Một, còn 16 ngày nữa Chùa An Nhiên mở cửa. Trong lúc chờ, thử việc của ngày rằm: ghi lại ba điều bạn biết ơn trong tháng. Hoặc như thông điệp hôm nay: "Viết ra ba điều bạn tự hào về mình trong năm. Đừng ngại, bạn xứng đáng được ghi nhận."
 - **EN:** Full moon, 16 days until we open. "Write down three things you're proud of this year. Don't be shy; you deserve recognition."
-- **Hashtag:** #ChuaAnNhien #ngayram #biet_on #tongketnam #binhan
+- **Hashtag:** #ChuaAnNhien #ngayram #bietOn #tongketnam #binhan
 - **Gợi ý hình:** trăng tròn trên mái chùa, đèn lồng giấy dọc lối vào; số "16" viết tay trên giấy dó.
 - **CTA:** Lưu bài và viết 3 điều của bạn vào bình luận (nếu muốn).
 
@@ -49,7 +49,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, FB Reels, IG Reels, YT · Video 1 "2 phút đi chùa giữa giờ làm" (15 giây); ZL · ảnh + text
 - **Nguồn:** TĐ 238 (đúng như `video-scripts.md` Video 1)
 - **Caption VI:** Chùa An Nhiên đã mở cửa. Giữa ngày bận rộn, cho mình 2 phút: thắp một nén hương, thỉnh một hồi chuông, đọc một lời nhắn. "Lúc nhiều việc, hãy làm từng việc một." Chùa hư cấu, miễn phí, không quảng cáo. Tìm "Chùa An Nhiên" trên App Store và Google Play.
-- **EN:** Chùa An Nhiên is open. Two quiet minutes: light incense, ring the bell, read a short note. "Busy day? Do one thing at a time." Free, no ads.
+- **EN:** An Nhiên Pagoda is open. Two quiet minutes: light incense, ring the bell, read a short note. "Busy day? Do one thing at a time." Free, no ads.
 - **Hashtag:** #ChuaAnNhien #dichuaonline #thaphuong #congso #binhan
 - **Gợi ý hình:** theo kịch bản Video 1 (bàn làm việc ồn → sân chùa yên tĩnh).
 - **CTA:** Tải ngay – link ở bio / tìm "Chùa An Nhiên" trên store.
@@ -66,8 +66,8 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 ### #6 · D+2 · CN 10/01 · 3 tháng Chạp · [Giá trị]
 - **Kênh / định dạng:** CĐ, FB · bài text + 1 ảnh hậu trường (không dán link nếu nhóm không cho phép)
 - **Nguồn:** TĐ 10
-- **Caption VI:** Nhóm làm Chùa An Nhiên phần lớn sống xa quê. Có những tối muốn ghé chùa mà không kịp, nên chúng mình ngồi viết từng quẻ thơ, thu từng tiếng chuông. Thông điệp hôm nay: "Trong bữa cơm hôm nay, thử ăn miếng đầu tiên thật chậm." Bạn hay đi chùa vào dịp nào?
-- **EN:** Most of our team lives far from home. "At today's meal, try eating the first bite very slowly." When do you usually visit a pagoda?
+- **Caption VI:** Nhóm làm Chùa An Nhiên phần lớn sống xa quê. Có những tối muốn ghé chùa mà không kịp, nên chúng mình ngồi viết từng quẻ thơ, thu từng tiếng chuông. Thông điệp hôm nay: "Trong bữa cơm hôm nay, thử ăn miếng đầu tiên thật chậm và cảm nhận hương vị trọn vẹn." Bạn hay đi chùa vào dịp nào?
+- **EN:** Most of our team lives far from home. "At today's meal, try eating the first bite very slowly and fully tasting it." When do you usually visit a pagoda?
 - **Hashtag:** #ChuaAnNhien #hautruong #xaque #songcham
 - **Gợi ý hình:** bàn làm việc với sổ nháp thơ lục bát, tai nghe, chén trà (không lộ màn hình máy tính có dữ liệu riêng).
 - **CTA:** Kể dịp đi chùa của bạn trong bình luận.
@@ -76,7 +76,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, IG Reels, YT · Video 2 "Xin một quẻ thơ lục bát" (20 giây). Bản đăng tự nhiên **cắt khung "Tải miễn phí" (giây 19–20)**, giữ CTA bình luận; bản có khung tải để dành cho Spark Ads.
 - **Nguồn:** Q 82 "Con đường qua đồi" (D31)
 - **Caption VI:** Đầu tuần rối bời? Quẻ 82 "Con đường qua đồi": "Đường quanh qua mấy ngọn đồi / Dốc cao chẳng ngại, nghỉ ngồi lấy hơi". Lời khuyên: viết ra ba việc bạn đã làm được trong tháng qua. Quẻ để chiêm nghiệm, không phải lời tiên đoán.
-- **EN:** Verse 82, "The Road Over the Hills": "The road winds over hill on hill / Don't fear the climb; sit, rest, be still." For reflection, not prediction.
+- **EN:** Verse 82, "The Road Over the Hills": "The road winds over hill on hill / Don't fear the climb; sit, rest, be still". For reflection, not prediction.
 - **Hashtag:** #ChuaAnNhien #quexam #thoLucBat #chiemnghiem #dautuan
 - **Gợi ý hình:** theo kịch bản Video 2.
 - **CTA:** Bình luận chủ đề bạn muốn xin quẻ hôm nay.
@@ -86,7 +86,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Nguồn:** TĐ 12; Q 1 "Bình minh ló dạng" (lời khuyên)
 - **Caption VI:** Thông điệp bình an tuần này: "Mỗi buổi sáng là một trang giấy mới. Bạn không cần viết hoàn hảo, chỉ cần viết bằng tấm lòng tử tế." Gợi ý từ quẻ 1: dậy sớm hơn một chút, làm việc quan trọng nhất trước, và mỉm cười chào người thân.
 - **EN:** "Each morning is a fresh page. You don't need to write it perfectly, only with a kind heart."
-- **Hashtag:** #ChuaAnNhien #thongdiepbinhan #buoisang #tutế
+- **Hashtag:** #ChuaAnNhien #thongdiepbinhan #buoisang #tute
 - **Gợi ý hình:** trang giấy trắng bên cửa sổ lúc bình minh, sương mỏng.
 - **CTA:** Chia sẻ cho một người hay dậy sớm.
 
@@ -125,7 +125,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** FB Live, TT Live · 20 phút (đăng thông báo lúc 12:00, live 20:00)
 - **Nguồn:** TĐ 16
 - **Caption VI:** 20:00 tối nay, đội làm Chùa An Nhiên lên live 20 phút: trả lời câu hỏi của bạn, rồi cùng gõ mõ, thở chậm vài phút. Không bán gì, không xin gì. Thông điệp hôm nay: "Tưới một chậu cây trong nhà và ngắm nó vài phút. Sự sống lớn lên lặng lẽ, không vội vàng."
-- **EN:** Live tonight at 8 p.m. (Vietnam time): Q&A, then a few minutes of slow breathing with the wooden bell. "Water a houseplant and watch it for a few minutes. Life grows quietly, without hurry."
+- **EN:** Live tonight at 8 p.m. (Vietnam time): Q&A, then a few minutes of slow breathing to the wooden fish (mõ). "Water a houseplant and watch it for a few minutes. Life grows quietly, without hurry."
 - **Hashtag:** #ChuaAnNhien #livestream #gomo #hoidap
 - **Gợi ý hình:** ảnh bìa live: chậu cây xanh bên mõ gỗ, chữ "Live 20:00".
 - **CTA:** Đặt câu hỏi trước trong bình luận.
@@ -134,7 +134,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** ZL "Chuẩn bị đón Rằm tháng Chạp" · text + ảnh; FB · ảnh
 - **Nguồn:** Q 8 "Trăng rằm sáng tỏ"
 - **Caption VI:** Ba ngày nữa là Rằm tháng Chạp, rằm cuối cùng của năm Bính Ngọ. Quẻ 8 "Trăng rằm sáng tỏ": "Người thương dẫu cách đường dài / Cùng trông trăng sáng, sớm mai sum vầy". Lời khuyên: tối nay gọi cho một người thân ở xa, kể họ nghe một chuyện vui trong ngày.
-- **EN:** Three days to the last full moon of the year. Verse 8: "Though loved ones live a world away / We share one moon, and meet one day." Call someone far away tonight.
+- **EN:** Three days to the last full moon of the year. Verse 8: "Though loved ones live a world away / We share one moon, and meet one day". Call someone far away tonight.
 - **Hashtag:** #ChuaAnNhien #RamThangChap #trangram #giadinh #quexam
 - **Gợi ý hình:** trăng rằm trên mái ngói, hai khung cửa sổ ở hai nơi cùng nhìn một vầng trăng.
 - **CTA:** Gắn tên người bạn muốn gọi tối nay.
@@ -143,7 +143,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, YT · video hậu trường "Viết một quẻ lục bát mất bao lâu?" (25 giây)
 - **Nguồn:** Q 53 "Sen hồng giữa đầm" (D31)
 - **Caption VI:** Viết một quẻ thơ lục bát mất bao lâu? Câu 6 tiếng, câu 8 tiếng, tiếng cuối câu 6 vần với tiếng thứ 6 câu 8: "Sen hồng mọc giữa bùn ao / Hương thơm vẫn tỏa, sắc nào kém trong" (quẻ 53). Có quẻ viết lại cả chục lần. Bạn thích câu lục bát nào nhất?
-- **EN:** How long does one six-eight verse take? Verse 53: "A lotus rises pink from muddy ground / Its fragrance pure, its color clear and sound." Some took a dozen drafts.
+- **EN:** How long does one six-eight verse take? Verse 53: "A lotus rises pink from muddy ground / Its fragrance pure, its color clear and sound". Some took a dozen drafts.
 - **Hashtag:** #ChuaAnNhien #thoLucBat #hautruong #tiengViet #quexam
 - **Gợi ý hình:** tay viết nháp trên giấy, khoanh tròn tiếng "ao – nào", đếm tiếng bằng ngón tay; đầm sen (ảnh tự chụp hoặc minh họa).
 - **CTA:** Bình luận câu lục bát bạn thuộc từ nhỏ (ca dao, phạm vi công cộng).
@@ -183,7 +183,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** CĐ (nhóm người Việt xa quê, sinh viên), FB · bài text + ảnh
 - **Nguồn:** Q 74 "Chim mỏi về tổ"
 - **Caption VI:** Người Việt xa quê đón Tết, có ai như mình đang đếm ngày? Quẻ 74 "Chim mỏi về tổ": "Người đi dẫu cách dặm ngàn / Nhớ về mái ấm, bình an quây quần". Lời khuyên của quẻ: hôm nay gọi điện cho cha mẹ hoặc người thân ở xa, hỏi han họ đôi câu.
-- **EN:** Far from home this Tết? Verse 74: "Though you may wander many miles away / Come home, where peace and loved ones always stay." Call your parents today.
+- **EN:** Far from home this Tết? Verse 74: "Though you may wander many miles away / Come home, where peace and loved ones always stay". Call your parents today.
 - **Hashtag:** #ChuaAnNhien #xaque #TetXaNha #giadinh #quexam
 - **Gợi ý hình:** đàn chim bay về tổ lúc hoàng hôn, cửa sổ phòng trọ.
 - **CTA:** Bình luận bạn đang đón Tết ở đâu.
@@ -210,7 +210,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** IG, FB · carousel 3 ảnh
 - **Nguồn:** Q 100 "Tấm gương lau bụi"
 - **Caption VI:** Quẻ 100 "Tấm gương lau bụi": "Mỗi ngày lau một góc lòng / An nhiên tự đến, chẳng mong cầu gì". Lời khuyên: tối nay ngồi yên năm phút, thở chậm và để từng suy nghĩ trôi qua như bụi được lau khỏi gương. Quẻ để chiêm nghiệm, không phải lời tiên đoán.
-- **EN:** Verse 100, "Wiping Dust From the Mirror": "Each day, wipe one small corner clear / Unsought, a quiet peace draws near." For reflection, not prediction.
+- **EN:** Verse 100, "Wiping Dust From the Mirror": "Each day, wipe one small corner clear / Unsought, a quiet peace draws near". For reflection, not prediction.
 - **Hashtag:** #ChuaAnNhien #annhien #chanhniem #quexam #cuoinam
 - **Gợi ý hình:** (1) gương mờ bụi; (2) một vệt lau sáng; (3) lời khuyên + ghi chú quẻ.
 - **CTA:** Lưu lại cho tối nay.
@@ -233,15 +233,15 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Nguồn:** Tết-TĐ 5; Tết lời chào 10; SK `ong-cong-ong-tao` (nhiệm vụ "Thả cá chép ảo xuống hồ sen")
 - **Caption VI:** "Ông Công ông Táo đã lên đường, nhà mình cũng dọn dẹp thôi nào." Hôm nay Chùa An Nhiên chính thức vào mùa Tết. Thả một chú cá chép ảo xuống hồ sen và tự hỏi: "Bạn muốn căn bếp nhà mình có câu chuyện gì thật ấm?"
 - **EN:** "The Kitchen Gods have set off on their journey. Time to tidy up at home too." What warm story would you like your kitchen to tell?
-- **Hashtag:** #ChuaAnNhien #OngCongOngTao #Tet2027 #canhep #giadinh
+- **Hashtag:** #ChuaAnNhien #OngCongOngTao #Tet2027 #canbep #giadinh
 - **Gợi ý hình:** cá chép đỏ bơi vào hồ sen (màn hình app), bếp lửa hồng; không dùng câu "tiễn xui, đón may".
 - **CTA:** Bình luận một món ăn làm bếp nhà bạn ấm nhất.
 
 ### #24 · D+23 · CN 31/01 · 24 tháng Chạp · [Giá trị]
 - **Kênh / định dạng:** IG, FB · carousel 4 ảnh "Lời nguyện mẫu mùa Tết"
 - **Nguồn:** Tết-LN 1, 3, 5 (lời nguyện mẫu do đội viết)
-- **Caption VI:** Ba lời nguyện mẫu mùa Tết từ đội Chùa An Nhiên: "Con nguyện dọn nhà gọn gàng, và dọn lòng bớt đi những điều giận hờn." "Con nguyện năm mới nói lời hiền, làm việc tử tế, sống chậm hơn một chút." Lời nguyện là để nhắc mình, không phải để đổi lấy điều gì.
-- **EN:** Sample Tết wishes: "I vow to tidy my home, and to clear my heart of old resentments." "This new year I vow to speak gently, act kindly and live a little more slowly."
+- **Caption VI:** Ba lời nguyện mẫu Tết của đội: "Con nguyện năm mới cả nhà được quây quần, ai đi xa cũng về đến nơi bình an." "Con nguyện dọn nhà gọn gàng, và dọn lòng bớt đi những điều giận hờn." "Con nguyện năm mới nói lời hiền, làm việc tử tế, sống chậm hơn một chút." Nguyện để nhắc mình, không để đổi lấy gì.
+- **EN:** Sample Tết wishes: "May my whole family gather this new year, and may those far away arrive home safely." "I vow to tidy my home, and to clear my heart of old resentments." "This new year I vow to speak gently, act kindly and live a little more slowly."
 - **Hashtag:** #ChuaAnNhien #loinguyen #Tet2027 #namMoi #songcham
 - **Gợi ý hình:** thẻ đỏ treo trên Cây nguyện, mỗi ảnh một lời nguyện; ảnh 4: "Lời nguyện mẫu do đội viết".
 - **CTA:** Bạn chọn lời nguyện nào? Bình luận số 1, 2 hay 3.
@@ -258,8 +258,8 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 ### #26 · D+26 · T4 03/02 · 27 tháng Chạp · [Giá trị]
 - **Kênh / định dạng:** CĐ, ZL, FB · thiệp ảnh "Lời chúc Tết từ đội làm app"
 - **Nguồn:** Tết-TĐ 8
-- **Caption VI:** Đội Chùa An Nhiên gửi lời chúc sớm: năm mới bình an, đủ ấm, đủ vui. "Lời chúc đầu năm quý ở chỗ chân thành, không ở chỗ hoa mỹ. Một câu "mong bạn khỏe" cũng đủ ấm." Năm nay bạn định chúc ai đầu tiên?
-- **EN:** An early New Year wish from our team: peace, warmth and joy. "A simple 'stay well' is warm enough."
+- **Caption VI:** Đội Chùa An Nhiên gửi lời chúc sớm: năm mới bình an, đủ ấm, đủ vui. “Lời chúc đầu năm quý ở chỗ chân thành, không ở chỗ hoa mỹ. Một câu "mong bạn khỏe" cũng đủ ấm.” Năm nay bạn định chúc ai đầu tiên?
+- **EN:** An early New Year wish from our team: peace, warmth and joy. “A simple "stay well" is warm enough.”
 - **Hashtag:** #ChuaAnNhien #chucTet #Tet2027 #loichuc
 - **Gợi ý hình:** thiệp giấy dó, cành mai vàng, chữ ký "Đội Chùa An Nhiên" viết tay.
 - **CTA:** Gắn tên người bạn muốn chúc Tết đầu tiên.
@@ -268,7 +268,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, IG Reels · video 15 giây "Gói bánh chưng cùng chú tiểu"
 - **Nguồn:** Tết-NV `goi-banh-chung`; Tết-TĐ 14
 - **Caption VI:** 28 Tết, nhà nhà canh nồi bánh chưng. Trong Chùa An Nhiên, bạn xếp lá, đong gạo, gói bánh cùng chú tiểu rồi chia cho khách ghé chùa. "Hãy để chiếc bánh chưng nhắc bạn: điều ngon cần thời gian, cần lửa đều và cần người ngồi canh."
-- **EN:** Wrap a virtual bánh chưng with the little monk. "Good things need time, a steady fire and someone to watch over them."
+- **EN:** Wrap a virtual bánh chưng with the little monk. "Let the sticky rice cake remind you: good things need time, a steady fire and someone to watch over them."
 - **Hashtag:** #ChuaAnNhien #banhchung #28Tet #Tet2027 #vanhoaViet
 - **Gợi ý hình:** màn hình nhiệm vụ gói bánh xen cảnh thật nồi bánh chưng đỏ lửa (tự quay, có đồng ý của người xuất hiện).
 - **CTA:** Năm nay nhà bạn có gói bánh không? Kể trong bình luận.
@@ -277,7 +277,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** FB, TT, ZL · video 20 giây, đăng **21:00**; giảm quảng cáo sau 22:00
 - **Nguồn:** quẻ đặc biệt mùa Tết `nen-huong-giao-thua` (`tet.json` → `queDacBiet`); Tết-TĐ 7; Tết-NV `tinh-tam-giao-thua`
 - **Caption VI:** Đêm nay là Giao thừa (tháng Chạp năm nay chỉ có 29 ngày). "Giao thừa một nén hương thơm / Nhớ ơn năm cũ bát cơm ấm lòng". Phút chuyển giao, thử im lặng một chút: nghe tiếng thở của mình, nghe tiếng năm mới gõ cửa. Ngồi yên 5 phút cùng tiếng chuông nhé.
-- **EN:** New Year's Eve. "As the year turns, the incense rises slow / I thank the old year for the warmth I know." Sit still for five minutes with the pagoda bell.
+- **EN:** Lunar New Year's Eve. "As the year turns, the incense rises slow / I thank the old year for the warmth I know". Sit still for five minutes with the pagoda bell.
 - **Hashtag:** #ChuaAnNhien #GiaoThua #TetDinhMui #tinhtam #binhan
 - **Gợi ý hình:** nén hương trong đêm, ngọn đèn giao thừa trên sân chùa, pháo hoa ảo xa xa; chuông chùa từ app, không nhạc trend.
 - **CTA:** Bình luận một lời cảm ơn gửi năm cũ.
@@ -296,7 +296,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Nguồn:** Tết-TĐ 16; Tết-NV `ngam-trang-thuong-nguyen` (nhắc trước Rằm tháng Giêng 20/02/2027)
 - **Caption VI:** Mùng 2 Tết, đi chúc Tết họ hàng. "Đi chúc Tết, hãy lắng nghe nhiều hơn kể. Người già thường chỉ cần có người ngồi bên." Và nhớ hẹn nhau Rằm tháng Giêng (20/02): ra sân chùa ngắm trăng, nhìn lại những ý định đầu năm.
 - **EN:** Day two of Tết. "When visiting for New Year, listen more than you talk. Elders often just want someone beside them."
-- **Hashtag:** #ChuaAnNhien #mung2Tet #TetDinhMui #giadinh #lắngnghe
+- **Hashtag:** #ChuaAnNhien #mung2Tet #TetDinhMui #giadinh #langnghe
 - **Gợi ý hình:** bàn trà ngày Tết, ông bà và cháu ngồi trò chuyện (ảnh tự chụp/minh họa, có đồng ý).
 - **CTA:** Kể một câu chuyện bạn được nghe ngày Tết.
 

@@ -124,7 +124,7 @@ main:focus { outline: none; }
 }
 .brand svg { width: 34px; height: 34px; flex: none; }
 .nav { display: none; gap: 1.25rem; }
-.nav a { color: var(--muted); text-decoration: none; font-size: .95rem; display: inline-flex; align-items: center; min-height: 44px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: .95rem; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
 .nav a:hover { color: var(--wood-strong); }
 @media (min-width: 820px) { .nav { display: flex; } }
 

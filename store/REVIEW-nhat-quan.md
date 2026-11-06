@@ -26,3 +26,24 @@
 - Biệt danh bắt buộc hay tùy chọn, nhãn "Một người viết"/"Someone", thao tác Chặn/bỏ chặn trong Cài đặt: phải khớp bản dựng thật.
 - Các thời hạn lưu 24 tháng / 30 ngày / 90 ngày / 12 tháng cần pháp lý xác nhận.
 - Email và tên miền `.example` vẫn là giữ chỗ (D18).
+
+## Phiên 2026-11-06
+
+1. **`press-kit.md`**: thêm mục "Mô tả dài (≈400 chữ)" VI + EN, đặt sau "Mô tả vừa". Số liệu đối chiếu bằng Node với `content/`: 100 quẻ (6 chủ đề), 366 thông điệp, 300 lời nguyện mẫu, 22 sự kiện âm lịch (tên lễ theo `su-kien-am-lich.json`), 5 bộ mùa trong `content/mua/` và 90 thông báo đẩy (`thong-bao-day.json`). Thuật ngữ EN theo D33. Nhắc biệt danh tùy chọn ("Một người viết"/"Someone", D32).
+2. **`review-replies.md`**: thêm 8 mẫu #13–#20 (phí, chậm/tốn pin, đổi biệt danh, góp ý một quẻ, thông báo quá nhiều, quyền riêng tư/lời nguyện công khai, 5 sao kèm chuyện buồn, câu hỏi tiếng Anh về ý nghĩa). Đã đếm bằng Node, mọi ô ≤ 350 ký tự (lớn nhất 289). Mẫu #19 chỉ đồng cảm và gợi ý tìm người thân/chuyên gia, không tư vấn y tế. Ghi chú [CẦN XÁC NHẬN] mở rộng cho đường dẫn Cài đặt → Thông báo, đổi biệt danh và xóa từng lời nguyện.
+3. **`social-posts-30-ngay.md`**: mọi trích dẫn VI/EN đã kiểm bằng Node, đều là chuỗi con đúng của dữ liệu trong `content/` (thông điệp, quẻ, lời nguyện, `mua/tet.json`). Ngày dương, ngày âm và thứ khớp `launch-plan-30-days.md`; số ngày D±n kiểm bằng Node. Caption VI ≤ 300, hashtag ≤ 5 và đều có `#ChuaAnNhien`. Đã sửa:
+   - #1: TĐ 327 bị lược bằng "…", nay ghi nguyên văn (VI + EN). EN đổi "Chùa An Nhiên" thành "An Nhiên Pagoda" (D33).
+   - #4: EN đổi thành "An Nhiên Pagoda is open".
+   - #6: TĐ 10 bị cắt mất nửa câu, nay ghi đủ "…và cảm nhận hương vị trọn vẹn" (VI + EN).
+   - #12: EN "wooden bell" dịch sai chữ "mõ", nay là "wooden fish (mõ)".
+   - #24: caption hứa "Ba lời nguyện" mà chỉ có 2. Đã thêm Tết-LN 1 (VI + EN) và rút gọn câu để còn 296 ký tự.
+   - #26: sửa ngoặc kép lồng nhau. EN đổi 'stay well' thành "stay well" cho khớp dữ liệu.
+   - #27: EN trích sai chữ hoa giữa câu, nay ghi nguyên câu Tết-TĐ 14.
+   - #28: EN "New Year's Eve" đổi thành "Lunar New Year's Eve".
+   - #7, #13, #14, #18, #21, #28: thơ EN bỏ dấu chấm trong ngoặc ở cuối dòng thơ, cho khớp dữ liệu (D29) và cách viết bản VI.
+   - Hashtag: `#biet_on` → `#bietOn`, `#tutế` → `#tute`, `#canhep` (lỗi gõ) → `#canbep`, `#lắngnghe` → `#langnghe`. Hashtag nay không dấu, không ký tự lạ.
+   - Không thấy từ mê tín, hứa linh ứng, hù dọa hay kêu gọi cúng dường. Không có tên chùa thật hay lời bài hát. "mong cầu" ở #21 là thơ quẻ 100, "công đức" ở #5 là câu phủ định ("không nhận").
+4. **Cần xác nhận**:
+   - `store/README.md` ghi "chưa có Trung Thu EN", nhưng nay đã có `content/i18n/en/mua/trung-thu.json`. Nên cập nhật README và mục tương ứng ở trên.
+   - Đường dẫn Cài đặt → Thông báo và chỗ đổi biệt danh phải khớp bản dựng thật.
+   - D14: TĐ n = ngày thứ n. Năm 2026/2027 không nhuận, nên từ 01/03 trở đi cần dev xác nhận cách ánh xạ id (bài #1–#3 dùng id 327/343/357).
