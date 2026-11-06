@@ -76,7 +76,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, IG Reels, YT · Video 2 "Xin một quẻ thơ lục bát" (20 giây). Bản đăng tự nhiên **cắt khung "Tải miễn phí" (giây 19–20)**, giữ CTA bình luận; bản có khung tải để dành cho Spark Ads.
 - **Nguồn:** Q 82 "Con đường qua đồi" (D31)
 - **Caption VI:** Đầu tuần rối bời? Quẻ 82 "Con đường qua đồi": "Đường quanh qua mấy ngọn đồi / Dốc cao chẳng ngại, nghỉ ngồi lấy hơi". Lời khuyên: viết ra ba việc bạn đã làm được trong tháng qua. Quẻ để chiêm nghiệm, không phải lời tiên đoán.
-- **EN:** Verse 82, "The Road Over the Hills": "The road winds over hill on hill / Don't fear the climb; sit, rest, be still." For reflection, not prediction.
+- **EN:** Verse 82, "The Road Over the Hills": "The road winds over hill on hill / Don't fear the climb; sit, rest, be still". For reflection, not prediction.
 - **Hashtag:** #ChuaAnNhien #quexam #thoLucBat #chiemnghiem #dautuan
 - **Gợi ý hình:** theo kịch bản Video 2.
 - **CTA:** Bình luận chủ đề bạn muốn xin quẻ hôm nay.
@@ -134,7 +134,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** ZL "Chuẩn bị đón Rằm tháng Chạp" · text + ảnh; FB · ảnh
 - **Nguồn:** Q 8 "Trăng rằm sáng tỏ"
 - **Caption VI:** Ba ngày nữa là Rằm tháng Chạp, rằm cuối cùng của năm Bính Ngọ. Quẻ 8 "Trăng rằm sáng tỏ": "Người thương dẫu cách đường dài / Cùng trông trăng sáng, sớm mai sum vầy". Lời khuyên: tối nay gọi cho một người thân ở xa, kể họ nghe một chuyện vui trong ngày.
-- **EN:** Three days to the last full moon of the year. Verse 8: "Though loved ones live a world away / We share one moon, and meet one day." Call someone far away tonight.
+- **EN:** Three days to the last full moon of the year. Verse 8: "Though loved ones live a world away / We share one moon, and meet one day". Call someone far away tonight.
 - **Hashtag:** #ChuaAnNhien #RamThangChap #trangram #giadinh #quexam
 - **Gợi ý hình:** trăng rằm trên mái ngói, hai khung cửa sổ ở hai nơi cùng nhìn một vầng trăng.
 - **CTA:** Gắn tên người bạn muốn gọi tối nay.
@@ -143,7 +143,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, YT · video hậu trường "Viết một quẻ lục bát mất bao lâu?" (25 giây)
 - **Nguồn:** Q 53 "Sen hồng giữa đầm" (D31)
 - **Caption VI:** Viết một quẻ thơ lục bát mất bao lâu? Câu 6 tiếng, câu 8 tiếng, tiếng cuối câu 6 vần với tiếng thứ 6 câu 8: "Sen hồng mọc giữa bùn ao / Hương thơm vẫn tỏa, sắc nào kém trong" (quẻ 53). Có quẻ viết lại cả chục lần. Bạn thích câu lục bát nào nhất?
-- **EN:** How long does one six-eight verse take? Verse 53: "A lotus rises pink from muddy ground / Its fragrance pure, its color clear and sound." Some took a dozen drafts.
+- **EN:** How long does one six-eight verse take? Verse 53: "A lotus rises pink from muddy ground / Its fragrance pure, its color clear and sound". Some took a dozen drafts.
 - **Hashtag:** #ChuaAnNhien #thoLucBat #hautruong #tiengViet #quexam
 - **Gợi ý hình:** tay viết nháp trên giấy, khoanh tròn tiếng "ao – nào", đếm tiếng bằng ngón tay; đầm sen (ảnh tự chụp hoặc minh họa).
 - **CTA:** Bình luận câu lục bát bạn thuộc từ nhỏ (ca dao, phạm vi công cộng).
@@ -183,7 +183,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** CĐ (nhóm người Việt xa quê, sinh viên), FB · bài text + ảnh
 - **Nguồn:** Q 74 "Chim mỏi về tổ"
 - **Caption VI:** Người Việt xa quê đón Tết, có ai như mình đang đếm ngày? Quẻ 74 "Chim mỏi về tổ": "Người đi dẫu cách dặm ngàn / Nhớ về mái ấm, bình an quây quần". Lời khuyên của quẻ: hôm nay gọi điện cho cha mẹ hoặc người thân ở xa, hỏi han họ đôi câu.
-- **EN:** Far from home this Tết? Verse 74: "Though you may wander many miles away / Come home, where peace and loved ones always stay." Call your parents today.
+- **EN:** Far from home this Tết? Verse 74: "Though you may wander many miles away / Come home, where peace and loved ones always stay". Call your parents today.
 - **Hashtag:** #ChuaAnNhien #xaque #TetXaNha #giadinh #quexam
 - **Gợi ý hình:** đàn chim bay về tổ lúc hoàng hôn, cửa sổ phòng trọ.
 - **CTA:** Bình luận bạn đang đón Tết ở đâu.
@@ -210,7 +210,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** IG, FB · carousel 3 ảnh
 - **Nguồn:** Q 100 "Tấm gương lau bụi"
 - **Caption VI:** Quẻ 100 "Tấm gương lau bụi": "Mỗi ngày lau một góc lòng / An nhiên tự đến, chẳng mong cầu gì". Lời khuyên: tối nay ngồi yên năm phút, thở chậm và để từng suy nghĩ trôi qua như bụi được lau khỏi gương. Quẻ để chiêm nghiệm, không phải lời tiên đoán.
-- **EN:** Verse 100, "Wiping Dust From the Mirror": "Each day, wipe one small corner clear / Unsought, a quiet peace draws near." For reflection, not prediction.
+- **EN:** Verse 100, "Wiping Dust From the Mirror": "Each day, wipe one small corner clear / Unsought, a quiet peace draws near". For reflection, not prediction.
 - **Hashtag:** #ChuaAnNhien #annhien #chanhniem #quexam #cuoinam
 - **Gợi ý hình:** (1) gương mờ bụi; (2) một vệt lau sáng; (3) lời khuyên + ghi chú quẻ.
 - **CTA:** Lưu lại cho tối nay.
@@ -259,7 +259,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** CĐ, ZL, FB · thiệp ảnh "Lời chúc Tết từ đội làm app"
 - **Nguồn:** Tết-TĐ 8
 - **Caption VI:** Đội Chùa An Nhiên gửi lời chúc sớm: năm mới bình an, đủ ấm, đủ vui. “Lời chúc đầu năm quý ở chỗ chân thành, không ở chỗ hoa mỹ. Một câu "mong bạn khỏe" cũng đủ ấm.” Năm nay bạn định chúc ai đầu tiên?
-- **EN:** An early New Year wish from our team: peace, warmth and joy. "A simple 'stay well' is warm enough."
+- **EN:** An early New Year wish from our team: peace, warmth and joy. “A simple "stay well" is warm enough.”
 - **Hashtag:** #ChuaAnNhien #chucTet #Tet2027 #loichuc
 - **Gợi ý hình:** thiệp giấy dó, cành mai vàng, chữ ký "Đội Chùa An Nhiên" viết tay.
 - **CTA:** Gắn tên người bạn muốn chúc Tết đầu tiên.
@@ -268,7 +268,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** TT, IG Reels · video 15 giây "Gói bánh chưng cùng chú tiểu"
 - **Nguồn:** Tết-NV `goi-banh-chung`; Tết-TĐ 14
 - **Caption VI:** 28 Tết, nhà nhà canh nồi bánh chưng. Trong Chùa An Nhiên, bạn xếp lá, đong gạo, gói bánh cùng chú tiểu rồi chia cho khách ghé chùa. "Hãy để chiếc bánh chưng nhắc bạn: điều ngon cần thời gian, cần lửa đều và cần người ngồi canh."
-- **EN:** Wrap a virtual bánh chưng with the little monk. "Good things need time, a steady fire and someone to watch over them."
+- **EN:** Wrap a virtual bánh chưng with the little monk. "Let the sticky rice cake remind you: good things need time, a steady fire and someone to watch over them."
 - **Hashtag:** #ChuaAnNhien #banhchung #28Tet #Tet2027 #vanhoaViet
 - **Gợi ý hình:** màn hình nhiệm vụ gói bánh xen cảnh thật nồi bánh chưng đỏ lửa (tự quay, có đồng ý của người xuất hiện).
 - **CTA:** Năm nay nhà bạn có gói bánh không? Kể trong bình luận.
@@ -277,7 +277,7 @@ Khớp từng ngày với `launch-plan-30-days.md` (D0 = mùng 1 tháng Chạp, 
 - **Kênh / định dạng:** FB, TT, ZL · video 20 giây, đăng **21:00**; giảm quảng cáo sau 22:00
 - **Nguồn:** quẻ đặc biệt mùa Tết `nen-huong-giao-thua` (`tet.json` → `queDacBiet`); Tết-TĐ 7; Tết-NV `tinh-tam-giao-thua`
 - **Caption VI:** Đêm nay là Giao thừa (tháng Chạp năm nay chỉ có 29 ngày). "Giao thừa một nén hương thơm / Nhớ ơn năm cũ bát cơm ấm lòng". Phút chuyển giao, thử im lặng một chút: nghe tiếng thở của mình, nghe tiếng năm mới gõ cửa. Ngồi yên 5 phút cùng tiếng chuông nhé.
-- **EN:** Lunar New Year's Eve. "As the year turns, the incense rises slow / I thank the old year for the warmth I know." Sit still for five minutes with the pagoda bell.
+- **EN:** Lunar New Year's Eve. "As the year turns, the incense rises slow / I thank the old year for the warmth I know". Sit still for five minutes with the pagoda bell.
 - **Hashtag:** #ChuaAnNhien #GiaoThua #TetDinhMui #tinhtam #binhan
 - **Gợi ý hình:** nén hương trong đêm, ngọn đèn giao thừa trên sân chùa, pháo hoa ảo xa xa; chuông chùa từ app, không nhạc trend.
 - **CTA:** Bình luận một lời cảm ơn gửi năm cũ.
