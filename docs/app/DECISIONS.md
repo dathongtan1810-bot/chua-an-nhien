@@ -42,3 +42,9 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
 26. **Không dùng quảng cáo** (quyết định của chủ dự án): gỡ plugin `@capacitor-community/admob`, code `src/ads/`, cờ
     `VITE_ADS_ENABLED`, App ID trong AndroidManifest/Info.plist. Hạt sen chỉ đến từ tu tập nhẹ nhàng; app không có SDK
     quảng cáo hay theo dõi → Data safety không khai báo Advertising ID.
+27. **Chữ giao diện của phiên nội dung** (`content/giao-dien.json`, `i18n/en/giao-dien.json`) được nạp làm lớp bổ sung cho
+    i18n (`setContentStrings`, `tOr` có chữ dự phòng). Khóa của app ưu tiên trước; app đang dùng: màn giới thiệu bước 1–3
+    (`onboarding.*`), lý do báo cáo (`bao-cao.*`). Không dùng các chuỗi nói về "Cây nguyện" / tab (app dùng dòng sông
+    thả đèn và bản đồ) — bước 4 giới thiệu do app viết (`onboarding.river-*`).
+28. **Chưa có "Bỏ chặn"**: giao thức server chưa có sự kiện bỏ chặn; nếu chỉ bỏ ở client thì server vẫn ẩn → không làm
+    để tránh giao diện báo sai. Cần phiên backend thêm `unblock_user` rồi mới thêm danh sách chặn trong Cài đặt.

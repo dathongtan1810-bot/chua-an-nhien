@@ -57,6 +57,12 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
   khác tụt 15 → 5 fps (đo được, kể cả khi 2 trang đó đứng yên) → timeout ngẫu nhiên. Lưu ý server giới hạn thả đèn
   theo IP (mọi test chạy từ 127.0.0.1): chạy lặp nhiều lần trên cùng một server có thể chạm giới hạn → dùng server mới.
 
+## Đợt 5
+- Merge nhánh content/server mới nhất. Dùng **chữ giao diện của phiên nội dung** (`content/giao-dien.json`):
+  màn **giới thiệu lần đầu 4 bước** (thay toast gợi ý; bỏ qua bằng `?skip`), **5 lý do báo cáo** đèn.
+- Gửi phiên nội dung: các chuỗi `onboarding.4-*`, `trang-thai-rong.cay-nguyen`, `kiem-duyet.*` nói "Cây nguyện"/"treo lên cây"
+  — app không có Cây nguyện (dùng dòng sông thả đèn). Gửi phiên backend: cần sự kiện `unblock_user` để làm "Bỏ chặn".
+
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
 - Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật.

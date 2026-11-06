@@ -205,6 +205,15 @@ export function loadLangContent(lang: string): Promise<void> {
       'su-kien-am-lich': load('su-kien-am-lich', sampleSuKien, isSuKien).items,
       'loi-nguyen-mau': load('loi-nguyen-mau', sampleLoiNguyen, isLoiNguyenMau).items,
     };
+    const ui = Object.entries(enLoaders).find(([path]) => path.endsWith('/giao-dien.json'));
+    if (ui) {
+      try {
+        const raw = await ui[1]();
+        if (isStringDict(raw)) uiEn = raw;
+      } catch {
+        /* dùng chữ của app */
+      }
+    }
     for (const name of Object.keys(VALIDATORS) as ContentKey[]) {
       const entry = Object.entries(enLoaders).find(([path]) => path.endsWith(`/${name}.json`));
       if (!entry) continue;
@@ -217,6 +226,21 @@ export function loadLangContent(lang: string): Promise<void> {
     }
   })();
   return enLoad;
+}
+
+// ---------- Chữ giao diện (content/giao-dien.json + i18n/en/giao-dien.json) ----------
+const isStringDict = (x: unknown): x is Record<string, string> =>
+  isObj(x) && Object.values(x).every((v) => typeof v === 'string');
+let uiEn: Record<string, string> = {};
+
+/** Chữ giao diện tiếng Việt của phiên nội dung (rỗng nếu chưa có file). */
+export function uiStringsVi(): Record<string, string> {
+  const ext = Object.entries(externalFiles).find(([p]) => p.endsWith('/giao-dien.json'))?.[1];
+  return isStringDict(ext) ? ext : {};
+}
+/** Chữ giao diện tiếng Anh — có sau khi loadLangContent('en'). */
+export function uiStringsEn(): Record<string, string> {
+  return uiEn;
 }
 
 function pickLang<T>(name: ContentKey, vi: T[]): T[] {

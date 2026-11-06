@@ -7,6 +7,8 @@ const vi: Dict = {
   'app.tagline': 'Một khoảng lặng giữa ngày',
   'start.enter': 'Bước vào cổng chùa',
   'start.hint': 'Chạm để bắt đầu • Bật âm thanh để cảm nhận trọn vẹn',
+  'onboarding.river-title': 'Thả đèn hoa đăng trên dòng sông',
+  'onboarding.river-body': 'Viết một lời nguyện hiền hòa, thả đèn trôi cùng đèn của mọi người, và tùy hỷ với lời nguyện của người khác.',
   'start.tip': 'Kéo ngang để ngắm cảnh • Chạm vòng sáng để hành lễ • Bản đồ ở góc trên',
   'area.cong': 'Cổng tam quan',
   'area.san': 'Sân chùa',
@@ -182,6 +184,8 @@ const en: Dict = {
   'app.tagline': 'A quiet moment in your day',
   'start.enter': 'Step through the gate',
   'start.hint': 'Tap to begin • Sound on for the full experience',
+  'onboarding.river-title': 'Release a flower lantern on the river',
+  'onboarding.river-body': 'Write a gentle wish, let your lantern drift with everyone else\'s, and rejoice in the wishes of others.',
   'start.tip': 'Drag sideways to look around • Tap glowing rings to take part • Map at the top',
   'area.cong': 'Three-entrance gate',
   'area.san': 'Courtyard',
@@ -363,10 +367,25 @@ export function getLang(): Lang {
   return current;
 }
 
+/** Chữ giao diện do phiên nội dung viết (content/giao-dien.json, khóa `nhom.khoa`), nạp lúc chạy. */
+const CONTENT: Record<Lang, Dict> = { vi: {}, en: {} };
+export function setContentStrings(lang: Lang, dict: Record<string, string>): void {
+  CONTENT[lang] = { ...dict };
+}
+
 export function t(key: string, vars?: Record<string, string | number>): string {
-  let s = DICTS[current][key] ?? DICTS.vi[key] ?? key;
+  let s = DICTS[current][key] ?? CONTENT[current][key] ?? DICTS.vi[key] ?? CONTENT.vi[key] ?? key;
   if (vars) for (const [k, v] of Object.entries(vars)) s = s.split(`{${k}}`).join(String(v));
   return s;
+}
+
+/** Như t() nhưng có chữ dự phòng khi khóa (thường là khóa của phiên nội dung) chưa có. */
+export function tOr(key: string, fallback: string, vars?: Record<string, string | number>): string {
+  const s = t(key, vars);
+  if (s !== key) return s;
+  let f = fallback;
+  if (vars) for (const [k, v] of Object.entries(vars)) f = f.split(`{${k}}`).join(String(v));
+  return f;
 }
 
 export function missingKeys(): string[] {

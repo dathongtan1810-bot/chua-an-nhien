@@ -13,7 +13,7 @@ import type Phaser from 'phaser';
 import { makeLantern, makeRipple, LANTERN_COLORS as LANTERN_RGB } from '../art/sprites';
 import { audio } from '../audio/engine';
 import { vibrate } from '../audio/haptics';
-import { getLang, t } from '../core/i18n';
+import { getLang, t, tOr } from '../core/i18n';
 import { store } from '../core/store';
 import { getLoiNguyenMau } from '../data/content';
 import { checkText } from '../logic/filter';
@@ -429,17 +429,20 @@ export function openLanternDetail(l: LanternPayload, mine: boolean): void {
   const extra = h('div', { style: { marginTop: '12px' } });
   const reportBtn = btn(t('lantern.report'), 'btn', () => {
     extra.innerHTML = '';
-    const reasons: [LKey, string][] = [
-      ['rBad', 'offensive'],
-      ['rSpam', 'spam'],
-      ['rOther', 'other'],
+    // Lý do báo cáo: chữ của phiên nội dung (content/giao-dien.json), dự phòng bằng chữ của app
+    const reasons: [string, string, string][] = [
+      ['bao-cao.ly-do.xuc-pham', loc('rBad'), 'offensive'],
+      ['bao-cao.ly-do.quang-cao', loc('rSpam'), 'spam'],
+      ['bao-cao.ly-do.thong-tin-ca-nhan', 'Có thông tin cá nhân', 'personal_info'],
+      ['bao-cao.ly-do.khong-phu-hop', 'Nội dung không phù hợp', 'inappropriate'],
+      ['bao-cao.ly-do.khac', loc('rOther'), 'other'],
     ];
     extra.append(
-      h('p', { style: { margin: '0 0 8px', fontSize: '16px' } }, loc('reason')),
+      h('p', { style: { margin: '0 0 8px', fontSize: '16px' } }, tOr('bao-cao.chon-ly-do', loc('reason'))),
       h(
         'div',
         { style: { display: 'flex', flexWrap: 'wrap', gap: '8px' } },
-        ...reasons.map(([k, code]) =>
+        ...reasons.map(([key, fallback, code]) =>
           h(
             'button',
             {
@@ -453,7 +456,7 @@ export function openLanternDetail(l: LanternPayload, mine: boolean): void {
                 sheet.close();
               },
             },
-            loc(k),
+            tOr(key, fallback),
           ),
         ),
       ),

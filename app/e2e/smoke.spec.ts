@@ -15,6 +15,7 @@ test('vào game → thắp hương → thả đèn', async ({ page }) => {
   page.on('console', (m) => m.type() === 'error' && console.log('[console.error]', m.text()));
   await page.goto('/');
   await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
+  await page.getByRole('button', { name: 'Bỏ qua' }).click(); // màn giới thiệu lần đầu
   await expect(page.locator('.hud-title')).toHaveText('Cổng tam quan');
 
   // Đi tới sân chùa rồi chính điện qua thanh hành động
@@ -68,4 +69,20 @@ test('a11y: bảng Cài đặt giữ focus bàn phím và trả focus khi đóng
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(opener).toBeFocused();
+});
+
+test('màn giới thiệu lần đầu: 4 bước rồi vào chùa, lần sau không hiện lại', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
+  const dlg = page.getByRole('dialog');
+  await expect(dlg).toBeVisible();
+  await expect(dlg).toContainText('Chào mừng đến Chùa An Nhiên');
+  for (let i = 0; i < 3; i++) await dlg.getByRole('button', { name: 'Tiếp' }).click();
+  await expect(dlg).toContainText('Thả đèn hoa đăng trên dòng sông');
+  await dlg.getByRole('button', { name: 'Bắt đầu' }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.reload();
+  await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
+  await expect(page.locator('.hud-title')).toHaveText('Cổng tam quan');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
 });

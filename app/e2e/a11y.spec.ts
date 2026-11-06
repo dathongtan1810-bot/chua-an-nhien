@@ -11,6 +11,10 @@ test('a11y: màn chào', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('button', { name: 'Bước vào cổng chùa' })).toBeVisible();
   expect(await scan(page)).toEqual([]);
+  // màn giới thiệu lần đầu
+  await page.getByRole('button', { name: 'Bước vào cổng chùa' }).click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  expect(await scan(page)).toEqual([]);
 });
 
 test('a11y: HUD và các bảng', async ({ page }) => {

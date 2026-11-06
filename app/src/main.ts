@@ -4,14 +4,15 @@ import { GAME_H, GAME_W } from './art/types';
 import { audio } from './audio/engine';
 import { AREA_INFO, isAreaId, type AreaId } from './core/areas';
 import { bus, game, requestGoTo } from './core/bus';
-import { setLang, t } from './core/i18n';
+import { setContentStrings, setLang, t } from './core/i18n';
 import { store } from './core/store';
 import { setForcedDate, todayInfo } from './core/today';
-import { loadLangContent } from './data/content';
+import { loadLangContent, uiStringsEn, uiStringsVi } from './data/content';
 import { net } from './net/service';
 import { AreaScene } from './scenes/AreaScene';
 import { closeSheet, h, toast, uiRoot } from './ui/dom';
 import { Hud } from './ui/hud';
+import { showOnboarding } from './ui/onboarding';
 import { applySettings } from './ui/panels';
 import { installShare } from './share/share';
 import { registerSW } from './pwa';
@@ -50,7 +51,11 @@ gameInst.scene.add('area', AreaScene, false);
 
 const hud = new Hud();
 // nội dung tiếng Anh (quẻ, thông điệp, sự kiện) tải lười; xong thì vẽ lại HUD
-void loadLangContent(store.state.lang).then(() => hud.render());
+setContentStrings('vi', uiStringsVi());
+void loadLangContent(store.state.lang).then(() => {
+  setContentStrings('en', uiStringsEn());
+  hud.render();
+});
 
 let begun = false;
 function begin(): void {
@@ -73,8 +78,13 @@ function begin(): void {
   game.api = null; // cảnh sắp khởi động lại: lệnh từ HUD được xếp hàng tới khi sẵn sàng
   gameInst.scene.start('area', { area: startArea, ritual: ritualParam });
   if (!s.onboarded) {
-    store.dispatch({ type: 'onboarded' });
-    setTimeout(() => toast(t('start.tip'), 6000), 1400);
+    const tip = () => {
+      store.dispatch({ type: 'onboarded' });
+      setTimeout(() => toast(t('start.tip'), 6000), 600);
+    };
+    // ?skip (dev/test) bỏ qua màn giới thiệu
+    if (params.get('skip') !== null) tip();
+    else showOnboarding(tip);
   }
   bus.on((e) => {
     if (e.type === 'reward' && e.reasons.some((r) => r.startsWith('quest') || r === 'allQuests' || r === 'event')) {

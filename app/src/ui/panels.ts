@@ -2,12 +2,12 @@ import { audio } from '../audio/engine';
 import { setHapticsEnabled } from '../audio/haptics';
 import { AREA_INFO, type AreaId } from '../core/areas';
 import { game, requestGoTo } from '../core/bus';
-import { getLang, setLang, t } from '../core/i18n';
+import { getLang, setContentStrings, setLang, t } from '../core/i18n';
 import { SHOP_ITEMS, type ShopCategory } from '../core/shop';
 import { DAILY_QUESTS, type Settings } from '../core/state';
 import { store } from '../core/store';
 import { todayInfo } from '../core/today';
-import { contentSource, loadLangContent } from '../data/content';
+import { contentSource, loadLangContent, uiStringsEn } from '../data/content';
 import { currentStreak } from '../logic/streak';
 import { randomNickname, randomNicknameEn } from '../logic/nickname';
 import { formatLunar, yearCanChi } from '../lunar/lunar';
@@ -343,7 +343,10 @@ export function openSettings(onLangChange: () => void): void {
                 store.dispatch({ type: 'lang', lang: l });
                 setLang(l);
                 s.close();
-                void loadLangContent(l).then(onLangChange);
+                void loadLangContent(l).then(() => {
+                  setContentStrings('en', uiStringsEn());
+                  onLangChange();
+                });
               },
             },
             l === 'vi' ? 'Tiếng Việt' : 'English',
