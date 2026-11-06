@@ -23,6 +23,9 @@ const EnvSchema = z.object({
   DB_PATH: z.string().default('./data/chua.db'),
   /** Nếu đặt (postgres://...), dùng PostgreSQL thay cho SQLite. */
   DATABASE_URL: z.string().default(''),
+  /** Nếu đặt (redis://...), chạy chế độ nhiều instance: phát sự kiện, presence, cooldown chuông, phòng riêng dùng chung qua Redis. */
+  REDIS_URL: z.string().default(''),
+  REDIS_PREFIX: z.string().default('chua:'),
   /** Salt băm deviceId. BẮT BUỘC đổi trong production. */
   DEVICE_SALT: z.string().min(8).default('dev-salt-change-me'),
   ADMIN_PASSWORD: z.string().default(''),
@@ -33,6 +36,8 @@ const EnvSchema = z.object({
   /** "all" | "none" | danh sách: presence,incense,bell,lantern,report,room */
   ONLINE_FEATURES: z.string().default('all'),
   MODERATION_MODE: z.enum(['pre', 'post']).default('post'),
+  /** Đèn chỉ chứa từ mức nhẹ (mucDo 1): "reject" = từ chối, nhắc người dùng sửa; "pending" = nhận nhưng chờ duyệt. */
+  MILD_WORD_ACTION: z.enum(['reject', 'pending']).default('reject'),
   MAX_CONN_PER_IP: int(20),
   MAX_PAYLOAD_BYTES: int(4096),
   /** Số sự kiện tối đa / 10 giây cho mỗi socket (chống flood chung). */

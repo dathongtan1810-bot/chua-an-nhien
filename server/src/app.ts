@@ -14,6 +14,10 @@ import { createPostgresRepositoriesFromUrl } from './repo/postgres.js';
 import type { Repositories } from './repo/types.js';
 import { ContentFilter, DEFAULT_UNACCENTED_ALSO, parseWordList } from './services/filter.js';
 import { Hub, type IO } from './realtime/hub.js';
+import { LocalCluster, RedisCluster, type Cluster } from './realtime/cluster.js';
+import { Redis } from 'ioredis';
+import { createAdapter } from '@socket.io/redis-adapter';
+import { guardFireAndForget } from './realtime/redis.js';
 import { registerApi } from './http/api.js';
 import { registerAdmin } from './http/admin.js';
 import { SlidingWindowLimiter } from './services/rateLimit.js';
@@ -147,7 +151,34 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     next();
   });
 
-  const hub = new Hub({ io, config, repos, log, metrics, filter });
+  // Nhiều instance: Redis adapter cho Socket.IO + trạng thái dùng chung
+  let cluster: Cluster = new LocalCluster();
+  const redisClients: Redis[] = [];
+  if (config.REDIS_URL) {
+    const pub = new Redis(config.REDIS_URL, { lazyConnect: false, maxRetriesPerRequest: 3 });
+    const sub = pub.duplicate();
+    const state = pub.duplicate();
+    redisClients.push(pub, sub, state);
+    for (const r of redisClients) {
+      r.on('error', (err) => log.error({ err }, 'redis error'));
+      guardFireAndForget(r); // xem src/realtime/redis.ts
+    }
+    // chờ kết nối xong: tránh lệnh nằm trong hàng đợi offline bị huỷ khi đóng sớm
+    await Promise.all(
+      redisClients.map((r) =>
+        r.status === 'ready' ? undefined : new Promise<void>((resolve, reject) => {
+          r.once('ready', () => resolve());
+          r.once('end', () => reject(new Error('redis connection ended before ready')));
+        }),
+      ),
+    );
+    io.adapter(createAdapter(pub, sub, { key: `${config.REDIS_PREFIX}sio` }));
+    cluster = new RedisCluster(state, config.REDIS_PREFIX, Math.max(10_000, config.PRESENCE_INTERVAL_MS * 4));
+    if (!config.DATABASE_URL) log.warn('REDIS_URL đã đặt nhưng không có DATABASE_URL: các instance phải dùng chung một DB (Postgres)');
+    log.info({ instance: (cluster as RedisCluster).instanceId }, 'cluster mode (redis)');
+  }
+
+  const hub = new Hub({ io, config, repos, log, metrics, filter, cluster });
   await hub.start();
 
   const ctx: AppContext = { config, log, metrics, repos, filter, hub, io, app, startedAt: Date.now(), unaccentedAlso: seed.unaccentedAlso };
@@ -164,6 +195,17 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     clearInterval(sweep);
     hub.stop();
     await new Promise<void>((resolve) => io.close(() => resolve()));
+    await hub.drain(); // chờ dọn phòng/presence đang chạy trước khi đóng Redis/DB
+    await cluster.close();
+    // adapter.close() (gọi trong io.close) gửi (p)unsubscribe mà không chờ; Redis trả lời theo thứ tự,
+    // nên chờ lệnh (p)unsubscribe của mình xong = lệnh của adapter cũng đã xong → mới quit an toàn.
+    const subClient = redisClients[1];
+    if (subClient && subClient.status === 'ready') {
+      await subClient.punsubscribe().catch(() => undefined);
+      await subClient.unsubscribe().catch(() => undefined);
+    }
+    // quit(): chờ các lệnh đang gửi xong rồi mới đóng (disconnect() làm chúng reject "Connection is closed")
+    await Promise.all(redisClients.map((r) => r.quit().catch(() => r.disconnect())));
     await repos.close();
   });
 

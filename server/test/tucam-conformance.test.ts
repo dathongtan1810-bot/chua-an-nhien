@@ -69,3 +69,50 @@ describe.skipIf(!hasData)('fuzz biến thể lách trên mọi từ cấm mucDo 
     });
   }
 });
+
+describe.skipIf(!hasData)('bổ sung sau review lần 2', () => {
+  const parsed = parseWordList(JSON.parse(fs.readFileSync(tuCamUrl, 'utf8')));
+  const f = new ContentFilter({ words: parsed.words, unaccentedAlso: [], substitutions: parsed.substitutions });
+  const blocked = (t: string) => !f.check(t).ok;
+
+  it('dấu * thay chữ bị bắt', () => {
+    for (const t of ['f*ck', 'đ*t mẹ', 'c*c', 'sh*t', 'F*CK you']) expect(blocked(t), t).toBe(true);
+    for (const t of ['mã số 5*3', '**', 'a*b', 'con * nhé', 'đánh dấu * vào ô']) expect(blocked(t), t).toBe(false);
+  });
+
+  it('từ 3 ký tự bị tách thành mảnh dài hơn 1 ký tự', () => {
+    for (const t of ['đ ịt', 'l ồn', 'đ ịt mẹ']) expect(blocked(t), t).toBe(true);
+    expect(blocked('lon len')).toBe(false);
+  });
+
+  it('cụm không dấu chỉ tính khi ngữ cảnh cũng không dấu', () => {
+    for (const t of ['lý do cho con', 'lý do cho', 'Gửi một món quà nhỏ không lý do cho người thân.']) expect(blocked(t), t).toBe(false);
+    for (const t of ['do cho', 'oc cho qua', 'hôm nay dit me may luôn', 'khon nan that']) expect(blocked(t), t).toBe(true);
+  });
+
+  it('văn bản sạch khác của nhóm nội dung (thông điệp ngày, lịch, quẻ xăm)', () => {
+    const strs: string[] = [];
+    const walk = (v: unknown) => {
+      if (typeof v === 'string') {
+        if (/\s/.test(v)) strs.push(...v.split(/(?<=[.!?;])\s+/));
+      } else if (Array.isArray(v)) v.forEach(walk);
+      else if (v && typeof v === 'object') Object.values(v).forEach(walk);
+    };
+    for (const file of ['thong-diep-ngay.json', 'su-kien-am-lich.json', 'que-xam-02.json']) walk(JSON.parse(fs.readFileSync(new URL(`./fixtures/${file}`, import.meta.url), 'utf8')));
+    const f2 = new ContentFilter({ words: parsed.words, unaccentedAlso: [], substitutions: parsed.substitutions, maxChars: 100_000 });
+    const wrong = strs.map((t) => ({ t, r: f2.check(t) })).filter((x) => !x.r.ok && x.r.reason !== 'empty').map((x) => `${x.r.match} | ${x.t}`);
+    // 2 câu khuyên răn chứa đúng cụm trong danh sách của nhóm nội dung ("kiếm tiền nhanh", "cờ bạc") – đã báo trong HANDOFF.
+    expect(wrong.filter((w) => !/^(kiếm tiền nhanh|cờ bạc) \|/.test(w))).toEqual([]);
+    expect(strs.length).toBeGreaterThan(500);
+  });
+});
+
+describe.skipIf(!hasData)('mức độ', () => {
+  const parsed = parseWordList(JSON.parse(fs.readFileSync(tuCamUrl, 'utf8')));
+  const f = new ContentFilter({ words: parsed.words, unaccentedAlso: [], substitutions: parsed.substitutions });
+  it('mucDo 1 → mild, mucDo ≥ 2 → severe, câu có cả hai → severe', () => {
+    expect(f.check('thằng ngu').severity).toBe('mild');
+    expect(f.check('địt mẹ').severity).toBe('severe');
+    expect(f.check('thằng ngu địt mẹ').severity).toBe('severe');
+  });
+});

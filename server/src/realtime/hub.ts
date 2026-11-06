@@ -19,8 +19,8 @@ import type { LanternRow, Repositories, UserRow } from '../repo/types.js';
 import { ContentFilter } from '../services/filter.js';
 import { hashDevice, newId, randomNickname, sanitizeNickname } from '../services/identity.js';
 import { Presence } from '../services/presence.js';
-import { CooldownLimiter, SlidingWindowLimiter } from '../services/rateLimit.js';
-import { Rooms } from '../services/rooms.js';
+import { SlidingWindowLimiter } from '../services/rateLimit.js';
+import type { Cluster, PresenceSnapshot } from './cluster.js';
 import { iso, vnDay } from '../time.js';
 import { translate } from '../i18n.js';
 
@@ -89,11 +89,14 @@ export interface HubDeps {
   log: Logger;
   metrics: Metrics;
   filter: ContentFilter;
+  cluster: Cluster;
 }
 
 export class Hub {
   readonly presence = new Presence();
-  readonly rooms = new Rooms();
+  private globalSnap: PresenceSnapshot | null = null;
+  private lastSnapJson = '';
+  private roomsCount = 0;
   private incense: Array<IncenseItem & { ts: number }> = [];
   /** userId → tập userId có quan hệ chặn (hai chiều), nạp khi hello. */
   private blockCache = new Map<string, Set<string>>();
@@ -101,14 +104,28 @@ export class Hub {
   private connPerIp = new Map<string, number>();
   private limiters = new Map<string, SlidingWindowLimiter>();
   private floodLimiter: SlidingWindowLimiter;
-  private bellUser = new CooldownLimiter(LIMITS.BELL_USER_COOLDOWN_MS);
-  private bellGlobal = new CooldownLimiter(LIMITS.BELL_GLOBAL_COOLDOWN_MS);
   private bellIp = new SlidingWindowLimiter(IP_FACTOR, LIMITS.BELL_USER_COOLDOWN_MS);
   private lanternUser = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR, 3600_000);
   private lanternIp = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR * IP_FACTOR, 3600_000);
   private timers: NodeJS.Timeout[] = [];
   private floodStrikes = new Map<string, number>();
   private lanternInflight = new Set<string>();
+  /** Tác vụ nền đang chạy (dọn phòng, presence tick…) — chờ hết khi đóng server. */
+  private pending = new Set<Promise<unknown>>();
+  private stopped = false;
+
+  private track(p: Promise<unknown>, what: string): void {
+    const q = p.catch((err) => {
+      if (!this.stopped) this.d.log.error({ err }, `${what} failed`);
+    });
+    this.pending.add(q);
+    void q.finally(() => this.pending.delete(q));
+  }
+
+  /** Chờ mọi tác vụ nền xong (gọi khi đóng server, trước khi đóng Redis/DB). */
+  async drain(): Promise<void> {
+    while (this.pending.size) await Promise.all([...this.pending]);
+  }
 
   constructor(private readonly d: HubDeps) {
     this.floodLimiter = new SlidingWindowLimiter(d.config.SOCKET_EVENTS_PER_10S, 10_000);
@@ -145,37 +162,59 @@ export class Hub {
     io.on('connection', (s) => this.onConnection(s));
 
     const presenceTick = setInterval(() => this.broadcastPresence(), config.PRESENCE_INTERVAL_MS);
-    const sweepTick = setInterval(() => void this.sweep(), 60_000);
+    const sweepTick = setInterval(() => this.track(this.sweep(), 'sweep'), 60_000);
     presenceTick.unref();
     sweepTick.unref();
     this.timers.push(presenceTick, sweepTick);
   }
 
   stop(): void {
+    this.stopped = true;
     for (const t of this.timers) clearInterval(t);
     this.timers = [];
   }
 
   private broadcastPresence(): void {
-    const { metrics, io, config } = this.d;
+    if (this.stopped) return;
+    this.track(this.presenceTick(), 'presence tick');
+  }
+
+  private async presenceTick(): Promise<void> {
+    const { metrics, io, config, cluster } = this.d;
     metrics.connections.set(io.engine.clientsCount);
     for (const [k, v] of Object.entries(this.debugSizes())) metrics.internal.set({ name: k }, v);
     // Dọn kết nối chết (socket đã mất mà chưa kịp gỡ khỏi presence)
     this.presence.sweep((id) => io.sockets.sockets.has(id));
-    if (!this.presence.changed) return;
-    const snap = this.presence.snapshot();
+    let snap: PresenceSnapshot;
+    if (cluster.distributed) {
+      // nhiều instance: luôn đồng bộ (instance khác có thể đổi), chỉ phát khi snapshot toàn cụm đổi
+      snap = await cluster.syncPresence(this.presence.userAreas());
+      this.globalSnap = snap;
+      const json = JSON.stringify(snap);
+      if (json === this.lastSnapJson) return;
+      this.lastSnapJson = json;
+    } else {
+      if (!this.presence.changed) return;
+      snap = this.presence.snapshot();
+      await cluster.syncPresence(this.presence.userAreas());
+    }
     metrics.online.set(snap.online);
     for (const [a, n] of Object.entries(snap.areas)) metrics.areaOnline.set({ area: a }, n);
     this.d.repos.stats.max(vnDay(), 'peak_online', snap.online).catch((err) => this.d.log.error({ err }, 'stats.max failed'));
-    if (config.features.has('presence')) io.to(LOBBY).emit('presence', snap);
+    // mỗi instance chỉ phát cho socket của mình (tránh nhân bản qua adapter)
+    if (config.features.has('presence')) io.local.to(LOBBY).emit('presence', snap);
   }
 
   async sweep(now = Date.now()): Promise<void> {
     this.pruneIncense(now);
-    this.rooms.sweep(now);
+    try {
+      await this.d.cluster.rooms.sweep(now);
+      this.roomsCount = await this.d.cluster.rooms.size();
+    } catch (err) {
+      this.d.log.error({ err }, 'room sweep failed');
+    }
     for (const l of this.limiters.values()) l.sweep();
     this.floodLimiter.sweep();
-    this.bellUser.sweep();
     this.bellIp.sweep();
     this.lanternUser.sweep();
     this.lanternIp.sweep();
@@ -286,15 +325,18 @@ export class Hub {
       if (!uid) return;
       const set = this.userSockets.get(uid);
       set?.delete(s.id);
-      if (!set || set.size === 0) {
+      const last = !set || set.size === 0;
+      if (last) {
         this.userSockets.delete(uid);
         this.blockCache.delete(uid);
-        const room = this.rooms.leave(uid);
-        if (room) this.emitRoomState(room.code);
-      } else {
-        const room = this.rooms.roomOf(uid);
-        if (room) this.emitRoomState(room.code);
       }
+      this.track(
+        (async () => {
+          const code = last ? await this.d.cluster.rooms.leave(uid) : await this.d.cluster.rooms.roomOf(uid);
+          if (code) await this.emitRoomState(code);
+        })(),
+        'room cleanup',
+      );
     });
   }
 
@@ -359,13 +401,13 @@ export class Hub {
       s.leave(userRoom(prevUid));
       const set = this.userSockets.get(prevUid);
       set?.delete(s.id);
-      const oldRoom = this.rooms.roomOf(prevUid);
-      if (oldRoom) s.leave(privRoom(oldRoom.code));
+      const oldRoom = await this.d.cluster.rooms.roomOf(prevUid);
+      if (oldRoom) s.leave(privRoom(oldRoom));
       if (!set || set.size === 0) {
         this.userSockets.delete(prevUid);
         this.blockCache.delete(prevUid);
-        const left = this.rooms.leave(prevUid);
-        if (left) this.emitRoomState(left.code);
+        const left = await this.d.cluster.rooms.leave(prevUid);
+        if (left) await this.emitRoomState(left);
       }
     }
     s.data.userId = user.id;
@@ -378,22 +420,26 @@ export class Hub {
 
     this.pruneIncense(now);
     const blocked = this.blocked(user.id);
-    const snap = this.presence.snapshot();
+    const snap = this.onlineSnapshot;
+    // nhiều instance: hương có thể thắp ở instance khác → đọc từ DB
+    const incense = this.d.cluster.distributed
+      ? (await repos.incense.listSince(now - LIMITS.INCENSE_WINDOW_MS)).map((r) => ({ userId: r.userId, nickname: r.nickname, count: r.count, at: iso(r.at) }))
+      : this.incense.map(({ ts: _ts, ...i }) => i);
     s.emit('welcome', {
       userId: user.id,
       nickname: user.nickname,
       online: snap.online,
       areas: snap.areas,
-      incense: this.incense.filter((i) => !blocked.has(i.userId)).map(({ ts: _ts, ...i }) => i),
+      incense: incense.filter((i) => !blocked.has(i.userId)),
       serverTime: iso(now),
     });
     return { userId: user.id };
   }
 
-  private onEnterArea(s: Sock, p: { area: import('../../../shared/protocol.js').Area }) {
+  private async onEnterArea(s: Sock, p: { area: import('../../../shared/protocol.js').Area }) {
     this.presence.setArea(s.id, p.area);
-    const room = this.rooms.roomOf(s.data.userId!);
-    if (room) this.emitRoomState(room.code);
+    const code = await this.d.cluster.rooms.roomOf(s.data.userId!);
+    if (code) await this.emitRoomState(code);
   }
 
   private async onIncense(s: Sock, p: { count: number }) {
@@ -410,12 +456,14 @@ export class Hub {
 
   private async onBell(s: Sock, p: { force: number }) {
     const uid = s.data.userId!;
-    const u = this.bellUser.check(uid);
-    const g = this.bellGlobal.check('g');
     const ip = this.bellIp.peek(s.data.ip);
-    if (!u.ok || !g.ok || !ip.ok) throw new RateLimitedError('ring_bell', Math.max(u.retryAfterMs, g.retryAfterMs, ip.retryAfterMs));
-    this.bellUser.commit(uid);
-    this.bellGlobal.commit('g');
+    if (!ip.ok) throw new RateLimitedError('ring_bell', ip.retryAfterMs);
+    // người 1 lần/20 s + toàn server 1 lần/3 s — kiểm tra & đặt nguyên tử (cả cụm nếu dùng Redis)
+    const cd = await this.d.cluster.cooldowns([
+      { key: `bell:u:${uid}`, ms: LIMITS.BELL_USER_COOLDOWN_MS },
+      { key: 'bell:g', ms: LIMITS.BELL_GLOBAL_COOLDOWN_MS },
+    ]);
+    if (!cd.ok) throw new RateLimitedError('ring_bell', cd.retryAfterMs);
     this.bellIp.hit(s.data.ip);
     const now = Date.now();
     await this.d.repos.stats.incr(vnDay(now), 'bells');
@@ -449,14 +497,16 @@ export class Hub {
     if (n >= LIMITS.LANTERNS_PER_HOUR) throw new RateLimitedError('release_lantern', 60_000);
 
     const res = filter.check(p.text);
-    if (!res.ok) {
+    // Từ mức nhẹ + MILD_WORD_ACTION=pending → nhận đèn nhưng chờ duyệt (không từ chối)
+    const mildPending = !res.ok && res.reason === 'banned_word' && res.severity === 'mild' && config.MILD_WORD_ACTION === 'pending';
+    if (!res.ok && !mildPending) {
       metrics.rejected.inc({ reason: res.reason! });
       throw new HandledError('content_rejected', REJECT_MSG[res.reason!] ?? 'Nội dung không hợp lệ');
     }
     const lu = this.lanternUser.hit(uid);
     if (!lu.ok) throw new RateLimitedError('release_lantern', lu.retryAfterMs);
     const user = await repos.users.findById(uid);
-    const status = config.MODERATION_MODE === 'pre' || user?.flagged ? 'pending' : 'approved';
+    const status = config.MODERATION_MODE === 'pre' || user?.flagged || mildPending ? 'pending' : 'approved';
     const row = await repos.lanterns.create({
       id: newId('l'),
       userId: uid,
@@ -552,60 +602,68 @@ export class Hub {
   }
 
   // ---------------------------------------------------------------- rooms (EXT)
-  private roomState(code: string): RoomStatePayload | null {
-    const r = this.rooms.get(code);
+  private async roomState(code: string): Promise<RoomStatePayload | null> {
+    const r = await this.d.cluster.rooms.get(code);
     if (!r) return null;
-    const members = [...r.members].map((uid) => {
-      const sid = this.userSockets.get(uid)?.values().next().value as string | undefined;
-      const nickname = sid ? (this.d.io.sockets.sockets.get(sid)?.data.nickname ?? '') : '';
-      return { userId: uid, nickname, area: this.presence.areaOf(uid) };
-    });
+    const members = r.members.map(({ userId, nickname }) => ({
+      userId,
+      nickname,
+      // người ở instance này: đọc ngay; người ở instance khác: theo presence gộp (trễ ≤ 1 chu kỳ)
+      area: this.presence.hasUser(userId) ? this.presence.areaOf(userId) : this.d.cluster.areaOf(userId),
+    }));
     return { code, members };
   }
 
-  private emitRoomState(code: string): void {
-    const st = this.roomState(code);
+  private async emitRoomState(code: string): Promise<void> {
+    const st = await this.roomState(code);
     if (st) this.d.io.to(privRoom(code)).emit('room_state', st);
   }
 
+  /** Cho mọi socket của user (ở mọi instance) vào/ra kênh phòng. */
   private joinSockets(uid: string, code: string, join: boolean): void {
-    for (const sid of this.userSockets.get(uid) ?? []) {
-      const sock = this.d.io.sockets.sockets.get(sid);
-      if (!sock) continue;
-      if (join) sock.join(privRoom(code));
-      else sock.leave(privRoom(code));
+    const all = this.d.io.in(userRoom(uid));
+    if (join) all.socketsJoin(privRoom(code));
+    else all.socketsLeave(privRoom(code));
+  }
+
+  private async onRoomCreate(s: Sock) {
+    const uid = s.data.userId!;
+    const old = await this.d.cluster.rooms.roomOf(uid);
+    const code = await this.d.cluster.rooms.create(uid, s.data.nickname ?? '');
+    if (!code) throw new HandledError('internal', 'Hết chỗ tạo phòng');
+    this.roomsCount++;
+    if (old && old !== code) {
+      this.joinSockets(uid, old, false);
+      this.d.io.to(userRoom(uid)).emit('room_left', { code: old });
+      await this.emitRoomState(old);
     }
+    this.joinSockets(uid, code, true);
+    await this.emitRoomState(code);
+    return { code };
   }
 
-  private onRoomCreate(s: Sock) {
+  private async onRoomJoin(s: Sock, p: { code: string }) {
     const uid = s.data.userId!;
-    const room = this.rooms.create(uid);
-    if (!room) throw new HandledError('internal', 'Hết chỗ tạo phòng');
-    return this.onRoomJoin(s, { code: room.code });
-  }
-
-  private onRoomJoin(s: Sock, p: { code: string }) {
-    const uid = s.data.userId!;
-    const r = this.rooms.join(p.code, uid);
+    const r = await this.d.cluster.rooms.join(p.code, uid, s.data.nickname ?? '');
     if (r.error) throw new HandledError(r.error, r.error === 'room_full' ? 'Phòng đã đủ người' : 'Mã phòng không tồn tại');
     if (r.left) {
-      this.joinSockets(uid, r.left.code, false);
-      this.d.io.to(userRoom(uid)).emit('room_left', { code: r.left.code });
-      this.emitRoomState(r.left.code);
+      this.joinSockets(uid, r.left, false);
+      this.d.io.to(userRoom(uid)).emit('room_left', { code: r.left });
+      await this.emitRoomState(r.left);
     }
     this.joinSockets(uid, p.code, true);
-    this.emitRoomState(p.code);
+    await this.emitRoomState(p.code);
     return { code: p.code };
   }
 
-  private onRoomLeave(s: Sock) {
+  private async onRoomLeave(s: Sock) {
     const uid = s.data.userId!;
-    const room = this.rooms.leave(uid);
-    if (!room) return { code: null };
-    this.joinSockets(uid, room.code, false);
-    this.d.io.to(userRoom(uid)).emit('room_left', { code: room.code });
-    this.emitRoomState(room.code);
-    return { code: room.code };
+    const code = await this.d.cluster.rooms.leave(uid);
+    if (!code) return { code: null };
+    this.joinSockets(uid, code, false);
+    this.d.io.to(userRoom(uid)).emit('room_left', { code });
+    await this.emitRoomState(code);
+    return { code };
   }
 
   // ---------------------------------------------------------------- admin / REST hooks
@@ -625,6 +683,11 @@ export class Hub {
       if (code) sock.emit('error', { code, message: message ?? code });
       sock.disconnect(true);
     }
+    if (this.d.cluster.distributed) {
+      // socket của user ở instance khác
+      if (code) this.d.io.to(userRoom(userId)).emit('error', { code, message: message ?? code });
+      this.d.io.in(userRoom(userId)).disconnectSockets(true);
+    }
   }
 
   /** Gỡ dữ liệu trong bộ nhớ của user (sau POST /api/me/delete). */
@@ -632,11 +695,18 @@ export class Hub {
     this.incense = this.incense.filter((i) => i.userId !== userId);
     this.blockCache.delete(userId);
     for (const set of this.blockCache.values()) set.delete(userId);
-    const room = this.rooms.leave(userId);
-    if (room) this.emitRoomState(room.code);
+    this.track(
+      (async () => {
+        const code = await this.d.cluster.rooms.leave(userId);
+        if (code) await this.emitRoomState(code);
+      })(),
+      'forgetUser room',
+    );
   }
 
   async blockedOf(userId: string): Promise<Set<string>> {
+    // nhiều instance: quan hệ chặn có thể vừa đổi ở instance khác → luôn đọc DB
+    if (this.d.cluster.distributed) return new Set(await this.d.repos.blocks.related(userId));
     return this.blockCache.get(userId) ?? new Set(await this.d.repos.blocks.related(userId));
   }
 
@@ -648,14 +718,16 @@ export class Hub {
       connPerIp: this.connPerIp.size,
       blockCache: this.blockCache.size,
       floodStrikes: this.floodStrikes.size,
-      rooms: this.rooms.size,
+      rooms: this.roomsCount,
       incense: this.incense.length,
       limiterKeys: [...this.limiters.values()].reduce((n, l) => n + l.size, 0) + this.floodLimiter.size + this.lanternUser.size + this.lanternIp.size,
-      bellKeys: this.bellUser.size + this.bellIp.size,
+      bellKeys: this.bellIp.size,
     };
   }
 
-  get onlineSnapshot() {
+  get onlineSnapshot(): PresenceSnapshot {
+    // 1 instance: tức thời; nhiều instance: snapshot toàn cụm gần nhất (trễ ≤ 1 chu kỳ presence)
+    if (this.d.cluster.distributed && this.globalSnap) return this.globalSnap;
     return this.presence.snapshot();
   }
 }

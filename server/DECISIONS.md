@@ -62,3 +62,13 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     Chấp nhận lọt dạng 2 chữ số liền ("t40", "fr33") để không chặn nhầm mã/số; báo cáo + kiểm duyệt bù lại.
     Fuzz test (`tucam-conformance.test.ts`): chữ hoa, chèn `.`/`-`/khoảng trắng/zero-width, lặp chữ, leet 1 ký tự trên mọi từ mucDo ≥ 2 → 0 lọt.
 31. **PostgreSQL**: `src/repo/postgres.ts` cài đặt cùng interface; bật bằng `DATABASE_URL`. Kiểm thử: pg-mem (luôn chạy) + Postgres thật (`PG_TEST_URL`, workflow `server-postgres.yml`). SQLite vẫn là mặc định (đơn giản, 1 instance). Sao lưu Postgres dùng `pg_dump` (endpoint backup của admin trả lỗi).
+32. **Sau review lần 2 (bộ lọc)**:
+    - `*` giữa các chữ cái là **ký tự đại diện 1 ký tự** ("f*ck", "đ*t mẹ", "c*c"); tối đa một nửa số ký tự là `*`; chỉ chạy đường chậm khi văn bản có `*`.
+    - Từ 3 ký tự bị tách ("đ ịt", "l ồn") được ghép bản **có dấu**; không ghép bản không dấu (tránh "lon len").
+    - Cụm không dấu nhiều âm tiết chỉ tính khi **token sát hai bên cũng không dấu** ("lý do cho con" ≠ "đồ chó"; "do cho", "oc cho qua" vẫn chặn).
+    - Chỉ mục đoạn dài tối đa = số token của mẫu dài nhất + 1 (4..12) thay vì cố định 8.
+33. **`mucDo` của tu-cam.json**: mucDo 1 mã hoá tiền tố `!` (mức nhẹ). `MILD_WORD_ACTION=reject` (mặc định, giữ hành vi cũ) hoặc `pending` (đèn chỉ chứa từ nhẹ được nhận ở trạng thái chờ duyệt). Từ mức ≥ 2 luôn bị từ chối. Chưa làm "che ***" vì cần vị trí trên chuỗi gốc.
+34. **Nhiều instance (`REDIS_URL`)**: lớp `Cluster` (`src/realtime/cluster.ts`) — `LocalCluster` (mặc định, như cũ) và `RedisCluster`.
+    Redis adapter cho Socket.IO; presence gộp (mỗi instance chỉ phát `presence` cho socket của mình — `io.local`); cooldown chuông nguyên tử (Lua);
+    phòng riêng trong Redis (Lua cho vào phòng); hương `welcome` và quan hệ chặn đọc DB. Giới hạn kết nối/IP & rate limit sự kiện vẫn theo từng instance.
+    Phòng trống hết hạn theo TTL Redis (thời gian thật).

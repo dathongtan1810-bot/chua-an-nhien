@@ -232,21 +232,33 @@
   }
 
   let lanternSeq = 0;
-  async function loadLanterns(silent) {
+  let lanternNext = null;
+  let lanternShown = 0;
+  async function loadLanterns(silent, more) {
     const status = $('#lantern-status').value;
     const seq = ++lanternSeq;
     let data;
-    try { data = await api('/lanterns?status=' + encodeURIComponent(status)); } catch (e) {
+    const qs = '/lanterns?status=' + encodeURIComponent(status) + '&limit=100' + (more && lanternNext ? '&before=' + encodeURIComponent(lanternNext) : '');
+    try { data = await api(qs); } catch (e) {
       if (!silent && e.status !== 401) toast(e.message);
       return;
     }
     if (seq !== lanternSeq) return;
     const list = $('#lantern-list');
-    clear(list);
+    const oldMore = $('#lantern-more');
+    if (oldMore) oldMore.remove();
+    if (!more) { clear(list); lanternShown = 0; }
     const rows = data.lanterns || [];
-    $('#lantern-count').textContent = rows.length + ' đèn';
-    if (!rows.length) { list.append(empty('Không có đèn nào')); return; }
+    lanternShown += rows.length;
+    lanternNext = data.nextBefore || null;
+    $('#lantern-count').textContent = lanternShown + ' đèn' + (lanternNext ? '+' : '');
+    if (!lanternShown) { list.append(empty('Không có đèn nào')); return; }
     for (const l of rows) list.append(lanternItem(l));
+    if (lanternNext) {
+      const btn = el('button', { type: 'button', class: 'btn', id: 'lantern-more', text: 'Tải thêm' });
+      btn.addEventListener('click', () => loadLanterns(false, true));
+      list.after(btn);
+    }
   }
 
   function lanternItem(l) {

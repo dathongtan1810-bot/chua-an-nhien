@@ -130,8 +130,27 @@ const toAudit = (r: Raw): AuditRow => ({
 
 type Queryable = Pick<Pool, 'query'> | PoolClient;
 
+/** Khoá advisory cố định cho việc tạo schema (nhiều instance khởi động cùng lúc). */
+const SCHEMA_LOCK_KEY = 72_310_501;
+
+async function ensureSchema(pool: Pool): Promise<void> {
+  // CREATE TABLE IF NOT EXISTS chạy đồng thời vẫn có thể lỗi trùng kiểu (pg_type) → tuần tự hoá bằng advisory lock
+  const c = await pool.connect();
+  try {
+    await c.query('BEGIN');
+    await c.query('SELECT pg_advisory_xact_lock($1)', [SCHEMA_LOCK_KEY]).catch(() => undefined); // pg-mem không có hàm này
+    await c.query(SCHEMA);
+    await c.query('COMMIT');
+  } catch (e) {
+    await c.query('ROLLBACK').catch(() => undefined);
+    throw e;
+  } finally {
+    c.release();
+  }
+}
+
 export async function createPostgresRepositories(pool: Pool): Promise<Repositories> {
-  await pool.query(SCHEMA);
+  await ensureSchema(pool);
 
   const rows = async (c: Queryable, sql: string, params: unknown[] = []): Promise<Raw[]> =>
     (await c.query(sql, params)).rows as Raw[];
@@ -247,15 +266,15 @@ export async function createPostgresRepositories(pool: Pool): Promise<Repositori
           )
         ).map(toLantern);
       },
-      async listByStatus(status, now, limit) {
+      async listByStatus(status, now, limit, before = Number.MAX_SAFE_INTEGER) {
         const rs =
           status === 'all'
-            ? await rows(pool, 'SELECT * FROM lanterns WHERE expires_at > $1 ORDER BY created_at DESC LIMIT $2', [now, limit])
-            : await rows(pool, 'SELECT * FROM lanterns WHERE status = $1 AND expires_at > $2 ORDER BY created_at DESC LIMIT $3', [
-                status,
-                now,
-                limit,
-              ]);
+            ? await rows(pool, 'SELECT * FROM lanterns WHERE expires_at > $1 AND created_at < $2 ORDER BY created_at DESC LIMIT $3', [now, before, limit])
+            : await rows(
+                pool,
+                'SELECT * FROM lanterns WHERE status = $1 AND expires_at > $2 AND created_at < $3 ORDER BY created_at DESC LIMIT $4',
+                [status, now, before, limit],
+              );
         return rs.map(toLantern);
       },
       async setStatus(id, status) {

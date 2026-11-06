@@ -157,8 +157,8 @@ export function createSqliteRepositories(dbPath: string): Repositories {
       `SELECT * FROM lanterns WHERE status = 'approved' AND created_at > ? AND expires_at > ?
        ORDER BY created_at DESC LIMIT ?`,
     ),
-    lanternsByStatus: db.prepare('SELECT * FROM lanterns WHERE status = ? AND expires_at > ? ORDER BY created_at DESC LIMIT ?'),
-    lanternsAll: db.prepare('SELECT * FROM lanterns WHERE expires_at > ? ORDER BY created_at DESC LIMIT ?'),
+    lanternsByStatus: db.prepare('SELECT * FROM lanterns WHERE status = ? AND expires_at > ? AND created_at < ? ORDER BY created_at DESC LIMIT ?'),
+    lanternsAll: db.prepare('SELECT * FROM lanterns WHERE expires_at > ? AND created_at < ? ORDER BY created_at DESC LIMIT ?'),
     lanternSetStatus: db.prepare('UPDATE lanterns SET status = ? WHERE id = ?'),
     lanternCountUser: db.prepare('SELECT COUNT(*) AS n FROM lanterns WHERE user_id = ? AND created_at > ?'),
     likeInsert: db.prepare('INSERT OR IGNORE INTO lantern_likes (lantern_id, user_id, created_at) VALUES (?, ?, ?)'),
@@ -309,8 +309,8 @@ export function createSqliteRepositories(dbPath: string): Repositories {
       async listApproved({ since, now, limit }) {
         return (q.lanternsApproved.all(since, now, limit) as Raw[]).map(toLantern);
       },
-      async listByStatus(status, now, limit) {
-        const rows = status === 'all' ? q.lanternsAll.all(now, limit) : q.lanternsByStatus.all(status, now, limit);
+      async listByStatus(status, now, limit, before = Number.MAX_SAFE_INTEGER) {
+        const rows = status === 'all' ? q.lanternsAll.all(now, before, limit) : q.lanternsByStatus.all(status, now, before, limit);
         return (rows as Raw[]).map(toLantern);
       },
       async setStatus(id, status) {

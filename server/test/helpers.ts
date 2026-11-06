@@ -34,6 +34,10 @@ async function pgReposForTest(): Promise<Repositories | undefined> {
 
 export async function startServer(env: Record<string, string> = {}, opts: { repos?: Repositories } = {}): Promise<TestServer> {
   if (!opts.repos && !env.DB_PATH) opts = { ...opts, repos: await pgReposForTest() };
+  // TEST_ALL_REDIS=1 + REDIS_TEST_URL: chạy mọi test ở chế độ cụm (1 instance nhưng qua Redis)
+  if (process.env.TEST_ALL_REDIS && process.env.REDIS_TEST_URL && env.REDIS_URL === undefined) {
+    env = { ...env, REDIS_URL: process.env.REDIS_TEST_URL, REDIS_PREFIX: `ta${process.pid}_${++seq}_${Date.now()}:` };
+  }
   const ctx = await buildApp(testConfig({ PRESENCE_INTERVAL_MS: '100', MAX_CONN_PER_IP: '200', SOCKET_EVENTS_PER_10S: '200', ...env }), opts);
   await ctx.app.listen({ host: '127.0.0.1', port: 0 });
   const port = (ctx.app.server.address() as AddressInfo).port;

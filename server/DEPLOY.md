@@ -10,6 +10,8 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `PORT` / `HOST` | `8080` / `0.0.0.0` | |
 | `NODE_ENV` | `development` | đặt `production` (bật cookie Secure, bắt buộc `DEVICE_SALT`) |
 | `DB_PATH` | `./data/chua.db` (Docker: `/data/chua.db`) | phải nằm trên volume bền |
+| `REDIS_URL` | rỗng | `redis://...` → chế độ nhiều instance (xem "Scale"). Cần `DATABASE_URL` dùng chung |
+| `REDIS_PREFIX` | `chua:` | tiền tố khoá Redis |
 | `DATABASE_URL` | rỗng | `postgres://...` → dùng PostgreSQL (src/repo/postgres.ts) thay SQLite; sao lưu bằng `pg_dump` |
 | `DEVICE_SALT` | — | **bắt buộc** ở production, chuỗi ngẫu nhiên dài; **không đổi** sau khi chạy (đổi = mọi thiết bị thành người mới) |
 | `ADMIN_PASSWORD` | rỗng (tắt admin) | mật khẩu trang `/admin/` |
@@ -17,6 +19,7 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `CORS_ORIGINS` | `*` | danh sách origin cách nhau dấu phẩy, vd `https://chua-an-nhien.vn,capacitor://localhost` |
 | `ONLINE_FEATURES` | `all` | `none` hoặc `presence,incense,bell,lantern,report,room` |
 | `MODERATION_MODE` | `post` | `pre` = mọi đèn chờ duyệt |
+| `MILD_WORD_ACTION` | `reject` | đèn chỉ chứa từ mức nhẹ (mucDo 1 của tu-cam.json): `reject` = từ chối, nhắc sửa; `pending` = nhận nhưng chờ admin duyệt |
 | `MAX_CONN_PER_IP` | `20` | |
 | `MAX_PAYLOAD_BYTES` | `4096` | gói socket & body HTTP |
 | `SOCKET_EVENTS_PER_10S` | `40` | chống flood mỗi socket |
@@ -112,9 +115,21 @@ socket.emit('hello', { deviceId, nickname: null, lang: 'vi' });
 - **Kiểm duyệt gắt hơn** (vd dịp lễ đông người): `MODERATION_MODE=pre`.
 - Dừng an toàn: server bắt `SIGTERM`, đóng socket & DB trong ≤ 10 s.
 
-## Scale (khi > ~5–10k người đồng thời)
+## Scale nhiều instance (khi > ~5–10k người đồng thời)
 
-1. Đặt `DATABASE_URL` để dùng Postgres (đã có `src/repo/postgres.ts`, kiểm thử trên Postgres 16 thật + pg-mem).
-2. Thêm `@socket.io/redis-adapter` để nhiều instance phát sự kiện cho nhau.
-3. Chuyển presence/hương/rate limit/phòng sang Redis (hiện ở `src/services/*` trong bộ nhớ).
-4. Bật sticky session (Fly: `fly-replay`/Render: không cần nếu chỉ dùng websocket transport).
+Đã hỗ trợ sẵn — chỉ cần cấu hình:
+
+1. `DATABASE_URL=postgres://...` — mọi instance dùng chung một Postgres.
+2. `REDIS_URL=redis://...` — bật chế độ cụm:
+   - `@socket.io/redis-adapter`: mọi sự kiện (chuông, đèn, hương, phòng, ngắt kết nối khi khoá) phát xuyên instance;
+   - presence gộp toàn cụm (mỗi instance ghi bản đồ người→khu vào Redis, TTL 10 s);
+   - cooldown chuông (20 s/người, 3 s toàn server) kiểm tra & đặt **nguyên tử** bằng Lua;
+   - phòng riêng lưu trong Redis (vào phòng nguyên tử, phòng trống tự hết hạn sau 10 phút);
+   - hương trong `welcome` đọc từ DB; quan hệ chặn luôn đọc DB.
+3. Chỉ dùng transport `websocket` ở client (khuyến nghị sẵn) → **không cần sticky session**.
+4. `REDIS_PREFIX` nếu nhiều môi trường dùng chung một Redis.
+
+Còn theo từng instance (chấp nhận được, ghi rõ): giới hạn kết nối/IP, chống flood, rate limit theo sự kiện (lỏng hơn N lần với N instance);
+giới hạn 3 đèn/giờ vẫn chặt vì đếm trong DB. Kiểm thử: `test/cluster.test.ts` (2 instance thật) và toàn bộ bộ test với `TEST_ALL_REDIS=1` (CI job `redis-cluster`).
+
+Fly.io: `fly scale count 3` + Upstash Redis (`fly redis create`) + Fly Postgres; bỏ `[mounts]` (không cần volume SQLite).
