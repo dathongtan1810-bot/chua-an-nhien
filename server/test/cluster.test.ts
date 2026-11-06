@@ -2,7 +2,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import os from 'node:os';
 import path from 'node:path';
-import { collect, emitAck, sleep, startServer, waitFor, type TestServer } from './helpers.js';
+import { collect, devId, emitAck, sleep, startServer, waitFor, type TestServer } from './helpers.js';
 
 const url = process.env.REDIS_TEST_URL;
 let A: TestServer | undefined;
@@ -74,6 +74,16 @@ describe.skipIf(!url)('cụm 2 instance qua Redis', () => {
     const s2 = await st2;
     expect(s2.members.find((m) => m.nickname === 'Con')?.area).toBe('chinh-dien');
     expect(await emitAck(y.c, 'room_join', { code: 'ZZZZZZ' })).toMatchObject({ ok: false, code: 'room_not_found' });
+  });
+
+  it('rate limit theo sự kiện dùng chung giữa các instance', async () => {
+    const { a, b } = await pair();
+    const d = devId();
+    const x = await a.hello(d);
+    const y = await b.hello(d); // cùng thiết bị, tab thứ 2 ở instance khác
+    expect(await emitAck(x.c, 'light_incense', { count: 1 })).toMatchObject({ ok: true });
+    // 1 lần/15 s/người: tab ở instance B cũng phải bị chặn
+    expect(await emitAck(y.c, 'light_incense', { count: 1 })).toMatchObject({ ok: false, code: 'rate_limited' });
   });
 
   it('khoá thiết bị ở instance A ngắt kết nối user ở instance B', async () => {

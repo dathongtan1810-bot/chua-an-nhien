@@ -8,7 +8,7 @@ import { randomBytes } from 'node:crypto';
 import type { Redis } from 'ioredis';
 import { emptyAreaCounts, type Area, type AreaCounts } from '../../../shared/protocol.js';
 import type { LimitResult } from '../services/rateLimit.js';
-import { CooldownLimiter } from '../services/rateLimit.js';
+import { CooldownLimiter, SlidingWindowLimiter } from '../services/rateLimit.js';
 import { Rooms, ROOM_IDLE_TTL_MS, ROOM_MAX_MEMBERS, MAX_ROOMS } from '../services/rooms.js';
 
 export interface RoomInfo {
@@ -25,6 +25,11 @@ export interface Cluster {
   readonly distributed: boolean;
   /** Kiểm tra & đặt nguyên tử nhiều cooldown cùng lúc (vd chuông: theo user + toàn server). */
   cooldowns(items: Array<{ key: string; ms: number }>): Promise<LimitResult>;
+  /**
+   * Cửa sổ trượt: kiểm tra TẤT CẢ khoá, chỉ khi mọi khoá còn hạn mức mới ghi nhận cả lượt (nguyên tử).
+   * Dùng cho rate limit theo sự kiện/IP để nhiều instance chia chung hạn mức.
+   */
+  windowHits(items: Array<{ key: string; max: number; windowMs: number }>): Promise<LimitResult>;
   /** Gộp presence: nhận bản đồ userId→khu của instance này, trả snapshot toàn cụm. */
   syncPresence(local: Map<string, Area | null>): Promise<PresenceSnapshot>;
   areaOf(userId: string): Area | null;
@@ -50,6 +55,24 @@ function snapshotOf(map: Map<string, Area | null>): PresenceSnapshot {
 export class LocalCluster implements Cluster {
   readonly distributed = false;
   private cds = new Map<number, CooldownLimiter>();
+  private wins = new Map<string, SlidingWindowLimiter>();
+
+  async windowHits(items: Array<{ key: string; max: number; windowMs: number }>): Promise<LimitResult> {
+    const lim = (max: number, w: number) => {
+      const k = `${max}/${w}`;
+      let l = this.wins.get(k);
+      if (!l) this.wins.set(k, (l = new SlidingWindowLimiter(max, w)));
+      return l;
+    };
+    let retry = 0;
+    for (const it of items) {
+      const r = lim(it.max, it.windowMs).peek(it.key);
+      if (!r.ok) retry = Math.max(retry, r.retryAfterMs);
+    }
+    if (retry > 0) return { ok: false, retryAfterMs: retry };
+    for (const it of items) lim(it.max, it.windowMs).hit(it.key);
+    return { ok: true, retryAfterMs: 0 };
+  }
   private last = new Map<string, Area | null>();
   private roomsImpl = new Rooms();
   private nick = new Map<string, string>();
@@ -104,6 +127,7 @@ export class LocalCluster implements Cluster {
     sweep: async (now?: number) => {
       this.roomsImpl.sweep(now);
       for (const l of this.cds.values()) l.sweep();
+      for (const l of this.wins.values()) l.sweep();
     },
     size: async () => this.roomsImpl.size,
   };
@@ -121,6 +145,29 @@ end
 if maxttl > 0 then return maxttl end
 for i, k in ipairs(KEYS) do
   redis.call('SET', k, '1', 'PX', ARGV[i])
+end
+return 0`;
+
+// Cửa sổ trượt nhiều khoá: KEYS = các ZSET; ARGV = [now, member, max1, win1, max2, win2, ...]
+const WINDOW_LUA = `
+local now = tonumber(ARGV[1])
+local retry = 0
+for i, k in ipairs(KEYS) do
+  local max = tonumber(ARGV[1 + i * 2])
+  local win = tonumber(ARGV[2 + i * 2])
+  redis.call('ZREMRANGEBYSCORE', k, '-inf', now - win)
+  if redis.call('ZCARD', k) >= max then
+    local oldest = redis.call('ZRANGE', k, 0, 0, 'WITHSCORES')
+    local r = tonumber(oldest[2]) + win - now
+    if r < 1 then r = 1 end
+    if r > retry then retry = r end
+  end
+end
+if retry > 0 then return retry end
+for i, k in ipairs(KEYS) do
+  local win = tonumber(ARGV[2 + i * 2])
+  redis.call('ZADD', k, now, ARGV[2])
+  redis.call('PEXPIRE', k, win)
 end
 return 0`;
 
@@ -154,6 +201,16 @@ export class RedisCluster implements Cluster {
 
   async cooldowns(items: Array<{ key: string; ms: number }>): Promise<LimitResult> {
     const res = (await this.r.eval(COOLDOWN_LUA, items.length, ...items.map((i) => this.k(`cd:${i.key}`)), ...items.map((i) => String(i.ms)))) as number;
+    return res > 0 ? { ok: false, retryAfterMs: res } : { ok: true, retryAfterMs: 0 };
+  }
+
+  private seq = 0;
+
+  async windowHits(items: Array<{ key: string; max: number; windowMs: number }>): Promise<LimitResult> {
+    const member = `${Date.now()}:${this.instanceId}:${++this.seq}`;
+    const args = [String(Date.now()), member];
+    for (const it of items) args.push(String(it.max), String(it.windowMs));
+    const res = (await this.r.eval(WINDOW_LUA, items.length, ...items.map((i) => this.k(`win:${i.key}`)), ...args)) as number;
     return res > 0 ? { ok: false, retryAfterMs: res } : { ok: true, retryAfterMs: 0 };
   }
 

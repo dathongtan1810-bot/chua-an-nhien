@@ -129,7 +129,7 @@ socket.emit('hello', { deviceId, nickname: null, lang: 'vi' });
 3. Chỉ dùng transport `websocket` ở client (khuyến nghị sẵn) → **không cần sticky session**.
 4. `REDIS_PREFIX` nếu nhiều môi trường dùng chung một Redis.
 
-Còn theo từng instance (chấp nhận được, ghi rõ): giới hạn kết nối/IP, chống flood, rate limit theo sự kiện (lỏng hơn N lần với N instance);
-giới hạn 3 đèn/giờ vẫn chặt vì đếm trong DB. Kiểm thử: `test/cluster.test.ts` (2 instance thật) và toàn bộ bộ test với `TEST_ALL_REDIS=1` (CI job `redis-cluster`).
+Rate limit theo sự kiện (theo người & theo IP), giới hạn chuông/đèn theo IP cũng dùng chung qua Redis (cửa sổ trượt nguyên tử, Lua).
+Còn theo từng instance (có chủ đích): giới hạn số kết nối/IP và chống flood theo socket — vì mỗi kết nối chỉ nằm trên một instance. Kiểm thử: `test/cluster.test.ts` (2 instance thật) và toàn bộ bộ test với `TEST_ALL_REDIS=1` (CI job `redis-cluster`).
 
 Fly.io: `fly scale count 3` + Upstash Redis (`fly redis create`) + Fly Postgres; bỏ `[mounts]` (không cần volume SQLite).

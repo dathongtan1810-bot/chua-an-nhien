@@ -249,9 +249,19 @@ export class Hub {
     return { id: l.id, text: l.text, color: l.color, nickname: l.nickname, at: iso(l.createdAt), likes: l.likes };
   }
 
-  private limit(event: C2SEvent, s: Sock): void {
+  private async limit(event: C2SEvent, s: Sock): Promise<void> {
     const u = this.limiters.get(`u:${event}`);
     if (!u) return;
+    if (this.d.cluster.distributed) {
+      // nhiều instance: hạn mức dùng chung qua Redis
+      const [max, win] = EVENT_LIMITS[event]!;
+      const r = await this.d.cluster.windowHits([
+        { key: `ev:u:${event}:${s.data.userId ?? s.id}`, max, windowMs: win },
+        { key: `ev:ip:${event}:${s.data.ip}`, max: max * IP_FACTOR, windowMs: win },
+      ]);
+      if (!r.ok) throw new RateLimitedError(event, r.retryAfterMs);
+      return;
+    }
     const ipL = this.limiters.get(`ip:${event}`)!;
     const r1 = u.peek(s.data.userId ?? s.id);
     const r2 = ipL.peek(s.data.ip);
@@ -296,7 +306,7 @@ export class Hub {
             throw new HandledError('invalid_payload', parsed.error.issues.map((i) => `${i.path.join('.') || ev}: ${i.message}`).join('; ').slice(0, 300));
           }
           if (ev !== 'hello') this.requireUser(s);
-          this.limit(ev, s);
+          await this.limit(ev, s);
           const res = await this.dispatch(ev, s, parsed.data);
           ack?.({ ok: true, ...(res ?? {}) });
         } catch (err) {
@@ -456,15 +466,21 @@ export class Hub {
 
   private async onBell(s: Sock, p: { force: number }) {
     const uid = s.data.userId!;
-    const ip = this.bellIp.peek(s.data.ip);
-    if (!ip.ok) throw new RateLimitedError('ring_bell', ip.retryAfterMs);
+    const distributed = this.d.cluster.distributed;
+    if (distributed) {
+      const ipr = await this.d.cluster.windowHits([{ key: `bell:ip:${s.data.ip}`, max: IP_FACTOR, windowMs: LIMITS.BELL_USER_COOLDOWN_MS }]);
+      if (!ipr.ok) throw new RateLimitedError('ring_bell', ipr.retryAfterMs);
+    } else {
+      const ip = this.bellIp.peek(s.data.ip);
+      if (!ip.ok) throw new RateLimitedError('ring_bell', ip.retryAfterMs);
+    }
     // người 1 lần/20 s + toàn server 1 lần/3 s — kiểm tra & đặt nguyên tử (cả cụm nếu dùng Redis)
     const cd = await this.d.cluster.cooldowns([
       { key: `bell:u:${uid}`, ms: LIMITS.BELL_USER_COOLDOWN_MS },
       { key: 'bell:g', ms: LIMITS.BELL_GLOBAL_COOLDOWN_MS },
     ]);
     if (!cd.ok) throw new RateLimitedError('ring_bell', cd.retryAfterMs);
-    this.bellIp.hit(s.data.ip);
+    if (!distributed) this.bellIp.hit(s.data.ip);
     const now = Date.now();
     await this.d.repos.stats.incr(vnDay(now), 'bells');
     this.d.metrics.bells.inc();
@@ -479,10 +495,17 @@ export class Hub {
     if (this.lanternInflight.has(uid)) throw new RateLimitedError('release_lantern', 1000);
     const lu = this.lanternUser.peek(uid);
     if (!lu.ok) throw new RateLimitedError('release_lantern', lu.retryAfterMs);
-    // IP: ghi nhận ngay (đồng bộ, trước mọi await) để nhiều user cùng IP không vượt rào song song
-    const li = this.lanternIp.hit(s.data.ip);
-    if (!li.ok) throw new RateLimitedError('release_lantern', li.retryAfterMs);
     this.lanternInflight.add(uid);
+    try {
+      // IP: ghi nhận ngay (trước khi tạo đèn) để nhiều user cùng IP không vượt rào song song; cả cụm nếu dùng Redis
+      const li = this.d.cluster.distributed
+        ? await this.d.cluster.windowHits([{ key: `lantern:ip:${s.data.ip}`, max: LIMITS.LANTERNS_PER_HOUR * IP_FACTOR, windowMs: 3600_000 }])
+        : this.lanternIp.hit(s.data.ip);
+      if (!li.ok) throw new RateLimitedError('release_lantern', li.retryAfterMs);
+    } catch (e) {
+      this.lanternInflight.delete(uid);
+      throw e;
+    }
     try {
       return await this.createLantern(s, uid, p, now);
     } finally {
