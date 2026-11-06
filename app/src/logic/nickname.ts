@@ -110,7 +110,28 @@ function pick<T>(arr: readonly T[], rand: () => number): T {
   return arr[Math.min(arr.length - 1, Math.max(0, i))] as T;
 }
 
+/** Server chỉ nhận biệt danh ≤ 24 ký tự (shared/protocol.ts LIMITS.NICKNAME_MAX_CHARS). */
+export const NICKNAME_MAX_CHARS = 24;
+
+/** Cắt biệt danh cho vừa giới hạn server, ưu tiên cắt ở ranh giới từ. */
+export function clampNickname(s: string): string {
+  const t = s.trim().replace(/\s+/g, ' ');
+  if ([...t].length <= NICKNAME_MAX_CHARS) return t;
+  const words = t.split(' ');
+  while (words.length > 1 && [...words.join(' ')].length > NICKNAME_MAX_CHARS) words.pop();
+  return [...words.join(' ')].slice(0, NICKNAME_MAX_CHARS).join('');
+}
+
 export function randomNickname(rand: () => number = Math.random): string {
+  // thử vài lần để có biệt danh đủ 3 phần mà vẫn ≤ 24 ký tự
+  for (let i = 0; i < 12; i++) {
+    const n = randomNicknameRaw(rand);
+    if ([...n].length <= NICKNAME_MAX_CHARS) return n;
+  }
+  return clampNickname(randomNicknameRaw(rand));
+}
+
+function randomNicknameRaw(rand: () => number): string {
   const title = pick(NICK_TITLES_VI, rand);
   const nature = pick(NICK_NATURE_VI, rand);
   let adj = pick(NICK_ADJ_VI, rand);
@@ -118,10 +139,19 @@ export function randomNickname(rand: () => number = Math.random): string {
   return `${title} ${nature} ${adj}`;
 }
 
-/** English nickname, e.g. "Wanderer of Pink Lotus". */
-export function randomNicknameEn(rand: () => number = Math.random): string {
+/** Biệt danh tiếng Anh thô (chưa kiểm độ dài). */
+function randomNicknameEnRaw(rand: () => number): string {
   const title = pick(NICK_TITLES_EN, rand);
   const adj = pick(NICK_ADJ_EN, rand);
   const nature = pick(NICK_NATURE_EN, rand);
   return `${title} of ${adj} ${nature}`;
+}
+
+/** English nickname, e.g. "Pink Lotus Wanderer" — ≤ 24 ký tự. */
+export function randomNicknameEn(rand: () => number = Math.random): string {
+  for (let i = 0; i < 12; i++) {
+    const n = randomNicknameEnRaw(rand);
+    if ([...n].length <= NICKNAME_MAX_CHARS) return n;
+  }
+  return clampNickname(randomNicknameEnRaw(rand));
 }

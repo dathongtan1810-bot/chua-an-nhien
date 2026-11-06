@@ -22,6 +22,7 @@ import { addEntry } from '../storage/journal';
 import { h, toast, uiRoot } from '../ui/dom';
 import { BurnerDisplay } from './burner';
 import { VisitorOrbs } from './visitors';
+import { isLowPerf, setLowPerf, shouldLowerQuality, showFpsMeter } from '../core/perf';
 
 const NAV_LABEL_OFFSET = 70;
 
@@ -109,7 +110,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     }
 
     this.setupAreaFeatures();
-    this.setupDecorations();
+    if (!isLowPerf()) this.setupDecorations();
+    this.setupPerfProbe();
     this.setupHotspotMarkers();
     this.setupInput();
     this.setupNet();
@@ -164,7 +166,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       this.ritualHidden.push(img);
     }
     // người viếng khác trong khu (đốm sáng); dải mặt đất tùy khu
-    if (store.state.settings.online) {
+    if (store.state.settings.online && !isLowPerf()) {
       const band = this.area === 'bo-song' ? { top: 760, bottom: 820 } : this.area === 'ho-sen' ? { top: 860, bottom: 900 } : { top: 690, bottom: 840 };
       const orbs = new VisitorOrbs(this, this.layers.main, this.worldWidth, band, rm);
       orbs.setCount((net.areas[this.area] ?? 0) - 1);
@@ -310,6 +312,31 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       this.markers.push(ring, txt);
       if (!rm) this.tweens.add({ targets: ring, scale: 1.18, alpha: 0.6, yoyo: true, repeat: -1, duration: 1400, ease: 'Sine.easeInOut' });
     }
+  }
+
+  /** Đo FPS sau khi vào khu; máy yếu → các khu sau dùng hiệu ứng nhẹ. `?fps` hiện bộ đếm. */
+  private setupPerfProbe(): void {
+    const meter = showFpsMeter()
+      ? this.add
+          .text(GAME_W / 2, 6, '', { fontFamily: 'monospace', fontSize: '14px', color: '#9ff59f', backgroundColor: 'rgba(0,0,0,0.5)' })
+          .setOrigin(0.5, 0)
+          .setScrollFactor(0)
+          .setDepth(100)
+      : null;
+    const samples: number[] = [];
+    const t0 = performance.now();
+    // đồng hồ thật (đồng hồ Phaser chạy chậm khi FPS thấp)
+    const timer = window.setInterval(() => {
+      const fps = this.game.loop.actualFps;
+      meter?.setText(`${fps.toFixed(0)} fps${isLowPerf() ? ' · nhẹ' : ''}`);
+      // bỏ 2 giây đầu (nướng texture), lấy 8 mẫu trong 4 giây
+      if (performance.now() - t0 > 2000 && samples.length < 8) {
+        samples.push(fps);
+        if (samples.length === 8 && !isLowPerf() && shouldLowerQuality(samples)) setLowPerf(true);
+      }
+    }, 500);
+    const ev = { remove: () => window.clearInterval(timer) };
+    this.unsubs.push(() => ev.remove());
   }
 
   /** Tên khu hiện mờ giữa màn hình khi vừa bước vào. */

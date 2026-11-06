@@ -1,6 +1,7 @@
 import type { AreaId } from './areas';
 import { DEFAULT_EQUIPPED, DEFAULT_OWNED, shopItem, type ShopCategory } from './shop';
 import { emptyStreak, visit, type Streak } from '../logic/streak';
+import { clampNickname } from '../logic/nickname';
 
 export type Lang = 'vi' | 'en';
 export type QuestId = 'thap-huong' | 'thien-3' | 'tha-den';
@@ -254,7 +255,7 @@ export function reduce(state: GameState, action: Action): Result {
       s = { ...s, onboarded: true };
       break;
     case 'nickname':
-      s = { ...s, nickname: action.nickname.slice(0, 40) };
+      s = { ...s, nickname: clampNickname(action.nickname) };
       break;
     case 'bonus': {
       s = rollDay(s, action.dateKey);

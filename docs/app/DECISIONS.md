@@ -32,3 +32,9 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
     sự kiện `thang: null` = hằng tháng; `trangTri` là mô tả văn xuôi → suy ra token hiệu ứng theo từ khóa;
     `nhiemVu` là danh sách → lấy việc đầu tiên. Không sửa thư mục `content/` (thuộc phiên nội dung).
 20. `?date=` chỉ có hiệu lực ở bản dev (tránh làm hỏng streak người chơi ở bản phát hành).
+21. **Biệt danh ≤ 24 ký tự** cho khớp `LIMITS.NICKNAME_MAX_CHARS` của server (dài hơn → `hello` bị từ chối).
+22. **Client chờ `welcome` rồi mới gửi sự kiện khác** (server trả `not_hello` nếu nhận trước khi xử lý xong `hello`);
+    `enter_area` gửi lại khi có welcome, hành động khác xếp hàng tối đa 10.
+23. **Nội dung tiếng Anh tải lười** (`import.meta.glob` không eager) để gói tải đầu không tăng; sự kiện giữ ngày và
+    token trang trí của bản tiếng Việt cùng `id`.
+24. **Hiệu ứng nhẹ tự động** theo FPS đo bằng đồng hồ thật (đồng hồ Phaser chậm khi FPS thấp); lưu sessionStorage.

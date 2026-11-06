@@ -34,9 +34,12 @@ npm run dev        # http://localhost:5173  (?skip&area=bo-song&ritual=lantern&h
 npm test           # Vitest
 npm run build      # dist/ (PWA, chơi offline)
 npm run e2e        # Playwright smoke
+npm run e2e:server # e2e với server thật (cd server && npm start trước; E2E_SERVER_URL mặc định :8080)
 ```
 Cấu hình (biến môi trường Vite): `VITE_SERVER_URL` (server Socket.IO thật; để trống → MockServer),
 `VITE_ONLINE_FEATURES`, `VITE_USE_MOCK_SERVER`, `VITE_ADS_ENABLED` (mặc định tắt), `VITE_PUBLIC_URL`.
+
+Đo hiệu năng trên máy thật: thêm `?fps` vào URL để hiện bộ đếm FPS.
 
 Mobile: `npm run cap:sync` rồi `npx cap open android|ios`. Xem [docs/app/PUBLISHING.md](docs/app/PUBLISHING.md).
 

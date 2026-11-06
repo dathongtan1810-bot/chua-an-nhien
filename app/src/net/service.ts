@@ -2,6 +2,7 @@ import { ONLINE_FEATURES, SERVER_URL, USE_MOCK_SERVER } from '../config';
 import type { AreaId } from '../core/areas';
 import { AREAS } from '../core/areas';
 import { checkText } from '../logic/filter';
+import { clampNickname } from '../logic/nickname';
 import { RateLimiter, DEFAULT_RATE_RULES } from '../logic/ratelimit';
 import { createNetClient, type NetClient, type NetStatus } from './client';
 import { isLanternColor, ROOM_CODE_RE, type AreaCounts, type IncenseLitPayload, type LanternPayload, type RoomStatePayload, type S2CEvents } from './protocol';
@@ -60,7 +61,7 @@ export class NetService {
 
   start(hello: { deviceId: string; nickname: string; lang: string }, enabled: boolean, blocked: string[]): void {
     this.stop();
-    this.hello = hello;
+    this.hello = { ...hello, nickname: clampNickname(hello.nickname) };
     blocked.forEach((b) => this.blocked.add(b));
     if (!ONLINE_FEATURES || !enabled) {
       this.setStatus('offline');
@@ -72,7 +73,7 @@ export class NetService {
     this.unsubs.push(c.onStatus((s) => this.setStatus(s)));
     on('welcome', (w) => {
       this.userId = w.userId;
-      if (w.nickname && w.nickname !== hello.nickname) this.emit({ type: 'nickname', nickname: w.nickname });
+      if (w.nickname && w.nickname !== clampNickname(hello.nickname)) this.emit({ type: 'nickname', nickname: w.nickname });
       this.online = w.online;
       this.areas = { ...emptyAreas(), ...w.areas };
       this.incense = w.incense.filter((i) => !this.blocked.has(i.userId));
@@ -114,7 +115,7 @@ export class NetService {
     });
     on('rate_limited', (r) => this.emit({ type: 'rateLimited', event: String(r.event), retryAfterMs: r.retryAfterMs }));
     on('error', (e) => this.emit({ type: 'error', code: String(e.code), message: e.message }));
-    c.connect({ deviceId: hello.deviceId, nickname: hello.nickname, lang: hello.lang });
+    c.connect({ deviceId: hello.deviceId, nickname: clampNickname(hello.nickname), lang: hello.lang });
   }
 
   stop(): void {

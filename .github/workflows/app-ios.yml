@@ -25,7 +25,9 @@ jobs:
       - run: npm run build
       - run: npx cap sync ios
       - name: xcodebuild (iphonesimulator, unsigned)
+        shell: bash
         run: |
+          set -o pipefail
           xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath build CODE_SIGNING_ALLOWED=NO build | tail -40

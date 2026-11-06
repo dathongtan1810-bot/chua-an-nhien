@@ -31,6 +31,9 @@ export class SocketClient implements NetClient {
   private status: NetStatus = 'offline';
   private hello: HelloPayload | null = null;
   private lastArea: EnterAreaPayload | null = null;
+  /** Server yêu cầu hello xong (nhận welcome) mới nhận sự kiện khác → xếp hàng tới lúc đó. */
+  private welcomed = false;
+  private pending: [keyof C2SEvents, unknown][] = [];
   private readonly limiter: RateLimiter;
   private readonly serverUrl: string | undefined;
   private readonly fetchTimeoutMs: number;
@@ -62,10 +65,17 @@ export class SocketClient implements NetClient {
     });
     this.socket = s;
     s.on('connect', () => {
+      this.welcomed = false;
       this.setStatus('online');
-      // (re)gửi hello + khu đang đứng sau mỗi lần kết nối/kết nối lại
+      // (re)gửi hello sau mỗi lần kết nối/kết nối lại; khu đang đứng + hàng đợi gửi khi nhận welcome
       if (this.hello) s.emit('hello', this.hello);
+    });
+    s.on('welcome', () => {
+      this.welcomed = true;
       if (this.lastArea) s.emit('enter_area', this.lastArea);
+      const q = this.pending;
+      this.pending = [];
+      for (const [ev, data] of q) if (ev !== 'enter_area') s.emit(ev, data);
     });
     s.on('disconnect', () => {
       this.setStatus(this.socket && s.active ? 'connecting' : 'offline');
@@ -110,6 +120,11 @@ export class SocketClient implements NetClient {
     const s = this.socket;
     // Không đệm hành động khi mất kết nối (hello/enter_area sẽ gửi lại khi reconnect)
     if (!s || !s.connected) return;
+    if (ev !== 'hello' && !this.welcomed) {
+      // đã kết nối nhưng server chưa xử lý xong hello: giữ lại (tối đa 10), enter_area gửi lại khi welcome
+      if (ev !== 'enter_area' && this.pending.length < 10) this.pending.push([ev, data]);
+      return;
+    }
     s.emit(ev, data);
   }
 

@@ -26,14 +26,23 @@ Với server thật (phiên backend): `cd server && npm install && npm start` (c
 `VITE_SERVER_URL=http://localhost:8080 npm run dev` trong `app/`.
 Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`).
 
-## Còn lại
-- (Đã sửa) e2e đỏ trên CI: Phaser bỏ qua `camera.fadeOut()` khi fadeIn còn chạy, và trên máy chậm đồng hồ Phaser
-  chạy chậm hơn thời gian thực → chuyển khu kẹt/rất chậm. Nay `resetFX()` trước khi fade + hẹn giờ dự phòng theo
-  `setTimeout`; cảnh tự đăng ký lại `game.api` và xử lý lệnh HUD xếp hàng trong `update`. Tái hiện/kiểm tra:
-  `E2E_CPU_THROTTLE=4 npx playwright test` hoặc `npx playwright test --repeat-each=4 --workers=4`.
-- Chạy e2e với server thật (chưa làm: hết giờ). Kiểm tra nhánh `qa/` khi có (`qa/BUGS.md` chưa tồn tại).
-- Nội dung tiếng Anh của phiên nội dung (`content/i18n`) chưa được nối vào chế độ English (thơ/quẻ vẫn tiếng Việt).
-- 2 lỗi review nhỏ chưa sửa:
-  sheet chưa có focus trap; nút "online" bật lại chưa xin lại danh sách đèn ngay.
-- Build native thật (Android Studio / Xcode trên macOS), ký bằng keystore (xem docs/app/PUBLISHING.md).
-- Đo FPS trên máy thật tầm trung (headless SwiftShader không đại diện).
+## Đợt 2 (06/11) — đã làm hết mục "Còn lại"
+- **E2E với server thật**: `e2e/online.spec.ts` — hai người chơi thấy nhau (presence), thấy hương & đèn của nhau,
+  đèn có trong REST `/api/lanterns`. `npm run e2e:server` (build app với `VITE_SERVER_URL`, chạy cả bộ e2e);
+  CI: `.github/workflows/app-e2e-server.yml` dựng `server/` rồi chạy. Qua đó tìm và sửa 2 lỗi client thật:
+  biệt danh > 24 ký tự bị server từ chối `hello` (nay ≤ 24, `clampNickname`); client gửi `enter_area` trước khi
+  server xử lý xong `hello` → `not_hello` (nay chờ `welcome` rồi mới gửi, có hàng đợi nhỏ).
+- **Nội dung tiếng Anh**: `content/i18n/en/*.json` tải lười khi chọn English (chunk riêng, không tăng gói đầu);
+  quẻ/thông điệp/sự kiện/lời nguyện tiếng Anh, cùng id nên quẻ trùng giữa hai ngôn ngữ. Đọc to & ảnh chuỗi ngày theo ngôn ngữ.
+- **Review**: focus trap trong bảng (a11y, có e2e); bật/tắt online khởi động lại khu → tải lại đèn.
+- **Native**: Android APK debug + APK/AAB release chưa ký build thật trên CI (`app-android`, artifact);
+  thêm `app-ios.yml` build iOS Simulator trên macOS (không ký). Ký phát hành: xem docs/app/PUBLISHING.md.
+- **Hiệu năng**: `?fps` hiện bộ đếm FPS để đo trên máy thật; FPS trung bình < 40 trong 4 giây đầu → các khu sau
+  bỏ hiệu ứng trang trí (hạt rơi, đốm sáng, sương) trong phiên (`src/core/perf.ts`).
+- Đã merge lại nhánh server/content mới nhất (không xung đột). Vẫn chưa có nhánh `qa/`.
+
+## Còn lại (cần người/thiết bị thật)
+- Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
+- Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật; kiểm tra kết quả workflow `app-ios`.
+- Khi phiên QA có `qa/BUGS.md`: merge và sửa.
+
