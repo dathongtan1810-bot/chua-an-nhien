@@ -37,3 +37,5 @@ Bộ nội dung theo mùa đang có file (05/11/2026): `content/mua/` – **Tế
 - [ ] Rà soát asset: không có chữ Vạn, không hình ảnh chùa/tượng có thật.
 - [ ] Tư vấn pháp lý: phân loại sản phẩm (ứng dụng hay trò chơi điện tử) và quy định quảng cáo nội dung tín ngưỡng tại Việt Nam.
 - [ ] Google Play: kiểm thử kín ≥ 12 người thử × 14 ngày (nếu tài khoản cá nhân mới).
+- [Mẫu trả lời đánh giá](review-replies.md)
+- [Press kit](press-kit.md)
