@@ -57,6 +57,7 @@ Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; sau
 | Chưa so sánh `postgres.ts` ↔ `sqlite.ts` | ✅ đã review; thêm test đồng thời trên Postgres thật (tim/báo cáo/tạo user trùng) |
 | (mới phát hiện) "lý do cho con" bị chặn nhầm là "đồ chó" | ✅ cụm không dấu chỉ tính khi token sát hai bên cũng không dấu |
 | (mới phát hiện) 2 instance khởi động cùng lúc trên Postgres → lỗi tạo bảng | ✅ advisory lock |
+| (mới phát hiện, CI) unhandled "Connection is closed" khi đóng server ở chế độ cụm | ✅ lệnh không-chờ của redis-adapter được bắt sẵn; tái hiện tất định bằng proxy chậm (`cluster.test.ts`) |
 
 ### "Việc nên làm tiếp" cũ — trạng thái
 
@@ -73,7 +74,7 @@ Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; sau
 1. **Deploy** lên Fly.io/Render (cần thông tin tài khoản) và đặt `DEVICE_SALT`, `ADMIN_PASSWORD`, `CORS_ORIGINS` thật.
 2. **Báo nhóm nội dung**: 2 câu trong chính nội dung của họ bị danh sách của họ chặn — "…chạy theo những cách **kiếm tiền nhanh**" (thong-diep-ngay) và "Tránh **cờ bạc**, vay nóng…" — nên thêm allowlist ("cách kiếm tiền nhanh", "tránh cờ bạc", "bỏ cờ bạc"…) nếu lời nguyện kiểu này cần qua.
 3. Lọt có chủ đích: leet 2 chữ số liền ("t40", "fr33") — đổi thì chặn nhầm "Mã D17"/"giấy A4".
-4. Chế độ cụm: giới hạn kết nối/IP và rate limit theo sự kiện vẫn tính riêng từng instance (lỏng hơn N lần); nếu cần chặt, chuyển `SlidingWindowLimiter` sang Redis.
+4. ~~Chế độ cụm: rate limit theo sự kiện tính riêng từng instance~~ → ✅ đã chuyển sang Redis (`windowHits`); chỉ giới hạn kết nối/IP & chống flood theo socket còn theo từng instance (có chủ đích).
 5. Nếu bật `MILD_WORD_ACTION` hoặc cập nhật tu-cam.json trên DB đã chạy: vào admin bấm **"Nạp lại từ file gốc"** (để có tiền tố `!` mức nhẹ).
 
 ## Rủi ro / lưu ý
