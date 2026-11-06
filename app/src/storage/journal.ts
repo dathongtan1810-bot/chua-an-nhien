@@ -68,6 +68,27 @@ export async function listEntries(limit = 200): Promise<JournalEntry[]> {
   });
 }
 
+/** Cập nhật chi tiết một mục (vd. đánh dấu lời nguyện "đã thành"). */
+export async function updateEntry(id: number, patch: Record<string, string | number>): Promise<void> {
+  const db = await open();
+  if (!db) {
+    const m = memory.find((e) => e.id === id);
+    if (m) m.detail = { ...m.detail, ...patch };
+    return;
+  }
+  await new Promise<void>((res) => {
+    const tx = db.transaction(STORE, 'readwrite');
+    const os = tx.objectStore(STORE);
+    const req = os.get(id);
+    req.onsuccess = () => {
+      const e = req.result as JournalEntry | undefined;
+      if (e) os.put({ ...e, detail: { ...e.detail, ...patch } });
+    };
+    tx.oncomplete = () => res();
+    tx.onerror = () => res();
+  });
+}
+
 export async function clearJournal(): Promise<void> {
   memory.length = 0;
   const db = await open();

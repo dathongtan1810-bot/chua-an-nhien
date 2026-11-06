@@ -15,6 +15,7 @@ import { net } from '../net/service';
 import { clearJournal, listEntries, type JournalEntry } from '../storage/journal';
 import { h, openSheet, toast } from './dom';
 import { mapSvg } from './minimap';
+import { openWishes } from './wishes';
 
 export function openMap(): void {
   const s = openSheet(t('map.title'));
@@ -163,6 +164,7 @@ export function openJournal(): void {
       ),
     ),
   );
+  s.body.append(h('section', {}, h('button', { class: 'btn primary', onclick: () => openWishes() }, '🏮 ' + t('wishes.open'))));
   const ul = h('ul', { class: 'list' }, h('li', {}, '…'));
   s.body.append(h('section', {}, ul));
   void listEntries(150).then((list) => {
