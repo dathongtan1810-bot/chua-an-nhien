@@ -8,7 +8,7 @@ export default tseslint.config(
   {
     languageOptions: { globals: { window: 'readonly', document: 'readonly', navigator: 'readonly' } },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       'no-undef': 'off',
     },
