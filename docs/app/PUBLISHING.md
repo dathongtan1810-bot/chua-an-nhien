@@ -206,3 +206,9 @@ Không chèn chữ "bói", "may mắn", "cầu tài lộc" lên ảnh. Không hi
 - [ ] Báo cáo/chặn/xóa dữ liệu hoạt động với server thật.
 - [ ] `ADS_ENABLED=false`, không có SDK quảng cáo/analytics trong bản build.
 - [ ] Privacy policy & email liên hệ là thật.
+
+## Thông báo nhắc mùng 1 / rằm (Local Notifications)
+- Mặc định **tắt**; người dùng tự bật trong Cài đặt → app xin quyền thông báo (Android 13+: `POST_NOTIFICATIONS`,
+  iOS: hộp thoại cho phép thông báo). Lịch ~24 lần nhắc (khoảng 1 năm), 6:30 sáng giờ VN, lên lại mỗi lần mở app.
+- Nội dung chỉ mời ghé thắp hương / thở chậm — không thúc ép, không hứa linh ứng. Không dùng thông báo đẩy từ server.
+- Data safety / App Privacy: thông báo cục bộ, không thu thập thêm dữ liệu.

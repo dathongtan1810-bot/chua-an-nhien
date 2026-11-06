@@ -30,6 +30,8 @@ export interface Settings {
   largeText: boolean;
   highContrast: boolean;
   online: boolean;
+  /** Nhắc nhẹ mùng 1 / rằm (chỉ trên app điện thoại) */
+  reminders: boolean;
 }
 
 export interface Totals {
@@ -91,6 +93,7 @@ export function defaultSettings(): Settings {
     largeText: false,
     highContrast: false,
     online: true,
+    reminders: false,
   };
 }
 

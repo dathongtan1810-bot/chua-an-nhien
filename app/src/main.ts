@@ -116,6 +116,8 @@ new MutationObserver((muts) => {
 }).observe(uiRoot(), { childList: true, subtree: true });
 registerSW();
 void import('./native').then((m) => m.initNative()).catch(() => undefined);
+// lịch nhắc mùng 1 / rằm: lên lại mỗi lần mở app để luôn phủ ~1 năm tới
+if (store.state.settings.reminders) void import('./core/reminders').then((r) => r.applyReminders(true));
 // Nút Back Android: đóng bảng / nghi thức trước, rồi lùi về khu trước
 window.addEventListener('can:back', () => {
   if (closeSheet()) return;

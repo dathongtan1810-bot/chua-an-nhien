@@ -184,3 +184,44 @@ export async function exitApp(): Promise<void> {
     /* ignore */
   }
 }
+
+// ---------- Nhắc nhẹ mùng 1 / rằm (Local Notifications, người dùng tự bật) ----------
+const REMINDER_ID_BASE = 7000;
+
+export interface ReminderNotice {
+  at: Date;
+  title: string;
+  body: string;
+}
+
+/** Lên lịch lại toàn bộ lời nhắc (hủy lịch cũ trước). Trả về false nếu không có quyền / không phải app. */
+export async function scheduleReminders(list: ReminderNotice[]): Promise<boolean> {
+  if (!isNative()) return false;
+  try {
+    const { LocalNotifications } = await import('@capacitor/local-notifications');
+    const perm = await LocalNotifications.requestPermissions();
+    if (perm.display !== 'granted') return false;
+    await cancelReminders();
+    const now = Date.now();
+    await LocalNotifications.schedule({
+      notifications: list
+        .filter((n) => n.at.getTime() > now)
+        .map((n, i) => ({ id: REMINDER_ID_BASE + i, title: n.title, body: n.body, schedule: { at: n.at } })),
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function cancelReminders(): Promise<void> {
+  if (!isNative()) return;
+  try {
+    const { LocalNotifications } = await import('@capacitor/local-notifications');
+    const pending = await LocalNotifications.getPending();
+    const ours = pending.notifications.filter((n) => n.id >= REMINDER_ID_BASE && n.id < REMINDER_ID_BASE + 100);
+    if (ours.length) await LocalNotifications.cancel({ notifications: ours.map((n) => ({ id: n.id })) });
+  } catch {
+    /* ignore */
+  }
+}

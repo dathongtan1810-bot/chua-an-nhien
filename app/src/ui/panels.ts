@@ -15,6 +15,7 @@ import { net } from '../net/service';
 import { clearJournal, listEntries, type JournalEntry } from '../storage/journal';
 import { h, openSheet, toast } from './dom';
 import { mapSvg } from './minimap';
+import { applyReminders } from '../core/reminders';
 import { openWishes } from './wishes';
 
 export function openMap(): void {
@@ -244,6 +245,32 @@ export function applySettings(s: Settings): void {
   root.classList.toggle('reduce-motion', s.reducedMotion);
 }
 
+function reminderToggle(): HTMLElement {
+  const native = !!(window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor?.isNativePlatform?.();
+  const input = h('input', {
+    type: 'checkbox',
+    checked: store.state.settings.reminders,
+    disabled: !native,
+    onchange: async (e: Event) => {
+      const on = (e.target as HTMLInputElement).checked;
+      const ok = await applyReminders(on);
+      if (on && !ok) {
+        (e.target as HTMLInputElement).checked = false;
+        toast(t('settings.remindersDenied'));
+        return;
+      }
+      store.dispatch({ type: 'settings', patch: { reminders: on } });
+      if (on) toast(t('settings.remindersOn'));
+    },
+  });
+  return h(
+    'label',
+    { class: 'toggle' },
+    h('span', {}, t('settings.reminders'), native ? null : h('div', { class: 'muted' }, t('settings.remindersWeb'))),
+    input,
+  );
+}
+
 export function openSettings(onLangChange: () => void): void {
   const s = openSheet(t('settings.title'));
   const st = store.state.settings;
@@ -279,6 +306,7 @@ export function openSettings(onLangChange: () => void): void {
     h(
       'section',
       {},
+      reminderToggle(),
       check('online', () => {
         const ss = store.state;
         net.start({ deviceId: ss.deviceId, nickname: ss.nickname, lang: ss.lang }, ss.settings.online, ss.blocked);
