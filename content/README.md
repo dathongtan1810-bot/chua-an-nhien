@@ -7,6 +7,7 @@
 | `su-kien-am-lich.json` | Lễ Phật giáo & dân gian theo âm lịch, trang trí, nhiệm vụ | `su-kien-am-lich.schema.json` |
 | `thong-diep-ngay.json` | 366 thông điệp mỗi ngày (≤ 160 ký tự) | `thong-diep-ngay.schema.json` |
 | `loi-nguyen-mau.json` | 300 lời nguyện mẫu (≤ 120 ký tự) | `loi-nguyen-mau.schema.json` |
+| `giao-dien.json` | ~150 chuỗi giao diện app, khóa phẳng `nhom.khoa` (≤ 140 ký tự; biến `{n}`, `{nickname}`, `{ngay}`) | `giao-dien.schema.json` |
 | `i18n/en/*.json` | Bản tiếng Anh (cùng id, cùng schema) | như trên |
 | `mua/` | Bộ nội dung theo mùa (Tết, Vu Lan) | — |
 
