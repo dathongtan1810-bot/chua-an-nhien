@@ -50,6 +50,8 @@ export class AreaScene extends Phaser.Scene implements GameApi {
   private transitioning = false;
   /** true khi create() xong — trước đó lệnh từ HUD được xếp hàng. */
   private ready = false;
+  /** Tăng mỗi lần init — hẹn giờ của lần chạy cảnh cũ không được chạy vào cảnh mới. */
+  private generation = 0;
   private markers: Phaser.GameObjects.GameObject[] = [];
   /** Ẩn khi nghi thức chạy (nghi thức vẽ bản động riêng). */
   private ritualHidden: Phaser.GameObjects.Image[] = [];
@@ -71,6 +73,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     this.active = null;
     this.transitioning = false;
     this.ready = false;
+    this.generation++;
     this.burner = null;
     this.river = null;
     this.markers = [];
@@ -135,11 +138,11 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     this.events.once('shutdown', () => this.cleanup());
     const queued = game.pending;
     game.pending = {};
-    if (queued.goTo && queued.goTo !== this.area) this.time.delayedCall(50, () => this.goTo(queued.goTo!));
+    if (queued.goTo && queued.goTo !== this.area) this.later(50, () => this.goTo(queued.goTo!));
     else if (queued.ritual) this.pendingRitual = queued.ritual;
     if (this.pendingRitual && isRitualId(this.pendingRitual)) {
       const id = this.pendingRitual;
-      this.time.delayedCall(250, () => this.startRitual(id));
+      this.later(250, () => this.startRitual(id));
     }
   }
 
@@ -557,7 +560,7 @@ export class AreaScene extends Phaser.Scene implements GameApi {
       floatText: (text, x, y, color = '#fff4dc') => this.floatText(text, x, y, color),
       exit: (next) => {
         this.exitRitual();
-        if (next) this.time.delayedCall(200, () => this.startRitual(next));
+        if (next) this.later(200, () => this.startRitual(next));
       },
     };
     // canh camera vào điểm nóng của nghi thức
@@ -596,6 +599,17 @@ export class AreaScene extends Phaser.Scene implements GameApi {
     panel.remove();
     this.setMarkersVisible(true);
     bus.emit({ type: 'ritualEnded', id });
+  }
+
+  /**
+   * Hẹn giờ theo đồng hồ thật. Đồng hồ Phaser (`this.time`) chạy chậm hơn thời gian thực khi khung hình thưa
+   * (máy yếu / CI không GPU) nên việc mở nghi thức, chuyển khu bị trễ nhiều giây.
+   */
+  private later(ms: number, fn: () => void): void {
+    const gen = this.generation;
+    window.setTimeout(() => {
+      if (gen === this.generation && this.sys.isActive()) fn();
+    }, ms);
   }
 
   private setMarkersVisible(v: boolean): void {
