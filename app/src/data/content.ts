@@ -228,6 +228,34 @@ export function loadLangContent(lang: string): Promise<void> {
   return enLoad;
 }
 
+// ---------- Lời thông báo nhắc (content/thong-bao-day.json + bản EN) ----------
+export interface ThongBao {
+  id: string;
+  loai: string;
+  tieuDe: string;
+  noiDung: string;
+}
+const isThongBao = (x: unknown): x is ThongBao =>
+  isObj(x) && typeof x.id === 'string' && typeof x.loai === 'string' && isStr(x.tieuDe) && isStr(x.noiDung);
+/** App không có "Cây nguyện" (dùng dòng sông thả đèn) → bỏ các câu nhắc tới nó. */
+const mentionsWishTree = (b: ThongBao) => /cây nguyện|wish tree/i.test(b.tieuDe + ' ' + b.noiDung);
+
+/** Lời nhắc của phiên nội dung theo ngôn ngữ (rỗng nếu chưa có file). */
+export async function getThongBao(lang: string): Promise<ThongBao[]> {
+  let raw: unknown = Object.entries(externalFiles).find(([p]) => p.endsWith('/thong-bao-day.json'))?.[1];
+  if (lang === 'en') {
+    const en = Object.entries(enLoaders).find(([p]) => p.endsWith('/thong-bao-day.json'));
+    if (en) {
+      try {
+        raw = await en[1]();
+      } catch {
+        /* giữ bản tiếng Việt */
+      }
+    }
+  }
+  return Array.isArray(raw) ? raw.filter(isThongBao).filter((b) => !mentionsWishTree(b)) : [];
+}
+
 // ---------- Chữ giao diện (content/giao-dien.json + i18n/en/giao-dien.json) ----------
 const isStringDict = (x: unknown): x is Record<string, string> =>
   isObj(x) && Object.values(x).every((v) => typeof v === 'string');

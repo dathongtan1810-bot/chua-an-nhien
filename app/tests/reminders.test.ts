@@ -29,3 +29,22 @@ describe('nhắc mùng 1 & rằm', () => {
     expect(reminderTime('2026-02-17').toISOString()).toBe('2026-02-16T23:30:00.000Z');
   });
 });
+
+describe('lời nhắc dùng câu của phiên nội dung', () => {
+  it('xoay vòng câu theo loại, thay {nickname}, không có câu nhắc "Cây nguyện"', async () => {
+    const { reminderNotices } = await import('../src/core/reminders');
+    const { getThongBao } = await import('../src/data/content');
+    const texts = await getThongBao('vi');
+    expect(texts.length).toBeGreaterThan(0);
+    expect(texts.some((b) => /cây nguyện/i.test(b.noiDung + b.tieuDe))).toBe(false);
+    const n = reminderNotices('2026-02-01', 6, texts, 'Lữ khách Sen');
+    expect(n).toHaveLength(6);
+    expect(n.every((x) => !x.title.includes('{nickname}') && !x.body.includes('{nickname}'))).toBe(true);
+    expect(new Set(n.map((x) => x.title)).size).toBeGreaterThan(2); // không lặp một câu
+  });
+  it('không có nội dung thì dùng câu mặc định của app', async () => {
+    const { reminderNotices } = await import('../src/core/reminders');
+    const n = reminderNotices('2026-02-01', 2, []);
+    expect(n[0].title).toMatch(/Rằm|Mùng 1/);
+  });
+});
