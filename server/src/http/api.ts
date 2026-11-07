@@ -21,6 +21,8 @@ export function registerApi(ctx: AppContext): void {
   app.get('/api/health', async (): Promise<HealthResponse> => ({
     ok: true,
     uptimeSec: Math.round((Date.now() - ctx.startedAt) / 1000),
+    uptime: Math.round((Date.now() - ctx.startedAt) / 1000),
+    online: hub.onlineSnapshot.online,
     version: VERSION,
     serverTime: iso(Date.now()),
   }));
@@ -51,6 +53,9 @@ export function registerApi(ctx: AppContext): void {
       online: snap.online,
       areas: snap.areas,
       today: { lanterns: day.lanterns ?? 0, incense: day.incense ?? 0, bells: day.bells ?? 0 },
+      lanternsToday: day.lanterns ?? 0,
+      incenseToday: day.incense ?? 0,
+      bellsToday: day.bells ?? 0,
       serverTime: iso(Date.now()),
     };
   });

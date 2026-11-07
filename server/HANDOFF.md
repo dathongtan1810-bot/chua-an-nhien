@@ -69,6 +69,15 @@ Từ ~04:11 đến 06:30 UTC phiên dừng do hết hạn mức sử dụng; sau
 | Admin phân trang đèn; audit log | ✅ con trỏ `before` + nút "Tải thêm"; nhật ký thao tác |
 | "Nghi ngờ → pending" | ✅ chính là `MILD_WORD_ACTION=pending` cho từ mức nhẹ |
 
+## Đối chiếu với client app (nhánh `claude/jolly-mendel-hppn0t`, 07/11)
+
+Nhánh app đã merge server/shared mới nhất. So `app/src/net/protocol.ts` với server, đã bổ sung phía server (chỉ THÊM, không phá hợp đồng):
+- `lantern_released` / `GET /api/lanterns` có **`userId`** tác giả — trước đây thiếu nên nút "Chặn" tác giả trong app (`rituals/lantern.ts`) không bao giờ hiện khi chạy server thật.
+- Màu **`#rgb`** (app chấp nhận) được server nhận.
+- `/api/stats` có `incenseToday`/`lanternsToday`/`bellsToday`; `/api/health` có `uptime`/`online` (tên app đọc).
+- `SOCKET_TRANSPORTS`: chế độ cụm mặc định chỉ websocket (app khai báo `['websocket','polling']`, polling cần sticky session).
+Test: `test/client-compat.test.ts`. **Ghi chú cho nhóm app**: có thể bỏ `'polling'` khỏi `transports` nếu deploy nhiều instance; `app/src/net/protocol.ts` có thể import thẳng `shared/protocol.ts` để tránh lệch.
+
 ## Việc nên làm tiếp
 
 1. **Deploy** lên Fly.io/Render (cần thông tin tài khoản) và đặt `DEVICE_SALT`, `ADMIN_PASSWORD`, `CORS_ORIGINS` thật.

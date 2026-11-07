@@ -246,7 +246,7 @@ export class Hub {
   }
 
   toPayload(l: LanternRow): LanternPayload {
-    return { id: l.id, text: l.text, color: l.color, nickname: l.nickname, at: iso(l.createdAt), likes: l.likes };
+    return { id: l.id, text: l.text, color: l.color, nickname: l.nickname, at: iso(l.createdAt), likes: l.likes, userId: l.userId };
   }
 
   private async limit(event: C2SEvent, s: Sock): Promise<void> {

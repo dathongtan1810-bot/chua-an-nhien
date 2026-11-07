@@ -73,3 +73,4 @@ Ghi lại các chỗ đặc tả chưa rõ và lựa chọn đã làm. Mới nh�
     phòng riêng trong Redis (Lua cho vào phòng); hương `welcome` và quan hệ chặn đọc DB. Giới hạn kết nối/IP & rate limit sự kiện vẫn theo từng instance.
     Phòng trống hết hạn theo TTL Redis (thời gian thật).
 35. **Rate limit trong chế độ cụm**: `Cluster.windowHits` — cửa sổ trượt nhiều khoá, kiểm tra & ghi nguyên tử (Lua trên ZSET). Dùng cho giới hạn theo sự kiện (user & IP), chuông theo IP, đèn theo IP. Giới hạn kết nối/IP và chống flood theo socket vẫn theo instance.
+36. **Đối chiếu client app**: thêm `userId` vào `LanternPayload`, chấp nhận màu `#rgb`, bản phẳng `*Today` trong `/api/stats`, `uptime`/`online` trong `/api/health`; `SOCKET_TRANSPORTS` (cụm mặc định chỉ websocket vì polling cần sticky session). Tất cả là bổ sung, không phá hợp đồng gốc.

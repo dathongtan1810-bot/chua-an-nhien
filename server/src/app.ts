@@ -83,6 +83,14 @@ export function clientIp(headers: Record<string, string | string[] | undefined>,
   return strip(remote ?? 'unknown');
 }
 
+/** Transport Socket.IO cho phép; chế độ cụm mặc định chỉ websocket (polling cần sticky session). */
+export function socketTransports(config: Config): Array<'websocket' | 'polling'> {
+  const raw = config.SOCKET_TRANSPORTS.trim();
+  if (!raw) return config.REDIS_URL ? ['websocket'] : ['polling', 'websocket'];
+  const list = raw.split(',').map((x) => x.trim()).filter((x): x is 'websocket' | 'polling' => x === 'websocket' || x === 'polling');
+  return list.length ? list : ['polling', 'websocket'];
+}
+
 export async function buildApp(config: Config, opts: { repos?: Repositories } = {}): Promise<AppContext> {
   const log = createLogger(config.LOG_LEVEL);
   const metrics = createMetrics();
@@ -144,6 +152,7 @@ export async function buildApp(config: Config, opts: { repos?: Repositories } = 
     pingTimeout: 20_000,
     connectTimeout: 10_000,
     perMessageDeflate: false,
+    transports: socketTransports(config),
     serveClient: false,
   });
   io.use((socket, next) => {
