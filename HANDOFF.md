@@ -12,7 +12,7 @@ Nhánh: `claude/jolly-mendel-hppn0t` · PR nháp: https://github.com/dathongtan1
 - **P9 (một phần)**: đã merge nhánh server (`server/`, `shared/`, `admin/`) và nội dung (`content/`, `site/`, `store/`).
   App đọc nội dung thật từ `content/*.json` (100 quẻ, 366 thông điệp, 22 sự kiện, 300 lời nguyện) qua bước chuẩn hóa
   schema trong `app/src/data/content.ts`. Client đã khớp giới hạn tần suất và sự kiện EXT của server
-  (`lantern_liked`, phòng gia đình `room_*`). Sửa 17/20 lỗi từ đợt review code (xem commit "review fixes").
+  (`lantern_liked`, phòng gia đình `room_*`). Đã xử lý đủ 20/20 lỗi từ đợt review code (đợt cuối: dòng sông chỉ tạo hình cho 40 đèn đang hiện, commit 3758a39).
 - **P10 / thêm**: README có ảnh chụp 8 khu, thẻ tên khu, gợi ý lần đầu, sương sớm, đốm sáng người viếng,
   phòng "Đi chùa cùng gia đình", quầng sáng đèn người thân, đọc to thông điệp ngày.
 - Test: 210 Vitest + Playwright smoke (vào game → thắp hương → thả đèn; link mời). CI `app-ci` + `app-android` xanh.
