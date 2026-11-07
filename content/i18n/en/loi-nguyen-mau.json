@@ -22,7 +22,7 @@
   {
     "id": 5,
     "chuDe": "gia-dao",
-    "noiDung": "Working far from home, I hope to make it back this Lunar New Year (Tết) to hug my grandparents."
+    "noiDung": "Working far from home, I vow to save my leave and book early so I can hug my grandparents this Lunar New Year (Tết)."
   },
   {
     "id": 6,
@@ -42,7 +42,7 @@
   {
     "id": 9,
     "chuDe": "gia-dao",
-    "noiDung": "As a mother, I hope to listen to my child more than I scold."
+    "noiDung": "As a mother, I vow to get down to my child's eye level and hear the whole story before I speak."
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
   {
     "id": 20,
     "chuDe": "gia-dao",
-    "noiDung": "I hope my parents back home always have good neighbors nearby."
+    "noiDung": "My parents live alone back home; I vow to get to know their neighbors and thank them each time I visit."
   },
   {
     "id": 21,
@@ -212,7 +212,7 @@
   {
     "id": 43,
     "chuDe": "cong-viec",
-    "noiDung": "May I stay calm in my upcoming job interview."
+    "noiDung": "Before my interview, I vow to prepare well, practice my answers out loud, and arrive fifteen minutes early."
   },
   {
     "id": 44,
@@ -307,7 +307,7 @@
   {
     "id": 62,
     "chuDe": "cong-viec",
-    "noiDung": "As a teacher, I hope to keep my passion alive for my students."
+    "noiDung": "As a teacher, I vow to try a new way of teaching each week so my students stay eager to come to class."
   },
   {
     "id": 63,
@@ -322,7 +322,7 @@
   {
     "id": 65,
     "chuDe": "cong-viec",
-    "noiDung": "May night-shift workers like me always get home safely."
+    "noiDung": "Working night shifts, I vow to rest enough before heading home and never push myself to drive when I'm too drowsy."
   },
   {
     "id": 66,
@@ -332,7 +332,7 @@
   {
     "id": 67,
     "chuDe": "cong-viec",
-    "noiDung": "As a nurse, I hope my hands are always gentle with patients."
+    "noiDung": "As a nurse, I vow to call patients by name and explain each shot before I give it."
   },
   {
     "id": 68,
@@ -372,7 +372,7 @@
   {
     "id": 75,
     "chuDe": "cong-viec",
-    "noiDung": "I hope that at the end of each workday, I know I gave my best."
+    "noiDung": "I vow to clear my desk before leaving and jot down three tasks for tomorrow morning."
   },
   {
     "id": 76,
@@ -412,7 +412,7 @@
   {
     "id": 83,
     "chuDe": "suc-khoe",
-    "noiDung": "I'm unwell; I hope each day to feel a little stronger than the day before."
+    "noiDung": "While I'm sick, I vow to take my medicine on time, finish my bowl of rice porridge, and rest without guilt."
   },
   {
     "id": 84,
@@ -452,7 +452,7 @@
   {
     "id": 91,
     "chuDe": "suc-khoe",
-    "noiDung": "In my old age, I vow to keep body and mind at ease each day."
+    "noiDung": "In my later years, I vow to do gentle exercises each morning and weed the garden each afternoon to stay limber."
   },
   {
     "id": 92,
@@ -572,12 +572,12 @@
   {
     "id": 115,
     "chuDe": "suc-khoe",
-    "noiDung": "I vow to take the stairs instead of the elevator, a little every day."
+    "noiDung": "I vow to climb two flights of stairs instead of taking the elevator, adding a floor as my legs get used to it."
   },
   {
     "id": 116,
     "chuDe": "hoc-hanh",
-    "noiDung": "I vow to study every day so I have no regrets after the exam."
+    "noiDung": "I vow to study with a classmate who's struggling; explaining things to them helps me understand them better too."
   },
   {
     "id": 117,
@@ -677,7 +677,7 @@
   {
     "id": 136,
     "chuDe": "hoc-hanh",
-    "noiDung": "Though I'm older now, I hope to keep learning something new each day."
+    "noiDung": "Though I'm older, I vow to ask my grandchild to teach me the computer and write down every step carefully."
   },
   {
     "id": 137,
@@ -897,7 +897,7 @@
   {
     "id": 180,
     "chuDe": "tinh-duyen",
-    "noiDung": "May we nurture our love through small things every day."
+    "noiDung": "I vow to ask my partner one question each evening beyond the daily chores, and truly wait for the answer."
   },
   {
     "id": 181,
@@ -987,7 +987,7 @@
   {
     "id": 198,
     "chuDe": "tai-loc",
-    "noiDung": "I hope my shop always keeps its word with suppliers."
+    "noiDung": "I vow to tell my suppliers ahead of time whenever problems come up, instead of leaving them guessing."
   },
   {
     "id": 199,
@@ -1032,7 +1032,7 @@
   {
     "id": 207,
     "chuDe": "binh-an",
-    "noiDung": "May travelers like me return home safely from every journey."
+    "noiDung": "Before every long trip, I vow to check my vehicle, get enough sleep, and text home when I arrive."
   },
   {
     "id": 208,
@@ -1092,7 +1092,7 @@
   {
     "id": 219,
     "chuDe": "binh-an",
-    "noiDung": "Working far away, I hope my parents at home are safe and well every day."
+    "noiDung": "Working far away, I vow to end each day by telling my parents one happy thing, so we can all sleep easy."
   },
   {
     "id": 220,
@@ -1187,22 +1187,22 @@
   {
     "id": 238,
     "chuDe": "binh-an",
-    "noiDung": "May everyone who passes through the pagoda gate take home a little peace."
+    "noiDung": "I vow to keep my words calm, so anyone walking beside me feels a little more at ease."
   },
   {
     "id": 239,
     "chuDe": "binh-an",
-    "noiDung": "I hope my children working far away always have good friends beside them."
+    "noiDung": "With my children working far away, I vow to worry less, trust them more, and only give advice when it truly matters."
   },
   {
     "id": 240,
     "chuDe": "binh-an",
-    "noiDung": "I vow to keep a small, unhurried space in each day for myself."
+    "noiDung": "I vow to walk home slowly, giving my mind time to set down the day's work."
   },
   {
     "id": 241,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to my parents for working so hard to raise me."
+    "noiDung": "My parents worked so hard to raise me; now I vow to cook them breakfast myself every time I go home."
   },
   {
     "id": 242,
@@ -1212,17 +1212,17 @@
   {
     "id": 243,
     "chuDe": "bien-on",
-    "noiDung": "Thank you to my teachers for being patient with me through my school years."
+    "noiDung": "Remembering my teachers, I vow to help a child in my neighborhood with homework every week."
   },
   {
     "id": 244,
     "chuDe": "bien-on",
-    "noiDung": "I hope to always remember those who helped me in hard times."
+    "noiDung": "I vow to keep a list of those who helped me through hard times and check in with each of them every year."
   },
   {
     "id": 245,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful for an ordinary day: food to eat and a home to return to."
+    "noiDung": "A meal and a home are already enough; I vow to complain less and give what I can spare to those in need."
   },
   {
     "id": 246,
@@ -1232,12 +1232,12 @@
   {
     "id": 247,
     "chuDe": "bien-on",
-    "noiDung": "Thank you to the stranger who helped push my bike when it broke down."
+    "noiDung": "Remembering the stranger who helped push my broken-down bike, I vow to stop whenever I see someone who needs a hand."
   },
   {
     "id": 248,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to the doctors who saved my father's life."
+    "noiDung": "Doctors saved my father; I vow to donate blood regularly to pass that kindness on."
   },
   {
     "id": 249,
@@ -1247,17 +1247,17 @@
   {
     "id": 250,
     "chuDe": "bien-on",
-    "noiDung": "I vow to be grateful even for the hardships that helped me grow."
+    "noiDung": "I vow to write down one lesson this year's hardships taught me, so I can face the next one more steadily."
   },
   {
     "id": 251,
     "chuDe": "bien-on",
-    "noiDung": "Thank you to my wife for standing by me through our hardest years."
+    "noiDung": "My wife saw me through our lean years; I vow to share the housework and ask how she's doing more often."
   },
   {
     "id": 252,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to the farmers who grow the rice I eat every day."
+    "noiDung": "Thinking of those who plant the rice, I vow to finish every bowl I serve myself and leave no grain behind."
   },
   {
     "id": 253,
@@ -1267,12 +1267,12 @@
   {
     "id": 254,
     "chuDe": "bien-on",
-    "noiDung": "I thank myself for not giving up this past year."
+    "noiDung": "I vow to recognize my own effort, without waiting for praise to see how hard I've tried."
   },
   {
     "id": 255,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to the neighbors who watched my house while I was away."
+    "noiDung": "My neighbors watched my house for me; I vow to keep an eye on theirs when they're away and water their plants."
   },
   {
     "id": 256,
@@ -1287,7 +1287,7 @@
   {
     "id": 258,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful for my children's laughter after a tiring day."
+    "noiDung": "My children's laughter makes me forget how tired I am; I vow to shut the laptop early and play with them."
   },
   {
     "id": 259,
@@ -1297,22 +1297,22 @@
   {
     "id": 260,
     "chuDe": "bien-on",
-    "noiDung": "Thank you to the friends who stayed when I failed."
+    "noiDung": "My friends stayed when I stumbled; I vow to be the one who stays when they need me."
   },
   {
     "id": 261,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful for a peaceful country in which to grow up and study."
+    "noiDung": "Having grown up in peace, I vow to tell my children how hard their grandparents worked for the life we have now."
   },
   {
     "id": 262,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful to Mom for all the sleepless nights whenever I was sick."
+    "noiDung": "Mom stayed up all night when I was sick; I vow to keep track of her checkups and take her to every one."
   },
   {
     "id": 263,
     "chuDe": "bien-on",
-    "noiDung": "Thank you to my colleagues for guiding me through my first days."
+    "noiDung": "I vow to treat the colleagues who mentored me to lunch and tell them exactly how they helped me."
   },
   {
     "id": 264,
@@ -1322,7 +1322,7 @@
   {
     "id": 265,
     "chuDe": "bien-on",
-    "noiDung": "I'm grateful for every meal, every sip of water, every breath today."
+    "noiDung": "I'm learning to notice the good things I overlook: clean water from the tap, streetlights on, the bus arriving on time."
   },
   {
     "id": 266,
@@ -1497,6 +1497,6 @@
   {
     "id": 300,
     "chuDe": "the-gioi",
-    "noiDung": "I vow to do one small kindness for a stranger every day."
+    "noiDung": "I vow to learn a few greetings in the native languages of the migrant workers living near me."
   }
 ]

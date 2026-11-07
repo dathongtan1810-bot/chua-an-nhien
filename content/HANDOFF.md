@@ -13,7 +13,7 @@ _Cập nhật: 2026-11-05 (UTC). Nhánh: `claude/sweet-tesla-9rdbof` · PR nháp
 | 6 | Site tĩnh + pháp lý (VI/EN) | `site/` | ✅ |
 | 7 | Tài liệu store/ASO/marketing | `store/` | ✅ |
 | 8 | Bản tiếng Anh | `content/i18n/en/` | ✅ |
-| + | Bộ mùa | `content/mua/` (+ `i18n/en/mua/`) | ✅ Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu |
+| + | Bộ mùa | `content/mua/` (+ `i18n/en/mua/`) | ✅ 7 bộ: Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Thành Đạo |
 | + | Thông báo đẩy (VI/EN) | `content/thong-bao-day.json` | ✅ 90 mục, đã đưa vào validate |
 | + | 30 bài đăng MXH | `store/social-posts-30-ngay.md` | ✅ (chưa rà lại thủ công) |
 | + | Rà soát | `content/REVIEW-chinh-ta.md`, `REVIEW-tho.md`, `REVIEW-en.md`, `store/REVIEW-nhat-quan.md` | ✅ 26 bài thơ biên tập lại, EN thống nhất thuật ngữ |
@@ -44,6 +44,12 @@ Sửa trong `content/_parts/que-xam-0N.json` (VI) / `en-que-xam-0N.json` (EN) �
 - QA site: 8 trang × 3 viewport × sáng/tối, WCAG AA đạt; sửa vùng chạm menu; báo cáo `site/QA.md`.
 - `store/press-kit.md` có bản 400 chữ VI/EN; `store/review-replies.md` đủ 20 mẫu; `store/social-posts-30-ngay.md` đã đọc lại, trích dẫn khớp dữ liệu.
 - DECISIONS thêm D34 (cách chọn thông điệp năm nhuận) và D35 (nhãn "Làm ăn").
+
+## Phiên 2026-11-07 (01:20–01:30 UTC) — mục "còn giờ"
+- Rà chính tả 5 bộ mùa, chữ giao diện, thông báo đẩy: không lỗi chính tả; viết lại 28 câu trùng/na ná (VI + EN). `content/REVIEW-chinh-ta.md`.
+- Tăng đa dạng: viết lại 39 thông điệp + 38 lời nguyện (VI + EN), giữ nguyên các id được store trích. `content/REVIEW-da-dang.md`.
+- Thêm 2 bộ mùa: Phật Thành Đạo (1–8/12 âm), Tết Đoan Ngọ (1–5/5 âm) — tổng 7 bộ (D36).
+- `validate.mjs` kiểm thêm: câu thơ quẻ mùa không trùng 100 quẻ chính.
 
 ## Còn lại (chỉ phụ thuộc người thật)
 - Các mục **[CẦN XÁC NHẬN]** ở phần trên: email/tên miền, pháp nhân, SDK, thời hạn lưu, thao tác Báo cáo/Chặn/Cài đặt thật, nhóm từ chính trị, link store, og:image.

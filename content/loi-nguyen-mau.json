@@ -22,7 +22,7 @@
   {
     "id": 5,
     "chuDe": "gia-dao",
-    "noiDung": "Con là người đi làm xa, con mong Tết này về kịp ôm ông bà."
+    "noiDung": "Đi làm xa, con nguyện để dành ngày phép và đặt vé sớm để Tết này kịp về ôm ông bà."
   },
   {
     "id": 6,
@@ -42,7 +42,7 @@
   {
     "id": 9,
     "chuDe": "gia-dao",
-    "noiDung": "Là mẹ, con mong mình biết lắng nghe con nhiều hơn là la mắng."
+    "noiDung": "Là mẹ, con nguyện ngồi xuống ngang tầm mắt con và nghe con kể hết rồi mới nói."
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
   {
     "id": 20,
     "chuDe": "gia-dao",
-    "noiDung": "Con mong bố mẹ con ở quê luôn có hàng xóm tốt bên cạnh."
+    "noiDung": "Bố mẹ ở quê một mình, con nguyện làm quen hàng xóm của bố mẹ và cảm ơn họ mỗi lần về."
   },
   {
     "id": 21,
@@ -212,7 +212,7 @@
   {
     "id": 43,
     "chuDe": "cong-viec",
-    "noiDung": "Xin cho con giữ được bình tĩnh trong buổi phỏng vấn sắp tới."
+    "noiDung": "Trước buổi phỏng vấn, con nguyện chuẩn bị kỹ, tập trả lời thành tiếng và đến sớm mười lăm phút."
   },
   {
     "id": 44,
@@ -307,7 +307,7 @@
   {
     "id": 62,
     "chuDe": "cong-viec",
-    "noiDung": "Con là giáo viên, con mong mình luôn giữ được lửa với học trò."
+    "noiDung": "Là giáo viên, con nguyện mỗi tuần thử một cách dạy mới để học trò còn háo hức đến lớp."
   },
   {
     "id": 63,
@@ -322,7 +322,7 @@
   {
     "id": 65,
     "chuDe": "cong-viec",
-    "noiDung": "Xin cho những người làm ca đêm như con luôn về nhà an toàn."
+    "noiDung": "Làm ca đêm, con nguyện chợp mắt đủ trước khi về và không cố lái xe lúc quá buồn ngủ."
   },
   {
     "id": 66,
@@ -332,7 +332,7 @@
   {
     "id": 67,
     "chuDe": "cong-viec",
-    "noiDung": "Con là y tá, con mong đôi tay mình luôn nhẹ nhàng với người bệnh."
+    "noiDung": "Là y tá, con nguyện gọi người bệnh bằng tên và giải thích từng mũi tiêm trước khi làm."
   },
   {
     "id": 68,
@@ -372,7 +372,7 @@
   {
     "id": 75,
     "chuDe": "cong-viec",
-    "noiDung": "Con mong cuối mỗi ngày làm việc, con biết mình đã làm hết sức."
+    "noiDung": "Con nguyện dọn bàn làm việc trước khi về và ghi sẵn ba việc cho sáng mai."
   },
   {
     "id": 76,
@@ -412,7 +412,7 @@
   {
     "id": 83,
     "chuDe": "suc-khoe",
-    "noiDung": "Con đang ốm, con mong mỗi ngày khỏe hơn hôm qua một chút."
+    "noiDung": "Đang ốm, con nguyện uống thuốc đúng giờ, ăn hết bát cháo và cho phép mình nghỉ mà không áy náy."
   },
   {
     "id": 84,
@@ -452,7 +452,7 @@
   {
     "id": 91,
     "chuDe": "suc-khoe",
-    "noiDung": "Con là người già, con nguyện giữ thân tâm thư thái mỗi ngày."
+    "noiDung": "Tuổi đã cao, con nguyện sáng tập vài động tác dưỡng sinh, chiều ra vườn nhổ cỏ cho người dẻo dai."
   },
   {
     "id": 92,
@@ -572,12 +572,12 @@
   {
     "id": 115,
     "chuDe": "suc-khoe",
-    "noiDung": "Con nguyện đi thang bộ thay thang máy, mỗi ngày một chút."
+    "noiDung": "Con nguyện leo bộ hai tầng thay vì chờ thang máy, rồi thêm dần từng tầng khi chân đã quen."
   },
   {
     "id": 116,
     "chuDe": "hoc-hanh",
-    "noiDung": "Con nguyện chăm học mỗi ngày, thi xong không hối tiếc."
+    "noiDung": "Con nguyện học nhóm với bạn còn yếu, giảng cho bạn hiểu cũng là cách con nắm bài chắc hơn."
   },
   {
     "id": 117,
@@ -677,7 +677,7 @@
   {
     "id": 136,
     "chuDe": "hoc-hanh",
-    "noiDung": "Con đã lớn tuổi, con mong mình vẫn học được điều mới mỗi ngày."
+    "noiDung": "Dù đã lớn tuổi, con nguyện nhờ cháu dạy dùng máy tính và chép lại từng bước thật cẩn thận."
   },
   {
     "id": 137,
@@ -897,7 +897,7 @@
   {
     "id": 180,
     "chuDe": "tinh-duyen",
-    "noiDung": "Xin cho chúng con biết vun đắp tình cảm từ những điều nhỏ mỗi ngày."
+    "noiDung": "Con nguyện mỗi tối hỏi người ấy một câu ngoài chuyện cơm nước, và thật lòng chờ nghe trả lời."
   },
   {
     "id": 181,
@@ -987,7 +987,7 @@
   {
     "id": 198,
     "chuDe": "tai-loc",
-    "noiDung": "Con mong cửa hàng của con giữ được chữ tín với nhà cung cấp."
+    "noiDung": "Con nguyện báo trước cho nhà cung cấp mỗi khi có trục trặc, không im lặng để họ phải đoán."
   },
   {
     "id": 199,
@@ -1032,7 +1032,7 @@
   {
     "id": 207,
     "chuDe": "binh-an",
-    "noiDung": "Xin cho người đi xa như con chuyến nào cũng về nhà bình an."
+    "noiDung": "Trước mỗi chuyến đi xa, con nguyện kiểm tra xe kỹ, ngủ đủ giấc và nhắn tin báo nhà khi đến nơi."
   },
   {
     "id": 208,
@@ -1092,7 +1092,7 @@
   {
     "id": 219,
     "chuDe": "binh-an",
-    "noiDung": "Con đi làm xa, con mong cha mẹ ở nhà ngày nào cũng bình an."
+    "noiDung": "Đi làm xa, con nguyện cuối ngày kể cha mẹ nghe một chuyện vui, để cả nhà cùng ngủ yên."
   },
   {
     "id": 220,
@@ -1187,22 +1187,22 @@
   {
     "id": 238,
     "chuDe": "binh-an",
-    "noiDung": "Xin cho mỗi người bước qua cổng chùa đều mang về chút an yên."
+    "noiDung": "Con nguyện giữ lời nói ôn hòa, để ai đi cạnh con cũng thấy dễ chịu hơn một chút."
   },
   {
     "id": 239,
     "chuDe": "binh-an",
-    "noiDung": "Con mong các con đi làm ăn xa luôn có bạn tốt bên cạnh."
+    "noiDung": "Các con đi làm xa, con nguyện tập lo ít đi, tin các con hơn và chỉ dặn dò khi thật cần."
   },
   {
     "id": 240,
     "chuDe": "binh-an",
-    "noiDung": "Con nguyện giữ cho mình một khoảng nhỏ mỗi ngày, không vội vã."
+    "noiDung": "Con nguyện đi bộ chậm trên đường về nhà, để tâm trí kịp đặt xuống chuyện ở chỗ làm."
   },
   {
     "id": 241,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn bố mẹ đã tần tảo nuôi con khôn lớn."
+    "noiDung": "Bố mẹ tần tảo nuôi con lớn, nay con nguyện tự tay nấu bữa sáng cho bố mẹ mỗi lần về quê."
   },
   {
     "id": 242,
@@ -1212,17 +1212,17 @@
   {
     "id": 243,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn thầy cô đã kiên nhẫn với con suốt những năm đi học."
+    "noiDung": "Nhớ ơn thầy cô, con nguyện mỗi tuần kèm một em nhỏ trong xóm học bài."
   },
   {
     "id": 244,
     "chuDe": "bien-on",
-    "noiDung": "Con mong mình luôn nhớ ơn những người đã giúp con lúc khó khăn."
+    "noiDung": "Con nguyện giữ danh sách những người từng giúp con lúc khó, và mỗi năm hỏi thăm từng người."
   },
   {
     "id": 245,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn một ngày bình thường: có cơm ăn, có nhà để về."
+    "noiDung": "Có cơm ăn, có nhà về đã là đủ, con nguyện bớt than phiền và chia bớt đồ dùng cho người thiếu."
   },
   {
     "id": 246,
@@ -1232,12 +1232,12 @@
   {
     "id": 247,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn người lạ đã giúp con dắt xe lúc xe hỏng giữa đường."
+    "noiDung": "Nhớ người lạ từng giúp con dắt xe hỏng giữa đường, con nguyện dừng lại khi thấy ai cần một bàn tay."
   },
   {
     "id": 248,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn những bác sĩ đã cứu sống bố con."
+    "noiDung": "Các bác sĩ đã cứu bố con, con nguyện đi hiến máu đều đặn để tiếp nối điều tốt ấy."
   },
   {
     "id": 249,
@@ -1247,17 +1247,17 @@
   {
     "id": 250,
     "chuDe": "bien-on",
-    "noiDung": "Con nguyện biết ơn cả những khó khăn đã dạy con trưởng thành."
+    "noiDung": "Con nguyện viết ra một điều khó khăn năm nay đã dạy con, để lần sau gặp lại con vững vàng hơn."
   },
   {
     "id": 251,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn vợ đã ở bên con những năm tháng chật vật nhất."
+    "noiDung": "Vợ đã cùng con đi qua những năm túng thiếu, con nguyện san sẻ việc nhà và hỏi han cô ấy nhiều hơn."
   },
   {
     "id": 252,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn người nông dân làm ra hạt gạo con ăn mỗi ngày."
+    "noiDung": "Nghĩ đến người cấy lúa, con nguyện ăn hết phần cơm mình xới, không bỏ thừa hạt nào."
   },
   {
     "id": 253,
@@ -1267,12 +1267,12 @@
   {
     "id": 254,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn chính mình đã không bỏ cuộc trong năm qua."
+    "noiDung": "Con nguyện ghi nhận công sức của chính mình, không đợi ai khen mới thấy mình đã cố gắng."
   },
   {
     "id": 255,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn bà con hàng xóm đã trông nhà giúp lúc con đi xa."
+    "noiDung": "Hàng xóm từng trông nhà giúp con, con nguyện để mắt nhà bên khi họ vắng và tưới giúp mấy chậu cây."
   },
   {
     "id": 256,
@@ -1287,7 +1287,7 @@
   {
     "id": 258,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn tiếng cười của các con sau một ngày mệt mỏi."
+    "noiDung": "Tiếng cười của các con làm con quên mệt, con nguyện tắt máy tính sớm để chơi cùng các con."
   },
   {
     "id": 259,
@@ -1297,22 +1297,22 @@
   {
     "id": 260,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn những người bạn đã ở lại khi con thất bại."
+    "noiDung": "Bạn bè đã ở lại khi con vấp ngã, con nguyện sẽ là người ở lại khi họ cần."
   },
   {
     "id": 261,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn đất nước yên bình để con được lớn lên, học hành."
+    "noiDung": "Được lớn lên nơi yên bình, con nguyện kể cho các con nghe ông bà đã vất vả thế nào để có ngày hôm nay."
   },
   {
     "id": 262,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn mẹ đã bao đêm thức trắng mỗi lần con ốm."
+    "noiDung": "Mẹ từng thức trắng bên con lúc ốm, con nguyện nhớ lịch tái khám và đưa mẹ đi đầy đủ."
   },
   {
     "id": 263,
     "chuDe": "bien-on",
-    "noiDung": "Con cảm ơn anh chị đồng nghiệp đã chỉ bảo con những ngày đầu."
+    "noiDung": "Con nguyện mời anh chị đồng nghiệp từng chỉ bảo con một bữa trưa, và nói rõ họ đã giúp con thế nào."
   },
   {
     "id": 264,
@@ -1322,7 +1322,7 @@
   {
     "id": 265,
     "chuDe": "bien-on",
-    "noiDung": "Con biết ơn từng bữa cơm, từng ngụm nước, từng hơi thở hôm nay."
+    "noiDung": "Con tập để ý những điều tốt mình hay bỏ qua: vòi nước chảy trong, đèn đường sáng, xe buýt đến đúng giờ."
   },
   {
     "id": 266,
@@ -1497,6 +1497,6 @@
   {
     "id": 300,
     "chuDe": "the-gioi",
-    "noiDung": "Con nguyện mỗi ngày làm một việc tốt nhỏ cho người lạ."
+    "noiDung": "Con nguyện học vài câu chào bằng tiếng mẹ đẻ của những người lao động nước ngoài sống quanh con."
   }
 ]

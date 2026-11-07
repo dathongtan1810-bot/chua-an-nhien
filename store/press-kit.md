@@ -6,7 +6,7 @@
 **EN:** An Nhiên Pagoda is a fictional pagoda on your phone. Light virtual incense, ring the bell, draw an original six-eight verse for reflection, and hang a kind wish on the Wishing Tree. Free, ad-free, no money offerings, no account needed.
 
 ## Mô tả vừa (≈150 chữ)
-**VI:** Giữa nhịp sống bận rộn, không phải lúc nào ta cũng có thể ghé chùa. Chùa An Nhiên mang đến một khoảng sân yên tĩnh trong túi áo: 100 quẻ thơ lục bát do đội ngũ tự sáng tác, mỗi quẻ có lời giải theo gia đạo, công việc, sức khỏe, học hành, tình duyên, tài lộc và ghi rõ "mang tính chiêm nghiệm"; 366 thông điệp bình an cho từng ngày; lịch lễ âm lịch với trang trí và nhiệm vụ nhẹ nhàng cho Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu. Lời nguyện được lọc từ tự động và có nút báo cáo, chặn. App song ngữ Việt – Anh, không quảng cáo, không thu tiền cúng dường, không hứa linh ứng.
+**VI:** Giữa nhịp sống bận rộn, không phải lúc nào ta cũng có thể ghé chùa. Chùa An Nhiên mang đến một khoảng sân yên tĩnh trong túi áo: 100 quẻ thơ lục bát do đội ngũ tự sáng tác, mỗi quẻ có lời giải theo gia đạo, công việc, sức khỏe, học hành, tình duyên, tài lộc và ghi rõ "mang tính chiêm nghiệm"; 366 thông điệp bình an cho từng ngày; lịch lễ âm lịch với trang trí và nhiệm vụ nhẹ nhàng cho Tết, Rằm tháng Giêng, Phật Đản, Tết Đoan Ngọ, Vu Lan, Trung Thu, Phật Thành Đạo. Lời nguyện được lọc từ tự động và có nút báo cáo, chặn. App song ngữ Việt – Anh, không quảng cáo, không thu tiền cúng dường, không hứa linh ứng.
 
 **EN:** Life is busy, and we can't always visit a pagoda. An Nhiên Pagoda offers a quiet courtyard in your pocket: 100 original six-eight verses, each with reflections on family, work, health, study, love and finances, clearly marked "for reflection"; 366 daily messages of calm; a lunar calendar with gentle decorations and activities for Tết, the First Full Moon, Buddha's Birthday (Vesak), Vu Lan and Mid-Autumn. Wishes are auto-filtered with report and block options. Bilingual Vietnamese–English, ad-free, no money offerings, no promises of miracles.
 
@@ -19,7 +19,7 @@ Bước vào sân chùa, bạn có thể thắp một nén hương ảo, thỉnh
 
 Mỗi ngày trong năm có một thông điệp riêng, tổng cộng 366 thông điệp ngắn về hơi thở, bữa cơm, gia đình và lòng biết ơn. Trên Cây nguyện, bạn treo một lời nguyện lành của mình, hoặc chọn từ 300 lời nguyện mẫu cho bình an, gia đạo, công việc, học hành, lòng biết ơn và cả lời tưởng nhớ người đã khuất. Lời nguyện hiển thị dưới biệt danh tùy chọn (không đặt thì hiện "Một người viết"), được lọc từ tự động và có nút báo cáo, chặn.
 
-Lịch âm trong app có 22 ngày lễ Phật giáo và dân gian, từ mùng Một, ngày Rằm hằng tháng đến Ông Công Ông Táo và Tất niên – Đêm Trừ tịch. Mỗi lễ có lời giới thiệu, trang trí sân chùa và vài nhiệm vụ nhẹ nhàng như viết ba điều biết ơn hay gọi điện cho người thân. Năm bộ nội dung theo mùa (Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu) mang đến lời chào, thông điệp, lời nguyện và quẻ đặc biệt. Bạn có thể bật 90 thông báo đẩy dịu dàng nhắc ngày lễ hay một hơi thở chậm, và tắt bất cứ lúc nào.
+Lịch âm trong app có 22 ngày lễ Phật giáo và dân gian, từ mùng Một, ngày Rằm hằng tháng đến Ông Công Ông Táo và Tất niên – Đêm Trừ tịch. Mỗi lễ có lời giới thiệu, trang trí sân chùa và vài nhiệm vụ nhẹ nhàng như viết ba điều biết ơn hay gọi điện cho người thân. Bảy bộ nội dung theo mùa (Tết, Rằm tháng Giêng, Phật Đản, Tết Đoan Ngọ, Vu Lan, Trung Thu, Phật Thành Đạo) mang đến lời chào, thông điệp, lời nguyện và quẻ đặc biệt. Bạn có thể bật 90 thông báo đẩy dịu dàng nhắc ngày lễ hay một hơi thở chậm, và tắt bất cứ lúc nào.
 
 Chùa An Nhiên song ngữ Việt – Anh, miễn phí, không quảng cáo, không mua trong ứng dụng ở bản 1.0, không thu tiền cúng dường và không hứa linh ứng. App không cần tài khoản, email hay số điện thoại. Bạn có thể xóa toàn bộ dữ liệu ngay trong Cài đặt.
 
@@ -31,13 +31,13 @@ In the courtyard you can light virtual incense, ring the bell, tap the wooden fi
 
 Every day of the year has its own message: 366 short notes about breathing, shared meals, family and gratitude. On the Wishing Tree you can hang a kind wish of your own or choose from 300 sample wishes for peace, family, work, study, gratitude and remembering loved ones who have passed. Wishes appear under an optional nickname ("Someone" if you don't set one), are filtered automatically, and can be reported or blocked.
 
-The in-app lunar calendar covers 22 Buddhist and folk observances, from the first and fifteenth day of each lunar month to Kitchen Gods Day and Lunar New Year's Eve. Each one has a short introduction, decorations for the pagoda courtyard and a few gentle activities, like writing down three things you're grateful for or calling a relative. Five seasonal sets (Lunar New Year (Tết), the First Full Moon, Buddha's Birthday (Vesak), Vu Lan (Ullambana) and Mid-Autumn) bring special greetings, messages, wishes and verses. You can turn on 90 gentle push notifications for holidays or a slow breath, and turn them off at any time.
+The in-app lunar calendar covers 22 Buddhist and folk observances, from the first and fifteenth day of each lunar month to Kitchen Gods Day and Lunar New Year's Eve. Each one has a short introduction, decorations for the pagoda courtyard and a few gentle activities, like writing down three things you're grateful for or calling a relative. Seven seasonal sets (Lunar New Year (Tết), the First Full Moon, Buddha's Birthday (Vesak), Vu Lan (Ullambana), Mid-Autumn, the Mid-Year Festival (Đoan Ngọ) and Bodhi Day) bring special greetings, messages, wishes and verses. You can turn on 90 gentle push notifications for holidays or a slow breath, and turn them off at any time.
 
 An Nhiên Pagoda is bilingual (Vietnamese and English), free, ad-free, with no in-app purchases in version 1.0, no money offerings and no promises of miracles. No account, email or phone number is needed. You can delete all of your data right from Settings.
 
 ## Điểm nổi bật
 - 100 quẻ lục bát tự sáng tác, kiểm luật bằng công cụ tự động.
-- 366 thông điệp mỗi ngày, 300 lời nguyện mẫu, 5 bộ nội dung theo mùa.
+- 366 thông điệp mỗi ngày, 300 lời nguyện mẫu, 7 bộ nội dung theo mùa.
 - Không quảng cáo, không mua trong app (bản 1.0), không thu tiền cúng dường.
 - Quyền riêng tư: chỉ mã thiết bị ẩn danh, biệt danh tùy chọn và lời nguyện; xóa dữ liệu ngay trong app.
 

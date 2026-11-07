@@ -4,7 +4,7 @@
   "khoangNgayAm": { "tu": { "thang": 8, "ngay": 10 }, "den": { "thang": 8, "ngay": 16 } },
   "moTa": "In the middle of the eighth lunar month, An Nhiên Pagoda hangs star lanterns, sets out a full-moon feast and opens its yard for children's lantern parades. It is the season of the roundest moon of the year, of gathering over tea and mooncakes, and of gratitude for the fields and for the hands that bring in the harvest.",
   "loiChao": [
-    { "id": 1, "noiDung": "The autumn moon has risen over the bell tower. Come watch it in the pagoda yard." },
+    { "id": 1, "noiDung": "The autumn moon is over the bell tower. A seat in the yard is waiting for you." },
     { "id": 2, "noiDung": "An Nhiên Pagoda wishes you a warm Mid-Autumn full of togetherness." },
     { "id": 3, "noiDung": "The children are lining up for the lantern parade. Would you like to join?" },
     { "id": 4, "noiDung": "The full-moon feast is ready. Sit down and pour yourself a cup of tea." },
@@ -14,7 +14,7 @@
     { "id": 8, "noiDung": "The little monk just cut the mooncake into shares. Yours is waiting here." },
     { "id": 9, "noiDung": "Happy Mid-Autumn! May someone watch the moon with you tonight." },
     { "id": 10, "noiDung": "Ripe rice, a round moon. Come into the pagoda and say thank you." },
-    { "id": 11, "noiDung": "The full moon of the eighth month is so bright. Thank you for visiting." },
+    { "id": 11, "noiDung": "The eighth-month full moon is so bright. Stay a little longer before you go." },
     { "id": 12, "noiDung": "Lion-dance drums sound at the gate. Come in and watch the children dance." }
   ],
   "thongDiep": [
@@ -22,7 +22,7 @@
     { "id": 2, "noiDung": "Let children carry their own lanterns. The line may not be straight, but the joy belongs to them." },
     { "id": 3, "noiDung": "A small mooncake cut in four becomes four smiles. That is what togetherness looks like." },
     { "id": 4, "noiDung": "Before the feast, tell the children how a grain of rice travels from the field to the table." },
-    { "id": 5, "noiDung": "Someone could not make it home for the full moon. A video call is still watching the same moon together." },
+    { "id": 5, "noiDung": "Family far away and can't make it home for the full moon? A video call is enough to watch the same moon together." },
     { "id": 6, "noiDung": "A star lantern made of bamboo and paper can be lovelier than a bought one, because your time is inside it." },
     { "id": 7, "noiDung": "Being grateful for the harvest means thanking the sun, rain, soil and people you have never met." },
     { "id": 8, "noiDung": "Children remember Mid-Autumn not for expensive gifts, but for grown-ups who were willing to play." },
@@ -74,7 +74,7 @@
     { "id": 22, "noiDung": "I vow to stay grateful for what I have, whether much or little." },
     { "id": 23, "noiDung": "I hope those working on the full-moon night get a moment to look up and see it." },
     { "id": 24, "noiDung": "I vow to teach children to thank those who grow our rice and fruit." },
-    { "id": 25, "noiDung": "I hope my brothers and sisters always find time to gather, as on this moonlit night." },
+    { "id": 25, "noiDung": "May my brothers and sisters and I gather like tonight every Mid-Autumn." },
     { "id": 26, "noiDung": "I vow to listen fully when children tell me their stories, without cutting in." },
     { "id": 27, "noiDung": "I hope all birds, fish, trees and grasses rest peacefully under the autumn moon." },
     { "id": 28, "noiDung": "I vow to send a greeting to a friend I haven't seen in a long time." },
