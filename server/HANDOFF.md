@@ -76,7 +76,14 @@ Nhánh app đã merge server/shared mới nhất. So `app/src/net/protocol.ts` v
 - Màu **`#rgb`** (app chấp nhận) được server nhận.
 - `/api/stats` có `incenseToday`/`lanternsToday`/`bellsToday`; `/api/health` có `uptime`/`online` (tên app đọc).
 - `SOCKET_TRANSPORTS`: chế độ cụm mặc định chỉ websocket (app khai báo `['websocket','polling']`, polling cần sticky session).
-Test: `test/client-compat.test.ts`. **Ghi chú cho nhóm app**: có thể bỏ `'polling'` khỏi `transports` nếu deploy nhiều instance; `app/src/net/protocol.ts` có thể import thẳng `shared/protocol.ts` để tránh lệch.
+Test: `test/client-compat.test.ts`.
+
+**Kiểm thử đầu-cuối với client thật** (07/11): chạy `app/src/net/socket-client.ts` của nhánh app (không sửa) với `server/dist/index.js` — 15/15 kịch bản PASS:
+welcome 2 người, hương/chuông/đèn phát chéo, đèn có `userId`, thả tim, lọc nội dung, lỗi tiếng Anh khi `lang=en`, phòng gia đình (mã chữ thường),
+REST `fetchLanterns`/`stats`/`health`, chặn từ đèn ⇒ không còn thấy đèn, **server khởi động lại ⇒ client tự kết nối & hello lại cùng userId**, `deleteMyData`.
+Cách chạy lại: `git archive origin/claude/jolly-mendel-hppn0t app/src | tar -x -C <thư mục nháp>`, symlink `node_modules` → `server/node_modules`, viết script import `SocketClient` rồi chạy bằng `tsx`.
+
+**Ghi chú cho nhóm app**: có thể bỏ `'polling'` khỏi `transports` nếu deploy nhiều instance; `app/src/net/protocol.ts` có thể import thẳng `shared/protocol.ts` để tránh lệch.
 
 ## Việc nên làm tiếp
 
