@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "mua.schema.json",
-  "title": "Bộ nội dung theo mùa (Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu)",
+  "title": "Bộ nội dung theo mùa (Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Phật Thành Đạo)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -23,7 +23,9 @@
         "vu-lan",
         "ram-thang-gieng",
         "phat-dan",
-        "trung-thu"
+        "trung-thu",
+        "doan-ngo",
+        "thanh-dao"
       ]
     },
     "ten": {

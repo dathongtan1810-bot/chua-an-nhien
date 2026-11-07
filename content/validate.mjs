@@ -199,7 +199,7 @@ for (const [base, n, nguong] of [['thong-diep-ngay', 366, 0.08], ['loi-nguyen-ma
 }
 
 // ---------- 6. Bộ nội dung theo mùa ----------
-for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu']) {
+for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu', 'doan-ngo', 'thanh-dao']) {
   const vi = checkSchema(`mua/${mua}.json`, 'mua/mua.schema.json');
   const en = checkSchema(`i18n/en/mua/${mua}.json`, 'mua/mua.schema.json');
   for (const [rel, d] of [[`mua/${mua}.json`, vi], [`i18n/en/mua/${mua}.json`, en]]) {

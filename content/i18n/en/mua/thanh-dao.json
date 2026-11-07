@@ -2,7 +2,7 @@
   "id": "thanh-dao",
   "ten": "Bodhi Day (Buddha's Enlightenment) Season",
   "khoangNgayAm": { "tu": { "thang": 12, "ngay": 1 }, "den": { "thang": 12, "ngay": 8 } },
-  "moTa": "From the 1st to the 8th of the twelfth lunar month, An Nhiên Pagoda marks the day the Buddha attained enlightenment under the Bodhi tree. Meditation mats are laid out in the yard, and the pagoda kitchen cooks milk rice porridge as a gentle symbol of the Middle Way: neither too harsh nor too lax. It is a season to sit still, see your own heart clearly, be patient with yourself and look back on a year that is closing.",
+  "moTa": "From the 1st to the 8th of the twelfth lunar month, An Nhiên Pagoda marks the day the Buddha attained enlightenment under the Bodhi tree. Meditation mats are laid out in the yard, and the pagoda kitchen cooks milk rice porridge as a gentle symbol of the Middle Way: neither too harsh nor too lax. It is a season to sit still, see your heart clearly, be patient and look back on the closing year.",
   "loiChao": [
     { "id": 1, "noiDung": "The last lunar month is here. Come in and sit quietly under the Bodhi tree." },
     { "id": 2, "noiDung": "An Nhiên Pagoda wishes you a quiet, clear-hearted Bodhi Day season." },
@@ -10,9 +10,9 @@
     { "id": 4, "noiDung": "Hello. There's no hurry today. Let's just sit still together." },
     { "id": 5, "noiDung": "The kitchen just cooked a warm pot of milk porridge. Stop by for a small bowl." },
     { "id": 6, "noiDung": "The Bodhi tree in the yard stays green in winter. Come and see it." },
-    { "id": 7, "noiDung": "This Bodhi Day season, may you see your own heart a little more clearly each day." },
+    { "id": 7, "noiDung": "This Bodhi Day season, may you see your heart a little more clearly each day." },
     { "id": 8, "noiDung": "Hello, last month of the year. Let's look back on it gently together." },
-    { "id": 9, "noiDung": "The morning star shone over the pagoda roof today. Wishing you a calm, clear day." },
+    { "id": 9, "noiDung": "The morning star shone over the pagoda roof. Wishing you a calm, clear day." },
     { "id": 10, "noiDung": "Put your phone down for one minute and listen to the pagoda bell ring out." },
     { "id": 11, "noiDung": "The 8th of the month is near. Thank you for patiently visiting each day." },
     { "id": 12, "noiDung": "The meditation mat is ready. Sit as long as feels right, no need to strain." }
@@ -124,10 +124,10 @@
       "id": "bat-chao-sua",
       "tieuDe": "A Bowl of Milk Porridge",
       "tho": [
-        "A winter bowl of porridge warms the hand",
-        "As sweet and simple as a lullaby so grand",
+        "A winter bowl of porridge, warm and plain",
+        "As sweet as Mother's lullaby refrain",
         "The road is long, the morning mist is deep",
-        "Walk at your pace; the steady path you'll keep"
+        "Walk at your pace; the goal is yours to keep"
       ],
       "loiGiai": "The story of the bowl of milk porridge before the night of enlightenment reminds us that the path doesn't ask us to punish ourselves. This verse is about doing what is within your strength. On a long road, take it step by step, rest at times, and enjoy a warm meal. Those who care for themselves can travel far. What you're working toward will come through steadiness, not by pushing yourself to exhaustion.",
       "loiKhuyen": "Today, eat a warm meal slowly and ask yourself: am I pushing myself too hard at anything right now?"
@@ -136,8 +136,8 @@
       "id": "sao-mai-cuoi-nam",
       "tieuDe": "Morning Star at Year's End",
       "tho": [
-        "At year's end I sit upon the porch",
-        "And gently look back on the days gone by",
+        "At year's end on the porch I sit a while",
+        "And look back on the days gone by and smile",
         "The morning star climbs bright into the sky",
         "Next year I'll walk more steady, head held high"
       ],
