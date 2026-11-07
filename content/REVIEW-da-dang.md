@@ -40,8 +40,8 @@ Bản EN của toàn bộ 77 id trên đã cập nhật (tiếng Anh Mỹ, D33: 
 | Tỉ lệ bigram khác nhau | 0.7034 → 0.7229 | 0.7166 → 0.7324 |
 
 Số câu chứa cụm:
-- **Thông điệp:** "hôm nay" 33 → 15 · "cảm ơn" 33 → 21 · "lắng nghe" 13 → dưới top 12 · "kiên nhẫn" 13 → dưới top 12 · "biết ơn" 8 → 5 · "mỗi ngày" 4 → 2 · "một chút" 16 → 11 · trigram "hôm nay hãy" 8 → dưới top · "lời cảm ơn" 9 → 6. "bình an" 5, "nhẹ nhàng" 11, "tử tế" 11 không đổi, vì các câu chứa chúng không nằm trong nhóm yếu nhất. "thong dong" vốn không có (0).
-- **Lời nguyện:** "mỗi ngày" 12 → 2 · "biết ơn" 11 → 1 · "cảm ơn" 10 → dưới top · "con biết" 14 → dưới top · "bình an" 3 → 1 · "an yên" 1 → 0. Câu mở đầu "Con mong" 85 → 80, "Xin cho" 42 → 37, "Con nguyện" 122 → 129.
+- **Thông điệp:** "hôm nay" 33 → 15 · "cảm ơn" 33 → 21 · "lắng nghe" 13 → 6 · "kiên nhẫn" 13 → 7 · "món quà" 9 → 4 · "biết ơn" 8 → 5 · "mỗi ngày" 4 → 2 · "một chút" 16 → 11 · "hôm nay hãy" 8 → 4 · "lời cảm ơn" 9 → 6. "bình an" 5, "nhẹ nhàng" 11, "tử tế" 11 không đổi, vì các câu chứa chúng không nằm trong nhóm yếu nhất. "thong dong" vốn không có (0).
+- **Lời nguyện:** "mỗi ngày" 12 → 2 · "biết ơn" 11 → 1 · "cảm ơn" 10 → 5 · "con biết" 14 → 3 · "bình an" 3 → 1 · "an yên" 1 → 0. Câu mở đầu "Con mong" 85 → 80, "Xin cho" 42 → 37, "Con nguyện" 122 → 129.
 
 Cặp còn > 0.3 (từ đơn) là những cặp khác ý nhau, chỉ trùng từ, nên giữ nguyên. Thông điệp: 46/234, 110/251. Lời nguyện: 52/287, 44/191, 10/166, 61/253.
 
@@ -60,7 +60,7 @@ Cặp còn > 0.3 (từ đơn) là những cặp khác ý nhau, chỉ trùng từ
 | LN 300 | Con nguyện mỗi ngày làm một việc tốt nhỏ cho người lạ. | Con nguyện học vài câu chào bằng tiếng mẹ đẻ của những người lao động nước ngoài sống quanh con. |
 
 ## Kiểm tra chéo
-- So từng câu mới với mọi chuỗi trong `content/mua/*.json` và `content/thong-bao-day.json` (Jaccard từ+bigram). Không câu nào vượt 0.2. Bản nháp LN 219 từng giống một lời nguyện Vu Lan ở mức 0.28 ("ngủ sớm, ăn đúng bữa để cha mẹ bớt lo") nên đã được viết lại.
+- So từng câu mới với mọi chuỗi trong `content/mua/*.json` (gồm cả `thanh-dao.json`, `doan-ngo.json` mới thêm) và `content/thong-bao-day.json` (Jaccard từ+bigram). Không câu nào vượt 0.2. Bản nháp LN 219 từng giống một lời nguyện Vu Lan ở mức 0.28 ("ngủ sớm, ăn đúng bữa để cha mẹ bớt lo") nên đã được viết lại.
 - Toàn bộ là câu tự sáng tác. Không trích danh ngôn, kinh, thơ hay bài hát. Không nhắc cúng dường, không hứa linh ứng, không hù dọa.
 
 ## Gợi ý lần sau
