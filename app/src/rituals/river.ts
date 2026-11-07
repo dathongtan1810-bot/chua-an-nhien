@@ -65,9 +65,26 @@ export class RiverLanterns {
     this.group = scene.add.container(0, 0);
     layer.add(this.group);
     this.glowTex = makeGlow(scene);
-    for (const l of net.lanterns.values()) {
-      const mine = (!!l.userId && l.userId === net.userId) || (l.nickname === store.state.nickname && net.myLanternTexts.has(l.text));
-      this.add(l, mine);
+    this.refill();
+  }
+
+  private isMine(l: LanternPayload): boolean {
+    return (!!l.userId && l.userId === net.userId) || (l.nickname === store.state.nickname && net.myLanternTexts.has(l.text));
+  }
+
+  /**
+   * Bù đèn từ dữ liệu (net.lanterns) cho đủ RIVER_CAP: chỉ đèn đang hiện mới có hình
+   * (server có thể trả ~200 đèn — tạo hình cho tất cả sẽ vượt ngân sách đối tượng của khu).
+   */
+  private refill(): void {
+    if (this.destroyed || this.entries.size >= RIVER_CAP) return;
+    const candidates = [...net.lanterns.values()]
+      .filter((l) => !this.entries.has(l.id))
+      .map((l) => ({ l, mine: this.isMine(l), at: Date.parse(l.at) || 0 }))
+      .sort((a, b) => Number(b.mine) - Number(a.mine) || b.at - a.at);
+    for (const c of candidates) {
+      if (this.entries.size >= RIVER_CAP) break;
+      this.add(c.l, c.mine);
     }
   }
 
@@ -142,12 +159,17 @@ export class RiverLanterns {
   }
 
   remove(id: string): void {
+    if (!this.dropEntry(id)) return;
+    this.refill();
+  }
+
+  private dropEntry(id: string): boolean {
     const e = this.entries.get(id);
-    if (!e) return;
+    if (!e) return false;
     this.entries.delete(id);
     e.img.destroy();
     e.glow.destroy();
-    this.applyCap();
+    return true;
   }
 
   private sortByDepth(): void {
@@ -164,15 +186,8 @@ export class RiverLanterns {
       [...this.entries.values()].map((e) => ({ id: e.l.id, at: e.at, mine: e.mine })),
       RIVER_CAP,
     );
-    for (const e of this.entries.values()) {
-      const v = show.has(e.l.id);
-      if (v === e.visible) continue;
-      e.visible = v;
-      e.img.setVisible(v);
-      e.glow.setVisible(v);
-      if (v) e.img.setInteractive();
-      else e.img.disableInteractive();
-    }
+    // đèn ngoài danh sách hiện: hủy hình (dữ liệu vẫn ở net.lanterns, refill() lấy lại khi có chỗ)
+    for (const e of [...this.entries.values()]) if (!show.has(e.l.id)) this.dropEntry(e.l.id);
   }
 
   update(time: number, delta: number): void {
