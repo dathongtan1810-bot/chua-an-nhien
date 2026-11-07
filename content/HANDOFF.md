@@ -13,7 +13,7 @@ _Cập nhật: 2026-11-05 (UTC). Nhánh: `claude/sweet-tesla-9rdbof` · PR nháp
 | 6 | Site tĩnh + pháp lý (VI/EN) | `site/` | ✅ |
 | 7 | Tài liệu store/ASO/marketing | `store/` | ✅ |
 | 8 | Bản tiếng Anh | `content/i18n/en/` | ✅ |
-| + | Bộ mùa | `content/mua/` (+ `i18n/en/mua/`) | ✅ Tết, Rằm tháng Giêng, Phật Đản, Vu Lan, Trung Thu |
+| + | Bộ mùa | `content/mua/` (+ `i18n/en/mua/`) | ✅ 7 bộ: Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Thành Đạo |
 | + | Thông báo đẩy (VI/EN) | `content/thong-bao-day.json` | ✅ 90 mục, đã đưa vào validate |
 | + | 30 bài đăng MXH | `store/social-posts-30-ngay.md` | ✅ (chưa rà lại thủ công) |
 | + | Rà soát | `content/REVIEW-chinh-ta.md`, `REVIEW-tho.md`, `REVIEW-en.md`, `store/REVIEW-nhat-quan.md` | ✅ 26 bài thơ biên tập lại, EN thống nhất thuật ngữ |
