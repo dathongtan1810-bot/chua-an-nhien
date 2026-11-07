@@ -1,0 +1,594 @@
+[
+  {
+    "id": 26,
+    "tieuDe": "Bến đò sớm mai",
+    "tho": [
+      "Sớm mai bến nước còn sương",
+      "Con đò đã sẵn lên đường sang sông",
+      "Ai ơi gắng sức thành công",
+      "Tay chèo đều nhịp, bờ đông đã gần"
+    ],
+    "loiGiai": "Sương sớm còn giăng trên bến, con đò đã sẵn sàng sang sông. Quẻ này khích lệ bạn mạnh dạn bắt đầu việc mình đã ấp ủ. Bờ bên kia không xa như bạn nghĩ, chỉ cần giữ một lòng, chèo đều tay từng nhịp. Đừng chờ sương tan hết mới đi, vì con đường sẽ rõ dần khi bạn đã lên đường.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà, một lời hỏi han buổi sáng có thể mở đầu cho cả ngày êm ấm. Bạn hãy chủ động bắt chuyện, đừng đợi người khác mở lời trước.",
+      "cong-viec": "Việc mới đang chờ bạn khởi sự. Hãy lập kế hoạch đơn giản, làm phần đầu tiên ngay trong tuần này, rồi điều chỉnh dần theo thực tế.",
+      "suc-khoe": "Thức dậy sớm hơn một chút, đi bộ nhẹ hay hít thở sâu giữa không khí trong lành sẽ giúp cơ thể tỉnh táo, tinh thần phấn chấn.",
+      "hoc-hanh": "Đây là lúc tốt để bắt đầu môn học hay kỹ năng mới. Đặt mục tiêu nhỏ, học đều mỗi ngày, bạn sẽ ngạc nhiên vì mình tiến xa.",
+      "tinh-duyen": "Nếu có người khiến bạn để tâm, hãy chân thành và từ tốn. Không cần vội, nhưng cũng đừng mãi đứng bên này bến mà ngắm.",
+      "tai-loc": "Tiền bạc đến từ sự chăm chỉ đều đặn. Hãy bắt đầu ghi chép chi tiêu và để dành một phần nhỏ ngay từ hôm nay."
+    },
+    "loiKhuyen": "Hãy làm bước đầu tiên ngay hôm nay, dù nhỏ. Chèo đều tay, giữ vững lòng, bờ bên kia sẽ đến gần.",
+    "chuDe": [
+      "cong-viec",
+      "hoc-hanh"
+    ]
+  },
+  {
+    "id": 27,
+    "tieuDe": "Suối nhỏ qua ghềnh",
+    "tho": [
+      "Suối con len lỏi qua ghềnh",
+      "Đá ngăn chẳng giận, bồng bềnh vòng quanh",
+      "Nước mềm mà vẫn trong xanh",
+      "Chậm mà bền bỉ, sẽ thành sông sâu"
+    ],
+    "loiGiai": "Dòng suối nhỏ gặp đá chắn không giận, không dừng, mà mềm mại tìm lối vòng qua. Nhờ vậy nước vẫn trong và cuối cùng hòa thành sông lớn. Quẻ nhắc bạn rằng mềm mỏng không phải là yếu đuối. Khi gặp trở ngại, hãy bình tĩnh tìm cách khác, giữ cho lòng mình trong trẻo, đi chậm mà bền.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Khi trong nhà có điều chưa thuận, hãy nói nhẹ nhàng thay vì tranh hơn thua. Lời mềm như nước sẽ làm dịu những góc cạnh.",
+      "cong-viec": "Gặp khó trong công việc, đừng cố đẩy thẳng vào chỗ vướng. Thử hỏi ý đồng nghiệp hoặc đổi cách làm, lối ra thường ở ngay bên cạnh.",
+      "suc-khoe": "Cơ thể cần nhịp sống đều như dòng suối. Uống đủ nước, ngủ đúng giờ, vận động vừa sức. Nếu thấy mệt kéo dài, hãy đi khám để yên tâm.",
+      "hoc-hanh": "Bài khó chưa hiểu thì đừng nản. Hãy đọc lại từ phần căn bản, hỏi thầy cô hay bạn bè, kiến thức sẽ thấm dần như nước thấm đất.",
+      "tinh-duyen": "Tình cảm cần sự mềm mỏng và nhẫn nại. Đừng ép người kia phải theo ý mình; lắng nghe nhiều hơn thì hai bên sẽ hiểu nhau hơn.",
+      "tai-loc": "Thu nhập có thể chưa tăng nhanh, nhưng đều đặn tích góp thì như suối nhỏ thành sông. Tránh những lời mời làm giàu nhanh."
+    },
+    "loiKhuyen": "Gặp đá thì vòng qua, đừng húc vào. Giữ lòng trong, đi chậm mà bền, rồi bạn sẽ đến nơi.",
+    "chuDe": [
+      "suc-khoe"
+    ]
+  },
+  {
+    "id": 28,
+    "tieuDe": "Thuyền về bến lặng",
+    "tho": [
+      "Chiều buông thuyền nhỏ về neo",
+      "Bến quen có ngọn đèn treo cửa nhà",
+      "Bữa cơm ấm áp ông bà",
+      "Cháu con đông đủ, gần xa sum vầy"
+    ],
+    "loiGiai": "Chiều xuống, con thuyền nhỏ về neo nơi bến quen, nơi có ngọn đèn treo trước cửa nhà. Quẻ này mang sắc thái an định, nhắc bạn trân quý mái ấm và những người thân đang chờ mình. Sau những ngày bận rộn ngoài kia, hãy dành thời gian trở về, ngồi bên bữa cơm chung, nghe ông bà cha mẹ kể chuyện.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đây là lúc tốt để sum họp. Hãy gọi điện cho người thân ở xa, hoặc sắp xếp một bữa cơm đông đủ cả nhà trong tuần này.",
+      "cong-viec": "Công việc tạm ổn định. Hãy làm cho xong phần việc trong giờ, hạn chế mang việc về nhà để giữ thời gian cho gia đình.",
+      "suc-khoe": "Bữa cơm nhà đầy đủ, ăn chậm, nói chuyện vui sẽ tốt cho cả thân lẫn tâm. Người lớn tuổi trong nhà nên được khám sức khỏe định kỳ.",
+      "hoc-hanh": "Học xong hãy cho phép mình nghỉ ngơi bên gia đình. Có khi chính lời khuyên của người thân giúp bạn sáng ra điều đang băn khoăn.",
+      "tinh-duyen": "Người thật lòng với bạn là người mong bạn bình an trở về. Hãy quý những ai biết lặng lẽ để đèn chờ mình.",
+      "tai-loc": "Chi tiêu trong nhà nên bàn bạc cùng nhau. Một khoản để dành chung cho gia đình sẽ khiến mọi người yên tâm hơn."
+    },
+    "loiKhuyen": "Hôm nay hãy về sớm một chút, ăn cùng người thân một bữa cơm và nói một lời cảm ơn.",
+    "chuDe": [
+      "gia-dao"
+    ]
+  },
+  {
+    "id": 29,
+    "tieuDe": "Cầu tre lắt lẻo",
+    "tho": [
+      "Cầu tre lắt lẻo bắc ngang",
+      "Bước chân thong thả, vững vàng qua kênh",
+      "Đừng vì gió thổi chông chênh",
+      "Mà buông tay vịn, lênh đênh giữa dòng"
+    ],
+    "loiGiai": "Cây cầu tre bắc qua kênh tuy lắt lẻo nhưng vẫn đưa người sang bờ, nếu ta bước thong thả và giữ chắc tay vịn. Quẻ nhắc nhở sự cẩn trọng: đừng vì gió thổi mà hoảng hốt buông tay. Trong lúc chưa vững, hãy dựa vào những điều căn bản, những người đáng tin và từng bước nhỏ chắc chắn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà, khi có chuyện chông chênh, hãy cùng nhau giữ những nếp quen như bữa cơm chung, lời chào hỏi. Đó chính là tay vịn của cả nhà.",
+      "cong-viec": "Đang làm việc mới hay ở vị trí lạ, hãy đi từng bước, hỏi kỹ quy trình, đừng làm liều chỉ để kịp thời gian.",
+      "suc-khoe": "Cẩn thận khi đi lại, nhất là lúc trời mưa trơn. Nếu cơ thể có dấu hiệu bất thường, hãy đi khám sớm, đừng chủ quan.",
+      "hoc-hanh": "Kỳ thi hay bài khó trước mắt có thể khiến bạn lo. Hãy ôn lại kiến thức nền, làm chắc phần mình biết trước rồi mới tính phần khó.",
+      "tinh-duyen": "Khi tình cảm có chút chao đảo, đừng vội buông lời giận dữ. Giữ sự tôn trọng như giữ tay vịn, mọi chuyện sẽ dần qua.",
+      "tai-loc": "Lúc này chưa nên mạo hiểm tiền bạc. Giữ khoản dự phòng, chỉ chi cho việc cần thiết, mọi quyết định lớn nên cân nhắc thêm."
+    },
+    "loiKhuyen": "Bước thong thả, giữ chắc tay vịn. Chậm một chút mà an toàn còn hơn vội vàng mà chao đảo.",
+    "chuDe": [
+      "hoc-hanh"
+    ]
+  },
+  {
+    "id": 30,
+    "tieuDe": "Mặt hồ như gương",
+    "tho": [
+      "Mặt hồ phẳng lặng như gương",
+      "Gió yên thì bóng mây vương rõ ràng",
+      "Lòng ta lắng đọng nhẹ nhàng",
+      "Nghỉ ngơi đúng lúc, thênh thang tâm hồn"
+    ],
+    "loiGiai": "Khi gió lặng, mặt hồ phẳng như gương, soi rõ từng áng mây. Lòng người cũng vậy: lúc bớt xao động, ta mới thấy rõ điều mình thật sự cần. Quẻ này khuyên bạn dành thời gian tĩnh lặng, nghỉ ngơi đúng lúc. Không phải lúc nào cũng phải làm thêm; đôi khi ngồi yên chính là cách tốt nhất để đi tiếp.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà, hãy tạo một góc yên tĩnh, bớt tiếng ồn và màn hình vào buổi tối để mọi người được nghỉ ngơi, trò chuyện nhẹ nhàng.",
+      "cong-viec": "Đừng ra quyết định khi đang nóng nảy. Hãy để mọi việc lắng xuống một đêm, sáng hôm sau bạn sẽ nhìn ra hướng đi rõ hơn.",
+      "suc-khoe": "Cơ thể đang cần nghỉ ngơi. Hãy ngủ đủ giấc, thử vài phút hít thở chậm mỗi ngày. Nếu mất ngủ kéo dài, nên hỏi ý kiến bác sĩ.",
+      "hoc-hanh": "Học trong không gian yên tĩnh, tắt bớt thông báo điện thoại. Đầu óc lắng lại thì kiến thức mới dễ in vào như bóng mây trên hồ.",
+      "tinh-duyen": "Hãy lắng lòng để hiểu cảm xúc của chính mình trước khi đòi hỏi người kia hiểu mình. Sự bình thản giúp tình cảm thêm bền.",
+      "tai-loc": "Tiền bạc lúc này cần sự điềm tĩnh. Đừng mua sắm theo cảm hứng; ghi lại món muốn mua, vài ngày sau xem có thật cần không."
+    },
+    "loiKhuyen": "Mỗi ngày dành mười phút ngồi yên, thở chậm. Lòng lặng rồi, việc gì cũng thấy rõ hơn.",
+    "chuDe": [
+      "suc-khoe"
+    ]
+  },
+  {
+    "id": 31,
+    "tieuDe": "Giọt nước mòn đá",
+    "tho": [
+      "Nước rơi từng giọt bền lâu",
+      "Đá kia cứng mấy cũng sâu vết mòn",
+      "Học hành giữ chí sắt son",
+      "Mỗi ngày một chút, vuông tròn về sau"
+    ],
+    "loiGiai": "Giọt nước nhỏ rơi đều qua năm tháng có thể làm mòn cả tảng đá cứng. Quẻ này khích lệ sự bền chí: không cần sức mạnh lớn, chỉ cần đều đặn mỗi ngày. Việc học, việc làm hay một thói quen tốt đều thành hình từ những nỗ lực nhỏ lặp lại. Giữ chí son sắt, rồi mọi việc sẽ vuông tròn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Những điều tốt trong nhà được vun từ việc nhỏ hằng ngày: một lời hỏi thăm, một lần phụ giúp việc nhà. Hãy kiên trì làm, đừng đợi dịp lớn.",
+      "cong-viec": "Dự án dài hơi cần sự đều đặn. Chia việc thành phần nhỏ, mỗi ngày hoàn thành một phần, đừng dồn đến phút cuối.",
+      "suc-khoe": "Một thói quen tốt như đi bộ, giãn cơ hay ngủ sớm, nếu giữ đều sẽ mang lại sức khỏe lâu dài hơn mọi cách làm vội vàng.",
+      "hoc-hanh": "Học mỗi ngày một ít còn hơn học dồn một đêm. Hãy đặt lịch ôn cố định, ghi chép lại điều đã học, kiến thức sẽ thấm sâu.",
+      "tinh-duyen": "Tình cảm bền lâu nhờ sự quan tâm đều đặn, không phải những lời hứa lớn. Hãy để ý những điều nhỏ người kia cần.",
+      "tai-loc": "Để dành một khoản nhỏ đều mỗi tháng, lâu dần sẽ thành vốn. Tránh xa cờ bạc hay những lời hứa lãi cao bất thường."
+    },
+    "loiKhuyen": "Chọn một việc tốt và làm đều mỗi ngày trong ba mươi ngày. Nhỏ mà đều, lâu ắt thành.",
+    "chuDe": [
+      "hoc-hanh",
+      "cong-viec"
+    ]
+  },
+  {
+    "id": 32,
+    "tieuDe": "Đường đèo mây phủ",
+    "tho": [
+      "Đường đèo mây phủ quanh co",
+      "Đi đều chậm rãi, chẳng lo vội vàng",
+      "Mây tan trời rạng huy hoàng",
+      "Đỉnh cao chờ đón người mang lòng bền"
+    ],
+    "loiGiai": "Đường đèo quanh co lại bị mây che, người đi chưa thấy đỉnh. Quẻ nhắc bạn kiên nhẫn: cứ đi đều, chậm rãi, đừng vội vàng mà mất an toàn. Mây rồi sẽ tan, trời sẽ rạng. Những ai giữ lòng bền thì sẽ thấy đỉnh cao đang chờ, và cả chặng đường đã qua cũng thành điều đáng quý.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Khi gia đình đang trải qua giai đoạn khó, hãy cùng nhau đi từng bước. Bàn bạc rõ ràng, chia sẻ việc nhà, không ai phải gánh một mình.",
+      "cong-viec": "Công việc có thể chưa thấy kết quả ngay. Hãy giữ nhịp làm đều, ghi lại tiến bộ mỗi tuần để thấy mình đang tiến lên.",
+      "suc-khoe": "Đừng ép cơ thể làm quá sức. Nghỉ ngơi xen kẽ, ăn uống đủ chất. Có dấu hiệu bất thường thì nên đi khám thay vì cố chịu.",
+      "hoc-hanh": "Có môn học như đường đèo, càng lên càng khó. Hãy nhờ người đi trước chỉ đường và kiên trì luyện tập từng dạng bài.",
+      "tinh-duyen": "Nếu chưa rõ lòng người kia, đừng vội kết luận. Thời gian và sự chân thành sẽ làm tan dần mây mù.",
+      "tai-loc": "Thu nhập có thể chậm, nhưng hãy giữ việc làm chính đáng và chi tiêu dè dặt. Tránh vay mượn để chạy theo thứ chưa cần."
+    },
+    "loiKhuyen": "Đi đều, đừng vội. Mây che chỉ là tạm thời; người bền lòng sẽ tới được đỉnh.",
+    "chuDe": [
+      "cong-viec",
+      "tai-loc"
+    ]
+  },
+  {
+    "id": 33,
+    "tieuDe": "Biển lặng sau giông",
+    "tho": [
+      "Đêm qua biển động trùng khơi",
+      "Sáng nay sóng lặng, mặt trời lên cao",
+      "Buồn vui như sóng xôn xao",
+      "Thôi không níu giữ, lòng nào chẳng yên"
+    ],
+    "loiGiai": "Đêm qua biển động, sáng nay sóng đã lặng và mặt trời lên cao. Buồn vui trong đời cũng như sóng, có lúc xôn xao rồi lại yên. Quẻ này khuyên bạn biết buông xuống những giận hờn, lo âu đã qua. Không phải quên hết, mà là thôi níu giữ, để lòng nhẹ đi và đón nhận ngày mới bình an.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Nếu vừa có chuyện không vui trong nhà, hãy là người mở lời làm hòa trước. Một bữa cơm, một lời xin lỗi có thể làm biển lặng lại.",
+      "cong-viec": "Một việc vừa không như ý đã qua rồi. Hãy rút ra bài học, ghi lại điều cần sửa, rồi tập trung vào việc trước mắt.",
+      "suc-khoe": "Lo âu kéo dài làm cơ thể mỏi mệt. Hãy tập thở chậm, đi dạo, trò chuyện với người tin cậy. Nếu buồn bã nhiều ngày, nên tìm đến chuyên gia.",
+      "hoc-hanh": "Một bài thi chưa tốt không nói lên tất cả. Hãy xem lại chỗ sai, nghỉ ngơi một chút, rồi bắt đầu ôn tiếp với tâm thế mới.",
+      "tinh-duyen": "Giận hờn trong tình cảm như cơn sóng, đến rồi đi. Đừng giữ mãi lời nặng; hãy nói chuyện thẳng thắn khi cả hai đã bình tĩnh.",
+      "tai-loc": "Nếu từng mất mát chút tiền bạc, đừng cố gỡ lại bằng cách liều lĩnh. Bình tâm, tiết kiệm lại từ đầu là con đường chắc chắn."
+    },
+    "loiKhuyen": "Viết ra điều đang làm bạn nặng lòng, đọc lại một lần rồi cất đi. Biết buông thì lòng sẽ nhẹ.",
+    "chuDe": [
+      "gia-dao",
+      "suc-khoe",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 34,
+    "tieuDe": "Núi xa trong mây",
+    "tho": [
+      "Núi xa còn khuất trong mây",
+      "Đường lên chưa rõ, sương vây lối mòn",
+      "Duyên lành như núi vẫn còn",
+      "Sương tan núi hiện, xanh non một màu"
+    ],
+    "loiGiai": "Ngọn núi xa còn khuất trong mây, đường lên chưa rõ, sương còn vây lối mòn. Quẻ này nói về sự chờ đợi bình thản. Điều tốt lành vẫn ở đó như núi vẫn còn, chỉ là chưa đến lúc hiện ra. Khi sương tan, bạn sẽ thấy núi xanh một màu. Trong lúc chờ, hãy chăm lo cho chính mình.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Có những mong mỏi trong gia đình chưa thành ngay được. Hãy kiên nhẫn, góp phần nhỏ của mình mỗi ngày, đừng trách nhau vì chậm.",
+      "cong-viec": "Cơ hội có thể chưa xuất hiện rõ. Trong lúc chờ, hãy rèn thêm kỹ năng để khi đến lúc, bạn đã sẵn sàng.",
+      "suc-khoe": "Sức khỏe hồi phục cần thời gian. Hãy làm theo hướng dẫn của bác sĩ, nghỉ ngơi đủ và đừng sốt ruột đòi khỏe ngay.",
+      "hoc-hanh": "Kết quả học tập chưa thấy ngay không có nghĩa là công sức uổng phí. Hãy tiếp tục ôn luyện; hiểu biết đang lớn dần trong bạn.",
+      "tinh-duyen": "Duyên lành không vội. Người phù hợp có thể chưa đến, hoặc đã ở gần mà bạn chưa nhận ra. Hãy sống tốt và mở lòng.",
+      "tai-loc": "Đừng sốt ruột mà chạy theo những cách kiếm tiền nhanh. Giữ việc làm ổn định, tích lũy đều, khi sương tan bạn sẽ thấy rõ đường."
+    },
+    "loiKhuyen": "Chưa thấy núi không có nghĩa là núi không có. Hãy chăm lo cho mình trong lúc chờ sương tan.",
+    "chuDe": [
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 35,
+    "tieuDe": "Sông chia hai nhánh",
+    "tho": [
+      "Sông kia chia nhánh đôi đường",
+      "Nhánh nào cũng chảy, cũng thương đất lành",
+      "Nghĩ xong thì bước cho nhanh",
+      "Chớ nên ngoái mãi mà thành đắn đo"
+    ],
+    "loiGiai": "Dòng sông chia làm hai nhánh, nhánh nào cũng chảy về nơi đất lành. Quẻ này đến khi bạn đứng trước lựa chọn. Hãy cân nhắc kỹ, lắng nghe lòng mình và hỏi ý người tin cậy; nhưng khi đã nghĩ xong thì mạnh dạn bước, đừng ngoái lại mãi mà sinh đắn đo. Con đường nào đi bằng lòng chân thành cũng có điều đáng học.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Nếu cả nhà đang phải chọn một việc lớn, hãy để mọi người cùng nói ý kiến. Quyết rồi thì cùng nhau ủng hộ, không trách móc về sau.",
+      "cong-viec": "Đứng trước hai hướng đi trong công việc, hãy viết ra điều được và điều mất của mỗi bên, chọn hướng hợp với giá trị của mình.",
+      "suc-khoe": "Đắn đo kéo dài dễ khiến bạn căng thẳng, mất ngủ. Hãy đặt một thời hạn để quyết định, rồi cho tâm trí nghỉ ngơi.",
+      "hoc-hanh": "Chọn ngành, chọn trường hay chọn môn, hãy dựa vào điều bạn yêu thích và khả năng thật sự. Đã chọn thì học hết lòng.",
+      "tinh-duyen": "Nếu lòng đang phân vân giữa hai ngả, hãy thành thật với chính mình và với người khác. Rõ ràng là cách tử tế nhất.",
+      "tai-loc": "Trước lựa chọn về tiền bạc, ưu tiên phương án an toàn, minh bạch. Đừng chọn chỉ vì lời hứa lợi nhuận cao."
+    },
+    "loiKhuyen": "Nghĩ kỹ, rồi quyết. Đã chọn thì bước hết lòng, đừng để đắn đo giữ chân mình mãi.",
+    "chuDe": [
+      "hoc-hanh",
+      "cong-viec"
+    ]
+  },
+  {
+    "id": 36,
+    "tieuDe": "Hai người chung thuyền",
+    "tho": [
+      "Hai người chung một con thuyền",
+      "Mái chèo cùng nhịp, bình yên tới bờ",
+      "Một người lỡ nhịp chẳng ngờ",
+      "Người kia chậm lại, đợi chờ cùng sang"
+    ],
+    "loiGiai": "Hai người cùng chèo một con thuyền, chỉ khi cùng nhịp thì thuyền mới êm. Có lúc một người lỡ nhịp, người kia chậm lại chờ, rồi cùng sang bờ. Quẻ này nói về tinh thần đồng lòng, bao dung và nhường nhịn. Dù là gia đình, bạn đời hay đồng nghiệp, sự kiên nhẫn với nhau chính là mái chèo đưa thuyền đi xa.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Người trong nhà mỗi người một tính. Khi ai đó mệt hay sai sót, hãy chậm lại và giúp một tay thay vì trách cứ.",
+      "cong-viec": "Làm việc nhóm cần phân công rõ và giữ nhịp chung. Nếu đồng nghiệp chậm, hãy hỏi xem họ cần hỗ trợ gì.",
+      "suc-khoe": "Rủ người thân cùng tập thể dục, cùng đi bộ buổi chiều. Có bạn đồng hành, thói quen tốt dễ giữ lâu hơn.",
+      "hoc-hanh": "Học nhóm hiệu quả khi mọi người cùng góp sức. Hãy kiên nhẫn giảng lại cho bạn chưa hiểu, chính bạn cũng sẽ hiểu sâu hơn.",
+      "tinh-duyen": "Tình cảm bền khi hai người biết chờ nhau. Đừng so ai làm nhiều ai làm ít; hãy cùng nhìn về một hướng.",
+      "tai-loc": "Chuyện tiền bạc chung nên minh bạch và bàn bạc trước. Cùng nhau lập kế hoạch chi tiêu sẽ tránh được hiểu lầm."
+    },
+    "loiKhuyen": "Khi người bên cạnh lỡ nhịp, hãy chậm lại chờ. Cùng nhịp thì thuyền mới tới bờ.",
+    "chuDe": [
+      "gia-dao",
+      "cong-viec",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 37,
+    "tieuDe": "Cửa biển triều lên",
+    "tho": [
+      "Triều lên cửa biển bao la",
+      "Thuyền nào sẵn lưới, thuận đà ra khơi",
+      "Cơ may như nước đầy vơi",
+      "Buồm khâu lưới vá, gặp thời mà đi"
+    ],
+    "loiGiai": "Triều lên, cửa biển mở rộng. Con thuyền nào đã sẵn lưới thì thuận đà ra khơi. Quẻ này mang sắc thái khích lệ: cơ hội có thể đang đến, nhưng chỉ người đã chuẩn bị mới đón được trọn. Hãy kiểm tra lại hành trang, kỹ năng và kế hoạch của mình, để khi thời đến thì vững vàng mà đi và an toàn mà về.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Gia đình có thể đón tin vui hay dịp quan trọng. Hãy cùng nhau chuẩn bị chu đáo, chia việc rõ ràng để ai cũng thấy thoải mái.",
+      "cong-viec": "Cơ hội trong công việc đang mở ra. Hãy cập nhật hồ sơ, hoàn thiện kỹ năng và mạnh dạn nhận phần việc mới khi được giao.",
+      "suc-khoe": "Muốn đón cơ hội thì sức khỏe phải sẵn sàng. Ăn uống điều độ, ngủ đủ, đừng thức khuya liên tục vì công việc.",
+      "hoc-hanh": "Một kỳ thi hay cuộc thi sắp đến. Hãy ôn tập có kế hoạch, chuẩn bị giấy tờ sớm để tới ngày không bị bất ngờ.",
+      "tinh-duyen": "Nếu gặp người hợp ý, hãy tự nhiên và chân thành. Chuẩn bị cho mình một tâm thế cởi mở là cách đón duyên tốt nhất.",
+      "tai-loc": "Có thể có thêm nguồn thu từ sức lao động chính đáng. Hãy đọc kỹ điều khoản, tránh những lời mời đầu tư mập mờ."
+    },
+    "loiKhuyen": "Kiểm tra lại hành trang của mình ngay hôm nay. Thời đến cho người sẵn sàng.",
+    "chuDe": [
+      "tai-loc",
+      "cong-viec"
+    ]
+  },
+  {
+    "id": 38,
+    "tieuDe": "Hòn đá kê đường suối",
+    "tho": [
+      "Bên dòng có đá ai kê",
+      "Cho người qua suối, đường về ráo chân",
+      "Qua rồi xin nhớ ân nhân",
+      "Ơn người đặt đá, chẳng cần ai hay"
+    ],
+    "loiGiai": "Bên dòng suối có hòn đá ai đó đã kê sẵn, nhờ vậy người qua đường về ráo chân. Người đặt đá chẳng cần ai biết đến. Quẻ này nói về lòng biết ơn: những điều ta đang có thường được bao người âm thầm vun đắp. Hãy nhớ ơn họ, và chính bạn cũng có thể là người lặng lẽ kê đá cho người đến sau.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Hãy nói lời cảm ơn với cha mẹ, ông bà, những người đã chăm lo cho bạn. Một lời cảm ơn giản dị cũng làm ấm cả nhà.",
+      "cong-viec": "Thành công hôm nay có phần công sức của đồng nghiệp, người đi trước. Hãy ghi nhận họ, và sẵn lòng chỉ dẫn người mới.",
+      "suc-khoe": "Cảm ơn cơ thể đã gắng sức mỗi ngày bằng cách chăm sóc nó: ăn uống lành, nghỉ ngơi đủ, khám sức khỏe định kỳ.",
+      "hoc-hanh": "Thầy cô, bạn bè đã giúp bạn học tốt hơn. Hãy tri ân họ, và chia sẻ lại tài liệu, kinh nghiệm cho bạn bè cùng tiến.",
+      "tinh-duyen": "Hãy trân trọng những điều nhỏ người kia đã làm cho bạn. Ghi nhận và nói lời cảm ơn giúp tình cảm thêm sâu.",
+      "tai-loc": "Biết đủ và biết ơn những gì đang có giúp bạn chi tiêu hợp lý hơn. Dành chút thời gian giúp người khó khăn bằng việc làm cụ thể."
+    },
+    "loiKhuyen": "Hôm nay hãy cảm ơn một người đã từng giúp bạn, và làm một việc tốt nhỏ không cần ai biết.",
+    "chuDe": [
+      "gia-dao"
+    ]
+  },
+  {
+    "id": 39,
+    "tieuDe": "Cầu đá rêu phong",
+    "tho": [
+      "Cầu xưa đá phủ rêu phong",
+      "Trăm năm vẫn đứng giữa dòng nước trôi",
+      "Lời ra như đá đặt rồi",
+      "Giữ cho bền chặt, nối đôi bờ liền"
+    ],
+    "loiGiai": "Cây cầu đá phủ rêu đã đứng giữa dòng nước trôi hàng trăm năm, vẫn nối liền đôi bờ. Lời nói cũng như viên đá: đã nói ra thì hãy giữ cho bền chặt. Quẻ này nhắc về chữ tín. Người giữ lời sẽ được tin cậy, và niềm tin ấy chính là cây cầu nối người với người, bền hơn mọi thứ hào nhoáng.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà, hứa với con cái hay cha mẹ điều gì thì hãy cố làm cho được. Nếu không thể, hãy nói thật và xin lỗi.",
+      "cong-viec": "Giữ đúng hẹn, đúng cam kết với khách hàng và đồng nghiệp. Chỉ hứa điều mình làm được, đó là vốn quý của người đi làm.",
+      "suc-khoe": "Hãy giữ lời hứa với chính mình về một thói quen tốt như ngủ sớm hay vận động. Sức khỏe bền từ những cam kết nhỏ.",
+      "hoc-hanh": "Đã đặt kế hoạch học thì giữ cho đều. Tự hứa với mình và thực hiện, bạn sẽ thêm tự tin vào khả năng của bản thân.",
+      "tinh-duyen": "Tình cảm bền nhờ sự thủy chung và lời nói đi đôi với việc làm. Đừng hứa hẹn vội; hãy để hành động nói thay.",
+      "tai-loc": "Vay mượn thì trả đúng hạn, hợp tác thì minh bạch. Chữ tín giữ được hôm nay sẽ mở cửa cho bạn nhiều về sau."
+    },
+    "loiKhuyen": "Chỉ hứa điều mình làm được, và làm điều mình đã hứa. Chữ tín là cây cầu bền nhất.",
+    "chuDe": [
+      "tinh-duyen",
+      "cong-viec"
+    ]
+  },
+  {
+    "id": 40,
+    "tieuDe": "Suối nguồn non cao",
+    "tho": [
+      "Nguồn trong từ đỉnh non cao",
+      "Chảy qua khe đá rì rào ngày đêm",
+      "Giữ thân như suối êm đềm",
+      "Ăn chừng, ngủ đủ, sức thêm mỗi ngày"
+    ],
+    "loiGiai": "Dòng suối từ đỉnh non cao chảy qua khe đá, rì rào ngày đêm mà vẫn trong lành. Quẻ này nhắc bạn chăm lo thân tâm như giữ một dòng suối sạch: ăn uống vừa chừng, ngủ đủ giấc, vận động nhẹ nhàng, giữ tâm êm đềm. Sức khỏe không đến trong một ngày, nhưng mỗi ngày giữ gìn một chút sẽ cho bạn sức bền lâu dài.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Bữa cơm gia đình đơn giản, nhiều rau xanh, ít dầu mỡ là món quà sức khỏe cho cả nhà. Hãy cùng nhau nấu nướng và ăn chậm.",
+      "cong-viec": "Làm việc lâu nên đứng dậy giãn cơ, uống nước. Một cơ thể khỏe là nền tảng để làm việc tốt và lâu dài.",
+      "suc-khoe": "Hãy lắng nghe cơ thể. Ăn uống điều độ, ngủ đủ, uống đủ nước. Nếu đang dùng thuốc, hãy theo đúng chỉ dẫn của bác sĩ và tái khám đúng hẹn.",
+      "hoc-hanh": "Ngủ đủ giúp trí nhớ tốt hơn. Đừng thức quá khuya để học; chia thời gian hợp lý và nghỉ giải lao giữa các buổi.",
+      "tinh-duyen": "Một tâm hồn trong lành giúp tình cảm nhẹ nhàng. Hãy cùng người thương đi dạo, tập thể dục, chăm sóc nhau.",
+      "tai-loc": "Chi cho sức khỏe như thực phẩm lành, khám định kỳ là khoản đáng giá. Bớt những chi tiêu cho thói quen không tốt."
+    },
+    "loiKhuyen": "Tối nay hãy ngủ sớm hơn ba mươi phút và uống thêm một cốc nước. Giữ thân như giữ suối nguồn.",
+    "chuDe": [
+      "suc-khoe"
+    ]
+  },
+  {
+    "id": 41,
+    "tieuDe": "Đò nhỏ đợi khách",
+    "tho": [
+      "Bến sông đò nhỏ chờ ai",
+      "Chẳng vì vắng khách mà phai tấm lòng",
+      "Người thương có lúc ngược dòng",
+      "Đò ơi cứ đợi, thong dong nắng chiều"
+    ],
+    "loiGiai": "Con đò nhỏ bên bến sông vẫn đợi, chẳng vì vắng khách mà phai lòng. Quẻ này nói về sự chờ đợi thủy chung và bình thản. Điều tốt đẹp, người tri kỷ hay cơ duyên có thể đến muộn, nhưng sẽ đến với người giữ được lòng mình. Trong lúc đợi, đừng ngồi yên buồn bã mà hãy sống thong dong, làm tốt việc của mình mỗi ngày.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Có người thân đi xa, hay có điều cả nhà đang mong. Hãy giữ liên lạc, gửi lời hỏi han, để người ở xa biết luôn có bến chờ.",
+      "cong-viec": "Kết quả xin việc hay thăng tiến có thể còn đang chờ. Trong lúc ấy, hãy làm tốt việc hiện tại và tiếp tục học hỏi.",
+      "suc-khoe": "Đừng để sự mong chờ làm bạn bỏ bê bản thân. Ăn uống đúng bữa, ra ngoài dạo chơi, gặp gỡ bạn bè cho lòng thư thái.",
+      "hoc-hanh": "Thành quả học tập cần thời gian để hiện ra. Hãy tiếp tục chăm chỉ, đừng so sánh tốc độ của mình với người khác.",
+      "tinh-duyen": "Người thương có thể đến lúc bạn không ngờ. Hãy giữ lòng chân thành, sống vui vẻ, đừng vì sốt ruột mà chọn vội.",
+      "tai-loc": "Thu nhập có lúc thưa như bến vắng. Hãy chi tiêu dè dặt, giữ khoản dự phòng và kiên nhẫn với công việc chính đáng."
+    },
+    "loiKhuyen": "Chờ đợi mà vẫn sống vui, đó là cách đợi đẹp nhất. Hãy làm tốt việc của hôm nay.",
+    "chuDe": [
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 42,
+    "tieuDe": "Dừng chân lưng núi",
+    "tho": [
+      "Lưng chừng núi, gió nhẹ đưa",
+      "Dừng chân ngồi tạm, cho vừa sức đi",
+      "Đỉnh cao còn đó, lo gì",
+      "Thở sâu một nhịp, rồi đi tiếp đường"
+    ],
+    "loiGiai": "Leo đến lưng chừng núi, gió nhẹ đưa, người khôn biết dừng chân ngồi nghỉ cho vừa sức. Đỉnh cao vẫn ở đó, chẳng đi đâu mất. Quẻ này nhắc bạn rằng nghỉ ngơi không phải là bỏ cuộc. Đường còn xa, hãy lấy lại hơi sức, uống ngụm nước, nhìn lại chặng đã qua rồi mới bước tiếp.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Hãy dành một ngày cuối tuần cho cả nhà thư giãn, không bàn chuyện áp lực. Cùng nghỉ ngơi giúp mọi người gần nhau hơn.",
+      "cong-viec": "Nếu thấy kiệt sức vì công việc, hãy xin nghỉ phép ngắn hoặc sắp xếp lại khối lượng việc. Làm bền quan trọng hơn làm gấp.",
+      "suc-khoe": "Cơ thể đang báo hiệu cần nghỉ. Ngủ đủ, giảm cà phê, đi dạo nhẹ. Nếu mệt mỏi kéo dài hay đau nhức, hãy đi khám bác sĩ.",
+      "hoc-hanh": "Học liên tục dễ quá tải. Hãy chia buổi học, nghỉ năm đến mười phút sau mỗi phần, đầu óc sẽ tiếp thu tốt hơn.",
+      "tinh-duyen": "Tình cảm cũng cần những lúc chậm lại. Thay vì đòi hỏi, hãy cùng nhau nghỉ ngơi, trò chuyện nhẹ nhàng.",
+      "tai-loc": "Đừng vì muốn kiếm thêm mà làm quá sức. Sức khỏe là vốn lớn nhất; chi tiêu vừa phải để không phải gồng mình."
+    },
+    "loiKhuyen": "Nghỉ một chút để đi được xa. Hôm nay hãy cho mình một khoảng thời gian thật sự thảnh thơi.",
+    "chuDe": [
+      "suc-khoe",
+      "hoc-hanh"
+    ]
+  },
+  {
+    "id": 43,
+    "tieuDe": "Hồ trong soi bóng",
+    "tho": [
+      "Cúi nhìn hồ nước mênh mông",
+      "Bóng ta in rõ, mây hồng bay qua",
+      "Soi mình bớt trách người ta",
+      "Lỗi mình tự sửa, thuận hòa đôi bên"
+    ],
+    "loiGiai": "Cúi nhìn mặt hồ rộng, ta thấy bóng mình in rõ giữa mây trời. Quẻ này khuyên bạn soi lại chính mình: bớt trách người, thêm tự xét. Ai cũng có lúc sai, điều quý là biết nhận ra và tự sửa. Khi mình thay đổi trước, mọi mối quan hệ xung quanh cũng dần trở nên thuận hòa.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Khi có bất đồng trong nhà, trước khi trách ai, hãy tự hỏi mình đã góp phần gì. Nhận lỗi trước sẽ làm dịu không khí.",
+      "cong-viec": "Hãy nhìn lại cách làm việc của mình: điều gì làm tốt, điều gì cần sửa. Xin góp ý từ đồng nghiệp với lòng cởi mở.",
+      "suc-khoe": "Quan sát thói quen sinh hoạt của mình trong một tuần: giờ ngủ, bữa ăn, thời gian dùng điện thoại, rồi chọn một điều để điều chỉnh.",
+      "hoc-hanh": "Xem lại bài kiểm tra cũ, tìm ra lỗi hay mắc. Tự học từ chính sai sót của mình là cách tiến bộ nhanh và chắc.",
+      "tinh-duyen": "Trong tình cảm, thay vì đòi người kia thay đổi, hãy xem mình có thể dịu dàng, lắng nghe hơn ở đâu.",
+      "tai-loc": "Nhìn lại các khoản chi tháng qua, tìm ra chỗ còn lãng phí. Sửa từ thói quen nhỏ sẽ giúp tài chính vững hơn."
+    },
+    "loiKhuyen": "Tối nay hãy dành vài phút tự hỏi: hôm nay mình đã làm tốt điều gì, cần sửa điều gì.",
+    "chuDe": [
+      "hoc-hanh",
+      "gia-dao"
+    ]
+  },
+  {
+    "id": 44,
+    "tieuDe": "Thuyền nan tập chèo",
+    "tho": [
+      "Thuyền nan nhỏ bé, sóng to",
+      "Biết lường sức mọn, chẳng lo ngại ngần",
+      "Ven bờ luyện tập dần dần",
+      "Tay quen vững mái, xa gần đều qua"
+    ],
+    "loiGiai": "Chiếc thuyền nan nhỏ bé giữa sóng to, người chèo biết lường sức mình nên không liều ra khơi mà tập chèo ven bờ trước. Dần dần tay quen, mái vững, xa gần đều đi được. Quẻ này khuyên can đảm nhưng vừa sức: bắt đầu từ việc nhỏ, tích lũy kinh nghiệm, rồi hãy nhận việc lớn hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Việc lớn trong nhà như sửa nhà, chuyển chỗ ở nên làm từng phần, tính trước ngân sách và hỏi ý người có kinh nghiệm.",
+      "cong-viec": "Đừng nhận quá nhiều việc cùng lúc để chứng tỏ mình. Hãy làm thật tốt phần vừa sức, uy tín sẽ đưa bạn đến việc lớn hơn.",
+      "suc-khoe": "Tập luyện thể thao nên tăng dần cường độ, khởi động kỹ. Nếu có bệnh nền, hãy hỏi bác sĩ trước khi tập nặng.",
+      "hoc-hanh": "Học từ bài dễ đến bài khó. Nắm chắc căn bản rồi mới làm bài nâng cao, bạn sẽ đi nhanh hơn về lâu dài.",
+      "tinh-duyen": "Mối quan hệ mới nên tìm hiểu từ từ. Bắt đầu bằng tình bạn, sự tin tưởng sẽ lớn dần một cách tự nhiên.",
+      "tai-loc": "Muốn làm ăn, hãy bắt đầu nhỏ với số vốn mình có, không vay mượn quá sức. Học kinh nghiệm trước rồi mới mở rộng."
+    },
+    "loiKhuyen": "Bắt đầu nhỏ, tập cho vững. Biết lường sức mình là can đảm thật sự.",
+    "chuDe": [
+      "cong-viec",
+      "tai-loc"
+    ]
+  },
+  {
+    "id": 45,
+    "tieuDe": "Khúc quanh trên đèo",
+    "tho": [
+      "Đèo cao mấy khúc vòng quanh",
+      "Đường xa mà chắc, bước nhanh dễ lầm",
+      "Làm ăn chẳng vội, âm thầm",
+      "Dành từng đồng nhỏ, tiền cầm chắc tay"
+    ],
+    "loiGiai": "Con đèo cao uốn nhiều khúc quanh. Tưởng đi vòng là chậm, nhưng chính những khúc quanh ấy giúp người qua đèo được an toàn. Quẻ này nhắc rằng con đường vững chãi đôi khi không phải đường thẳng nhất. Làm ăn, tích lũy cũng thế: đi đều, tiết kiệm, không đốt cháy giai đoạn thì tự nhiên sẽ đủ đầy.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đừng so sánh nhà mình với nhà người. Mỗi gia đình có con đường riêng; vun vén từng chút, sống hòa thuận là quý.",
+      "cong-viec": "Thăng tiến có thể không nhanh như mong muốn. Hãy xem mỗi khúc quanh là dịp học thêm kỹ năng, không đi đường tắt sai quy định.",
+      "suc-khoe": "Đi đường đèo hay đường xa, hãy nghỉ đủ trước khi đi, không lái xe khi mệt. Với sức khỏe, cũng đừng tìm cách chữa tắt.",
+      "hoc-hanh": "Không có cách học nào thay được ôn luyện. Hãy theo lộ trình rõ ràng, đừng chỉ học mẹo để đối phó kỳ thi.",
+      "tinh-duyen": "Tình cảm có những khúc quanh. Hãy kiên nhẫn đi qua cùng nhau, đừng vội buông tay khi đường chưa thẳng.",
+      "tai-loc": "Làm giàu bền vững nhờ chăm chỉ và tiết kiệm. Tránh cờ bạc, vay nóng, hay những lời mời lãi cao. Đi chậm mà chắc sẽ đủ đầy."
+    },
+    "loiKhuyen": "Đi đường vòng mà an toàn còn hơn đường tắt mà rủi ro. Mỗi tháng hãy để dành một khoản nhỏ.",
+    "chuDe": [
+      "tai-loc"
+    ]
+  },
+  {
+    "id": 46,
+    "tieuDe": "Sông dài ra biển",
+    "tho": [
+      "Sông dài rồi cũng ra khơi",
+      "Bao nhiêu khúc khuỷu một thời đã qua",
+      "Chuyện xưa cứ để trôi xa",
+      "Giữ điều tốt đẹp, thứ tha lỗi lầm"
+    ],
+    "loiGiai": "Dòng sông dài qua bao khúc khuỷu rồi cũng ra đến biển khơi. Những gì đã qua, vui hay buồn, cũng là một phần của dòng chảy ấy. Quẻ này khuyên buông bỏ chuyện cũ, giữ lại điều tốt đẹp và thứ tha lỗi lầm cho người lẫn cho mình. Khi lòng rộng như biển, những va vấp xưa sẽ chẳng còn làm mình nặng nề.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Những hiểu lầm cũ trong gia đình, nếu còn vướng, hãy chủ động hàn gắn. Tha thứ không phải là quên, mà là cho nhau một khởi đầu mới.",
+      "cong-viec": "Đừng mang chuyện không vui ở chỗ làm cũ vào nơi mới. Giữ lại bài học, để những bực bội trôi đi.",
+      "suc-khoe": "Ôm giữ phiền muộn lâu ngày làm thân tâm mệt mỏi. Hãy chia sẻ với người thân tin cậy, viết nhật ký, đi bộ ngoài trời.",
+      "hoc-hanh": "Một lần thất bại trong học tập không định nghĩa bạn. Hãy tha thứ cho mình, rút kinh nghiệm và bắt đầu lại với lòng nhẹ nhõm.",
+      "tinh-duyen": "Chuyện tình đã qua hãy để nó trôi về biển. Giữ lại điều đẹp, cảm ơn và chúc người cũ bình an, rồi mở lòng đón ngày mới.",
+      "tai-loc": "Những khoản đã chi sai, hãy xem là bài học để lần sau cẩn thận hơn. Đừng tiếc nuối mà chi tiêu theo cảm xúc."
+    },
+    "loiKhuyen": "Hôm nay hãy tha thứ cho một điều cũ, có thể là cho chính mình. Giữ điều tốt, để điều buồn trôi đi.",
+    "chuDe": [
+      "gia-dao",
+      "tinh-duyen"
+    ]
+  },
+  {
+    "id": 47,
+    "tieuDe": "Sỏi tròn lòng suối",
+    "tho": [
+      "Sỏi tròn nằm dưới suối sâu",
+      "Mặc dòng nước chảy, bấy lâu tròn dần",
+      "Người hay mài giũa tinh thần",
+      "Bớt điều góc cạnh, ân cần với nhau"
+    ],
+    "loiGiai": "Viên sỏi nằm dưới lòng suối, mặc nước chảy bao năm mà dần trở nên tròn trịa. Quẻ này nói về sự tu dưỡng: con người cũng được mài giũa qua năm tháng, qua va chạm và học hỏi. Bớt đi góc cạnh nóng nảy, ta sẽ sống ân cần với nhau hơn. Đừng ngại thử thách, chúng đang làm cho bạn tốt hơn.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Trong nhà, bớt một lời gay gắt là thêm một phần ấm áp. Tập nói chậm, nói nhẹ, nhất là với người lớn tuổi và trẻ nhỏ.",
+      "cong-viec": "Những góp ý khó nghe ở chỗ làm có thể là nước mài sỏi. Hãy lắng nghe, chọn lọc điều đúng để hoàn thiện mình.",
+      "suc-khoe": "Nóng giận nhiều dễ ảnh hưởng đến sức khỏe. Khi bực bội, hãy hít thở sâu, uống ngụm nước, đi vài bước rồi mới nói.",
+      "hoc-hanh": "Học là quá trình mài giũa lâu dài. Hãy kiên nhẫn với những bài khó và những lời sửa bài của thầy cô.",
+      "tinh-duyen": "Tình cảm bền khi cả hai biết mềm lại. Bớt cái tôi một chút, thêm lời dịu dàng, mọi va chạm sẽ nhẹ đi.",
+      "tai-loc": "Sự tích lũy tài chính cũng như sỏi tròn dần: cần thời gian và kiên nhẫn. Giữ kỷ luật chi tiêu, không chạy theo đám đông."
+    },
+    "loiKhuyen": "Hôm nay hãy thử thay một câu nói gay gắt bằng một câu nhẹ nhàng. Mềm lại, lòng sẽ an.",
+    "chuDe": [
+      "hoc-hanh",
+      "tai-loc"
+    ]
+  },
+  {
+    "id": 48,
+    "tieuDe": "Cầu treo đung đưa",
+    "tho": [
+      "Cầu treo gió thổi đung đưa",
+      "Mắt nhìn phía trước, chân vừa bước sang",
+      "Tay vin dây chắc, khẽ khàng",
+      "Bờ kia đã tới, rộn ràng niềm vui"
+    ],
+    "loiGiai": "Cây cầu treo đung đưa trong gió, người qua cầu nếu nhìn xuống sẽ ngại, nhưng nhìn về phía trước và tay vin chắc dây thì bước nào cũng vững. Quẻ này dành cho lúc bạn đang lo lắng trước một thử thách. Hãy tập trung vào bước kế tiếp thay vì nỗi sợ, tin vào sự chuẩn bị của mình, rồi niềm vui sẽ chờ ở bờ bên kia.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Khi gia đình đối mặt việc mới, hãy động viên nhau nhìn về phía trước. Một bàn tay nắm lấy lúc này quý hơn nhiều lời khuyên.",
+      "cong-viec": "Thuyết trình, phỏng vấn hay nhận việc mới có thể khiến bạn hồi hộp. Hãy chuẩn bị kỹ, tập trước vài lần, rồi tự tin bước lên.",
+      "suc-khoe": "Lo lắng có thể làm tim đập nhanh, khó ngủ. Hãy tập thở chậm, vận động nhẹ. Nếu lo âu kéo dài, đừng ngại tìm bác sĩ tư vấn.",
+      "hoc-hanh": "Trước kỳ thi, đừng nghĩ mãi về điểm số. Tập trung vào từng câu, làm chắc câu mình biết, giữ bình tĩnh khi gặp câu khó.",
+      "tinh-duyen": "Mở lời với người mình quý có thể khiến bạn ngại ngần. Hãy chân thành, nhẹ nhàng; dù kết quả ra sao, bạn đã sống thật lòng.",
+      "tai-loc": "Trước khoản chi lớn, hãy lập kế hoạch rõ ràng và có phương án dự phòng. Chuẩn bị kỹ thì bớt lo."
+    },
+    "loiKhuyen": "Nhìn về phía trước, tay giữ chắc điều căn bản. Từng bước một, bạn sẽ qua cầu.",
+    "chuDe": [
+      "hoc-hanh"
+    ]
+  },
+  {
+    "id": 49,
+    "tieuDe": "Núi đá giữa gió mưa",
+    "tho": [
+      "Mưa nghiêng gió giật bốn phương",
+      "Núi kia vẫn đứng, mây vương đỉnh đầu",
+      "Khen chê gió thổi về đâu",
+      "Giữ lòng vững chãi, dãi dầu chẳng sao"
+    ],
+    "loiGiai": "Mưa nghiêng gió giật bốn phương, núi đá vẫn đứng yên, mây chỉ vương trên đỉnh rồi bay đi. Lời khen tiếng chê ngoài kia cũng như gió thổi. Quẻ này khuyên bạn giữ lòng vững chãi, sống theo điều mình thấy đúng, không vì lời người mà chao đảo. Vững từ bên trong thì dù gặp dãi dầu cũng chẳng sao.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Mỗi gia đình có cách sống riêng. Đừng vì lời bàn tán bên ngoài mà làm nhau buồn; hãy tin và đứng về phía nhau.",
+      "cong-viec": "Khen chê ở chỗ làm là chuyện thường. Ghi nhận góp ý có ích, bỏ qua lời vô căn cứ, và tiếp tục làm việc với tâm thế điềm tĩnh.",
+      "suc-khoe": "Một tinh thần vững giúp cơ thể khỏe. Giữ nhịp sinh hoạt đều, bớt đọc tin tiêu cực. Khi thấy căng thẳng nhiều, hãy tìm người để tâm sự.",
+      "hoc-hanh": "Đừng để so sánh với bạn bè làm bạn nản. Hãy theo đuổi mục tiêu của mình với tốc độ phù hợp với bản thân.",
+      "tinh-duyen": "Hãy tin vào cảm nhận chân thành của mình hơn là lời đồn đoán. Một mối quan hệ vững cần sự tin tưởng từ hai phía.",
+      "tai-loc": "Đừng chạy theo trào lưu tiêu xài hay đầu tư vì sợ thua kém người khác. Giữ kế hoạch tài chính của mình, vững vàng là đủ."
+    },
+    "loiKhuyen": "Lắng nghe góp ý, nhưng giữ vững điều mình tin là đúng. Núi chẳng vì gió mà dời.",
+    "chuDe": [
+      "suc-khoe",
+      "tai-loc"
+    ]
+  },
+  {
+    "id": 50,
+    "tieuDe": "Bến xưa người về",
+    "tho": [
+      "Bao năm xa bến xa làng",
+      "Hôm nay về lại, ngỡ ngàng hàng tre",
+      "Bến xưa vẫn đó, lắng nghe",
+      "Tiếng cười thân thuộc, chở che một nhà"
+    ],
+    "loiGiai": "Bao năm xa bến xa làng, nay trở về thấy hàng tre vẫn đó, bến xưa vẫn đợi, tiếng cười thân thuộc chở che cả nhà. Quẻ này mang sắc thái sum họp và biết ơn cội nguồn. Dù đi xa đến đâu, nơi chốn cũ và những người thương vẫn là chỗ dựa. Hãy dành thời gian trở về, thăm hỏi và gìn giữ những gắn bó ấy.",
+    "loiGiaiTheoChuDe": {
+      "gia-dao": "Đây là lúc tốt để thăm quê, thăm ông bà, cha mẹ. Nếu chưa về được, một cuộc gọi hỏi han cũng đủ làm người nhà vui.",
+      "cong-viec": "Có thể bạn gặp lại người quen cũ, đồng nghiệp xưa. Hãy giữ mối quan hệ tốt đẹp; những gắn bó chân thành thường mở ra cơ hội.",
+      "suc-khoe": "Không khí quê nhà và bữa cơm mẹ nấu giúp tinh thần hồi phục. Hãy cho mình thời gian nghỉ ngơi, và nhắc người thân đi khám sức khỏe.",
+      "hoc-hanh": "Đừng quên những thầy cô, mái trường đã dạy dỗ mình. Ghé thăm hay gửi lời tri ân cũng là cách nuôi dưỡng lòng hiếu học.",
+      "tinh-duyen": "Tình cảm có thể đến từ những gì thân quen gần gũi. Hãy trân trọng người đã luôn ở bên bạn, kể cả khi bạn đi xa.",
+      "tai-loc": "Tiền bạc nên dành một phần chăm lo cho gia đình. Chi tiêu có kế hoạch để những lần về thăm nhà luôn vui và nhẹ nhàng."
+    },
+    "loiKhuyen": "Hãy gọi cho người thân hôm nay, hoặc hẹn ngày về thăm. Nơi chốn cũ luôn có người chờ.",
+    "chuDe": [
+      "gia-dao",
+      "tinh-duyen"
+    ]
+  }
+]

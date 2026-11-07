@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "thong-diep-ngay.schema.json",
+  "title": "Thông điệp mỗi ngày",
+  "type": "array",
+  "minItems": 366,
+  "maxItems": 366,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "noiDung"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 366
+      },
+      "noiDung": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 160
+      }
+    }
+  }
+}

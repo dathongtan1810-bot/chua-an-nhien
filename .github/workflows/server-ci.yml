@@ -1,0 +1,55 @@
+name: server-ci
+on:
+  push:
+    paths: ['server/**', 'shared/**', 'admin/**', '.github/workflows/server-*.yml']
+  pull_request:
+    paths: ['server/**', 'shared/**', 'admin/**', '.github/workflows/server-*.yml']
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+  redis-cluster:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:7
+        ports: ['6379:6379']
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
+    defaults:
+      run:
+        working-directory: server
+    env:
+      REDIS_TEST_URL: redis://localhost:6379
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      # test 2 instance + toàn bộ bộ test ở chế độ cụm Redis
+      - run: npx vitest run test/cluster.test.ts
+      - run: npx vitest run
+        env:
+          TEST_ALL_REDIS: '1'
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f server/Dockerfile -t chua-an-nhien-server .

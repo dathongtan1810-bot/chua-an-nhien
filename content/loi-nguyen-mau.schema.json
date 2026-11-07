@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "loi-nguyen-mau.schema.json",
+  "title": "Lời nguyện mẫu",
+  "type": "array",
+  "minItems": 300,
+  "maxItems": 300,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "chuDe",
+      "noiDung"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 300
+      },
+      "chuDe": {
+        "enum": [
+          "gia-dao",
+          "cong-viec",
+          "suc-khoe",
+          "hoc-hanh",
+          "tinh-duyen",
+          "tai-loc",
+          "binh-an",
+          "bien-on",
+          "cau-sieu",
+          "the-gioi"
+        ]
+      },
+      "noiDung": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 120
+      }
+    }
+  }
+}
