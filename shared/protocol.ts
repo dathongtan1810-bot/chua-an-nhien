@@ -75,7 +75,7 @@ export type RingBellPayload = z.infer<typeof RingBellSchema>;
 export const LanternColorSchema = z
   .string()
   .trim()
-  .regex(/^(#[0-9a-fA-F]{6}|[a-z][a-z-]{0,19})$/, 'color phải là #rrggbb hoặc tên màu a-z');
+  .regex(/^(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}|[a-z][a-z-]{0,19})$/, 'color phải là #rrggbb, #rgb hoặc tên màu a-z');
 
 export const ReleaseLanternSchema = z.object({
   text: z.string().max(1000), // kiểm tra độ dài thật (≤120 ký tự) ở bộ lọc sau khi chuẩn hoá
@@ -163,6 +163,8 @@ export interface LanternPayload {
   nickname: string;
   at: string;
   likes: number;
+  /** EXT: userId công khai của tác giả (để client chặn/báo cáo tác giả từ đèn). Cùng loại id đã có trong incense_lit. */
+  userId: string;
 }
 export interface LanternRemovedPayload {
   id: string;
@@ -252,6 +254,10 @@ export interface ClientToServerEvents {
 export interface HealthResponse {
   ok: true;
   uptimeSec: number;
+  /** EXT: bí danh của uptimeSec (client app đọc `uptime`). */
+  uptime: number;
+  /** EXT: số người online (toàn cụm). */
+  online: number;
   version: string;
   serverTime: string;
 }
@@ -263,6 +269,10 @@ export interface StatsResponse {
   online: number;
   areas: AreaCounts;
   today: { lanterns: number; incense: number; bells: number };
+  /** EXT: bản phẳng của `today` (client app đọc các tên này). */
+  lanternsToday: number;
+  incenseToday: number;
+  bellsToday: number;
   serverTime: string;
 }
 export const LanternsQuerySchema = z.object({

@@ -12,6 +12,7 @@ Server là **một tiến trình Node** (Fastify + Socket.IO) dùng **SQLite** t
 | `DB_PATH` | `./data/chua.db` (Docker: `/data/chua.db`) | phải nằm trên volume bền |
 | `REDIS_URL` | rỗng | `redis://...` → chế độ nhiều instance (xem "Scale"). Cần `DATABASE_URL` dùng chung |
 | `REDIS_PREFIX` | `chua:` | tiền tố khoá Redis |
+| `SOCKET_TRANSPORTS` | rỗng | `websocket` hoặc `websocket,polling`. Rỗng = cả hai khi 1 instance, chỉ websocket khi có `REDIS_URL` |
 | `DATABASE_URL` | rỗng | `postgres://...` → dùng PostgreSQL (src/repo/postgres.ts) thay SQLite; sao lưu bằng `pg_dump` |
 | `DEVICE_SALT` | — | **bắt buộc** ở production, chuỗi ngẫu nhiên dài; **không đổi** sau khi chạy (đổi = mọi thiết bị thành người mới) |
 | `ADMIN_PASSWORD` | rỗng (tắt admin) | mật khẩu trang `/admin/` |
@@ -126,7 +127,7 @@ socket.emit('hello', { deviceId, nickname: null, lang: 'vi' });
    - cooldown chuông (20 s/người, 3 s toàn server) kiểm tra & đặt **nguyên tử** bằng Lua;
    - phòng riêng lưu trong Redis (vào phòng nguyên tử, phòng trống tự hết hạn sau 10 phút);
    - hương trong `welcome` đọc từ DB; quan hệ chặn luôn đọc DB.
-3. Chỉ dùng transport `websocket` ở client (khuyến nghị sẵn) → **không cần sticky session**.
+3. Ở chế độ cụm server mặc định **chỉ nhận websocket** (`SOCKET_TRANSPORTS` rỗng + `REDIS_URL`) → **không cần sticky session**. Client app hiện khai báo `['websocket', 'polling']`: vẫn kết nối được (thử websocket trước); chỉ mạng chặn websocket mới không vào được. Muốn cho phép polling ở chế độ cụm: `SOCKET_TRANSPORTS=websocket,polling` **và** bật sticky session ở load balancer.
 4. `REDIS_PREFIX` nếu nhiều môi trường dùng chung một Redis.
 
 Rate limit theo sự kiện (theo người & theo IP), giới hạn chuông/đèn theo IP cũng dùng chung qua Redis (cửa sổ trượt nguyên tử, Lua).

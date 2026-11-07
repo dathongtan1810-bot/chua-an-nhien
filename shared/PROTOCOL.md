@@ -22,7 +22,7 @@ Nguồn sự thật: [`shared/protocol.ts`](./protocol.ts) (type TypeScript + zo
 | `enter_area` | `{area}` | |
 | `light_incense` | `{count}` | số nguyên 1–9. Mỗi người 1 lần/15 s. |
 | `ring_bell` | `{force}` | số 0–1. Mỗi người 1 lần/20 s, toàn server tối đa 1 lần/3 s. |
-| `release_lantern` | `{text, color}` | `text` ≤ 120 ký tự sau chuẩn hoá; `color` = `#rrggbb` hoặc tên màu `[a-z-]`. 3 đèn/giờ/người. Ack: `{ok:true, id, status:'approved'|'pending'}`. |
+| `release_lantern` | `{text, color}` | `text` ≤ 120 ký tự sau chuẩn hoá; `color` = `#rrggbb`, `#rgb` hoặc tên màu `[a-z-]` (vd token của app: `hong`, `vang`, `trang`, `xanh`, `tim`). 3 đèn/giờ/người. Ack: `{ok:true, id, status:'approved'|'pending'}`. |
 | `like_lantern` | `{id}` | mỗi người 1 lần/đèn (`already_liked`). |
 | `report` | `{type:'lantern'|'user', id, reason}` | `reason` ≤ 200 ký tự (có thể rỗng). Đủ 3 người khác nhau báo cáo → tự ẩn chờ duyệt. Ack: `{ok:true, autoHidden}`. |
 | `block_user` | `{userId}` | Hai bên không còn thấy đèn/hương của nhau (realtime + REST). |
@@ -35,7 +35,7 @@ Nguồn sự thật: [`shared/protocol.ts`](./protocol.ts) (type TypeScript + zo
 | `presence` | `{online, areas}` — phát gộp mỗi 3 s, **chỉ khi có thay đổi**. `online` đếm theo người (nhiều tab cùng thiết bị = 1). |
 | `incense_lit` | `{userId, nickname, count, at}` |
 | `bell_rung` | `{force, at}` |
-| `lantern_released` | `{id, text, color, nickname, at, likes}` — khi `MODERATION_MODE=pre` (hoặc người dùng bị gắn cờ), chỉ **tác giả** nhận ngay; mọi người nhận khi admin duyệt. |
+| `lantern_released` | `{id, text, color, nickname, at, likes, userId}` — `userId` (EXT, thêm sau) là id công khai của tác giả, để client chặn/báo cáo tác giả từ đèn; khi `MODERATION_MODE=pre` (hoặc người dùng bị gắn cờ), chỉ **tác giả** nhận ngay; mọi người nhận khi admin duyệt. |
 | `lantern_removed` | `{id}` — đèn bị ẩn (báo cáo/admin), tác giả xoá dữ liệu, hoặc do chặn. |
 | `rate_limited` | `{event, retryAfterMs}` |
 | `error` | `{code, message}` — `code` ∈ `invalid_payload, not_hello, banned, feature_disabled, content_rejected, not_found, already_liked, already_reported, cannot_target_self, room_not_found, room_full, too_many_connections, internal`. `message` hiển thị được cho người dùng: tiếng Anh nếu `hello.lang` bắt đầu bằng `en`, còn lại tiếng Việt. |
@@ -46,9 +46,9 @@ Khi bị khoá (`banned`) server gửi `error` rồi ngắt kết nối. Vượt
 
 | Route | Mô tả |
 |---|---|
-| `GET /api/health` | `{ok, uptimeSec, version, serverTime}` |
+| `GET /api/health` | `{ok, uptimeSec, uptime, online, version, serverTime}` (`uptime`, `online`: EXT) |
 | `GET /api/lanterns?since=ISO` | `{lanterns: LanternPayload[], serverTime}` — đèn đã duyệt, chưa hết hạn (24 h), mới nhất trước, tối đa 200. Header tuỳ chọn `x-device-id` để lọc người đã chặn. |
-| `GET /api/stats` | `{online, areas, today:{lanterns, incense, bells}, serverTime}` — "hôm nay" theo giờ Việt Nam (UTC+7). |
+| `GET /api/stats` | `{online, areas, today:{lanterns, incense, bells}, lanternsToday, incenseToday, bellsToday, serverTime}` (bản phẳng: EXT) — "hôm nay" theo giờ Việt Nam (UTC+7). |
 | `POST /api/me/delete` | body `{deviceId}` → `{ok:true, deleted:{lanterns, likes, reports, blocks, incense, user}}`. Luôn trả `ok` (kể cả deviceId không tồn tại). Ngắt mọi kết nối của thiết bị. |
 | `GET /metrics` | Prometheus (nếu đặt `METRICS_TOKEN` thì cần `Authorization: Bearer <token>`). |
 

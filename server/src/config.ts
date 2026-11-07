@@ -26,6 +26,9 @@ const EnvSchema = z.object({
   /** Nếu đặt (redis://...), chạy chế độ nhiều instance: phát sự kiện, presence, cooldown chuông, phòng riêng dùng chung qua Redis. */
   REDIS_URL: z.string().default(''),
   REDIS_PREFIX: z.string().default('chua:'),
+  /** "websocket,polling" | "websocket". Rỗng = websocket+polling khi 1 instance, chỉ websocket khi có REDIS_URL
+   *  (polling cần sticky session giữa các instance). */
+  SOCKET_TRANSPORTS: z.string().default(''),
   /** Salt băm deviceId. BẮT BUỘC đổi trong production. */
   DEVICE_SALT: z.string().min(8).default('dev-salt-change-me'),
   ADMIN_PASSWORD: z.string().default(''),
