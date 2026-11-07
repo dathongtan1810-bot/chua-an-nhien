@@ -88,3 +88,19 @@ export function judgeHold(holdStartMs: number, holdEndMs: number, growStartMs: n
   const overlap = Math.min(holdEndMs, growStartMs + growMs) - Math.max(holdStartMs, growStartMs);
   return overlap >= growMs * 0.5;
 }
+
+/**
+ * Đồng hồ thiền theo thời gian thật: cộng khoảng `now - lastTick`, nhưng một khoảng quá dài (ứng dụng bị ẩn,
+ * máy khóa màn hình) chỉ tính tối đa `maxGapMs` → buổi thiền "tạm dừng" thay vì nhảy tới cuối.
+ * Không phụ thuộc nhịp khung hình: máy yếu ít khung hình vẫn đếm đúng giây.
+ */
+export function advanceClock(
+  elapsedMs: number,
+  lastTick: number,
+  now: number,
+  maxGapMs = 2000,
+): { elapsedMs: number; lastTick: number } {
+  if (lastTick <= 0) return { elapsedMs, lastTick: now };
+  const gap = Math.max(0, now - lastTick);
+  return { elapsedMs: elapsedMs + Math.min(gap, maxGapMs), lastTick: now };
+}

@@ -105,3 +105,15 @@ describe('judgeHold', () => {
     expect(judgeHold(G, G + GROW, G, 0)).toBe(false);
   });
 });
+
+describe('đồng hồ thiền theo thời gian thật', () => {
+  it('đếm đúng giây dù ít khung hình; khoảng ẩn app chỉ tính tối đa 2s', async () => {
+    const { advanceClock } = await import('../src/rituals/pure-a');
+    let c = advanceClock(0, 0, 1000); // khung đầu chỉ mốc thời gian
+    expect(c.elapsedMs).toBe(0);
+    for (let t = 1300; t <= 4000; t += 300) c = advanceClock(c.elapsedMs, c.lastTick, t); // ~3 fps
+    expect(c.elapsedMs).toBe(3000);
+    c = advanceClock(c.elapsedMs, c.lastTick, 4000 + 60_000); // ẩn app 1 phút
+    expect(c.elapsedMs).toBe(5000);
+  });
+});

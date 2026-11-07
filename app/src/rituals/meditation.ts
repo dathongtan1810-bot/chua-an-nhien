@@ -7,7 +7,7 @@ import { makeGlow } from '../art/sprites';
 import { GAME_H, GAME_W } from '../art/types';
 import { getLang, t } from '../core/i18n';
 import { h } from '../ui/dom';
-import { breathPhase, formatMmSs, wholeMinutes } from './pure-a';
+import { breathPhase, formatMmSs, wholeMinutes, advanceClock } from './pure-a';
 import type { Ritual, RitualFactory } from './types';
 
 export { breathPhase } from './pure-a';
@@ -40,6 +40,7 @@ export const meditationRitual: RitualFactory = (host) => {
   let running = false;
   let finished = false;
   let elapsed = 0;
+  let lastTick = 0;
   let durationMs = 0;
   let lastPhase = '';
   let destroyed = false;
@@ -125,6 +126,7 @@ export const meditationRitual: RitualFactory = (host) => {
     audio.unlock();
     durationMs = minutes * 60000;
     elapsed = 0;
+    lastTick = 0;
     running = true;
     lastPhase = '';
     keepAwake();
@@ -175,15 +177,15 @@ export const meditationRitual: RitualFactory = (host) => {
   showChooser();
 
   const ritual: Ritual = {
-    update(_time: number, delta: number) {
+    update() {
       if (finished) {
         ring?.setAlpha(vis.a);
         glow?.setAlpha(vis.a * 0.6);
         return;
       }
       if (!running) return;
-      // clamp big gaps (tab switch) so a frozen frame doesn't skip the session
-      elapsed += Math.min(delta, 250);
+      // đồng hồ thật (không theo nhịp khung hình); ẩn ứng dụng thì tạm dừng — xem advanceClock
+      ({ elapsedMs: elapsed, lastTick } = advanceClock(elapsed, lastTick, performance.now()));
       const b = breathPhase(elapsed);
       const s = reducedMotion ? 0.85 + (b.scale - 0.6) * 0.375 : b.scale;
       ring?.setScale(s).setAlpha(vis.a);
