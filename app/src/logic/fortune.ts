@@ -31,9 +31,28 @@ const KNOWN_TOPICS: Record<string, { vi: string; en: string }> = {
   'hoc-hanh': { vi: 'Học hành', en: 'Study' },
   'tinh-duyen': { vi: 'Tình duyên', en: 'Love' },
   'tai-loc': { vi: 'Làm ăn', en: 'Livelihood' },
+  mua: { vi: 'Quẻ của mùa', en: 'Seasonal verse' },
   ...Object.fromEntries(TOPICS.map((t) => [t.id, { vi: t.vi, en: t.en }])),
 };
 const TOPIC_ORDER = ['gia-dao', 'cong-viec', 'suc-khoe', 'hoc-hanh', 'tinh-duyen', 'tai-loc', 'binh-an', 'cong-danh', 'hoc-tap'];
+
+/** Mã chủ đề đặc biệt: quẻ của mùa đang diễn ra (content/mua/*.json → queDacBiet). */
+export const SEASON_TOPIC = 'mua';
+
+/** Đổi quẻ đặc biệt của mùa sang dạng QueXam (không có lời giải theo chủ đề). */
+export function seasonSticksAsQueXam(
+  sticks: readonly { id: string; tieuDe: string; tho: string[] | string; loiGiai: string; loiKhuyen: string }[],
+): QueXam[] {
+  return sticks.map((s, i) => ({
+    id: 1001 + i,
+    tieuDe: s.tieuDe,
+    tho: Array.isArray(s.tho) ? s.tho.join('\n') : s.tho,
+    loiGiai: s.loiGiai,
+    loiGiaiTheoChuDe: {},
+    loiKhuyen: s.loiKhuyen,
+    chuDe: [SEASON_TOPIC],
+  }));
+}
 
 export function topicLabel(id: string, lang: 'vi' | 'en'): string {
   return KNOWN_TOPICS[id]?.[lang] ?? id;

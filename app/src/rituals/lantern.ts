@@ -16,6 +16,7 @@ import { vibrate } from '../audio/haptics';
 import { getLang, t, tOr } from '../core/i18n';
 import { store } from '../core/store';
 import { getLoiNguyenMau } from '../data/content';
+import { todayInfo } from '../core/today';
 import { checkText } from '../logic/filter';
 import { LANTERN_COLORS, LANTERN_MAX_LEN, type LanternPayload } from '../net/protocol';
 import { net } from '../net/service';
@@ -78,7 +79,9 @@ function swatchCss(color: string): string {
 
 function randomTemplate(): string {
   try {
-    const list = getLoiNguyenMau();
+    const season = todayInfo().season;
+    // trong mùa (Tết, Vu Lan…): 2/3 gợi ý lấy từ lời nguyện của mùa
+    const list = season?.loiNguyen.length && Math.random() < 0.67 ? season.loiNguyen : getLoiNguyenMau();
     if (!list.length) return '';
     return list[Math.floor(Math.random() * list.length)].noiDung;
   } catch {

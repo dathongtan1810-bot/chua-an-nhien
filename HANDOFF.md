@@ -63,6 +63,14 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
 - Gửi phiên nội dung: các chuỗi `onboarding.4-*`, `trang-thai-rong.cay-nguyen`, `kiem-duyet.*` nói "Cây nguyện"/"treo lên cây"
   — app không có Cây nguyện (dùng dòng sông thả đèn). Gửi phiên backend: cần sự kiện `unblock_user` để làm "Bỏ chặn".
 
+## Đợt 6
+- Merge content/server mới (server gửi `userId` trong đèn → nút Chặn tác giả đèn hoạt động với server thật).
+- **Chủ đề xin xăm khớp nội dung thật** (trước đó 3/6 chủ đề không có quẻ riêng); Nhật ký hiện tên quẻ + chủ đề.
+- **Lời nhắc mùng 1/rằm** dùng câu của phiên nội dung (`thong-bao-day.json`), xoay vòng, điền biệt danh.
+- **Bộ mùa** (7 bộ: Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Thành Đạo): thông điệp, trang trí,
+  lời chào, gợi ý lời nguyện và "Quẻ đặc biệt của mùa" theo mùa đang diễn ra. Xem trước (dev): `?date=2026-08-21`.
+- Dòng sông chỉ tạo hình cho 40 đèn đang hiện (trước đó tới ~400 đối tượng khi server trả ~200 đèn).
+
 ## Còn lại (cần người/thiết bị thật)
 - Đo FPS trên điện thoại tầm trung thật bằng `?fps` (trình duyệt headless ở đây render phần mềm, ~20 fps).
 - Ký bản phát hành (keystore Android, chứng chỉ Apple) và thử trên máy thật.

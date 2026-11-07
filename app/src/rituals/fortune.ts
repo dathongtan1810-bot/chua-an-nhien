@@ -11,7 +11,8 @@ import { getLang, t, tOr } from '../core/i18n';
 import { store } from '../core/store';
 import { getQueXam, type QueXam } from '../data/content';
 import { vnDateKey } from '../logic/dates';
-import { availableTopics, pickFortune, topicLabel } from '../logic/fortune';
+import { availableTopics, pickFortune, SEASON_TOPIC, seasonSticksAsQueXam, topicLabel } from '../logic/fortune';
+import { todayInfo } from '../core/today';
 import { h } from '../ui/dom';
 import { highPass, shakeDetector, type Vec3 } from './pure-b';
 import type { Ritual, RitualFactory, RitualHost } from './types';
@@ -21,7 +22,10 @@ const L = {
   en: { close: 'Close', share: 'Share', stick: 'Stick no. {n}', topic: 'Topic: {t}', hold: 'Hold the button to shake', poem: 'Poem' },
 };
 /** Nhãn chủ đề: chữ của phiên nội dung (xin-que.chu-de.*) nếu có, không thì nhãn của app. */
-const topicName = (id: string, lang: 'vi' | 'en'): string => tOr(`xin-que.chu-de.${id}`, topicLabel(id, lang));
+const topicName = (id: string, lang: 'vi' | 'en'): string =>
+  id === SEASON_TOPIC
+    ? tOr('mua.que-dac-biet', lang === 'vi' ? 'Quẻ của mùa' : 'Seasonal verse') + (todayInfo().season ? ` · ${todayInfo().season!.ten}` : '')
+    : tOr(`xin-que.chu-de.${id}`, topicLabel(id, lang));
 
 const loc = (k: keyof typeof L.vi, vars: Record<string, string | number> = {}): string => {
   let s = (getLang() === 'en' ? L.en : L.vi)[k];
@@ -114,7 +118,11 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
     const used = (store.dispatch({ type: 'rollDay', dateKey: vnDateKey() }), store.state.daily.fortuneTopics) ?? [];
     const lang = getLang() === 'en' ? 'en' : 'vi';
     let anyUsed = false;
-    const chips = availableTopics(getQueXam()).map((tp) => {
+    const season = todayInfo().season;
+    const topicList = availableTopics(getQueXam());
+    // trong mùa: thêm lựa chọn "Quẻ của mùa" (quẻ đặc biệt của phiên nội dung)
+    if (season?.queDacBiet.length) topicList.unshift({ id: SEASON_TOPIC, vi: 'Quẻ của mùa', en: 'Seasonal verse' });
+    const chips = topicList.map((tp) => {
       const isUsed = used.includes(tp.id);
       if (isUsed) anyUsed = true;
       return h(
@@ -291,7 +299,12 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
     step = 'drop';
     holding = false;
     root.innerHTML = '';
-    const que = pickFortune(getQueXam(), { deviceId: store.state.deviceId, topic, dateKey: vnDateKey() });
+    const seasonSticks = topic === SEASON_TOPIC ? seasonSticksAsQueXam(todayInfo().season?.queDacBiet ?? []) : [];
+    const que = pickFortune(seasonSticks.length ? seasonSticks : getQueXam(), {
+      deviceId: store.state.deviceId,
+      topic,
+      dateKey: vnDateKey(),
+    });
 
     const stick = scene.add.container(CUP_X + 10, CUP_Y - 120);
     const g = scene.add.graphics();
@@ -376,7 +389,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
           WebkitOverflowScrolling: 'touch',
         },
       },
-      h('p', { style: { margin: '0', fontSize: '15px', opacity: '0.75', textAlign: 'center' } }, `${loc('stick', { n: que.id })} · ${topicName(topic, lang)}`),
+      h('p', { style: { margin: '0', fontSize: '15px', opacity: '0.75', textAlign: 'center' } }, topic === SEASON_TOPIC ? topicName(topic, lang) : `${loc('stick', { n: que.id })} · ${topicName(topic, lang)}`),
       h('h2', { style: { margin: '6px 0 12px', fontSize: '24px', textAlign: 'center', fontFamily: 'serif' } }, que.tieuDe),
       h(
         'p',

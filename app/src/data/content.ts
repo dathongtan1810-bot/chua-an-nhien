@@ -9,6 +9,7 @@ import sampleThongDiep from './sample-thong-diep-ngay.json';
 import sampleSuKien from './sample-su-kien-am-lich.json';
 import sampleLoiNguyen from './sample-loi-nguyen-mau.json';
 import { getLang } from '../core/i18n';
+import { isSeason, type Season } from '../logic/season';
 
 export interface QueXam {
   id: number;
@@ -205,6 +206,7 @@ export function loadLangContent(lang: string): Promise<void> {
       'su-kien-am-lich': load('su-kien-am-lich', sampleSuKien, isSuKien).items,
       'loi-nguyen-mau': load('loi-nguyen-mau', sampleLoiNguyen, isLoiNguyenMau).items,
     };
+    await loadSeasonsEn();
     const ui = Object.entries(enLoaders).find(([path]) => path.endsWith('/giao-dien.json'));
     if (ui) {
       try {
@@ -226,6 +228,44 @@ export function loadLangContent(lang: string): Promise<void> {
     }
   })();
   return enLoad;
+}
+
+// ---------- Bộ mùa (content/mua/*.json + i18n/en/mua/*.json) ----------
+const seasonFiles = import.meta.glob(['../../../content/mua/*.json', '!../../../content/mua/*.schema.json'], {
+  eager: true,
+  import: 'default',
+}) as Record<string, unknown>;
+const seasonEnLoaders = import.meta.glob('../../../content/i18n/en/mua/*.json', { import: 'default' }) as Record<
+  string,
+  () => Promise<unknown>
+>;
+let seasonsEn: Season[] = [];
+
+/** Các bộ mùa theo ngôn ngữ hiện tại (tiếng Anh có sau loadSeasonsEn; thiếu thì dùng tiếng Việt). */
+export function getSeasons(): Season[] {
+  const vi = Object.values(seasonFiles).filter(isSeason);
+  if (getLang() !== 'en' || !seasonsEn.length) return vi;
+  // bản EN giữ khoảng ngày của bản VI cùng id
+  return seasonsEn.map((e) => ({ ...e, khoangNgayAm: vi.find((v) => v.id === e.id)?.khoangNgayAm ?? e.khoangNgayAm }));
+}
+
+async function loadSeasonsEn(): Promise<void> {
+  const out: Season[] = [];
+  for (const load of Object.values(seasonEnLoaders)) {
+    try {
+      const raw = await load();
+      if (isSeason(raw)) out.push(raw);
+    } catch {
+      /* bỏ qua */
+    }
+  }
+  seasonsEn = out;
+}
+
+/** Từ khóa mô tả trang trí (văn xuôi) → token hiệu ứng của app. */
+export function decorTokensFromText(texts: readonly string[]): string[] {
+  const text = texts.join(' ');
+  return DECOR_KEYWORDS.filter(([re]) => re.test(text)).map(([, tok]) => tok);
 }
 
 // ---------- Lời thông báo nhắc (content/thong-bao-day.json + bản EN) ----------

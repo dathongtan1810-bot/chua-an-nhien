@@ -22,3 +22,18 @@ describe('todayInfo', () => {
     expect(eventRitualFor('Gọi điện cho mẹ')).toBe('any');
   });
 });
+
+describe('todayInfo — bộ mùa', () => {
+  it('mùa Vu Lan (7/2026 âm): thông điệp & trang trí của mùa', async () => {
+    const { getSeasons } = await import('../src/data/content');
+    // 9/7 âm lịch Bính Ngọ = 21/08/2026
+    const info = todayInfo(Date.parse('2026-08-21T05:00:00Z'));
+    expect(info.lunar.month).toBe(7);
+    expect(info.season?.id).toBe('vu-lan');
+    const vuLan = getSeasons().find((s) => s.id === 'vu-lan')!;
+    expect(vuLan.thongDiep.map((m) => m.noiDung)).toContain(info.message);
+  });
+  it('ngoài mùa thì không có season', () => {
+    expect(todayInfo(Date.parse('2026-11-07T05:00:00Z')).season).toBeNull();
+  });
+});

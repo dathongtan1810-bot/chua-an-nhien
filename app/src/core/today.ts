@@ -1,4 +1,5 @@
-import { getSuKien, getThongDiep, type SuKien } from '../data/content';
+import { decorTokensFromText, getSeasons, getSuKien, getThongDiep, type SuKien } from '../data/content';
+import { activeSeason, type Season } from '../logic/season';
 import { fnv1a } from '../logic/fortune';
 import { decorationsFor, eventsForLunarDate } from '../logic/lunarEvents';
 import { vnDateKey, vnHour } from '../logic/dates';
@@ -15,6 +16,8 @@ export interface TodayInfo {
   /** Nghi thức hoàn thành nhiệm vụ sự kiện hôm nay (null nếu không có sự kiện). */
   eventRitual: RitualKind | 'any' | null;
   fullMoon: boolean;
+  /** Bộ mùa đang diễn ra (content/mua), nếu có */
+  season: Season | null;
 }
 
 /** Suy ra nghi thức cần làm từ mô tả nhiệm vụ sự kiện. */
@@ -49,7 +52,9 @@ export function todayInfo(now: Date | number = forcedNow ?? Date.now()): TodayIn
   const events = eventsForLunarDate(getSuKien(), lunar, len)
     // sự kiện năm (thang > 0) lên trước sự kiện hằng tháng
     .sort((a, b) => (b.thang > 0 ? 1 : 0) - (a.thang > 0 ? 1 : 0));
-  const msgs = getThongDiep();
+  const season = activeSeason(getSeasons(), lunar);
+  // trong mùa: thông điệp của mùa; ngoài mùa: thông điệp ngày chung
+  const msgs = season?.thongDiep.length ? season.thongDiep : getThongDiep();
   const message = msgs.length ? msgs[fnv1a(dateKey) % msgs.length].noiDung : '';
   const main = events[0];
   return {
@@ -57,9 +62,10 @@ export function todayInfo(now: Date | number = forcedNow ?? Date.now()): TodayIn
     hour: vnHour(now),
     lunar,
     events,
-    decorations: decorationsFor(events),
+    decorations: [...new Set([...decorationsFor(events), ...(season ? decorTokensFromText(season.trangTri) : [])])],
     message,
     eventRitual: main ? eventRitualFor(main.nhiemVu) : null,
     fullMoon: lunar.day >= 14 && lunar.day <= 16,
+    season,
   };
 }

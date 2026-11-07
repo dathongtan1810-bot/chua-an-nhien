@@ -8,6 +8,7 @@ import { setContentStrings, setLang, t } from './core/i18n';
 import { store } from './core/store';
 import { setForcedDate, todayInfo } from './core/today';
 import { loadLangContent, uiStringsEn, uiStringsVi } from './data/content';
+import { fnv1a } from './logic/fortune';
 import { net } from './net/service';
 import { AreaScene } from './scenes/AreaScene';
 import { closeSheet, h, toast, uiRoot } from './ui/dom';
@@ -57,6 +58,21 @@ void loadLangContent(store.state.lang).then(() => {
   hud.render();
 });
 
+const SEASON_GREET_KEY = 'chua-an-nhien:seasonGreet';
+function greetSeason(delayMs: number): void {
+  const info = todayInfo();
+  const season = info.season;
+  if (!season?.loiChao.length) return;
+  try {
+    if (localStorage.getItem(SEASON_GREET_KEY) === info.dateKey) return;
+    localStorage.setItem(SEASON_GREET_KEY, info.dateKey);
+  } catch {
+    /* ignore */
+  }
+  const line = season.loiChao[fnv1a(info.dateKey) % season.loiChao.length].noiDung;
+  setTimeout(() => toast('🌸 ' + line, 6500), delayMs);
+}
+
 let begun = false;
 function begin(): void {
   begun = true;
@@ -86,6 +102,8 @@ function begin(): void {
     if (params.get('skip') !== null) tip();
     else showOnboarding(tip);
   }
+  // lời chào của mùa (Tết, Vu Lan…) — mỗi ngày một lần
+  greetSeason(s.onboarded ? 1500 : 8000);
   bus.on((e) => {
     if (e.type === 'reward' && e.reasons.some((r) => r.startsWith('quest') || r === 'allQuests' || r === 'event')) {
       toast('🪷 ' + t('reward.plus', { n: e.amount }));

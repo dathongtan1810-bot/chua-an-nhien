@@ -76,7 +76,8 @@ export class Hud {
     const area = store.state.area;
     this.title.textContent = t(AREA_INFO[area].nameKey);
     const info = todayInfo();
-    this.sub.textContent = formatLunar(info.lunar, getLang()) + (info.events[0] ? ' • ' + info.events[0].ten : '');
+    const tag = info.events[0]?.ten ?? info.season?.ten;
+    this.sub.textContent = formatLunar(info.lunar, getLang()) + (tag ? ' • ' + tag : '');
     this.renderOnline();
     this.renderSeeds();
     this.renderActions(area);

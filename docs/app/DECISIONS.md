@@ -52,3 +52,7 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
     (binh-an, cong-danh, hoc-tap…) mà nội dung thật dùng bộ mã chung D6 (gia-dao, cong-viec, suc-khoe, hoc-hanh,
     tinh-duyen, tai-loc) → 3/6 chủ đề không có quẻ/lời giải riêng. Nhãn hiển thị lấy `xin-que.chu-de.*` của phiên nội dung
     (`tai-loc` = "Làm ăn", D35). Nhật ký lưu và hiện tên quẻ + tên chủ đề.
+30. **Bộ mùa** (`content/mua/*.json`, 7 bộ, + bản EN): mùa đang diễn ra tính theo khoảng ngày âm (có vắt qua năm, vd. Tết
+    23/12 → 15/1); mùa chồng nhau thì chọn mùa có khoảng ngắn hơn (Rằm tháng Giêng thắng mùa Tết). Trong mùa: thông điệp
+    ngày lấy từ mùa, trang trí theo `trangTri` (từ khóa → token), lời chào mỗi ngày một lần, 2/3 gợi ý lời nguyện từ mùa,
+    thêm lựa chọn "Quẻ đặc biệt của mùa" (queDacBiet). Chưa dùng `nhiemVu` của mùa (phần thưởng là đồ trang trí app chưa có).
