@@ -11,11 +11,11 @@
     { "id": 5, "noiDung": "Hương sen thoảng ngoài hiên. Mời bạn ngồi xuống, thở một hơi thật sâu." },
     { "id": 6, "noiDung": "Lễ đài tắm Phật đã sẵn sàng. Mời bạn cùng múc một gáo nước trong." },
     { "id": 7, "noiDung": "Mừng Phật Đản! Mong lòng bạn hôm nay nhẹ như cánh sen trên mặt hồ." },
-    { "id": 8, "noiDung": "Bếp chùa đang nấu một nồi canh chay. Mời bạn ghé dùng bữa cùng." },
+    { "id": 8, "noiDung": "Mùi canh chay thơm từ gian bếp chùa. Bạn ghé ngồi ăn cùng mọi người nhé." },
     { "id": 9, "noiDung": "Chào bạn. Một nụ cười hiền hôm nay cũng là món quà mừng Phật Đản." },
     { "id": 10, "noiDung": "Cờ hoa đã rực sân chùa. Cảm ơn bạn đã về đây trong mùa lễ lớn." },
     { "id": 11, "noiDung": "Rằm tháng Tư sắp đến. Mời bạn thắp một ngọn đèn sen cho người thương." },
-    { "id": 12, "noiDung": "Sen nở từ bùn mà vẫn thơm. Chúc bạn một ngày dịu dàng với chính mình." }
+    { "id": 12, "noiDung": "Sen nở từ bùn mà vẫn thơm. Mong hôm nay bạn cũng hiền với chính mình." }
   ],
   "thongDiep": [
     { "id": 1, "noiDung": "Hoa sen mọc lên từ bùn mà không mang mùi bùn. Khó khăn không làm bạn kém đi, nó có thể làm bạn sâu sắc hơn." },
@@ -29,7 +29,7 @@
     { "id": 9, "noiDung": "Hôm nay thử ăn một bữa thật chậm, nhận ra vị của từng món và bàn tay người đã nấu." },
     { "id": 10, "noiDung": "Lòng thương không chia phe. Thương người mình quý đã đành, thử thương cả người mình chưa hiểu." },
     { "id": 11, "noiDung": "Đèn hoa sen thắp lên không để cầu xin, mà để nhắc mình giữ một chút sáng trong lòng." },
-    { "id": 12, "noiDung": "Bạn không cần hoàn hảo mới bắt đầu tu tập. Chỉ cần hôm nay hiền hơn hôm qua một chút." },
+    { "id": 12, "noiDung": "Bạn không cần hoàn hảo mới bắt đầu tu tập. Mỗi ngày bớt đi một chút nóng nảy là đã đang tập rồi." },
     { "id": 13, "noiDung": "Tặng một cuốn sách cũ, một chiếc áo còn tốt hay một buổi chiều dạy kèm. Việc thiện có nhiều hình dạng." },
     { "id": 14, "noiDung": "Thả chậm bước chân khi đi qua hồ sen. Có những vẻ đẹp chỉ hiện ra khi mình đủ chậm." },
     { "id": 15, "noiDung": "Từ bi với người khác dễ hơn khi mình đã học được cách từ bi với chính mình." },
@@ -38,25 +38,25 @@
     { "id": 18, "noiDung": "Nhìn một đứa trẻ cười, ta hiểu niềm vui trong trẻo là có thật. Hãy giữ lấy điều đó." },
     { "id": 19, "noiDung": "Nước tắm Phật chảy xuống rồi tan vào đất. Việc thiện cũng vậy, làm xong thì để nó nhẹ nhàng trôi đi." },
     { "id": 20, "noiDung": "Mỗi người đều có một hồ sen trong lòng. Có khi chỉ cần dọn bớt lá úa là hoa tự nở." },
-    { "id": 21, "noiDung": "Hôm nay hãy cho một con vật nhỏ ăn, tưới một cái cây, hoặc nhặt một mẩu rác bên đường." },
+    { "id": 21, "noiDung": "Hôm nay hãy để ý đến những sinh linh nhỏ quanh mình: tưới chậu cây khô, rắc ít gạo cho chim sẻ, nhặt một mẩu rác bên đường." },
     { "id": 22, "noiDung": "Tâm bình thì nhìn đâu cũng thấy hoa. Tâm động thì hoa trước mặt cũng hóa mờ." },
     { "id": 23, "noiDung": "Lắng nghe trọn vẹn một người mà không ngắt lời cũng là một cách thực hành từ bi." },
     { "id": 24, "noiDung": "Mùa Phật Đản, thử bớt một lời phán xét trong ngày. Bạn sẽ thấy lòng mình rộng ra." },
     { "id": 25, "noiDung": "Bữa cơm chay giản dị nhắc rằng mình cần ít hơn mình tưởng để thấy đủ." },
     { "id": 26, "noiDung": "Đi chùa mùa lễ, hãy đi nhẹ, nói khẽ và nhường đường. Sự tôn kính hiện ra trong từng cử chỉ." },
     { "id": 27, "noiDung": "Có người đang buồn mà không nói ra. Một ánh mắt quan tâm có khi đủ để họ thấy mình không một mình." },
-    { "id": 28, "noiDung": "Việc thiện không cần lớn. Một nụ cười với người bán hàng mệt mỏi cũng làm ngày của họ khác đi." },
+    { "id": 28, "noiDung": "Đôi khi một nụ cười với người bán hàng đang mệt cũng đủ làm ngày của họ khác đi." },
     { "id": 29, "noiDung": "Sen không chọn nơi để mọc, nhưng chọn cách để nở. Bạn cũng có thể chọn cách mình đáp lại mỗi ngày." },
     { "id": 30, "noiDung": "Rằm tháng Tư qua đi, đèn sen sẽ cất. Hãy giữ lại một thói quen lành bạn đã tập trong mùa này." }
   ],
   "loiNguyen": [
     { "id": 1, "noiDung": "Con nguyện mùa Phật Đản này làm ít nhất một việc thiện nhỏ mỗi ngày." },
     { "id": 2, "noiDung": "Con mong mọi người quanh con đều được đối xử bằng sự dịu dàng." },
-    { "id": 3, "noiDung": "Con nguyện ăn chay một ngày trong tuần để tập sống nhẹ nhàng với muôn loài." },
+    { "id": 3, "noiDung": "Con nguyện ăn chay trọn ngày Rằm tháng Tư để tập sống nhẹ nhàng với muôn loài." },
     { "id": 4, "noiDung": "Con mong lòng con như hoa sen, đi qua bùn mà vẫn giữ được hương." },
     { "id": 5, "noiDung": "Con nguyện rửa sạch một thói quen nóng nảy như rửa bụi trên tay." },
     { "id": 6, "noiDung": "Con mong những em bé sinh ra mùa này được lớn lên trong yêu thương." },
-    { "id": 7, "noiDung": "Con nguyện lắng nghe cha mẹ nhiều hơn, kể cả khi con nghĩ mình đã biết." },
+    { "id": 7, "noiDung": "Con nguyện nghe cho trọn lời người khác, kể cả khi con nghĩ mình đã biết." },
     { "id": 8, "noiDung": "Con mong những người bệnh đang nằm viện có người thân ở bên chăm sóc." },
     { "id": 9, "noiDung": "Con nguyện bớt một lời chê bai mỗi ngày và thêm một lời động viên." },
     { "id": 10, "noiDung": "Con mong muôn loài nhỏ bé được sống yên, không bị làm hại vô cớ." },
@@ -76,7 +76,7 @@
     { "id": 24, "noiDung": "Con mong ông bà con được sống thanh thản, ngày nào cũng có niềm vui nhỏ." },
     { "id": 25, "noiDung": "Con nguyện kiên nhẫn hơn với người lớn tuổi và với các em nhỏ." },
     { "id": 26, "noiDung": "Con mong những người đang cô đơn tìm được một người bạn biết lắng nghe." },
-    { "id": 27, "noiDung": "Con nguyện ăn uống vừa đủ, không bỏ phí thức ăn." },
+    { "id": 27, "noiDung": "Con nguyện ăn uống vừa đủ, biết dừng lại khi đã no." },
     { "id": 28, "noiDung": "Con mong mọi hiểu lầm trong nhà con được nói ra nhẹ nhàng và được gỡ." },
     { "id": 29, "noiDung": "Con nguyện nhìn người khác bằng ánh mắt thương, trước khi nhìn bằng ánh mắt xét." },
     { "id": 30, "noiDung": "Con mong hạt giống từ bi con gieo mùa này sẽ còn xanh đến mùa sau." }
@@ -91,7 +91,7 @@
     {
       "id": "thap-den-hoa-sen",
       "ten": "Thắp đèn hoa sen",
-      "moTa": "Chọn màu và thắp một chiếc đèn hoa sen ảo dọc lối đi, gửi kèm một lời chúc an vui.",
+      "moTa": "Thắp một chiếc đèn hoa sen ảo theo màu bạn thích và treo dọc lối đi, gửi kèm một lời chúc an vui.",
       "phanThuong": "Đèn hoa sen hồng treo hiên"
     },
     {

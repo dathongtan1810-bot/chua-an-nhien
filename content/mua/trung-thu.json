@@ -4,7 +4,7 @@
   "khoangNgayAm": { "tu": { "thang": 8, "ngay": 10 }, "den": { "thang": 8, "ngay": 16 } },
   "moTa": "Những ngày giữa tháng Tám âm lịch, Chùa An Nhiên treo đèn ông sao, bày mâm cỗ trăng rằm và mở sân cho các em nhỏ rước đèn. Đây là mùa của vầng trăng tròn nhất năm, của sum vầy bên chén trà, miếng bánh, và của lòng biết ơn với ruộng đồng, với những bàn tay đã làm nên mùa màng.",
   "loiChao": [
-    { "id": 1, "noiDung": "Trăng thu đã lên trên tháp chuông. Mời bạn vào sân chùa ngắm cùng." },
+    { "id": 1, "noiDung": "Trăng thu đã lên trên tháp chuông. Sân chùa còn một chỗ ngồi cho bạn." },
     { "id": 2, "noiDung": "Chùa An Nhiên chúc bạn một mùa Trung Thu sum vầy và ấm áp." },
     { "id": 3, "noiDung": "Các em nhỏ đang xếp hàng rước đèn. Bạn có muốn đi cùng không?" },
     { "id": 4, "noiDung": "Mâm cỗ rằm đã bày xong. Mời bạn ngồi xuống, rót một chén trà." },
@@ -14,15 +14,15 @@
     { "id": 8, "noiDung": "Chú tiểu vừa cắt bánh chia phần. Phần của bạn vẫn đang đợi đây." },
     { "id": 9, "noiDung": "Trung Thu vui vẻ! Mong bạn có người cùng ngắm trăng đêm nay." },
     { "id": 10, "noiDung": "Mùa lúa chín, mùa trăng tròn. Mời bạn vào chùa nói lời cảm ơn." },
-    { "id": 11, "noiDung": "Trăng rằm tháng Tám sáng lắm. Cảm ơn bạn đã ghé chùa mùa này." },
+    { "id": 11, "noiDung": "Trăng Rằm tháng Tám sáng lắm. Bạn ở lại thêm một chút rồi hẵng về nhé." },
     { "id": 12, "noiDung": "Tiếng trống lân rộn ngoài cổng. Mời bạn vào xem các em nhỏ múa." }
   ],
   "thongDiep": [
-    { "id": 1, "noiDung": "Trăng rằm tháng Tám tròn nhất năm, nhưng điều làm Trung Thu trọn vẹn là có người ngồi bên cạnh." },
+    { "id": 1, "noiDung": "Trăng Rằm tháng Tám tròn nhất năm, nhưng điều làm Trung Thu trọn vẹn là có người ngồi bên cạnh." },
     { "id": 2, "noiDung": "Hãy để các em nhỏ tự cầm đèn. Có thể chúng đi chưa thẳng hàng, nhưng niềm vui là của chúng." },
     { "id": 3, "noiDung": "Miếng bánh nướng nhỏ thôi, chia làm tư lại thành bốn nụ cười. Sum vầy là như thế." },
     { "id": 4, "noiDung": "Trước khi ăn cỗ, thử kể cho con trẻ nghe hạt gạo đi từ đồng ruộng đến mâm cơm thế nào." },
-    { "id": 5, "noiDung": "Có người không về kịp đêm rằm. Một cuộc gọi có hình cũng là cùng nhau ngắm một vầng trăng." },
+    { "id": 5, "noiDung": "Người thân ở xa chưa về được đêm rằm? Một cuộc gọi có hình cũng đủ để cùng nhau ngắm một vầng trăng." },
     { "id": 6, "noiDung": "Đèn ông sao tự làm bằng tre và giấy có khi đẹp hơn đèn mua sẵn, vì có thời gian của mình trong đó." },
     { "id": 7, "noiDung": "Biết ơn mùa màng là biết ơn nắng, mưa, đất và cả những người mình chưa từng gặp." },
     { "id": 8, "noiDung": "Trẻ con nhớ Trung Thu không phải vì quà đắt, mà vì có người lớn chịu chơi cùng." },
@@ -74,7 +74,7 @@
     { "id": 22, "noiDung": "Con nguyện giữ lòng biết ơn với những gì mình đang có, dù nhiều hay ít." },
     { "id": 23, "noiDung": "Con mong những người đang làm việc đêm rằm cũng có phút ngẩng lên thấy trăng." },
     { "id": 24, "noiDung": "Con nguyện dạy con trẻ biết ơn người làm ra hạt gạo, trái cây." },
-    { "id": 25, "noiDung": "Con mong anh chị em trong nhà luôn có dịp quây quần như đêm trăng này." },
+    { "id": 25, "noiDung": "Con mong mùa trăng nào anh chị em con cũng có dịp quây quần như đêm nay." },
     { "id": 26, "noiDung": "Con nguyện lắng nghe trọn vẹn khi con trẻ kể chuyện, không cắt ngang." },
     { "id": 27, "noiDung": "Con mong mọi loài chim cá, cây cỏ cũng được yên dưới ánh trăng thu." },
     { "id": 28, "noiDung": "Con nguyện gửi một lời hỏi thăm đến người bạn con lâu rồi chưa gặp." },
@@ -115,7 +115,7 @@
     {
       "id": "goi-ve-sum-vay",
       "ten": "Cuộc gọi sum vầy",
-      "moTa": "Gọi điện hoặc gọi có hình cho người thân ở xa trong những ngày rằm tháng Tám.",
+      "moTa": "Gọi điện hoặc gọi có hình cho người thân ở xa trong những ngày Rằm tháng Tám.",
       "phanThuong": "Bộ ấm trà mùa thu trên bàn"
     },
     {

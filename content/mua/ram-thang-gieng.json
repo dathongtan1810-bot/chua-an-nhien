@@ -7,7 +7,7 @@
     { "id": 1, "noiDung": "Trăng rằm đầu năm đã lên. Mời bạn vào sân chùa ngồi ngắm cùng." },
     { "id": 2, "noiDung": "Đèn lồng đã thắp dọc lối đi, chỉ còn chờ bước chân của bạn." },
     { "id": 3, "noiDung": "Chào bạn đêm Nguyên Tiêu. Bàn trà và giấy bút đã sẵn bên hồ." },
-    { "id": 4, "noiDung": "Nửa tháng Giêng đã qua. Bạn có muốn ngồi lại nhìn một chút không?" },
+    { "id": 4, "noiDung": "Tháng Giêng đã đi được một nửa. Bạn có muốn ngồi lại nhìn một chút không?" },
     { "id": 5, "noiDung": "Trăng tròn, đèn sáng, gió xuân còn mát. Chúc bạn một đêm thật an." },
     { "id": 6, "noiDung": "Chú tiểu vừa treo xong chiếc đèn cuối cùng. Mời bạn ghé xem." },
     { "id": 7, "noiDung": "Rằm Giêng về, Chùa An Nhiên gửi bạn một lời chúc đầu năm thật hiền." },
@@ -27,7 +27,7 @@
     { "id": 7, "noiDung": "Ngắm trăng thì đừng cầm điện thoại quá lâu. Để mắt mình được nghỉ trong ánh sáng dịu." },
     { "id": 8, "noiDung": "Mỗi chiếc đèn trên lối đi có một màu riêng. Mỗi người trong nhà cũng vậy, cứ để họ sáng theo cách của họ." },
     { "id": 9, "noiDung": "Lời nguyện đầu năm nên ngắn. Ngắn để nhớ được, nhớ được để làm được." },
-    { "id": 10, "noiDung": "Đêm rằm tháng Giêng, hãy rót một chén trà cho người bên cạnh trước khi rót cho mình." },
+    { "id": 10, "noiDung": "Đêm Rằm tháng Giêng, hãy rót một chén trà cho người bên cạnh trước khi rót cho mình." },
     { "id": 11, "noiDung": "Trăng không cần ai khen mới sáng. Bạn cũng không cần ai khen mới làm điều tử tế." },
     { "id": 12, "noiDung": "Đèn lồng treo cao để người đi xa nhìn thấy đường về. Bạn có thể là ngọn đèn cho ai đó." },
     { "id": 13, "noiDung": "Trăng tròn rồi sẽ khuyết, khuyết rồi lại tròn. Những ngày chưa trọn vẹn cũng chỉ là một chặng." },
@@ -39,7 +39,7 @@
     { "id": 19, "noiDung": "Đầu năm hay nghĩ về những điều mình muốn có. Thử nghĩ thêm về điều mình muốn trao đi." },
     { "id": 20, "noiDung": "Một chiếc đèn tắt không làm cả lối đi tối. Một ngày mệt mỏi không làm cả năm hỏng." },
     { "id": 21, "noiDung": "Người xưa ngâm thơ dưới trăng để lòng thư thái. Bạn có thể hát khẽ một câu mình thích." },
-    { "id": 22, "noiDung": "Hãy viết điều mong ước lên giấy rồi đọc lại vào rằm tháng Giêng năm sau. Bạn sẽ thấy mình lớn lên." },
+    { "id": 22, "noiDung": "Hãy viết điều mong ước lên giấy rồi đọc lại vào Rằm tháng Giêng năm sau. Bạn sẽ thấy mình lớn lên." },
     { "id": 23, "noiDung": "Đừng đợi đủ đầy mới vui. Vầng trăng mỏng đầu tháng cũng có vẻ đẹp riêng của nó." },
     { "id": 24, "noiDung": "Thắp đèn cho mình, cũng nhớ để đèn ngoài hiên cho người qua đường đỡ tối." },
     { "id": 25, "noiDung": "Trăng rằm soi rõ cả những vết nứt trên tường cũ. Thấy rồi thì sửa, không cần buồn." },
@@ -177,7 +177,7 @@
         "Đầu năm nhẹ bước thảnh thơi",
         "Mong cho khắp chốn mọi nơi an lành"
       ],
-      "loiGiai": "Sau những ngày Tết bận rộn, vầng trăng rằm tháng Giêng như một lời mời ngồi xuống. Quẻ này nói về sự thong thả: không phải lười biếng, mà là biết dừng đúng lúc để lấy lại hơi thở. Khi lòng mình thảnh thơi, mình mới có đủ chỗ để nghĩ tới người khác và mong cho mọi nơi được an lành.",
+      "loiGiai": "Sau những ngày Tết bận rộn, vầng trăng Rằm tháng Giêng như một lời mời ngồi xuống. Quẻ này nói về sự thong thả: không phải lười biếng, mà là biết dừng đúng lúc để lấy lại hơi thở. Khi lòng mình thảnh thơi, mình mới có đủ chỗ để nghĩ tới người khác và mong cho mọi nơi được an lành.",
       "loiKhuyen": "Tối nay, tắt điện thoại mười phút và ngồi ngoài hiên hoặc bên cửa sổ. Chỉ ngắm trời và thở chậm."
     },
     {
