@@ -1,0 +1,35 @@
+# Deploy từ GỐC repo: fly deploy -c server/fly.toml
+# (đường dẫn dockerfile tính từ thư mục chứa file này; nếu flyctl dùng sai build context,
+#  copy file ra gốc repo và đổi dockerfile = "server/Dockerfile" — xem DEPLOY.md)
+app = "chua-an-nhien"
+primary_region = "sin"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  TRUST_PROXY = "true"
+  MODERATION_MODE = "post"
+  CORS_ORIGINS = "*"
+
+[mounts]
+  source = "chua_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  min_machines_running = 1
+  [http_service.concurrency]
+    type = "connections"
+    soft_limit = 4000
+    hard_limit = 5000
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  path = "/api/health"
+  timeout = "3s"
