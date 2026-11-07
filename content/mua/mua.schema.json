@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mua.schema.json",
+  "title": "Bộ nội dung theo mùa (Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Phật Thành Đạo)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "ten",
+    "khoangNgayAm",
+    "moTa",
+    "loiChao",
+    "thongDiep",
+    "loiNguyen",
+    "nhiemVu",
+    "trangTri",
+    "queDacBiet"
+  ],
+  "properties": {
+    "id": {
+      "enum": [
+        "tet",
+        "vu-lan",
+        "ram-thang-gieng",
+        "phat-dan",
+        "trung-thu",
+        "doan-ngo",
+        "thanh-dao"
+      ]
+    },
+    "ten": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 60
+    },
+    "khoangNgayAm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tu",
+        "den"
+      ],
+      "properties": {
+        "tu": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "thang",
+            "ngay"
+          ],
+          "properties": {
+            "thang": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "ngay": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30
+            }
+          }
+        },
+        "den": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "thang",
+            "ngay"
+          ],
+          "properties": {
+            "thang": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "ngay": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30
+            }
+          }
+        }
+      }
+    },
+    "moTa": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 400
+    },
+    "loiChao": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "noiDung"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "noiDung": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 80
+          }
+        }
+      }
+    },
+    "thongDiep": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "noiDung"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "noiDung": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 160
+          }
+        }
+      }
+    },
+    "loiNguyen": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "noiDung"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "noiDung": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 120
+          }
+        }
+      }
+    },
+    "nhiemVu": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ten",
+          "moTa",
+          "phanThuong"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "ten": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 50
+          },
+          "moTa": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 160
+          },
+          "phanThuong": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 80
+          }
+        }
+      }
+    },
+    "trangTri": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 80
+      }
+    },
+    "queDacBiet": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "tieuDe",
+          "tho",
+          "loiGiai",
+          "loiKhuyen"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "tieuDe": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40
+          },
+          "tho": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 5,
+              "maxLength": 80
+            }
+          },
+          "loiGiai": {
+            "type": "string",
+            "minLength": 120,
+            "maxLength": 600
+          },
+          "loiKhuyen": {
+            "type": "string",
+            "minLength": 30,
+            "maxLength": 220
+          }
+        }
+      }
+    }
+  }
+}

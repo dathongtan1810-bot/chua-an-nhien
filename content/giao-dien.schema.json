@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "giao-dien.schema.json",
+  "title": "Chuỗi giao diện app: khóa \"nhom.khoa\" → chuỗi ≤ 140 ký tự",
+  "type": "object",
+  "required": [
+    "onboarding.3-mo-ta",
+    "cai-dat.biet-danh-mac-dinh",
+    "cai-dat.xoa-du-lieu",
+    "kiem-duyet.muc-do-1",
+    "kiem-duyet.muc-do-2",
+    "kiem-duyet.muc-do-3"
+  ],
+  "additionalProperties": {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": 140
+  }
+}

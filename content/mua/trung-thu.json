@@ -1,0 +1,197 @@
+{
+  "id": "trung-thu",
+  "ten": "Mùa Trung Thu",
+  "khoangNgayAm": { "tu": { "thang": 8, "ngay": 10 }, "den": { "thang": 8, "ngay": 16 } },
+  "moTa": "Những ngày giữa tháng Tám âm lịch, Chùa An Nhiên treo đèn ông sao, bày mâm cỗ trăng rằm và mở sân cho các em nhỏ rước đèn. Đây là mùa của vầng trăng tròn nhất năm, của sum vầy bên chén trà, miếng bánh, và của lòng biết ơn với ruộng đồng, với những bàn tay đã làm nên mùa màng.",
+  "loiChao": [
+    { "id": 1, "noiDung": "Trăng thu đã lên trên tháp chuông. Sân chùa còn một chỗ ngồi cho bạn." },
+    { "id": 2, "noiDung": "Chùa An Nhiên chúc bạn một mùa Trung Thu sum vầy và ấm áp." },
+    { "id": 3, "noiDung": "Các em nhỏ đang xếp hàng rước đèn. Bạn có muốn đi cùng không?" },
+    { "id": 4, "noiDung": "Mâm cỗ rằm đã bày xong. Mời bạn ngồi xuống, rót một chén trà." },
+    { "id": 5, "noiDung": "Chào bạn mùa trăng. Hôm nay bạn đã gọi về nhà chưa?" },
+    { "id": 6, "noiDung": "Đèn ông sao đỏ rực khắp sân. Mời bạn chọn cho mình một chiếc." },
+    { "id": 7, "noiDung": "Gió thu mát rồi. Mời bạn chậm lại một chút để nghe tiếng lá." },
+    { "id": 8, "noiDung": "Chú tiểu vừa cắt bánh chia phần. Phần của bạn vẫn đang đợi đây." },
+    { "id": 9, "noiDung": "Trung Thu vui vẻ! Mong bạn có người cùng ngắm trăng đêm nay." },
+    { "id": 10, "noiDung": "Mùa lúa chín, mùa trăng tròn. Mời bạn vào chùa nói lời cảm ơn." },
+    { "id": 11, "noiDung": "Trăng Rằm tháng Tám sáng lắm. Bạn ở lại thêm một chút rồi hẵng về nhé." },
+    { "id": 12, "noiDung": "Tiếng trống lân rộn ngoài cổng. Mời bạn vào xem các em nhỏ múa." }
+  ],
+  "thongDiep": [
+    { "id": 1, "noiDung": "Trăng Rằm tháng Tám tròn nhất năm, nhưng điều làm Trung Thu trọn vẹn là có người ngồi bên cạnh." },
+    { "id": 2, "noiDung": "Hãy để các em nhỏ tự cầm đèn. Có thể chúng đi chưa thẳng hàng, nhưng niềm vui là của chúng." },
+    { "id": 3, "noiDung": "Miếng bánh nướng nhỏ thôi, chia làm tư lại thành bốn nụ cười. Sum vầy là như thế." },
+    { "id": 4, "noiDung": "Trước khi ăn cỗ, thử kể cho con trẻ nghe hạt gạo đi từ đồng ruộng đến mâm cơm thế nào." },
+    { "id": 5, "noiDung": "Người thân ở xa chưa về được đêm rằm? Một cuộc gọi có hình cũng đủ để cùng nhau ngắm một vầng trăng." },
+    { "id": 6, "noiDung": "Đèn ông sao tự làm bằng tre và giấy có khi đẹp hơn đèn mua sẵn, vì có thời gian của mình trong đó." },
+    { "id": 7, "noiDung": "Biết ơn mùa màng là biết ơn nắng, mưa, đất và cả những người mình chưa từng gặp." },
+    { "id": 8, "noiDung": "Trẻ con nhớ Trung Thu không phải vì quà đắt, mà vì có người lớn chịu chơi cùng." },
+    { "id": 9, "noiDung": "Ngắm trăng là một cách nghỉ ngơi. Không cần nghĩ gì, chỉ nhìn và thở." },
+    { "id": 10, "noiDung": "Chén trà nóng đêm thu nói thay nhiều lời. Rót cho người lớn tuổi trước, mời bằng hai tay." },
+    { "id": 11, "noiDung": "Có những em nhỏ chưa có đèn đêm nay. Nếu được, hãy chia cho các em một chiếc." },
+    { "id": 12, "noiDung": "Trăng soi mọi mái nhà như nhau. Sự quan tâm của mình cũng có thể đi xa hơn cánh cửa nhà mình." },
+    { "id": 13, "noiDung": "Mâm cỗ không cần nhiều món. Một đĩa bưởi, vài quả hồng và tiếng cười là đủ đầy." },
+    { "id": 14, "noiDung": "Người lớn cũng từng là đứa trẻ cầm đèn. Đêm nay, thử để đứa trẻ trong mình được vui." },
+    { "id": 15, "noiDung": "Trung Thu là dịp nói lời cảm ơn với cha mẹ, những người đã từng thức khuya làm đèn cho mình." },
+    { "id": 16, "noiDung": "Hãy cất điện thoại khi ngồi cùng gia đình đêm rằm. Trăng chỉ tròn vài đêm, khoảnh khắc này chỉ có một lần." },
+    { "id": 17, "noiDung": "Hạt lúa cúi đầu khi chín. Người càng nhiều hiểu biết càng nên khiêm nhường." },
+    { "id": 18, "noiDung": "Đi rước đèn, nhớ nắm tay em nhỏ đi sau. Sum vầy là không để ai lạc lại phía sau." },
+    { "id": 19, "noiDung": "Mùa thu dạy ta buông nhẹ như lá rơi. Điều đã cũ, để nó về với đất, nuôi mùa mới." },
+    { "id": 20, "noiDung": "Hỏi ông bà về Trung Thu ngày xưa. Câu chuyện của họ là món quà quý hơn hộp bánh." },
+    { "id": 21, "noiDung": "Trăng không cần phải sáng hơn sao. Mỗi thứ có chỗ của mình trên bầu trời đêm." },
+    { "id": 22, "noiDung": "Lời khen dành cho trẻ đêm nay nên cụ thể: \"Con cầm đèn khéo quá\" ấm hơn \"Con ngoan\"." },
+    { "id": 23, "noiDung": "Sau đêm rằm, trăng sẽ khuyết dần. Đừng buồn, cứ giữ lấy cảm giác ấm áp đã có." },
+    { "id": 24, "noiDung": "Người nông dân không vội gặt khi lúa chưa chín. Mọi điều tốt cũng có mùa của nó." },
+    { "id": 25, "noiDung": "Bày cỗ cùng con, để con tự xếp hoa quả. Mâm có lệch một chút, con sẽ nhớ mãi." },
+    { "id": 26, "noiDung": "Đèn lồng cá chép bơi trong đêm, như nhắc ta kiên trì, nhẹ nhàng mà vẫn đi tới." },
+    { "id": 27, "noiDung": "Biết ơn không cần lời lớn. Ăn hết bát cơm, không bỏ phí, đã là biết ơn người làm ra hạt gạo." },
+    { "id": 28, "noiDung": "Có người đón Trung Thu một mình. Một lời nhắn \"Trăng đẹp lắm, mình nhớ bạn\" có thể làm họ ấm cả đêm." },
+    { "id": 29, "noiDung": "Trăng tròn rồi, lòng mình cũng thử tròn lại: làm lành một chuyện nhỏ còn dang dở." },
+    { "id": 30, "noiDung": "Mùa trăng qua đi, đèn ông sao được cất lên gác. Niềm vui sum vầy thì để lại trong nhà cả năm." }
+  ],
+  "loiNguyen": [
+    { "id": 1, "noiDung": "Con nguyện đêm rằm này được ngồi ngắm trăng cùng cả gia đình." },
+    { "id": 2, "noiDung": "Con mong mọi em nhỏ đều có một chiếc đèn và một người lớn đi cùng." },
+    { "id": 3, "noiDung": "Con xin cảm ơn những người nông dân đã làm ra hạt gạo con ăn mỗi ngày." },
+    { "id": 4, "noiDung": "Con nguyện dành trọn một buổi tối chơi cùng các con, không vội vàng." },
+    { "id": 5, "noiDung": "Con mong người thân ở xa của con có một đêm trăng bình an." },
+    { "id": 6, "noiDung": "Con nguyện năm nay ăn uống trân trọng, không bỏ phí thức ăn." },
+    { "id": 7, "noiDung": "Con mong mùa màng năm sau thuận nắng thuận mưa, ruộng đồng xanh tốt." },
+    { "id": 8, "noiDung": "Con nguyện nhớ hỏi han ông bà nhiều hơn, nghe ông bà kể chuyện xưa." },
+    { "id": 9, "noiDung": "Con mong những em nhỏ đang ở xa cha mẹ vẫn thấy mình được thương." },
+    { "id": 10, "noiDung": "Con nguyện chia một phần bánh trái mùa này cho người neo đơn quanh xóm." },
+    { "id": 11, "noiDung": "Con xin cảm ơn cha mẹ những mùa trăng tuổi nhỏ đã cho con nhiều kỷ niệm." },
+    { "id": 12, "noiDung": "Con mong mỗi gia đình đều có một góc sân để cùng ngồi ngắm trăng." },
+    { "id": 13, "noiDung": "Con nguyện kiên nhẫn với các em nhỏ, trả lời câu hỏi của các em thật hiền." },
+    { "id": 14, "noiDung": "Con mong các bạn trẻ xa quê có một mâm cỗ nhỏ và bạn bè cùng vui." },
+    { "id": 15, "noiDung": "Con nguyện làm lành với một người thân trước khi trăng rằm khuyết đi." },
+    { "id": 16, "noiDung": "Con mong đất đai, sông suối được giữ gìn để mùa màng còn mãi tươi tốt." },
+    { "id": 17, "noiDung": "Con nguyện tự tay làm một chiếc đèn ông sao tặng một em nhỏ." },
+    { "id": 18, "noiDung": "Con mong trẻ em nơi khó khăn có một Trung Thu đủ đèn, đủ bánh, đủ vui." },
+    { "id": 19, "noiDung": "Con xin cảm ơn mùa thu đã cho con những ngày mát và một vầng trăng đẹp." },
+    { "id": 20, "noiDung": "Con nguyện cất điện thoại khi ăn cơm cùng gia đình." },
+    { "id": 21, "noiDung": "Con mong mọi nhà có tiếng cười trẻ con vang lên trong đêm rằm." },
+    { "id": 22, "noiDung": "Con nguyện giữ lòng biết ơn với những gì mình đang có, dù nhiều hay ít." },
+    { "id": 23, "noiDung": "Con mong những người đang làm việc đêm rằm cũng có phút ngẩng lên thấy trăng." },
+    { "id": 24, "noiDung": "Con nguyện dạy con trẻ biết ơn người làm ra hạt gạo, trái cây." },
+    { "id": 25, "noiDung": "Con mong mùa trăng nào anh chị em con cũng có dịp quây quần như đêm nay." },
+    { "id": 26, "noiDung": "Con nguyện lắng nghe trọn vẹn khi con trẻ kể chuyện, không cắt ngang." },
+    { "id": 27, "noiDung": "Con mong mọi loài chim cá, cây cỏ cũng được yên dưới ánh trăng thu." },
+    { "id": 28, "noiDung": "Con nguyện gửi một lời hỏi thăm đến người bạn con lâu rồi chưa gặp." },
+    { "id": 29, "noiDung": "Con mong mùa trăng năm sau, nhà con vẫn đủ người ngồi quanh mâm cỗ." },
+    { "id": 30, "noiDung": "Con nguyện giữ lại trong lòng sự hồn nhiên của đứa trẻ cầm đèn năm nào." }
+  ],
+  "nhiemVu": [
+    {
+      "id": "ruoc-den-ong-sao",
+      "ten": "Rước đèn ông sao",
+      "moTa": "Cầm đèn ông sao ảo đi một vòng quanh sân chùa cùng các chú tiểu và các em nhỏ.",
+      "phanThuong": "Đèn ông sao đỏ treo trước hiên nhà"
+    },
+    {
+      "id": "bay-mam-co-trang",
+      "ten": "Bày mâm cỗ trăng rằm",
+      "moTa": "Tự sắp mâm cỗ Trung Thu ảo với bưởi, hồng, bánh nướng, bánh dẻo theo ý bạn.",
+      "phanThuong": "Mâm cỗ trăng rằm trên hiên chùa"
+    },
+    {
+      "id": "ngam-trang-thu",
+      "ten": "Ngắm trăng thu",
+      "moTa": "Ngồi năm phút dưới vầng trăng ảo trên tháp chuông, thở chậm và lắng nghe gió.",
+      "phanThuong": "Vầng trăng thu lớn trên tháp chuông"
+    },
+    {
+      "id": "ke-chuyen-cho-tre",
+      "ten": "Kể chuyện cho trẻ",
+      "moTa": "Kể cho một em nhỏ nghe một câu chuyện về Trung Thu của bạn ngày bé, rồi đánh dấu hoàn thành.",
+      "phanThuong": "Chiếc ghế mây nhỏ dưới gốc cây"
+    },
+    {
+      "id": "cam-on-mua-mang",
+      "ten": "Lời cảm ơn mùa màng",
+      "moTa": "Viết một lời cảm ơn gửi những người làm ra bữa ăn của bạn và treo lên Cây nguyện.",
+      "phanThuong": "Bó lúa vàng treo bên cửa"
+    },
+    {
+      "id": "goi-ve-sum-vay",
+      "ten": "Cuộc gọi sum vầy",
+      "moTa": "Gọi điện hoặc gọi có hình cho người thân ở xa trong những ngày Rằm tháng Tám.",
+      "phanThuong": "Bộ ấm trà mùa thu trên bàn"
+    },
+    {
+      "id": "lam-den-thu-cong",
+      "ten": "Làm đèn thủ công",
+      "moTa": "Ghép một chiếc đèn lồng ảo từ nan tre và giấy màu theo từng bước hướng dẫn.",
+      "phanThuong": "Đèn cá chép giấy treo hành lang"
+    },
+    {
+      "id": "chia-banh",
+      "ten": "Chia bánh cho mọi người",
+      "moTa": "Chia phần bánh ảo cho ba người bạn trong danh sách kèm một lời chúc Trung Thu.",
+      "phanThuong": "Đĩa bánh dẻo nhỏ trên bàn thờ"
+    },
+    {
+      "id": "mua-lan-san-chua",
+      "ten": "Xem múa lân sân chùa",
+      "moTa": "Ghé sân chùa ảo xem các em nhỏ múa lân và gửi một tràng vỗ tay cổ vũ.",
+      "phanThuong": "Đầu lân nhỏ đặt cạnh cổng"
+    },
+    {
+      "id": "nguyen-doan-vien",
+      "ten": "Treo lời nguyện đoàn viên",
+      "moTa": "Viết một lời nguyện cho gia đình hoặc cho các em nhỏ và treo lên Cây nguyện.",
+      "phanThuong": "Dải lụa cam trên Cây nguyện"
+    }
+  ],
+  "trangTri": [
+    "Đèn ông sao đỏ khắp sân chùa",
+    "Đèn cá chép giấy treo hành lang",
+    "Vầng trăng thu lớn trên tháp chuông",
+    "Mâm cỗ trăng rằm trên hiên chùa",
+    "Chùm bưởi và hồng đỏ trên mâm",
+    "Đầu lân nhỏ đặt cạnh cổng",
+    "Bó lúa vàng treo bên cửa",
+    "Bộ ấm trà mùa thu trên bàn",
+    "Dải lụa cam trên Cây nguyện",
+    "Hàng đèn kéo quân dưới mái hiên",
+    "Chiếc ghế mây nhỏ dưới gốc cây"
+  ],
+  "queDacBiet": [
+    {
+      "id": "den-ong-sao",
+      "tieuDe": "Đèn ông sao",
+      "tho": [
+        "Ông sao năm cánh đỏ tươi",
+        "Rước đèn em bé nụ cười rộn vang",
+        "Sân chùa rực rỡ ánh vàng",
+        "Mẹ cha đứng ngắm rộn ràng niềm vui"
+      ],
+      "loiGiai": "Niềm vui của trẻ nhỏ rất giản dị: một chiếc đèn, một khoảng sân và người lớn đứng nhìn theo. Quẻ này nhắc bạn rằng hạnh phúc thường đến từ những điều đơn sơ như thế. Nếu dạo này bạn thấy cuộc sống nặng nề, hãy thử quay về với những niềm vui nhỏ, và dành thời gian chơi cùng ai đó mà không mang theo lo toan.",
+      "loiKhuyen": "Dành một buổi tối tuần này chơi trọn vẹn với con cháu hoặc em nhỏ trong nhà, để chúng được dẫn đường cho trò chơi."
+    },
+    {
+      "id": "trang-thu-sum-vay",
+      "tieuDe": "Trăng thu sum vầy",
+      "tho": [
+        "Rằm thu trăng sáng như gương",
+        "Cả nhà ngồi lại yêu thương chuyện trò",
+        "Chén trà miếng bánh thơm tho",
+        "Ai xa cũng thấy ấm no trong lòng"
+      ],
+      "loiGiai": "Sum vầy không đòi hỏi mâm cao cỗ đầy, chỉ cần cả nhà chịu ngồi lại với nhau. Quẻ này nói về sức mạnh của những buổi trò chuyện giản dị. Khi có người lắng nghe, người ở xa cũng thấy ấm, người ở gần cũng thấy gần hơn. Nếu có khoảng cách nào trong nhà, đêm trăng là dịp tốt để bắt đầu một câu chuyện mới.",
+      "loiKhuyen": "Mời người thân cùng ngồi uống trà mười lăm phút, mỗi người kể một chuyện vui trong tuần. Ai ở xa thì gọi có hình."
+    },
+    {
+      "id": "lua-vang-nho-on",
+      "tieuDe": "Lúa vàng nhớ ơn",
+      "tho": [
+        "Lúa vàng trĩu hạt đồng xa",
+        "Cảm ơn tay mẹ tay cha dãi dầu",
+        "Bưởi hồng bày cỗ đêm thâu",
+        "Nhớ ơn ruộng đất dài lâu nghĩa tình"
+      ],
+      "loiGiai": "Mâm cỗ đêm rằm có được là nhờ bao nắng mưa, bao bàn tay chăm bón. Quẻ này mời bạn nhìn lại những điều mình đang hưởng và nhớ đến người đã góp phần làm ra chúng. Lòng biết ơn giúp ta sống khiêm nhường hơn và trân trọng hơn. Khi biết ơn, ta cũng tự nhiên muốn gieo lại điều tốt cho người khác.",
+      "loiKhuyen": "Trong bữa ăn hôm nay, kể tên ba người hoặc ba điều đã góp phần làm nên mâm cơm, rồi nói một lời cảm ơn."
+    }
+  ]
+}
