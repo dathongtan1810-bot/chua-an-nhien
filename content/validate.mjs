@@ -199,6 +199,7 @@ for (const [base, n, nguong] of [['thong-diep-ngay', 366, 0.08], ['loi-nguyen-ma
 }
 
 // ---------- 6. Bộ nội dung theo mùa ----------
+const THO_DA_CO = new Map((que || []).flatMap((q) => (q.tho || []).map((l) => [norm(l), `quẻ ${q.id}`])));
 for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu', 'doan-ngo', 'thanh-dao']) {
   const vi = checkSchema(`mua/${mua}.json`, 'mua/mua.schema.json');
   const en = checkSchema(`i18n/en/mua/${mua}.json`, 'mua/mua.schema.json');
@@ -208,6 +209,12 @@ for (const mua of ['tet', 'ram-thang-gieng', 'phat-dan', 'vu-lan', 'trung-thu', 
     for (const k of ['loiChao', 'thongDiep', 'loiNguyen']) dupCheck(rel, d[k] || [], (x) => x.noiDung, k);
   }
   if (vi) for (const q of vi.queDacBiet || []) {
+    // câu thơ quẻ mùa không trùng câu thơ 100 quẻ chính hay bộ mùa khác
+    for (const l of q.tho || []) {
+      const k = norm(l);
+      if (THO_DA_CO.has(k)) err(`mua/${mua}.json`, `quẻ ${q.id}: câu thơ trùng ${THO_DA_CO.get(k)}: "${l}"`);
+      else THO_DA_CO.set(k, `mua/${mua} ${q.id}`);
+    }
     const r = checkLucBat(q.tho);
     r.errors.forEach((m) => err(`mua/${mua}.json`, `quẻ ${q.id} (lục bát): ${m}`));
     r.warnings.forEach((m) => warn(`mua/${mua}.json`, `quẻ ${q.id} (lục bát): ${m}`));
