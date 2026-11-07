@@ -20,9 +20,42 @@ export const TOPICS: readonly Topic[] = [
   { id: 'tinh-duyen', vi: 'Tình duyên', en: 'Love' },
 ] as const;
 
+/**
+ * Nhãn của mọi mã chủ đề đã biết. Mã chung với phiên nội dung (content/DECISIONS D6):
+ * gia-dao, cong-viec, suc-khoe, hoc-hanh, tinh-duyen, tai-loc ("Làm ăn" — D35). Các mã còn lại là của dữ liệu mẫu.
+ */
+const KNOWN_TOPICS: Record<string, { vi: string; en: string }> = {
+  'gia-dao': { vi: 'Gia đạo', en: 'Family' },
+  'cong-viec': { vi: 'Công việc', en: 'Work' },
+  'suc-khoe': { vi: 'Sức khỏe', en: 'Health' },
+  'hoc-hanh': { vi: 'Học hành', en: 'Study' },
+  'tinh-duyen': { vi: 'Tình duyên', en: 'Love' },
+  'tai-loc': { vi: 'Làm ăn', en: 'Livelihood' },
+  ...Object.fromEntries(TOPICS.map((t) => [t.id, { vi: t.vi, en: t.en }])),
+};
+const TOPIC_ORDER = ['gia-dao', 'cong-viec', 'suc-khoe', 'hoc-hanh', 'tinh-duyen', 'tai-loc', 'binh-an', 'cong-danh', 'hoc-tap'];
+
 export function topicLabel(id: string, lang: 'vi' | 'en'): string {
-  const t = TOPICS.find((x) => x.id === id);
-  return t ? t[lang] : id;
+  return KNOWN_TOPICS[id]?.[lang] ?? id;
+}
+
+/**
+ * Chủ đề thật sự có trong bộ quẻ đang dùng (theo `loiGiaiTheoChuDe` và `chuDe`), để mỗi chủ đề
+ * người chơi chọn đều có quẻ và lời giải riêng — không cố định danh sách.
+ */
+export function availableTopics(list: readonly QueXam[]): Topic[] {
+  const ids = new Set<string>();
+  for (const q of list) {
+    q.chuDe.forEach((c) => ids.add(c));
+    Object.keys(q.loiGiaiTheoChuDe).forEach((c) => ids.add(c));
+  }
+  const rank = (id: string) => {
+    const i = TOPIC_ORDER.indexOf(id);
+    return i < 0 ? TOPIC_ORDER.length : i;
+  };
+  return [...ids]
+    .sort((a, b) => rank(a) - rank(b) || a.localeCompare(b))
+    .map((id) => ({ id, vi: topicLabel(id, 'vi'), en: topicLabel(id, 'en') }));
 }
 
 /** 32-bit FNV-1a hash of a string (UTF-16 code units). */

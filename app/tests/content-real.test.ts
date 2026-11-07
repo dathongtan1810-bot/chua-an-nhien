@@ -33,3 +33,20 @@ describe('nội dung tiếng Anh (content/i18n/en)', () => {
     }
   });
 });
+
+describe('chủ đề xin xăm khớp nội dung thật', () => {
+  it('mọi chủ đề hiển thị đều có quẻ và lời giải riêng', async () => {
+    const { getQueXam: q } = await import('../src/data/content');
+    const { availableTopics, pickFortune, topicLabel } = await import('../src/logic/fortune');
+    const list = q();
+    const topics = availableTopics(list);
+    expect(topics.length).toBeGreaterThanOrEqual(3);
+    for (const tp of topics) {
+      const stick = pickFortune(list, { deviceId: 'dev-abc', topic: tp.id, dateKey: '2026-11-07' });
+      expect(stick.loiGiaiTheoChuDe[tp.id], `chủ đề ${tp.id}`).toBeTruthy();
+      expect(topicLabel(tp.id, 'vi')).not.toBe(tp.id); // có nhãn hiển thị
+    }
+    // nhãn "Làm ăn" cho tai-loc theo quyết định D35 của phiên nội dung
+    expect(topicLabel('tai-loc', 'vi')).toBe('Làm ăn');
+  });
+});

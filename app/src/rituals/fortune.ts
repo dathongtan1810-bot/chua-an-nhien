@@ -7,11 +7,11 @@
 import type Phaser from 'phaser';
 import { audio } from '../audio/engine';
 import { vibrate } from '../audio/haptics';
-import { getLang, t } from '../core/i18n';
+import { getLang, t, tOr } from '../core/i18n';
 import { store } from '../core/store';
 import { getQueXam, type QueXam } from '../data/content';
 import { vnDateKey } from '../logic/dates';
-import { TOPICS, pickFortune } from '../logic/fortune';
+import { availableTopics, pickFortune, topicLabel } from '../logic/fortune';
 import { h } from '../ui/dom';
 import { highPass, shakeDetector, type Vec3 } from './pure-b';
 import type { Ritual, RitualFactory, RitualHost } from './types';
@@ -20,6 +20,9 @@ const L = {
   vi: { close: 'Đóng', share: 'Chia sẻ', stick: 'Quẻ số {n}', topic: 'Chủ đề: {t}', hold: 'Giữ nút để lắc', poem: 'Thơ' },
   en: { close: 'Close', share: 'Share', stick: 'Stick no. {n}', topic: 'Topic: {t}', hold: 'Hold the button to shake', poem: 'Poem' },
 };
+/** Nhãn chủ đề: chữ của phiên nội dung (xin-que.chu-de.*) nếu có, không thì nhãn của app. */
+const topicName = (id: string, lang: 'vi' | 'en'): string => tOr(`xin-que.chu-de.${id}`, topicLabel(id, lang));
+
 const loc = (k: keyof typeof L.vi, vars: Record<string, string | number> = {}): string => {
   let s = (getLang() === 'en' ? L.en : L.vi)[k];
   for (const [kk, v] of Object.entries(vars)) s = s.split(`{${kk}}`).join(String(v));
@@ -111,7 +114,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
     const used = (store.dispatch({ type: 'rollDay', dateKey: vnDateKey() }), store.state.daily.fortuneTopics) ?? [];
     const lang = getLang() === 'en' ? 'en' : 'vi';
     let anyUsed = false;
-    const chips = TOPICS.map((tp) => {
+    const chips = availableTopics(getQueXam()).map((tp) => {
       const isUsed = used.includes(tp.id);
       if (isUsed) anyUsed = true;
       return h(
@@ -128,7 +131,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
             startShake();
           },
         },
-        tp[lang],
+        topicName(tp.id, lang),
       );
     });
     const card = h(
@@ -224,7 +227,6 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
       t('fortune.shakeBtn'),
     );
     const lang = getLang() === 'en' ? 'en' : 'vi';
-    const tp = TOPICS.find((x) => x.id === topic);
     root.append(
       h(
         'div',
@@ -243,7 +245,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
               lineHeight: '1.45',
             },
           },
-          loc('topic', { t: tp ? tp[lang] : topic }),
+          loc('topic', { t: topicName(topic, lang) }),
           h('br'),
           t('fortune.shake'),
         ),
@@ -347,11 +349,10 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
     step = 'card';
     if (!completed) {
       completed = true;
-      host.complete('fortune', 1, { id: que.id, topic }, 'fortune');
+      host.complete('fortune', 1, { id: que.id, topic, tieuDe: que.tieuDe }, 'fortune');
       audio.reward();
     }
     const lang = getLang() === 'en' ? 'en' : 'vi';
-    const tp = TOPICS.find((x) => x.id === topic);
     const meaning = que.loiGiaiTheoChuDe[topic] ?? que.loiGiai;
     const sec = (title: string, text: string) =>
       h(
@@ -375,7 +376,7 @@ export const fortuneRitual: RitualFactory = (host: RitualHost): Ritual => {
           WebkitOverflowScrolling: 'touch',
         },
       },
-      h('p', { style: { margin: '0', fontSize: '15px', opacity: '0.75', textAlign: 'center' } }, `${loc('stick', { n: que.id })} · ${tp ? tp[lang] : topic}`),
+      h('p', { style: { margin: '0', fontSize: '15px', opacity: '0.75', textAlign: 'center' } }, `${loc('stick', { n: que.id })} · ${topicName(topic, lang)}`),
       h('h2', { style: { margin: '6px 0 12px', fontSize: '24px', textAlign: 'center', fontFamily: 'serif' } }, que.tieuDe),
       h(
         'p',

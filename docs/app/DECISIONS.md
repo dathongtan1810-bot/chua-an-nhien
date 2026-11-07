@@ -48,3 +48,7 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
     thả đèn và bản đồ) — bước 4 giới thiệu do app viết (`onboarding.river-*`).
 28. **Chưa có "Bỏ chặn"**: giao thức server chưa có sự kiện bỏ chặn; nếu chỉ bỏ ở client thì server vẫn ẩn → không làm
     để tránh giao diện báo sai. Cần phiên backend thêm `unblock_user` rồi mới thêm danh sách chặn trong Cài đặt.
+29. **Chủ đề xin xăm lấy từ dữ liệu** (`availableTopics`), không cố định: trước đây app hiện 6 chủ đề của dữ liệu mẫu
+    (binh-an, cong-danh, hoc-tap…) mà nội dung thật dùng bộ mã chung D6 (gia-dao, cong-viec, suc-khoe, hoc-hanh,
+    tinh-duyen, tai-loc) → 3/6 chủ đề không có quẻ/lời giải riêng. Nhãn hiển thị lấy `xin-que.chu-de.*` của phiên nội dung
+    (`tai-loc` = "Làm ăn", D35). Nhật ký lưu và hiện tên quẻ + tên chủ đề.

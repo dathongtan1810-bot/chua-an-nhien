@@ -2,7 +2,7 @@ import { audio } from '../audio/engine';
 import { setHapticsEnabled } from '../audio/haptics';
 import { AREA_INFO, type AreaId } from '../core/areas';
 import { game, requestGoTo } from '../core/bus';
-import { getLang, setContentStrings, setLang, t } from '../core/i18n';
+import { getLang, setContentStrings, setLang, t, tOr } from '../core/i18n';
 import { SHOP_ITEMS, type ShopCategory } from '../core/shop';
 import { DAILY_QUESTS, type Settings } from '../core/state';
 import { store } from '../core/store';
@@ -10,6 +10,7 @@ import { todayInfo } from '../core/today';
 import { contentSource, loadLangContent, uiStringsEn } from '../data/content';
 import { currentStreak } from '../logic/streak';
 import { randomNickname, randomNicknameEn } from '../logic/nickname';
+import { topicLabel } from '../logic/fortune';
 import { formatLunar, yearCanChi } from '../lunar/lunar';
 import { net } from '../net/service';
 import { clearJournal, listEntries, type JournalEntry } from '../storage/journal';
@@ -125,7 +126,11 @@ function describe(e: JournalEntry): string {
     case 'meditation':
       return vi ? `Thiền ${d.minutes ?? ''} phút` : `Meditated ${d.minutes ?? ''} min`;
     case 'fortune':
-      return (vi ? 'Xin xăm: ' : 'Fortune: ') + (d.tieuDe ?? '#' + (d.id ?? '')) + (d.topic ? ` (${d.topic})` : '');
+      return (
+        (vi ? 'Xin xăm: ' : 'Fortune: ') +
+        (d.tieuDe ?? (vi ? 'Quẻ số ' : 'Stick ') + (d.id ?? '')) +
+        (d.topic ? ` · ${tOr(`xin-que.chu-de.${d.topic}`, topicLabel(String(d.topic), vi ? 'vi' : 'en'))}` : '')
+      );
     case 'lantern':
       return (vi ? 'Thả đèn: “' : 'Lantern: “') + (d.text ?? '') + '”';
     case 'bell':
