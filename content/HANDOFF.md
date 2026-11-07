@@ -45,6 +45,12 @@ Sửa trong `content/_parts/que-xam-0N.json` (VI) / `en-que-xam-0N.json` (EN) �
 - `store/press-kit.md` có bản 400 chữ VI/EN; `store/review-replies.md` đủ 20 mẫu; `store/social-posts-30-ngay.md` đã đọc lại, trích dẫn khớp dữ liệu.
 - DECISIONS thêm D34 (cách chọn thông điệp năm nhuận) và D35 (nhãn "Làm ăn").
 
+## Phiên 2026-11-07 (01:20–01:30 UTC) — mục "còn giờ"
+- Rà chính tả 5 bộ mùa, chữ giao diện, thông báo đẩy: không lỗi chính tả; viết lại 28 câu trùng/na ná (VI + EN). `content/REVIEW-chinh-ta.md`.
+- Tăng đa dạng: viết lại 39 thông điệp + 38 lời nguyện (VI + EN), giữ nguyên các id được store trích. `content/REVIEW-da-dang.md`.
+- Thêm 2 bộ mùa: Phật Thành Đạo (1–8/12 âm), Tết Đoan Ngọ (1–5/5 âm) — tổng 7 bộ (D36).
+- `validate.mjs` kiểm thêm: câu thơ quẻ mùa không trùng 100 quẻ chính.
+
 ## Còn lại (chỉ phụ thuộc người thật)
 - Các mục **[CẦN XÁC NHẬN]** ở phần trên: email/tên miền, pháp nhân, SDK, thời hạn lưu, thao tác Báo cáo/Chặn/Cài đặt thật, nhóm từ chính trị, link store, og:image.
 - Dev triển khai D30 (ưu tiên bộ mùa) và D34 (thông điệp năm nhuận).
