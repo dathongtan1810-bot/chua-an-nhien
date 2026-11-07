@@ -73,6 +73,8 @@ export interface GameState {
   blocked: string[];
   area: AreaId;
   onboarded: boolean;
+  /** Nhiệm vụ mùa đã xong: questKey → dateKey */
+  seasonQuests: Record<string, string>;
 }
 
 export const RITUAL_REWARD = 1;
@@ -80,6 +82,7 @@ export const RITUAL_DAILY_CAP = 20;
 export const QUEST_REWARD = 3;
 export const ALL_QUESTS_BONUS = 5;
 export const EVENT_REWARD = 5;
+export const SEASON_QUEST_REWARD = 2;
 
 export function defaultSettings(): Settings {
   return {
@@ -138,6 +141,7 @@ export function initialState(deviceId: string, nickname: string, dateKey: string
     blocked: [],
     area: 'cong',
     onboarded: false,
+    seasonQuests: {},
   };
 }
 
@@ -154,7 +158,9 @@ export type Action =
   | { type: 'nickname'; nickname: string }
   | { type: 'reward'; amount: number }
   /** Thưởng nhỏ (vd. giữ nhịp mõ đều) — tính chung trần thưởng nghi thức mỗi ngày. */
-  | { type: 'bonus'; dateKey: string };
+  | { type: 'bonus'; dateKey: string }
+  /** Hoàn thành một nhiệm vụ mùa (một lần mỗi mùa mỗi năm) */
+  | { type: 'seasonQuest'; key: string; dateKey: string };
 
 export interface Reward {
   amount: number;
@@ -269,6 +275,13 @@ export function reduce(state: GameState, action: Action): Result {
       }
       break;
     }
+    case 'seasonQuest': {
+      if (s.seasonQuests[action.key]) break;
+      s = { ...s, seasonQuests: { ...s.seasonQuests, [action.key]: action.dateKey }, hatSen: s.hatSen + SEASON_QUEST_REWARD };
+      reward.amount = SEASON_QUEST_REWARD;
+      reward.reasons.push('seasonQuest');
+      break;
+    }
     case 'reward':
       s = { ...s, hatSen: s.hatSen + action.amount };
       reward.amount = action.amount;
@@ -291,5 +304,6 @@ export function hydrate(raw: unknown, fallback: GameState): GameState {
     daily: r.daily ? { ...emptyDaily(r.daily.dateKey), ...r.daily } : fallback.daily,
     equipped: { ...fallback.equipped, ...(r.equipped ?? {}) },
     owned: Array.from(new Set([...(fallback.owned ?? []), ...(r.owned ?? [])])),
+    seasonQuests: { ...(r.seasonQuests ?? {}) },
   } as GameState;
 }

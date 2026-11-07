@@ -21,6 +21,8 @@ import type { Ritual, RitualHost } from '../rituals/types';
 import { addEntry } from '../storage/journal';
 import { h, toast, uiRoot } from '../ui/dom';
 import { BurnerDisplay } from './burner';
+import { completeSeasonQuestsByRitual } from '../core/seasonQuests';
+import { SEASON_QUEST_REWARD } from '../core/state';
 import { VisitorOrbs } from './visitors';
 import { isDrizzleDay } from '../logic/weather';
 import { isLowPerf, setLowPerf, shouldLowerQuality, showFpsMeter } from '../core/perf';
@@ -546,6 +548,10 @@ export class AreaScene extends Phaser.Scene implements GameApi {
         if (reward.amount > 0) {
           bus.emit({ type: 'reward', amount: reward.amount, reasons: reward.reasons });
           this.floatText(t('reward.plus', { n: reward.amount }), GAME_W / 2, 380, '#f2cd6b');
+        }
+        // nhiệm vụ của mùa khớp nghi thức này (vd. "Tĩnh tâm đêm giao thừa" = thiền 5 phút)
+        for (const name of completeSeasonQuestsByRitual(kind, amount)) {
+          toast('🌸 ' + t('season.questDone', { name, n: SEASON_QUEST_REWARD }), 4500);
         }
       },
       floatText: (text, x, y, color = '#fff4dc') => this.floatText(text, x, y, color),

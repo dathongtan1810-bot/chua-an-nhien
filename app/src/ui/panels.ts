@@ -4,7 +4,7 @@ import { AREA_INFO, type AreaId } from '../core/areas';
 import { game, requestGoTo } from '../core/bus';
 import { getLang, setContentStrings, setLang, t, tOr } from '../core/i18n';
 import { SHOP_ITEMS, type ShopCategory } from '../core/shop';
-import { DAILY_QUESTS, type Settings } from '../core/state';
+import { DAILY_QUESTS, SEASON_QUEST_REWARD, type Settings } from '../core/state';
 import { store } from '../core/store';
 import { todayInfo } from '../core/today';
 import { contentSource, loadLangContent, uiStringsEn } from '../data/content';
@@ -16,6 +16,7 @@ import { net } from '../net/service';
 import { clearJournal, listEntries, type JournalEntry } from '../storage/journal';
 import { h, openSheet, toast } from './dom';
 import { mapSvg } from './minimap';
+import { markSeasonQuestDone, seasonQuestsToday } from '../core/seasonQuests';
 import { applyReminders } from '../core/reminders';
 import { openWishes } from './wishes';
 
@@ -99,6 +100,33 @@ export function openToday(): void {
     ul.append(h('li', { class: done ? 'quest done' : 'quest' }, h('span', {}, (done ? '✅ ' : '◯ ') + t('quest.' + q)), h('span', { class: 'muted' }, '+3 🪷')));
   }
   s.body.append(h('section', {}, h('h3', {}, t('today.quests')), ul));
+  const seasonal = seasonQuestsToday();
+  if (seasonal) {
+    const sul = h('ul', { class: 'list' });
+    for (const q of seasonal.quests) {
+      let right: HTMLElement;
+      if (q.done) right = h('span', { class: 'chip active', style: { cursor: 'default' } }, '✓');
+      else if (q.kind.ritual) right = h('span', { class: 'muted' }, t('season.inApp'));
+      else
+        right = h(
+          'button',
+          {
+            class: 'chip',
+            onclick: () => {
+              const n = markSeasonQuestDone(q.key);
+              if (n > 0) toast('🪷 ' + t('reward.plus', { n }));
+              s.close();
+              openToday();
+            },
+          },
+          t('season.markDone'),
+        );
+      sul.append(
+        h('li', { class: q.done ? 'quest done' : 'quest', style: { alignItems: 'flex-start' } }, h('div', {}, h('strong', {}, q.quest.ten), h('div', { class: 'muted' }, q.quest.moTa)), right),
+      );
+    }
+    s.body.append(h('section', {}, h('h3', {}, '🌸 ' + t('season.quests', { name: seasonal.seasonName })), h('p', { class: 'muted' }, t('season.hint', { n: SEASON_QUEST_REWARD })), sul));
+  }
   const streak = currentStreak(st.streak, info.dateKey);
   s.body.append(
     h(

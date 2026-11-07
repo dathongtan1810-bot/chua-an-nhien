@@ -55,4 +55,8 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
 30. **Bộ mùa** (`content/mua/*.json`, 7 bộ, + bản EN): mùa đang diễn ra tính theo khoảng ngày âm (có vắt qua năm, vd. Tết
     23/12 → 15/1); mùa chồng nhau thì chọn mùa có khoảng ngắn hơn (Rằm tháng Giêng thắng mùa Tết). Trong mùa: thông điệp
     ngày lấy từ mùa, trang trí theo `trangTri` (từ khóa → token), lời chào mỗi ngày một lần, 2/3 gợi ý lời nguyện từ mùa,
-    thêm lựa chọn "Quẻ đặc biệt của mùa" (queDacBiet). Chưa dùng `nhiemVu` của mùa (phần thưởng là đồ trang trí app chưa có).
+    thêm lựa chọn "Quẻ đặc biệt của mùa" (queDacBiet).
+31. **Nhiệm vụ của mùa** (`nhiemVu`): phân loại theo cái app có (`classifyQuest`) — khớp nghi thức (thiền, thả đèn, xin
+    xăm…) thì tự hoàn thành khi làm trong mùa (thiền "5 phút" cần ≥ 5 phút); việc ngoài đời (gọi cho cha mẹ, ăn chay…)
+    người chơi tự đánh dấu; việc chỉ có "ảo"/Cây nguyện/gửi quà trong app thì ẩn. Thưởng +2 Hạt sen một lần mỗi nhiệm vụ
+    mỗi mùa mỗi năm (năm = năm bắt đầu mùa, vì mùa Tết vắt năm) thay cho đồ trang trí app chưa có.

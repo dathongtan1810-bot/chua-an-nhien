@@ -175,6 +175,11 @@ const vi: Dict = {
   'room.bad': 'Mã phòng chưa đúng (6 ký tự).',
   'room.offline': 'Cần bật tính năng trực tuyến để đi cùng gia đình.',
   'room.you': '(bạn)',
+  'season.quests': 'Việc của {name}',
+  'season.hint': 'Việc nhẹ trong mùa, mỗi việc +{n} Hạt sen một lần. Việc ngoài đời thì bạn tự đánh dấu khi đã làm.',
+  'season.markDone': 'Đã làm',
+  'season.inApp': 'Làm trong chùa',
+  'season.questDone': 'Xong việc của mùa: {name} (+{n} Hạt sen)',
   'map.title': 'Bản đồ chùa',
   'event.today': 'Hôm nay là {name}',
 };
@@ -352,6 +357,11 @@ const en: Dict = {
   'room.bad': 'Invalid room code (6 characters).',
   'room.offline': 'Turn on online features to visit with family.',
   'room.you': '(you)',
+  'season.quests': 'Tasks for {name}',
+  'season.hint': 'Gentle seasonal tasks, +{n} lotus seeds each, once. Mark real-life tasks yourself when done.',
+  'season.markDone': 'Done',
+  'season.inApp': 'In the pagoda',
+  'season.questDone': 'Seasonal task done: {name} (+{n} lotus seeds)',
   'map.title': 'Pagoda map',
   'event.today': 'Today is {name}',
 };

@@ -69,6 +69,7 @@ Debug: `/?skip&area=<khu>&ritual=<id>&hour=<0-23>` (dev thêm `&date=YYYY-MM-DD`
 - **Lời nhắc mùng 1/rằm** dùng câu của phiên nội dung (`thong-bao-day.json`), xoay vòng, điền biệt danh.
 - **Bộ mùa** (7 bộ: Tết, Rằm tháng Giêng, Phật Đản, Đoan Ngọ, Vu Lan, Trung Thu, Thành Đạo): thông điệp, trang trí,
   lời chào, gợi ý lời nguyện và "Quẻ đặc biệt của mùa" theo mùa đang diễn ra. Xem trước (dev): `?date=2026-08-21`.
+- **Việc của mùa** trong màn Hôm nay: tự hoàn thành khi làm nghi thức khớp, việc ngoài đời tự đánh dấu, +2 Hạt sen.
 - Dòng sông chỉ tạo hình cho 40 đèn đang hiện (trước đó tới ~400 đối tượng khi server trả ~200 đèn).
 
 ## Còn lại (cần người/thiết bị thật)
