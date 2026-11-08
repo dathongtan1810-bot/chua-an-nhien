@@ -36,3 +36,19 @@ Scope: `_parts/en-que-xam-01..04.json` (→ `i18n/en/que-xam.json` via `tools/me
 - **Buddha's Birthday (Vesak)** at first mention, then "Buddha's Birthday".
 - **Guanyin (Quan Âm)** at first mention, then "Guanyin" ("Avalokiteshvara" removed; event titles: "Guanyin (Quan Âm) Birthday", "Guanyin Enlightenment Day", "Guanyin Renunciation Day").
 - **American spelling**: color, honor, neighbor, gray, travelers, practice (verb), recognize, apologize, summarize, rumors, signaling, counselor, Mom.
+
+## Session 2026-11-08
+Scope: `i18n/en/giao-dien.json`, `i18n/en/thong-bao-day.json`, `i18n/en/mua/thanh-dao.json`, `i18n/en/mua/doan-ngo.json`, checked string by string against the VI source. Keys, ids and placeholders (`{n}`, `{nickname}`, `{ngay}`) unchanged. `node content/validate.mjs` → 0 errors, 0 warnings.
+
+| File | Strings edited |
+|---|---|
+| giao-dien | 36 |
+| thong-bao-day | 48 (titles + bodies) |
+| mua/thanh-dao | 33 (incl. 4 verse lines) |
+| mua/doan-ngo | 38 (incl. 8 verse lines) |
+
+- **UI:** "Bài thơ" → "Poem" (it was "The verse", which clashed with "Verse {n}"); "Lời giải" → "Interpretation"; counters reworded so plurals still read right when n = 1 ("Sticks of incense lit today: {n}", "Strikes: {n}", "Days to go: {n}"); "Post anonymously" → "Hang anonymously"; "Suggest a wish" → "Show a sample wish"; "Hide wishes from this writer" to match "Blocked writers"; moderation messages made clearer ("unsuitable words have been hidden", "flagged for review"); contractions used consistently in the friendly messages.
+- **Notifications:** removed a repeated word (01 "moment… moment"); fixed literal phrasings ("everything will have its turn" → "come in its own time", "Kindness warms both sides" → "Kind words warm both people", "Hello new month"); "Lunar New Year's Eve"; title "First Full Moon of the Lunar Year" to match the UI; Amitabha "recite a few lines" → "chant his name"; Guanyin body no longer repeats "(Quan Âm)" right after the title.
+- **Thành Đạo:** "milk porridge" used everywhere (one place said "milk rice porridge"); "miracle" wording in message 9 removed; "forgive one old thing/matter" → "old hurt"; "A pot of ginger tea" (task reward and decoration kept in sync); verses: replaced "Grow calm, and open wide the heart inside", "the goal is yours to keep" (now "gray/way") and "walk more steady" (ungrammatical).
+- **Đoan Ngọ:** rewrote the awkward description ("a festival folk tradition also calls…"); "con cháu" → "children and grandchildren"; "siblings in my family" → "my brothers and sisters"; verses now rhyme properly (AABB): "full/cool, low/flows" → "sweet/eat, low/flow"; "ebb and flow" (which got the meaning wrong) → "ease/cease"; "green/evening scene" → "soon/afternoon". Message 14 was left as another session's editor had just updated it.
+- Note: the task brief said "fix American spelling", but D33 requires American English, so American spelling was kept and applied (e.g. "gray", "Neighborly", Oxford commas in edited lists).
