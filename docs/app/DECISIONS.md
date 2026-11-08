@@ -60,3 +60,9 @@ Ghi lại các lựa chọn tự đưa ra khi yêu cầu chưa rõ.
     xăm…) thì tự hoàn thành khi làm trong mùa (thiền "5 phút" cần ≥ 5 phút); việc ngoài đời (gọi cho cha mẹ, ăn chay…)
     người chơi tự đánh dấu; việc chỉ có "ảo"/Cây nguyện/gửi quà trong app thì ẩn. Thưởng +2 Hạt sen một lần mỗi nhiệm vụ
     mỗi mùa mỗi năm (năm = năm bắt đầu mùa, vì mùa Tết vắt năm) thay cho đồ trang trí app chưa có.
+32. **Đồng hồ Phaser vs đồng hồ thật**: `scene.time.now` cộng dồn thời gian thật (`TimeStep.time += rawDelta`) nên giữ
+    nhang 1,3 s, nhịp mõ, tuổi viên thức ăn cá vẫn đúng trên máy chậm. Còn `delayedCall`/`addEvent` chạy theo delta đã làm
+    mượt → trễ khi FPS thấp: chỗ ảnh hưởng thao tác/điều hướng đã chuyển sang `setTimeout` (`AreaScene.later`, goTo) hoặc
+    `performance.now()` (bộ đếm thiền, `advanceClock`). Cố ý GIỮ Phaser clock cho chờ thoát sau lạy (1,5 s), hiện quẻ sau
+    lắc ống xăm (0,65 s) và hiệu ứng nền (lá rơi…) vì chúng phải đi cùng nhịp tween — đổi sang đồng hồ thật thì quẻ có thể
+    hiện khi ống xăm còn đang lắc.
