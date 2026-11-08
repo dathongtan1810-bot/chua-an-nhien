@@ -102,3 +102,67 @@ Bản EN tương ứng (`i18n/en/mua/*.json`) được cập nhật cho các câ
 - tet nhiemVu, phat-dan/trung-thu loiChao#2 và tet loiChao#2 cùng khung "Chùa An Nhiên chúc bạn một mùa…": khung lời chào chung, giữ.
 - `thong-bao-day.json` dùng "ba mẹ", các bộ mùa dùng "cha mẹ": cả hai đều đúng, giữ theo giọng từng file.
 - giao-dien `chan.nut` dùng "Ẩn lời nguyện từ người này" nhưng các khóa khác dùng "chặn/bỏ chặn": nên thống nhất thuật ngữ khi dev chốt tính năng.
+
+## Phiên 2026-11-08
+
+Phạm vi: phần tiếng Việt của `_parts/que-xam-01.json` (quẻ 1–25: tieuDe, tho, loiGiai, loiGiaiTheoChuDe, loiKhuyen), `mua/thanh-dao.json`, `mua/doan-ngo.json`. Bản EN cùng id được cập nhật khi câu đổi nghĩa (`_parts/en-que-xam-01.json`, `i18n/en/mua/doan-ngo.json`).
+
+### Cách rà
+- Quét tự động (node): NFC, dấu thanh kiểu mới ở cuối âm tiết (oà/oá/uỷ…), i/y, khoảng trắng kép/trước dấu câu, từ lặp liền nhau, từ nhạy cảm (linh ứng, phù hộ, cúng dường, giải hạn, tiền, hung/cát…); đếm cụm 2–4 từ lặp trong lời giải lô 01 và so với lô 02–04.
+- Đối chiếu lời giải của các quẻ có thơ đã biên tập lại (2, 3, 4, 5, 13, 19, 23, 24, 25 – xem `REVIEW-tho.md`) với bài thơ mới.
+- Đọc lại toàn bộ từng câu.
+
+### Kết quả quét
+- Không có lỗi NFC, dấu thanh kiểu mới, i/y, khoảng trắng hay dấu câu; không thấy lỗi ch/tr, s/x, d/gi/r, l/n, hỏi/ngã.
+- Không có nội dung mê tín, hứa linh ứng, hù dọa hay nhắc tiền cúng dường. Mục `tai-loc` đều khuyên làm ăn lương thiện, tránh cờ bạc/đầu tư mạo hiểm.
+- Cụm khung "Đây là quẻ nói nhiều về …" xuất hiện 18 lần trong lô 01 (lô 02–04: 0 lần) → bỏ ở 12 mục, còn 6 (mỗi chủ đề một lần: quẻ 2, 4, 7, 9, 10, 15). "nhẹ nhàng" 14 → 9, "đều đặn" 18 → 14, "vững vàng" 5 → 2.
+- Quẻ 2, 3, 19: lời giải vẫn khớp thơ mới, không sửa vì lý do này.
+- Không sửa trường `tho` nào.
+
+### Thay đổi (32 chỗ)
+
+| File | Mục | Trước | Sau | Lý do | Sửa EN |
+|---|---|---|---|---|---|
+| _parts/que-xam-01.json | 4 loiGiai | …duyên lành sẽ tự tìm đến như gió nồm thổi qua sân. | …duyên lành sẽ tự tìm đến như gió ngoài song đến lúc tự lùa vào nhà. | Khớp thơ mới ("như gió ngoài song") | Có |
+| _parts/que-xam-01.json | 5 loiGiai | …thành quả sẽ đến vững vàng theo năm tháng. | …đến lúc, thành quả sẽ trổ bông như mầm cây được mưa xuân nuôi lớn. | Khớp thơ mới ("nuôi mầm", "tới tầm trổ bông"); bớt "vững vàng" | Có |
+| _parts/que-xam-01.json | 13 loiGiai | Chi tiêu vừa phải, sống giản dị, thì dù bữa cơm chỉ có rau cũng vẫn ấm lòng. Sự chuẩn bị hôm nay giúp bạn vững vàng… | Tiêu pha vừa đủ, sống giản dị, thì mai sau lòng vẫn yên. Sự chuẩn bị hôm nay giúp bạn vững chân… | "cơm rau ấm lòng" là ý thơ cũ; thơ mới "Tiêu pha vừa đủ, mai sau yên lòng"; bớt "vững vàng" | Có |
+| _parts/que-xam-01.json | 23 loiGiai | Nếu lòng còn son sắt, chỉ cần biết chờ đợi, thấu hiểu và nhường nhịn nhau đôi chút, tình cảm… | Giận hờn rồi cũng qua như gió thổi qua sông. Nếu lòng vẫn còn đợi trông, chỉ cần thấu hiểu và nhường nhau một bước, tình cảm… | "son sắt", "đôi chút" là ý thơ cũ; khớp thơ mới (gió qua sông, nhường nhau một bước) | Có |
+| _parts/que-xam-01.json | 24 loiGiai | Người có mục tiêu rõ ràng, dù đường xa hay gần cũng biết mình đang đi đâu. | Người học có mục tiêu rõ ràng cũng như người lên đường biết nơi mình đến: đường dài mấy cũng không thấy xa. | Khớp thơ mới ("Học hành như kẻ lên đường / Biết nơi mình đến, dặm trường chẳng xa") | Có |
+| _parts/que-xam-01.json | 25 loiGiai | Quẻ này khuyên đừng chạy theo những cơn gió nhất thời… | Quẻ này khuyên đừng chạy theo đám đông hay những cơn gió nhất thời… | Khớp thơ mới ("chớ chạy theo nhau") | Có |
+| _parts/que-xam-01.json | 25 loiGiai | Vững vàng như thế thì gió đổi chiều cũng chẳng ngại. | Giữ được nhịp ấy thì gió có đổi chiều, thổi mạnh đến đâu cũng chẳng ngại. | Khớp thơ mới ("gió mau chẳng nề"); bớt "vững vàng" | Có |
+| _parts/que-xam-01.json | 3 suc-khoe | Lo âu kéo dài ảnh hưởng… Nếu lo âu kéo dài, đừng ngại tìm gặp chuyên gia. | Lo âu lâu ngày ảnh hưởng… Nếu lo âu kéo dài, đừng ngại tìm gặp bác sĩ hoặc chuyên gia tâm lý. | Lặp "lo âu kéo dài" hai câu liền; nói rõ gặp bác sĩ | Có |
+| _parts/que-xam-01.json | 16 suc-khoe | …khi thấy cơn giận dâng lên. | …khi thấy cơn giận dâng lên; nếu hay đau đầu, hồi hộp, nên đi khám. | Nhắc huyết áp mà thiếu ý khám bác sĩ khi cần | Có |
+| _parts/que-xam-01.json | 17 tai-loc | …sẽ tiết kiệm hơn để đến lúc cần mới mua vội. | …sẽ tiết kiệm hơn là đợi đến lúc cần mới mua vội. | Ngữ pháp: thiếu "là" trong phép so sánh | Không (EN đã đúng ý) |
+| _parts/que-xam-01.json | 2 loiGiai | …vận động nhẹ nhàng, lòng vui vẻ. …mới có chỗ dựa vững vàng. | …vận động vừa sức, lòng vui vẻ. …mới có chỗ dựa. | Giảm cụm lặp "nhẹ nhàng", "vững vàng" | Không |
+| _parts/que-xam-01.json | 3 loiGiai | …rồi nhẹ nhàng buông bớt phần còn lại. | …rồi buông bớt phần còn lại. | Giảm "nhẹ nhàng" (câu sau đã có "Lòng nhẹ") | Không |
+| _parts/que-xam-01.json | 4 cong-viec | Cơ hội có khi đến nhẹ nhàng như gió. | Cơ hội có khi đến khẽ khàng như gió. | Giảm "nhẹ nhàng" | Không |
+| _parts/que-xam-01.json | 8 suc-khoe | …đi dạo nhẹ nhàng. …giữ giấc ngủ đều đặn. | …đi dạo thong thả. …giữ giấc ngủ đúng giờ. | Giảm "nhẹ nhàng", "đều đặn" (quẻ 8 có 3 lần "đều đặn") | Không |
+| _parts/que-xam-01.json | 8 tinh-duyen | Sự chân thành, đều đặn hỏi han sẽ giúp… | Sự chân thành và những lần hỏi han nhau mỗi ngày sẽ giúp… | Như trên; câu cũ hơi trúc trắc | Không |
+| _parts/que-xam-01.json | 5 tinh-duyen | …nhờ sự quan tâm đều đặn, … | …nhờ sự quan tâm bền bỉ, … | Quẻ 5 có 3 lần "đều đặn" | Không |
+| _parts/que-xam-01.json | 1 tai-loc | Tiền bạc đến từ công sức đều đặn mỗi ngày. | Tiền bạc đến từ công sức bỏ ra mỗi ngày. | Giảm "đều đặn" (lời giải quẻ 1 đã có) | Không |
+| _parts/que-xam-01.json | 21 suc-khoe | …cùng họ đi bộ nhẹ nhàng mỗi chiều. | …cùng họ đi bộ chậm mỗi chiều. | Giảm "nhẹ nhàng" | Không |
+| _parts/que-xam-01.json | 11 suc-khoe | Đây là quẻ nói nhiều về sức khỏe. Uống đủ nước… | Uống đủ nước… | Bỏ câu khung lặp 18 lần (xem trên) | Có (bỏ "This verse speaks mostly of …") |
+| _parts/que-xam-01.json | 12 hoc-hanh | Đây là quẻ nói nhiều về học hành. Hãy dọn gọn… | Hãy dọn gọn… | Như trên | Có |
+| _parts/que-xam-01.json | 13 tai-loc | Đây là quẻ nói nhiều về tài lộc. Hãy lập… | Hãy lập… | Như trên | Có |
+| _parts/que-xam-01.json | 14 tinh-duyen | Đây là quẻ nói nhiều về tình duyên. Tình mới chớm… | Tình mới chớm… | Như trên | Có |
+| _parts/que-xam-01.json | 16 gia-dao | Đây là quẻ nói nhiều về gia đạo. Khi nóng giận… | Khi nóng giận… | Như trên | Có |
+| _parts/que-xam-01.json | 18 cong-viec | Đây là quẻ nói nhiều về công việc. Khi chưa rõ hướng… | Khi chưa rõ hướng… | Như trên | Có |
+| _parts/que-xam-01.json | 19 suc-khoe | Đây là quẻ nói nhiều về sức khỏe. Hãy nghỉ ngơi đủ… | Hãy nghỉ ngơi đủ… | Như trên | Có |
+| _parts/que-xam-01.json | 20 hoc-hanh | Đây là quẻ nói nhiều về học hành. Hãy so mình… | Hãy so mình… | Như trên | Có |
+| _parts/que-xam-01.json | 21 gia-dao | Đây là quẻ nói nhiều về gia đạo. Hãy sắp xếp… | Hãy sắp xếp… | Như trên | Có |
+| _parts/que-xam-01.json | 22 tai-loc | Đây là quẻ nói nhiều về tài lộc. Hãy để dành… | Hãy để dành… | Như trên | Có |
+| _parts/que-xam-01.json | 23 tinh-duyen | Đây là quẻ nói nhiều về tình duyên. Đang có khoảng cách… | Đang có khoảng cách… | Như trên | Có |
+| _parts/que-xam-01.json | 25 tai-loc | Đây là quẻ nói nhiều về tài lộc. Tránh xa cờ bạc… | Tránh xa cờ bạc… | Như trên | Có |
+| mua/thanh-dao.json | queDacBiet duoi-coi-bo-de (loiGiai) | Mùa Thành Đạo là dịp tập sự kiên nhẫn ấy, từng hơi thở một. | Mùa Thành Đạo là dịp để tập kiên nhẫn như thế, từng hơi thở một. | Tối nghĩa: "tập sự" dễ đọc thành từ "tập sự" (học việc) | Không (EN đã đúng ý) |
+| mua/doan-ngo.json | thongDiep 14 | Cơ thể luôn lên tiếng trước khi mệt. Hãy lắng nghe những tín hiệu nhỏ như khát, mỏi hay đau đầu. | Cơ thể thường lên tiếng trước khi kiệt sức. Hãy để ý những tín hiệu nhỏ như khát, mỏi, đau đầu; nếu kéo dài, nên đi khám. | "luôn… trước khi mệt" khẳng định quá mức, mâu thuẫn (mỏi đã là mệt); thêm ý khám bác sĩ khi triệu chứng kéo dài | Có |
+
+
+### Kiểm tra sau khi sửa
+- `id`, cấu trúc, `tieuDe`, `tho`, `chuDe` giữ nguyên; độ dài trong giới hạn D10/schema.
+- `node content/tools/lucbat.mjs content/_parts/que-xam-01.json`: 25 quẻ, 0 lỗi luật, 0 cảnh báo.
+- `node content/tools/merge.mjs && node content/validate.mjs && node content/tools/check-site.mjs`: 0 lỗi, 0 cảnh báo; 13 file site/store, 0 lỗi (lô này không chứa quẻ 53, 82 nên không đụng site/store).
+
+### Ghi chú (không sửa)
+- Quẻ 8, thơ câu 2 "Soi chung mọi ngả, chẳng nào riêng ai": "chẳng nào" hơi gượng (chêm cho vần "cao–nào"); ý vẫn hiểu được ("chẳng riêng ai"). Đề nghị nhóm thơ cân nhắc khi rà đợt sau.
+- `thanh-dao` loiChao 8 "Chào bạn tháng Chạp." và `doan-ngo` loiChao 4 "Chào bạn giữa năm." dùng cùng khung chào theo thời điểm; giữ theo giọng bộ mùa, có thể thêm dấu phẩy ("Chào bạn, tháng Chạp…") nếu muốn rõ hơn.
+- Quẻ 6 hoc-hanh "không định nghĩa bạn" là lối nói vay từ tiếng Anh, vẫn dễ hiểu; giữ.

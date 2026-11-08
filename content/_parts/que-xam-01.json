@@ -10,7 +10,7 @@
       "suc-khoe": "Ngủ sớm để dậy sớm, ra ngoài đón chút nắng mai, vươn vai và hít thở sâu. Nếp sinh hoạt đều đặn là nền của sức khỏe lâu dài.",
       "hoc-hanh": "Buổi sớm là lúc trí nhớ tốt. Dành ra một khoảng ngắn mỗi sáng để ôn bài, bạn sẽ thấy việc học nhẹ nhàng hơn nhiều.",
       "tinh-duyen": "Tình cảm cũng cần những khởi đầu tươi mới. Một tin nhắn chúc ngày tốt lành, chân thành và giản dị, có khi quý hơn nhiều lời hoa mỹ.",
-      "tai-loc": "Tiền bạc đến từ công sức đều đặn mỗi ngày. Hãy lập kế hoạch chi tiêu rõ ràng ngay từ đầu tháng và bền bỉ làm ăn lương thiện."
+      "tai-loc": "Tiền bạc đến từ công sức bỏ ra mỗi ngày. Hãy lập kế hoạch chi tiêu rõ ràng ngay từ đầu tháng và bền bỉ làm ăn lương thiện."
     },
     "loiKhuyen": "Ngày mới đã đến. Hãy dậy sớm hơn một chút, làm việc quan trọng nhất trước, và mỉm cười chào người thân.",
     "chuDe": ["cong-viec", "tai-loc"]
@@ -19,7 +19,7 @@
     "id": 2,
     "tieuDe": "Sương sớm trên cỏ",
     "tho": ["Hạt sương đọng giữa cỏ non", "Long lanh buổi sớm, nắng còn chưa lên", "Thân như sương ấy, chớ quên", "Ngủ sâu ăn sạch, cho bền tháng năm"],
-    "loiGiai": "Giọt sương đọng trên ngọn cỏ trong veo và long lanh, nhưng cũng mong manh trước nắng gió. Thân thể con người cũng vậy: quý giá mà cần được nâng niu. Quẻ này nhắc bạn đừng coi nhẹ sức khỏe vì mải lo việc. Giữ thân như giữ giọt sương: ăn uống lành mạnh, ngủ đủ giấc, vận động nhẹ nhàng, lòng vui vẻ. Khi thân an thì mọi việc khác mới có chỗ dựa vững vàng.",
+    "loiGiai": "Giọt sương đọng trên ngọn cỏ trong veo và long lanh, nhưng cũng mong manh trước nắng gió. Thân thể con người cũng vậy: quý giá mà cần được nâng niu. Quẻ này nhắc bạn đừng coi nhẹ sức khỏe vì mải lo việc. Giữ thân như giữ giọt sương: ăn uống lành mạnh, ngủ đủ giấc, vận động vừa sức, lòng vui vẻ. Khi thân an thì mọi việc khác mới có chỗ dựa.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Hãy để ý đến sức khỏe của người thân, nhất là ông bà, cha mẹ. Một lời nhắc uống nước, một lần đưa đi khám định kỳ là cách thương nhau thiết thực.",
       "cong-viec": "Đừng vì việc gấp mà bỏ bữa hay thức quá khuya. Làm việc có giờ giấc, xen kẽ nghỉ ngắn sẽ giúp bạn bền sức và làm tốt hơn.",
@@ -35,11 +35,11 @@
     "id": 3,
     "tieuDe": "Mây trắng thong dong",
     "tho": ["Trời xanh mây trắng bay qua", "Chẳng mang chẳng giữ, trôi xa ngút ngàn", "Lòng ai lo nghĩ muôn vàn", "Buông như mây trắng, an nhàn thân tâm"],
-    "loiGiai": "Đám mây trắng trôi qua bầu trời, không mang theo gì, không níu giữ gì, nên bay được thật xa. Quẻ này dành cho người đang ôm nhiều lo nghĩ trong lòng. Có những điều bạn không thể thay đổi ngay, cứ nghĩ mãi chỉ khiến thân mệt, tâm nặng. Hãy học đám mây: làm hết phần mình rồi nhẹ nhàng buông bớt phần còn lại. Lòng nhẹ thì đầu óc sáng, sức khỏe cũng theo đó mà khá lên.",
+    "loiGiai": "Đám mây trắng trôi qua bầu trời, không mang theo gì, không níu giữ gì, nên bay được thật xa. Quẻ này dành cho người đang ôm nhiều lo nghĩ trong lòng. Có những điều bạn không thể thay đổi ngay, cứ nghĩ mãi chỉ khiến thân mệt, tâm nặng. Hãy học đám mây: làm hết phần mình rồi buông bớt phần còn lại. Lòng nhẹ thì đầu óc sáng, sức khỏe cũng theo đó mà khá lên.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Chuyện nhà có điều chưa vừa ý, đừng giữ mãi trong lòng. Nói ra nhẹ nhàng hoặc tạm gác lại, mọi người sẽ dễ thở hơn.",
       "cong-viec": "Đừng ôm hết mọi việc. Hãy chia sẻ bớt cho đồng nghiệp, tập trung vào điều mình làm tốt nhất, phần khác để lúc khác.",
-      "suc-khoe": "Lo âu kéo dài ảnh hưởng tới giấc ngủ và tiêu hóa. Mỗi ngày ngồi yên vài phút, thở chậm và sâu. Nếu lo âu kéo dài, đừng ngại tìm gặp chuyên gia.",
+      "suc-khoe": "Lo âu lâu ngày ảnh hưởng tới giấc ngủ và tiêu hóa. Mỗi ngày ngồi yên vài phút, thở chậm và sâu. Nếu lo âu kéo dài, đừng ngại tìm gặp bác sĩ hoặc chuyên gia tâm lý.",
       "hoc-hanh": "Đừng lo trước kết quả thi. Hãy chăm vào từng bài hôm nay; khi tâm nhẹ, bạn sẽ nhớ bài nhanh hơn.",
       "tinh-duyen": "Tình cảm không nên là gánh nặng. Hãy để mọi thứ tự nhiên như mây trôi, giữ sự chân thành và bớt đòi hỏi.",
       "tai-loc": "Đừng để chuyện tiền bạc chiếm hết tâm trí. Chi tiêu vừa phải, có kế hoạch, phần còn lại cứ bình thản mà làm."
@@ -51,10 +51,10 @@
     "id": 4,
     "tieuDe": "Gió nồm đầu hạ",
     "tho": ["Gió nồm thổi mát đầu hè", "Lá non rung nhẹ, ai nghe rộn lòng", "Tình duyên như gió ngoài song", "Đến khi đúng lúc, đợi mong chẳng hoài"],
-    "loiGiai": "Ngọn gió nồm đầu hè mang hơi mát dịu dàng, khẽ lay hàng lá non. Không ai nắm được gió, nhưng ai cũng cảm được khi gió về. Quẻ này nói về duyên: không thể ép, cũng chẳng thể vội. Hãy sống tốt, mở lòng và giữ sự chân thành; khi đến lúc, duyên lành sẽ tự tìm đến như gió nồm thổi qua sân. Sự chờ đợi bằng lòng tin và tử tế chẳng bao giờ là hoài phí.",
+    "loiGiai": "Ngọn gió nồm đầu hè mang hơi mát dịu dàng, khẽ lay hàng lá non. Không ai nắm được gió, nhưng ai cũng cảm được khi gió về. Quẻ này nói về duyên: không thể ép, cũng chẳng thể vội. Hãy sống tốt, mở lòng và giữ sự chân thành; khi đến lúc, duyên lành sẽ tự tìm đến như gió ngoài song đến lúc tự lùa vào nhà. Sự chờ đợi bằng lòng tin và tử tế chẳng bao giờ là hoài phí.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Không khí gia đình cần những làn gió mát: một câu đùa vui, một buổi dạo chơi cùng nhau. Đừng để nhà chỉ toàn chuyện bổn phận.",
-      "cong-viec": "Cơ hội có khi đến nhẹ nhàng như gió. Hãy chuẩn bị sẵn kỹ năng để khi cơ hội tới, bạn đủ sức nắm lấy.",
+      "cong-viec": "Cơ hội có khi đến khẽ khàng như gió. Hãy chuẩn bị sẵn kỹ năng để khi cơ hội tới, bạn đủ sức nắm lấy.",
       "suc-khoe": "Mùa nóng đến, hãy giữ nhà thông thoáng, uống đủ nước và tránh ra nắng gắt vào buổi trưa.",
       "hoc-hanh": "Đừng nản nếu chưa thấy tiến bộ. Kiến thức thấm dần như gió mát, một ngày bạn sẽ thấy mình hiểu bài rõ ràng.",
       "tinh-duyen": "Đây là quẻ nói nhiều về tình duyên. Người đang chờ, hãy sống vui và mở lòng. Người đã có đôi, hãy giữ sự dịu dàng, bớt so đo.",
@@ -67,13 +67,13 @@
     "id": 5,
     "tieuDe": "Mưa xuân lất phất",
     "tho": ["Mưa xuân lất phất bên thềm", "Âm thầm thấm đất, ngày đêm nuôi mầm", "Học hành mỗi buổi chuyên tâm", "Việc làm đều đặn, tới tầm trổ bông"],
-    "loiGiai": "Mưa xuân rất nhỏ, chẳng ào ạt, nhưng ngày đêm thấm sâu vào đất, nuôi mầm cây lớn dần. Quẻ này khuyên bạn đừng xem nhẹ những nỗ lực nhỏ. Mỗi trang sách đọc, mỗi việc làm cẩn thận hôm nay đều thấm vào bạn như mưa xuân thấm vào đất. Không cần làm điều lớn lao trong một ngày; chỉ cần đều đặn, kiên nhẫn, thành quả sẽ đến vững vàng theo năm tháng.",
+    "loiGiai": "Mưa xuân rất nhỏ, chẳng ào ạt, nhưng ngày đêm thấm sâu vào đất, nuôi mầm cây lớn dần. Quẻ này khuyên bạn đừng xem nhẹ những nỗ lực nhỏ. Mỗi trang sách đọc, mỗi việc làm cẩn thận hôm nay đều thấm vào bạn như mưa xuân thấm vào đất. Không cần làm điều lớn lao trong một ngày; chỉ cần đều đặn, kiên nhẫn, đến lúc, thành quả sẽ trổ bông như mầm cây được mưa xuân nuôi lớn.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Tình thân được vun bằng những điều nhỏ: hỏi han mỗi ngày, giúp nhau việc vặt. Đừng đợi dịp lớn mới bày tỏ yêu thương.",
       "cong-viec": "Hãy chia việc lớn thành phần nhỏ, làm xong từng phần mỗi ngày. Sự đều đặn sẽ giúp bạn được tin cậy và tiến bộ rõ rệt.",
       "suc-khoe": "Tập thể dục nhẹ mỗi ngày mười lăm phút tốt hơn tập nặng một lần rồi bỏ. Hãy chọn môn vừa sức và giữ cho đều.",
       "hoc-hanh": "Đây là quẻ tốt cho việc học. Mỗi ngày đọc vài trang, ghi chép vài điều, cứ thế bền bỉ, kiến thức sẽ đầy lên lúc nào không hay.",
-      "tinh-duyen": "Tình cảm bền lâu nhờ sự quan tâm đều đặn, không phải những lời hứa lớn. Hãy dịu dàng và có mặt khi người kia cần.",
+      "tinh-duyen": "Tình cảm bền lâu nhờ sự quan tâm bền bỉ, không phải những lời hứa lớn. Hãy dịu dàng và có mặt khi người kia cần.",
       "tai-loc": "Để dành từng khoản nhỏ mỗi tuần, lâu dần sẽ thành khoản đáng kể. Tránh vay mượn để chi tiêu vượt sức."
     },
     "loiKhuyen": "Hãy chọn một việc nhỏ bạn có thể làm mỗi ngày, như đọc năm trang sách, và giữ nó trong suốt một tháng.",
@@ -119,9 +119,9 @@
     "loiGiaiTheoChuDe": {
       "gia-dao": "Người nhà ở xa, hãy gọi điện hỏi thăm đều đặn. Người ở gần, hãy cùng ăn một bữa cơm đông đủ trong dịp rằm.",
       "cong-viec": "Làm việc với người ở xa cần trao đổi rõ ràng. Hãy giữ liên lạc thường xuyên, chia sẻ thông tin minh bạch để mọi việc thuận lợi.",
-      "suc-khoe": "Đêm trăng đẹp là dịp để thư giãn, đi dạo nhẹ nhàng. Tránh thức quá khuya để giữ giấc ngủ đều đặn.",
+      "suc-khoe": "Đêm trăng đẹp là dịp để thư giãn, đi dạo thong thả. Tránh thức quá khuya để giữ giấc ngủ đúng giờ.",
       "hoc-hanh": "Học nhóm với bạn bè, dù trực tuyến, giúp bạn hiểu bài sâu hơn. Hãy chia sẻ điều mình biết và học hỏi từ người khác.",
-      "tinh-duyen": "Người thương ở xa, hãy tin nhau và giữ lời hứa. Sự chân thành, đều đặn hỏi han sẽ giúp tình cảm vượt qua khoảng cách.",
+      "tinh-duyen": "Người thương ở xa, hãy tin nhau và giữ lời hứa. Sự chân thành và những lần hỏi han nhau mỗi ngày sẽ giúp tình cảm vượt qua khoảng cách.",
       "tai-loc": "Tiền bạc nên minh bạch giữa người thân. Nếu cần hỗ trợ nhau, hãy nói rõ ràng để giữ được tình nghĩa lâu dài."
     },
     "loiKhuyen": "Tối nay hãy gọi cho một người thân ở xa, kể cho họ nghe một chuyện vui trong ngày của bạn.",
@@ -167,7 +167,7 @@
     "loiGiaiTheoChuDe": {
       "gia-dao": "Hãy để ý nếu người thân đang làm việc quá nhiều. Một ly nước mát, một lời nhắc nghỉ ngơi là sự quan tâm rất quý.",
       "cong-viec": "Việc nhiều không có nghĩa là phải làm hết trong một lúc. Hãy sắp xếp thứ tự ưu tiên, nghỉ ngắn giữa giờ để giữ sức.",
-      "suc-khoe": "Đây là quẻ nói nhiều về sức khỏe. Uống đủ nước, tránh nắng gắt, nghỉ trưa ngắn. Nếu chóng mặt, mệt mỏi kéo dài, hãy đi khám bác sĩ.",
+      "suc-khoe": "Uống đủ nước, tránh nắng gắt, nghỉ trưa ngắn. Nếu chóng mặt, mệt mỏi kéo dài, hãy đi khám bác sĩ.",
       "hoc-hanh": "Học dồn dập dễ khiến đầu óc quá tải. Chia nhỏ thời gian học, nghỉ năm phút sau mỗi buổi để tỉnh táo hơn.",
       "tinh-duyen": "Khi một trong hai người mệt mỏi, hãy nhường nhịn và chăm sóc nhau, đừng để căng thẳng biến thành cãi vã.",
       "tai-loc": "Đừng làm thêm quá sức chỉ để kiếm thêm chút tiền mà tổn hại sức khỏe. Tiết kiệm hợp lý bền hơn chạy theo thu nhập."
@@ -184,7 +184,7 @@
       "gia-dao": "Gia đình hãy tạo cho con em một góc học yên tĩnh. Giảm tiếng ồn, tắt bớt ti vi vào giờ học là món quà thiết thực.",
       "cong-viec": "Công việc cần sự tập trung cao. Hãy dành những khoảng thời gian không bị làm phiền để xử lý việc khó.",
       "suc-khoe": "Trời thu hanh khô, hãy uống đủ nước, giữ ấm cổ họng và ngủ đúng giờ để giữ tinh thần minh mẫn.",
-      "hoc-hanh": "Đây là quẻ nói nhiều về học hành. Hãy dọn gọn chỗ học, tắt thông báo điện thoại, tự chép lại ý chính bằng tay để nhớ lâu.",
+      "hoc-hanh": "Hãy dọn gọn chỗ học, tắt thông báo điện thoại, tự chép lại ý chính bằng tay để nhớ lâu.",
       "tinh-duyen": "Tình cảm cũng cần sự trong trẻo. Hãy nói thật lòng, nghe bằng cả tâm, đừng để những điều vụn vặt làm rối lòng.",
       "tai-loc": "Hãy dành thời gian ngồi yên và xem lại thu chi một cách rõ ràng. Đầu óc tỉnh táo giúp bạn tránh những quyết định vội."
     },
@@ -195,14 +195,14 @@
     "id": 13,
     "tieuDe": "Gió bấc mùa đông",
     "tho": ["Đông về gió bấc lạnh lùng", "Nhà ai sớm liệu, ấm cùng bên nhau", "Từ hè gom củi phơi rau", "Tiêu pha vừa đủ, mai sau yên lòng"],
-    "loiGiai": "Khi gió bấc thổi về, nhà nào sớm chuẩn bị thì vẫn ấm êm bên nhau. Quẻ này nói về sự lo xa trong chuyện tiền bạc. Lúc thuận lợi, đừng tiêu xài hết; hãy biết để dành, như người trữ củi từ mùa hè cho mùa đông. Chi tiêu vừa phải, sống giản dị, thì dù bữa cơm chỉ có rau cũng vẫn ấm lòng. Sự chuẩn bị hôm nay giúp bạn vững vàng khi gặp lúc khó khăn.",
+    "loiGiai": "Khi gió bấc thổi về, nhà nào sớm chuẩn bị thì vẫn ấm êm bên nhau. Quẻ này nói về sự lo xa trong chuyện tiền bạc. Lúc thuận lợi, đừng tiêu xài hết; hãy biết để dành, như người trữ củi từ mùa hè cho mùa đông. Tiêu pha vừa đủ, sống giản dị, thì mai sau lòng vẫn yên. Sự chuẩn bị hôm nay giúp bạn vững chân khi gặp lúc khó khăn.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà nên cùng nhau bàn chuyện để dành, chuẩn bị cho những việc lớn sắp tới. Sự đồng lòng giúp mọi người yên tâm.",
       "cong-viec": "Hãy chuẩn bị trước cho những giai đoạn bận rộn: học thêm kỹ năng, sắp xếp hồ sơ, giữ quan hệ tốt với đồng nghiệp.",
       "suc-khoe": "Trời lạnh cần giữ ấm cổ, ngực và chân. Ăn đồ ấm, uống nước ấm, vận động nhẹ trong nhà để cơ thể khỏe.",
       "hoc-hanh": "Ôn bài từ sớm, đừng đợi sát ngày thi. Sự chuẩn bị đều đặn giúp bạn bình tĩnh khi bước vào phòng thi.",
       "tinh-duyen": "Tình cảm cần được chăm lo từ lúc bình thường, đừng đợi đến khi có chuyện mới quan tâm nhau.",
-      "tai-loc": "Đây là quẻ nói nhiều về tài lộc. Hãy lập một quỹ dự phòng nhỏ, chi tiêu có kế hoạch, tránh vay mượn và tránh mọi hình thức cờ bạc."
+      "tai-loc": "Hãy lập một quỹ dự phòng nhỏ, chi tiêu có kế hoạch, tránh vay mượn và tránh mọi hình thức cờ bạc."
     },
     "loiKhuyen": "Hãy mở một khoản để dành riêng cho lúc cần, và mỗi lần có thu nhập thì bỏ vào đó một phần nhỏ trước khi tiêu.",
     "chuDe": ["tai-loc"]
@@ -217,7 +217,7 @@
       "cong-viec": "Việc mới bắt đầu còn nhiều bỡ ngỡ. Hãy học hỏi từ người đi trước, kiên nhẫn để mọi thứ dần vào nề nếp.",
       "suc-khoe": "Nếu đang tập một thói quen tốt cho sức khỏe, hãy bắt đầu nhẹ nhàng và tăng dần, đừng ép bản thân quá sớm.",
       "hoc-hanh": "Môn học mới chưa hiểu ngay là bình thường. Mỗi ngày tìm hiểu một chút, kiến thức sẽ tròn dần như trăng.",
-      "tinh-duyen": "Đây là quẻ nói nhiều về tình duyên. Tình mới chớm cần sự kiên nhẫn. Hãy lắng nghe, tôn trọng nhịp của người kia và đừng vội hứa hẹn.",
+      "tinh-duyen": "Tình mới chớm cần sự kiên nhẫn. Hãy lắng nghe, tôn trọng nhịp của người kia và đừng vội hứa hẹn.",
       "tai-loc": "Khoản để dành ban đầu còn nhỏ, đừng nản. Đều đặn góp thêm, theo thời gian bạn sẽ thấy nó lớn dần."
     },
     "loiKhuyen": "Đừng vội vàng với điều mới chớm. Hãy làm một việc nhỏ thể hiện sự quan tâm mỗi ngày và để thời gian làm phần còn lại.",
@@ -245,9 +245,9 @@
     "tho": ["Cơn giông ập đến bất ngờ", "Sấm vang chớp giật, phút giờ rồi qua", "Trong nhà lời nặng lỡ ra", "Lặng yên giây lát, mặn mà như xưa"],
     "loiGiai": "Cơn giông mùa hè thường đến bất ngờ, sấm chớp ầm ầm, nhưng chỉ chốc lát là qua. Quẻ này nói về những lúc trong nhà lỡ nặng lời với nhau. Cơn giận như cơn giông, đến nhanh và đi cũng nhanh, nếu ta biết lặng yên chờ nó qua thay vì đổ thêm lời. Sau đó, hãy nhẹ nhàng làm lành; tình thân vốn sâu đậm, chỉ cần một bước nhường nhau là mọi thứ lại mặn mà như xưa.",
     "loiGiaiTheoChuDe": {
-      "gia-dao": "Đây là quẻ nói nhiều về gia đạo. Khi nóng giận, hãy tạm rời đi, hít thở sâu. Khi bình tĩnh lại, chủ động xin lỗi và nói chuyện nhẹ nhàng.",
+      "gia-dao": "Khi nóng giận, hãy tạm rời đi, hít thở sâu. Khi bình tĩnh lại, chủ động xin lỗi và nói chuyện nhẹ nhàng.",
       "cong-viec": "Có xung đột ở nơi làm việc, đừng phản ứng ngay. Đợi một chút để bình tâm, rồi trao đổi thẳng thắn và lịch sự.",
-      "suc-khoe": "Nóng giận thường xuyên ảnh hưởng tới huyết áp và giấc ngủ. Hãy tập hít thở chậm khi thấy cơn giận dâng lên.",
+      "suc-khoe": "Nóng giận thường xuyên ảnh hưởng tới huyết áp và giấc ngủ. Hãy tập hít thở chậm khi thấy cơn giận dâng lên; nếu hay đau đầu, hồi hộp, nên đi khám.",
       "hoc-hanh": "Lúc bực bội vì bài khó, hãy nghỉ một chút, uống nước rồi quay lại. Đầu óc bình tĩnh sẽ tìm ra cách giải.",
       "tinh-duyen": "Cãi nhau rồi thì đừng để giận qua đêm. Một lời xin lỗi chân thành, một cái ôm nhẹ có thể làm tan mọi khúc mắc.",
       "tai-loc": "Đừng đưa ra quyết định tiền bạc lúc đang nóng giận hay buồn bực. Hãy đợi tâm yên rồi mới tính."
@@ -266,7 +266,7 @@
       "suc-khoe": "Giao mùa dễ cảm lạnh. Hãy giữ ấm cổ, ngủ đủ, ăn uống đủ chất. Nếu ho, sốt kéo dài, nên đi khám bác sĩ.",
       "hoc-hanh": "Trời mát là lúc dễ tập trung. Tranh thủ học buổi sáng, nhưng nhớ mặc ấm và đừng thức khuya.",
       "tinh-duyen": "Nhớ ai thì cứ nhẹ nhàng hỏi thăm. Sự quan tâm chân thành, đúng lúc là cách vun đắp tình cảm bền lâu.",
-      "tai-loc": "Chuẩn bị đồ dùng cho mùa lạnh từ sớm sẽ tiết kiệm hơn để đến lúc cần mới mua vội."
+      "tai-loc": "Chuẩn bị đồ dùng cho mùa lạnh từ sớm sẽ tiết kiệm hơn là đợi đến lúc cần mới mua vội."
     },
     "loiKhuyen": "Hôm nay hãy gửi một lời hỏi thăm đến người bạn đang nhớ, và nhớ mặc thêm áo khi ra ngoài.",
     "chuDe": ["tinh-duyen", "suc-khoe"]
@@ -278,7 +278,7 @@
     "loiGiai": "Sáng sớm sương mù giăng kín, chẳng nhìn thấy xa. Nhưng người đi đường không cần thấy hết con đường, chỉ cần thấy vài bước trước mặt và đi chậm lại. Quẻ này dành cho người đang phân vân vì công việc chưa rõ ràng. Đừng đứng yên chờ mọi thứ sáng tỏ; hãy hỏi người biết việc, đi từng bước chắc chắn, vừa đi vừa quan sát. Sương sẽ tan dần khi mặt trời lên.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Có chuyện nhà chưa biết tính sao, hãy hỏi ý kiến người lớn, bàn bạc cùng mọi người rồi quyết dần từng việc.",
-      "cong-viec": "Đây là quẻ nói nhiều về công việc. Khi chưa rõ hướng, hãy làm phần chắc chắn trước, hỏi thêm người có kinh nghiệm và ghi chép lại những gì học được.",
+      "cong-viec": "Khi chưa rõ hướng, hãy làm phần chắc chắn trước, hỏi thêm người có kinh nghiệm và ghi chép lại những gì học được.",
       "suc-khoe": "Trời sương nên giữ ấm khi ra ngoài sớm. Nếu thấy cơ thể có dấu hiệu lạ mà chưa rõ, hãy đi khám để được tư vấn.",
       "hoc-hanh": "Chưa biết chọn ngành hay hướng học nào, hãy tìm hiểu, hỏi thầy cô và người đi trước, thử sức ở từng việc nhỏ.",
       "tinh-duyen": "Tình cảm chưa rõ ràng thì đừng vội kết luận. Hãy dành thời gian hiểu nhau thêm, từng bước một.",
@@ -295,7 +295,7 @@
     "loiGiaiTheoChuDe": {
       "gia-dao": "Người nhà vừa khỏe lại, hãy san sẻ bớt việc cho họ, chăm sóc bữa ăn và để họ được nghỉ ngơi trọn vẹn.",
       "cong-viec": "Sau giai đoạn áp lực, hãy quay lại công việc từ từ. Sắp xếp lại lịch, giảm bớt việc không gấp để giữ sức.",
-      "suc-khoe": "Đây là quẻ nói nhiều về sức khỏe. Hãy nghỉ ngơi đủ, tái khám theo lời bác sĩ, đừng tự ý bỏ thuốc hay làm việc nặng quá sớm.",
+      "suc-khoe": "Hãy nghỉ ngơi đủ, tái khám theo lời bác sĩ, đừng tự ý bỏ thuốc hay làm việc nặng quá sớm.",
       "hoc-hanh": "Nếu bị chậm bài vì nghỉ ốm, đừng lo lắng. Hãy hỏi bạn bè, thầy cô và học bù dần, không cần dồn hết một lúc.",
       "tinh-duyen": "Sau những ngày giận hờn hay xa cách, hãy cho nhau thời gian. Sự nhẹ nhàng giúp tình cảm hồi phục.",
       "tai-loc": "Sau một giai đoạn khó khăn, hãy cân đối lại chi tiêu từ từ. Đừng vội tiêu xài lớn hay bù đắp bằng những khoản rủi ro."
@@ -312,7 +312,7 @@
       "gia-dao": "Cha mẹ đừng so sánh con mình với con nhà khác. Hãy khen điểm mạnh của con và kiên nhẫn giúp con ở điểm còn yếu.",
       "cong-viec": "Mỗi người trong nhóm có thế mạnh riêng. Hãy làm tốt phần việc của mình và tôn trọng đóng góp của người khác.",
       "suc-khoe": "Đừng ép mình theo chế độ tập luyện của người khác. Hãy chọn cách phù hợp với sức mình và tuổi tác.",
-      "hoc-hanh": "Đây là quẻ nói nhiều về học hành. Hãy so mình với chính mình hôm qua. Tìm môn mình yêu thích, học sâu, và giúp bạn bè khi có thể.",
+      "hoc-hanh": "Hãy so mình với chính mình hôm qua. Tìm môn mình yêu thích, học sâu, và giúp bạn bè khi có thể.",
       "tinh-duyen": "Đừng so người thương với người khác. Ai cũng có điểm đáng quý; hãy trân trọng những gì người ấy mang đến.",
       "tai-loc": "Đừng chạy theo cách tiêu xài của người khác. Sống theo khả năng của mình là cách giữ tiền bạc vững vàng."
     },
@@ -325,9 +325,9 @@
     "tho": ["Chiều tà nắng nhạt hiên tây", "Mẹ cha tóc bạc, đong đầy thương con", "Về thăm khi nắng hãy còn", "Ngồi bên trò chuyện, vẹn tròn yêu thương"],
     "loiGiai": "Nắng chiều đã nhạt nơi hiên tây, như mái tóc cha mẹ ngày một bạc thêm. Tình thương cha mẹ dành cho con vẫn luôn đầy ắp, nhưng thời gian bên nhau thì có hạn. Quẻ này nhắc nhẹ: hãy về thăm, ngồi bên cha mẹ, ông bà khi còn có thể. Không cần quà cáp lớn lao, chỉ cần có mặt, hỏi han và lắng nghe. Đó là món quà ý nghĩa nhất với người lớn tuổi.",
     "loiGiaiTheoChuDe": {
-      "gia-dao": "Đây là quẻ nói nhiều về gia đạo. Hãy sắp xếp thời gian về thăm cha mẹ, ông bà; nếu ở xa, hãy gọi điện đều đặn và lắng nghe họ kể chuyện.",
+      "gia-dao": "Hãy sắp xếp thời gian về thăm cha mẹ, ông bà; nếu ở xa, hãy gọi điện đều đặn và lắng nghe họ kể chuyện.",
       "cong-viec": "Công việc quan trọng, nhưng đừng để nó lấy hết thời gian dành cho gia đình. Hãy cân bằng giữa việc làm và việc nhà.",
-      "suc-khoe": "Hãy nhắc cha mẹ khám sức khỏe định kỳ và cùng họ đi bộ nhẹ nhàng mỗi chiều. Bản thân bạn cũng nên giữ sức để chăm lo cho nhà.",
+      "suc-khoe": "Hãy nhắc cha mẹ khám sức khỏe định kỳ và cùng họ đi bộ chậm mỗi chiều. Bản thân bạn cũng nên giữ sức để chăm lo cho nhà.",
       "hoc-hanh": "Hãy hỏi ông bà, cha mẹ về chuyện ngày xưa. Những câu chuyện ấy là bài học về cuộc sống mà sách vở khó có.",
       "tinh-duyen": "Người biết thương cha mẹ thường biết thương người. Hãy cùng người thương thăm hỏi gia đình hai bên.",
       "tai-loc": "Hãy dành một phần nhỏ thu nhập để chăm lo cho cha mẹ một cách thiết thực, như thuốc men, đồ dùng cần thiết."
@@ -346,7 +346,7 @@
       "suc-khoe": "Sức khỏe tốt không đến từ một đợt ăn kiêng hay tập luyện cấp tốc, mà từ thói quen lành mạnh duy trì lâu dài.",
       "hoc-hanh": "Học mỗi ngày một ít, ôn lại thường xuyên. Kiến thức thấm từ từ sẽ nhớ lâu hơn học dồn trước kỳ thi.",
       "tinh-duyen": "Tình cảm sâu đậm được bồi đắp từ những quan tâm nhỏ mỗi ngày, không phải những lời hứa lớn.",
-      "tai-loc": "Đây là quẻ nói nhiều về tài lộc. Hãy để dành đều đặn, dù ít. Tránh xa cờ bạc, đầu tư mạo hiểm hay những lời hứa lãi cao bất thường."
+      "tai-loc": "Hãy để dành đều đặn, dù ít. Tránh xa cờ bạc, đầu tư mạo hiểm hay những lời hứa lãi cao bất thường."
     },
     "loiKhuyen": "Hãy chọn một khoản để dành cố định mỗi tuần và một thói quen học cố định mỗi ngày, rồi giữ chúng thật đều.",
     "chuDe": ["tai-loc", "hoc-hanh"]
@@ -355,13 +355,13 @@
     "id": 23,
     "tieuDe": "Trăng khuyết lại tròn",
     "tho": ["Trăng kia khuyết mấy lại tròn", "Duyên dù lỡ nhịp, vẫn còn đợi trông", "Giận hờn như gió qua sông", "Nhường nhau một bước, mặn nồng đêm trăng"],
-    "loiGiai": "Trăng có lúc khuyết, có lúc tròn, đó là lẽ tự nhiên. Tình cảm cũng vậy, có lúc đầy đặn, có lúc hụt hẫng vì hiểu lầm hay xa cách. Quẻ này khuyên đừng vì một lúc khuyết mà nghĩ mọi thứ đã mất. Nếu lòng còn son sắt, chỉ cần biết chờ đợi, thấu hiểu và nhường nhịn nhau đôi chút, tình cảm sẽ lại tròn đầy như trăng rằm.",
+    "loiGiai": "Trăng có lúc khuyết, có lúc tròn, đó là lẽ tự nhiên. Tình cảm cũng vậy, có lúc đầy đặn, có lúc hụt hẫng vì hiểu lầm hay xa cách. Quẻ này khuyên đừng vì một lúc khuyết mà nghĩ mọi thứ đã mất. Giận hờn rồi cũng qua như gió thổi qua sông. Nếu lòng vẫn còn đợi trông, chỉ cần thấu hiểu và nhường nhau một bước, tình cảm sẽ lại tròn đầy như trăng rằm.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Quan hệ trong nhà có lúc lạnh nhạt. Hãy kiên nhẫn, chủ động quan tâm, những khoảng trống sẽ dần được lấp đầy.",
       "cong-viec": "Công việc có lúc thăng lúc trầm. Giai đoạn chậm lại là lúc tốt để học hỏi và chuẩn bị cho chặng tiếp theo.",
       "suc-khoe": "Sức khỏe có lúc lên xuống theo mùa. Hãy lắng nghe cơ thể, nghỉ ngơi khi mệt và đi khám khi cần.",
       "hoc-hanh": "Kết quả học có lúc chưa như ý. Đừng nản, hãy xem lại cách học, bền bỉ thì kết quả sẽ khá dần.",
-      "tinh-duyen": "Đây là quẻ nói nhiều về tình duyên. Đang có khoảng cách thì hãy nói chuyện chân thành, lắng nghe và nhường nhau một bước.",
+      "tinh-duyen": "Đang có khoảng cách thì hãy nói chuyện chân thành, lắng nghe và nhường nhau một bước.",
       "tai-loc": "Thu nhập có tháng nhiều tháng ít. Hãy để dành lúc dư để có cái dùng lúc thiếu, chi tiêu có kế hoạch."
     },
     "loiKhuyen": "Hãy nhường người thương một bước trong chuyện nhỏ hôm nay, và nói với họ một điều bạn trân trọng ở họ.",
@@ -371,7 +371,7 @@
     "id": 24,
     "tieuDe": "Ngôi sao dẫn lối",
     "tho": ["Giữa khuya sao Bắc trong ngần", "Soi người đi tối, xa gần biết phương", "Học hành như kẻ lên đường", "Biết nơi mình đến, dặm trường chẳng xa"],
-    "loiGiai": "Giữa đêm khuya, ngôi sao phương Bắc sáng trong, giúp người đi đêm định hướng mà không sợ lạc. Quẻ này nói về tầm quan trọng của mục tiêu. Người có mục tiêu rõ ràng, dù đường xa hay gần cũng biết mình đang đi đâu. Hãy xác định điều bạn thật sự muốn trong học hành và công việc, viết nó ra, rồi để nó dẫn lối mỗi khi bạn phân vân. Có hướng đi, mọi nỗ lực sẽ không bị phí.",
+    "loiGiai": "Giữa đêm khuya, ngôi sao phương Bắc sáng trong, giúp người đi đêm định hướng mà không sợ lạc. Quẻ này nói về tầm quan trọng của mục tiêu. Người học có mục tiêu rõ ràng cũng như người lên đường biết nơi mình đến: đường dài mấy cũng không thấy xa. Hãy xác định điều bạn thật sự muốn trong học hành và công việc, viết nó ra, rồi để nó dẫn lối mỗi khi bạn phân vân. Có hướng đi, mọi nỗ lực sẽ không bị phí.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà nên cùng nhau đặt ra mục tiêu chung, như dành dụm cho việc học của con hay sửa sang nhà cửa, để mọi người cùng hướng về.",
       "cong-viec": "Hãy đặt mục tiêu rõ ràng cho năm nay, chia thành mục tiêu tháng và việc tuần. Khi có hướng, bạn sẽ ít bị phân tán.",
@@ -387,14 +387,14 @@
     "id": 25,
     "tieuDe": "Gió đổi chiều",
     "tho": ["Gió kia đổi hướng thất thường", "Lúc lên lúc xuống, khó lường trước sau", "Tiền nong chớ chạy theo nhau", "Giữ đều tay góp, gió mau chẳng nề"],
-    "loiGiai": "Gió có lúc thổi hướng này, có lúc đổi hướng khác, khó mà đoán trước. Chuyện tiền bạc cũng thế, có lúc thuận lúc nghịch. Quẻ này khuyên đừng chạy theo những cơn gió nhất thời, như lời rủ rê làm giàu nhanh hay những trò may rủi. Hãy giữ nhịp đều đặn: làm việc lương thiện, dành dụm từng chút, cùng người nhà bàn bạc trước những khoản chi lớn. Vững vàng như thế thì gió đổi chiều cũng chẳng ngại.",
+    "loiGiai": "Gió có lúc thổi hướng này, có lúc đổi hướng khác, khó mà đoán trước. Chuyện tiền bạc cũng thế, có lúc thuận lúc nghịch. Quẻ này khuyên đừng chạy theo đám đông hay những cơn gió nhất thời, như lời rủ rê làm giàu nhanh hay những trò may rủi. Hãy giữ nhịp đều đặn: làm việc lương thiện, dành dụm từng chút, cùng người nhà bàn bạc trước những khoản chi lớn. Giữ được nhịp ấy thì gió có đổi chiều, thổi mạnh đến đâu cũng chẳng ngại.",
     "loiGiaiTheoChuDe": {
       "gia-dao": "Cả nhà cùng thống nhất cách chi tiêu, có khoản dự phòng chung. Khi gặp lúc khó, mọi người cùng chung sức sẽ vượt qua.",
       "cong-viec": "Công việc có thể thay đổi. Hãy không ngừng học thêm kỹ năng để thích nghi, đừng phụ thuộc vào một nguồn duy nhất.",
       "suc-khoe": "Thời tiết thay đổi thất thường, hãy giữ ấm, ăn uống điều độ và nghỉ ngơi đủ để cơ thể thích nghi.",
       "hoc-hanh": "Đừng chạy theo mọi trào lưu học tập. Chọn hướng phù hợp với mình và kiên trì theo đuổi.",
       "tinh-duyen": "Đừng để những lời bàn tán bên ngoài làm lung lay tình cảm. Tin nhau và nói chuyện thẳng thắn với nhau.",
-      "tai-loc": "Đây là quẻ nói nhiều về tài lộc. Tránh xa cờ bạc, đầu tư theo phong trào hay vay để đầu cơ. Hãy tiết kiệm đều và chỉ chi khi đã cân nhắc kỹ."
+      "tai-loc": "Tránh xa cờ bạc, đầu tư theo phong trào hay vay để đầu cơ. Hãy tiết kiệm đều và chỉ chi khi đã cân nhắc kỹ."
     },
     "loiKhuyen": "Trước bất kỳ khoản chi hay khoản đầu tư lớn nào, hãy đợi ba ngày và hỏi ý kiến người thân tin cậy.",
     "chuDe": ["tai-loc"]
