@@ -1,0 +1,14 @@
+node_modules/
+dist/
+app/dist/
+app/test-results/
+app/playwright-report/
+app/android/app/build/
+app/android/.gradle/
+app/ios/App/Pods/
+*.log
+.DS_Store
+.env
+*.keystore
+*.jks
+app/dist-e2e-server/

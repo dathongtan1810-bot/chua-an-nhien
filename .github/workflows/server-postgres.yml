@@ -1,0 +1,36 @@
+name: server-postgres
+on:
+  push:
+    paths: ['server/**', 'shared/**', '.github/workflows/server-postgres.yml']
+  pull_request:
+    paths: ['server/**', 'shared/**', '.github/workflows/server-postgres.yml']
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: chua
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    defaults:
+      run:
+        working-directory: server
+    env:
+      PG_TEST_URL: postgres://postgres:test@localhost:5432/chua
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      - run: npx vitest run test/postgres.real.test.ts test/repo.postgres.test.ts test/postgres.integration.test.ts
+      # Chạy TOÀN BỘ test tích hợp trên Postgres thật (mỗi server test 1 schema)
+      - run: npx vitest run
+        env:
+          TEST_ALL_PG: '1'

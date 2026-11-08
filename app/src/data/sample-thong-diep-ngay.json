@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "noiDung": "Hít vào, tôi biết tôi đang thở. Thở ra, tôi mỉm cười."
+  },
+  {
+    "id": 2,
+    "noiDung": "Hôm nay chỉ cần làm tốt một việc nhỏ là đủ."
+  },
+  {
+    "id": 3,
+    "noiDung": "Bình yên không ở đâu xa, nó ở ngay trong hơi thở này."
+  },
+  {
+    "id": 4,
+    "noiDung": "Một lời cảm ơn chân thành có thể sưởi ấm cả một ngày."
+  },
+  {
+    "id": 5,
+    "noiDung": "Đi chậm lại một chút, bạn sẽ thấy nhiều điều đẹp hơn."
+  },
+  {
+    "id": 6,
+    "noiDung": "Lắng nghe trọn vẹn là món quà quý nhất ta trao cho người khác."
+  },
+  {
+    "id": 7,
+    "noiDung": "Hãy đối xử với chính mình dịu dàng như với người bạn thân."
+  },
+  {
+    "id": 8,
+    "noiDung": "Mỗi bữa cơm là một dịp để biết ơn người đã làm ra hạt gạo."
+  },
+  {
+    "id": 9,
+    "noiDung": "Giận dữ như cầm than nóng, người bị bỏng trước tiên là mình."
+  },
+  {
+    "id": 10,
+    "noiDung": "Biết đủ là đủ, đợi đủ biết bao giờ mới đủ."
+  },
+  {
+    "id": 11,
+    "noiDung": "Hôm nay, hãy gọi cho cha mẹ chỉ để hỏi: Ba mẹ có khỏe không?"
+  },
+  {
+    "id": 12,
+    "noiDung": "Hoa sen nở từ bùn. Khó khăn cũng có thể nuôi lớn điều tốt đẹp."
+  },
+  {
+    "id": 13,
+    "noiDung": "Một nụ cười trao đi không làm bạn nghèo đi chút nào."
+  },
+  {
+    "id": 14,
+    "noiDung": "Đừng để lo lắng về ngày mai lấy mất bình yên của hôm nay."
+  },
+  {
+    "id": 15,
+    "noiDung": "Uống một ngụm nước thật chậm và cảm nhận nó."
+  },
+  {
+    "id": 16,
+    "noiDung": "Nói lời hay như gieo hạt giống tốt vào lòng người."
+  },
+  {
+    "id": 17,
+    "noiDung": "Tha thứ không phải vì người kia xứng đáng, mà vì lòng ta xứng đáng được nhẹ nhõm."
+  },
+  {
+    "id": 18,
+    "noiDung": "Mỗi bước chân trên đất là một lần trở về với hiện tại."
+  },
+  {
+    "id": 19,
+    "noiDung": "Không cần hoàn hảo, chỉ cần chân thành."
+  },
+  {
+    "id": 20,
+    "noiDung": "Hãy để điện thoại xuống mười phút và nhìn ra bầu trời."
+  },
+  {
+    "id": 21,
+    "noiDung": "Kiên nhẫn là khi ta biết mọi thứ đều có thời của nó."
+  },
+  {
+    "id": 22,
+    "noiDung": "Một việc tốt nhỏ mỗi ngày, một năm thành ba trăm sáu mươi lăm việc tốt."
+  },
+  {
+    "id": 23,
+    "noiDung": "Ăn quả nhớ kẻ trồng cây. Hôm nay bạn biết ơn ai?"
+  },
+  {
+    "id": 24,
+    "noiDung": "Tâm tĩnh như mặt hồ, mới soi được trăng."
+  },
+  {
+    "id": 25,
+    "noiDung": "Khi mệt, hãy nghỉ. Nghỉ ngơi cũng là tinh tấn."
+  },
+  {
+    "id": 26,
+    "noiDung": "Đừng so sánh chương đầu của mình với chương giữa của người khác."
+  },
+  {
+    "id": 27,
+    "noiDung": "Dọn một góc nhà gọn gàng, lòng cũng nhẹ đi một chút."
+  },
+  {
+    "id": 28,
+    "noiDung": "Lời nói không mất tiền mua, hãy lựa lời mà nói cho vừa lòng nhau."
+  },
+  {
+    "id": 29,
+    "noiDung": "Thương yêu là hiểu. Hiểu là lắng nghe."
+  },
+  {
+    "id": 30,
+    "noiDung": "Hôm nay hãy khen một người một cách chân thành."
+  },
+  {
+    "id": 31,
+    "noiDung": "Như cây tre, mềm mà không gãy."
+  },
+  {
+    "id": 32,
+    "noiDung": "Mỗi sáng thức dậy là một món quà mới."
+  },
+  {
+    "id": 33,
+    "noiDung": "Hãy là ánh đèn nhỏ cho người bên cạnh."
+  },
+  {
+    "id": 34,
+    "noiDung": "Đọc vài trang sách hay cũng là cách nuôi dưỡng tâm hồn."
+  },
+  {
+    "id": 35,
+    "noiDung": "Bớt một lời phàn nàn, thêm một lời cảm ơn."
+  },
+  {
+    "id": 36,
+    "noiDung": "Gốc có vững, cây mới cao. Hãy nhớ về cội nguồn."
+  },
+  {
+    "id": 37,
+    "noiDung": "Thở sâu ba lần trước khi trả lời một tin nhắn khó."
+  },
+  {
+    "id": 38,
+    "noiDung": "Niềm vui chia sẻ thì nhân đôi, nỗi buồn chia sẻ thì vơi nửa."
+  },
+  {
+    "id": 39,
+    "noiDung": "Bạn không cần phải gánh mọi thứ một mình."
+  },
+  {
+    "id": 40,
+    "noiDung": "Chánh niệm là làm một việc và chỉ một việc, với cả tấm lòng."
+  },
+  {
+    "id": 41,
+    "noiDung": "Hôm nay hãy ăn chậm, nhai kỹ, và tận hưởng hương vị."
+  },
+  {
+    "id": 42,
+    "noiDung": "Mây trôi rồi trời lại xanh. Nỗi buồn cũng vậy."
+  },
+  {
+    "id": 43,
+    "noiDung": "Giúp người không cần ai biết, lòng mình biết là đủ."
+  },
+  {
+    "id": 44,
+    "noiDung": "Tưới một chậu cây, chăm một mầm xanh, chăm một niềm vui."
+  },
+  {
+    "id": 45,
+    "noiDung": "Ngủ sớm một chút là cách yêu thương cơ thể mình."
+  },
+  {
+    "id": 46,
+    "noiDung": "Một ngày an lành bắt đầu từ một ý nghĩ lành."
+  },
+  {
+    "id": 47,
+    "noiDung": "Bước ra ngoài, hít thở không khí và nghe tiếng chim."
+  },
+  {
+    "id": 48,
+    "noiDung": "Hiếu thảo không cần điều lớn lao, chỉ cần có mặt và quan tâm."
+  },
+  {
+    "id": 49,
+    "noiDung": "Ai cũng đang cố gắng theo cách của họ. Hãy bao dung."
+  },
+  {
+    "id": 50,
+    "noiDung": "Sai thì sửa, ngã thì đứng dậy. Không sao cả."
+  },
+  {
+    "id": 51,
+    "noiDung": "Hãy để mỗi lời nói ra đều có ích hoặc dịu dàng."
+  },
+  {
+    "id": 52,
+    "noiDung": "Khi nghe tiếng chuông, hãy dừng lại và trở về với hơi thở."
+  },
+  {
+    "id": 53,
+    "noiDung": "Thành công nhỏ hôm nay cũng xứng đáng được mỉm cười."
+  },
+  {
+    "id": 54,
+    "noiDung": "Ngắm trăng đêm nay, gửi một lời chúc bình an đến ai đó."
+  },
+  {
+    "id": 55,
+    "noiDung": "Nước chảy đá mòn. Bền bỉ là sức mạnh dịu dàng."
+  },
+  {
+    "id": 56,
+    "noiDung": "Lòng biết ơn biến những gì ta có thành đủ đầy."
+  },
+  {
+    "id": 57,
+    "noiDung": "Hôm nay, hãy nhường một chút. Bạn sẽ thấy rộng lòng hơn."
+  },
+  {
+    "id": 58,
+    "noiDung": "Đừng vội vàng, hoa nở đúng mùa của nó."
+  },
+  {
+    "id": 59,
+    "noiDung": "Nghĩ thiện, nói thiện, làm thiện. Ba điều giản dị."
+  },
+  {
+    "id": 60,
+    "noiDung": "Cảm ơn bạn đã ghé chùa hôm nay. Mong bạn một ngày an nhiên."
+  }
+]

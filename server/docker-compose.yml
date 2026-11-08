@@ -1,0 +1,45 @@
+# Chạy: cd server && docker compose up --build
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: production
+      DEVICE_SALT: ${DEVICE_SALT:?đặt DEVICE_SALT trong server/.env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?đặt ADMIN_PASSWORD trong server/.env}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      MODERATION_MODE: ${MODERATION_MODE:-post}
+      ONLINE_FEATURES: ${ONLINE_FEATURES:-all}
+      METRICS_TOKEN: ${METRICS_TOKEN:-}
+      TRUST_PROXY: ${TRUST_PROXY:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      DATABASE_URL: ${DATABASE_URL:-}
+      REDIS_URL: ${REDIS_URL:-}
+    volumes:
+      - chua-data:/data
+    restart: unless-stopped
+
+# Tuỳ chọn: chạy kèm PostgreSQL —  docker compose --profile pg up --build
+# rồi đặt DATABASE_URL=postgres://chua:chua@postgres:5432/chua trong .env
+  postgres:
+    image: postgres:16
+    profiles: ["pg"]
+    environment:
+      POSTGRES_USER: chua
+      POSTGRES_PASSWORD: chua
+      POSTGRES_DB: chua
+    volumes:
+      - chua-pg:/var/lib/postgresql/data
+    restart: unless-stopped
+  redis:
+    image: redis:7
+    profiles: ["cluster"]
+    restart: unless-stopped
+# Nhiều instance:  docker compose --profile pg --profile cluster up --build --scale server=3
+#   (đặt DATABASE_URL=postgres://chua:chua@postgres:5432/chua, REDIS_URL=redis://redis:6379; bỏ cổng cố định nếu scale)
+volumes:
+  chua-data:
+  chua-pg:
