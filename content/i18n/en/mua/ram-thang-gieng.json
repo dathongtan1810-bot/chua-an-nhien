@@ -1,0 +1,196 @@
+{
+  "id": "ram-thang-gieng",
+  "ten": "First Full Moon Season",
+  "khoangNgayAm": { "tu": { "thang": 1, "ngay": 13 }, "den": { "thang": 1, "ngay": 16 } },
+  "moTa": "In the days around the first full moon of the lunar year, also called the Lantern Festival, An Nhiên Pagoda lights lanterns along every path and sets out tea, paper and brushes by the lotus pond. It is a time to watch the year's first round moon, write a few simple lines of verse and send kind wishes into a year that is still very young.",
+  "loiChao": [
+    { "id": 1, "noiDung": "The year's first full moon has risen. Come sit in the yard and watch with us." },
+    { "id": 2, "noiDung": "Lanterns are lit along the path. They are only waiting for your footsteps." },
+    { "id": 3, "noiDung": "Good evening on Lantern Night. Tea, paper and brushes are ready by the pond." },
+    { "id": 4, "noiDung": "Half of the first month has passed. Would you like to sit and look back awhile?" },
+    { "id": 5, "noiDung": "Round moon, bright lanterns, a cool spring breeze. Wishing you a peaceful night." },
+    { "id": 6, "noiDung": "The little monk just hung the last lantern. Come and have a look." },
+    { "id": 7, "noiDung": "The first full moon is here. An Nhiên Pagoda sends you a gentle new-year wish." },
+    { "id": 8, "noiDung": "A blank sheet of paper by the lotus pond is waiting for your poem." },
+    { "id": 9, "noiDung": "Hello. Let's walk slowly under the row of lanterns today." },
+    { "id": 10, "noiDung": "Tonight the pond holds two moons: one in the sky, one on the water." },
+    { "id": 11, "noiDung": "New year, mid-month, a full moon. Come in and light a kind lantern." },
+    { "id": 12, "noiDung": "The full moon is still bright. Thank you for visiting the pagoda these days." }
+  ],
+  "thongDiep": [
+    { "id": 1, "noiDung": "The first full moon is never in a hurry. It rises slowly and brightens slowly, as all good things take time." },
+    { "id": 2, "noiDung": "A small lantern lights only a few steps ahead. But a few steps are enough to keep going." },
+    { "id": 3, "noiDung": "On Lantern Night, try writing four lines about what you love most in your home." },
+    { "id": 4, "noiDung": "A poem doesn't need to be good to be written. Written from the heart, it is already lovely." },
+    { "id": 5, "noiDung": "Half a month of the new year has gone. If you forgot an intention, today you can begin again." },
+    { "id": 6, "noiDung": "A lantern is warm because of the flame inside. Words are warm when there is a kind heart behind them." },
+    { "id": 7, "noiDung": "When you watch the moon, put your phone down for a while. Let your eyes rest in the soft light." },
+    { "id": 8, "noiDung": "Every lantern on the path has its own color. So does everyone at home; let them shine in their own way." },
+    { "id": 9, "noiDung": "A new-year wish should be short. Short enough to remember, and remembered enough to be done." },
+    { "id": 10, "noiDung": "On the first full moon, pour a cup of tea for the person beside you before pouring your own." },
+    { "id": 11, "noiDung": "The moon doesn't need praise to shine. You don't need praise to do something kind." },
+    { "id": 12, "noiDung": "Lanterns hang high so travelers can find their way home. You can be a lantern for someone." },
+    { "id": 13, "noiDung": "The full moon will wane, and the waning moon will fill again. Incomplete days are just one stretch of the road." },
+    { "id": 14, "noiDung": "Send an old friend a message on the full moon. Sometimes a single line reconnects many years." },
+    { "id": 15, "noiDung": "Tonight's best poem may be what you say to your mother: \"Sit here and watch the moon with me.\"" },
+    { "id": 16, "noiDung": "When visiting a pagoda at the start of the year, a light heart matters more than many offerings." },
+    { "id": 17, "noiDung": "Moonlight falls equally on every roof. Joy is worth sharing the same way." },
+    { "id": 18, "noiDung": "Sit by the pond and watch the lantern light sway on the water. When the heart is still, things become clear." },
+    { "id": 19, "noiDung": "At the start of the year we think about what we want to have. Try also thinking about what you want to give." },
+    { "id": 20, "noiDung": "One lantern going out doesn't darken the whole path. One tiring day doesn't spoil the whole year." },
+    { "id": 21, "noiDung": "People of old recited poems under the moon to ease their minds. You might softly hum a tune you like." },
+    { "id": 22, "noiDung": "Write down your hopes and read them again next year on this full moon. You will see how you have grown." },
+    { "id": 23, "noiDung": "Don't wait for fullness to be happy. The thin new moon has a beauty of its own." },
+    { "id": 24, "noiDung": "Light a lantern for yourself, and remember to leave a porch light on for those passing by." },
+    { "id": 25, "noiDung": "The full moon shows even the cracks in an old wall. Once you see them, mend them; no need to be sad." },
+    { "id": 26, "noiDung": "Each wish is a seed. Plant it tonight, and water it with deeds in the days to come." },
+    { "id": 27, "noiDung": "After the bustle of the New Year, the full moon is a time to settle and hear what your heart is saying." },
+    { "id": 28, "noiDung": "Some people watch the moon alone. If you know someone like that, invite them to sit with you." },
+    { "id": 29, "noiDung": "A small lantern doesn't compete with the moon. It only needs to light its own corner of the yard." },
+    { "id": 30, "noiDung": "When the full moon passes, the lanterns are put away. But keep the kind promise you made all year long." }
+  ],
+  "loiNguyen": [
+    { "id": 1, "noiDung": "I vow to slow down this year, slow enough to see the moon rise each month." },
+    { "id": 2, "noiDung": "I hope my family can sit together under the full moon, with no one in a rush." },
+    { "id": 3, "noiDung": "I vow to keep my good intentions from the first month until the last." },
+    { "id": 4, "noiDung": "I hope tonight's lantern light warms anyone who feels lost." },
+    { "id": 5, "noiDung": "I am grateful for the first half-month of the year and its ordinary, precious days." },
+    { "id": 6, "noiDung": "I vow to write more, read more and complain less this year." },
+    { "id": 7, "noiDung": "I hope my parents have many calm moonlit nights with their children and grandchildren." },
+    { "id": 8, "noiDung": "I vow to be a small lantern for someone in need, even if I light only a few steps." },
+    { "id": 9, "noiDung": "I hope my old friends are all well, even though we haven't met in a long time." },
+    { "id": 10, "noiDung": "I vow to spend one full-moon night each month looking back at myself kindly." },
+    { "id": 11, "noiDung": "I hope every home in my neighborhood is lit and warm with laughter this year." },
+    { "id": 12, "noiDung": "I vow to speak fewer words, but let each one be true and kind." },
+    { "id": 13, "noiDung": "I hope children have a joyful school year, free to ask and truly heard." },
+    { "id": 14, "noiDung": "I send good wishes to the stranger I have never met who is watching this same moon." },
+    { "id": 15, "noiDung": "I vow to write three lines of gratitude before going to sleep." },
+    { "id": 16, "noiDung": "I hope those working far from home have a good meal tonight." },
+    { "id": 17, "noiDung": "I vow to compare myself less with others and enjoy my own steps." },
+    { "id": 18, "noiDung": "I hope this year's harvest is gentle and farmers have an easier time." },
+    { "id": 19, "noiDung": "I vow to care for a small potted plant all year, as I would care for a promise." },
+    { "id": 20, "noiDung": "I hope everyone in my home says thank you to one another every day." },
+    { "id": 21, "noiDung": "I vow that when I am angry, I will wait until the next morning before speaking." },
+    { "id": 22, "noiDung": "I hope the first moon of the year brings some peace to places facing hardship." },
+    { "id": 23, "noiDung": "I vow to learn a new skill this year and be patient with myself while learning." },
+    { "id": 24, "noiDung": "I hope lonely elders have someone drop by to pour them tea on the full moon." },
+    { "id": 25, "noiDung": "I vow to keep my heart clear as a pond, so I can see what I should do." },
+    { "id": 26, "noiDung": "I am grateful to those who lit a lantern for me when I had lost my way." },
+    { "id": 27, "noiDung": "I hope the small creatures around me can live in peace this new year." },
+    { "id": 28, "noiDung": "I vow to spend more time with my loved ones than with screens." },
+    { "id": 29, "noiDung": "I hope each of my friends finds a simple joy this year." },
+    { "id": 30, "noiDung": "I vow to light a kind lantern in my heart on every full moon of the year." }
+  ],
+  "nhiemVu": [
+    {
+      "id": "thap-den-long",
+      "ten": "Light a New-Year Lantern",
+      "moTa": "Choose a color and light a virtual lantern along the pagoda path, with a short wish for those who come after.",
+      "phanThuong": "A red lantern for your porch"
+    },
+    {
+      "id": "viet-tho-nguyen-tieu",
+      "ten": "Four Lines on the Full Moon",
+      "moTa": "Write four simple lines of your own about the moon, home or loved ones, and place them on the poetry table by the pond.",
+      "phanThuong": "A brush and ink stone on the poetry table"
+    },
+    {
+      "id": "ngam-trang-dau-nam",
+      "ten": "Watch the First Moon",
+      "moTa": "Sit by the virtual lotus pond for five minutes, breathe slowly and watch the full moon rise over the water.",
+      "phanThuong": "A full moon over the pagoda roof"
+    },
+    {
+      "id": "tha-den-hoa-dang",
+      "ten": "Float a Lotus Lantern",
+      "moTa": "Float a virtual lotus lantern on the pond, carrying a kind wish for your family.",
+      "phanThuong": "A lotus lantern drifting on the pond"
+    },
+    {
+      "id": "pha-tra-moi-nguoi",
+      "ten": "A Cup of Tea for Others",
+      "moTa": "Brew a virtual pot of tea and invite three friends from your list to watch the moon together.",
+      "phanThuong": "A blue-glazed tea set on the tea table"
+    },
+    {
+      "id": "nhin-lai-nua-thang",
+      "ten": "Look Back on Half a Month",
+      "moTa": "Note one thing you have done and one thing you want to continue since the first day of the year.",
+      "phanThuong": "A red-covered notebook on the bookshelf"
+    },
+    {
+      "id": "loi-chuc-nguoi-la",
+      "ten": "Wishes for Strangers",
+      "moTa": "Read three wishes on the Wishing Tree and send each one a kind blessing.",
+      "phanThuong": "A small wind chime on the Wishing Tree"
+    },
+    {
+      "id": "goi-ve-nha",
+      "ten": "A Full-Moon Call",
+      "moTa": "Call a relative who lives far away, then mark the task complete once you have talked.",
+      "phanThuong": "A family photo frame by the window"
+    },
+    {
+      "id": "cay-nguyen-dau-nam",
+      "ten": "Hang a New-Year Wish",
+      "moTa": "Write a very short wish for the whole year and hang it on the pagoda's Wishing Tree.",
+      "phanThuong": "A yellow silk ribbon on the Wishing Tree"
+    },
+    {
+      "id": "di-cham-duoi-den",
+      "ten": "Walk Slowly Under the Lanterns",
+      "moTa": "Walk the whole lantern path in the virtual pagoda yard in rhythm with your breath, without rushing.",
+      "phanThuong": "A row of colorful lanterns before your home"
+    }
+  ],
+  "trangTri": [
+    "Red lanterns along the pagoda entrance",
+    "Colorful lanterns under the eaves",
+    "A full moon over the pagoda roof",
+    "Lotus lanterns drifting on the pond",
+    "A tea table with paper and brushes by the pond",
+    "A brush and ink stone on the poetry table",
+    "A small wind chime on the Wishing Tree",
+    "A yellow silk ribbon on the Wishing Tree",
+    "A small kumquat pot by the steps",
+    "A blue-glazed tea set on the tea table"
+  ],
+  "queDacBiet": [
+    {
+      "id": "den-vang-dau-nam",
+      "tieuDe": "A Golden Lantern",
+      "tho": [
+        "A golden lantern at the year's first light",
+        "Lights a few steps of spring road, soft and bright",
+        "A line of verse beside the yard I write",
+        "And send to those I love a peaceful night"
+      ],
+      "loiGiai": "A golden lantern at the start of the year doesn't light the whole long road; it lights only a few steps ahead. This verse reminds you not to worry too far into the year. Walk lightly, step by step, and finish today's small tasks well. The line of verse by the yard is a message to loved ones: sometimes a simple word of care is enough to warm each other's hearts.",
+      "loiKhuyen": "Write a short, sincere message to a dear friend. No need for fancy words; it only needs to sound like you."
+    },
+    {
+      "id": "trang-ram-thong-tha",
+      "tieuDe": "An Unhurried Moon",
+      "tho": [
+        "The first full moon is round and clear",
+        "We sit in quiet, with the sky so near",
+        "The year begins at a gentle, easy pace",
+        "May kindness and peace reach every place"
+      ],
+      "loiGiai": "After the busy days of the New Year, the first full moon is like an invitation to sit down. This verse is about unhurriedness: not laziness, but knowing when to pause and catch your breath. When your heart is at ease, there is room to think of others and wish peace for every place.",
+      "loiKhuyen": "Tonight, switch off your phone for ten minutes and sit on the porch or by a window. Just look at the sky and breathe slowly."
+    },
+    {
+      "id": "giay-hong-tho-hien",
+      "tieuDe": "Gentle Verse on Pink Paper",
+      "tho": [
+        "On pink paper I write one line",
+        "And send the festival a gentle wish of mine",
+        "May my heart stay green like a tender leaf",
+        "And sow small kindnesses that bloom past grief"
+      ],
+      "loiGiai": "Your new-year dream need not be grand. This verse compares the heart to a young leaf: still soft, still green, easy to bend toward goodness. Small kind acts sown regularly will slowly become a joyful season for you and those around you. Be patient with your seeds.",
+      "loiKhuyen": "Choose one very small kind act you can do every week this year, and write it on the first page of your notebook."
+    }
+  ]
+}

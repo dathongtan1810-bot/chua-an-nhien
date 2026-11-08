@@ -1,0 +1,20 @@
+{
+  "name": "chua-an-nhien-qa",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "QA: test tích hợp hộp đen (server thật + client thật) cho Chùa An Nhiên",
+  "scripts": {
+    "pretest": "npm --prefix ../server run build --silent",
+    "test": "vitest run",
+    "test:api": "vitest run api",
+    "e2e": "playwright test --trace off",
+    "all": "npm test && npm run e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "socket.io-client": "^4.8.4",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.0"
+  }
+}

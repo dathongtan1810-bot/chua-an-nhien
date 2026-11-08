@@ -1,0 +1,114 @@
+[
+  {
+    "ten": "Mùng 1",
+    "thang": 0,
+    "ngay": 1,
+    "moTa": "Ngày đầu tháng âm lịch, dịp để tĩnh tâm, thắp nén hương và đặt ý định tốt cho tháng mới.",
+    "trangTri": "den-long,hoa-sen",
+    "nhiemVu": "Thắp một nén hương và viết một ý định tốt cho tháng mới"
+  },
+  {
+    "ten": "Ngày Rằm",
+    "thang": 0,
+    "ngay": 15,
+    "moTa": "Ngày trăng tròn giữa tháng, dịp để ngắm trăng, sống chậm và hướng về điều thiện.",
+    "trangTri": "trang-ram,hoa-sen",
+    "nhiemVu": "Ngắm trăng rằm và gửi một lời chúc bình an đến người thân"
+  },
+  {
+    "ten": "Tết Nguyên Đán",
+    "thang": 1,
+    "ngay": 1,
+    "moTa": "Mùng 1 Tết, ngày đầu năm mới. Chúc nhau an khang, đi chùa đầu năm cầu bình an cho gia đình.",
+    "trangTri": "hoa-dao-mai,den-long,phao-hoa-nhe,co-phuon",
+    "nhiemVu": "Gửi một lời chúc năm mới đến cha mẹ, ông bà"
+  },
+  {
+    "ten": "Mùng 2 Tết",
+    "thang": 1,
+    "ngay": 2,
+    "moTa": "Ngày thứ hai của Tết, theo nếp xưa thường đi thăm bên ngoại, sum vầy cùng họ hàng.",
+    "trangTri": "hoa-dao-mai,den-long,phao-hoa-nhe",
+    "nhiemVu": "Hỏi thăm một người họ hàng lâu ngày chưa gặp"
+  },
+  {
+    "ten": "Mùng 3 Tết",
+    "thang": 1,
+    "ngay": 3,
+    "moTa": "Ngày thứ ba của Tết, dịp tri ân thầy cô theo câu “Mùng 3 Tết thầy”.",
+    "trangTri": "hoa-dao-mai,den-long,phao-hoa-nhe",
+    "nhiemVu": "Gửi lời tri ân đến một thầy cô đã dạy dỗ mình"
+  },
+  {
+    "ten": "Tết Nguyên Tiêu",
+    "thang": 1,
+    "ngay": 15,
+    "moTa": "Rằm tháng Giêng, ngày rằm lớn đầu năm. Chùa chiền thắp đèn, người người cầu an cho năm mới.",
+    "trangTri": "trang-ram,den-long,hoa-sen",
+    "nhiemVu": "Thắp một ngọn đèn lồng và viết lời nguyện an lành cho cả năm"
+  },
+  {
+    "ten": "Tết Hàn Thực",
+    "thang": 3,
+    "ngay": 3,
+    "moTa": "Mùng 3 tháng Ba, ngày làm bánh trôi bánh chay, nhớ về cội nguồn và tổ tiên.",
+    "trangTri": "hoa-sen",
+    "nhiemVu": "Kể cho người thân nghe một kỷ niệm đẹp về ông bà"
+  },
+  {
+    "ten": "Lễ Phật Đản",
+    "thang": 4,
+    "ngay": 15,
+    "moTa": "Rằm tháng Tư, kỷ niệm ngày đản sinh của Đức Phật. Dịp lan tỏa lòng từ bi và trí tuệ.",
+    "trangTri": "hoa-sen,co-phuon,den-long,trang-ram",
+    "nhiemVu": "Làm một việc thiện nhỏ để lan tỏa lòng từ bi"
+  },
+  {
+    "ten": "Tết Đoan Ngọ",
+    "thang": 5,
+    "ngay": 5,
+    "moTa": "Mùng 5 tháng Năm, Tết giữa năm, dịp chăm lo sức khỏe cho cả gia đình.",
+    "trangTri": "hoa-sen",
+    "nhiemVu": "Cùng gia đình ăn trái cây và dành thời gian vận động nhẹ"
+  },
+  {
+    "ten": "Lễ Vu Lan báo hiếu",
+    "thang": 7,
+    "ngay": 15,
+    "moTa": "Rằm tháng Bảy, mùa báo hiếu. Cài một bông hoa hồng lên áo để nhớ ơn cha mẹ.",
+    "trangTri": "hoa-hong,hoa-sen,den-long,trang-ram",
+    "nhiemVu": "Thả một đèn hoa đăng gửi lời tri ân cha mẹ"
+  },
+  {
+    "ten": "Tết Trung Thu",
+    "thang": 8,
+    "ngay": 15,
+    "moTa": "Rằm tháng Tám, trăng tròn sáng nhất năm. Đêm đoàn viên, rước đèn và ngắm trăng.",
+    "trangTri": "trang-ram,den-long",
+    "nhiemVu": "Treo một chiếc đèn ông sao và cùng người thân ngắm trăng"
+  },
+  {
+    "ten": "Tết Hạ Nguyên",
+    "thang": 10,
+    "ngay": 15,
+    "moTa": "Rằm tháng Mười, Tết cơm mới, tri ân mùa màng và người làm ra hạt gạo.",
+    "trangTri": "trang-ram,hoa-sen",
+    "nhiemVu": "Ăn một bữa cơm thật chậm và cảm ơn người làm ra hạt gạo"
+  },
+  {
+    "ten": "Ông Công Ông Táo",
+    "thang": 12,
+    "ngay": 23,
+    "moTa": "Ngày 23 tháng Chạp, tiễn Táo Quân về trời, dọn dẹp nhà cửa chuẩn bị đón Tết.",
+    "trangTri": "den-long,hoa-dao-mai",
+    "nhiemVu": "Dọn dẹp một góc nhà gọn gàng để chuẩn bị đón Tết"
+  },
+  {
+    "ten": "Tất niên – Giao thừa",
+    "thang": 12,
+    "ngay": 30,
+    "moTa": "Ngày cuối năm âm lịch (dù tháng Chạp chỉ có 29 ngày). Khép lại năm cũ, chào đón năm mới an lành.",
+    "trangTri": "den-long,hoa-dao-mai,phao-hoa-nhe",
+    "nhiemVu": "Viết ba điều biết ơn của năm cũ và một ước nguyện cho năm mới"
+  }
+]

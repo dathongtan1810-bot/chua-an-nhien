@@ -1,0 +1,51 @@
+{
+  "name": "chua-an-nhien-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src tests",
+    "format": "prettier --write \"src/**/*.{ts,css,json}\" \"tests/**/*.ts\"",
+    "e2e": "playwright test",
+    "icons": "node scripts/gen-icons.mjs",
+    "cap:sync": "npm run build && cap sync",
+    "android:apk": "cd android && ./gradlew assembleDebug",
+    "cap:open:ios": "cap open ios",
+    "cap:open:android": "cap open android",
+    "e2e:server": "VITE_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} vite build --outDir dist-e2e-server && E2E_DIST=dist-e2e-server E2E_SERVER_URL=${E2E_SERVER_URL:-http://localhost:8080} playwright test --workers=1"
+  },
+  "dependencies": {
+    "@capacitor-community/keep-awake": "^8.0.1",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/local-notifications": "8.3.1",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
+    "phaser": "3.90.0",
+    "socket.io-client": "^4.8.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/ios": "^8.6.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.63.0",
+    "eslint": "^10.14.0",
+    "fake-indexeddb": "^6.2.7",
+    "jsdom": "^30.1.3",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  }
+}
