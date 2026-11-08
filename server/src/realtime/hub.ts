@@ -52,7 +52,7 @@ const FEATURE_OF: Partial<Record<C2SEvent, Feature>> = {
   room_leave: 'room',
 };
 
-/** Giới hạn theo sự kiện: [số lần, cửa sổ ms] cho mỗi user; IP gấp IP_FACTOR lần. */
+/** Giới hạn theo sự kiện: [số lần, cửa sổ ms] cho mỗi user; IP gấp RATE_LIMIT_IP_FACTOR lần. */
 const EVENT_LIMITS: Partial<Record<C2SEvent, [number, number]>> = {
   hello: [5, 60_000],
   enter_area: [30, 60_000],
@@ -65,7 +65,6 @@ const EVENT_LIMITS: Partial<Record<C2SEvent, [number, number]>> = {
   room_join: [20, 600_000],
   room_leave: [20, 600_000],
 };
-const IP_FACTOR = 5;
 
 class HandledError extends Error {
   constructor(
@@ -106,9 +105,10 @@ export class Hub {
   private connPerIp = new Map<string, number>();
   private limiters = new Map<string, SlidingWindowLimiter>();
   private floodLimiter: SlidingWindowLimiter;
-  private bellIp = new SlidingWindowLimiter(IP_FACTOR, LIMITS.BELL_USER_COOLDOWN_MS);
+  private readonly ipFactor: number;
+  private bellIp: SlidingWindowLimiter;
   private lanternUser = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR, 3600_000);
-  private lanternIp = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR * IP_FACTOR, 3600_000);
+  private lanternIp: SlidingWindowLimiter;
   private timers: NodeJS.Timeout[] = [];
   private floodStrikes = new Map<string, number>();
   private lanternInflight = new Set<string>();
@@ -130,10 +130,13 @@ export class Hub {
   }
 
   constructor(private readonly d: HubDeps) {
+    this.ipFactor = d.config.RATE_LIMIT_IP_FACTOR;
+    this.bellIp = new SlidingWindowLimiter(this.ipFactor, LIMITS.BELL_USER_COOLDOWN_MS);
+    this.lanternIp = new SlidingWindowLimiter(LIMITS.LANTERNS_PER_HOUR * this.ipFactor, 3600_000);
     this.floodLimiter = new SlidingWindowLimiter(d.config.SOCKET_EVENTS_PER_10S, 10_000);
     for (const [ev, [max, win]] of Object.entries(EVENT_LIMITS)) {
       this.limiters.set(`u:${ev}`, new SlidingWindowLimiter(max, win));
-      this.limiters.set(`ip:${ev}`, new SlidingWindowLimiter(max * IP_FACTOR, win));
+      this.limiters.set(`ip:${ev}`, new SlidingWindowLimiter(max * this.ipFactor, win));
     }
   }
 
@@ -259,7 +262,7 @@ export class Hub {
       const [max, win] = EVENT_LIMITS[event]!;
       const r = await this.d.cluster.windowHits([
         { key: `ev:u:${event}:${s.data.userId ?? s.id}`, max, windowMs: win },
-        { key: `ev:ip:${event}:${s.data.ip}`, max: max * IP_FACTOR, windowMs: win },
+        { key: `ev:ip:${event}:${s.data.ip}`, max: max * this.ipFactor, windowMs: win },
       ]);
       if (!r.ok) throw new RateLimitedError(event, r.retryAfterMs);
       return;
@@ -472,7 +475,7 @@ export class Hub {
     const uid = s.data.userId!;
     const distributed = this.d.cluster.distributed;
     if (distributed) {
-      const ipr = await this.d.cluster.windowHits([{ key: `bell:ip:${s.data.ip}`, max: IP_FACTOR, windowMs: LIMITS.BELL_USER_COOLDOWN_MS }]);
+      const ipr = await this.d.cluster.windowHits([{ key: `bell:ip:${s.data.ip}`, max: this.ipFactor, windowMs: LIMITS.BELL_USER_COOLDOWN_MS }]);
       if (!ipr.ok) throw new RateLimitedError('ring_bell', ipr.retryAfterMs);
     } else {
       const ip = this.bellIp.peek(s.data.ip);
@@ -503,7 +506,7 @@ export class Hub {
     try {
       // IP: ghi nhận ngay (trước khi tạo đèn) để nhiều user cùng IP không vượt rào song song; cả cụm nếu dùng Redis
       const li = this.d.cluster.distributed
-        ? await this.d.cluster.windowHits([{ key: `lantern:ip:${s.data.ip}`, max: LIMITS.LANTERNS_PER_HOUR * IP_FACTOR, windowMs: 3600_000 }])
+        ? await this.d.cluster.windowHits([{ key: `lantern:ip:${s.data.ip}`, max: LIMITS.LANTERNS_PER_HOUR * this.ipFactor, windowMs: 3600_000 }])
         : this.lanternIp.hit(s.data.ip);
       if (!li.ok) throw new RateLimitedError('release_lantern', li.retryAfterMs);
     } catch (e) {

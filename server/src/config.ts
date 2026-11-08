@@ -46,6 +46,8 @@ const EnvSchema = z.object({
   /** Số sự kiện tối đa / 10 giây cho mỗi socket (chống flood chung). */
   SOCKET_EVENTS_PER_10S: int(40),
   HTTP_RATE_PER_MIN: int(120),
+  /** Giới hạn theo IP = giới hạn theo người × hệ số này (nhiều người chung NAT). Tăng cho server chạy e2e (mọi client cùng 127.0.0.1). */
+  RATE_LIMIT_IP_FACTOR: int(5).pipe(z.number().int().min(1).max(10_000)),
   /** Số proxy tin cậy phía trước (hop). "true" = 1, "false"/"0" = không tin X-Forwarded-For. */
   TRUST_PROXY: z
     .string()

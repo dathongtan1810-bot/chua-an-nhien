@@ -85,6 +85,8 @@ Cách chạy lại: `git archive origin/claude/jolly-mendel-hppn0t app/src | tar
 
 **Yêu cầu từ nhóm app (08/11): `unblock_user` để làm "Bỏ chặn"** → ✅ đã thêm (EXT, PROTOCOL.md); test trong `lantern.test.ts`.
 
+**Vướng mắc e2e của nhóm app (giới hạn thả đèn theo IP khi chạy lặp từ 127.0.0.1)** → server e2e đặt `RATE_LIMIT_IP_FACTOR=100` (mặc định 5).
+
 **Ghi chú cho nhóm app**: có thể bỏ `'polling'` khỏi `transports` nếu deploy nhiều instance; `app/src/net/protocol.ts` có thể import thẳng `shared/protocol.ts` để tránh lệch.
 
 ## Việc nên làm tiếp

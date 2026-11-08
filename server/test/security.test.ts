@@ -160,3 +160,20 @@ describe('rò rỉ bộ nhớ', () => {
     if (!process.env.TEST_ALL_REDIS) expect(s.ctx.hub.debugSizes().rooms).toBe(0);
   });
 });
+
+describe('RATE_LIMIT_IP_FACTOR', () => {
+  it('nới giới hạn theo IP cho server chạy e2e (nhiều người cùng 127.0.0.1)', async () => {
+    // mặc định 5: người thứ 6 cùng IP bị chặn thả đèn khi mỗi người đã thả 3 (15/giờ/IP)
+    s = await startServer();
+    const users = await Promise.all(Array.from({ length: 6 }, () => s.hello()));
+    let ok = 0;
+    for (const u of users) for (let i = 0; i < 3; i++) if ((await emitAck(u.c, 'release_lantern', { text: `đèn ${i}`, color: 'red' })).ok) ok++;
+    expect(ok).toBe(15);
+    await s.close();
+    s = await startServer({ RATE_LIMIT_IP_FACTOR: '100' });
+    const many = await Promise.all(Array.from({ length: 6 }, () => s.hello()));
+    let ok2 = 0;
+    for (const u of many) for (let i = 0; i < 3; i++) if ((await emitAck(u.c, 'release_lantern', { text: `đèn ${i}`, color: 'red' })).ok) ok2++;
+    expect(ok2).toBe(18);
+  });
+});
