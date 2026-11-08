@@ -97,6 +97,9 @@ export type ReportPayload = z.input<typeof ReportSchema>;
 
 export const BlockUserSchema = z.object({ userId: IdSchema });
 export type BlockUserPayload = z.infer<typeof BlockUserSchema>;
+/** EXT: bỏ chặn (chỉ gỡ chiều do chính mình chặn). */
+export const UnblockUserSchema = BlockUserSchema;
+export type UnblockUserPayload = BlockUserPayload;
 
 // ---- EXT: phòng riêng đi chùa cùng gia đình ------------------------------
 export const ROOM_CODE_REGEX = /^[A-HJ-NP-Z2-9]{6}$/; // bỏ I, O, 0, 1 cho dễ đọc
@@ -120,6 +123,7 @@ export const C2S_SCHEMAS = {
   like_lantern: LikeLanternSchema,
   report: ReportSchema,
   block_user: BlockUserSchema,
+  unblock_user: UnblockUserSchema,
   // EXT
   room_create: RoomCreateSchema,
   room_join: RoomJoinSchema,
@@ -242,6 +246,8 @@ export interface ClientToServerEvents {
   like_lantern: (p: LikeLanternPayload, ack?: Ack) => void;
   report: (p: ReportPayload, ack?: Ack) => void;
   block_user: (p: BlockUserPayload, ack?: Ack) => void;
+  // EXT
+  unblock_user: (p: UnblockUserPayload, ack?: Ack) => void;
   // EXT
   room_create: (p?: Record<string, never> | null, ack?: Ack) => void;
   room_join: (p: RoomJoinPayload, ack?: Ack) => void;

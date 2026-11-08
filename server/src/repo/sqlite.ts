@@ -180,6 +180,7 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     reportsResolve: db.prepare('UPDATE reports SET resolved = 1 WHERE target_type = ? AND target_id = ? AND resolved = 0'),
 
     blockInsert: db.prepare('INSERT OR IGNORE INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, ?)'),
+    blockDelete: db.prepare('DELETE FROM blocks WHERE blocker_id = ? AND blocked_id = ?'),
     blocksRelated: db.prepare(
       'SELECT blocked_id AS uid FROM blocks WHERE blocker_id = ? UNION SELECT blocker_id AS uid FROM blocks WHERE blocked_id = ?',
     ),
@@ -347,6 +348,9 @@ export function createSqliteRepositories(dbPath: string): Repositories {
     blocks: {
       async add(a, b, at) {
         q.blockInsert.run(a, b, at);
+      },
+      async remove(a, b) {
+        return q.blockDelete.run(a, b).changes > 0;
       },
       async related(id) {
         return (q.blocksRelated.all(id, id) as Array<{ uid: string }>).map((r) => r.uid);

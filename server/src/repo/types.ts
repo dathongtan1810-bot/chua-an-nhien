@@ -78,6 +78,8 @@ export interface ReportsRepo {
 
 export interface BlocksRepo {
   add(blockerId: string, blockedId: string, at: number): Promise<void>;
+  /** Gỡ chặn theo chiều blocker → blocked; true nếu có bản ghi bị xoá. */
+  remove(blockerId: string, blockedId: string): Promise<boolean>;
   /** Mọi userId có quan hệ chặn với user (hai chiều). */
   related(userId: string): Promise<string[]>;
 }

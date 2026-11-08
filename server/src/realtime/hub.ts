@@ -46,6 +46,7 @@ const FEATURE_OF: Partial<Record<C2SEvent, Feature>> = {
   like_lantern: 'lantern',
   report: 'report',
   block_user: 'report',
+  unblock_user: 'report',
   room_create: 'room',
   room_join: 'room',
   room_leave: 'room',
@@ -59,6 +60,7 @@ const EVENT_LIMITS: Partial<Record<C2SEvent, [number, number]>> = {
   like_lantern: [60, 60_000],
   report: [10, 600_000],
   block_user: [20, 600_000],
+  unblock_user: [20, 600_000],
   room_create: [5, 600_000],
   room_join: [20, 600_000],
   room_leave: [20, 600_000],
@@ -368,6 +370,8 @@ export class Hub {
         return this.onReport(s, p);
       case 'block_user':
         return this.onBlock(s, p);
+      case 'unblock_user':
+        return this.onUnblock(s, p);
       case 'room_create':
         return this.onRoomCreate(s);
       case 'room_join':
@@ -622,6 +626,30 @@ export class Hub {
     // Gỡ nội dung của nhau khỏi màn hình hai bên
     for (const id of await repos.lanterns.listIdsByUser(target.id)) this.d.io.to(userRoom(uid)).emit('lantern_removed', { id });
     for (const id of await repos.lanterns.listIdsByUser(uid)) this.d.io.to(userRoom(target.id)).emit('lantern_removed', { id });
+  }
+
+  /** EXT: bỏ chặn. Nếu hai bên không còn chặn nhau theo chiều nào, gửi lại đèn đang hiện của nhau. */
+  private async onUnblock(s: Sock, p: { userId: string }) {
+    const { repos } = this.d;
+    const uid = s.data.userId!;
+    if (p.userId === uid) throw new HandledError('cannot_target_self', 'Không thể chặn chính mình');
+    const removed = await repos.blocks.remove(uid, p.userId);
+    // nạp lại quan hệ chặn của cả hai từ DB (bên kia có thể vẫn đang chặn mình)
+    const mine = new Set(await repos.blocks.related(uid));
+    if (this.blockCache.has(uid)) this.blockCache.set(uid, mine);
+    if (this.blockCache.has(p.userId)) this.blockCache.set(p.userId, new Set(await repos.blocks.related(p.userId)));
+    if (removed && !mine.has(p.userId)) {
+      const now = Date.now();
+      const resend = async (authorId: string, toUser: string) => {
+        for (const id of await repos.lanterns.listIdsByUser(authorId)) {
+          const l = await repos.lanterns.findById(id);
+          if (l && l.status === 'approved' && l.expiresAt > now) this.d.io.to(userRoom(toUser)).emit('lantern_released', this.toPayload(l));
+        }
+      };
+      await resend(p.userId, uid);
+      await resend(uid, p.userId);
+    }
+    return { unblocked: removed, stillBlocked: mine.has(p.userId) };
   }
 
   // ---------------------------------------------------------------- rooms (EXT)

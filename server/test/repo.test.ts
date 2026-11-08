@@ -76,3 +76,15 @@ describe('sqlite repositories', () => {
     expect(await r.words.count()).toBe(2);
   });
 });
+
+describe('blocks.remove', () => {
+  it('gỡ đúng chiều', async () => {
+    await r.blocks.add('u1', 'u2', now);
+    await r.blocks.add('u2', 'u1', now);
+    expect(await r.blocks.remove('u1', 'u2')).toBe(true);
+    expect(await r.blocks.remove('u1', 'u2')).toBe(false);
+    expect(await r.blocks.related('u1')).toEqual(['u2']); // chiều u2→u1 còn
+    expect(await r.blocks.remove('u2', 'u1')).toBe(true);
+    expect(await r.blocks.related('u1')).toEqual([]);
+  });
+});

@@ -56,6 +56,11 @@ Khi bị khoá (`banned`) server gửi `error` rồi ngắt kết nối. Vượt
 
 Các sự kiện dưới đây là **bổ sung**; client cũ có thể bỏ qua.
 
+### `unblock_user` (C→S)
+`{userId}` → ack `{ok:true, unblocked, stillBlocked}`. Chỉ gỡ chiều do chính mình chặn (`unblocked=false` nếu mình không chặn người đó).
+Nếu sau đó hai bên không còn chặn nhau theo chiều nào (`stillBlocked=false`), server gửi lại `lantern_released` các đèn đang hiện của bên kia cho mỗi bên;
+hương/đèn mới lại hiện như bình thường. Rate limit như `block_user` (20 lần/10 phút).
+
 ### `lantern_liked` (S→C)
 `{id, likes}` — số tim mới của đèn, phát cho mọi người (trừ người bị chặn với tác giả).
 

@@ -346,6 +346,9 @@ export async function createPostgresRepositories(pool: Pool): Promise<Repositori
       async add(a, b, at) {
         await run(pool, 'INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING', [a, b, at]);
       },
+      async remove(a, b) {
+        return (await run(pool, 'DELETE FROM blocks WHERE blocker_id = $1 AND blocked_id = $2', [a, b])) > 0;
+      },
       async related(id) {
         return (
           await rows(

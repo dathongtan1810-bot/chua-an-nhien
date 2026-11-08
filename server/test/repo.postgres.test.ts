@@ -113,3 +113,13 @@ describe('postgres repositories (pg-mem)', () => {
     await expect(r.backup('/tmp/x')).rejects.toThrow('pg_dump');
   });
 });
+
+describe('postgres blocks.remove', () => {
+  it('gỡ đúng chiều', async () => {
+    await r.blocks.add('u1', 'u2', now);
+    await r.blocks.add('u2', 'u1', now);
+    expect(await r.blocks.remove('u1', 'u2')).toBe(true);
+    expect(await r.blocks.remove('u1', 'u2')).toBe(false);
+    expect(await r.blocks.related('u1')).toEqual(['u2']);
+  });
+});

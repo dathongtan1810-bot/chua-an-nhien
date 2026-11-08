@@ -83,6 +83,8 @@ welcome 2 người, hương/chuông/đèn phát chéo, đèn có `userId`, thả
 REST `fetchLanterns`/`stats`/`health`, chặn từ đèn ⇒ không còn thấy đèn, **server khởi động lại ⇒ client tự kết nối & hello lại cùng userId**, `deleteMyData`.
 Cách chạy lại: `git archive origin/claude/jolly-mendel-hppn0t app/src | tar -x -C <thư mục nháp>`, symlink `node_modules` → `server/node_modules`, viết script import `SocketClient` rồi chạy bằng `tsx`.
 
+**Yêu cầu từ nhóm app (08/11): `unblock_user` để làm "Bỏ chặn"** → ✅ đã thêm (EXT, PROTOCOL.md); test trong `lantern.test.ts`.
+
 **Ghi chú cho nhóm app**: có thể bỏ `'polling'` khỏi `transports` nếu deploy nhiều instance; `app/src/net/protocol.ts` có thể import thẳng `shared/protocol.ts` để tránh lệch.
 
 ## Việc nên làm tiếp

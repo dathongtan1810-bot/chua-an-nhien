@@ -210,3 +210,43 @@ describe('MILD_WORD_ACTION (mucDo 1)', () => {
     expect(await emitAck(b.c, 'release_lantern', { text: 'địt mẹ', color: 'red' })).toMatchObject({ ok: false, code: 'content_rejected' });
   });
 });
+
+describe('bỏ chặn (EXT unblock_user)', () => {
+  it('bỏ chặn → thấy lại hương/đèn; nhận lại đèn đang hiện của nhau', async () => {
+    s = await startServer();
+    const a = await s.hello();
+    const b = await s.hello();
+    const { id } = await emitAck(a.c, 'release_lantern', { text: 'đèn của A', color: 'red' });
+    await emitAck(b.c, 'block_user', { userId: a.w.userId });
+    const back = waitFor(b.c, 'lantern_released');
+    expect(await emitAck(b.c, 'unblock_user', { userId: a.w.userId })).toMatchObject({ ok: true, unblocked: true, stillBlocked: false });
+    expect((await back).id).toBe(id); // đèn của A được gửi lại cho B
+    const inc = waitFor(b.c, 'incense_lit');
+    a.c.emit('light_incense', { count: 1 });
+    expect((await inc).userId).toBe(a.w.userId);
+    const rest = await (await fetch(`${s.url}/api/lanterns`)).json();
+    expect(rest.lanterns.map((l: any) => l.id)).toContain(id);
+  });
+
+  it('bên kia vẫn chặn mình → vẫn không thấy nhau; không tự gỡ chặn của người khác', async () => {
+    s = await startServer();
+    const a = await s.hello();
+    const b = await s.hello();
+    await emitAck(a.c, 'block_user', { userId: b.w.userId });
+    await emitAck(b.c, 'block_user', { userId: a.w.userId });
+    expect(await emitAck(b.c, 'unblock_user', { userId: a.w.userId })).toMatchObject({ ok: true, unblocked: true, stillBlocked: true });
+    const seen = collect(b.c, 'lantern_released', 300);
+    await emitAck(a.c, 'release_lantern', { text: 'vẫn ẩn', color: 'red' });
+    expect(await seen).toHaveLength(0);
+    // B không gỡ được chặn do A đặt
+    expect(await emitAck(b.c, 'unblock_user', { userId: a.w.userId })).toMatchObject({ ok: true, unblocked: false, stillBlocked: true });
+  });
+
+  it('payload sai / chính mình', async () => {
+    s = await startServer();
+    const a = await s.hello();
+    expect(await emitAck(a.c, 'unblock_user', { userId: a.w.userId })).toMatchObject({ ok: false, code: 'cannot_target_self' });
+    expect(await emitAck(a.c, 'unblock_user', { userId: '' })).toMatchObject({ ok: false, code: 'invalid_payload' });
+    expect(await emitAck(a.c, 'unblock_user', { userId: 'khong-ton-tai' })).toMatchObject({ ok: true, unblocked: false });
+  });
+});
